@@ -2,7 +2,7 @@ This is BibTeX, Version 0.99d (TeX Live 2012)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: /Users/abrahamn/Documents/Physics/papers/DishPapers/DishMeasurements/.texpadtmp/DishMeasurements_rev0.aux
 I couldn't open style file apj.bst
----line 3 of file /Users/abrahamn/Documents/Physics/papers/DishPapers/DishMeasurements/.texpadtmp/DishMeasurements_rev0.aux
+---line 2 of file /Users/abrahamn/Documents/Physics/papers/DishPapers/DishMeasurements/.texpadtmp/DishMeasurements_rev0.aux
  : \bibstyle{apj
  :              }
 I'm skipping whatever remains of this command
@@ -10,7 +10,7 @@ I found no \citation commands---while reading file /Users/abrahamn/Documents/Phy
 I found no style file---while reading file /Users/abrahamn/Documents/Physics/papers/DishPapers/DishMeasurements/.texpadtmp/DishMeasurements_rev0.aux
 You've used 0 entries,
             0 wiz_defined-function locations,
-            86 strings with 724 characters,
+            85 strings with 698 characters,
 and the built_in function-call counts, 0 in all, are:
 = -- 0
 > -- 0
