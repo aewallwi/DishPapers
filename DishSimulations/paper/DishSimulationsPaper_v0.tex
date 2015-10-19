@@ -1,0 +1,54 @@
+\documentclass[twocolumn]{emulateapj}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{natbib}
+\citestyle{aa}
+
+\begin{document}
+\title{The Hydrogen Epoch of Reionization Array Dish: Characterization with Electromagnetic Simulations}
+\author{
+Ewall-Wice Aaron\altaffilmark{1,2},
+Bradley Richard\altaffilmark{3,4},
+Jacqueline Hewitt\altaffilmark{1,2},
+Ali S. Zaki\altaffilmark{5},
+Bowman Judd\altaffilmark{6},
+Cheng Carina\altaffilmark{5},
+Neben Abraham\altaffilmark{1,2},
+Parsons Aaron\altaffilmark{5},
+Patra Nipanjana\altaffilmark{5},
+Thyagarajan Nithyanandan\altaffilmark{6}
+}
+
+\altaffiltext{1}{MIT Kavli Institute for Cosmological Physics}
+\altaffiltext{2}{MIT Dept. of Physics}
+\altaffiltext{3}{National Radio Astronomy Obs., Charlottesville VA}
+\altaffiltext{4}{Dept. of Astronomy, U. Virginia, Charlottesville VA}
+\altaffiltext{5}{Astronomy Dept. U. California, Berkeley CA}
+\altaffiltext{6}{School of Earth and Space Exploration, Arizona State U.,
+Tempe AZ}
+\begin{abstract}
+Using electromagnetic simulations, we assess the spectral properties of the antenna element of the Hydrogen Epoch of Reionization Array (HERA) in order to both establish a specification for the degree of spectral structure that is permissible to sufficiently isolate foregrounds and allow a detection of the cosmological 21\,cm signal and verify direct laboratory measurements of the dish characteristics. We find that our simulations are in good agreement with field measurements. Using simulations of foregrounds, we find that the $\approx -40$\,dB response at 60\,ns of the HERA dish is sufficient to isolate the cosmological 21\,cm signal $\approx 0.2$\,$h$Mpc$^{-1}$ at $z\approx 8.5$ and obtain a high signal to noise detection of the power spectrum.
+\end{abstract}
+\section{Introduction}
+Observations of the redshift 21\,cm radiation neutral hydrogen in the intergalactic medium (IGM) have the potential to illuminate the hitherto unobserved {\it dark ages} and {\it cosmic dawn}, revolutionizing our understanding of the first UV and X-ray sources in the universe and how their properties influenced galactic evolution (see \citet{Furlanetto:2006Review}, \citet{Morales:2010}, and \citet{Pritchard:2012} for reviews). As of now, two major experimental endeavors are underway to make a first detection of the 21\,cm signal with most focusing on the Epoch of Reionization (EoR) in which UV photons from early galaxies transformed the hydrogen in the universe from neutral to ionized. The first involves measuring the sky-averaged global signal and is being pursued by experiments such as EDGES \citep{Bowman:2010}, LEDA \citep{Greenhill:2012}, DARE \citep{Burns:2012}, SciHi \citep{Voytek:2014}, and BIGHORNS \citep{Sokolowski:2015} coming online in their planning stages or taking data. The second attempts to observe spatial  fluctuations in the 21\,cm emission using radio interferometers. As of now, a first generation of interferometry experiments are taking data in an attempt to make a first statistical detection of the power spectrum of 21\,cm brightness temperature fluctuations. These include the Giant Metrewave Telescope (GMRT)  \citep{Paciga:2013}, the Low Frequency ARray (LOFAR), \citep{VanHaarlem:2013}, the Murchison Widefield Array \citep{Tingay:2013} and the Precision Array for Probing the Epoch of Reionization (PAPER) \citep{Parsons:2010}. 
+
+The primary obstacle to obtaining a high redshift detection of the cosmological signal through both of these methods is the existence of foregrounds that are $\sim 10^5-10^6$ times brighter. While requiring much greater sensitivity to global-signal experiments, interferometers have the advantage that these spectrally smooth foregrounds naturally avoid a significant region of $k$-space, known as the {\it EoR window}, occupying a region known as the {\it wedge} \citep{Datta:2010,Vedantham:2012,Parsons:2012,Thyagarajan:2013,Liu:2014a,Liu:2014b}, however any structure in the frequency response of the instrument has the potential to leak foregrounds into the EoR window, masking our signal. Indeed, low level spectral structures in the analogue and digital signal chains on the initial buildout of the MWA are proving to be a significant obstacle \citep{Dillon:2015b,EwallWice:2015a,Beardsley:2015b}. 
+
+While, in principle, spectral structure in the bandpass of the instrument may be removed in calibration, simulations show that any mismodeling of emission and the primary beam, potentially below the confusion limit, will mix the significant spectral structure on long baselines into short ones, masking the signal entirely \citep{Barry:2015}. While redundant calibration \citep{Wieringa:1992,Liu:2011,Zheng:2014} is able to calibrate the independent of a detailed model of the sky, any direction-dependent chromatic structure in the primary beam of the instrument introduces additional degrees of freedom that must be modeled, potentially leading to signal loss and the introduction of spurious spectral structure due to unmodeled foregrounds in long baselines. Because of our limited knowledge of foregrounds at low-frequency and the fidelity of calibration algorithms, the only sure way of building an instrument that will guarantee a detection of the redshifted 21\,cm emission is to design it such that all spectral structure in the signal chain is limited to a finite region of delay space, well below the wedge.
+
+
+The Hydrogen Epoch of Reionization Array (HERA) is an instrument currently taking first observations in the Karoo in South Africa with the ultimate goal of detecting the power spectrum of 21\,cm brightness temperature fluctuations at high signal-to-noise (SNR) \citep{Pober:2014}. A central principle in HERA's design is that it be calibration fail-safe such that a detection of the signal is guaranteed, even if the chromaticity of the instrument is not calibrated out. This paper and its companions \citep{Neben:2015b,Patra:2015,Thyagarajan:2015c} describe a multifaceted approach to establishing a stringent specification on the spectral structure permissible for HERA to be calibration fail-safe and determine to what extent its design meets these requirements. We accomplish this by establishing a spec with simulations of foregrounds \citep{Thyagarjan:2015c} and verifying that HERA primary antenna element meets this spec with reflectometry \citep{Patra:2015} and Orbcomm beam mapping \citep{Neben:2015b}. These measurements are verified with detailed electromagnetic simulations which we describe in this work. 
+
+This paper is organized as follows. In \S~\ref{sec:Formalism} we lay out our analytic framework for describing the impact of reflections and spectral structure on foreground leakage in delay-transform power spectra. In \S~\ref{sec:Simulations} we describe our electromagnetic simulations of the HERA dish element. In \S~\ref{sec:Comparison} we compare our simulation results to direct measurements of the primary dish element and in \S~\ref{sec:Foregrounds} we apply our electromagnetic simulation results to simulations of foregrounds to determine the extent that the HERA dish's chromatic structure pollutes the EoR window and their impact on HERA's overall sensitivity. We conclude in \S~\ref{sec:Conclusion}.
+
+\section{The Impact of Reflections on Delay-Transform Power Spectra}\label{sec:Formalism}
+\section{Electromagnetic Simulations of the HERA dish element}\label{sec:Simulations}
+\section{Comparing Simulations Results to Measurements}
+\label{sec:Comparison}
+\section{The Effect of the HERA dish Chromaticity on Foreground Leakage and Sensitivity}
+\label{sec:Foregrounds}
+\section{Conclusions}
+\label{sec:Conclusion}
+\bibliographystyle{apj}
+\bibliography{biblio}
+\end{document}
