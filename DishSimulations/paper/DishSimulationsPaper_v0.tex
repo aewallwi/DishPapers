@@ -54,13 +54,23 @@ This paper is organized as follows. In \S~\ref{sec:Formalism} we lay out our ana
 
 \appendix
 \section{The Effect of Reflections and Cross-Talk on Visibilities}
-In this section, we develope formalism to discuss the impact of reflections of electromagnetic waves between antennas and within the signal chain of single antennas on foreground leakage in 21\,cm experiments. We start with the time varying electric field from a single source with location ${\bf \widehat{k}}$ on the sky, arriving at antenna $i$ with delay $\tau_i$ and antenna $j$ with delay $\tau_j$ with respect to the electric field at the origin which we denote as $s(t)$. We allow for two different types of reflections: First, we allow reflections within the analogue path of each $i^{th}$ antenna which we denote as $r_i(\tau)$. We also allow for single reflections between any $i-j$ antenna pair which we denote as $r_{ij}(\tau')$. Our choice of arbitrary $\tau'$, for now, allows for multi-path propogation between antennas, though we expect it to be dominated by the geometrical delay between the antenna pair. The electric field at antenna $i$ is given by
+In this section, we develope formalism to discuss the impact of reflections of electromagnetic waves between antennas and within the signal chain of single antennas on foreground leakage in 21\,cm experiments. We start with the time varying electric field from a single source with location ${\bf \widehat{k}}$ on the sky, arriving at antenna $i$ with delay $\tau_i$ and antenna $j$ with delay $\tau_j$ with respect to the electric field at the origin which we denote as $s(t,{\bf \hat{k}})$. We allow for two different types of reflections: First, we allow reflections within the analogue path of each $i^{th}$ antenna which we denote as $r_i(\tau,{\bf \hat{k}})$. We also allow for single reflections between any $i-j$ antenna pair which we denote as $r_{ij}(\tau',{\bf \hat{k}})$. Our choice of arbitrary $\tau'$, for now, allows for multi-path propogation between antennas, though we expect it to be dominated by the geometrical delay between the antenna pair. The electric field at antenna $i$ is given by
 \begin{equation}
-s_i(t) = \int d \tau' s(t+\tau_i-\tau') + \sum_{j \ne i} s(t + \tau_j - \tau_{ij}) r_{ij}(\tau')
+s_i(t,{\bf \hat{k}}) = \int d \tau' r_i(\tau',{\bf \hat{k}})s(t+\tau_i-\tau') + \sum_{j \ne i} \int d \tau' s(t + \tau_j - \tau_{ij}) r_{ij}(\tau',{\bf \hat{k}})
 \end{equation}  
 In an FX correlator, the electric field is sampled, Fourier transformed, and cross multipled between antenna pairs to form visibilities. The Fourier transform step leaves us with 
 \begin{equation}
-
+\widetilde{s}_i(f,{\bf \hat{k}}) = \widetilde{s}(f,{\bf \hat{k}}) \left[ \int d \tau' r_i(\tau',{\bf \hat{k}})e^{2 \pi i(\tau_i - \tau')f} + \sum_{j\ne i} \int d \tau' e^{2 \pi i(\tau_j - \tau_{ij})f} r_{ij}(\tau',{\bf \hat{k}}) \right]
+\end{equation}
+Multiplying and averaging gives us the visibility for the single source we obtain
+\begin{align}\label{eq:SingleSource}
+v_{ij}'(f,{\bf \hat{k}}) & = \langle \widetilde{s}_i(f,{\bf \widehat{k}}) \widetilde{s}_j(f,{\bf \hat{k}}) \rangle_t \nonumber \\
+&=d \Omega  I(f,{\bf \hat{k}}) g_i(f) g_j^*(f) a_i(f,{\bf \hat{k}})a_j^*(f,{\bf \hat{k}}) e^{2 \pi i{\bf u_{ij}} \cdot {\bf \hat{k}}} + d \Omega I(f,{\bf \hat{k}}) \sum_{\ell \ne j} g_i(f)a_i(f,{\bf \hat{k}}) C_{\ell j}^*(f,{\bf \hat{k}}) e^{2 \pi i {\bf u_{\ell i} \cdot {\bf \hat{k}}}} \nonumber \\ 
+& + d \Omega I(f,{\bf \hat{k}})\sum_{k \ne i} g_j^*(f) a_j^*(f) C_{ki}(f,{\bf \hat{k}}) e^{2 \pi i {\bf u_{kj}\cdot {\bf \hat{k}}}} + d \Omega I(f,{\bf \hat{k}}) \sum_{k\ne i}\sum_{\ell \ne j} C_{ki}(f,{\bf \hat{k}}) C_{j\ell}^*(f,{\bf \hat{k}}) e^{2 \pi i {\bf u_{k\ell}}\cdot{\bf \hat{k}}},
+\end{align}
+where $g_i(f) a_i(f,{\bf \hat{k}}) = \int d \tau r_i(\tau,{\bf \hat{k}}) e^{2 \pi i f \tau}$ is the effective direction dependent gain of the system which can be factored into a directoin dependent and direction independent function where $g_i(f)$ is the gain of the analogue signal chain after the radiation has been absorbed by the feed and $a_i(f,{\bf \hat{k}})$ describes the chromatic electric field response of the antenna. The first term in equation~\ref{eq:SingleSource} is an effective visibility with self-reflections. The two cross terms and the last term involve the mixing of visibilities complementary too the $ij$ baseline and have the potential to introduce significant chromatic features since they potentially insert visibilities on much longer basline lengths. Assuming propogation along a single path directly between the antennas, we may write $C_{ik}(f,{\bf \hat{k}})$ as 
+\begin{equation}
+C_{ki} = a_i({\bf \hat{k}}_{ki}) \frac{1}{r_{ik}}\left[\frac{d \sigma_k}{d \Omega}({\bf \hat{k}},{\bf \hat{k}}_{ij})\right]^{1/2} e^{2 \pi i \tau_{ik} f}
 \end{equation}
 
 \end{document}
