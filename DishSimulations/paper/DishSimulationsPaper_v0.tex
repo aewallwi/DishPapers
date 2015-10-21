@@ -51,4 +51,15 @@ This paper is organized as follows. In \S~\ref{sec:Formalism} we lay out our ana
 \label{sec:Conclusion}
 \bibliographystyle{apj}
 \bibliography{biblio}
+
+\appendix
+\section{The Effect of Reflections and Cross-Talk on Visibilities}
+In this section, we develope formalism to discuss the impact of reflections of electromagnetic waves between antennas and within the signal chain of single antennas on foreground leakage in 21\,cm experiments. We start with the time varying electric field from a single source with location ${\bf \widehat{k}}$ on the sky, arriving at antenna $i$ with delay $\tau_i$ and antenna $j$ with delay $\tau_j$ with respect to the electric field at the origin which we denote as $s(t)$. We allow for two different types of reflections: First, we allow reflections within the analogue path of each $i^{th}$ antenna which we denote as $r_i(\tau)$. We also allow for single reflections between any $i-j$ antenna pair which we denote as $r_{ij}(\tau')$. Our choice of arbitrary $\tau'$, for now, allows for multi-path propogation between antennas, though we expect it to be dominated by the geometrical delay between the antenna pair. The electric field at antenna $i$ is given by
+\begin{equation}
+s_i(t) = \int d \tau' s(t+\tau_i-\tau') + \sum_{j \ne i} s(t + \tau_j - \tau_{ij}) r_{ij}(\tau')
+\end{equation}  
+In an FX correlator, the electric field is sampled, Fourier transformed, and cross multipled between antenna pairs to form visibilities. The Fourier transform step leaves us with 
+\begin{equation}
+\end{equation}
+
 \end{document}
