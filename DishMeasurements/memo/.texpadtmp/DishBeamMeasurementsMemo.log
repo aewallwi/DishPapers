@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  24 OCT 2015 10:47
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  24 OCT 2015 11:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -224,18 +224,7 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 AAS preprint substyle, v5.2 <12 Dec 2003>.
-LaTeX Font Info:    Try loading font information for U+lasy on input line 105.
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/ulasy.fd
-File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-)
-LaTeX Font Info:    Try loading font information for U+msa on input line 105.
- (/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2009/06/22 v3.00 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 105.
- (/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-) <aerial.png, id=1, 1137.24875pt x 660.4675pt>
+<aerial.png, id=1, 1137.24875pt x 660.4675pt>
 File: aerial.png Graphic file (type png)
  <use aerial.png>
 Package pdftex.def Info: aerial.png used on input line 111.
@@ -249,7 +238,18 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 143.
- [2] <null1_rel.png, id=18, 722.7pt x 939.51pt>
+LaTeX Font Info:    Try loading font information for U+lasy on input line 148.
+ (/usr/local/texlive/2012/texmf-dist/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 148.
+ (/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 148.
+ (/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+) [2] <null1_rel.png, id=17, 722.7pt x 939.51pt>
 File: null1_rel.png Graphic file (type png)
  <use null1_rel.png>
 Package pdftex.def Info: null1_rel.png used on input line 153.
@@ -261,7 +261,7 @@ LaTeX Warning: Float too large for page by 60.0596pt on input line 156.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<null3_rel.png, id=19, 722.7pt x 939.51pt>
+<null3_rel.png, id=18, 722.7pt x 939.51pt>
 File: null3_rel.png Graphic file (type png)
  <use null3_rel.png>
 Package pdftex.def Info: null3_rel.png used on input line 159.
@@ -273,7 +273,7 @@ LaTeX Warning: Float too large for page by 45.09952pt on input line 162.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<null4_rel.png, id=20, 722.7pt x 939.51pt>
+<null4_rel.png, id=19, 722.7pt x 939.51pt>
 File: null4_rel.png Graphic file (type png)
  <use null4_rel.png>
 Package pdftex.def Info: null4_rel.png used on input line 165.
@@ -285,7 +285,7 @@ LaTeX Warning: Float too large for page by 72.89052pt on input line 168.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<feed.jpg, id=21, 1606.0pt x 1204.5pt>
+<feed.jpg, id=20, 1606.0pt x 1204.5pt>
 File: feed.jpg Graphic file (type jpg)
  <use feed.jpg>
 Package pdftex.def Info: feed.jpg used on input line 177.
@@ -294,7 +294,7 @@ Package pdftex.def Info: feed.jpg used on input line 177.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<feed0_abs_old_ref_model.png, id=22, 722.7pt x 939.51pt>
+<feed0_abs_old_ref_model.png, id=21, 722.7pt x 939.51pt>
 File: feed0_abs_old_ref_model.png Graphic file (type png)
  <use feed0_abs_old_ref_model.png>
 Package pdftex.def Info: feed0_abs_old_ref_model.png used on input line 183.
@@ -306,7 +306,7 @@ LaTeX Warning: Float too large for page by 60.0596pt on input line 186.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[3] <dish3_abs_old_ref_model.png, id=28, 722.7pt x 939.51pt>
+[3] <dish3_abs_old_ref_model.png, id=27, 722.7pt x 939.51pt>
 File: dish3_abs_old_ref_model.png Graphic file (type png)
  <use dish3_abs_old_ref_model.png>
 Package pdftex.def Info: dish3_abs_old_ref_model.png used on input line 199.
@@ -318,7 +318,7 @@ LaTeX Warning: Float too large for page by 30.13943pt on input line 202.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<dish1_abs_old_ref_model.png, id=29, 722.7pt x 939.51pt>
+<dish1_abs_old_ref_model.png, id=28, 722.7pt x 939.51pt>
 File: dish1_abs_old_ref_model.png Graphic file (type png)
  <use dish1_abs_old_ref_model.png>
 Package pdftex.def Info: dish1_abs_old_ref_model.png used on input line 205.
@@ -330,7 +330,7 @@ LaTeX Warning: Float too large for page by 30.13943pt on input line 208.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<dish2_abs_old_ref_model.png, id=30, 722.7pt x 939.51pt>
+<dish2_abs_old_ref_model.png, id=29, 722.7pt x 939.51pt>
 File: dish2_abs_old_ref_model.png Graphic file (type png)
  <use dish2_abs_old_ref_model.png>
 Package pdftex.def Info: dish2_abs_old_ref_model.png used on input line 211.
@@ -342,7 +342,7 @@ LaTeX Warning: Float too large for page by 30.13943pt on input line 214.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<dish4_abs_old_ref_model.png, id=31, 722.7pt x 939.51pt>
+<dish4_abs_old_ref_model.png, id=30, 722.7pt x 939.51pt>
 File: dish4_abs_old_ref_model.png Graphic file (type png)
  <use dish4_abs_old_ref_model.png>
 Package pdftex.def Info: dish4_abs_old_ref_model.png used on input line 217.
@@ -354,17 +354,17 @@ LaTeX Warning: Float too large for page by 42.97035pt on input line 220.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<measbeam_raw.png, id=32, 593.21625pt x 589.20125pt>
+<measbeam_raw.png, id=31, 593.21625pt x 589.20125pt>
 File: measbeam_raw.png Graphic file (type png)
  <use measbeam_raw.png>
 Package pdftex.def Info: measbeam_raw.png used on input line 225.
 (pdftex.def)             Requested size: 252.94499pt x 251.22984pt.
- <measbeam_interp.png, id=33, 593.21625pt x 589.20125pt>
+ <measbeam_interp.png, id=32, 593.21625pt x 589.20125pt>
 File: measbeam_interp.png Graphic file (type png)
  <use measbeam_interp.png>
 Package pdftex.def Info: measbeam_interp.png used on input line 226.
 (pdftex.def)             Requested size: 252.94499pt x 251.22984pt.
- <measbeam_interp_expcutoff.png, id=34, 593.21625pt x 589.20125pt>
+ <measbeam_interp_expcutoff.png, id=33, 593.21625pt x 589.20125pt>
 File: measbeam_interp_expcutoff.png Graphic file (type png)
  <use measbeam_interp_expcutoff.png>
 Package pdftex.def Info: measbeam_interp_expcutoff.png used on input line 227.
@@ -377,7 +377,7 @@ Overfull \hbox (38.56833pt too wide) in paragraph at lines 225--228
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<ew_beams_slice.pdf, id=35, 406.21764pt x 392.89026pt>
+<ew_beams_slice.pdf, id=34, 406.21764pt x 392.89026pt>
 File: ew_beams_slice.pdf Graphic file (type pdf)
  <use ew_beams_slice.pdf>
 Package pdftex.def Info: ew_beams_slice.pdf used on input line 233.
@@ -386,57 +386,49 @@ Package pdftex.def Info: ew_beams_slice.pdf used on input line 233.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[4] <LST0deg_14m_42m_EWbaselinesblackman.png, id=42, 985.6825pt x 602.25pt>
+[4] <LST0deg_14m_42m_EWbaselinesblackman.png, id=41, 985.6825pt x 602.25pt>
 File: LST0deg_14m_42m_EWbaselinesblackman.png Graphic file (type png)
  <use LST0deg_14m_42m_EWbaselinesblackman.png>
-Package pdftex.def Info: LST0deg_14m_42m_EWbaselinesblackman.png used on input line 279.
-(pdftex.def)             Requested size: 397.48499pt x 242.86229pt.
- <LST60deg_14m_42m_EWbaselinesblackman.png, id=43, 985.6825pt x 602.25pt>
+Package pdftex.def Info: LST0deg_14m_42m_EWbaselinesblackman.png used on input line 280.
+(pdftex.def)             Requested size: 469.75499pt x 287.01825pt.
+ <LST60deg_14m_42m_EWbaselinesblackman.png, id=42, 985.6825pt x 602.25pt>
 File: LST60deg_14m_42m_EWbaselinesblackman.png Graphic file (type png)
  <use LST60deg_14m_42m_EWbaselinesblackman.png>
-Package pdftex.def Info: LST60deg_14m_42m_EWbaselinesblackman.png used on input line 280.
-(pdftex.def)             Requested size: 397.48499pt x 242.86229pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 279--281
-[][]
- []
+Package pdftex.def Info: LST60deg_14m_42m_EWbaselinesblackman.png used on input line 281.
+(pdftex.def)             Requested size: 469.75499pt x 287.01825pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<LST0deg_14m_42m_NSslantbaselinesblackman.png, id=44, 986.68625pt x 602.25pt>
+<LST0deg_14m_42m_NSslantbaselinesblackman.png, id=43, 986.68625pt x 602.25pt>
 File: LST0deg_14m_42m_NSslantbaselinesblackman.png Graphic file (type png)
  <use LST0deg_14m_42m_NSslantbaselinesblackman.png>
-Package pdftex.def Info: LST0deg_14m_42m_NSslantbaselinesblackman.png used on input line 286.
-(pdftex.def)             Requested size: 397.48499pt x 242.61418pt.
- <LST0deg_14m_42m_SEslantbaselinesblackman.png, id=45, 985.6825pt x 602.25pt>
+Package pdftex.def Info: LST0deg_14m_42m_NSslantbaselinesblackman.png used on input line 287.
+(pdftex.def)             Requested size: 469.75499pt x 286.73337pt.
+ <LST0deg_14m_42m_SEslantbaselinesblackman.png, id=44, 985.6825pt x 602.25pt>
 File: LST0deg_14m_42m_SEslantbaselinesblackman.png Graphic file (type png)
  <use LST0deg_14m_42m_SEslantbaselinesblackman.png>
-Package pdftex.def Info: LST0deg_14m_42m_SEslantbaselinesblackman.png used on input line 287.
-(pdftex.def)             Requested size: 397.48499pt x 242.86229pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 286--288
-[][]
- []
+Package pdftex.def Info: LST0deg_14m_42m_SEslantbaselinesblackman.png used on input line 288.
+(pdftex.def)             Requested size: 469.75499pt x 287.01825pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-(/Users/abrahamn/Documents/Physics/papers/DishPapers/DishMeasurements/memo/.texpadtmp/DishBeamMeasurementsMemo.bbl) [5] [6 <./null1_rel.png (PNG copy)>] [7 <./null3_rel.png (PNG copy)>] [8 <./null4_rel.png (PNG copy)>] [9 <./feed.jpg>] [10 <./feed0_abs_old_ref_model.png (PNG copy)>] [11 <./dish3_abs_old_ref_model.png (PNG copy)>] [12 <./dish1_abs_old_ref_model.png (PNG copy)>] [13 <./dish2_abs_old_ref_model.png (PNG copy)>] [14 <./dish4_abs_old_ref_model.png (PNG copy)>] [15 <./measbeam_raw.png> <./measbeam_interp.png> <./measbeam_interp_expcutoff.png>] [16 <./ew_beams_slice.pdf>] [17 <./LST0deg_14m_42m_EWbaselinesblackman.png> <./LST60deg_14m_42m_EWbaselinesblackman.png>] [18 <./LST0deg_14m_42m_NSslantbaselinesblackman.png> <./LST0deg_14m_42m_SEslantbaselinesblackman.png>] (/Users/abrahamn/Documents/Physics/papers/DishPapers/DishMeasurements/memo/.texpadtmp/DishBeamMeasurementsMemo.aux)
+[5] (/Users/abrahamn/Documents/Physics/papers/DishPapers/DishMeasurements/memo/.texpadtmp/DishBeamMeasurementsMemo.bbl) [6] [7 <./null1_rel.png (PNG copy)>] [8 <./null3_rel.png (PNG copy)>] [9 <./null4_rel.png (PNG copy)>] [10 <./feed.jpg>] [11 <./feed0_abs_old_ref_model.png (PNG copy)>] [12 <./dish3_abs_old_ref_model.png (PNG copy)>] [13 <./dish1_abs_old_ref_model.png (PNG copy)>] [14 <./dish2_abs_old_ref_model.png (PNG copy)>] [15 <./dish4_abs_old_ref_model.png (PNG copy)>] [16 <./measbeam_raw.png> <./measbeam_interp.png> <./measbeam_interp_expcutoff.png>] [17 <./ew_beams_slice.pdf>] [18 <./LST0deg_14m_42m_EWbaselinesblackman.png> <./LST60deg_14m_42m_EWbaselinesblackman.png>] [19 <./LST0deg_14m_42m_NSslantbaselinesblackman.png> <./LST0deg_14m_42m_SEslantbaselinesblackman.png>] (/Users/abrahamn/Documents/Physics/papers/DishPapers/DishMeasurements/memo/.texpadtmp/DishBeamMeasurementsMemo.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3447 strings out of 493488
- 46258 string characters out of 3141326
- 108910 words of memory out of 3000000
+ 3446 strings out of 493488
+ 46269 string characters out of 3141326
+ 110187 words of memory out of 3000000
  6675 multiletter control sequences out of 15000+200000
- 13442 words of font info for 56 fonts, out of 3000000 for 9000
+ 12089 words of font info for 50 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,7n,26p,1060b,251s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on /Users/abrahamn/Documents/Physics/papers/DishPapers/DishMeasurements/memo/.texpadtmp/DishBeamMeasurementsMemo.pdf (18 pages, 7847578 bytes).
+ 38i,7n,26p,1060b,253s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on /Users/abrahamn/Documents/Physics/papers/DishPapers/DishMeasurements/memo/.texpadtmp/DishBeamMeasurementsMemo.pdf (19 pages, 7842219 bytes).
 PDF statistics:
  183 PDF objects out of 1000 (max. 8388607)
  87 compressed objects within 1 object stream
