@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.8)  19 OCT 2015 00:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.8)  24 OCT 2015 22:37
 entering extended mode
 **DishSimulationsPaper_v0.tex
 (DishSimulationsPaper_v0.tex
@@ -331,35 +331,74 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 42.
 
-(DishSimulationsPaper_v0.bbl)
+<figures/DishSA.png, id=18, 4047.12pt x 3035.34pt>
+File: figures/DishSA.png Graphic file (type png)
+ <use figures/DishSA.png>
+Package pdftex.def Info: figures/DishSA.png used on input line 48.
+(pdftex.def)             Requested size: 256.55872pt x 192.39458pt.
+
+Overfull \hbox (11.29219pt too wide) in paragraph at lines 48--49
+[][] 
+ []
+
+<figures/One_dish_Pfeed_render_pw_0deg.png, id=19, 1461.46pt x 561.09625pt>
+File: figures/One_dish_Pfeed_render_pw_0deg.png Graphic file (type png)
+
+<use figures/One_dish_Pfeed_render_pw_0deg.png>
+Package pdftex.def Info: figures/One_dish_Pfeed_render_pw_0deg.png used on inpu
+t line 90.
+(pdftex.def)             Requested size: 256.55872pt x 98.49297pt.
+
+Overfull \hbox (11.29219pt too wide) in paragraph at lines 90--91
+[][] 
+ []
+
+[2 <./figures/DishSA.png (PNG copy)>]
+<figures/SimulationIllustration.png, id=28, 701.7417pt x 272.4579pt>
+File: figures/SimulationIllustration.png Graphic file (type png)
+
+<use figures/SimulationIllustration.png>
+Package pdftex.def Info: figures/SimulationIllustration.png used on input line 
+95.
+(pdftex.def)             Requested size: 513.11743pt x 199.2335pt.
+ (DishSimulationsPaper_v0.bbl) [3 <./figures/One_dish_Pfeed_render_pw_0deg.png>
+] [4 <./figures/SimulationIllustration.png>]
 
 Package natbib Warning: There were undefined citations.
 
-[2] (DishSimulationsPaper_v0.aux) ) 
+[5] (DishSimulationsPaper_v0.aux) ) 
 Here is how much of TeX's memory you used:
- 4628 strings out of 493673
- 59300 string characters out of 3141531
- 158115 words of memory out of 3000000
- 7928 multiletter control sequences out of 15000+200000
- 12529 words of font info for 52 fonts, out of 3000000 for 9000
+ 4689 strings out of 493673
+ 60390 string characters out of 3141531
+ 163829 words of memory out of 3000000
+ 7979 multiletter control sequences out of 15000+200000
+ 14415 words of font info for 58 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 35i,7n,29p,2463b,311s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 35i,14n,29p,2463b,317s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmmi10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-r9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10
-.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pf
-b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on DishSimulationsPaper_v0.pdf (2 pages, 169664 bytes).
+/public/amsfonts/cm/cmbx5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmbx7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmcsc10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmex10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmmi10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmmi5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmmi7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
+5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pf
+b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb>
+Output written on DishSimulationsPaper_v0.pdf (5 pages, 13359491 bytes).
 PDF statistics:
- 61 PDF objects out of 1000 (max. 8388607)
+ 108 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
