@@ -99,17 +99,52 @@ In Fig.~\ref{fig:SimulationSetup} we show the geometery of the electromagnetic s
 \subsection{Deconvolving the Response Function}
 In our simulation, we obtain the voltage at the feed output as a function of time which we will call $v_{out}(t)$. It is related to the input lane wave through the equation 
 \begin{equation}
-v_{out}(t) = \sum_n r_n(\theta=0) v_{in}(t - \tau_n)
+v_{out}(t,\theta=0) = \sum_n r_n(\theta=0) v_{in}(t - \tau_n,\theta=0),
 \end{equation}
-which is essentially a convolution in time of $r_n(\theta=0)$ with the input plane wave 
-\section{Comparing Simulations Results to Measurements}
-\label{sec:Comparison}
+which is essentially a convolution in time of $r_n(\theta=0)$ with the input plane wave. We may undo this convolution by taking a discrete Fourier transform of both $v_{out}$ and $v_{in}$ in time, dividing them in Fourier space, and taking an inverse DFT back. Our simulation output is sampled at even time intervals so we may use and FFT. 
+\begin{equation}
+\widehat{{\bf r}}(\theta=0) = \boldsymbol{\mathcal{F}}^{-1} \left[ \frac{\boldsymbol{\mathcal{F}} {\bf v_{out}}(\theta=0)}{{\bf v_{in}}(\theta=0)} \right] 
+\end{equation}
+where ${\bf \mathcal{F}}$ is the Fourier transform matrix for a 1d vector of length $N$. 
+\begin{equation}
+\boldsymbol{\mathcal{F}}_{mn} = e^{2 \pi i m n /N}
+\end{equation}
+In Fig.~\ref{fig:FrequencyDomain} we show the amplitude of the Fourier transform of our Gaussian input, centered at $150$\,MHz along with the voltage response. Since our input is band limited between $\approx 20$ and $280$\,MHz, the direct ratio of our voltage response and input wave is dominated by numerical noise outside of this range. We eliminate these numerical artifacts by multiplying our ratio by a Hamming window between $50$\,MHz and $250$\,MHz and set our estimate to zero elsewhere. From a physical standpoint, this is sensible since 21\,cm experiments only observe a limited bandwidth. PAPER's correlator, which will initially serve as the HERA backend samples over a $100$\,MHz instantaneous freqeuency interval. Hence analogue filtering is applied to limit the incoming signal within a finite bandwidth and prevent aliasing.
+
+\begin{figure}[h!]
+\includegraphics[width=.5\textwidth]{figures/frequency_domain.pdf}
+\caption{The absolute value of the discrete Fourier transform of our simulation outputs. We obtain the effective response function of the dish by Fourier transforming the voltage output from our dish (green line) and dividing by the Fourier transform of the input wave (blue line). The simple ratio is plotted as a red line. Since our input is limited to frequencies between $\approx 20$ and $280$\,MHz, there is significant numerical noise that will effect our result outside of this region which we see in the divergene of the red line towards the edges of the plot. To eliminate this noise, we multiply by a Hamming window between $50$ and $250$\,MHz and set our estimate to zero elsewhere. The Fourier transform of our response estimate with the filter applied is shown as a cyan line.}
+\label{fig:FrequencyDomain}
+\end{figure}
+
+\section{Results and Comparison to Reflectometry Data}\label{sec:Comparison}
+\subsection{The Delay Response at Zenith}
+In Fig.~\ref{fig:Comparison}, we show the filtered response function deconvolved from our electromagnetic simulations. The response of the dish rapidly dies off as a function of time. After $\approx90$\,ns, we observe lobed structures with a period of $\approx 30$\,ns which corresponds to the geometrical delay between the feed and the dish apex, indicating that the large $\tau$ roll off is dominated by reflections between the feed and the dish. 
+
+Our simulations are intended to verify direct reflectometry measurements taken on a prototype of the HERA feed and dish in Green Bank, presented in \citep{Patra:2015}. For the readers convenience, we briefly explain the reflectometry measurement here before comparing them to our simulation.   
+
+In the reflecometry measurement, a signal is sent from a Vector Network Analyzer (VNA) via a coaxial cable (which is calibrated out) into the back of the feed. The VNA than measures the ratio between returned and transmitted power as a function of frequency, $S_{11}(f)$. A fundamental difference between the reflectometry measurement and the delay response that we are attempting to obtain is that at zero delay, $S_{11}$ is measureing the reflection of the input wave off of the back of the feed while in the delay response of the antenna, the zero delay reflection is the fraction of the electromagnetic wave off of the sky that is accepted by the feed. To obtain $\boldsymbol{\widehat{\rho}}$, we must correct for this difference. It is shown in \citep{Patra:2015} that the correction is 
+\begin{equation}
+\widehat{\rho}(f) = \frac{\Gamma_a(f)}{1-\Gamma_a(f)} \left[ S_{11}(f) - \Gamma_a(f) \right] + 1 - \Gamma_a(f).
+\end{equation}
+Applying this transformtion to $S_{11}(f)$ and taking a DFT into the time domain over a band of $100-200$\,MHz, we obtain a measurement based estimate of the dish response function at zenith which is plotted in Fig.~\ref{fig:Comparison} alongside our simulation result. The general trends of the two two lines are in excellent agreement though the phases of the reflections at large time scales are $\approx 10$\,ns out of phase. As the long term delay structure of the delay response determines to what extent foregrounds leak out of the wedge, our simulations verify our measurement of the HERA dish's key performance feature.
+\begin{figure}[h!]
+\includegraphics[width=.5\textwidth]{figures/compareSimToDataNormalized.pdf}
+\caption{The response function deconvolved from our simulation (blue line) compared to the response function estimated from reflectometry measurements described in \citep{Patra:2015}. Our simulations are in good agreement with the reflectometry results, dropping below $-60$\,dB at $180$\,ns. Since the foregrounds are $\approx 10^6$ times larger than the signal, the necessary attenuation of zenith emission is obtained after $\approx 0.1$\,$h$Mpc$^{-1}$.}
+\label{fig:Comparison}
+\end{figure}
+\subsection{The Delay Response of the Sidelobes}
+ After observing decent agreement between simulations and data, we now use our time-domain simulations to probe the side-lobe structure of the dish which are currently inaccessible to our experimental setup. Understanding the delay structure of the sidelobes is critical for several reasons. First, the sidelobes represent the largest delays occupied by foregrounds, hence the closest to the EoR window which we wish to keep foreground-free. While spectral leakage of sources at zenith may place them somewhere within the wedge, any spectral structure in the sidelobes is guaranteed to place these sources directly inside of the window. Second, the forshortening of diffuse structure near the horizon due to wide-field projection effects leads to a significant amount of foreground power entering at these delays, generally making them the most contaminated region of the wedge outside of the central lobe and leading to the so called ``pitchfork" \citep{Thyagarajan:2015a,Thyagarajan:2015b}. 
+ 
+ We fist attempt to explore the Dish sidelobe structure by running high resolution spatial beam maps {\bf Rich fill in details of running 2D beam simulations}. However, comparison between individual frequency channels in both CST and FEKO indicates numerical precision errors {\bf Show a figure of an attempted beam and frequency artifacts at zenith.}
+
+
 \section{The Effect of the HERA dish Chromaticity on Foreground Leakage and Sensitivity}
 \label{sec:Foregrounds}
 \section{Conclusions}
 \label{sec:Conclusion}
 \bibliographystyle{apj}
-\bibliography{biblio}
+\bibliography{DishSimulation_paper_v0}
 
 \appendix
 \section{The Effect of Reflections and Cross-Talk on Visibilities}\label{app:Reflections}
