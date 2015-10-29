@@ -13,15 +13,15 @@ DHcm=DH*3.08567758e24#hubble distance in cm
 kb=1.38e-23
 jy=1e-26
 mH=1.6726231e-24
-#pl13.Ob0=0.022068/(pl13.H0.value/1e2)**2.
-print pl13.Ob0
+pl13.Ob0=0.022068/(pl13.H0.value/1e2)**2.
+
 
 
 def H0_s():
     return pl13.H0_s
 
 def get_crit():
-    return pl13.critical_density(0).value
+    return pl13.critical_density(0)
 
 #in g cm^-3
 def baryon_density(z):

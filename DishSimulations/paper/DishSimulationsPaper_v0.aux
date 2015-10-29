@@ -53,7 +53,9 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces The absolute value of the discrete Fourier transform of our simulation outputs. We obtain the effective response function of the dish by Fourier transforming the voltage output from our dish (green line) and dividing by the Fourier transform of the input wave (blue line). The simple ratio is plotted as a red line. Since our input is limited to frequencies between $\approx 20$ and $280$\tmspace  +\thinmuskip {.1667em}MHz, there is significant numerical noise that will effect our result outside of this region which we see in the divergene of the red line towards the edges of the plot. To eliminate this noise, we multiply by a Hamming window between $50$ and $250$\tmspace  +\thinmuskip {.1667em}MHz and set our estimate to zero elsewhere. The Fourier transform of our response estimate with the filter applied is shown as a cyan line.}}{4}{}}
 \newlabel{fig:FrequencyDomain}{{4}{4}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}The Effect of the HERA dish Chromaticity on Foreground Leakage and Sensitivity}{4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}How Deep Can we Clean?}{4}{}}
+\newlabel{sec:Foregrounds}{{5}{4}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Simulating Foreground Visibilities with the Spectral Structure of the HERA Dish.}{4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}How Deep Can we Clean?}{4}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces The response function deconvolved from our simulation (blue line) compared to the response function estimated from reflectometry measurements described in \citep  {Patra:2015}. Our simulations are in good agreement with the reflectometry results, dropping below $-60$\tmspace  +\thinmuskip {.1667em}dB at $180$\tmspace  +\thinmuskip {.1667em}ns. Since the foregrounds are $\approx 10^6$ times larger than the signal, the necessary attenuation of zenith emission is obtained after $\approx 0.1$\tmspace  +\thinmuskip {.1667em}$h$Mpc$^{-1}$.}}{4}{}}
 \newlabel{fig:Comparison}{{5}{4}{}{}{}}
 \bibdata{DishSimulationsPaper_v0Notes,DishSimulation_paper_v0}
@@ -87,12 +89,16 @@
 \bibcite{Voytek:2014}{{28}{2014}{{{Voytek} {et~al.}}}{{{Voytek}, {Natarajan}, {J{\'a}uregui Garc{\'{\i }}a}, {Peterson}, \& {L{\'o}pez-Cruz}}}}
 \bibcite{Wieringa:1992}{{29}{1992}{{Wieringa}}{{}}}
 \bibcite{Zheng:2014}{{30}{2014}{{{Zheng} {et~al.}}}{{{Zheng}, {Tegmark}, {Buza}, {Dillon}, {Gharibyan}, {Hickish}, {Kunz}, {Liu}, {Losh}, {Lutomirski}, {Morrison}, {Narayanan}, {Perko}, {Rosner}, {Sanchez}, {Schutz}, {Tribiano}, {Valdez}, {Yang}, {Adami}, {Zelko}, {Zheng}, {Armstrong}, {Bradley}, {Dexter}, {Ewall-Wice}, {Magro}, {Matejek}, {Morgan}, {Neben}, {Pan}, {Penna}, {Peterson}, {Su}, {Villasenor}, {Williams}, \& {Zhu}}}}
-\newlabel{sec:Foregrounds}{{5.1}{5}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces The absolute magnitude of a delay transformed 14-meter baseline (blue line) compared to the same visibility (green line) contaminated by reflections at the level observed in the HERA dish design. We see that the extended delay kernel smooths out structure, originating from foregrounds, within the horizon. For HERA, we expect to use the delay-clean to remove foregrounds. However, the depth of cleaning is limited by the noise level on a single baseline (black line). We show the foreground residuals with arising from a clean down to the $5\tmspace  +\thinmuskip {.1667em}\sigma $ noise level after 2 minutes of integration, seeing that cleaning at this cadence achieves $\approx $ two orders of magnitude of foreground reduction. The reflections in the dish lead to extensive winged structures that bleed into the EoR window and are well below the thermal noise level. All data in this plot are obtained from a $100$\tmspace  +\thinmuskip {.1667em}MHz bandwidth centered at $150$\tmspace  +\thinmuskip {.1667em}MHz.}}{5}{}}
+\newlabel{fig:Cleaning}{{6}{5}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}The Implications of Dish Reflections on EoR Sensitivity}{5}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {6}Conclusions}{5}{}}
 \newlabel{sec:Conclusion}{{6}{5}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {A}The Effect of Reflections and Cross-Talk on Visibilities}{5}{}}
 \newlabel{app:Reflections}{{A}{5}{}{}{}}
-\newlabel{eq:SingleSource}{{\hbox {A3}}{5}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces The delay transformed power spectra of foregrounds with (blue line) and without (green line) contamination from reflections in the dish. The residuals of these foregrounds, cleaned to $5\tmspace  +\thinmuskip {.1667em}\sigma $ after 2 minutes of integration, are plotted with (red dashed line) and without (cyan dashed line) dish reflections. We compare to the amplitude of the 21\tmspace  +\thinmuskip {.1667em}cm power spectrum (solid black line). Foreground contamination, leaked by reflections, extends out to $k_\parallel \approx 0.25$\tmspace  +\thinmuskip {.1667em}$h$Mpc$^{-1}$. The signals plummet to zero at $k=0$ is an artifact of the spatial extent of the simulation which does not probe extremely fine scales.}}{6}{}}
+\newlabel{fig:SignalCompare}{{7}{6}{}{}{}}
+\newlabel{eq:SingleSource}{{\hbox {A3}}{6}{}{}{}}
 \citation{Parsons:2012}
 \bibstyle{apj}
-\newlabel{LastPage}{{}{6}{}{}{}}
+\newlabel{LastPage}{{}{7}{}{}{}}

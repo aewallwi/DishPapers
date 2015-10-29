@@ -139,15 +139,34 @@ Applying this transformtion to $S_{11}(f)$ and taking a DFT into the time domain
  We fist attempt to explore the Dish sidelobe structure by running high resolution spatial beam maps {\bf Rich fill in details of running 2D beam simulations}. However, comparison between individual frequency channels in both CST and FEKO indicates numerical precision errors {\bf Show a figure of an attempted beam and frequency artifacts at zenith.}
 
 
-\section{The Effect of the HERA dish Chromaticity on Foreground Leakage and Sensitivity}
+\section{The Effect of the HERA dish Chromaticity on Foreground Leakage and Sensitivity}\label{sec:Foregrounds}
+
+\subsection{Simulating Foreground Visibilities with the Spectral Structure of the HERA Dish.}
 
 \subsection{How Deep Can we Clean?}
 The level of foreground subtraction possible depends on the number of time steps and redundant baselines that are averaged before performing the cleaning step. The standard deviation on the real and imaginary part of a single delay transformed visibility is given by \citep{Morales:2004}
 \begin{equation}
 \Delta V = \frac{\sqrt{2 B} k_B T_{sys}}{A_e \sqrt{\tau}}
 \end{equation}
-where $A_e$ is the effective area of the dish, $B$ is the bandwidth, $T_{sys}$ is the system temperature, $\tau$ is the integration time, and $k_B$ is the Boltzmann constant. The system temperature can be calculated by assuming that $T_{sys} = 100\text{K} + T_{sky}$ where $100$\,K is the temperature of the PAPER reciever and $T_{sky} = 60 (\lambda/1\,\text{meter} )^{2.55}$ is the sky temperature \citep{Fixsen:2008}. For $A_e$ we use the value of $75$\,m determined in \citep{Neben:2015b}. If we assume that each baseline is cleaned independently and that the integration time is $\tau \approx 60$\,s, than the noise level at 150\,MHz is approximately $9.9$\,Jy\,MHz. In order to avoid subtracting noise, we assume that cleaning is performed down to $5\,\sigma$.
-\label{sec:Foregrounds}
+where $A_e$ is the effective area of the dish, $B$ is the bandwidth, $T_{sys}$ is the system temperature, $\tau$ is the integration time, and $k_B$ is the Boltzmann constant. The system temperature can be calculated by assuming that $T_{sys} = 100\text{K} + T_{sky}$ where $100$\,K is the temperature of the PAPER reciever and $T_{sky} = 60 (\lambda/1\,\text{meter} )^{2.55}$ is the sky temperature \citep{Fixsen:2008}. For $A_e$ we use the value of $75$\,m determined in \citep{Neben:2015b}. If we assume that each baseline is cleaned independently and that the integration time is $\tau \approx 60$\,s, than the noise level at 150\,MHz is approximately $9.9$\,Jy\,MHz. In order to avoid subtracting noise, we assume that cleaning is performed down to $5\,\sigma$. In Fig.~\ref{fig:Cleaning}, we see that cleaning to $5\,\sigma$ 
+
+\begin{figure}
+\includegraphics[width=.5\textwidth]{figures/cleaning_noise.pdf}
+\caption{The absolute magnitude of a delay transformed 14-meter baseline (blue line) compared to the same visibility (green line) contaminated by reflections at the level observed in the HERA dish design. We see that the extended delay kernel smooths out structure, originating from foregrounds, within the horizon. For HERA, we expect to use the delay-clean to remove foregrounds. However, the depth of cleaning is limited by the noise level on a single baseline (black line). We show the foreground residuals with arising from a clean down to the $5\,\sigma$ noise level after 2 minutes of integration, seeing that cleaning at this cadence achieves $\approx$ two orders of magnitude of foreground reduction. The reflections in the dish lead to extensive winged structures that bleed into the EoR window and are well below the thermal noise level. All data in this plot are obtained from a $100$\,MHz bandwidth centered at $150$\,MHz.}
+\label{fig:Cleaning}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\includegraphics[width=.5\textwidth]{figures/resid_5sigma_compare.pdf}
+\caption{The delay transformed power spectra of foregrounds with (blue line) and without (green line) contamination from reflections in the dish. The residuals of these foregrounds, cleaned to $5\,\sigma$ after 2 minutes of integration, are plotted with (red dashed line) and without (cyan dashed line) dish reflections. We compare to the amplitude of the 21\,cm power spectrum (solid black line). Foreground contamination, leaked by reflections, extends out to $k_\parallel \approx 0.25$\,$h$Mpc$^{-1}$. The signals plummet to zero at $k=0$ is an artifact of the spatial extent of the simulation which does not probe extremely fine scales.}
+\label{fig:SignalCompare}
+\end{figure}
+
+\subsection{The Implications of Dish Reflections on EoR Sensitivity}
+Since the amplitude of the 21\,cm signal is maximal at smaller $k$ values, a loss of large scale signal out to $0.25$\,$h$Mpc$^{-1}$ will eliminate some of the power spectrum modes that HERA will have the greatest SNR on, impacting our overall sensitivity. We address the change in SNR and its implications on HERA's ability to place constraints on reionization parameters in this section, using the Fisher Matrix Formalism. 
+
 \section{Conclusions}
 \label{sec:Conclusion}
 \bibliographystyle{apj}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  28 OCT 2015 21:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  29 OCT 2015 12:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -452,30 +452,54 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [3 <./figures/One_dish_Pfeed_render_pw_0deg.png>]
 
 Package natbib Warning: Citation `Morales:2004' on page 4 undefined on input li
-ne 145.
+ne 147.
 
 
 Package natbib Warning: Citation `Fixsen:2008' on page 4 undefined on input lin
-e 149.
+e 151.
 
 [4 <./figures/SimulationIllustration.png> <./figures/frequency_domain.pdf> <./f
 igures/compareSimToDataNormalized.pdf
 
 pdfTeX warning: /usr/texbin/pdflatex (file ./figures/compareSimToDataNormalized
 .pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] (./DishSimulationsPaper_v0.bbl) [5]
+>] <figures/cleaning_noise.pdf, id=157, 722.7pt x 722.7pt>
+File: figures/cleaning_noise.pdf Graphic file (type pdf)
+
+<use figures/cleaning_noise.pdf>
+Package pdftex.def Info: figures/cleaning_noise.pdf used on input line 154.
+(pdftex.def)             Requested size: 256.55872pt x 256.55478pt.
+
+Overfull \hbox (11.29219pt too wide) in paragraph at lines 154--155
+[][] 
+ []
+
+<figures/resid_5sigma_compare.pdf, id=158, 803.0pt x 674.16681pt>
+File: figures/resid_5sigma_compare.pdf Graphic file (type pdf)
+
+<use figures/resid_5sigma_compare.pdf>
+Package pdftex.def Info: figures/resid_5sigma_compare.pdf used on input line 16
+2.
+(pdftex.def)             Requested size: 256.55872pt x 215.39832pt.
+
+Overfull \hbox (11.29219pt too wide) in paragraph at lines 162--163
+ [][] 
+ []
+
+(./DishSimulationsPaper_v0.bbl) [5 <./figures/cleaning_noise.pdf>] [6 <./figure
+s/resid_5sigma_compare.pdf>]
 
 Package natbib Warning: There were undefined citations.
 
-[6] (./DishSimulationsPaper_v0.aux) ) 
+[7] (./DishSimulationsPaper_v0.aux) ) 
 Here is how much of TeX's memory you used:
- 5087 strings out of 493089
- 67900 string characters out of 6134842
- 173744 words of memory out of 5000000
- 8473 multiletter control sequences out of 15000+600000
+ 5099 strings out of 493089
+ 68247 string characters out of 6134842
+ 173421 words of memory out of 5000000
+ 8483 multiletter control sequences out of 15000+600000
  16351 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,14n,29p,2463b,317s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,14n,29p,2463b,320s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmbsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
@@ -500,10 +524,10 @@ b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></
 usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></u
 sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on DishSimulationsPaper_v0.pdf (6 pages, 13422319 bytes).
+Output written on DishSimulationsPaper_v0.pdf (7 pages, 13468248 bytes).
 PDF statistics:
- 240 PDF objects out of 1000 (max. 8388607)
- 114 compressed objects within 2 object streams
+ 377 PDF objects out of 1000 (max. 8388607)
+ 154 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
