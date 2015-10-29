@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  28 OCT 2015 12:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  28 OCT 2015 21:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -450,30 +450,32 @@ Overfull \hbox (11.29219pt too wide) in paragraph at lines 132--133
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [3 <./figures/One_dish_Pfeed_render_pw_0deg.png>]
-(./DishSimulationsPaper_v0.bbl [4 <./figures/SimulationIllustration.png> <./fig
-ures/frequency_domain.pdf>]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 91.
-
-
-LaTeX Warning: A float is stuck (cannot be placed) on input line 91.
+Package natbib Warning: Citation `Morales:2004' on page 4 undefined on input li
+ne 145.
 
 
-Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
+Package natbib Warning: Citation `Fixsen:2008' on page 4 undefined on input lin
+e 149.
 
-) [5 <./figures/compareSimToDataNormalized.pdf>]
+[4 <./figures/SimulationIllustration.png> <./figures/frequency_domain.pdf> <./f
+igures/compareSimToDataNormalized.pdf
+
+pdfTeX warning: /usr/texbin/pdflatex (file ./figures/compareSimToDataNormalized
+.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>] (./DishSimulationsPaper_v0.bbl) [5]
 
 Package natbib Warning: There were undefined citations.
 
 [6] (./DishSimulationsPaper_v0.aux) ) 
 Here is how much of TeX's memory you used:
- 5084 strings out of 493089
- 67866 string characters out of 6134842
- 166591 words of memory out of 5000000
- 8470 multiletter control sequences out of 15000+600000
+ 5087 strings out of 493089
+ 67900 string characters out of 6134842
+ 173744 words of memory out of 5000000
+ 8473 multiletter control sequences out of 15000+600000
  16351 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,14n,29p,2463b,374s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,14n,29p,2463b,317s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmbsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
@@ -498,10 +500,10 @@ b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></
 usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></u
 sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on DishSimulationsPaper_v0.pdf (6 pages, 13418323 bytes).
+Output written on DishSimulationsPaper_v0.pdf (6 pages, 13422319 bytes).
 PDF statistics:
- 241 PDF objects out of 1000 (max. 8388607)
- 115 compressed objects within 2 object streams
+ 240 PDF objects out of 1000 (max. 8388607)
+ 114 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

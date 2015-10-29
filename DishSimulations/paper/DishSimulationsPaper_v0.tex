@@ -140,6 +140,13 @@ Applying this transformtion to $S_{11}(f)$ and taking a DFT into the time domain
 
 
 \section{The Effect of the HERA dish Chromaticity on Foreground Leakage and Sensitivity}
+
+\subsection{How Deep Can we Clean?}
+The level of foreground subtraction possible depends on the number of time steps and redundant baselines that are averaged before performing the cleaning step. The standard deviation on the real and imaginary part of a single delay transformed visibility is given by \citep{Morales:2004}
+\begin{equation}
+\Delta V = \frac{\sqrt{2 B} k_B T_{sys}}{A_e \sqrt{\tau}}
+\end{equation}
+where $A_e$ is the effective area of the dish, $B$ is the bandwidth, $T_{sys}$ is the system temperature, $\tau$ is the integration time, and $k_B$ is the Boltzmann constant. The system temperature can be calculated by assuming that $T_{sys} = 100\text{K} + T_{sky}$ where $100$\,K is the temperature of the PAPER reciever and $T_{sky} = 60 (\lambda/1\,\text{meter} )^{2.55}$ is the sky temperature \citep{Fixsen:2008}. For $A_e$ we use the value of $75$\,m determined in \citep{Neben:2015b}. If we assume that each baseline is cleaned independently and that the integration time is $\tau \approx 60$\,s, than the noise level at 150\,MHz is approximately $9.9$\,Jy\,MHz. In order to avoid subtracting noise, we assume that cleaning is performed down to $5\,\sigma$.
 \label{sec:Foregrounds}
 \section{Conclusions}
 \label{sec:Conclusion}
