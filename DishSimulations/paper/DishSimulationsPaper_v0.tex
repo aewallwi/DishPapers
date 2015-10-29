@@ -13,10 +13,12 @@ Jacqueline Hewitt\altaffilmark{1,2},
 Ali S. Zaki\altaffilmark{5},
 Bowman Judd\altaffilmark{6},
 Cheng Carina\altaffilmark{5},
+David Deboer\altaffilmark{5},
 Neben Abraham\altaffilmark{1,2},
 Parsons Aaron\altaffilmark{5},
 Patra Nipanjana\altaffilmark{5},
-Thyagarajan Nithyanandan\altaffilmark{6}
+Thyagarajan Nithyanandan\altaffilmark{6},
+and others.
 }
 
 \altaffiltext{1}{MIT Kavli Institute for Cosmological Physics}
@@ -79,7 +81,23 @@ The delay transform power spectrum estimate, $\widehat{P}$, is proportional to $
 &+ \sum_{|\Delta \tau_{mn}| > 0} 2 \text{Re} \left[   \widetilde{V}^*_{ij} (\tau) \widetilde{V}^{mn}_{ij} (\tau - \Delta \tau_{mn})  \right] \nonumber \\
 &+ \sum_{\substack{|\Delta \tau_{op}|>0\\|\Delta \tau_{mn}|>0}} \widetilde{V}^{mn}_{ij} (\tau - \Delta \tau_{mn}) \widetilde{V}^{op*}_{ij}(\tau - \Delta \tau_{op})
 \end{align}
-In the absence of reflections, only the top line of equation~\ref{eq:Reflections} would enter the delay power spectrum estimate. The following lines involve the translation of the signal (including foregrounds and signal) out to the delay of each reflection and weighted by the effective primary beam of the reflection. Since each translated visibility is intrinsically $\sim 10^6$ times brighter than the signal, any reflection with a delay large enough to place it within the EoR window, must be sufficiently attenuated by $R_{mn}({\bf \hat{k}})$. The precise degree of attenuation is determined in \citep{Thyagarajan:2015c} using simulations of foregrounds and noise and sets the spec for our antenna. In this paper, we study $R_{mn}({\bf \hat{k}})$ for the HERA antenna element to verify that it both meets the spec and agrees with direct measurements of the antenna element with refelctometry \citep{Patra:2015} and Orbcomm measurements \citep{Neben:2015b}.
+In the absence of reflections, only the top line of equation~\ref{eq:Reflections} would enter the delay power spectrum estimate. The following lines involve the translation of the signal (including foregrounds and signal) out to the delay of each reflection and weighted by the effective primary beam of the reflection. Since each translated visibility is intrinsically $\sim 10^6$ times brighter than the signal, any reflection with a delay large enough to place it within the EoR window, must be sufficiently attenuated by $R_{mn}({\bf \hat{k}})$. The precise degree of attenuation is determined in \citep{Thyagarajan:2015c} using simulations of foregrounds and noise and sets the spec for our antenna.
+
+It is instructive to examine, in more detail, the case where $r_0$ at ($\tau=0$) is significantly greater than the other coefficients. Than we can approximate
+\begin{equation}
+\widetilde{V}_{ij}'(\tau) \approx \widetilde{V}_{ij} + \sum_{m>0} \widetilde{V}_{ij}^{m0} (\tau -  \tau_m)
+\end{equation}
+
+
+
+If we make the assumption that the beam can be factored into a frequency dependent and frequency dependent term, $a_m = a({\bf \hat{k}}) r_m$ than we have
+\begin{equation}
+\widetilde{V}_{ij} \approx \widetilde{V}_{ij}(\tau) + \sum_{m>0} r_m \widetilde{V}_{ij}(\tau - \tau_m)
+\end{equation}
+ Hence, for a delay response dominated by the $0$-delay mode, as we might expect in our antenna element, the delay transformed visibilities are effectively convolved with the {\it voltage response}, not the voltage response squared as we might naively expect!
+
+
+ In this paper, we study $R_{mn}({\bf \hat{k}})$ for the HERA antenna element to verify that it both meets the spec and agrees with direct measurements of the antenna element with refelctometry \citep{Patra:2015} and Orbcomm measurements \citep{Neben:2015b}.
 
 \section{Electromagnetic Simulations of the HERA dish element}\label{sec:Simulations}
 In Fig.~\ref{fig:SimulationSetup} we show the geometery of the electromagnetic simulation. {\bf Rich: fill in the details here}
@@ -164,7 +182,7 @@ where $A_e$ is the effective area of the dish, $B$ is the bandwidth, $T_{sys}$ i
 \label{fig:SignalCompare}
 \end{figure}
 
-\subsection{The Implications of Dish Reflections on EoR Sensitivity}
+\subsection{The Implications of Dish Reflections on EoR Science}
 Since the amplitude of the 21\,cm signal is maximal at smaller $k$ values, a loss of large scale signal out to $0.25$\,$h$Mpc$^{-1}$ will eliminate some of the power spectrum modes that HERA will have the greatest SNR on, impacting our overall sensitivity. We address the change in SNR and its implications on HERA's ability to place constraints on reionization parameters in this section, using the Fisher Matrix Formalism. 
 
 \section{Conclusions}

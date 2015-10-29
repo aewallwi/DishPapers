@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  29 OCT 2015 12:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  29 OCT 2015 18:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -350,17 +350,17 @@ e
 ))
 \openout3 = `DishSimulationsPaper_v0Notes.bib'.
 
-LaTeX Font Info:    Try loading font information for U+lasy on input line 30.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 32.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 30.
+LaTeX Font Info:    Try loading font information for U+msa on input line 32.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 30.
+LaTeX Font Info:    Try loading font information for U+msb on input line 32.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -370,64 +370,64 @@ Class revtex4-1 Warning: Assuming \noaffiliation for authors.
 
 
 Package natbib Warning: Citation `Tingay:2013' on page 1 undefined on input lin
-e 33.
+e 35.
 
 
 Package natbib Warning: Citation `Thyagarjan:2015c' on page 1 undefined on inpu
-t line 40.
+t line 42.
 
 [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 42.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 44.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 42.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 44.
 
 <figures/DishSA.png, id=19, 4047.12pt x 3035.34pt>
 File: figures/DishSA.png Graphic file (type png)
  <use figures/DishSA.png>
-Package pdftex.def Info: figures/DishSA.png used on input line 48.
+Package pdftex.def Info: figures/DishSA.png used on input line 50.
 (pdftex.def)             Requested size: 256.55872pt x 192.39458pt.
 
-Overfull \hbox (11.29219pt too wide) in paragraph at lines 48--49
-[][] 
- []
-
-<figures/One_dish_Pfeed_render_pw_0deg.png, id=20, 1461.46pt x 561.09625pt>
-File: figures/One_dish_Pfeed_render_pw_0deg.png Graphic file (type png)
-
-<use figures/One_dish_Pfeed_render_pw_0deg.png>
-Package pdftex.def Info: figures/One_dish_Pfeed_render_pw_0deg.png used on inpu
-t line 90.
-(pdftex.def)             Requested size: 256.55872pt x 98.49297pt.
-
-Overfull \hbox (11.29219pt too wide) in paragraph at lines 90--91
+Overfull \hbox (11.29219pt too wide) in paragraph at lines 50--51
 [][] 
  []
 
 [2 <./figures/DishSA.png (PNG copy)>]
+<figures/One_dish_Pfeed_render_pw_0deg.png, id=27, 1461.46pt x 561.09625pt>
+File: figures/One_dish_Pfeed_render_pw_0deg.png Graphic file (type png)
+
+<use figures/One_dish_Pfeed_render_pw_0deg.png>
+Package pdftex.def Info: figures/One_dish_Pfeed_render_pw_0deg.png used on inpu
+t line 108.
+(pdftex.def)             Requested size: 256.55872pt x 98.49297pt.
+
+Overfull \hbox (11.29219pt too wide) in paragraph at lines 108--109
+[][] 
+ []
+
 <figures/SimulationIllustration.png, id=29, 701.7417pt x 272.4579pt>
 File: figures/SimulationIllustration.png Graphic file (type png)
 
 <use figures/SimulationIllustration.png>
 Package pdftex.def Info: figures/SimulationIllustration.png used on input line 
-95.
+113.
 (pdftex.def)             Requested size: 513.11743pt x 199.2335pt.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 106.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 124.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 106.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 124.
 
 <figures/frequency_domain.pdf, id=30, 596.2275pt x 460.72125pt>
 File: figures/frequency_domain.pdf Graphic file (type pdf)
 
 <use figures/frequency_domain.pdf>
-Package pdftex.def Info: figures/frequency_domain.pdf used on input line 115.
+Package pdftex.def Info: figures/frequency_domain.pdf used on input line 133.
 (pdftex.def)             Requested size: 256.55872pt x 198.24687pt.
 
-Overfull \hbox (11.29219pt too wide) in paragraph at lines 115--116
+Overfull \hbox (11.29219pt too wide) in paragraph at lines 133--134
 [][] 
  []
 
@@ -439,38 +439,39 @@ File: figures/compareSimToDataNormalized.pdf Graphic file (type pdf)
 
 <use figures/compareSimToDataNormalized.pdf>
 Package pdftex.def Info: figures/compareSimToDataNormalized.pdf used on input l
-ine 132.
+ine 150.
 (pdftex.def)             Requested size: 256.55872pt x 210.30768pt.
 
-Overfull \hbox (11.29219pt too wide) in paragraph at lines 132--133
+Overfull \hbox (11.29219pt too wide) in paragraph at lines 150--151
 [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[3 <./figures/One_dish_Pfeed_render_pw_0deg.png>]
-
-Package natbib Warning: Citation `Morales:2004' on page 4 undefined on input li
-ne 147.
-
-
-Package natbib Warning: Citation `Fixsen:2008' on page 4 undefined on input lin
-e 151.
-
-[4 <./figures/SimulationIllustration.png> <./figures/frequency_domain.pdf> <./f
-igures/compareSimToDataNormalized.pdf
+[3 <./figures/One_dish_Pfeed_render_pw_0deg.png>] [4 <./figures/SimulationIllus
+tration.png> <./figures/frequency_domain.pdf> <./figures/compareSimToDataNormal
+ized.pdf
 
 pdfTeX warning: /usr/texbin/pdflatex (file ./figures/compareSimToDataNormalized
 .pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] <figures/cleaning_noise.pdf, id=157, 722.7pt x 722.7pt>
+>]
+
+Package natbib Warning: Citation `Morales:2004' on page 5 undefined on input li
+ne 165.
+
+
+Package natbib Warning: Citation `Fixsen:2008' on page 5 undefined on input lin
+e 169.
+
+<figures/cleaning_noise.pdf, id=157, 722.7pt x 722.7pt>
 File: figures/cleaning_noise.pdf Graphic file (type pdf)
 
 <use figures/cleaning_noise.pdf>
-Package pdftex.def Info: figures/cleaning_noise.pdf used on input line 154.
+Package pdftex.def Info: figures/cleaning_noise.pdf used on input line 172.
 (pdftex.def)             Requested size: 256.55872pt x 256.55478pt.
 
-Overfull \hbox (11.29219pt too wide) in paragraph at lines 154--155
+Overfull \hbox (11.29219pt too wide) in paragraph at lines 172--173
 [][] 
  []
 
@@ -478,28 +479,32 @@ Overfull \hbox (11.29219pt too wide) in paragraph at lines 154--155
 File: figures/resid_5sigma_compare.pdf Graphic file (type pdf)
 
 <use figures/resid_5sigma_compare.pdf>
-Package pdftex.def Info: figures/resid_5sigma_compare.pdf used on input line 16
-2.
+Package pdftex.def Info: figures/resid_5sigma_compare.pdf used on input line 18
+0.
 (pdftex.def)             Requested size: 256.55872pt x 215.39832pt.
 
-Overfull \hbox (11.29219pt too wide) in paragraph at lines 162--163
+Overfull \hbox (11.29219pt too wide) in paragraph at lines 180--181
  [][] 
  []
 
-(./DishSimulationsPaper_v0.bbl) [5 <./figures/cleaning_noise.pdf>] [6 <./figure
-s/resid_5sigma_compare.pdf>]
+(./DishSimulationsPaper_v0.bbl [5 <./figures/cleaning_noise.pdf> <./figures/res
+id_5sigma_compare.pdf
+
+pdfTeX warning: /usr/texbin/pdflatex (file ./figures/resid_5sigma_compare.pdf):
+ PDF inclusion: multiple pdfs with page group included in a single page
+>]) [6]
 
 Package natbib Warning: There were undefined citations.
 
 [7] (./DishSimulationsPaper_v0.aux) ) 
 Here is how much of TeX's memory you used:
- 5099 strings out of 493089
- 68247 string characters out of 6134842
- 173421 words of memory out of 5000000
- 8483 multiletter control sequences out of 15000+600000
+ 5097 strings out of 493089
+ 68225 string characters out of 6134842
+ 170615 words of memory out of 5000000
+ 8481 multiletter control sequences out of 15000+600000
  16351 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,14n,29p,2463b,320s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,14n,29p,2463b,381s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmbsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
@@ -524,10 +529,10 @@ b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></
 usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></u
 sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on DishSimulationsPaper_v0.pdf (7 pages, 13468248 bytes).
+Output written on DishSimulationsPaper_v0.pdf (7 pages, 13469274 bytes).
 PDF statistics:
- 377 PDF objects out of 1000 (max. 8388607)
- 154 compressed objects within 2 object streams
+ 376 PDF objects out of 1000 (max. 8388607)
+ 153 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
