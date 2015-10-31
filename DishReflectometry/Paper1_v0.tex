@@ -89,15 +89,11 @@ Hence, the delay spectrum, integrated over all sky would be written as,
 \mathcal{F} \left [V e^{i\phi}\right]   & = &  \left [B(\tau)\ast I_{sky}(\tau) \ast \delta(\tau+\tau_{g}) \right ] 	
 \label{eq4}
 \end{eqnarray}
-the convolution being carried out along the $\tau$ axis which is Fourier conjugate of the frequency $\nu$. In words, the sky delay spectrum is convoluted with the delay spectrum of the instrument and is centred at a delay $\tau_{g}$. The projected geometric delay $\tau_{g}$ for a given baseline can vary from 0 to $\tau_{g}$. Also, due to frequency dependence of the sky signal, the delay spectrum of the sky spills over the delay $\tau> \tau_{g}$ with delaying amplitude [Ref to the figure Parsons12]. Sky delay spectrum $I_{sky}(\tau)$ is contributed by the foreground  $I_{fg}(\tau)$ and the 21~cm power spectrum $I_{21}(\tau)$. Since $I_{fg}$ is spectrally smooth, whereas $I_{21}$ contains spectral structures, for wideband measurements, the relative strength of the smooth spectrum foreground with respect to the delay spectrum of the $I_{21}$ reduces at higher delays. 
+the convolution being carried out along the $\tau$ axis which is Fourier conjugate of the frequency $\nu$. In words, the sky delay spectrum is convoluted with the delay spectrum of the instrument and is centred at a delay $\tau_{g}$. The projected geometric delay $\tau_{g}$ for a given baseline can vary from 0 to $\tau_{g}$. Also, due to frequency dependence of the sky signal, the delay spectrum of the sky spills over the delay $\tau> \tau_{g}$ with decaying amplitude [Ref to the figure Parsons12]. Sky delay spectrum $I_{sky}(\tau)$ is contributed by the foreground  $I_{fg}(\tau)$ and the 21~cm power spectrum $I_{21}(\tau)$. Since $I_{fg}$ is spectrally smooth, whereas $I_{21}$ contains spectral structures, for wideband measurements, the relative strength of the smooth spectrum foreground with respect to the delay spectrum of the $I_{21}$ reduces at higher delays and, therefore, at higher delays, the 21~cm delay spectrum is detectable.  \textbf{[ Reference to Nithya's foreground simulation work, reference to any plots on the relative contribution of the  foreground and EoR signal. ]}
 
 
-\section{Effect of multiple reflections off the parabolic dish on the measured visibility}
- Plane waves incident on a parabolic dish
-are focussed at the feed which is kept at the focal plane of the dish. The mismatch between the impedance of free space and the feed and transmission line results
-in a partial coupling of the sky signal into the feed while the rest is
-reflected off the feed. The reflected signal illuminates the dish and most of it is reflected back into the space. However, a part of it reflects back and forth several times in between the feed and the vertex of the dish which is shadowed by the feed (dashed blue arrows in Figure \ref{fig:cartoon}). Such reflections generate multiple copies of the incident sky signal of reduced strength at various time/phase delays and thus produces spurious correlations in the visibilities of
-interferometric data. In this section we compute the visibility of a two element interferometer accounting for the multiple reflections of the sky signal in between the feed and the dish vertex.
+\section{Effects of multiple reflections of the sky signal between the parabolic dish and the feed on the measured visibility}
+ Plane waves incident on a parabolic dish are focussed at the feed which is kept at the focal plane of the dish. The mismatch between the impedance of free space and the feed and transmission line results in a partial coupling of the sky signal into the feed while the rest is reflected off the feed. The reflected signal illuminates the dish and most of it is reflected back into the space. However, a part of it reflects back and forth several times in between the feed and the vertex of the dish which is shadowed by the feed (dashed blue arrows in Figure \ref{fig:cartoon}). Such reflections generate multiple copies of the incident sky signal of reduced strength at various time/phase and thus produces spurious correlations in the visibilities of interferometric data. In this section we compute the visibility of a two element interferometer accounting for the additional reflections of the sky signal in between the feed and the dish vertex and the corresponding effects on the delay spectrum. 
 
 \begin{figure}[ht!]
 \centering
@@ -110,19 +106,19 @@ so it is crucial to adjust for this difference in our analysis.}
 \label{fig:cartoon}
 \end{figure}
 
-We again consider a two element interferometer as described in section 2. Two antennas are assumed to be exactly identical so that their electrical parameters are same. we denote the voltage reflection coefficient of each feed by $\Gamma_{f}$. The voltage reflection coefficient of the reflector dish is denoted by $\Gamma_{d}$. Upon first incidence of the sky signal onto the dish, the entire sky signal would be reflected and focussed onto the feed. Hence, for first incidence $\Gamma_{d}=1$. Sky signal that would return to the dish after successive reflections off the feed and the dish is only reflected from a small area around the vertex of the dish and therefore, $\Gamma_{d}<1$. In our analysis, we consider one reflection of the sky power from the feed and subsequent reflection off the dish as one single reflection. If the focal length of the dish is $l$, assuming the feed is located at the focus, the roundtrip phase delay of a signal of frequency $\nu$ after first reflection will be $\Phi= 2\pi {\nu \over c } 2l$ and the corresponding time delay would be $\Delta tau$. 
+Consider again a two element interferometer as described in section 2. Two antennas are assumed to be exactly identical so that their electrical parameters are same. We denote the voltage reflection coefficient of each feed by $\Gamma_{f}$. The voltage reflection coefficient of the reflector dish is denoted by $\Gamma_{d}$. Upon first incidence of the sky signal onto the dish, the entire sky signal would be reflected and focussed onto the feed. Hence, for first incidence $\Gamma_{d}=1$. Sky signal that would return to the dish after successive reflections off the feed and the dish is only reflected from a small area around the vertex of the dish and therefore, $\Gamma_{d}<1$. In our analysis, we consider one reflection of the sky power from the feed and subsequent reflection off the dish as one single reflection. If the focal length of the dish is $l$, assuming the feed is located at the focus, the roundtrip delay after first reflection will be $\Delta \tau = {2l \over c}$. 
 
 
 \subsection{Visibility of a two element interferometer considering reflections to first order}
 Upon first incidence of the sky signal $V_{sky}$, $\Gamma_{f}$ fraction of the voltage is reflected off the feed while $(1-\Gamma_{f})$ fraction is coupled to the feed. The reflected voltage then further reflected off the dish and $(1-\Gamma_{f}) $ fraction of it reenters the feed with a phase delay $\Phi$. Hence, the net voltage at the output of the two antennas could be written as,    
 \begin{eqnarray}
-V_{1} & = & A V_{sky}(1-\Gamma_{f}) + A V_{sky} \Gamma_{f} \Gamma_{d} e^{i\Phi} (1-\Gamma_{f})^{2}\nonumber\\
-         & = & A V_{sky} (1-\Gamma_{f}) \left [ 1+ (1-\Gamma_{a})\Gamma_{f} \Gamma_{d} e^{i\Phi} \right]\nonumber\\
+V_{1} & = & A V_{sky}(1-\Gamma_{f}) + A V_{sky} \Gamma_{f} \Gamma_{d} e^{2\pi i\nu \Delta \tau}  (1-\Gamma_{f})^{2}\nonumber\\
+         & = & A V_{sky} (1-\Gamma_{f}) \left [ 1+ (1-\Gamma_{a})\Gamma_{f} \Gamma_{d} e^{2\pi i\nu \Delta \tau} \right]\nonumber\\
 \label{eq4}
 \end{eqnarray}
 \begin{eqnarray}
-V_{2} & = & A V_{sky}(1-\Gamma_{f}) + A V_{sky} \Gamma_{f} \Gamma_{d} e^{i\Phi} (1-\Gamma_{f})^{2}exp({2\pi i \nu \vec{b}.\hat{s} \over c} )\nonumber\\
-         & = & A V_{sky} (1-\Gamma_{f}) \left [ 1+(1-\Gamma_{a}) \Gamma_{f} \Gamma_{d} e^{i\Phi} \right]exp({2\pi i \nu \vec{b}.\hat{s} \over c} )\nonumber\\
+V_{2} & = & A V_{sky}(1-\Gamma_{f}) + A V_{sky} \Gamma_{f} \Gamma_{d} e^{2\pi i\nu \Delta \tau} (1-\Gamma_{f})^{2}exp({2\pi i \nu \vec{b}.\hat{s} \over c} )\nonumber\\
+         & = & A V_{sky} (1-\Gamma_{f}) \left [ 1+(1-\Gamma_{a}) \Gamma_{f} \Gamma_{d} e^{2\pi i\nu \Delta \tau}  \right]exp({2\pi i \nu \vec{b}.\hat{s} \over c} )\nonumber\\
 \label{eq5}
 \end{eqnarray}
 Frequency as well as angular dependence of the quantities are not written explicitly for notational simplicity. 
@@ -130,32 +126,32 @@ The two antennas are assumed to have identical beam pattern which is $A_{1}=A_{2
 
 \begin{eqnarray}
 V e^{i\phi}(\nu) & = & \int V_{1}V_{2}^{*} d\Omega \nonumber\\
-		        & = & \int |A_{f}|^{2}|V_{sky}|^{2}\left [ 1+(1-\Gamma_{f}) \Gamma_{f} \Gamma_{d} e^{i\Phi} \right]|^{2} exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega
+		        & = & \int |A_{f}|^{2}|V_{sky}|^{2} |\left [ 1+(1-\Gamma_{f}) \Gamma_{f} \Gamma_{d} e^{2\pi i\nu \Delta \tau}  \right]|^{2} exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega
 \label{eq6}		        
 \end{eqnarray}
 
 
  Furthermore, combining all the terms that contain instrument response we define a common instrument parameter, written as, 
 \begin{eqnarray}
-\Sigma(\vec \theta, \nu) & = & |A_{f}|^{2} |\left [ 1+ (1-\Gamma_{f}) \Gamma_{f} \Gamma_{d} e^{i\Phi} \right]|^{2}\nonumber\\
- 	    & = &  |A_{f}|^{2}  \left[ 1+ |(1-\Gamma_{f})|^{2}|\Gamma_{f}|^{2}|\Gamma_{d}|^{2} + 2 \Re \left ( (1-\Gamma_{f})\Gamma_{f}\Gamma_{d} e^{i\Phi} \right) \right]
+\Sigma(\vec \theta, \nu) & = & |A_{f}|^{2} |\left [ 1+ (1-\Gamma_{f}) \Gamma_{f} \Gamma_{d} e^{2\pi i\nu \Delta \tau} \right]|^{2}\nonumber\\
+ 	    & = &  |A_{f}|^{2}  \left[ 1+ |(1-\Gamma_{f})|^{2}|\Gamma_{f}|^{2}|\Gamma_{d}|^{2} + 2 \Re \left ( (1-\Gamma_{f})\Gamma_{f}\Gamma_{d} e^{2\pi i\nu \Delta \tau} \right) \right]
 \label{eq{7}}	    
 \end{eqnarray}
 
-First term in the square bracket represents the cross coorrelation between the two antenna outputs contributed by the sky signal upon first direct incidence. The second term results from the cross correlation between two reflected signals in each antenna.The last term represents the cross correlation between the first direct incident signal of one antenna and the first reflected signal from the other antenna and vice versa.
+Therefore, the total visibility at any frequency would be the sum of the three visibilities contributed by three sources of correlated power. First term in the square bracket represents the cross coorrelation between the two antenna outputs contributed by the sky signal upon first direct incidence. The second term results from the cross correlation between two reflected signals in each antenna.The last term represents the cross correlation between the first direct incident signal of one antenna and the first reflected signal from the other antenna and vice versa.
 If the dish vertex is so constructed such that the reflection from the dish vertex is negligible i.e, $\Gamma_{d}<<1\ or = 0$ then the second and the third term of the $\Sigma$ vanish. \\
-Rewriting equation \ref{eq6}, the visibility could be written as, 
 
 
-\begin{eqnarray}
-V e^{i\phi}(\nu) & = & \int |A_{f}|^{2}|V_{sky}|^{2}|exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega \nonumber\\
-&& +  \int |A_{f}|^{2}|V_{sky}|^{2} |(1-\Gamma_{f})|^{2}|\Gamma_{f}|^{2}|\Gamma_{d}|^{2} exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega \nonumber\\
-&& + \int |A_{f}|^{2}|V_{sky}|^{2}| 2 \Re \left ((1-\Gamma_{f})\Gamma_{f}\Gamma_{d} e^{i\Phi} \right)exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega
-\label{eq8}		        
-\end{eqnarray}
 
-Therefore, the total visibility at any frequency would be the sum of the three visibilities contributed by three sources of correlated power. If we assume $|\Gamma_{f}|^{2} = |\Gamma_{d}|^{2}= 10dB$,  
-\subsection{Effect of multiple reflections on the delay spectrum}
+%\begin{eqnarray}
+%V e^{i\phi}(\nu) & = & \int |A_{f}|^{2}|V_{sky}|^{2}|exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega \nonumber\\
+%&& +  \int |A_{f}|^{2}|V_{sky}|^{2} |(1-\Gamma_{f})|^{2}|\Gamma_{f}|^{2}|\Gamma_{d}|^{2} exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega \nonumber\\
+%&& + \int |A_{f}|^{2}|V_{sky}|^{2}| 2 \Re \left ((1-\Gamma_{f})\Gamma_{f}\Gamma_{d} e^{i\Phi} \right)exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega
+%\label{eq8}		        
+%\end{eqnarray}
+
+ 
+\subsection{Effect of first reflection on the delay spectrum}
 We define $B(\vec \theta, \nu) =  A^{2}(\vec \theta, \nu) $ as the beam power pattern of the interferometer and $\Sigma_{rr}(\nu), \Sigma_{dr}(\nu)$ are the correlation coefficient between the two reflected signals in each antenna and the direct signal of one antenna with the reflected signal from the other antenna in the uv plane i.e, 
 
 \begin{equation}
@@ -167,7 +163,7 @@ We define $B(\vec \theta, \nu) =  A^{2}(\vec \theta, \nu) $ as the beam power pa
 \end{equation}
 
 and $\Delta \tau$ is the additional delay each reflected component suffers in addition to the intrinsic geometric delay 
-$\tau_{g}$.
+$\tau_{g}$. Therefore, $\Sigma(\vec \theta, \nu) = B(\vec \theta, \nu) \left [ 1+\Sigma_{rr} +\Sigma_{dr} \right]$
 
 As given in equation \ref{eq3}, the Fourier transform of this visibility spectrum along the frequency axis results in the delay spectrum. Hence, the all sky integrated delay spectrum could be written as, 
 %\begin{eqnarray}
@@ -182,11 +178,10 @@ As given in equation \ref{eq3}, the Fourier transform of this visibility spectru
 %\label{eq9}
 %\end{eqnarray}
 %
-he all sky integrated delay spectrum could be written as, 
 \begin{eqnarray}			
-\mathcal{F} \left [V e^{i\phi}\right] & = & \left [ B(\tau)\ast I_{sky}(\tau) \right ]\ast \delta(\tau_{g}) \nonumber\\
-		&& +  \left [ B_{f}(\tau)\ast I_{sky}(\tau)* \Sigma_{rr}( \tau) \right ]\ast \delta(\tau+\tau_{g}) \nonumber\\
-		&& +  \left [B_{f}(\tau)\ast I_{sky}(\tau)* \Sigma_{dr}( \tau) \right ]\ast \delta(\tau+\tau_{g}+ \Delta \tau)\nonumber\\
+\mathcal{F} \left [V e^{i\phi}\right] & = & \left [ B(\tau)\ast I_{sky}(\tau) \right ]\ast \delta(\tau+\tau_{g}) \nonumber\\
+		&& +  \left [ B(\tau)\ast I_{sky}(\tau)* \Sigma_{rr}( \tau) \right ]\ast \delta(\tau+\tau_{g}) \nonumber\\
+		&& +  \left [B(\tau)\ast I_{sky}(\tau)* \Sigma_{dr}( \tau) \right ]\ast \delta(\tau+\tau_{g}+ \Delta \tau)\nonumber\\
 \label{eq10}
 \end{eqnarray}
 
