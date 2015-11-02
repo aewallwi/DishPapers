@@ -92,7 +92,7 @@ Hence, the delay spectrum, integrated over all sky would be written as,
 the convolution being carried out along the $\tau$ axis which is Fourier conjugate of the frequency $\nu$. In words, the sky delay spectrum is convoluted with the delay spectrum of the instrument and is centred at a delay $\tau_{g}$. The projected geometric delay $\tau_{g}$ for a given baseline can vary from 0 to $\tau_{g}$. Also, due to frequency dependence of the sky signal, the delay spectrum of the sky spills over the delay $\tau> \tau_{g}$ with decaying amplitude [Ref to the figure Parsons12]. Sky delay spectrum $I_{sky}(\tau)$ is contributed by the foreground  $I_{fg}(\tau)$ and the 21~cm power spectrum $I_{21}(\tau)$. Since $I_{fg}$ is spectrally smooth, whereas $I_{21}$ contains spectral structures, for wideband measurements, the relative strength of the smooth spectrum foreground with respect to the delay spectrum of the $I_{21}$ reduces at higher delays and, therefore, at higher delays, the 21~cm delay spectrum is detectable.  \textbf{[ Reference to Nithya's foreground simulation work, reference to any plots on the relative contribution of the  foreground and EoR signal. ]}
 
 
-\section{Effects of multiple reflections of the sky signal between the parabolic dish and the feed on the measured visibility}
+\section{Effects of additional reflections of the sky signal between the parabolic dish and the feed on the measured visibility}
  Plane waves incident on a parabolic dish are focussed at the feed which is kept at the focal plane of the dish. The mismatch between the impedance of free space and the feed and transmission line results in a partial coupling of the sky signal into the feed while the rest is reflected off the feed. The reflected signal illuminates the dish and most of it is reflected back into the space. However, a part of it reflects back and forth several times in between the feed and the vertex of the dish which is shadowed by the feed (dashed blue arrows in Figure \ref{fig:cartoon}). Such reflections generate multiple copies of the incident sky signal of reduced strength at various time/phase and thus produces spurious correlations in the visibilities of interferometric data. In this section we compute the visibility of a two element interferometer accounting for the additional reflections of the sky signal in between the feed and the dish vertex and the corresponding effects on the delay spectrum. 
 
 \begin{figure}[ht!]
@@ -144,50 +144,6 @@ Fourier transform of this visibility spectrum along the frequency axis results i
  Fourier transform of the visibility contributed by any two voltage components from two antennas with no mutual delay is centred at a delay $\tau = \tau_{g}$ in the delay spectrum whereas any two voltage components from two antennas components having a mutual delay of $\Delta \tau$ will be centred at $\tau_{g} +\Delta \tau$. Therefore, the correlation between the reflected signal  from the feed and subsequently from the dish with the direct signal thus extends the foreground response to delays beyond the maximum geometric delay for a given baseline and contaminates the delay mode where 21~cm delay spectrum could potentially be detected. Also, any reflections arriving at the feed at any non-zero  value of the delay $\Delta \tau$ which could be the result of reflections from the feed structures would also generate non zero delay response at those delays. 
 If the dish vertex is so constructed such that the reflection from the dish vertex is negligible i.e, $\Gamma_{d}<<1\ or = 0$ then the second and the third term of the $\Sigma$ vanish. Also, if we assume a $\Gamma_{a} =-10dB$ and $\Gamma_{d}= -20dB$, the second term in the expression of $\Sigma(\vec \theta, \nu)$ becomes negligible compared to the first and the third term of the expression and, therefore, can be neglected. \\
 
-%\begin{eqnarray}
-%V e^{i\phi}(\nu) & = & \int |A_{f}|^{2}|V_{sky}|^{2}|exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega \nonumber\\
-%&& +  \int |A_{f}|^{2}|V_{sky}|^{2} |(1-\Gamma_{f})|^{2}|\Gamma_{f}|^{2}|\Gamma_{d}|^{2} exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega \nonumber\\
-%&& + \int |A_{f}|^{2}|V_{sky}|^{2}| 2 \Re \left ((1-\Gamma_{f})\Gamma_{f}\Gamma_{d} e^{i\Phi} \right)exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega
-%\label{eq8}		        
-%\end{eqnarray}
-
- 
-%\subsection{Effect of first reflection on the delay spectrum}
-%We define $B(\vec \theta, \nu) =  A^{2}(\vec \theta, \nu) $ as the cross power pattern of the interferometer and $\Sigma_{rr}(\nu), \Sigma_{dr}(\nu)$ are the correlation coefficient between the two reflected signals in each antenna and the direct signal of one antenna with the reflected signal from the other antenna in the uv plane i.e, 
-
-%\begin{equation}
-%\Sigma_{rr}(\nu) =  \left [ |(1-\Gamma_{f})|^{2}|\Gamma_{f}|^{2}|\Gamma_{d}|^{2} \right ]
-%\end{equation}
-
-%\begin{equation}
-%\Sigma_{dr}(\nu) = \left [ 2 \Re \left ((1-\Gamma_{f})\Gamma_{f}\Gamma_{d} e^{i\Phi} \right) \right]
-%\end{equation}
-
-%and $\Delta \tau$ is the additional delay each reflected component suffers in addition to the intrinsic geometric delay 
-%$\tau_{g}$. Therefore, $\Sigma(\vec \theta, \nu) = B(\vec \theta, \nu) \left [ 1+\Sigma_{rr} +\Sigma_{dr} \right]$
-
-%As given in equation \ref{eq3}, the Fourier transform of this visibility spectrum along the frequency axis results in the delay spectrum. Hence, the all sky integrated delay spectrum could be written as, 
-%\begin{eqnarray}
-%\mathcal{F} \left [V e^{i\phi}\right] & = & \int \left [\int B I_{sky}exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega \right ] exp\left[ -2 \pi i\nu \tau \right] d\nu \nonumber\\
-%&& + \int \left [  \int B I_{sky} \Sigma_{rr} exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega \right] exp\left[ -2 \pi i\nu \tau \right] d\nu  \nonumber\\
-%&& +\int \left [ \int B I_{sky} \Sigma_{dr} exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega \right ] exp\left[ -2 \pi i\nu \tau \right] d\nu \nonumber\\	
-%&& + \int \left [  \int |A_{f}|^{2}|V_{sky}|^{2} |(1-\Gamma_{f})|^{2}|\Gamma_{f}|^{2}|\Gamma_{d}|^{2} exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega \right] exp\left[ -2 \pi i\nu \tau \right] d\nu  \nonumber\\
-%&& +\int \left [ \int |A_{f}|^{2}|V_{sky}|^{2} 2 \Re \left ((1-\Gamma_{f})\Gamma_{f}\Gamma_{d} e^{i\Phi} \right)exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega \right ] exp\left[ -2 \pi i\nu \tau \right] d\nu \nonumber\\			
-%			& = & \int \left [\int B I_{sky} exp({2\pi i \nu \tau_{g}} ) dl dm \right ] exp\left[ -2 \pi i\nu \tau \right] d\nu \nonumber\\
-%&& + \int \left [  \int B I_{sky} \Sigma_{rr} exp({2\pi i \nu \tau_{g}} ) dl dm \right] exp\left[ -2 \pi i\nu \tau \right] d\nu  \nonumber\\
-%&& +\int \left [ \int B I_{sky} \Sigma_{dr} exp({2\pi i \nu \tau_{g}} ) dl dm \right ] exp\left[ -2 \pi i\nu \tau \right] d\nu \nonumber\\
-%\label{eq9}
-%\end{eqnarray}
-%
-%\begin{eqnarray}			
-%\mathcal{F} \left [V e^{i\phi}\right] & = & \left [ B(\tau)\ast I_{sky}(\tau) \right ]\ast \delta(\tau+\tau_{g}) \nonumber\\
-%		&& +  \left [ B(\tau)\ast I_{sky}(\tau)* \Sigma_{rr}( \tau) \right ]\ast \delta(\tau+\tau_{g}) \nonumber\\
-%		&& +  \left [B(\tau)\ast I_{sky}(\tau)* \Sigma_{dr}( \tau) \right ]\ast \delta(\tau+\tau_{g}+ \Delta \tau)\nonumber\\
-%\label{eq10}
-%\end{eqnarray}
-
- %In words, the Fourier transform of the visibility contributed by any two voltage components from two antennas with no mutual delay is centred at a delay $\tau = \tau_{g}$ in the delay spectrum whereas any two voltage components from two antennas components having a mutual delay of $\Delta \tau$ will be centred at $\tau_{g} +\Delta \tau$. The correlation between the reflected signal  from the feed and subsequently from the dish with the direct signal thus extends the foreground response to delays beyond the maximum geometric delay for a given baseline and contaminates the delay mode where 21~cm delay spectrum could potentially be detected. Also, any reflections arriving at the feed at any non-zero  value of the delay $\Delta \tau$ which could be the result of reflections from the feed structures would generate non zero delay response at those delays. 
-
 \subsection{Effect of higher order reflection on the delay spectrum} 
 Correlation between the higher order reflections of the signal in any antenna with the direct component of the other would result in a delay response at integral multiple of $\Delta \tau$ and vice versa. 
 If $I_{sky}$ is reflected n times in between the feed and the dish, the net voltage entering the feed after an
@@ -207,121 +163,82 @@ where $\Phi = 2\pi\nu\Delta \tau$. The relevant terms in the corresponding visib
 \Sigma(\vec \theta, \nu) = A_{f} \left [ 1+ 2 \Re \left [(1-\Gamma_{f})( \Gamma_{f}\Gamma_{d} e^{i\phi}+ (\Gamma_{f}\Gamma_{d})^2e^{i2\phi}+ ....+ (\Gamma_{f}\Gamma_{d})^{n}e^{in\phi}) \right ]\right ]
 \end{equation}
 
-\begin{eqnarray}
-V e^{i\phi}(\nu) & = & \int V_{1}V_{2}^{*} d\Omega \nonumber\\
-		        & = & \int |A_{f}|^{2}|V_{sky}|^{2} |\left [ 1+(1-\Gamma_{f}) \Gamma_{f} \Gamma_{d} e^{2\pi i\nu \Delta \tau}  \right]|^{2} exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega
-\label{eq6}		        
-\end{eqnarray}
+and the measured visibility spectrum, integrated over all sky would be, 
+\begin{equation}\label{eqn:series1}
+V_{meas}  = I_{sky}A_{f}\Sigma( \nu)
+\end{equation}
 
-
-To first order, the design specification of HERA elements requires that any
-delayed signal, arriving at the feed after a multipath propagation, should be
+The design specification of HERA elements requires that any
+signal, arriving at the feed at a delay $\Delta \tau$ with respect to the direct incidence, should be
 at the level of $-60dB$ at a delay of $60ns$ relative to the first incident
 signal at the feed \citep{parsons_deboer_memo}. This specification was
 approximated based on the power level of the cosmological signal in relation to
 foreground signals, which is estimated to be six orders of magnitude fainter
-\citep{santos_et_al2005,ali_et_al2008,deoliveira2008,jelic_et_al2008,bernardi_et_al2009,bernardi_et_al2010,ghosh_et_al2011}.
-Additionally, the $14m$ HERA baselines set a foreground containing
+\citep{santos_et_al2005,ali_et_al2008,deoliveira2008,jelic_et_al2008,bernardi_et_al2009,bernardi_et_al2010,ghosh_et_al2011}. Additionally, the $14m$ HERA baselines set a foreground containing
 horizon-limit (the wedge) that, with some buffer, sets a delay specification of
 $60ns$
-\citep{parsons_et_al2012b,vedantham_et_al2012,nithya_et_al2013,liu_et_al2014a,liu_et_al2014b}.
-
-We carry out reflectometry measurements at the HERA element prototype in Green
-Bank, WV (Figure \ref{fig:heradish}) in order to understand the nature of feed
-reflections in the dish and characterize its performance. As HERA progresses as
-an experiment, it is necessary to build optimized dishes that aim to minimize the
+\citep{parsons_et_al2012b,vedantham_et_al2012,nithya_et_al2013,liu_et_al2014a,liu_et_al2014b}. Our goal is to determine the effect of the instrument response $\Sigma(\nu)$ on the delay spectrum measurement. 
+\section{Measurements}
+We carried out reflectometry measurements at the HERA element prototype in Green
+Bank, WV (Figure \ref{fig:heradish}) in order to measure the instrument response of the feed and dish assembly and characterise its performance. As HERA progresses as
+an experiment, it is necessary to build optimised dishes that aim to minimise the
 challenges of chromaticity in our quest for the Epoch of Reionization.
 
-
-
-Plane waves incident on a parabolic dish
-are focussed at the feed with focal height $l$. For a well-designed feed, one
-that closely matches the impedance of free space\footnote{The impedance of free space
-is $Z_{0} = \mu_{0}c_{0} = \frac{1}{\epsilon_{0}c_{0}} \approx 377\Omega $.},
-most of the signal will enter the system while only
-a small percentage will be reflected back towards the dish for a secondary
-reflection into the feed (dashed blue arrows in Figure \ref{fig:cartoon}). In the
-following discussion, we consider a reflection off the feed and the
-subsequent reflection off the dish as one reflection.
-
-Quantitatively, if the incident power from the sky signal is $I_{sky}$, the feed
+As given in the previous section, if the incident power from the sky signal is $I_{sky}$, the feed
 reflection coefficient is $\Gamma_{f}$, and the dish reflection
-coefficient is $\Gamma_{d}$, then the net power entering the feed after an
-$n^{th}$ reflection off the feed and the dish is:
+coefficient is $\Gamma_{d}$, then the net power entering the feed after
+$n^{th}$ reflection off the feed and the dish (i.e, the sky integrated visibility spectrum) is:
 
 \begin{equation}\label{eqn:series1}
-P_{in} =  P_{sky}(1-\Gamma_{f})[1+ \Gamma_{f}\Gamma_{d} e^{i\phi}+ (\Gamma_{f}\Gamma_{d})^2e^{i2\phi}+ ....+ (\Gamma_{f}\Gamma_{d})^{n}e^{in\phi}]
+I_{meas} =  I_{sky}A_{f}[1+ \Gamma_{f}\Gamma_{d} e^{i\phi}+ (\Gamma_{f}\Gamma_{d})^2e^{i2\phi}+ ....+ (\Gamma_{f}\Gamma_{d})^{n}e^{in\phi}]
 \end{equation}
 
-where, $\phi = 2l({2\pi \over c})\nu$ is the propagation delay of a lightwave of frequency $\nu$ due to a reflection over a focal distance $l$. It is noted that upon the first incidence, the sky signal is focussed onto the feed from the entire dish and the dish reflection coefficient $\Gamma_{d}$ is $1$ for this first incidence. The subsequent back and forth reflection of the signal in between the feed and the dish, however, occurs from only the part of the dish which is shadowed by the feed. Therefore, in this case, $\Gamma_{d} < 1$.
+where, $\phi = 2\pi i\nu \Delta \tau$ is the roundtrip propagation delay of a lightwave of frequency $\nu$ due to a reflection over the focal distance $l$. It is noted that upon the first incidence, the sky signal is focussed onto the feed from the entire dish and the dish reflection coefficient $\Gamma_{d}$ is $1$ for this first incidence. The subsequent back and forth reflection of the signal in between the feed and the dish, however, occurs from only the part of the dish which is shadowed by the feed. Therefore, in this case, $\Gamma_{d} < 1$.
 
 Simplifying Equation \ref{eqn:series1}:
 \begin{eqnarray}\label{eqn:ratio1}
-{P_{in} \over P_{sky} } & = & (1-\Gamma_{f})[1+ \Gamma_{f}\Gamma_{d} e^{i\phi}+ (\Gamma_{f}\Gamma_{d})^2e^{i2\phi}+ ....+ (\Gamma_{f}\Gamma_{d})^{n}e^{in\phi}] \nonumber\\
-      & = & (1-\Gamma_{f}) \displaystyle\sum\limits_{n=0}^{n} [\Gamma_{f}\Gamma_{d}e^{i \phi}]^{n}\nonumber\\
-      & = & (1-\Gamma_{f})+(1-\Gamma_{f}) \displaystyle\sum\limits_{n=1}^{n} [\Gamma_{f}\Gamma_{d}e^{i \phi}]^{n}
+{I_{in} \over I_{sky} } & = & A_{f}[1+ \Gamma_{f}\Gamma_{d} e^{i\phi}+ (\Gamma_{f}\Gamma_{d})^2e^{i2\phi}+ ....+ (\Gamma_{f}\Gamma_{d})^{n}e^{in\phi}] \nonumber\\
+      & = & A_{f} \displaystyle\sum\limits_{n=0}^{n} [\Gamma_{f}\Gamma_{d}e^{i \phi}]^{n}\nonumber\\
+      & = & A_{f}+A_{f} \displaystyle\sum\limits_{n=1}^{n} [\Gamma_{f}\Gamma_{d}e^{i \phi}]^{n}
 \end{eqnarray}
 
-The ratio in Equation \ref{eqn:ratio1} quantifies the amount of power received
-with respect to the incident sky power. Realistically, the incident sky power
-is not easily quantifiable, but it is a quantity we need to know to accurately
-characterize reflections.  
-%The right hand side of this equation consists of system parameters which are all chromatic i.e, functions of frequency.  
-
-
-%Reflections cause the sky signal to appear at various delays. We aim to measure
-%the relative signal strength at those various delays, referred to as the
-%``delay spectrum" hereafter, to estimate levels of reflections in between the
-%feed and the dish apex.
- 
-%We employ the reciprocity theorem for antennas in our experimental set-up.
-%More specifically, our experimental set-up differs from measuring sky signal
-%reflections since we send a pulse that is to be transmitted from the feed
-%before receiving it again. This results in a reversed situation - most of our
-%original signal is transmitted from the feed to be reflected from the dish,
-%while a small percentage reflects back down the cable (red arrows in Figure
-%\ref{fig:cartoon}). Therefore, since our measurement is carried out in
-%transmitting mode while an observation would be carried out in receiving mode,
-%we correct our results in order to map them to represent real observations.
-
-In our experimental set-up, instead of using sky signal, we employ
-our feed as a transmitter and transmit a pulse. If the initial pulse is a broadband signal,
-$P_{tr}$, sent to the feed via a $75ft$ cable by a vector network
+In our experimental set-up, we use the feed as a transmitter and transmit a pulse. If the initial pulse is a broadband signal,
+$I_{tr}$, sent to the feed via a $75ft$ cable by a vector network
 analyser (VNA), a delay domain measurement of the system is accomplished by
-taking the Fourier transform of the measured complex return loss of the feed. When the signal is incident on
+taking the Fourier transform of the complex return loss of the feed measured by VNA. When the signal is incident on
 the feed, part of the incident power ($\Gamma_{f}$) is reflected back to the
 measuring device (dashed red arrows in Figure \ref{fig:cartoon}) and
 $(1-\Gamma_{f})$ is radiated by the feed (solid red arrows in Figure
 \ref{fig:cartoon}) which illuminates the dish. While most of the incident signal is reflected back into space by the dish, the reflected signal from the dish vertex returns to
 the feed. This incident signal is now
 reflected back and forth in between the feed and the dish much like the sky
-signal reflection discussed previously.  Hence, if $P_{r}$ is the power
-incident back on the feed for the first time then the reflected power, $P_{refl}$,
+signal reflection discussed previously.  Hence, if $I_{r}$ is the power
+incident back on the feed for the first time then the reflected power, $I_{refl}$,
 back into the VNA would be:
 
 \begin{equation}\label{eqn:series2}
-P_{refl} =  P_{r}(1-\Gamma_{f})[1+ \Gamma_{f}\Gamma_{d} e^{i\phi}+ (\Gamma_{f}\Gamma_{d})^2e^{i2\phi}+ ....+ (\Gamma_{f}\Gamma_{d})^{n}e^{in\phi}]
+I_{refl} =  I_{r}A_{f}[1+ \Gamma_{f}\Gamma_{d} e^{i\phi}+ (\Gamma_{f}\Gamma_{d})^2e^{i2\phi}+ ....+ (\Gamma_{f}\Gamma_{d})^{n}e^{in\phi}]
 \end{equation}
  
 Once again, note that we consider one reflection from the feed and its subsequent reflection from the dish as one reflection in total. Equation \ref{eqn:series2} is similar to Equation \ref{eqn:series1}, with different incident powers.
 
-Recall that $P_{r}$ is the initial power that is incident back on the feed, which is just the feed radiated power reflected off the dish:
+Recall that $I_{r}$ is the initial power that is incident back on the feed, which is just the feed radiated power reflected off the dish:
  
 \begin{equation}
-P_{r}= \Gamma_{d}(1-\Gamma_f)e^{i\phi} P_{tr}
+I_{r}= \Gamma_{d}(1-\Gamma_f)e^{i\phi} I_{tr}
 \end{equation}
 
 Also note that the first reflection of the signal sent by the VNA occurs at the feed end. Hence the total returned power $P_{ret}$, to the VNA  would be:
 
 \begin{eqnarray}
-P_{ret} & = & \Gamma_{f}P_{tr} \nonumber\\ 
- & + &   \Gamma_{d}(1-\Gamma_f)e^{i\phi} P_{tr}(1-\Gamma_{f}) [1+ \Gamma_{f}\Gamma_{d} e^{i\phi}+  ....+ (\Gamma_{f}\Gamma_{d})^{n}e^{in\phi}]\nonumber\\
+I_{ret} & = & \Gamma_{f}I_{tr} \nonumber\\ 
+ & + &   \Gamma_{d}(1-\Gamma_f)e^{i\phi} I_{tr}(1-\Gamma_{f}) [1+ \Gamma_{f}\Gamma_{d} e^{i\phi}+  ....+ (\Gamma_{f}\Gamma_{d})^{n}e^{in\phi}]\nonumber\\
  \end{eqnarray}
  
 Simplifying:
  
   \begin{eqnarray}\label{eqn:ratio2}
- {P_{ret} \over P_{tr} } & = & \Gamma_{f}
+ {I_{ret} \over I_{tr} } & = & \Gamma_{f}
   +  \Gamma_{d}(1-\Gamma_f)^{2} [e^{i\phi}+ \Gamma_{f}\Gamma_{d} e^{i2\phi}+  ....+ (\Gamma_{f}\Gamma_{d})^{n}e^{i n\phi}]\nonumber\\
   & = & \Gamma_{f} + { (1-\Gamma_f)^{2}\over \Gamma_{f} } \displaystyle\sum\limits_{n=1}^{n} [\Gamma_{f}\Gamma_{d}e^{i\phi}]^{n}
    \nonumber\\
@@ -339,10 +256,10 @@ measurements to real observations.
 %while a sky observation would be carried out in receiving mode, we correct our
 %results in order to map them real observations.
 
-The VNA measures the magnitude and phase of the quantity ${P_{ret}\over P_{tr}}$
+The VNA measures the magnitude and phase of the quantity ${I_{ret}\over I_{tr}}$
 as a function of frequency as shown in Figure \ref{fig:freq}. In our measurement
 set-up, the first reflection occurs at the feed $\Gamma_{f}$, so
-$({P_{ret} \over P_{tr} }  - \Gamma_{f}) $ gives an estimate of the delay
+$({I_{ret} \over I_{tr} }  - \Gamma_{f}) $ gives an estimate of the delay
 spectrum of the sky signal. In delay domain, the relative signal strength at
 zero delay represents the factor $\Gamma_{f}$ while the signal strength at any
 other delay represents any delayed signal that enters the feed after being
@@ -527,3 +444,49 @@ Parsons, A., \& Pober, Jonathan C., \& Aguirre, James E., \& Carilli, Christophe
 \end{thebibliography}{}
 
 \end{document}
+
+
+%\begin{eqnarray}
+%V e^{i\phi}(\nu) & = & \int |A_{f}|^{2}|V_{sky}|^{2}|exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega \nonumber\\
+%&& +  \int |A_{f}|^{2}|V_{sky}|^{2} |(1-\Gamma_{f})|^{2}|\Gamma_{f}|^{2}|\Gamma_{d}|^{2} exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega \nonumber\\
+%&& + \int |A_{f}|^{2}|V_{sky}|^{2}| 2 \Re \left ((1-\Gamma_{f})\Gamma_{f}\Gamma_{d} e^{i\Phi} \right)exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega
+%\label{eq8}		        
+%\end{eqnarray}
+
+ 
+%\subsection{Effect of first reflection on the delay spectrum}
+%We define $B(\vec \theta, \nu) =  A^{2}(\vec \theta, \nu) $ as the cross power pattern of the interferometer and $\Sigma_{rr}(\nu), \Sigma_{dr}(\nu)$ are the correlation coefficient between the two reflected signals in each antenna and the direct signal of one antenna with the reflected signal from the other antenna in the uv plane i.e, 
+
+%\begin{equation}
+%\Sigma_{rr}(\nu) =  \left [ |(1-\Gamma_{f})|^{2}|\Gamma_{f}|^{2}|\Gamma_{d}|^{2} \right ]
+%\end{equation}
+
+%\begin{equation}
+%\Sigma_{dr}(\nu) = \left [ 2 \Re \left ((1-\Gamma_{f})\Gamma_{f}\Gamma_{d} e^{i\Phi} \right) \right]
+%\end{equation}
+
+%and $\Delta \tau$ is the additional delay each reflected component suffers in addition to the intrinsic geometric delay 
+%$\tau_{g}$. Therefore, $\Sigma(\vec \theta, \nu) = B(\vec \theta, \nu) \left [ 1+\Sigma_{rr} +\Sigma_{dr} \right]$
+
+%As given in equation \ref{eq3}, the Fourier transform of this visibility spectrum along the frequency axis results in the delay spectrum. Hence, the all sky integrated delay spectrum could be written as, 
+%\begin{eqnarray}
+%\mathcal{F} \left [V e^{i\phi}\right] & = & \int \left [\int B I_{sky}exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega \right ] exp\left[ -2 \pi i\nu \tau \right] d\nu \nonumber\\
+%&& + \int \left [  \int B I_{sky} \Sigma_{rr} exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega \right] exp\left[ -2 \pi i\nu \tau \right] d\nu  \nonumber\\
+%&& +\int \left [ \int B I_{sky} \Sigma_{dr} exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega \right ] exp\left[ -2 \pi i\nu \tau \right] d\nu \nonumber\\	
+%&& + \int \left [  \int |A_{f}|^{2}|V_{sky}|^{2} |(1-\Gamma_{f})|^{2}|\Gamma_{f}|^{2}|\Gamma_{d}|^{2} exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega \right] exp\left[ -2 \pi i\nu \tau \right] d\nu  \nonumber\\
+%&& +\int \left [ \int |A_{f}|^{2}|V_{sky}|^{2} 2 \Re \left ((1-\Gamma_{f})\Gamma_{f}\Gamma_{d} e^{i\Phi} \right)exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega \right ] exp\left[ -2 \pi i\nu \tau \right] d\nu \nonumber\\			
+%			& = & \int \left [\int B I_{sky} exp({2\pi i \nu \tau_{g}} ) dl dm \right ] exp\left[ -2 \pi i\nu \tau \right] d\nu \nonumber\\
+%&& + \int \left [  \int B I_{sky} \Sigma_{rr} exp({2\pi i \nu \tau_{g}} ) dl dm \right] exp\left[ -2 \pi i\nu \tau \right] d\nu  \nonumber\\
+%&& +\int \left [ \int B I_{sky} \Sigma_{dr} exp({2\pi i \nu \tau_{g}} ) dl dm \right ] exp\left[ -2 \pi i\nu \tau \right] d\nu \nonumber\\
+%\label{eq9}
+%\end{eqnarray}
+%
+%\begin{eqnarray}			
+%\mathcal{F} \left [V e^{i\phi}\right] & = & \left [ B(\tau)\ast I_{sky}(\tau) \right ]\ast \delta(\tau+\tau_{g}) \nonumber\\
+%		&& +  \left [ B(\tau)\ast I_{sky}(\tau)* \Sigma_{rr}( \tau) \right ]\ast \delta(\tau+\tau_{g}) \nonumber\\
+%		&& +  \left [B(\tau)\ast I_{sky}(\tau)* \Sigma_{dr}( \tau) \right ]\ast \delta(\tau+\tau_{g}+ \Delta \tau)\nonumber\\
+%\label{eq10}
+%\end{eqnarray}
+
+ %In words, the Fourier transform of the visibility contributed by any two voltage components from two antennas with no mutual delay is centred at a delay $\tau = \tau_{g}$ in the delay spectrum whereas any two voltage components from two antennas components having a mutual delay of $\Delta \tau$ will be centred at $\tau_{g} +\Delta \tau$. The correlation between the reflected signal  from the feed and subsequently from the dish with the direct signal thus extends the foreground response to delays beyond the maximum geometric delay for a given baseline and contaminates the delay mode where 21~cm delay spectrum could potentially be detected. Also, any reflections arriving at the feed at any non-zero  value of the delay $\Delta \tau$ which could be the result of reflections from the feed structures would generate non zero delay response at those delays. 
+
