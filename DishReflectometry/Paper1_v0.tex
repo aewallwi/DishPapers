@@ -5,6 +5,14 @@
 \usepackage{graphicx} %for handling figures
 %\usepackage[none]{hyphenat} %disallows hyphenated words
 \newcommand{\vdag}{(v)^\dagger}
+\newcommand{\volt}{{v}}
+\newcommand{\vis}{{V}}
+\newcommand{\sky}{{\rm sky}}
+\newcommand{\bmvolt}{{a}}
+\newcommand{\bm}{{A}}
+\newcommand{\thhat}{{\hat\theta}}
+\newcommand{\fngexp}{{e^{\frac{2\pi i\nu\vec{b}\cdot\thhat}{c}}}}
+\newcommand{\ifngexp}{{e^{-\frac{2\pi i\nu\vec{b}\cdot\thhat}{c}}}}
 \newcommand{\myemail}{skywalker@galaxy.far.far.away}
 
 %\usepackage{cite}
@@ -51,44 +59,48 @@ Bank, WV (Figure \ref{fig:heradish}) and the results are interpreted in the ligh
 \end{figure}
 
 \section{Visibility measurements by a two element interferometer}
-Consider a two element interferometer with a baseline $b$ and antenna field pattern $A(\theta, \nu)$. If we denote the sky signal at an angle $\vec \theta$ by $V_{sky}(\vec \theta, \nu)$ and the receiver noise of each element as $V_{rec}(\nu)$ then the voltage output of each antenna may be written as,  
-\begin{equation}
-V_{1}(\vec \theta, \nu) = A_{1}(\theta,\nu)V_{sky}(\vec \theta,\nu)(\nu)\nonumber\\
-\end{equation}
-\begin{equation}
-V_{2} (\vec \theta, \nu)= A_{2}(\theta,\nu)V_{sky}(\theta,\nu)exp({2\pi i \nu \vec{b}.\hat{s} \over c} )(\nu)\nonumber\\
-\end{equation}
-where $\hat s$ is the unit vector along the direction of the baseline and $A_{1}(\theta,\nu)$ and $A_{2}(\theta,\nu)$ are the field pattern of the two antennas.
-Hence, the time averaged complex visibility integrated over all sky as measured by the interferometer may be written as, 
 
+Consider a two element interferometer with a baseline $\vec b$ and antenna field pattern $A(\thhat, \nu)$. If we denote the electric field sky signal in direction $\thhat$ by $\volt_\sky(\vec \theta, \nu)$ and the receiver noise of each element as $\volt_{rec}(\nu)$ then the voltage output of each antenna may be written as,  
 \begin{equation}
-V e^{i\phi}(\nu) =  \int  V_{1}(\theta,\nu)  V_{2}^{*} (\theta, \nu) exp(-{2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega 
+\volt_{1}(\thhat, \nu) = \bmvolt_{1}(\thhat,\nu)\volt_\sky(\thhat,\nu)\nonumber\\
+\end{equation}
+\begin{equation}
+\volt_{2} (\thhat, \nu)= \bmvolt_{2}(\thhat,\nu)\volt_\sky(\thhat,\nu)\fngexp\nonumber\\
+\end{equation}
+where $\bmvolt_{1}(\thhat,\nu)$ and $\bmvolt_{2}(\thhat,\nu)$ are the electric field response patterns 
+of the two antennas.
+Hence, the time averaged visibility measured by the interferometer may be written as, 
+\begin{equation}
+\vis(\vec b, \nu) =  \int  \volt_{1}(\thhat,\nu)  \volt_{2}^{*} (\thhat, \nu) \ifngexp d\Omega 
 \label{eq1}
 \end{equation}
 
-We define antenna cross power pattern as  $B(\theta,\nu)=A_{1}(\theta,\nu)A_{2}^{*}(\theta,\nu)$ and denote the sky power as  $V_{sky}(\theta,\nu)V_{sky}^{*}(\theta,\nu) = I_{sky}(\vec \theta, \nu)|^2$. Hence, 
-\begin{eqnarray}
-V e^{i\phi}(\nu) & = & \int B(\vec \theta, \nu) I_{sky}(\vec \theta,\nu) exp(-{2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega \nonumber\\
-		& = & \int B(l,m, \nu) I_{sky}(l,m,\nu) exp(-2\pi i \nu \tau_{g} ) dl dm \nonumber\\
+We define antenna cross power pattern as  $\bm(\thhat,\nu)=\bmvolt_{1}(\thhat,\nu)\bmvolt_{2}^{*}(\thhat,\nu)$ and denote the sky intensity as  $I_\sky(\thhat,\nu)=\volt_\sky(\thhat,\nu)\volt_\sky^{*}(\thhat,\nu)$. Hence, 
+\begin{equation}
+\vis(\vec b,\nu) = \int \bm(\thhat, \nu) I_\sky(\thhat,\nu) \ifngexp d\Omega
+	%	& = & \int B(l,m, \nu) I_{sky}(l,m,\nu) exp(-2\pi i \nu \tau_{g} ) dl dm \nonumber\\
  	%	& = & B(\vec u,\nu) \ast P_{sky}(\vec u,\nu ) \nonumber\\
 	%	& = & B(\nu { |\vec b| \over c} , \nu) \ast P_{sky}(\nu { |\vec b| \over c} , \nu) \nonumber\\
 	%	& = & B(\tau_{g}, \nu) \ast P_{sky}(\tau_{g} , \nu)	
 \label{eq2}
-\end{eqnarray}
+\end{equation}
 
 %i.e, the complex visibility is the Fourier transform of the product of the antenna beam pattern with the sky angular power spectrum. In other words, it is the convolution of the Fourier transform of the antenna power pattern with the Fourier transform of the sky. The complex visibility measured by an interferometer with a given baseline length has explicit dependence on frequency as well as implicit frequency dependence through the spatial frequency $\vec u = \nu { \vec b \over c}$ component. Since $\vec u $ is the For a given baseline length $|\vec b|$, the visibility measured at various frequencies are not only the function of frequencies but also samples different $\vec u$ in the uv space. Delay transformation technique takes the visibility measurements at different frequencies and Fourier transforms the complex visibilities. If we defineI_{sky} the Fourier conjugate of the frequency axis as $\tau$ then the equation could be written as, 
-The Fourier transform of this visibility spectrum along the frequency axis results in the delay spctrum.
-\begin{eqnarray}
-\mathcal{F} \left [V e^{i\phi}\right] & = & \int \left [\int B(l,m, \nu) I_{sky}(l,m,\nu) exp(-2\pi i \nu \tau_{g} ) dl dm \right ] exp\left[ -2 \pi i\nu \tau \right] d\nu \nonumber\\
+In \citet{parsons_et_al2012a}, the Fourier transform of the visibility along the frequency axis was introduced,
+resulting in the delay spctrum:
+\begin{equation}
+\tilde V(\vec b, \tau)  = \int\!\!\int{\bm(\thhat,\nu) I_\sky(\thhat,\nu) \ifngexp d\Omega~e^{-2\pi i\nu\tau} d\nu}
 						%   & = & \int \left [B(\tau)\ast I_{sky}(\tau) \ast \delta(\tau+\tau_{g}) \right ] dl dm	
 \label{eq3}
-\end{eqnarray}
+\end{equation}
 
 Hence, the delay spectrum, integrated over all sky would be written as, 
 \begin{eqnarray}
 \mathcal{F} \left [V e^{i\phi}\right]   & = &  \left [B(\tau)\ast I_{sky}(\tau) \ast \delta(\tau+\tau_{g}) \right ] 	
 \label{eq4}
 \end{eqnarray}
+% XXX rethink how to express this equation (not correct about integrated over all sky)
+% XXX define tau_g
 the convolution being carried out along the $\tau$ axis which is Fourier conjugate of the frequency $\nu$. In words, the sky delay spectrum is convoluted with the delay spectrum of the instrument and is centred at a delay $\tau_{g}$. The projected geometric delay $\tau_{g}$ for a given baseline can vary from 0 to $\tau_{g}$. Also, due to frequency dependence of the sky signal, the delay spectrum of the sky spills over the delay $\tau> \tau_{g}$ with decaying amplitude [Ref to the figure Parsons12]. Sky delay spectrum $I_{sky}(\tau)$ is contributed by the foreground  $I_{fg}(\tau)$ and the 21~cm power spectrum $I_{21}(\tau)$. Since $I_{fg}$ is spectrally smooth, whereas $I_{21}$ contains spectral structures, for wideband measurements, the relative strength of the smooth spectrum foreground with respect to the delay spectrum of the $I_{21}$ reduces at higher delays and, therefore, at higher delays, the 21~cm delay spectrum is detectable.  \textbf{[ Reference to Nithya's foreground simulation work, reference to any plots on the relative contribution of the  foreground and EoR signal. ]}
 
 
