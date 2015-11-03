@@ -32,6 +32,8 @@
 
 \author{Zaki Ali\altaffilmark{1}, Carina Cheng\altaffilmark{1}, Dave DeBoer\altaffilmark{1}}
 \author{Gilbert Hsyu\altaffilmark{2}, Tsz Kuk Leung\altaffilmark{2}, Aaron Parsons\altaffilmark{1}}
+% XXX add all members of HERA collaboration
+% XXX suggest Patra, Parsons, Ali, DeBoer, Cheng, Leung, Hsyu, alphabetical
 
 \altaffiltext{1}{University of California, Berkeley, nipanjana@berkeley.edu}
 \altaffiltext{2}{To be inserted}
@@ -41,6 +43,39 @@
 
 
 \section{Introduction}
+
+Since it was first proposed in \citet{shaver_et_al1999}, measuring 21~cm
+emission from neutral hydrogen in our early universe has gained attention as a
+powerful probe of both cosmology and astrophysics.  While the science case for
+21~cm cosmology, particularly during the Epoch of Reionization, is well
+established (see, e.g.,
+\citealt{furlanetto_et_al2006,morales_wyithe2010,furlanetto_loeb2014,pritchard_loeb2014}),
+the technical path toward measuring this signal has been more problematic.  The
+weakness of this hyperfine line keeps the 21~cm signal below opacity throughout
+cosmological history, but it also creates sensitivity and calibration
+challenges that have yet to be fully solved.  With noise temperatures dominated
+by sky noise \citep{XXX} and foregrounds four to five orders of magnitude
+brighter than the signal \citep{XXX}, 21~cm reionization experiments must
+furnish both collecting area and foreground suppression at levels significantly
+beyond anything previously achieved in radio telescopes operating below 1 GHz.
+
+One of the most problematic effects facing these experiments results form instrument
+chromaticity.  The spectral dimension of 21~cm reionization experiments is of vital
+importance; for line emission, this coordinate translates to a line-of-sight distance
+that can be used to construct three-dimensional maps (and power spectra) of emission,
+as well as probe the evolution of 21~cm emission over cosmological timescales.
+The evolving response of a radio telescope --- either a single dish
+or an interferometer --- versus spectral frequency modulates spectrally smooth foregrounds ,
+contaminating spectral modes that might
+otherwise be used to measure reionization \citep{XXX}.  Moreover, the chromaticity of
+a telescope's response pattern scales linearly with diameter, putting the
+needs of foreground suppression and signal sensitivity in direct tension with one
+another.
+
+% XXX the wedge
+
+
+
 The efficacy of the techniques of foreground removal from the measured data critically limits the 21~cm power spectrum measurements. The delay transformation technique of foreground removal, introduced by  \citep{ParsonsBacker2009,Parsons2012} computes the Fourier transform of the visibility measured by an interferometer and produces a spectrum, referred to as delay spectrum hereafter, which is a function of the geometric time delay corresponding to the physical length of the baseline between two antennas. For the visibilities measured over a wide field across wide frequency bandwidth, the delay spectrum is constituted by the instrument response, the foreground signal and 21cm power spectrum, hereafter referred to as EoR signal.
 %The complex visibility measured by an interferometer is a convolution of the instrument response with the true sky response in the UV plane. Therefore, when Fourier transformed, the delay spectrum is the multiplication of the sky response with the instrument response in the delay domain.
 The technique exploits the smooth spectral characteristics of the foreground and for a widefield wide bandwidth visibility measurement by an interferometer with a baseline $b$, confines the foreground contribution to the computed delay spectrum within the largest possible time delay $\tau = b/c$ corresponding to the given baseline length. Such techniques also assumes a spectrally smooth instrumental response whose contribution to the measured data, much as the contribution of the smooth spectrum foreground, also has an upper bound in the delay space imposed by the largest geometric delay of the given baseline. 
