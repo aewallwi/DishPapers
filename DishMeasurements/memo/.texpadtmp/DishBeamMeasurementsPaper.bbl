@@ -1,0 +1,85 @@
+\begin{thebibliography}{12}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{{Ali} {et~al.}(2015){Ali}, {Parsons}, {Zheng}, {Pober}, {Liu},
+  {Aguirre}, {Bradley}, {Bernardi}, {Carilli}, {Cheng}, {DeBoer}, {Dexter},
+  {Grobbelaar}, {Horrell}, {Jacobs}, {Klima}, {MacMahon}, {Maree}, {Moore},
+  {Razavi}, {Stefan}, {Walbrugh}, \& {Walker}}]{paper64}
+{Ali}, Z.~S., {et~al.} 2015, \apj, 809, 61
+
+\bibitem[{{de Oliveira-Costa} {et~al.}(2008){de Oliveira-Costa}, {Tegmark},
+  {Gaensler}, {Jonas}, {Landecker}, \& {Reich}}]{gsm}
+{de Oliveira-Costa}, A., {Tegmark}, M., {Gaensler}, B.~M., {Jonas}, J.,
+  {Landecker}, T.~L., \& {Reich}, P. 2008, \mnras, 388, 247
+
+\bibitem[{{Hurley-Walker} {et~al.}(2014){Hurley-Walker}, {Morgan}, {Wayth},
+  {Bell}, {Bernardi}, {Bhat}, Frank~{Briggs}, A., {Ewall-Wice}, {Feng},
+  {Hazelton}, {Hindson}, {Jacobs}, {Kaplan}, {Kudryavtseva}, {Lenc},
+  {McKinley}, {Mitchell}, {Pindor}, {Procopio}, {Oberoi}, {Offringa}, {Ord},
+  {Riding}, {Bowman}, {Cappallo}, {Corey}, {Emrich}, {Gaensler}, {Goeke},
+  {Greenhill}, {Hewitt}, {Johnston-Hollitt}, {Kasper}, {Kratzenberg},
+  {Lonsdale}, {Lynch}, {McWhirter}, {Morales}, {Morgan}, {Prabu}, {Rogers},
+  {Roshi}, {Shankar}, {Srivani}, {Subrahmanyan}, {Tingay}, {Waterson},
+  {Webster}, {Whitney}, {Williams}, \& {Williams}}]{MWACS}
+{Hurley-Walker}, N., {et~al.} 2014, PASA, 31, 45
+
+\bibitem[{{Mesinger} {et~al.}(2011){Mesinger}, {Furlanetto}, \&
+  {Cen}}]{21cmfast}
+{Mesinger}, A., {Furlanetto}, S., \& {Cen}, R. 2011, \mnras, 411, 955
+
+\bibitem[{{Neben} {et~al.}(2015a){Neben}, {Bradley}, {Hewitt}, {Bernardi},
+  {Bowman}, {Briggs}, {Cappallo}, {Deshpande}, {Goeke}, {Greenhill},
+  {Hazelton}, {Johnston-Hollitt}, {Kaplan}, {Lonsdale}, {McWhirter},
+  {Mitchell}, {Morales}, {Morgan}, {Oberoi}, {Ord}, {Prabu}, {Shankar},
+  {Srivani}, {Subrahmanyan}, {Tingay}, {Wayth}, {Webster}, {Williams}, \&
+  {Williams}}]{neben15}
+{Neben}, A.~R., {et~al.} 2015a, Radio Science, 50, 614
+
+\bibitem[{{Parsons} \& {Backer}(2009)}]{parsonsandbacker}
+{Parsons}, A.~R., \& {Backer}, D.~C. 2009, \aj, 138, 219
+
+\bibitem[{{Parsons} {et~al.}(2012){Parsons}, {Pober}, {Aguirre}, {Carilli},
+  {Jacobs}, \& {Moore}}]{perbaselinetechnique}
+{Parsons}, A.~R., {Pober}, J.~C., {Aguirre}, J.~E., {Carilli}, C.~L., {Jacobs},
+  D.~C., \& {Moore}, D.~F. 2012, \apj, 756, 165
+
+\bibitem[{{Parsons} {et~al.}(2014){Parsons}, {Liu}, {Aguirre}, {Ali},
+  {Bradley}, {Carilli}, {DeBoer}, {Dexter}, {Gugliucci}, {Jacobs}, {Klima},
+  {MacMahon}, {Manley}, {Moore}, {Pober}, {Stefan}, \& {Walbrugh}}]{paper32}
+{Parsons}, A.~R., {et~al.} 2014, \apj, 788, 106
+
+\bibitem[{{Slee}(1995)}]{Slee1995}
+{Slee}, O.~B. 1995, Australian Journal of Physics, 48, 143
+
+\bibitem[{Thyagarajan {et~al.}(2015a)Thyagarajan, Jacobs, Bowman, Barry,
+  Beardsley, Bernardi, Briggs, Cappallo, Carroll, Corey, de~Oliveira-Costa,
+  Dillon, Emrich, Ewall-Wice, Feng, Goeke, Greenhill, Hazelton, Hewitt,
+  Hurley-Walker, Johnston-Hollitt, Kaplan, Kasper, Kim, Kittiwisit,
+  Kratzenberg, Lenc, Line, Loeb, Lonsdale, Lynch, McKinley, McWhirter,
+  Mitchell, Morales, Morgan, Neben, Oberoi, Offringa, Ord, Paul, Pindor, Pober,
+  Prabu, Procopio, Riding, Rogers, Roshi, Shankar, Sethi, Srivani,
+  Subrahmanyan, Sullivan, Tegmark, Tingay, Trott, Waterson, Wayth, Webster,
+  Whitney, Williams, Williams, Wu, \& Wyithe}]{nithya15}
+Thyagarajan, N., {et~al.} 2015a, \apj, 804, 14
+
+\bibitem[{{Thyagarajan} {et~al.}(2015b){Thyagarajan}, {Jacobs}, {Bowman},
+  {Barry}, {Beardsley}, {Bernardi}, {Briggs}, {Cappallo}, {Carroll},
+  {Deshpande}, {de Oliveira-Costa}, {Dillon}, {Ewall-Wice}, {Feng},
+  {Greenhill}, {Hazelton}, {Hernquist}, {Hewitt}, {Hurley-Walker},
+  {Johnston-Hollitt}, {Kaplan}, {Kim}, {Kittiwisit}, {Lenc}, {Line}, {Loeb},
+  {Lonsdale}, {McKinley}, {McWhirter}, {Mitchell}, {Morales}, {Morgan},
+  {Neben}, {Oberoi}, {Offringa}, {Ord}, {Paul}, {Pindor}, {Pober}, {Prabu},
+  {Procopio}, {Riding}, {Udaya Shankar}, {Sethi}, {Srivani}, {Subrahmanyan},
+  {Sullivan}, {Tegmark}, {Tingay}, {Trott}, {Wayth}, {Webster}, {Williams},
+  {Williams}, \& {Wyithe}}]{nithya15b}
+{Thyagarajan}, N., {et~al.} 2015b, \apj, 807, L28
+
+\bibitem[{Zheng {et~al.}(2014)Zheng, Tegmark, Buza, Dillon, Gharibyan, Hickish,
+  Kunz, Liu, Losh, Lutomirski, Morrison, Narayanan, Perko, Rosner, Sanchez,
+  Schutz, Tribiano, Valdez, Yang, Adami, Zelko, Zheng, Armstrong, Bradley,
+  Dexter, Ewall-Wice, Magro, Matejek, Morgan, Neben, Pan, Penna, Peterson, Su,
+  Villasenor, Williams, \& Zhu}]{zheng14}
+Zheng, H., {et~al.} 2014, Monthly Notices of the Royal Astronomical Society,
+  445, 1084
+
+\end{thebibliography}

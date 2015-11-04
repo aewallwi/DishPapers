@@ -1,0 +1,47 @@
+This is BibTeX, Version 0.99d (TeX Live 2012)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: /Users/abrahamn/Documents/Physics/papers/DishPapers/DishMeasurements/memo/.texpadtmp/DishBeamMeasurementsPaper.aux
+The style file: ../apj.bst
+Database file #1: DishBeamMeasurementsPaperNotes.bib
+Database file #2: ../DishBeamMeasurementsMemo.bib
+You've used 12 entries,
+            2988 wiz_defined-function locations,
+            730 strings with 11666 characters,
+and the built_in function-call counts, 8223 in all, are:
+= -- 426
+> -- 1031
+< -- 2
++ -- 343
+- -- 331
+* -- 939
+:= -- 1683
+add.period$ -- 12
+call.type$ -- 12
+change.case$ -- 73
+chr.to.int$ -- 12
+cite$ -- 12
+duplicate$ -- 219
+empty$ -- 323
+format.name$ -- 374
+if$ -- 1487
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 12
+newline$ -- 40
+num.names$ -- 48
+pop$ -- 70
+preamble$ -- 1
+purify$ -- 73
+quote$ -- 0
+skip$ -- 187
+stack$ -- 0
+substring$ -- 246
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 108
+warning$ -- 0
+while$ -- 34
+width$ -- 0
+write$ -- 123
