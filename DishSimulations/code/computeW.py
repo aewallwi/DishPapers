@@ -72,8 +72,8 @@ nSteps=len(steps)
 reStep=re.compile('step_[0-9]{1,2}')
 reNum=re.compile('[0-9]{1,2}')
 reGHz=re.compile('[0-9]{1,2}.[0-9]{5}')
-dirname=config['STEPPARAM']+'_Output/data/'
-plotdir=config['STEPPARAM']+'_Output/plots/'
+dirname=config['STEPPARAM']+'_'+config['LABEL']+'_Output/data/'
+plotdir=config['STEPPARAM']+'_'+config['LABEL']+'_Output/plots/'
 trackMode=config['TRACKMODE']
 if(trackMode=='TRACK'):
     track=trackMode+config['TRACK']+'hrs'
@@ -81,9 +81,9 @@ else:
     track=trackMode
 
 senseList=dirname+'senseList'+postfix+'.txt'
-
+print senseList
 senseList=open(senseList).readlines()
-dDeltaFile=config['STEPPARAM']+'_Output/data/dDelta_'+config['STEPPARAM']+'.npz'
+dDeltaFile=config['STEPPARAM']+'_'+config['LABEL']+'_Output/data/dDelta_'+config['STEPPARAM']+'.npz'
 derivMat=np.load(dDeltaFile)
 
 zAxis=derivMat['zAxis']
@@ -98,6 +98,7 @@ wMat2=np.zeros((nZ,nK))
 errMat=np.zeros((nZ,nK))
 
 senseMat=[[ [] for nn in range(nZ)] for mm in range(nSteps)]
+
 
 #load up files
 for mm,fileName in enumerate(senseList):
@@ -143,7 +144,7 @@ for mm in range(nZ):
             if(not(np.any(np.isinf(dparams)))):
                 plt.plot(xFit,yFit,'bo',label='data')
                 plt.plot(xFit,xFit*params[0]+params[1],'-r',label='fit')
-                plt.savefig(config['STEPPARAM']+'_Output/plots/dSigma_k%d_z%d_%s_%s.png'%(nn,mm,config['ARRAY'],foregrounds))
+                plt.savefig(config['STEPPARAM']+'_'+config['LABEL']+'_Output/plots/dSigma_k%d_z%d_%s_%s.png'%(nn,mm,config['ARRAY'],foregrounds))
                 plt.close()
 #                if(np.abs(params[0])>3.*np.sqrt(dparams[0,0])):
  #                   slope=params[0]
@@ -157,7 +158,7 @@ for mm in range(nZ):
         ddPsList[mm,nn]=slope
 
 #save derivatives
-np.savez(config['STEPPARAM']+'_Output/data/ddData_%s_%s.npz'%(config['ARRAY'],foregrounds),ddGrid=ddPsList,kAxis=kAxis,zAxis=zAxis)
+np.savez(config['STEPPARAM']+'_'+config['LABEL']+'_Output/data/ddData_%s_%s.npz'%(config['ARRAY'],foregrounds),ddGrid=ddPsList,kAxis=kAxis,zAxis=zAxis)
 #now go through senseList but only append if step is zero
 
 for mm,fileName in enumerate(senseList):
@@ -204,8 +205,8 @@ wMat=np.array([wMat1,wMat2])
                  
                  
 
-np.savez(config['STEPPARAM']+'_Output/data/wMatrix_%s_%s_%s_%s.npz'%(config['STEPPARAM'],config['ARRAY'],foregrounds,track),kAxis=derivMat['kAxis'],zAxis=derivMat['zAxis'],wMat=wMat,errMat=errMat)
-np.savez(config['STEPPARAM']+'_Output/data/wMatrix1_%s_%s_%s_%s.npz'%(config['STEPPARAM'],config['ARRAY'],foregrounds,track),kAxis=derivMat['kAxis'],zAxis=derivMat['zAxis'],wMat=wMat1,errMat=errMat)
-np.savez(config['STEPPARAM']+'_Output/data/wMatrix2_%s_%s_%s_%s.npz'%(config['STEPPARAM'],config['ARRAY'],foregrounds,track),kAxis=derivMat['kAxis'],zAxis=derivMat['zAxis'],wMat=wMat2,errMat=errMat)
+np.savez(config['STEPPARAM']+'_'+config['LABEL']+'_Output/data/wMatrix_%s_%s_%s_%s.npz'%(config['STEPPARAM'],config['ARRAY'],foregrounds,track),kAxis=derivMat['kAxis'],zAxis=derivMat['zAxis'],wMat=wMat,errMat=errMat)
+np.savez(config['STEPPARAM']+'_'+config['LABEL']+'_Output/data/wMatrix1_%s_%s_%s_%s.npz'%(config['STEPPARAM'],config['ARRAY'],foregrounds,track),kAxis=derivMat['kAxis'],zAxis=derivMat['zAxis'],wMat=wMat1,errMat=errMat)
+np.savez(config['STEPPARAM']+'_'+config['LABEL']+'_Output/data/wMatrix2_%s_%s_%s_%s.npz'%(config['STEPPARAM'],config['ARRAY'],foregrounds,track),kAxis=derivMat['kAxis'],zAxis=derivMat['zAxis'],wMat=wMat2,errMat=errMat)
 
 

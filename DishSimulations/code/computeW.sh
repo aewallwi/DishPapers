@@ -8,13 +8,13 @@ thisdir=$(pwd)
 if ! [ -d "${thisdir}/${STEPPARAM}_${LABEL}_Output" ]
 then
     mkdir ${thisdir}/${STEPPARAM}_${LABEL}_Output 
+    python computeDerivative.py ${config}
 fi
 #first determine the redshifts to compute sensitivity and power spectra at
 #than for each model, match redshifts and calculate sensitivity. 
 python redshiftFreqs.py ${ZMIN} ${ZMAX} ${DZ} ${thisdir}/${STEPPARAM}_${LABEL}_Output
 
 
-python computeDerivative.py ${config}
 #now run 21cmSense for each reshift
 #get number of steps by listing all run directories
 ls -d 21cmFAST_${STEPPARAM}_step*/>${STEPPARAM}_steplist.txt
@@ -60,13 +60,15 @@ do
     nchan=$(python ../../nChan.py ${bwidth} ${DF})
     echo "bwidth=${bwidth}"
     echo "nchan=${nchan}"
-    if [ "${SAMPLEV}" = "True" ]
+    if [ "${SAMPLEV}" = "False" ]
     then
-	eorFlag="--eor ${psName}"
-    else
 	eorFlag="--eor ps_zeros.txt"
+    else
+	eorFlag="--eor ${psName}"
     fi
+
     mink=$(python ../../mink.py ${z} ${MINDELAY})
+    echo "mink=${mink}"
     #generate sensitivity for pess,mod, and opt scenarios and 1 year of observing. 
     if [ "${ARRAY}" = "mwa" ]  || [ "${ARRAY}" = "lofar" ] 
     then
