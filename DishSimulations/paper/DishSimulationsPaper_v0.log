@@ -1,13 +1,15 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.8)  24 OCT 2015 22:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  29 OCT 2015 18:23
 entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
 **DishSimulationsPaper_v0.tex
-(DishSimulationsPaper_v0.tex
-LaTeX2e <2015/01/01> patch level 2
-Babel <3.9m> and hyphenation patterns for 69 languages loaded.
-(emulateapj.cls
+(./DishSimulationsPaper_v0.tex
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(./emulateapj.cls
 Document Class: emulateapj 
 \bibbaselineskip=\skip41
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\revtex\revtex4-1.cls"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/revtex/revtex4-1.cls
 Document Class: revtex4-1 2010/07/25/20:33:00 4.1r (http://publish.aps.org/revt
 ex4/ for documentation)
  Copyright (c) 2009 The American Physical Society.
@@ -67,7 +69,7 @@ Class revtex4-1 Info: Overriding \@vspace, \@vspacer, \@no@pgbk, \@newline, and
 \widetext@top=\box39
 \widetext@bot=\box40
 Class revtex4-1 Info: Selecting society aps on input line 7542.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\revtex\aps4-1.rtx"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/revtex/aps4-1.rtx
 File: aps4-1 2010/07/25/20:33:00 4.1r (http://publish.aps.org/revtex4/ for docu
 mentation)
 Class revtex4-1 Info: RevTeX society APS selected on input line 31.
@@ -75,19 +77,19 @@ Class revtex4-1 Info: RevTeX society APS selected on input line 31.
 Class revtex4-1 Info: Selecting journal pra on input line 7544.
 Class revtex4-1 Info: APS journal PRA selected on input line 7545.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\revtex\aps10pt4-1.rtx"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/revtex/aps10pt4-1.rtx
 File: aps10pt4-1 2010/07/25/20:33:00 4.1r (http://publish.aps.org/revtex4/ for 
 documentation)
 Class revtex4-1 Info: RevTeX pointsize 10pt selected on input line 30.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\textcase\textcase.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/textcase/textcase.sty
 Package: textcase 2004/10/07 v0.07 Text only upper/lower case changing (DPC)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\url\url.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\natbib\natbib.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip45
 \bibsep=\skip46
@@ -96,42 +98,42 @@ LaTeX Info: Redefining \cite on input line 694.
 )
 Class revtex4-1 Info: Repairing natbib's \BibitemShut on input line 7549.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\revtex\revsymb4-1.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/revtex/revsymb4-1.sty
 Package: revsymb4-1 2010/07/25/20:33:00 4.1r (http://publish.aps.org/revtex4/ f
 or documentation)
 LaTeX Info: Redefining \REV@mathfrak on input line 119.
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\latexsym.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/latexsym.sty
 Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 \symlasy=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 (Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks16
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
-File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 94.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count95
@@ -139,10 +141,10 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen102
 \Gin@req@width=\dimen103
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks17
 \symAMSa=\mathgroup5
@@ -152,7 +154,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 LaTeX Info: Redefining \frak on input line 111.
 LaTeX Info: Redefining \Bbb on input line 113.
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\longtable.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip47
 \LTright=\skip48
@@ -170,7 +172,7 @@ Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \c@LT@chunks=\count100
 \LT@p@ftn=\toks18
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\epsf\epsf.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/generic/epsf/epsf.sty
 This is `epsf.tex' v2.7.4 <14 February 2011>
 \epsffilein=\read1
 \epsfframemargin=\dimen105
@@ -202,26 +204,26 @@ This is `epsf.tex' v2.7.4 <14 February 2011>
 \DT@p@ftn=\toks21
 \pt@column=\count107
 \pt@ncol=\count108
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip58
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks22
 \ex@=\dimen115
 )
 LaTeX Info: Redefining \text on input line 39.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen116
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count109
@@ -269,7 +271,9 @@ Class revtex4-1 Info: cite was not loaded (OK!) on input line 7.
 Class revtex4-1 Info: mcite was not loaded (OK!) on input line 7.
 Class revtex4-1 Info: multicol was not loaded (OK!) on input line 7.
 
-(DishSimulationsPaper_v0.aux)
+(./DishSimulationsPaper_v0.aux)
+\openout1 = `DishSimulationsPaper_v0.aux'.
+
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
@@ -283,7 +287,7 @@ LaTeX Font Info:    ... okay on input line 7.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count121
 \scratchdimen=\dimen124
@@ -296,19 +300,69 @@ LaTeX Font Info:    ... okay on input line 7.
 \MPnumerator=\count125
 \makeMPintoPDFobject=\count126
 \everyMPtoPDFconversion=\toks28
+) (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 30.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ulasy.fd"
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\openout3 = `DishSimulationsPaper_v0Notes.bib'.
+
+LaTeX Font Info:    Try loading font information for U+lasy on input line 32.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 30.
+LaTeX Font Info:    Try loading font information for U+msa on input line 32.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 30.
+LaTeX Font Info:    Try loading font information for U+msb on input line 32.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
@@ -316,89 +370,169 @@ Class revtex4-1 Warning: Assuming \noaffiliation for authors.
 
 
 Package natbib Warning: Citation `Tingay:2013' on page 1 undefined on input lin
-e 33.
+e 35.
 
 
 Package natbib Warning: Citation `Thyagarjan:2015c' on page 1 undefined on inpu
-t line 40.
+t line 42.
 
-[1{C:/Users/Aaron/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 42.
+[1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 44.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 42.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 44.
 
-<figures/DishSA.png, id=18, 4047.12pt x 3035.34pt>
+<figures/DishSA.png, id=19, 4047.12pt x 3035.34pt>
 File: figures/DishSA.png Graphic file (type png)
  <use figures/DishSA.png>
-Package pdftex.def Info: figures/DishSA.png used on input line 48.
+Package pdftex.def Info: figures/DishSA.png used on input line 50.
 (pdftex.def)             Requested size: 256.55872pt x 192.39458pt.
 
-Overfull \hbox (11.29219pt too wide) in paragraph at lines 48--49
-[][] 
- []
-
-<figures/One_dish_Pfeed_render_pw_0deg.png, id=19, 1461.46pt x 561.09625pt>
-File: figures/One_dish_Pfeed_render_pw_0deg.png Graphic file (type png)
-
-<use figures/One_dish_Pfeed_render_pw_0deg.png>
-Package pdftex.def Info: figures/One_dish_Pfeed_render_pw_0deg.png used on inpu
-t line 90.
-(pdftex.def)             Requested size: 256.55872pt x 98.49297pt.
-
-Overfull \hbox (11.29219pt too wide) in paragraph at lines 90--91
+Overfull \hbox (11.29219pt too wide) in paragraph at lines 50--51
 [][] 
  []
 
 [2 <./figures/DishSA.png (PNG copy)>]
-<figures/SimulationIllustration.png, id=28, 701.7417pt x 272.4579pt>
+<figures/One_dish_Pfeed_render_pw_0deg.png, id=27, 1461.46pt x 561.09625pt>
+File: figures/One_dish_Pfeed_render_pw_0deg.png Graphic file (type png)
+
+<use figures/One_dish_Pfeed_render_pw_0deg.png>
+Package pdftex.def Info: figures/One_dish_Pfeed_render_pw_0deg.png used on inpu
+t line 108.
+(pdftex.def)             Requested size: 256.55872pt x 98.49297pt.
+
+Overfull \hbox (11.29219pt too wide) in paragraph at lines 108--109
+[][] 
+ []
+
+<figures/SimulationIllustration.png, id=29, 701.7417pt x 272.4579pt>
 File: figures/SimulationIllustration.png Graphic file (type png)
 
 <use figures/SimulationIllustration.png>
 Package pdftex.def Info: figures/SimulationIllustration.png used on input line 
-95.
+113.
 (pdftex.def)             Requested size: 513.11743pt x 199.2335pt.
- (DishSimulationsPaper_v0.bbl) [3 <./figures/One_dish_Pfeed_render_pw_0deg.png>
-] [4 <./figures/SimulationIllustration.png>]
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 124.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 124.
+
+<figures/frequency_domain.pdf, id=30, 596.2275pt x 460.72125pt>
+File: figures/frequency_domain.pdf Graphic file (type pdf)
+
+<use figures/frequency_domain.pdf>
+Package pdftex.def Info: figures/frequency_domain.pdf used on input line 133.
+(pdftex.def)             Requested size: 256.55872pt x 198.24687pt.
+
+Overfull \hbox (11.29219pt too wide) in paragraph at lines 133--134
+[][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/compareSimToDataNormalized.pdf, id=31, 632.19942pt x 518.22675pt>
+File: figures/compareSimToDataNormalized.pdf Graphic file (type pdf)
+
+<use figures/compareSimToDataNormalized.pdf>
+Package pdftex.def Info: figures/compareSimToDataNormalized.pdf used on input l
+ine 150.
+(pdftex.def)             Requested size: 256.55872pt x 210.30768pt.
+
+Overfull \hbox (11.29219pt too wide) in paragraph at lines 150--151
+[][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[3 <./figures/One_dish_Pfeed_render_pw_0deg.png>] [4 <./figures/SimulationIllus
+tration.png> <./figures/frequency_domain.pdf> <./figures/compareSimToDataNormal
+ized.pdf
+
+pdfTeX warning: /usr/texbin/pdflatex (file ./figures/compareSimToDataNormalized
+.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+
+Package natbib Warning: Citation `Morales:2004' on page 5 undefined on input li
+ne 165.
+
+
+Package natbib Warning: Citation `Fixsen:2008' on page 5 undefined on input lin
+e 169.
+
+<figures/cleaning_noise.pdf, id=157, 722.7pt x 722.7pt>
+File: figures/cleaning_noise.pdf Graphic file (type pdf)
+
+<use figures/cleaning_noise.pdf>
+Package pdftex.def Info: figures/cleaning_noise.pdf used on input line 172.
+(pdftex.def)             Requested size: 256.55872pt x 256.55478pt.
+
+Overfull \hbox (11.29219pt too wide) in paragraph at lines 172--173
+[][] 
+ []
+
+<figures/resid_5sigma_compare.pdf, id=158, 803.0pt x 674.16681pt>
+File: figures/resid_5sigma_compare.pdf Graphic file (type pdf)
+
+<use figures/resid_5sigma_compare.pdf>
+Package pdftex.def Info: figures/resid_5sigma_compare.pdf used on input line 18
+0.
+(pdftex.def)             Requested size: 256.55872pt x 215.39832pt.
+
+Overfull \hbox (11.29219pt too wide) in paragraph at lines 180--181
+ [][] 
+ []
+
+(./DishSimulationsPaper_v0.bbl [5 <./figures/cleaning_noise.pdf> <./figures/res
+id_5sigma_compare.pdf
+
+pdfTeX warning: /usr/texbin/pdflatex (file ./figures/resid_5sigma_compare.pdf):
+ PDF inclusion: multiple pdfs with page group included in a single page
+>]) [6]
 
 Package natbib Warning: There were undefined citations.
 
-[5] (DishSimulationsPaper_v0.aux) ) 
+[7] (./DishSimulationsPaper_v0.aux) ) 
 Here is how much of TeX's memory you used:
- 4689 strings out of 493673
- 60390 string characters out of 3141531
- 163829 words of memory out of 3000000
- 7979 multiletter control sequences out of 15000+200000
- 14415 words of font info for 58 fonts, out of 3000000 for 9000
- 1025 hyphenation exceptions out of 8191
- 35i,14n,29p,2463b,317s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmbx5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmbx7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmcsc10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmex10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmmi10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmmi5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmmi7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
-5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pf
-b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Fil
-es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files 
-(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x8
-6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on DishSimulationsPaper_v0.pdf (5 pages, 13359491 bytes).
+ 5097 strings out of 493089
+ 68225 string characters out of 6134842
+ 170615 words of memory out of 5000000
+ 8481 multiletter control sequences out of 15000+600000
+ 16351 words of font info for 65 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 39i,14n,29p,2463b,381s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmbsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmbx5.pfb></usr/local/texlive/2015/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmib10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
+0.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.
+pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pf
+b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></u
+sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb>
+Output written on DishSimulationsPaper_v0.pdf (7 pages, 13469274 bytes).
 PDF statistics:
- 108 PDF objects out of 1000 (max. 8388607)
+ 376 PDF objects out of 1000 (max. 8388607)
+ 153 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

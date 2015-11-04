@@ -1,0 +1,86 @@
+File Endings:
+    *.csv       linear data
+    *_DB.csv    log data
+    *_P.csv     phase data
+    *_FFT.csv   fourier transformed data
+
+Basic Specs:
+    Feed impedance is 125Ω
+    Frequency bandwidth is 50MHz-500MHz
+
+_________________________________________________________________________________________________
+
+
+“Bottom Balun”  (4:1 balun close to dipole) w/Original Cable
+
+    OC_6_B              feed 6ft from top of hub
+    OC_9_B              … 9ft …
+    OC_12_B             … 12ft …
+    OC_15_B             … 15ft …
+
+“Top Balun” (4:1 balun away from dipole) w/Original Cable
+
+    OC_6_T              feed 6ft from top of hub
+        *missing OC_6_T_P.csv
+    OC_9_T              … 9ft …
+    OC_12_T             … 12ft …
+    OC_15_T             … 15ft …
+
+*All future measurements below are taken using the “bottom balun”
+*All future measurements below use a new cable (~75ft), which is 1.5x the length of the previous cable
+
+4:1 Balun w/New Cable
+
+    NC41_6              feed 6ft from top of hub
+        *missing NC41_6_FFT.csv
+    NC41_9              … 9ft …
+    NC41_12             … 12ft …
+    NC41_15             … 15ft …
+
+2:1 Balun w/New Cable
+
+    NC21_6              feed 6ft from top of hub
+    NC21_9              … 9ft …
+    NC21_12             … 12ft …
+    NC21_15             … 15ft …
+
+4:1 Balun w/New Cable (repeated)
+
+    NCR41_6             feed 6ft from top of hub
+    NCR41_9             … 9ft …
+    NCR41_12            … 12ft …
+    NCR41_15            … 15ft …
+
+2:1 Balun w/New Cable (repeated)
+
+    NCR21_6             feed 6ft from top of hub
+    NCR21_9             … 9ft …
+    NCR21_12            … 12ft …
+    NCR21_15            … 15ft …
+
+Feed Alone, 4:1 Balun w/New Cable
+
+    FA_NC41_3           feed 3ft above the ground
+    FA_NC41_AB_3        feed 3ft above echosorb
+    FA_NC41_AB_1.5      feed 1.5ft above echosorb
+
+Feed Alone, 2:1 Balun w/New Cable
+
+    FA_NC21_AB_3        feed 3ft above echosorb
+    FA_NC21_AB_1.5      feed 1.5ft above echosorb
+
+Feed in Cage, 4:1 Balun w/New Cable
+
+    FC_NC41             feed in cage on ground
+    FC_NC41_AB          feed in cage on echosorb
+
+Feed in Cage, 2:1 Balun w/New Cable
+
+    FC_NC21             feed in cage on ground
+    FC_NC21_AB          feed in cage on echosorb
+
+Feed in Cage Upside-Down, 4:1 Balun w/New Cable
+
+    FC_NC41_UD
+
+
