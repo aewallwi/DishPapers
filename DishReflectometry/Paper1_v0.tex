@@ -55,24 +55,69 @@ weakness of this hyperfine line keeps the 21~cm signal below opacity throughout
 cosmological history, but it also creates sensitivity and calibration
 challenges that have yet to be fully solved.  With noise temperatures dominated
 by sky noise \citep{XXX} and foregrounds four to five orders of magnitude
-brighter than the signal \citep{XXX}, 21~cm reionization experiments must
+brighter than the signal \citep{XXX}, 
+sky-averaged 21~cm monopole experiments such as
+(EDGES; \citealt{XXX}),
+(BIGHORNS; \citealt{XXX}),
+(SARAS; \citealt{patra_et_al2014}),
+(SCIHI; \citealt{voytek_et_al2014}),
+(HyPerion; \citealt{presley_et_al2015})
+% XXX others?
+and 21~cm reionization power spectrum experiments such as
+the LOw Frequency ARray (LOFAR; \citealt{XXX}),
+the Murchison Widefield Array (MWA; \citealt{XXX}),
+the Giant Metre-wave Radio Telescop (GMRT; \citealt{XXX}),
+the Donald C. Backer Precision Array to Probe the Epoch of Reionization (PAPER; \citealt{parsons_et_al2010}),
+the Hydrogen Epoch of Reionization Array (HERA; \citealt{XXX}),
+and the future Square Kilometre Array (SKA; \citealt{XXX})
+must
 furnish both collecting area and foreground suppression at levels significantly
 beyond anything previously achieved in radio telescopes operating below 1 GHz.
 
-One of the most problematic effects facing these experiments results form instrument
+One of the most problematic effects facing these experiments is instrument
 chromaticity.  The spectral dimension of 21~cm reionization experiments is of vital
 importance; for line emission, this coordinate translates to a line-of-sight distance
 that can be used to construct three-dimensional maps (and power spectra) of emission,
 as well as probe the evolution of 21~cm emission over cosmological timescales.
 The evolving response of a radio telescope --- either a single dish
-or an interferometer --- versus spectral frequency modulates spectrally smooth foregrounds ,
+or an interferometer --- versus spectral frequency modulates spectrally smooth foregrounds,
 contaminating spectral modes that might
 otherwise be used to measure reionization \citep{XXX}.  Moreover, the chromaticity of
-a telescope's response pattern scales linearly with diameter, putting the
+a telescope's response scales linearly with diameter, putting the
 needs of foreground suppression and signal sensitivity in direct tension with one
 another.
 
-% XXX the wedge
+A major step forward for the field of 21~cm cosmology has been the development
+of a mathematical description of telescope chromaticity, how it varies with
+element separation (or telescope diameter), and what it implies for distinguishing
+foreground emission from the cosmological 21~cm signal \citep{XXX}.  The ``wedge'', as it is
+colloquially known, describes a linear relationship between the separation between elements
+in an interferometric baseline and the maximum line-of-sight Fourier mode\footnote{Assuming
+a flat sky, and using appropriate
+cosmological scalars,
+the spectral axis, $\nu$, and angle on the sky, $\vec\theta$, translate to coordinates in
+a three-dimensional volume at cosmological distances.  In describing the spatial power spectrum of
+emission in this volume $P(\vec k)$, we use the three-dimensional wave vector 
+$\vec k\equiv(k_\parallel,\vec k_\perp)$, where $k_\parallel$ is aligned with the
+spectral axis $\nu$, and $\vec k_\perp$ lies in the plane of the sky.}
+that may be occupied by smooth spectrum foreground emission.  At low-order $k_\parallel$ modes
+within the limits of the wedge,
+foreground contamination may be suppressed through a combination of calibration and model 
+subtraction.  However, calibration or modeling errors rapidly re-establish the characteristic
+wedge pattern.  Outside of the wedge, foreground contamination drops rapidly 
+\citep{pober_et_al2013,thargarajan_et_al2015}, provided that the spectral responses
+of antenna elements and analog electronics are sufficiently smooth\footnote{Here, we distinguish
+the chromaticity of the elements in isolation from the chromaticity inherent to
+element separation in an interferometric baseline.}.  In promising avoidance-based
+foreground strategy employed by PAPER \citep{parsons_et_al2014,ali_et_al2015}, these modes
+may be targeted as the lowest risk path for contraining 21~cm reionization in the near term.
+
+In this paper, we examine the performance of a new prototype HERA element in the context of
+this new wedge-based framework.  In coordination with \citet{XXXsisterpapers}, we compare 
+reflectometry measurements with
+a specification for the spectral performance of an element, given models of the relative brightness of
+foreground and 21~cm reionization modes in $k$-space.  
+% XXX document map
 
 
 
