@@ -1,0 +1,472 @@
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  22 OCT 2015 12:20
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**DishBeamMeasurementsMemo
+(./DishBeamMeasurementsMemo.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2012-05-30, ngerman-x-2012-05-30, afrikaans, ancientgreek, ibycus, arabi
+c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
+h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
+h, french, friulan, galician, german, ngerman, swissgerman, monogreek, greek, h
+ungarian, icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, ma
+rathi, oriya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, 
+kurmanji, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk,
+ polish, portuguese, romanian, romansh, russian, sanskrit, serbian, serbianc, s
+lovak, slovenian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, 
+welsh, loaded.
+(/usr/local/texlive/2012/texmf-dist/tex/latex/aastex/aastex.cls
+Document Class: aastex 2005/06/22 5.2/AAS markup document class
+Class aastex Info: Original \LaTeX2.09 style by Chris Biemesderfer (chris@seago
+at.com). Adapted to \LaTeXe by A. Ogawa (ogawa@teleport.com) on input line 83.
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2009/06/22 v3.00
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\@emptytoks=\toks15
+\symAMSa=\mathgroup5
+\symAMSb=\mathgroup6
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+))
+(/usr/local/texlive/2012/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip43
+\bibsep=\skip44
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count88
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks16
+\verbatim@line=\toks17
+\verbatim@in@stream=\read1
+)
+\@slugcmmntwidth=\dimen105
+\abstract@box=\box26
+\c@editornote=\count89
+\c@cureqno=\count90
+\tnotemarkskip=\skip45
+\@abovenoteskip=\dimen106
+\pt@box=\box27
+\pt@width=\dimen107
+\pt@line=\count91
+\pt@column=\count92
+\pt@nlines=\count93
+\pt@ncol=\count94
+\pt@page=\count95
+\tabbaseskip=\dimen108
+\pt@tmpcapwidth=\dimen109
+\spew@tblnotesbox=\box28
+\restof@tblnotesbox=\box29
+\noteheight=\dimen110
+\pt@tabnoteminht=\dimen111
+\firsttabskip=\dimen112
+\captionbox=\box30
+\pt@reduceline=\dimen113
+\extra@vspace=\dimen114
+\c@plate=\count96
+\my@footins=\box31
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip46
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks18
+\ex@=\dimen115
+))
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen116
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count97
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count98
+\leftroot@=\count99
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count100
+\DOTSCASE@=\count101
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box32
+\strutbox@=\box33
+\big@size=\dimen117
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count102
+\c@MaxMatrixCols=\count103
+\dotsspace@=\muskip10
+\c@parentequation=\count104
+\dspbrk@lvl=\count105
+\tag@help=\toks19
+\row@=\count106
+\column@=\count107
+\maxfields@=\count108
+\andhelp@=\toks20
+\eqnshift@=\dimen118
+\alignsep@=\dimen119
+\tagshift@=\dimen120
+\tagwidth@=\dimen121
+\totwidth@=\dimen122
+\lineht@=\dimen123
+\@envbody=\toks21
+\multlinegap=\skip47
+\multlinetaggap=\skip48
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(./DishBeamMeasurementsMemo.aux)
+\openout1 = `DishBeamMeasurementsMemo.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+
+(/usr/local/texlive/2012/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count109
+\scratchdimen=\dimen124
+\scratchbox=\box34
+\nofMPsegments=\count110
+\nofMParguments=\count111
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count112
+\MPscratchDim=\dimen125
+\MPnumerator=\count113
+\makeMPintoPDFobject=\count114
+\everyMPtoPDFconversion=\toks24
+) (/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+AAS preprint substyle, v5.2 <12 Dec 2003>.
+<null1_rel.png, id=1, 722.7pt x 939.51pt>
+File: null1_rel.png Graphic file (type png)
+ <use null1_rel.png>
+Package pdftex.def Info: null1_rel.png used on input line 116.
+(pdftex.def)             Requested size: 433.62pt x 563.71036pt.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 117.
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 117.
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 117.
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+
+LaTeX Warning: Float too large for page by 28.04144pt on input line 119.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<null3_rel.png, id=2, 722.7pt x 939.51pt>
+File: null3_rel.png Graphic file (type png)
+ <use null3_rel.png>
+Package pdftex.def Info: null3_rel.png used on input line 122.
+(pdftex.def)             Requested size: 433.62pt x 563.71036pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<null4_rel.png, id=3, 722.7pt x 939.51pt>
+File: null4_rel.png Graphic file (type png)
+ <use null4_rel.png>
+Package pdftex.def Info: null4_rel.png used on input line 128.
+(pdftex.def)             Requested size: 433.62pt x 563.71036pt.
+
+
+LaTeX Warning: Float too large for page by 25.91228pt on input line 131.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<feed0_abs.png, id=4, 722.7pt x 939.51pt>
+File: feed0_abs.png Graphic file (type png)
+ <use feed0_abs.png>
+Package pdftex.def Info: feed0_abs.png used on input line 136.
+(pdftex.def)             Requested size: 433.62pt x 563.71036pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<dish3_abs.png, id=5, 722.7pt x 939.51pt>
+File: dish3_abs.png Graphic file (type png)
+ <use dish3_abs.png>
+Package pdftex.def Info: dish3_abs.png used on input line 144.
+(pdftex.def)             Requested size: 433.62pt x 563.71036pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<dish1_abs.png, id=6, 722.7pt x 939.51pt>
+File: dish1_abs.png Graphic file (type png)
+ <use dish1_abs.png>
+Package pdftex.def Info: dish1_abs.png used on input line 150.
+(pdftex.def)             Requested size: 433.62pt x 563.71036pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<dish2_abs.png, id=7, 722.7pt x 939.51pt>
+File: dish2_abs.png Graphic file (type png)
+ <use dish2_abs.png>
+Package pdftex.def Info: dish2_abs.png used on input line 156.
+(pdftex.def)             Requested size: 433.62pt x 563.71036pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<dish4_abs.png, id=8, 722.7pt x 939.51pt>
+File: dish4_abs.png Graphic file (type png)
+ <use dish4_abs.png>
+Package pdftex.def Info: dish4_abs.png used on input line 162.
+(pdftex.def)             Requested size: 433.62pt x 563.71036pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<measbeam_raw.png, id=9, 593.21625pt x 589.20125pt>
+File: measbeam_raw.png Graphic file (type png)
+ <use measbeam_raw.png>
+Package pdftex.def Info: measbeam_raw.png used on input line 170.
+(pdftex.def)             Requested size: 252.94499pt x 251.22984pt.
+
+<measbeam_interp.png, id=11, 593.21625pt x 589.20125pt>
+File: measbeam_interp.png Graphic file (type png)
+
+<use measbeam_interp.png>
+Package pdftex.def Info: measbeam_interp.png used on input line 171.
+(pdftex.def)             Requested size: 252.94499pt x 251.22984pt.
+
+<measbeam_interp_expcutoff.png, id=12, 593.21625pt x 589.20125pt>
+File: measbeam_interp_expcutoff.png Graphic file (type png)
+
+<use measbeam_interp_expcutoff.png>
+Package pdftex.def Info: measbeam_interp_expcutoff.png used on input line 172.
+(pdftex.def)             Requested size: 252.94499pt x 251.22984pt.
+
+Overfull \hbox (38.56833pt too wide) in paragraph at lines 170--173
+[][] []
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<beams.png, id=13, 525.965pt x 508.90125pt>
+File: beams.png Graphic file (type png)
+ <use beams.png>
+Package pdftex.def Info: beams.png used on input line 179.
+(pdftex.def)             Requested size: 361.34999pt x 349.64355pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<LST0deg_14m_42m_EWbaselinesblackman.png, id=14, 978.65625pt x 591.20876pt>
+File: LST0deg_14m_42m_EWbaselinesblackman.png Graphic file (type png)
+
+<use LST0deg_14m_42m_EWbaselinesblackman.png>
+Package pdftex.def Info: LST0deg_14m_42m_EWbaselinesblackman.png used on input 
+line 185.
+(pdftex.def)             Requested size: 397.48499pt x 240.12384pt.
+
+<LST60deg_14m_42m_EWbaselinesblackman.png, id=15, 978.65625pt x 591.20876pt>
+File: LST60deg_14m_42m_EWbaselinesblackman.png Graphic file (type png)
+
+<use LST60deg_14m_42m_EWbaselinesblackman.png>
+Package pdftex.def Info: LST60deg_14m_42m_EWbaselinesblackman.png used on input
+ line 186.
+(pdftex.def)             Requested size: 397.48499pt x 240.12384pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--187
+[][]
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+<LST0deg_14m_42m_NSslantbaselinesblackman.png, id=16, 978.65625pt x 591.20876pt
+>
+File: LST0deg_14m_42m_NSslantbaselinesblackman.png Graphic file (type png)
+ <use LST0deg_14m_42m_NSslantbaselinesblackman.png>
+Package pdftex.def Info: LST0deg_14m_42m_NSslantbaselinesblackman.png used on i
+nput line 193.
+(pdftex.def)             Requested size: 397.48499pt x 240.12384pt.
+
+<LST0deg_14m_42m_SEslantbaselinesblackman.png, id=17, 978.65625pt x 591.20876pt
+>
+File: LST0deg_14m_42m_SEslantbaselinesblackman.png Graphic file (type png)
+ <use LST0deg_14m_42m_SEslantbaselinesblackman.png>
+Package pdftex.def Info: LST0deg_14m_42m_SEslantbaselinesblackman.png used on i
+nput line 194.
+(pdftex.def)             Requested size: 397.48499pt x 240.12384pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--195
+[][]
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+(./DishBeamMeasurementsMemo.bbl) [1
+
+{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2 <./n
+ull1_rel.png (PNG copy)>] [3 <./null3_rel.png (PNG copy)>] [4 <./null4_rel.png 
+(PNG copy)>] [5 <./feed0_abs.png (PNG copy)>] [6 <./dish3_abs.png (PNG copy)>] 
+[7 <./dish1_abs.png (PNG copy)>] [8 <./dish2_abs.png (PNG copy)>] [9 <./dish4_a
+bs.png (PNG copy)>] [10 <./measbeam_raw.png> <./measbeam_interp.png> <./measbea
+m_interp_expcutoff.png>] [11 <./beams.png>]
+[12 <./LST0deg_14m_42m_EWbaselinesblackman.png> <./LST60deg_14m_42m_EWbaselines
+blackman.png>] [13 <./LST0deg_14m_42m_NSslantbaselinesblackman.png> <./LST0deg_
+14m_42m_SEslantbaselinesblackman.png>] (./DishBeamMeasurementsMemo.aux) ) 
+Here is how much of TeX's memory you used:
+ 3403 strings out of 493488
+ 44455 string characters out of 3141326
+ 104864 words of memory out of 3000000
+ 6640 multiletter control sequences out of 15000+200000
+ 11921 words of font info for 49 fonts, out of 3000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 38i,7n,26p,539b,251s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/
+local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/l
+ocal/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/lo
+cal/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
+l/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/t
+exlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texl
+ive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
+ve/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on DishBeamMeasurementsMemo.pdf (13 pages, 5271124 bytes).
+PDF statistics:
+ 100 PDF objects out of 1000 (max. 8388607)
+ 53 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+
