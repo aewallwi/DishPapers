@@ -13,7 +13,7 @@ DHcm=DH*3.08567758e24#hubble distance in cm
 kb=1.38e-23
 jy=1e-26
 mH=1.6726231e-24
-pl13.Ob0=0.022068/(pl13.H0.value/1e2)**2.
+#pl13.Ob0=0.022068/(pl13.H0.value/1e2)**2.
 
 
 

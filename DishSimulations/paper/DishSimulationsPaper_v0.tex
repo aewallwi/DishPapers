@@ -1,4 +1,4 @@
-\documentclass[twocolumn]{emulateapj}
+\documentclass[preprint]{emulateapj}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{natbib}
@@ -8,16 +8,17 @@
 \title{The Hydrogen Epoch of Reionization Array Dish: Characterization with Electromagnetic Simulations}
 \author{
 Ewall-Wice Aaron\altaffilmark{1,2},
-Bradley Richard\altaffilmark{3,4},
+Abraham Neben\altaffilmark{1,2},
+Nipanjana Patra\altaffilmark{5},
+Thyagarajan Nithyanandan\altaffilmark{6},
+Richard Bradley\altaffilmark{3,4},
 Jacqueline Hewitt\altaffilmark{1,2},
 Ali S. Zaki\altaffilmark{5},
 Bowman Judd\altaffilmark{6},
 Cheng Carina\altaffilmark{5},
-David Deboer\altaffilmark{5},
-Neben Abraham\altaffilmark{1,2},
+Deboer David\altaffilmark{5},
 Parsons Aaron\altaffilmark{5},
-Patra Nipanjana\altaffilmark{5},
-Thyagarajan Nithyanandan\altaffilmark{6},
+Venter Mariet\altaffilmark{7}
 and others.
 }
 
@@ -27,6 +28,7 @@ and others.
 \altaffiltext{4}{Dept. of Astronomy, U. Virginia, Charlottesville VA}
 \altaffiltext{5}{Astronomy Dept. U. California, Berkeley CA}
 \altaffiltext{6}{School of Earth and Space Exploration, Arizona State U.,
+\altaffiltext{7}{Stellenbosh}
 Tempe AZ}
 \begin{abstract}
 Using electromagnetic simulations, we assess the spectral properties of the antenna element of the Hydrogen Epoch of Reionization Array (HERA) in order to both establish a specification for the degree of spectral structure that is permissible to sufficiently isolate foregrounds and allow a detection of the cosmological 21\,cm signal and verify direct laboratory measurements of the dish characteristics. We find that our simulations are in good agreement with field measurements. Using simulations of foregrounds, we find that the $\approx -40$\,dB response at 60\,ns of the HERA dish is sufficient to isolate the cosmological 21\,cm signal $\approx 0.2$\,$h$Mpc$^{-1}$ at $z\approx 8.5$ and obtain a high signal to noise detection of the power spectrum.
@@ -47,19 +49,19 @@ This paper is organized as follows. In \S~\ref{sec:Formalism} we lay out our ana
 In this section, we show how reflections in the analogue signal path of an antenna lead to foreground contamination of the EoR window. HERA's primary antenna element consists of a sleeved dipole element suspended 5\,m above the focus of a 14\,m diameter parabolic dish (Fig.~\ref{fig:Dish}).
 
 \begin{figure}
-\includegraphics[width=.5\textwidth]{figures/DishSA.png}
+%\includegraphics[width=.5\textwidth]{figures/DishSA.png}
 \caption{The HERA primary antenna element-one of 19 undergoing currently taking the first observations in the Karoo in South Africa. The antenna consists of a sleeved dipole suspended within a 2\,m diameter skirt, five meters above the ground at the focal point of a 14\,m diameter dish.}\label{fig:Dish}
 \end{figure}
 
  We show in Appendix~\ref{app:Reflections} that if an astronomical radio signal with time dependence at the location of the feed, $s({\bf \hat{k}},t)$, experience reflections within the dish such that the voltage recorded in the feed is 
 \begin{equation}
-v(t) = \sum_n r_n({\bf \hat{k}}) s({\bf \hat{k}},t - \tau_n)
+v_i(t) = \sum_n r_i({\bf \hat{k}},\tau_n) s({\bf \hat{k}},t - \tau_n)
 \end{equation}
 Than the resulting visibilities obtained by cross correlating antenna $i$ and antenna $j$ are given by 
 \begin{equation}
-V'_{ij}(f) = \sum_{m,n} \int d \Omega R_{mn}({\bf \hat{k}}) e^{2 \pi i \Delta \tau_{mn}f} e^{2 \pi i {\bf u}_{ij} \cdot {\bf \hat{k}}} I(f,{\bf \hat{s}}),
+V'_{ij}(f) = \sum_{m,n} \int d \Omega R_{ij}({\bf \hat{k}},\Delta \tau_{mn}) e^{2 \pi i \Delta \tau_{mn}f} e^{2 \pi i {\bf u}_{ij} \cdot {\bf \hat{k}}} I(f,{\bf \hat{s}}),
 \end{equation}
-where $R_{mn}({\bf \hat{s}})=r_m r_n^*$, $I(f,{\bf \hat{s}})$ is the intensity of the signal on the sky, and can be decomposed into foregrounds and signal
+where $R_{ij}({\bf \hat{s}},\Delta \tau_{mn})=r_m r_n^*$, $I(f,{\bf \hat{s}})$ is the intensity of the signal on the sky, and can be decomposed into foregrounds and signal
 \begin{equation}
 I(f,{\bf \hat{s}}) = I_{fg}(f,{\bf \hat{s}})+I_{21}(f,{\bf \hat{s}})
 \end{equation}
@@ -71,9 +73,9 @@ should, in principle, separate the foregrounds from the signal with foregrounds 
 \begin{equation}
 \widetilde{V}_{ij}'(\tau) = \sum_{m,n} \widetilde{V}_{ij,FG}^{mn}(\tau - \Delta \tau_{mn}) + \widetilde{V}_{ij,21}^{mn}(\tau - \Delta \tau_{mn})
 \end{equation}
-where $V_{ij}^{mn}$ is a visibility resulting from the effective primary beam, $R_{mn}({\bf \hat{k}})$, at delay $\Delta \tau_{mn}$ induced by the reflections.
+where $V_{ij}^{mn}$ is a visibility resulting from the effective primary beam, $R_{ij}({\bf \hat{k}},\Delta \tau_{mn})$, at delay $\Delta \tau_{mn}$ induced by the reflections.
 \begin{equation}
-V_{ij}^{mn} = \int d \Omega R_{mn}({\bf \hat{s}}) I(f,{\bf \hat{s}})e^{2 \pi i {\bf u}_{ij} \cdot {\bf \hat{s}}}
+V_{ij}^{mn} = \int d \Omega R_{ij}({\bf \hat{s}},\Delta \tau_{mn}) I(f,{\bf \hat{s}})e^{2 \pi i {\bf u}_{ij} \cdot {\bf \hat{s}}}
 \end{equation}
 The delay transform power spectrum estimate, $\widehat{P}$, is proportional to $|\widetilde{V}_{ij}'|^2$, hence 
 \begin{align}\label{eq:Reflections}
@@ -81,23 +83,27 @@ The delay transform power spectrum estimate, $\widehat{P}$, is proportional to $
 &+ \sum_{|\Delta \tau_{mn}| > 0} 2 \text{Re} \left[   \widetilde{V}^*_{ij} (\tau) \widetilde{V}^{mn}_{ij} (\tau - \Delta \tau_{mn})  \right] \nonumber \\
 &+ \sum_{\substack{|\Delta \tau_{op}|>0\\|\Delta \tau_{mn}|>0}} \widetilde{V}^{mn}_{ij} (\tau - \Delta \tau_{mn}) \widetilde{V}^{op*}_{ij}(\tau - \Delta \tau_{op})
 \end{align}
-In the absence of reflections, only the top line of equation~\ref{eq:Reflections} would enter the delay power spectrum estimate. The following lines involve the translation of the signal (including foregrounds and signal) out to the delay of each reflection and weighted by the effective primary beam of the reflection. Since each translated visibility is intrinsically $\sim 10^6$ times brighter than the signal, any reflection with a delay large enough to place it within the EoR window, must be sufficiently attenuated by $R_{mn}({\bf \hat{k}})$. The precise degree of attenuation is determined in \citep{Thyagarajan:2015c} using simulations of foregrounds and noise and sets the spec for our antenna.
+In the absence of reflections, only the top line of equation~\ref{eq:Reflections} would enter the delay power spectrum estimate. The following lines involve the translation of the signal (including foregrounds and signal) out to the delay of each reflection and weighted by the effective primary beam of the reflection. Since each translated visibility is intrinsically $\sim 10^6$ times brighter than the signal, any reflection with a delay large enough to place it within the EoR window, must be sufficiently attenuated by $R_{ij}({\bf \hat{k}},\Delta \tau_{mn})$.% The precise degree of attenuation is determined in \citep{Thyagarajan:2015c} using simulations of foregrounds and noise and sets the spec for our antenna.
 
-It is instructive to examine, in more detail, the case where $r_0$ at ($\tau=0$) is significantly greater than the other coefficients. Than we can approximate
+To get a better idea for what spec this sets on the voltage response of our dish we examine, in more detail, the case where $r_0$ at ($\tau=0$) is significantly greater than the other coefficients as we might expect for a dish with a relatively smooth gain. Than we can approximate equation \ref{eq:Reflections} to linear order in $r_i$,
 \begin{equation}
 \widetilde{V}_{ij}'(\tau) \approx \widetilde{V}_{ij} + \sum_{m>0} \widetilde{V}_{ij}^{m0} (\tau -  \tau_m)
 \end{equation}
 
 
 
-If we make the assumption that the beam can be factored into a frequency dependent and frequency dependent term, $a_m = a({\bf \hat{k}}) r_m$ than we have
+If we make the assumption that the beam can be factored into a frequency dependent and frequency dependent term, $r_i({\bf \hat{k}},\tau) = a_i({\bf \hat{k}}) g_i(\tau)$ than we have
 \begin{equation}
-\widetilde{V}_{ij} \approx \widetilde{V}_{ij}(\tau) + \sum_{m>0} r_m \widetilde{V}_{ij}(\tau - \tau_m)
+\widetilde{V}_{ij}' \approx \widetilde{V}_{ij}(\tau) + \sum_{m>0} r_m \widetilde{V}_{ij}(\tau - \tau_m)
 \end{equation}
- Hence, for a delay response dominated by the $0$-delay mode, as we might expect in our antenna element, the delay transformed visibilities are effectively convolved with the {\it voltage response}, not the voltage response squared as we might naively expect!
+ Hence, for a delay response dominated by the $0$-delay mode, as we might expect in an antenna element with smooth gain, the delay transformed visibilities are effectively convolved with the {\it voltage response}, not the square of the voltage response as we might naively expect. A more compact writing the impact of the spectral structure of a separable beam on foregrounds would be
+ \begin{equation}
+ 	\widetilde{V}_{ij}'(\tau) = \left[ (g_i \star g_j^*) \star \widetilde{V}_{ij}\right](\tau)
+ \end{equation}
+ As a result, one should compare the amplitude of the voltage delay response of the antenna with the ratio between foregrounds and signal when 
 
 
- In this paper, we study $R_{mn}({\bf \hat{k}})$ for the HERA antenna element to verify that it both meets the spec and agrees with direct measurements of the antenna element with refelctometry \citep{Patra:2015} and Orbcomm measurements \citep{Neben:2015b}.
+ In this paper, we study $r_i({\bf \hat{k}},\Delta \tau)$ for the HERA antenna element to verify that it both meets the spec and agrees with direct measurements of the antenna element with refelctometry \citep{Patra:2015} and Orbcomm measurements \citep{Neben:2015b}. We also explore the implications of the performance of $r_i({\bf \hat{k}},\tau)$ on the scientific bottom line for EoR experiments, using the Fisher Matrix Formalism. 
 
 \section{Electromagnetic Simulations of the HERA dish element}\label{sec:Simulations}
 In Fig.~\ref{fig:SimulationSetup} we show the geometery of the electromagnetic simulation. {\bf Rich: fill in the details here}
@@ -184,6 +190,23 @@ where $A_e$ is the effective area of the dish, $B$ is the bandwidth, $T_{sys}$ i
 
 \subsection{The Implications of Dish Reflections on EoR Science}
 Since the amplitude of the 21\,cm signal is maximal at smaller $k$ values, a loss of large scale signal out to $0.25$\,$h$Mpc$^{-1}$ will eliminate some of the power spectrum modes that HERA will have the greatest SNR on, impacting our overall sensitivity. We address the change in SNR and its implications on HERA's ability to place constraints on reionization parameters in this section, using the Fisher Matrix Formalism. 
+
+\begin{figure}
+\includegraphics[width=.5\textwidth]{figures/reionization_triangle_compare.pdf}
+\caption{95\% confidence interfals with and without reflections. The primary effect of a large minimal delay accessible is that  the ``knee" which is the primary lever on $R_\text{mfp}$ becomes inaccessible at low redshift. Since the comoving minimal $k$ corresponding to a minimal delay becomes smaller at higher redshift, EoX measurements do improve constraints on $R_\text{mfp}$. }
+\end{figure}
+
+
+\begin{figure*}
+\includegraphics[width=\textwidth]{figures/sigmaVsZ.pdf}
+\caption{Fractional Errors on reionization and heating parameters as a function of maximal observed redshift.}
+\end{figure*}
+
+\begin{figure}
+\includegraphics[width=\textwidth]{figures/triangle_hera331.pdf}
+\caption{95\% confidence regions with and without reflections assuming that observations are taken over the redshifts between 5 and 25 are observed.}
+\end{figure}
+
 
 \section{Conclusions}
 \label{sec:Conclusion}
