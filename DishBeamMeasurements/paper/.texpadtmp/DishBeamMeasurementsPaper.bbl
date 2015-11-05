@@ -1,11 +1,17 @@
-\begin{thebibliography}{11}
+\begin{thebibliography}{17}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
-\bibitem[{{Ali} {et~al.}(2015){Ali}, {Parsons}, {Zheng}, {Pober}, {Liu},
-  {Aguirre}, {Bradley}, {Bernardi}, {Carilli}, {Cheng}, {DeBoer}, {Dexter},
-  {Grobbelaar}, {Horrell}, {Jacobs}, {Klima}, {MacMahon}, {Maree}, {Moore},
-  {Razavi}, {Stefan}, {Walbrugh}, \& {Walker}}]{paper64}
-{Ali}, Z.~S., {et~al.} 2015, \apj, 809, 61
+\bibitem[{{Ali} {et~al.}(2015{\natexlab{a}}){Ali}, {Parsons}, {Zheng}, {Pober},
+  {Liu}, {Aguirre}, {Bradley}, {Bernardi}, {Carilli}, {Cheng}, {DeBoer},
+  {Dexter}, {Grobbelaar}, {Horrell}, {Jacobs}, {Klima}, {MacMahon}, {Maree},
+  {Moore}, {Razavi}, {Stefan}, {Walbrugh}, \& {Walker}}]{paper64}
+{Ali}, Z.~S., {et~al.} 2015{\natexlab{a}}, \apj, 809, 61
+
+\bibitem[{{Ali} {et~al.}(2015{\natexlab{b}}){Ali}, {Parsons}, {Zheng}, {Pober},
+  {Liu}, {Aguirre}, {Bradley}, {Bernardi}, {Carilli}, {Cheng}, {DeBoer},
+  {Dexter}, {Grobbelaar}, {Horrell}, {Jacobs}, {Klima}, {MacMahon}, {Maree},
+  {Moore}, {Razavi}, {Stefan}, {Walbrugh}, \& {Walker}}]{ali2015}
+---. 2015{\natexlab{b}}, ArXiv e-prints
 
 \bibitem[{{de Oliveira-Costa} {et~al.}(2008){de Oliveira-Costa}, {Tegmark},
   {Gaensler}, {Jonas}, {Landecker}, \& {Reich}}]{gsm}
@@ -35,6 +41,11 @@
   {Williams}}]{neben15}
 {Neben}, A.~R., {et~al.} 2015a, Radio Science, 50, 614
 
+\bibitem[{Paciga {et~al.}(2011)Paciga, Chang, Gupta, Nityanada, Odegova, Pen,
+  Peterson, Roy, \& Sigurdson}]{Paciga2011}
+Paciga, G., {et~al.} 2011, Monthly Notices of the Royal Astronomical Society,
+  413, 1174
+
 \bibitem[{{Parsons} \& {Backer}(2009)}]{parsonsandbacker}
 {Parsons}, A.~R., \& {Backer}, D.~C. 2009, \aj, 138, 219
 
@@ -61,6 +72,73 @@
   Subrahmanyan, Sullivan, Tegmark, Tingay, Trott, Waterson, Wayth, Webster,
   Whitney, Williams, Williams, Wu, \& Wyithe}]{nithya15}
 Thyagarajan, N., {et~al.} 2015a, \apj, 804, 14
+
+\bibitem[{{Thyagarajan} {et~al.}(2015b){Thyagarajan}, {Jacobs}, {Bowman},
+  {Barry}, {Beardsley}, {Bernardi}, {Briggs}, {Cappallo}, {Carroll},
+  {Deshpande}, {de Oliveira-Costa}, {Dillon}, {Ewall-Wice}, {Feng},
+  {Greenhill}, {Hazelton}, {Hernquist}, {Hewitt}, {Hurley-Walker},
+  {Johnston-Hollitt}, {Kaplan}, {Kim}, {Kittiwisit}, {Lenc}, {Line}, {Loeb},
+  {Lonsdale}, {McKinley}, {McWhirter}, {Mitchell}, {Morales}, {Morgan},
+  {Neben}, {Oberoi}, {Offringa}, {Ord}, {Paul}, {Pindor}, {Pober}, {Prabu},
+  {Procopio}, {Riding}, {Udaya Shankar}, {Sethi}, {Srivani}, {Subrahmanyan},
+  {Sullivan}, {Tegmark}, {Tingay}, {Trott}, {Wayth}, {Webster}, {Williams},
+  {Williams}, \& {Wyithe}}]{nithya15b}
+{Thyagarajan}, N., {et~al.} 2015b, \apj, 807, L28
+
+\bibitem[{Tingay {et~al.}(2013)Tingay, Goeke, Bowman, Emrich, Ord, Mitchell,
+  Morales, Booler, Crosse, Wayth, Lonsdale, Tremblay, Pallot, Colegate,
+  Wicenec, Kudryavtseva, Arcus, Barnes, Bernardi, Briggs, Burns, Bunton,
+  Cappallo, Corey, Deshpande, Desouza, Gaensler, Greenhill, Hall, Hazelton,
+  Herne, Hewitt, Johnston-Hollitt, Kaplan, Kasper, Kincaid, Koenig,
+  Kratzenberg, Lynch, Mckinley, Mcwhirter, Morgan, Oberoi, Pathikulangara,
+  Prabu, Remillard, Rogers, Roshi, Salah, Sault, Udaya-Shankar, Schlagenhaufer,
+  Srivani, Stevens, Subrahmanyan, Waterson, Webster, Whitney, Williams,
+  Williams, \& Wyithe}]{tingay13}
+Tingay, S.~J., {et~al.} 2013, Publications of the Astronomical Society of
+  Australia, 30
+
+\bibitem[{{van Haarlem} {et~al.}(2013){van Haarlem}, {Wise}, {Gunst}, {Heald},
+  {McKean}, {Hessels}, {de Bruyn}, {Nijboer}, {Swinbank}, {Fallows},
+  {Brentjens}, {Nelles}, {Beck}, {Falcke}, {Fender}, {H{\"o}randel},
+  {Koopmans}, {Mann}, {Miley}, {R{\"o}ttgering}, {Stappers}, {Wijers},
+  {Zaroubi}, {van den Akker}, {Alexov}, {Anderson}, {Anderson}, {van Ardenne},
+  {Arts}, {Asgekar}, {Avruch}, {Batejat}, {B{\"a}hren}, {Bell}, {Bell}, {van
+  Bemmel}, {Bennema}, {Bentum}, {Bernardi}, {Best}, {B{\^i}rzan}, {Bonafede},
+  {Boonstra}, {Braun}, {Bregman}, {Breitling}, {van de Brink}, {Broderick},
+  {Broekema}, {Brouw}, {Br{\"u}ggen}, {Butcher}, {van Cappellen}, {Ciardi},
+  {Coenen}, {Conway}, {Coolen}, {Corstanje}, {Damstra}, {Davies}, {Deller},
+  {Dettmar}, {van Diepen}, {Dijkstra}, {Donker}, {Doorduin}, {Dromer}, {Drost},
+  {van Duin}, {Eisl{\"o}ffel}, {van Enst}, {Ferrari}, {Frieswijk}, {Gankema},
+  {Garrett}, {de Gasperin}, {Gerbers}, {de Geus}, {Grie{\ss}meier}, {Grit},
+  {Gruppen}, {Hamaker}, {Hassall}, {Hoeft}, {Holties}, {Horneffer}, {van der
+  Horst}, {van Houwelingen}, {Huijgen}, {Iacobelli}, {Intema}, {Jackson},
+  {Jelic}, {de Jong}, {Juette}, {Kant}, {Karastergiou}, {Koers}, {Kollen},
+  {Kondratiev}, {Kooistra}, {Koopman}, {Koster}, {Kuniyoshi}, {Kramer},
+  {Kuper}, {Lambropoulos}, {Law}, {van Leeuwen}, {Lemaitre}, {Loose}, {Maat},
+  {Macario}, {Markoff}, {Masters}, {McFadden}, {McKay-Bukowski}, {Meijering},
+  {Meulman}, {Mevius}, {Middelberg}, {Millenaar}, {Miller-Jones}, {Mohan},
+  {Mol}, {Morawietz}, {Morganti}, {Mulcahy}, {Mulder}, {Munk}, {Nieuwenhuis},
+  {van Nieuwpoort}, {Noordam}, {Norden}, {Noutsos}, {Offringa}, {Olofsson},
+  {Omar}, {Orr{\'u}}, {Overeem}, {Paas}, {Pandey-Pommier}, {Pandey}, {Pizzo},
+  {Polatidis}, {Rafferty}, {Rawlings}, {Reich}, {de Reijer}, {Reitsma},
+  {Renting}, {Riemers}, {Rol}, {Romein}, {Roosjen}, {Ruiter}, {Scaife}, {van
+  der Schaaf}, {Scheers}, {Schellart}, {Schoenmakers}, {Schoonderbeek},
+  {Serylak}, {Shulevski}, {Sluman}, {Smirnov}, {Sobey}, {Spreeuw}, {Steinmetz},
+  {Sterks}, {Stiepel}, {Stuurwold}, {Tagger}, {Tang}, {Tasse}, {Thomas},
+  {Thoudam}, {Toribio}, {van der Tol}, {Usov}, {van Veelen}, {van der Veen},
+  {ter Veen}, {Verbiest}, {Vermeulen}, {Vermaas}, {Vocks}, {Vogt}, {de Vos},
+  {van der Wal}, {van Weeren}, {Weggemans}, {Weltevrede}, {White}, {Wijnholds},
+  {Wilhelmsson}, {Wucknitz}, {Yatawatta}, {Zarka}, {Zensus}, \& {van
+  Zwieten}}]{lofar}
+{van Haarlem}, M.~P., {et~al.} 2013, \aap, 556, A2
+
+\bibitem[{{Zheng} {et~al.}(2014){Zheng}, {Tegmark}, {Buza}, {Dillon},
+  {Gharibyan}, {Hickish}, {Kunz}, {Liu}, {Losh}, {Lutomirski}, {Morrison},
+  {Narayanan}, {Perko}, {Rosner}, {Sanchez}, {Schutz}, {Tribiano}, {Valdez},
+  {Yang}, {Adami}, {Zelko}, {Zheng}, {Armstrong}, {Bradley}, {Dexter},
+  {Ewall-Wice}, {Magro}, {Matejek}, {Morgan}, {Neben}, {Pan}, {Penna},
+  {Peterson}, {Su}, {Villasenor}, {Williams}, \& {Zhu}}]{omniscope}
+{Zheng}, H., {et~al.} 2014, \mnras, 445, 1084
 
 \bibitem[{Zheng {et~al.}(2014)Zheng, Tegmark, Buza, Dillon, Gharibyan, Hickish,
   Kunz, Liu, Losh, Lutomirski, Morrison, Narayanan, Perko, Rosner, Sanchez,
