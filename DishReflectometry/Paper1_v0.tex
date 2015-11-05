@@ -168,20 +168,13 @@ We define antenna cross power pattern as  $\bm(\thhat,\nu)=\bmvolt_{1}(\thhat,\n
 %i.e, the complex visibility is the Fourier transform of the product of the antenna beam pattern with the sky angular power spectrum. In other words, it is the convolution of the Fourier transform of the antenna power pattern with the Fourier transform of the sky. The complex visibility measured by an interferometer with a given baseline length has explicit dependence on frequency as well as implicit frequency dependence through the spatial frequency $\vec u = \nu { \vec b \over c}$ component. Since $\vec u $ is the For a given baseline length $|\vec b|$, the visibility measured at various frequencies are not only the function of frequencies but also samples different $\vec u$ in the uv space. Delay transformation technique takes the visibility measurements at different frequencies and Fourier transforms the complex visibilities. If we defineI_{sky} the Fourier conjugate of the frequency axis as $\tau$ then the equation could be written as, 
 In \citet{parsons_et_al2012a}, the Fourier transform of the visibility along the frequency axis was introduced,
 resulting in the delay spctrum:
-\begin{equation}
-\tilde V(\vec b, \tau)  = \int\!\!\int{\bm(\thhat,\nu) I_\sky(\thhat,\nu) \ifngexp d\Omega~e^{-2\pi i\nu\tau} d\nu}
-						%   & = & \int \left [B(\tau)\ast I_{sky}(\tau) \ast \delta(\tau+\tau_{g}) \right ] dl dm	
-\label{eq3}
-\end{equation}
-
-Hence, the delay spectrum, integrated over all sky would be written as, 
 \begin{eqnarray}
-\mathcal{F} \left [V e^{i\phi}\right]   & = &  \left [B(\tau)\ast I_{sky}(\tau) \ast \delta(\tau+\tau_{g}) \right ] 	
-\label{eq4}
+\tilde V(\vec b, \tau) & = & \int\!\!\int{\bm(\thhat,\nu) I_\sky(\thhat,\nu) \ifngexp d\Omega~e^{-2\pi i\nu\tau}d\nu}\nonumber\\	                        & = &   \int \left [ A(\vec b, \tau)\ast I_{sky}(\vec b, \tau) \ast \delta( \vec b, \tau )\right ] d\Omega 
+\label{eq3}
 \end{eqnarray}
 % XXX rethink how to express this equation (not correct about integrated over all sky)
 % XXX define tau_g
-the convolution being carried out along the $\tau$ axis which is Fourier conjugate of the frequency $\nu$. In words, the sky delay spectrum is convoluted with the delay spectrum of the instrument and is centred at a delay $\tau_{g}$. The projected geometric delay $\tau_{g}$ for a given baseline can vary from 0 to $\tau_{g}$. Also, due to frequency dependence of the sky signal, the delay spectrum of the sky spills over the delay $\tau> \tau_{g}$ with decaying amplitude [Ref to the figure Parsons12]. Sky delay spectrum $I_{sky}(\tau)$ is contributed by the foreground  $I_{fg}(\tau)$ and the 21~cm power spectrum $I_{21}(\tau)$. Since $I_{fg}$ is spectrally smooth, whereas $I_{21}$ contains spectral structures, for wideband measurements, the relative strength of the smooth spectrum foreground with respect to the delay spectrum of the $I_{21}$ reduces at higher delays and, therefore, at higher delays, the 21~cm delay spectrum is detectable.  \textbf{[ Reference to Nithya's foreground simulation work, reference to any plots on the relative contribution of the  foreground and EoR signal. ]}
+where $\tau_{g} = {\vec b \cdot \thhat \over c}$. The convolution is carried out along the $\tau$ axis which is Fourier conjugate of the frequency $\nu$. In words, the sky delay spectrum is convoluted with the delay spectrum of the instrument. In the delay domain, the sky spectrum from any direction $\thhat$ would be located at $\tau = {\vec b \cdot \thhat \over c}$. Since the maximum geometric delay possible for a given base line would be    and is centred at a delay $\tau_{g}$. The projected geometric delay $\tau_{g}$ for a given baseline can vary from 0 to $\tau_{g}$. Also, due to frequency dependence of the sky signal, the delay spectrum of the sky spills over the delay $\tau> \tau_{g}$ with decaying amplitude [Ref to the figure Parsons12]. Sky delay spectrum $I_{sky}(\tau)$ is contributed by the foreground  $I_{fg}(\tau)$ and the 21~cm power spectrum $I_{21}(\tau)$. Since $I_{fg}$ is spectrally smooth, whereas $I_{21}$ contains spectral structures, for wideband measurements, the relative strength of the smooth spectrum foreground with respect to the delay spectrum of the $I_{21}$ reduces at higher delays and, therefore, at higher delays, the 21~cm delay spectrum is detectable.  \textbf{[ Reference to Nithya's foreground simulation work, reference to any plots on the relative contribution of the  foreground and EoR signal. ]}
 
 
 \section{Effects of additional reflections of the sky signal between the parabolic dish and the feed on the measured visibility}
