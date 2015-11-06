@@ -22,6 +22,7 @@ for filename in sys.argv[1:]:
     #d = 10**(db/10) * np.exp(2j*np.pi*ph/360) # power
     d = 10**(db/20) * np.exp(2j*np.pi*ph/360) # 20 to put into voltage amplitude, not power
 
+    d = np.abs(d)**2
     valid = np.ones(fq.size, dtype=np.bool) # use entire sampled band
     #valid = np.where(fq < .250) # restrict to HERA band
     #valid = np.where(np.logical_and(fq < .2, fq > .1)) # restrict to PAPER band
@@ -41,7 +42,8 @@ for filename in sys.argv[1:]:
     #plt.figure(2)
     #plt.semilogy(np.fft.fftshift(tau), np.fft.fftshift(np.abs(_d)**2))
     #plt.semilogy(np.fft.fftshift(tau), np.fft.fftshift(np.abs(_dw)), label=BASE)
-    plt.semilogy(np.fft.fftshift(tau), np.fft.fftshift(np.abs(_dw)**2), label=BASE)
+    #plt.semilogy(np.fft.fftshift(tau), np.fft.fftshift(np.abs(_dw)**2), label=BASE)
+    plt.semilogy(np.fft.fftshift(tau), np.fft.fftshift(np.abs(_dw)), label=BASE)
 
 #plt.figure(1); plt.legend(loc='best')
 #plt.figure(2)
