@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  5 NOV 2015 16:44
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  6 NOV 2015 10:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -331,61 +331,56 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 LaTeX Warning: Reference `fig:aerial' on page 2 undefined on input line 299.
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 382--383
- []\OT1/cmr/m/n/10 CST sim-u-la-tion (hera-cst/HERA[]DISH[]paper
- []
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 396.
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/omscmr.fd
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 374.
+ (/usr/local/texlive/2012/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 396.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 374.
 
 
-LaTeX Warning: Reference `fig:null1' on page 3 undefined on input line 401.
+LaTeX Warning: Reference `fig:null1' on page 3 undefined on input line 379.
 
 
-LaTeX Warning: Reference `fig:null3' on page 3 undefined on input line 403.
+LaTeX Warning: Reference `fig:null3' on page 3 undefined on input line 381.
 
 
-LaTeX Warning: Reference `fig:null4' on page 3 undefined on input line 403.
+LaTeX Warning: Reference `fig:null4' on page 3 undefined on input line 381.
 
 
-LaTeX Warning: Reference `fig:dish3' on page 3 undefined on input line 447.
+LaTeX Warning: Reference `fig:dish3' on page 3 undefined on input line 437.
 
 
-LaTeX Warning: Reference `fig:dish1' on page 3 undefined on input line 447.
+LaTeX Warning: Reference `fig:dish1' on page 3 undefined on input line 437.
 
 
-LaTeX Warning: Reference `fig:dish2' on page 3 undefined on input line 447.
+LaTeX Warning: Reference `fig:dish2' on page 3 undefined on input line 437.
 
 
-LaTeX Warning: Reference `fig:dish4' on page 3 undefined on input line 447.
+LaTeX Warning: Reference `fig:dish4' on page 3 undefined on input line 437.
+
+
+LaTeX Warning: Reference `fig:interpbeams' on page 3 undefined on input line 465.
+
+
+LaTeX Warning: Reference `fig:interpbeamsslice' on page 3 undefined on input line 465.
 
 [3]
-
-LaTeX Warning: Reference `fig:interpbeams' on page 4 undefined on input line 475.
-
-
-LaTeX Warning: Reference `fig:interpbeamsslice' on page 4 undefined on input line 475.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 502--502
+Underfull \hbox (badness 10000) in paragraph at lines 492--492
 $[]$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 502--502
+Underfull \hbox (badness 10000) in paragraph at lines 492--492
 
  []
 
+
+LaTeX Warning: Reference `fig:delayspec' on page 4 undefined on input line 521.
+
 [4]
 
-LaTeX Warning: Reference `fig:delayspec' on page 5 undefined on input line 531.
-
-
-LaTeX Warning: Reference `fig:delayspec2' on page 5 undefined on input line 537.
+LaTeX Warning: Reference `fig:delayspec2' on page 5 undefined on input line 527.
 
 (/Users/abrahamn/Documents/Physics/papers/DishPapers/DishBeamMeasurements/paper/.texpadtmp/DishBeamMeasurementsPaper.bbl) [5] (/Users/abrahamn/Documents/Physics/papers/DishPapers/DishBeamMeasurements/paper/.texpadtmp/DishBeamMeasurementsPaper.aux)
 
@@ -393,15 +388,15 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4949 strings out of 493488
- 66055 string characters out of 3141326
- 157533 words of memory out of 3000000
- 8173 multiletter control sequences out of 15000+200000
+ 4943 strings out of 493488
+ 65956 string characters out of 3141326
+ 156911 words of memory out of 3000000
+ 8167 multiletter control sequences out of 15000+200000
  13042 words of font info for 54 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  39i,7n,26p,2445b,271s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on /Users/abrahamn/Documents/Physics/papers/DishPapers/DishBeamMeasurements/paper/.texpadtmp/DishBeamMeasurementsPaper.pdf (5 pages, 232159 bytes).
+Output written on /Users/abrahamn/Documents/Physics/papers/DishPapers/DishBeamMeasurements/paper/.texpadtmp/DishBeamMeasurementsPaper.pdf (5 pages, 231789 bytes).
 PDF statistics:
  92 PDF objects out of 1000 (max. 8388607)
  66 compressed objects within 1 object stream
