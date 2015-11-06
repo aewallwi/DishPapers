@@ -1,4 +1,4 @@
-\documentclass[preprint]{emulateapj}
+\documentclass[onecolumn]{emulateapj}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{natbib}
@@ -46,36 +46,55 @@ The Hydrogen Epoch of Reionization Array (HERA) is an instrument currently takin
 This paper is organized as follows. In \S~\ref{sec:Formalism} we lay out our analytic framework for describing the impact of reflections and spectral structure on foreground leakage in delay-transform power spectra. In \S~\ref{sec:Simulations} we describe our electromagnetic simulations of the HERA dish element. In \S~\ref{sec:Comparison} we compare our simulation results to direct measurements of the primary dish element and in \S~\ref{sec:Foregrounds} we apply our electromagnetic simulation results to simulations of foregrounds to determine the extent that the HERA dish's chromatic structure pollutes the EoR window and their impact on HERA's overall sensitivity. We conclude in \S~\ref{sec:Conclusion}.
 
 \section{The Impact of Reflections on Delay-Transform Power Spectra}\label{sec:Formalism}
-In this section, we show how reflections in the analogue signal path of an antenna lead to foreground contamination of the EoR window. HERA's primary antenna element consists of a sleeved dipole element suspended 5\,m above the focus of a 14\,m diameter parabolic dish (Fig.~\ref{fig:Dish}).
-
-\begin{figure}
-%\includegraphics[width=.5\textwidth]{figures/DishSA.png}
-\caption{The HERA primary antenna element-one of 19 undergoing currently taking the first observations in the Karoo in South Africa. The antenna consists of a sleeved dipole suspended within a 2\,m diameter skirt, five meters above the ground at the focal point of a 14\,m diameter dish.}\label{fig:Dish}
-\end{figure}
-
- We show in Appendix~\ref{app:Reflections} that if an astronomical radio signal with time dependence at the location of the feed, $s({\bf \hat{k}},t)$, experience reflections within the dish such that the voltage recorded in the feed is 
-\begin{equation}
-v_i(t) = \sum_n r_i({\bf \hat{k}},\tau_n) s({\bf \hat{k}},t - \tau_n)
+In this section, we show how reflections in the analogue signal path of an antenna lead to foreground contamination of the EoR window. Inuitively, any reflections in the signal path introduce sinusoidal ripples in the frequency dependent gain of the instrument. Since reflection delay is the Fourier dual to frequency, reflections at larger delays introduce ripples at higher frequencies. Isolation of the 21\,cm signal from foregrounds that are over five orders of magnitude brighter depends critically on the fact that their smoothness. Any sinusoidal frequency structure, introduced by the antenna gain will cause these foregrounds to mimic and swamp the signal unless they are brought below a level similar to the ratio between the foregrounds and the signal itself. We now derive this process in formal detail. We assume that the intensity field on the sky is given by 
+\begin{equation}\label{eq:Dirac}
+I({\bf \widehat{k}},f) \delta_D({\bf \hat{k}} - {\bf \hat{k}'})= \langle s({\bf \hat{k}},f)s^*({\bf \hat{k}'},f)  \rangle_t^2
 \end{equation}
+ where $\delta_D$ is the Dirac delta function. We imagine that the electric field as a function of time, $\widetilde{s}({\bf \widehat{k}},t)$ arrives at an arbitrary origin at time $t$ and at the various $i^{th}$ antenna elements of an interferometer at locations ${\bf x_i}$ at times $\tau_i={\bf x_i} \cdot {\bf \widehat{k}} /c$. We now consider reflections within a single dish element described by a direction dependent reflection coefficient\footnote{Ignoring reflections between multiple dish elements which we treat in Appendix~\ref{app:Reflections}}, $\widetilde{r}_i({\bf \widehat{k}},\tau)$. which re-introduce the signal at later times $\tau$. The voltage signal measured at the $i^{th}$ antenna element, $\widetilde{v}_i$, is the integral over solid angle of the convolution of the electric field entering the antenna (delayed by $\tau_i$) with $r_i({\bf \widehat{k}},\tau')$.
+
+\begin{equation}
+\widetilde{v}_i(t) = \int d \Omega \int d \tau \widetilde{r}_i({\bf \widehat{k}},\tau') \widetilde{s}({\bf \widehat{k}},t+\tau_i - \tau)
+\end{equation}
+
+ An FX (or XF) correlator measures the time-averaged product of the fourier transform of the voltage streams between the $i^{th}$ and $j^{th}$ antenna. Fourier transforming the voltage stream from the $i^{th}$ antenna we obtain
+\begin{equation}
+v_i(f) = \int d \Omega \int d \tau' \widetilde{r}_i({\bf \widehat{k}},\tau') s({\bf \widehat{k}},f)e^{2 \pi i f(\tau'-\tau_i)}
+\end{equation}
+The time averaged product between the two antennas is
+\begin{equation}
+V_{ij}'(f) = \left \langle v_i(f) v_j^*(f) \right \rangle_t = \int d \Omega \int d \tau \widetilde{r}_i(\tau) d \tau' \widetilde{r}^*_j(\tau')e^{2 \pi i f (\tau'-\tau) } I({\bf \widehat{k}}, f) e^{- 2 \pi i \Delta \tau_{ij}f} 
+\end{equation}
+where $\Delta \tau_{ij} = \tau_i-\tau_j = ({\bf x_i - x_j}) \cdot {\bf \widehat{k}}/c$. We eliminated one of the solid angle integrals using equation~\ref{eq:Dirac}. 
+
+Defining ${\bf u}_{ij} = f ({\bf x}_i-{\bf x}_j)/c$, we obtain,
+ %HERA's primary antenna element consists of a sleeved dipole element suspended 5\,m above the focus of a 14\,m diameter parabolic dish (Fig.~\ref{fig:Dish}).
+.
+%\begin{figure}
+%\includegraphics[width=.5\textwidth]{figures/DishSA.png}
+%\caption{The HERA primary antenna element-one of 19 undergoing currently taking the first observations in the Karoo in South Africa. The antenna consists of a sleeved dipole suspended within a 2\,m diameter skirt, five meters above the ground at the focal point of a 14\,m diameter dish.}\label{fig:Dish}
+%\end{figure}
+
+% We show in Appendix~\ref{app:Reflections} that if an astronomical radio signal with time dependence at the location of the feed, $s({\bf \widehat{k}},t)$, experience reflections within the dish such that the voltage recorded in the feed is 
+ 
+ 
+
 Than the resulting visibilities obtained by cross correlating antenna $i$ and antenna $j$ are given by 
 \begin{equation}
-V'_{ij}(f) = \sum_{m,n} \int d \Omega R_{ij}({\bf \hat{k}},\Delta \tau_{mn}) e^{2 \pi i \Delta \tau_{mn}f} e^{2 \pi i {\bf u}_{ij} \cdot {\bf \hat{k}}} I(f,{\bf \hat{s}}),
+V'_{ij}(f) =  \int d \Omega r_i({\bf \widehat{k}},f) r^*_j({\bf \widehat{k}},f)  I(f,{\bf \widehat{s}})e^{2 \pi i {\bf u}_{ij} \cdot {\bf \widehat{k}}},
 \end{equation}
-where $R_{ij}({\bf \hat{s}},\Delta \tau_{mn})=r_m r_n^*$, $I(f,{\bf \hat{s}})$ is the intensity of the signal on the sky, and can be decomposed into foregrounds and signal
-\begin{equation}
-I(f,{\bf \hat{s}}) = I_{fg}(f,{\bf \hat{s}})+I_{21}(f,{\bf \hat{s}})
-\end{equation}
-While $I_{fg}$ is on the order of $10^6$ times larger than $I_{21}$, the continuum emission from foregrounds is expected to be spectrally smooth. Hence, a {\it delay transform} defined by
+where ${\bf u}_{ij} = ({\bf x}_i - {\bf x}_j ) f/c$ to use the usual $uv$ notation of interferometry. $r_i({\bf \hat{k}},f)$ is the inverse fourier transform of the reflection response of the dish, hence we see that the reflection response is precisely the Fourier dual to the Dish's frequency domain voltage beam. Setting a specification on reflections is hence equivalent to setting a specification on spectral smoothness. 
+
+In order to separate spectrally smooth foregrounds from our signal, we expect to use the {\it delay transform} over frequency, defined as \citep{Parsons:2012}
 \begin{equation}
 \widetilde{V}_{ij}(\tau) = \int d f e^{-2 \pi i \tau f} V_{ij}(f)
 \end{equation}
-should, in principle, separate the foregrounds from the signal with foregrounds occupying the wedge. However, the introduction of the chromatic $e^{2 \pi i \Delta \tau_{mn}}$ terms leads to foreground contamination being convolved out to higher delays.
+Applying this to equation~\ref{eq:}
 \begin{equation}
 \widetilde{V}_{ij}'(\tau) = \sum_{m,n} \widetilde{V}_{ij,FG}^{mn}(\tau - \Delta \tau_{mn}) + \widetilde{V}_{ij,21}^{mn}(\tau - \Delta \tau_{mn})
 \end{equation}
-where $V_{ij}^{mn}$ is a visibility resulting from the effective primary beam, $R_{ij}({\bf \hat{k}},\Delta \tau_{mn})$, at delay $\Delta \tau_{mn}$ induced by the reflections.
+where $V_{ij}^{mn}$ is a visibility resulting from the effective primary beam, $R_{ij}({\bf \widehat{k}},\Delta \tau_{mn})$, at delay $\Delta \tau_{mn}$ induced by the reflections.
 \begin{equation}
-V_{ij}^{mn} = \int d \Omega R_{ij}({\bf \hat{s}},\Delta \tau_{mn}) I(f,{\bf \hat{s}})e^{2 \pi i {\bf u}_{ij} \cdot {\bf \hat{s}}}
+V_{ij}^{mn} = \int d \Omega R_{ij}({\bf \widehat{s}},\Delta \tau_{mn}) I(f,{\bf \widehat{s}})e^{2 \pi i {\bf u}_{ij} \cdot {\bf \widehat{s}}}
 \end{equation}
 The delay transform power spectrum estimate, $\widehat{P}$, is proportional to $|\widetilde{V}_{ij}'|^2$, hence 
 \begin{align}\label{eq:Reflections}
@@ -83,7 +102,7 @@ The delay transform power spectrum estimate, $\widehat{P}$, is proportional to $
 &+ \sum_{|\Delta \tau_{mn}| > 0} 2 \text{Re} \left[   \widetilde{V}^*_{ij} (\tau) \widetilde{V}^{mn}_{ij} (\tau - \Delta \tau_{mn})  \right] \nonumber \\
 &+ \sum_{\substack{|\Delta \tau_{op}|>0\\|\Delta \tau_{mn}|>0}} \widetilde{V}^{mn}_{ij} (\tau - \Delta \tau_{mn}) \widetilde{V}^{op*}_{ij}(\tau - \Delta \tau_{op})
 \end{align}
-In the absence of reflections, only the top line of equation~\ref{eq:Reflections} would enter the delay power spectrum estimate. The following lines involve the translation of the signal (including foregrounds and signal) out to the delay of each reflection and weighted by the effective primary beam of the reflection. Since each translated visibility is intrinsically $\sim 10^6$ times brighter than the signal, any reflection with a delay large enough to place it within the EoR window, must be sufficiently attenuated by $R_{ij}({\bf \hat{k}},\Delta \tau_{mn})$.% The precise degree of attenuation is determined in \citep{Thyagarajan:2015c} using simulations of foregrounds and noise and sets the spec for our antenna.
+In the absence of reflections, only the top line of equation~\ref{eq:Reflections} would enter the delay power spectrum estimate. The following lines involve the translation of the signal (including foregrounds and signal) out to the delay of each reflection and weighted by the effective primary beam of the reflection. Since each translated visibility is intrinsically $\sim 10^6$ times brighter than the signal, any reflection with a delay large enough to place it within the EoR window, must be sufficiently attenuated by $R_{ij}({\bf \widehat{k}},\Delta \tau_{mn})$.% The precise degree of attenuation is determined in \citep{Thyagarajan:2015c} using simulations of foregrounds and noise and sets the spec for our antenna.
 
 To get a better idea for what spec this sets on the voltage response of our dish we examine, in more detail, the case where $r_0$ at ($\tau=0$) is significantly greater than the other coefficients as we might expect for a dish with a relatively smooth gain. Than we can approximate equation \ref{eq:Reflections} to linear order in $r_i$,
 \begin{equation}
@@ -92,7 +111,7 @@ To get a better idea for what spec this sets on the voltage response of our dish
 
 
 
-If we make the assumption that the beam can be factored into a frequency dependent and frequency dependent term, $r_i({\bf \hat{k}},\tau) = a_i({\bf \hat{k}}) g_i(\tau)$ than we have
+If we make the assumption that the beam can be factored into a frequency dependent and frequency dependent term, $r_i({\bf \widehat{k}},\tau) = a_i({\bf \widehat{k}}) g_i(\tau)$ than we have
 \begin{equation}
 \widetilde{V}_{ij}' \approx \widetilde{V}_{ij}(\tau) + \sum_{m>0} r_m \widetilde{V}_{ij}(\tau - \tau_m)
 \end{equation}
@@ -103,7 +122,7 @@ If we make the assumption that the beam can be factored into a frequency depende
  As a result, one should compare the amplitude of the voltage delay response of the antenna with the ratio between foregrounds and signal when 
 
 
- In this paper, we study $r_i({\bf \hat{k}},\Delta \tau)$ for the HERA antenna element to verify that it both meets the spec and agrees with direct measurements of the antenna element with refelctometry \citep{Patra:2015} and Orbcomm measurements \citep{Neben:2015b}. We also explore the implications of the performance of $r_i({\bf \hat{k}},\tau)$ on the scientific bottom line for EoR experiments, using the Fisher Matrix Formalism. 
+ In this paper, we study $r_i({\bf \widehat{k}},\Delta \tau)$ for the HERA antenna element to verify that it both meets the spec and agrees with direct measurements of the antenna element with refelctometry \citep{Patra:2015} and Orbcomm measurements \citep{Neben:2015b}. We also explore the implications of the performance of $r_i({\bf \widehat{k}},\tau)$ on the scientific bottom line for EoR experiments, using the Fisher Matrix Formalism. 
 
 \section{Electromagnetic Simulations of the HERA dish element}\label{sec:Simulations}
 In Fig.~\ref{fig:SimulationSetup} we show the geometery of the electromagnetic simulation. {\bf Rich: fill in the details here}
@@ -223,42 +242,42 @@ Since the amplitude of the 21\,cm signal is maximal at smaller $k$ values, a los
 
 \appendix
 \section{The Effect of Reflections and Cross-Talk on Visibilities}\label{app:Reflections}
-In this section, we develope formalism to discuss the impact of reflections of electromagnetic waves between antennas and within the signal chain of single antennas on foreground leakage in 21\,cm experiments. We start with the time varying electric field from a single source with location ${\bf \widehat{k}}$ on the sky, arriving at antenna $i$ with delay $\tau_i$ and antenna $j$ with delay $\tau_j$ with respect to the electric field at the origin which we denote as $s(t,{\bf \hat{s}})$. We allow for two different types of reflections: First, we allow reflections within the analogue path of each $i^{th}$ antenna which we denote as $r_i(\tau,{\bf \hat{s}})$. We also allow for single reflections between any $i-j$ antenna pair which we denote as $r_{ij}(\tau',{\bf \hat{s}})$. Our choice of arbitrary $\tau'$, for now, allows for multi-path propogation between antennas, though we expect it to be dominated by the geometrical delay between the antenna pair. The electric field at antenna $i$ is given by
+In this section, we investigate, formally, the impact of reflections of electromagnetic waves between antennas and within the signal chain of single antennas on foreground leakage in 21\,cm experiments. We start with the time varying electric field from a single source with location ${\bf \widehat{k}}$ on the sky, arriving at antenna $i$ with delay $\tau_i$ and antenna $j$ with delay $\tau_j$ with respect to the electric field at the origin which we denote as $s(t,{\bf \widehat{s}})$. We allow for two different types of reflections: First, we allow reflections within the analogue path of each $i^{th}$ antenna which we denote as $r_i(\tau,{\bf \widehat{s}})$. We also allow for single reflections between any $i-j$ antenna pair which we denote as $r_{ij}(\tau',{\bf \widehat{s}})$. Our choice of arbitrary $\tau'$, for now, allows for multi-path propogation between antennas, though we expect it to be dominated by the geometrical delay between the antenna pair. The electric field at antenna $i$ is given by
 \begin{equation}
-s_i(t,{\bf \hat{s}}) = \int d \tau' r_i(\tau',{\bf \hat{s}})s(t+\tau_i-\tau') + \sum_{j \ne i} \int d \tau' s(t + \tau_j - \tau_{ij}) r_{ij}(\tau',{\bf \hat{s}})
+s_i(t,{\bf \widehat{s}}) = \int d \tau' r_i(\tau',{\bf \widehat{s}})s(t+\tau_i-\tau') + \sum_{j \ne i} \int d \tau' s(t + \tau_j - \tau_{ij}) r_{ij}(\tau',{\bf \widehat{s}})
 \end{equation}  
 In an FX correlator, the electric field is sampled, Fourier transformed, and cross multipled between antenna pairs to form visibilities. The Fourier transform step leaves us with 
 \begin{equation}
-\widetilde{s}_i(f,{\bf \hat{s}}) = \widetilde{s}(f,{\bf \hat{s}}) \left[ \int d \tau' r_i(\tau',{\bf \hat{s}})e^{2 \pi i(\tau_i - \tau')f} + \sum_{j\ne i} \int d \tau' e^{2 \pi i(\tau_j - \tau_{ij})f} r_{ij}(\tau',{\bf \hat{s}}) \right]
+\widetilde{s}_i(f,{\bf \widehat{s}}) = \widetilde{s}(f,{\bf \widehat{s}}) \left[ \int d \tau' r_i(\tau',{\bf \widehat{s}})e^{2 \pi i(\tau_i - \tau')f} + \sum_{j\ne i} \int d \tau' e^{2 \pi i(\tau_j - \tau_{ij})f} r_{ij}(\tau',{\bf \widehat{s}}) \right]
 \end{equation}
 Multiplying and averaging gives us the visibility for the single source we obtain
 \begin{align}\label{eq:SingleSource}
-v_{ij}'(f,{\bf \hat{s}}) & = \langle \widetilde{s}_i(f,{\bf \widehat{k}}) \widetilde{s}_j(f,{\bf \hat{s}}) \rangle_t \nonumber \\
-&=d \Omega  I(f,{\bf \hat{s}}) g_i(f) g_j^*(f) a_i(f,{\bf \hat{s}})a_j^*(f,{\bf \hat{s}}) e^{2 \pi i{\bf u_{ij}} \cdot {\bf \hat{s}}} + d \Omega I(f,{\bf \hat{s}}) \sum_{\ell \ne j} g_i(f)a_i(f,{\bf \hat{s}}) C_{\ell j}^*(f,{\bf \hat{s}}) e^{2 \pi i {\bf u_{\ell i} \cdot {\bf \hat{s}}}} \nonumber \\ 
-& + d \Omega I(f,{\bf \hat{s}})\sum_{k \ne i} g_j^*(f) a_j^*(f) C_{ki}(f,{\bf \hat{s}}) e^{2 \pi i {\bf u_{kj}\cdot {\bf \hat{s}}}} + d \Omega I(f,{\bf \hat{s}}) \sum_{k\ne i}\sum_{\ell \ne j} C_{ki}(f,{\bf \hat{s}}) C_{j\ell}^*(f,{\bf \hat{s}}) e^{2 \pi i {\bf u_{k\ell}}\cdot{\bf \hat{s}}},
+v_{ij}'(f,{\bf \widehat{s}}) & = \langle \widetilde{s}_i(f,{\bf \widehat{k}}) \widetilde{s}_j(f,{\bf \widehat{s}}) \rangle_t \nonumber \\
+&=d \Omega  I(f,{\bf \widehat{s}}) g_i(f) g_j^*(f) a_i(f,{\bf \widehat{s}})a_j^*(f,{\bf \widehat{s}}) e^{2 \pi i{\bf u_{ij}} \cdot {\bf \widehat{s}}} + d \Omega I(f,{\bf \widehat{s}}) \sum_{\ell \ne j} g_i(f)a_i(f,{\bf \widehat{s}}) C_{\ell j}^*(f,{\bf \widehat{s}}) e^{2 \pi i {\bf u_{\ell i} \cdot {\bf \widehat{s}}}} \nonumber \\ 
+& + d \Omega I(f,{\bf \widehat{s}})\sum_{k \ne i} g_j^*(f) a_j^*(f) C_{ki}(f,{\bf \widehat{s}}) e^{2 \pi i {\bf u_{kj}\cdot {\bf \widehat{s}}}} + d \Omega I(f,{\bf \widehat{s}}) \sum_{k\ne i}\sum_{\ell \ne j} C_{ki}(f,{\bf \widehat{s}}) C_{j\ell}^*(f,{\bf \widehat{s}}) e^{2 \pi i {\bf u_{k\ell}}\cdot{\bf \widehat{s}}},
 \end{align}
-where $g_i(f) a_i(f,{\bf \hat{s}}) = \int d \tau r_i(\tau,{\bf \hat{s}}) e^{2 \pi i f \tau}$ is the effective direction dependent gain of the system which can be factored into a directoin dependent and direction independent function where $g_i(f)$ is the gain of the analogue signal chain after the radiation has been absorbed by the feed and $a_i(f,{\bf \hat{s}})$ describes the chromatic electric field response of the antenna. The first term in equation~\ref{eq:SingleSource} is an effective visibility with self-reflections. The two cross terms and the last term involve the mixing of visibilities complementary too the $ij$ baseline and have the potential to introduce significant chromatic features since they potentially insert visibilities on much longer basline lengths. Assuming propogation along a single path directly between the antennas, we may write $C_{ik}(f,{\bf \hat{s}})$ as 
+where $g_i(f) a_i(f,{\bf \widehat{s}}) = \int d \tau r_i(\tau,{\bf \widehat{s}}) e^{2 \pi i f \tau}$ is the effective direction dependent gain of the system which can be factored into a directoin dependent and direction independent function where $g_i(f)$ is the gain of the analogue signal chain after the radiation has been absorbed by the feed and $a_i(f,{\bf \widehat{s}})$ describes the chromatic electric field response of the antenna. The first term in equation~\ref{eq:SingleSource} is an effective visibility with self-reflections. The two cross terms and the last term involve the mixing of visibilities complementary too the $ij$ baseline and have the potential to introduce significant chromatic features since they potentially insert visibilities on much longer basline lengths. Assuming propogation along a single path directly between the antennas, we may write $C_{ik}(f,{\bf \widehat{s}})$ as 
 \begin{equation}
-C_{ki}(f,{\bf \hat{s}}) = a_i(f,{\bf \hat{s}}_{ki}) \frac{1}{r_{ik}}\left[\frac{d \sigma_k}{d \Omega}(f,{\bf \hat{s}},{\bf \hat{s}}_{ik})\right]^{1/2} e^{2 \pi i \tau_{ik} f}
+C_{ki}(f,{\bf \widehat{s}}) = a_i(f,{\bf \widehat{s}}_{ki}) \frac{1}{r_{ik}}\left[\frac{d \sigma_k}{d \Omega}(f,{\bf \widehat{s}},{\bf \widehat{s}}_{ik})\right]^{1/2} e^{2 \pi i \tau_{ik} f}
 \end{equation}
-Where $r_{ik}$ is the distance between antennas $i$ and $k$, $d \sigma_k (f,{\bf \hat{s}},{\bf \hat{s}}_{ij})/ d \Omega $ is the cross-section of the antenna to scatter radiation from the ${\bf \hat{s}}$ direction to the ${\bf \hat{s}}_{ik}$ direction where ${\bf \hat{s}}_{ik}$ is the unit vector in the direction between antenna $i$ and antenna $k$. Integrating over the primary beam, we obtain a full expression on the effect of the foregrounds. 
+Where $r_{ik}$ is the distance between antennas $i$ and $k$, $d \sigma_k (f,{\bf \widehat{s}},{\bf \widehat{s}}_{ij})/ d \Omega $ is the cross-section of the antenna to scatter radiation from the ${\bf \widehat{s}}$ direction to the ${\bf \widehat{s}}_{ik}$ direction where ${\bf \widehat{s}}_{ik}$ is the unit vector in the direction between antenna $i$ and antenna $k$. Integrating over the primary beam, we obtain a full expression on the effect of the foregrounds. 
 \begin{align}
-V_{ij}' = \int d \Omega v_{ij}'(f,{\bf \hat{s}}) &= g_i(f) g_j(f)^* \int d \Omega A_{ij}(f,{\bf \hat{s}}) I(f,{\bf \hat{s}})e^{2 \pi i f {\bf u_{ij}} \cdot {\bf \hat{s}}} + g_i(f) \sum_{\ell \ne j} \int d \Omega  A_{i\ell j}(f,{\bf \hat{s}}) I(f,{\bf \hat{s}})e^{2 \pi i {\bf u_{\ell i} } \cdot {\bf \hat{s}} } \nonumber \\ 
-& + g_j^*(f) \sum_{k \ne i}  \int d \Omega A^*_{jki}(f,{\bf \hat{s}}) I({\bf \hat{s}},f) e^{2 \pi i {\bf u}_{kj} \cdot {\bf \hat{s}} } + \sum_{k \ne i} \sum_{\ell \ne j}\int d \Omega A_{k i \ell j}(f,{\bf \hat{s}}) I(f,{\bf \hat{s}})e^{2 \pi i {\bf u}_{k\ell} \cdot {\bf \hat{s}}}
+V_{ij}' = \int d \Omega v_{ij}'(f,{\bf \widehat{s}}) &= g_i(f) g_j(f)^* \int d \Omega A_{ij}(f,{\bf \widehat{s}}) I(f,{\bf \widehat{s}})e^{2 \pi i f {\bf u_{ij}} \cdot {\bf \widehat{s}}} + g_i(f) \sum_{\ell \ne j} \int d \Omega  A_{i\ell j}(f,{\bf \widehat{s}}) I(f,{\bf \widehat{s}})e^{2 \pi i {\bf u_{\ell i} } \cdot {\bf \widehat{s}} } \nonumber \\ 
+& + g_j^*(f) \sum_{k \ne i}  \int d \Omega A^*_{jki}(f,{\bf \widehat{s}}) I({\bf \widehat{s}},f) e^{2 \pi i {\bf u}_{kj} \cdot {\bf \widehat{s}} } + \sum_{k \ne i} \sum_{\ell \ne j}\int d \Omega A_{k i \ell j}(f,{\bf \widehat{s}}) I(f,{\bf \widehat{s}})e^{2 \pi i {\bf u}_{k\ell} \cdot {\bf \widehat{s}}}
 \end{align}
-which is essentially an ad-mixture of many baselines with different effective primary beams. We denote the effective primary beam of the $i,j$ antenna pair as $A_{ij}(f,{\bf \hat{s}})=a_i(f,{\bf \hat{s}})a_j^*(f,{\bf \hat{s}})$, the effective beam from a single reflection correlated with a direct measurement as $A_{i \ell j} = a_i(f,{\bf \hat{s}}) C^*_{\ell j}(f,{\bf \hat{s}})$ and the correlation between entirely reflected terms as experiencing an effective primary beam of $A_{k i \ell j}=C_{ki}(f,{\bf \hat{s}}) C^*_{j \ell}(f,{\bf \hat{s}})$. In this paper, we focus on the reflection terms within a single antenna element. Hence, we ignore all but the first term for now. Any reflection terms occurring downstream of the conversion by the feed from electromagnetic radiation to voltage are lumped into $g_i(f)$ and reflections occurring within the antenna element enter into $a_i(f,{\bf \hat{s}})$. While reflections within the analogue system are a potential source of contamination, HERA's post-feed analogue signal path is designed to keep all reflections under 35\,m, within the wedge. 
+which is essentially an ad-mixture of many baselines with different effective primary beams. We denote the effective primary beam of the $i,j$ antenna pair as $A_{ij}(f,{\bf \widehat{s}})=a_i(f,{\bf \widehat{s}})a_j^*(f,{\bf \widehat{s}})$, the effective beam from a single reflection correlated with a direct measurement as $A_{i \ell j} = a_i(f,{\bf \widehat{s}}) C^*_{\ell j}(f,{\bf \widehat{s}})$ and the correlation between entirely reflected terms as experiencing an effective primary beam of $A_{k i \ell j}=C_{ki}(f,{\bf \widehat{s}}) C^*_{j \ell}(f,{\bf \widehat{s}})$. In this paper, we focus on the reflection terms within a single antenna element. Hence, we ignore all but the first term for now. Any reflection terms occurring downstream of the conversion by the feed from electromagnetic radiation to voltage are lumped into $g_i(f)$ and reflections occurring within the antenna element enter into $a_i(f,{\bf \widehat{s}})$. While reflections within the analogue system are a potential source of contamination, HERA's post-feed analogue signal path is designed to keep all reflections under 35\,m, within the wedge. 
 
-The focus of this paper and its companions is the reflection properties of the primary antenna element, so we will focus the rest of our discussion here on $a_i(f,{\bf \hat{s}})$. The primary elements of our dish include a feed and backplane suspended over a fourteen meter dish. We assume a set of discrete reflections within the dish, which without loss of generality are assumed to have frequency independent reflection coefficients\footnote{If we allow each coefficient to be frequency dependent, we can expand each frequency dependent term in a Fourier series of frequency independent terms} hence 
+The focus of this paper and its companions is the reflection properties of the primary antenna element, so we will focus the rest of our discussion here on $a_i(f,{\bf \widehat{s}})$. The primary elements of our dish include a feed and backplane suspended over a fourteen meter dish. We assume a set of discrete reflections within the dish, which without loss of generality are assumed to have frequency independent reflection coefficients\footnote{If we allow each coefficient to be frequency dependent, we can expand each frequency dependent term in a Fourier series of frequency independent terms} hence 
 \begin{equation}
-a_i(f,{\bf \hat{s}}) = \sum_{n} r_n({\bf \hat{s}}) e^{2 \pi i  \tau_n f}
+a_i(f,{\bf \widehat{s}}) = \sum_{n} r_n({\bf \widehat{s}}) e^{2 \pi i  \tau_n f}
 \end{equation}
 Assuming all antennas are identical, we have
 \begin{equation}
-A_{ij}(f,{\bf \hat{s}}) = \sum_m \sum_n r_n({\bf \hat{s}}) r_m^*({\bf \hat{s}}) e^{2 \pi i(\tau_n-\tau_m)f} = \sum_\alpha A_\alpha({\bf \hat{s}}) e^{2 \pi i \tau_\alpha}
+A_{ij}(f,{\bf \widehat{s}}) = \sum_m \sum_n r_n({\bf \widehat{s}}) r_m^*({\bf \widehat{s}}) e^{2 \pi i(\tau_n-\tau_m)f} = \sum_\alpha A_\alpha({\bf \widehat{s}}) e^{2 \pi i \tau_\alpha}
 \end{equation}
 where we have re-indexed $m$ and $n$ under a single greek index $\alpha$ in the second equality. The effect of internal reflections on a visibility is hence
 \begin{equation}
-V_{ij}'= \sum_\alpha \int d \Omega A_\alpha({\bf \hat{s}}) e^{2 \pi i \tau_\alpha f} e^{2 \pi i {\bf b}_{ij} \cdot {\bf \hat{s}}f/c} I(f,{\bf \hat{s}})
+V_{ij}'= \sum_\alpha \int d \Omega A_\alpha({\bf \widehat{s}}) e^{2 \pi i \tau_\alpha f} e^{2 \pi i {\bf b}_{ij} \cdot {\bf \widehat{s}}f/c} I(f,{\bf \widehat{s}})
 \end{equation}
 Taking the delay transform, one obtains
 \begin{equation}
@@ -266,7 +285,7 @@ Taking the delay transform, one obtains
 \end{equation}
 where 
 \begin{equation}
-\widetilde{V}^\alpha_{ij}(\tau) = \int d \tau e^{-2 \pi i f \tau} \int d \Omega A_\alpha({\bf \hat{s}}) e^{2 \pi i {\bf b}_{ij} \cdot {\bf \hat{s}} f/c} I(f,{\bf \hat{s}})
+\widetilde{V}^\alpha_{ij}(\tau) = \int d \tau e^{-2 \pi i f \tau} \int d \Omega A_\alpha({\bf \widehat{s}}) e^{2 \pi i {\bf b}_{ij} \cdot {\bf \widehat{s}} f/c} I(f,{\bf \widehat{s}})
 \end{equation}
 is the usual delay transform of \citet{Parsons:2012}. $\widetilde{V}_{ij}^alpha(\tau)$.
 \end{document}
