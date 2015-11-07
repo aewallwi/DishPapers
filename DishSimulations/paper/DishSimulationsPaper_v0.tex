@@ -46,11 +46,11 @@ The Hydrogen Epoch of Reionization Array (HERA) is an instrument currently takin
 This paper is organized as follows. In \S~\ref{sec:Formalism} we lay out our analytic framework for describing the impact of reflections and spectral structure on foreground leakage in delay-transform power spectra. In \S~\ref{sec:Simulations} we describe our electromagnetic simulations of the HERA dish element. In \S~\ref{sec:Comparison} we compare our simulation results to direct measurements of the primary dish element and in \S~\ref{sec:Foregrounds} we apply our electromagnetic simulation results to simulations of foregrounds to determine the extent that the HERA dish's chromatic structure pollutes the EoR window and their impact on HERA's overall sensitivity. We conclude in \S~\ref{sec:Conclusion}.
 
 \section{The Impact of Reflections on Delay-Transform Power Spectra}\label{sec:Formalism}
-In this section, we show how reflections in the analogue signal path of an antenna lead to foreground contamination of the EoR window. Inuitively, any reflections in the signal path introduce sinusoidal ripples in the frequency dependent gain of the instrument. Since reflection delay is the Fourier dual to frequency, reflections at larger delays introduce ripples at higher frequencies. Isolation of the 21\,cm signal from foregrounds that are over five orders of magnitude brighter depends critically on the fact that their smoothness. Any sinusoidal frequency structure, introduced by the antenna gain will cause these foregrounds to mimic and swamp the signal unless they are brought below a level similar to the ratio between the foregrounds and the signal itself. We now derive this process in formal detail. We assume that the intensity field on the sky is given by 
+In this section, we show how reflections in the analogue signal path of an antenna lead to foreground contamination of the EoR window. Inuitively, any reflections in the signal path introduce sinusoidal ripples in the frequency dependent gain of the instrument. Since reflection delay is the Fourier dual to frequency, reflections at larger delays introduce ripples at higher frequencies. Isolation of the 21\,cm signal from foregrounds that are over five orders of magnitude brighter depends critically on the fact that their smoothness. Any sinusoidal frequency structure, introduced by the antenna gain will cause these foregrounds to mimic and swamp the signal unless they are brought below a level similar to the ratio between the foregrounds and the signal itself. We now derive this process in formal detail. A simple equation for effect of direction independent reflections in the signal chain of an interferometer, downstream of the receiver, has been derived in \citep{EwallWice:2015a}, we extend this analysis in this section by considering the direction dependent reflections that can occur within the antenna element. We assume that the intensity field on the sky is given by 
 \begin{equation}\label{eq:Dirac}
 I({\bf \widehat{k}},f) \delta_D({\bf \hat{k}} - {\bf \hat{k}'})= \langle s({\bf \hat{k}},f)s^*({\bf \hat{k}'},f)  \rangle_t^2
 \end{equation}
- where $\delta_D$ is the Dirac delta function. We imagine that the electric field as a function of time, $\widetilde{s}({\bf \widehat{k}},t)$ arrives at an arbitrary origin at time $t$ and at the various $i^{th}$ antenna elements of an interferometer at locations ${\bf x_i}$ at times $\tau_i={\bf x_i} \cdot {\bf \widehat{k}} /c$. We now consider reflections within a single dish element described by a direction dependent reflection coefficient\footnote{Ignoring reflections between multiple dish elements which we treat in Appendix~\ref{app:Reflections}}, $\widetilde{r}_i({\bf \widehat{k}},\tau)$. which re-introduce the signal at later times $\tau$. The voltage signal measured at the $i^{th}$ antenna element, $\widetilde{v}_i$, is the integral over solid angle of the convolution of the electric field entering the antenna (delayed by $\tau_i$) with $r_i({\bf \widehat{k}},\tau')$.
+ where $\delta_D$ is the Dirac delta function and $\langle \rangle_t$ indicates an average in time. We imagine that the electric field as a function of time, $\widetilde{s}({\bf \widehat{k}},t)$ arrives at an arbitrary origin at time $t$ and at the various $i^{th}$ antenna elements of an interferometer at locations ${\bf x_i}$ at times $\tau_i={\bf x_i} \cdot {\bf \widehat{k}} /c$. We now consider reflections within a single dish element described by a direction dependent reflection coefficient\footnote{Ignoring reflections between multiple dish elements which we treat in Appendix~\ref{app:Reflections}}, $\widetilde{r}_i({\bf \widehat{k}},\tau)$. which re-introduce the signal at later times $\tau$. The voltage signal measured at the $i^{th}$ antenna element, $\widetilde{v}_i$, is the integral over solid angle of the convolution of the electric field entering the antenna (delayed by $\tau_i$) with $r_i({\bf \widehat{k}},\tau')$.
 
 \begin{equation}
 \widetilde{v}_i(t) = \int d \Omega \int d \tau \widetilde{r}_i({\bf \widehat{k}},\tau') \widetilde{s}({\bf \widehat{k}},t+\tau_i - \tau)
@@ -79,19 +79,31 @@ Defining ${\bf u}_{ij} = f ({\bf x}_i-{\bf x}_j)/c$, we obtain,
  
 
 Than the resulting visibilities obtained by cross correlating antenna $i$ and antenna $j$ are given by 
-\begin{equation}
-V'_{ij}(f) =  \int d \Omega r_i({\bf \widehat{k}},f) r^*_j({\bf \widehat{k}},f)  I(f,{\bf \widehat{s}})e^{2 \pi i {\bf u}_{ij} \cdot {\bf \widehat{k}}},
+\begin{equation}\label{eq:Visibility}
+V'_{ij}(f) =  \int d \Omega r_i({\bf \widehat{k}},f) r^*_j({\bf \widehat{k}},f)  I(f,{\bf \widehat{s}})e^{2 \pi i f {\bf u}_{ij} \cdot {\bf \widehat{k}}/c},
 \end{equation}
-where ${\bf u}_{ij} = ({\bf x}_i - {\bf x}_j ) f/c$ to use the usual $uv$ notation of interferometry. $r_i({\bf \hat{k}},f)$ is the inverse fourier transform of the reflection response of the dish, hence we see that the reflection response is precisely the Fourier dual to the Dish's frequency domain voltage beam. Setting a specification on reflections is hence equivalent to setting a specification on spectral smoothness. 
+where ${\bf b}_{ij} = ({\bf x}_i - {\bf x}_j )$ to use the usual $uv$ notation of interferometry. $r_i({\bf \hat{k}},f)$ is the inverse fourier transform of the reflection response of the dish, hence we see that the reflection response is precisely the Fourier dual to the Dish's frequency domain voltage beam. Setting a specification on reflections is hence equivalent to setting a specification on the spectral smoothness of the voltage beam. 
 
 In order to separate spectrally smooth foregrounds from our signal, we expect to use the {\it delay transform} over frequency, defined as \citep{Parsons:2012}
 \begin{equation}
 \widetilde{V}_{ij}(\tau) = \int d f e^{-2 \pi i \tau f} V_{ij}(f)
 \end{equation}
-Applying this to equation~\ref{eq:}
+Applying this to equation~\ref{eq:Visibility}, we obtain
 \begin{equation}
-\widetilde{V}_{ij}'(\tau) = \sum_{m,n} \widetilde{V}_{ij,FG}^{mn}(\tau - \Delta \tau_{mn}) + \widetilde{V}_{ij,21}^{mn}(\tau - \Delta \tau_{mn})
+\widetilde{V}'_{ij}(\tau)=  \int d \Omega \int d f  r_i({\bf \widehat{k}},f) r_j^*({\bf \widehat{k}},f)  I(f,{\bf \hat{k}}) e^{2 \pi i f ( {\bf b}_{ij} \cdot {\bf \hat{k}} /c - \tau)}
 \end{equation}
+Let's examine the quantity within the angular integral. For each ${\bf \hat{k}}$, we see that each source is mapped to a line $\tau ={\bf b}_{ij}\cdot{\bf \hat{k}}/c$, resulting in the much discussed ``wedge" \citep{Datta:2010,Vedantham:2012,Parsons:2012,Morales:2013,Thyagarajan:2013,Liu:2014a,Liu:2014b}. The presence of the frequency dependent beam causes each source line to be convolved in delay with the kernel
+\begin{equation}\label{eq:Kernel}
+\widetilde{R}_{ij}({\bf \hat{k}},\tau) = \int d \tau \widetilde{r}_i({\bf \hat{k}},\tau - \Delta \tau) \widetilde{r}_j({\bf \hat{k}},\Delta \tau).
+\end{equation}
+The beam has a different delay structure in each direction, and we demonstrate the effect of foreground smearing in Fig.~\ref{fig:Smearing} for a simple model with only three sources. Without reflections, the sources would form lines in $b-\tau$ space. With the reflections, the sources are smeared out, leading to supra-horizon emission. 
+\begin{figure*}[h!]
+\includegraphics[width=\textwidth]{figures/wedgeCompare.pdf}
+\caption{We demonstrate the impact on foregrounds of the frequency dependent beam. Left: The location of three sources in delay space assuming a frequency indepdendent beam (no reflections in the antenna element). Right: the presence of chromaticity due to reflections in the antenna smears the source in delay with the kernel given by equation~\ref{eq:Kernel}. Since the frequency response of the dish are a function of direction on the sky, the shape of the delay kernel is different for each source line. We see that this smearing can lead to substantial supra-horizon emission. Sources near zenith (low delay) tend to have a larger maximum since the beam gain is larger near zenith, but a more compact kernel (since beam bore-sights tend to have less spectral structure). Meanwhile, sources near the horizon have a much smaller maxima but have less compact kernels.}
+\label{fig:Smearing}
+\end{figure*}
+For the sake of pedagogy, we now consider the case where 
+
 where $V_{ij}^{mn}$ is a visibility resulting from the effective primary beam, $R_{ij}({\bf \widehat{k}},\Delta \tau_{mn})$, at delay $\Delta \tau_{mn}$ induced by the reflections.
 \begin{equation}
 V_{ij}^{mn} = \int d \Omega R_{ij}({\bf \widehat{s}},\Delta \tau_{mn}) I(f,{\bf \widehat{s}})e^{2 \pi i {\bf u}_{ij} \cdot {\bf \widehat{s}}}
