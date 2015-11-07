@@ -102,39 +102,18 @@ which itself is the convolution of the delay response of the two voltage beams, 
 \caption{We demonstrate the impact on foregrounds of the frequency dependent beam. Left: The location of three sources in delay space assuming a frequency indepdendent beam (no reflections in the antenna element). Right: the presence of chromaticity due to reflections in the antenna smears the source in delay with the kernel given by equation~\ref{eq:Kernel}. Since the frequency response of the dish are a function of direction on the sky, the shape of the delay kernel is different for each source line. We see that this smearing can lead to substantial supra-horizon emission. Sources near zenith (low delay) tend to have a larger maximum since the beam gain is larger near zenith, but a more compact kernel (since beam bore-sights tend to have less spectral structure). Meanwhile, sources near the horizon have a much smaller maxima but have less compact kernels.}
 \label{fig:Smearing}
 \end{figure*}
-For the sake of pedagogy, we now consider the case where the beam can be factored into angular and frequency dependent components, $r_i({\bf \hat{k}},f) = g_i(f)a_i({\bf \hat{k}})$. For such a case, every line in Fig.~\ref{fig:Smearing} would be convolved with the same frequency dependent shape, normalized to the gain of $a_i({\bf \hat{k}})$. 
-
-where $V_{ij}^{mn}$ is a visibility resulting from the effective primary beam, $R_{ij}({\bf \widehat{k}},\Delta \tau_{mn})$, at delay $\Delta \tau_{mn}$ induced by the reflections.
+For the sake of pedagogy, we now consider the case where the beam can be factored into angular and frequency dependent components, $r_i({\bf \hat{k}},f) = g_i(f)a_i({\bf \hat{k}})$. For such a case, every line in Fig.~\ref{fig:Smearing} would be convolved with the same delay dependent shape, normalized to the gain of $a_i({\bf \hat{k}})$. In this case, we have
 \begin{equation}
-V_{ij}^{mn} = \int d \Omega R_{ij}({\bf \widehat{s}},\Delta \tau_{mn}) I(f,{\bf \widehat{s}})e^{2 \pi i {\bf u}_{ij} \cdot {\bf \widehat{s}}}
+\widetilde{V}_{ij}'(\tau) = \int d\tau' \int d \tau'' \widetilde{g}_i(\tau' - \tau'')\widetilde{g}^*_j(\tau'') \widetilde{V}_{ij}(\tau-\tau')
 \end{equation}
-The delay transform power spectrum estimate, $\widehat{P}$, is proportional to $|\widetilde{V}_{ij}'|^2$, hence 
-\begin{align}\label{eq:Reflections}
-\widehat{P} & \propto |\widetilde{V}_{ij,FG}(\tau)|^2 + |\widetilde{V}_{ij,21}(\tau)|^2 + 2 \text{Re}(\widetilde{V}_{ij,21}(\tau)\widetilde{V}_{ij,FG}^*(\tau)) \nonumber \\
-&+ \sum_{|\Delta \tau_{mn}| > 0} 2 \text{Re} \left[   \widetilde{V}^*_{ij} (\tau) \widetilde{V}^{mn}_{ij} (\tau - \Delta \tau_{mn})  \right] \nonumber \\
-&+ \sum_{\substack{|\Delta \tau_{op}|>0\\|\Delta \tau_{mn}|>0}} \widetilde{V}^{mn}_{ij} (\tau - \Delta \tau_{mn}) \widetilde{V}^{op*}_{ij}(\tau - \Delta \tau_{op})
-\end{align}
-In the absence of reflections, only the top line of equation~\ref{eq:Reflections} would enter the delay power spectrum estimate. The following lines involve the translation of the signal (including foregrounds and signal) out to the delay of each reflection and weighted by the effective primary beam of the reflection. Since each translated visibility is intrinsically $\sim 10^6$ times brighter than the signal, any reflection with a delay large enough to place it within the EoR window, must be sufficiently attenuated by $R_{ij}({\bf \widehat{k}},\Delta \tau_{mn})$.% The precise degree of attenuation is determined in \citep{Thyagarajan:2015c} using simulations of foregrounds and noise and sets the spec for our antenna.
-
-To get a better idea for what spec this sets on the voltage response of our dish we examine, in more detail, the case where $r_0$ at ($\tau=0$) is significantly greater than the other coefficients as we might expect for a dish with a relatively smooth gain. Than we can approximate equation \ref{eq:Reflections} to linear order in $r_i$,
-\begin{equation}
-\widetilde{V}_{ij}'(\tau) \approx \widetilde{V}_{ij} + \sum_{m>0} \widetilde{V}_{ij}^{m0} (\tau -  \tau_m)
+We can further simplify matters by assuming that $\widetilde{g}_i(\tau=0)\gg\widetilde{g}_i(\tau>0)$, which is often a good assumption at large delays for the relatively smooth bandpasses our instruments are designed to have. 
+\begin{equation}\label{eq:KernelApprox}
+\widetilde{V}_{ij}'(\tau) \approx \widetilde{g}_i(0)\int d \tau' \widetilde{g}_j^*(\tau')\widetilde{V}_{ij}(\tau- \tau') + \widetilde{g}_j^*(0) \int d \tau' \widetilde{g}_i(\tau')\widetilde{V}_{ij}(\tau-\tau') 
 \end{equation}
+Hence, to first order, the impact of reflections is to convolve the delay-transformed visibility with the voltage beam of the instrument, which acts as the power-kernel. This may be a somewhat un-intuitive result since we might naively expect for the power-kernel to be the square of the delay-response. This linear falloff puts exquisite requirements on the smoothness of the beam, requiring that it fall roughly six orders of magnitude in delay before the signal is accessible. 
 
 
-
-If we make the assumption that the beam can be factored into a frequency dependent and frequency dependent term, $r_i({\bf \widehat{k}},\tau) = a_i({\bf \widehat{k}}) g_i(\tau)$ than we have
-\begin{equation}
-\widetilde{V}_{ij}' \approx \widetilde{V}_{ij}(\tau) + \sum_{m>0} r_m \widetilde{V}_{ij}(\tau - \tau_m)
-\end{equation}
- Hence, for a delay response dominated by the $0$-delay mode, as we might expect in an antenna element with smooth gain, the delay transformed visibilities are effectively convolved with the {\it voltage response}, not the square of the voltage response as we might naively expect. A more compact writing the impact of the spectral structure of a separable beam on foregrounds would be
- \begin{equation}
- 	\widetilde{V}_{ij}'(\tau) = \left[ (g_i \star g_j^*) \star \widetilde{V}_{ij}\right](\tau)
- \end{equation}
- As a result, one should compare the amplitude of the voltage delay response of the antenna with the ratio between foregrounds and signal when 
-
-
- In this paper, we study $r_i({\bf \widehat{k}},\Delta \tau)$ for the HERA antenna element to verify that it both meets the spec and agrees with direct measurements of the antenna element with refelctometry \citep{Patra:2015} and Orbcomm measurements \citep{Neben:2015b}. We also explore the implications of the performance of $r_i({\bf \widehat{k}},\tau)$ on the scientific bottom line for EoR experiments, using the Fisher Matrix Formalism. 
+ In this paper, we derive $\widetilde{r}_i({\bf \widehat{k}},\Delta \tau)$ for the HERA antenna element using electromagnetic simulations, in order to verify direct measurements of the antenna element with refelctometry \citep{Patra:2015} and Orbcomm measurements of the beam \citep{Neben:2015b}. We also explore the implications of the HERA dish's $\widetilde{r}_i({\bf \widehat{k}},\tau)$ on the scientific bottom line for EoR, using the Fisher Matrix Formalism. 
 
 \section{Electromagnetic Simulations of the HERA dish element}\label{sec:Simulations}
 In Fig.~\ref{fig:SimulationSetup} we show the geometery of the electromagnetic simulation. {\bf Rich: fill in the details here}
@@ -152,15 +131,16 @@ In Fig.~\ref{fig:SimulationSetup} we show the geometery of the electromagnetic s
 \label{fig:Simulation}
 \end{figure*}
 \subsection{Deconvolving the Response Function}
-In our simulation, we obtain the voltage at the feed output as a function of time which we will call $v_{out}(t)$. It is related to the input lane wave through the equation 
+Since our simulation is sampled in finite time steps, we will adopt discretized notation for this section. In particular, our simulation consists of $N$ samples, evenly spaced by $d \tau$ at times $\tau_n = n \times d \tau$. 
+In our simulation, we obtain the voltage at the feed output at time $\tau_n$ which we will call $\widetilde{v}_n$. It is related to the input plane wave through the discrete convolution 
 \begin{equation}
-v_{out}(t,\theta=0) = \sum_n r_n(\theta=0) v_{in}(t - \tau_n,\theta=0),
+\widetilde{v}_n({\bf \widehat{k}}) = \sum_m \widetilde{r}_m({\bf \widehat{k}}) \widetilde{s}_{n-m}({\bf \widehat{k}}),
 \end{equation}
-which is essentially a convolution in time of $r_n(\theta=0)$ with the input plane wave. We may undo this convolution by taking a discrete Fourier transform of both $v_{out}$ and $v_{in}$ in time, dividing them in Fourier space, and taking an inverse DFT back. Our simulation output is sampled at even time intervals so we may use and FFT. 
+We may undo this convolution by taking a discrete Fourier transform (DFT) of both ${\bf \widetilde{v}}$ and ${\bf \widetilde{s}}$ in time, dividing them in Fourier space, and taking an inverse DFT back. Symbolically,
 \begin{equation}
-\widehat{{\bf r}}(\theta=0) = \boldsymbol{\mathcal{F}}^{-1} \left[ \frac{\boldsymbol{\mathcal{F}} {\bf v_{out}}(\theta=0)}{{\bf v_{in}}(\theta=0)} \right] 
+{\bf \widetilde{r}}({\bf \widehat{k}}) = \boldsymbol{\mathcal{F}}^{-1} \left[ \frac{\boldsymbol{\mathcal{F}} {\bf \widetilde{v}}({\bf \widehat{k}})}{{\bf \widetilde{s}}({\bf \widehat{k}})} \right] 
 \end{equation}
-where ${\bf \mathcal{F}}$ is the Fourier transform matrix for a 1d vector of length $N$. 
+where $\boldsymbol{\mathcal{F}}$ is the Fourier transform matrix for a 1d vector of length $N$. 
 \begin{equation}
 \boldsymbol{\mathcal{F}}_{mn} = e^{2 \pi i m n /N}
 \end{equation}
@@ -172,7 +152,15 @@ In Fig.~\ref{fig:FrequencyDomain} we show the amplitude of the Fourier transform
 \label{fig:FrequencyDomain}
 \end{figure}
 
-\section{Results and Comparison to Reflectometry Data}\label{sec:Comparison}
+\subsection{Extrapolating the Bandpass and Power Kernel}
+We show our estimate of our delay kernel in Fig.~\ref{fig:voltageVsKernel}
+
+\begin{figure}
+\includegraphics[width=.5\textwidth]{figures/convolveCompare.pdf}
+\caption{Our estimate of $\widetilde{r}(\tau,\theta=0)$, the voltage response of the HERA dish at zenith (blue line) along with its square (green line) which falls off significantly faster with delay. The power kernel for identical dishes, $\widetilde{r}\star\widetilde{r}^*$, the voltage response convolved with itself, is plotted with a red line. Because the $\tau=0$ response of the dish is significantly larger than the reflections, linear terms in the convolution dominate the squared terms whose magnitude roughly corresponds to the green line. Hence, the power kernel is well approximated by $\widetilde{r}$ itself, verifying our result in equation~\ref{eq:KernelApprox}.  }
+\end{figure}
+
+\section{Comparison to Reflectometry Data}\label{sec:Comparison}
 \subsection{The Delay Response at Zenith}
 In Fig.~\ref{fig:Comparison}, we show the filtered response function deconvolved from our electromagnetic simulations. The response of the dish rapidly dies off as a function of time. After $\approx90$\,ns, we observe lobed structures with a period of $\approx 30$\,ns which corresponds to the geometrical delay between the feed and the dish apex, indicating that the large $\tau$ roll off is dominated by reflections between the feed and the dish. 
 
