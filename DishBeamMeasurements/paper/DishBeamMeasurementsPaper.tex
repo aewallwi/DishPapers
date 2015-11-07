@@ -364,29 +364,7 @@ values in each HEALPix cell.
 
 %Our power ratio measurement relies upon an accurately modeled reference dipole. We are developing a more comprehensive model of the physical reference antenna and ground screen design, improving on that used in \citep{neben15}. As yet, this improved model yields incorrect results, so more debugging is needed.
 
-\section{Dish Design and Modeling}
-
-\subsection{Design of the HERA Dish}
-
-design principles
-tradeoffs
-description of the final design
-
-\subsection{Dish Modeling}
-\label{sec:dishmodels}
-
-We compare measured beam patterns with a simplistic analytic model and two numerical electromagnetic models. Briefly, the dish is constructed of overlapping mesh rectangles secured to hanging PVC pipes to form an approximately parabolic surface with diameter 14\,m. The feed consists of a dual-polarization dipole antenna with a circular mesh backplane and a cylindrical mesh ``skirt'' hanging down. The feed is suspended over the dish surface by three ropes attached to poles equally spaced around the dish.
-
-\begin{enumerate}
-	\item Airy pattern for a 14\,m aperture
-	\item CST simulation (hera-cst/HERA\_DISH\_paper \_feed\_cyl36\_140mhz\_Y\_healpix.fits)
-	\item A separate simulation run by Dave with 68'' diameter feed backplane and 26'' skirt.
-\end{enumerate}
-
-
-
-
-\section{Error Analysis}
+\subsection{Assessing Experimental Systematics}
 
 As in \citet{neben15}, we assess systematics using a ``null experiment'' in which we use a second reference dipole as the antenna-under-test (AUT). Taking the ratio of its measured power pattern with the model beam pattern amounts to a ratio of the row power responses received by the two antennas. This test thus probes the level of environmental systematics (i.e., reflections and varying ground properties) and antenna fabrication imperfections which affect each antenna differently. This is not a probe of modeling imperfections common to both antennas, but we expect such errors to be subdominant as the physical properties of the antenna are easier to characterize, and thus simulate, than local environmental effects. 
 
@@ -420,6 +398,18 @@ The magnitude of these systematics is comparable to those observed in the two ot
 %\label{fig:null4}
 %\end{figure*}
 
+
+\section{Dish Design and Modeling}
+
+\subsection{Design of the HERA Dish}
+
+ASK DAVE DEBOER TO WRITE A TWO PARAGRAPH SUMMARY OF THE HERA ELEMENT AND HOW IT WAS DESIGNED
+
+\subsection{Dish Modeling}
+\label{sec:dishmodels}
+
+ASK DAVE OR RICH TO WRITE A ONE OR TWO PARAGRAPH SUMMARY OF THE ELECTROMAGNETIC DISH SIMULATIONS
+
 %\section{Feed Measurements}
 
 %Accurate modeling of both the dish and feed will be essential for final dish modeling. To that end, we deploy the feed on the ground facing the sky (Figure \ref{fig:feedpic}), replacing the north-most reference antenna in the \texttt{null3} configuration, to isolate the feed power pattern. 
@@ -438,7 +428,7 @@ The magnitude of these systematics is comparable to those observed in the two ot
 %\label{fig:feed0}
 %\end{figure*}
 
-\section{Dish Characterization}
+\section{Dish Measurements}
 
 \subsection{Power pattern measurements}
 
