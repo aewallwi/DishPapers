@@ -1,0 +1,6 @@
+From c8df822 (master):
+=====================
+
+(*) Initial commit
+(*) Add folder ForegroundSimulations with files ms.tex, eor.bib,
+changelog.txt and ms.pdf to git repo
