@@ -1,0 +1,257 @@
+
+%%\documentclass[12pt,preprint]{aastex}
+
+%% manuscript produces a one-column, double-spaced document:
+
+%% \documentclass[10pt,manuscript]{aastex}
+
+%% preprint2 produces a double-column, single-spaced document:
+\documentclass[preprint2,iop,numberedappendix,twocolappendix,appendixfloats]{emulateapj}
+%% \documentclass[preprint2,iop]{aastex}
+
+%% \documentclass[preprint2,longabstract]{aastex}
+
+%% \usepackage{ccaption}
+%% \captionstyle{\raggedright}
+\usepackage[caption=false]{subfig}
+\usepackage{amsmath}
+\usepackage{footnote}
+\bibpunct{(}{)}{;}{a}{}{,} 
+\captionsetup{belowskip=12pt,aboveskip=4pt}
+\setlength{\textfloatsep}{10pt plus 1.0pt minus 2.0pt}
+\newcommand{\dif}{\mathrm{d}}
+%% \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+\def\nar{{New~A~Rev.}}          % New Astronomy Review
+\def\pasa{{PASA}}               % Publications of the Astron. Soc. of Australia
+
+%% \bibliographystyle{mn2e}
+%% \bibliographystyle{apj}
+
+\shorttitle{Estimate of Foregrounds in EoR Power Spectra for HERA}
+\shortauthors{Thyagarajan et~al.}
+
+\def\ASU{\altaffilmark{1}}
+\def\ASUtxt{\altaffiltext{1}{Arizona State University, School of Earth and Space Exploration, Tempe, AZ 85287, USA}}
+
+\def\myemail{\altaffilmark{*}}
+\def\myemailtxt{\altaffiltext{*}{e-mail: t\_nithyanandan@asu.edu}}
+
+\def\UW{\altaffilmark{2}}
+\def\UWtxt{\altaffiltext{2}{University of Washington, Department of Physics, Seattle, WA 98195, USA}}
+
+\def\SKASA{\altaffilmark{3}}
+\def\SKASAtxt{\altaffiltext{3}{Square Kilometre Array South Africa (SKA SA), Park Road, Pinelands 7405, South Africa}}
+
+\def\RU{\altaffilmark{4}}
+\def\RUtxt{\altaffiltext{4}{Department of Physics and Electronics, Rhodes University, Grahamstown 6140, South Africa}}
+
+\def\CfA{\altaffilmark{5}}
+\def\CfAtxt{\altaffiltext{5}{Harvard-Smithsonian Center for Astrophysics, Cambridge, MA 02138, USA}}
+
+\def\ANU{\altaffilmark{6}}
+\def\ANUtxt{\altaffiltext{6}{Australian National University, Research School of Astronomy and Astrophysics, Canberra, ACT 2611, Australia}}
+
+\def\CAASTRO{\altaffilmark{7}}
+\def\CAASTROtxt{\altaffiltext{7}{ARC Centre of Excellence for All-sky Astrophysics (CAASTRO)}}
+
+\def\Haystack{\altaffilmark{8}}
+\def\Haystacktxt{\altaffiltext{8}{MIT Haystack Observatory, Westford, MA 01886, USA}}
+
+\def\MIT{\altaffilmark{9}}
+\def\MITtxt{\altaffiltext{9}{MIT Kavli Institute for Astrophysics and Space Research, Cambridge, MA 02139, USA}}
+
+\def\Curtin{\altaffilmark{10}}
+\def\Curtintxt{\altaffiltext{10}{International Centre for Radio Astronomy Research, Curtin University, Perth, WA 6845, Australia}}
+
+\def\Victoria{\altaffilmark{11}}
+\def\Victoriatxt{\altaffiltext{11}{Victoria University of Wellington, School of Chemical \& Physical Sciences, Wellington 6140, New Zealand}}
+
+\def\UWisc{\altaffilmark{12}}
+\def\UWisctxt{\altaffiltext{12}{University of Wisconsin--Milwaukee, Department of Physics, Milwaukee, WI 53201, USA}}
+
+\def\UMichigan{\altaffilmark{13}}
+\def\UMichigantxt{\altaffiltext{13}{University of Michigan, Department of Atmospheric, Oceanic and Space Sciences, Ann Arbor, MI 48109, USA}}
+
+\def\UMelbourne{\altaffilmark{14}}
+\def\UMelbournetxt{\altaffiltext{14}{The University of Melbourne, School of Physics, Parkville, VIC 3010, Australia}}
+
+\def\USydney{\altaffilmark{15}}
+\def\USydneytxt{\altaffiltext{15}{The University of Sydney, Sydney Institute for Astronomy, School of Physics, NSW 2006, Australia}}
+
+\def\CASS{\altaffilmark{16}}
+\def\CASStxt{\altaffiltext{16}{CSIRO Astronomy and Space Science (CASS), PO Box 76, Epping, NSW 1710, Australia}}
+
+\def\Tata{\altaffilmark{17}}
+\def\Tatatxt{\altaffiltext{17}{National Centre for Radio Astrophysics, Tata Institute for Fundamental Research, Pune 411007, India}}
+
+\def\RRI{\altaffilmark{18}}
+\def\RRItxt{\altaffiltext{18}{Raman Research Institute, Bangalore 560080, India}}
+
+\def\NRAO{\altaffilmark{19}}
+\def\NRAOtxt{\altaffiltext{19}{National Radio Astronomy Observatory, Charlottesville and Greenbank, USA}}
+
+\def\UWA{\altaffilmark{20}}
+\def\UWAtxt{\altaffiltext{20}{International Centre for Radio Astronomy Research, University of Western Australia, Crawley, WA 6009, Australia}}
+
+%% \definenote[thanks][conversion=set 2]
+
+\begin{document}
+
+\title{Estimation of Foregrounds in Wide-Field Measurements of Redshifted 21~cm Power Spectra with the Hydrogen Epoch of Reionization Array}
+
+%% Use \author, \affil, and the \and command to format
+%% author and affiliation information.
+%% Note that \email has replaced the old \authoremail command
+%% from AASTeX v4.0. You can use \email to mark an email address
+%% anywhere in the paper, not just in the front matter.
+%% As in the title, use \\ to force line breaks.
+
+%% Author list
+\author{
+%% Lead Authors
+Nithyanandan~Thyagarajan\ASU\myemail,
+TBD
+% Daniel~C.~Jacobs\ASU,
+% Judd~D.~Bowman\ASU,
+% N.~Barry\UW,
+% A.~P.~Beardsley\UW,
+% G.~Bernardi\SKASA$^,$\RU$^,$\CfA,
+% F.~Briggs\ANU$^,$\CAASTRO,
+% R.~J.~Cappallo\Haystack, 
+% P.~Carroll\UW,
+% B.~E.~Corey\Haystack, 
+% % A.~A.~Deshpande\RRI, 
+% A.~de~Oliveira-Costa\MIT,
+% Joshua~S.~Dillon\MIT,
+% D.~Emrich\Curtin,
+% % B.~M.~Gaensler\USydney$^,$\CAASTRO, 
+% A.~Ewall-Wice\MIT,
+% L.~Feng\MIT,
+% R.~Goeke\MIT,
+% L.~J.~Greenhill\CfA,
+% B.~J.~Hazelton\UW, 
+% J.~N.~Hewitt\MIT,
+% N.~Hurley-Walker\Curtin,
+% M.~Johnston-Hollitt\Victoria,
+% D.~L.~Kaplan\UWisc, 
+% J.~C.~Kasper\UMichigan$^,$\CfA, 
+% Han-Seek Kim\UMelbourne$^,$\CAASTRO,
+% P.~Kittiwisit\ASU,
+% E.~Kratzenberg\Haystack, 
+% E.~Lenc\USydney$^,$\CAASTRO,
+% J.~Line\UMelbourne$^,$\CAASTRO,
+% A.~Loeb\CfA,
+% C.~J.~Lonsdale\Haystack, 
+% M.~J.~Lynch\Curtin, 
+% B.~McKinley\UMelbourne$^,$\CAASTRO,
+% S.~R.~McWhirter\Haystack,
+% D.~A.~Mitchell\CASS$^,$\CAASTRO, 
+% M.~F.~Morales\UW, 
+% E.~Morgan\MIT, 
+% A.~R.~Neben\MIT,
+% D.~Oberoi\Tata, 
+% A.~R.~Offringa\ANU$^,$\CAASTRO, 
+% S.~M.~Ord\Curtin$^,$\CAASTRO,
+% Sourabh Paul\RRI,
+% B.~Pindor\UMelbourne$^,$\CAASTRO,
+% J.~C.~Pober\UW,
+% T.~Prabu\RRI, 
+% P.~Procopio\UMelbourne$^,$\CAASTRO,
+% J.~Riding\UMelbourne$^,$\CAASTRO,
+% A.~E.~E.~Rogers\Haystack, 
+% A.~Roshi\NRAO, 
+% N.~Udaya~Shankar\RRI, 
+% Shiv~K.~Sethi\RRI,
+% K.~S.~Srivani\RRI, 
+% R.~Subrahmanyan\RRI$^,$\CAASTRO, 
+% I.~S.~Sullivan\UW,
+% M.~Tegmark\MIT,
+% S.~J.~Tingay\Curtin$^,$\CAASTRO, 
+% C.~M.~Trott\Curtin$^,$\CAASTRO,
+% M.~Waterson\Curtin$^,$\ANU,
+% R.~B.~Wayth\Curtin$^,$\CAASTRO, 
+% R.~L.~Webster\UMelbourne$^,$\CAASTRO, 
+% A.~R.~Whitney\Haystack, 
+% A.~Williams\Curtin, 
+% C.~L.~Williams\MIT,
+% C.~Wu\UWA,
+% J.~S.~B.~Wyithe\UMelbourne$^,$\CAASTRO
+}
+
+%Institutional footnotes (typeset, then rearrange here to be in order)
+\ASUtxt
+% \UWtxt
+% \SKASAtxt
+% \RUtxt
+% \CfAtxt
+% \ANUtxt
+% \CAASTROtxt
+% \Haystacktxt
+% \MITtxt
+% \Curtintxt
+% \Victoriatxt
+% \UWisctxt
+% \UMichigantxt
+% \UMelbournetxt
+% \USydneytxt
+% \CASStxt
+% \Tatatxt
+% \RRItxt
+% \NRAOtxt
+% \UWAtxt
+\myemailtxt
+
+%% \clearpage
+
+\begin{abstract}
+
+\end{abstract}
+ 
+\keywords{cosmology: observations --- dark ages, reionization, first stars --- large-scale structure of universe --- methods: statistical --- radio continuum: galaxies --- techniques: interferometric}
+
+\section{Introduction}\label{intro}
+
+Hydrogen Epoch of Reionization Array (HERA\footnote{\url{http://reionization.org/}}; DeBoer~et~al.~2015, Murchison Widefield Array \citep[MWA;][]{lon09,bow13,tin13}, Precision Array for Probing the Epoch of Reionization \citep[PAPER;][]{par10}, Low Frequency Array \citep[LOFAR;][]{van13}
+
+Wedge papers \citep{ali08,ber09,ber10,bow09,liu09,liu14a,liu14b,dat10,liu11,gho12,mor12,par12b,tro12,dil13,dil14,pob13,thy13,thy15a,thy15b}
+
+\section{Delay Spectrum}\label{sec:delay-spectrum}
+
+\citep{par12b}
+
+\section{The Wide-Field ``Pitchfork'' Effect}\label{sec:wide-field}
+
+\citep{thy15a,thy15b}
+
+\section{Simulations}\label{sec:sim}
+
+We describe the instrument and foreground models used in our simulations. 
+
+\subsection{The Hydrogen Epoch of Reionization Array}\label{sec:HERA}
+
+\subsubsection{Antenna Power Pattern}
+
+\citep{neb15}
+
+\subsubsection{Antenna Reflectometry}
+
+Patra~et~al.~2015 (submitted), Ewall-Wice~et~al.~2015 (submitted)
+
+\subsection{Foreground Model}\label{sec:foreground}
+
+\section{Analysis of Foreground Signatures}\label{sec:FG-analysis}
+
+\section{Summary}\label{sec:summary}
+
+\acknowledgments
+
+This work was supported by the U. S. National Science Foundation (NSF) through award AST-1109257. DCJ is supported by an NSF Astronomy and Astrophysics Postdoctoral Fellowship under award AST-1401708. JCP is supported by an NSF Astronomy and Astrophysics Fellowship under award AST-1302774. 
+
+% \appendix
+
+% \par\bigskip
+\bibliographystyle{apj}
+\bibliography{eor}
+
+\end{document}
