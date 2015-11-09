@@ -130,7 +130,7 @@ In Fig.~\ref{fig:SimulationSetup} we show the geometery of the electromagnetic s
 \caption{An illustration of our simulation products and their origin in the HERA antenna geometry. A plane wave is injected from above the feed (red line). The amplitude of the electric field of the plane wave at output of the feed along with the voltage at the feed terminal outputs is recorded (black line). The feed in our simulation is situated $5$\,m above the bottom of the dish, hence there is a $\approx 30$\,ns delay between when the plane wave passes the terminal for the first time (A) and when it is first absorbed in the dipole (B), leading to the voltage response. Of concern to 21\,cm experiments are the subsequent reflections between the feed and the dish (C) which can lead to large delay contamination of the EoR window.}
 \label{fig:Simulation}
 \end{figure*}
-\subsection{Deconvolving the Response Function}
+\subsection{Deconvolving the Response Function}\label{ssec:Deconvolve}
 Since our simulation is sampled in finite time steps, we will adopt discretized notation for this section. In particular, our simulation consists of $N$ samples, evenly spaced by $d \tau$ at times $\tau_n = n \times d \tau$. 
 In our simulation, we obtain the voltage at the feed output at time $\tau_n$ which we will call $\widetilde{v}_n$. It is related to the input plane wave through the discrete convolution 
 \begin{equation}
@@ -153,12 +153,32 @@ In Fig.~\ref{fig:FrequencyDomain} we show the amplitude of the Fourier transform
 \end{figure}
 
 \subsection{Extrapolating the Bandpass and Power Kernel}
-We show our estimate of our delay kernel in Fig.~\ref{fig:voltageVsKernel}
-
+Our deconvolution gives us the time-domain voltage response of the HERA antenna element. We plot the absolute value of this response in Fig.~\ref{fig:KernelCompare}, seeing that it drops to $-20$\,dB after $\approx 75$\,ns. The power-kernel that convolves visibilities to higher delays is the convolution of $\widetilde{r}(\tau)$ with its complex conjugate, which we plot as the red line. The convolution is in very good agreement with the voltage response itself which is explained by the fact that second order terms of the convolution, approximately given by $|\widetilde{r}(\tau)|^2$ (green line) are over two orders of magnitude smaller above $50$\,ns.
 \begin{figure}
 \includegraphics[width=.5\textwidth]{figures/convolveCompare.pdf}
-\caption{Our estimate of $\widetilde{r}(\tau,\theta=0)$, the voltage response of the HERA dish at zenith (blue line) along with its square (green line) which falls off significantly faster with delay. The power kernel for identical dishes, $\widetilde{r}\star\widetilde{r}^*$, the voltage response convolved with itself, is plotted with a red line. Because the $\tau=0$ response of the dish is significantly larger than the reflections, linear terms in the convolution dominate the squared terms whose magnitude roughly corresponds to the green line. Hence, the power kernel is well approximated by $\widetilde{r}$ itself, verifying our result in equation~\ref{eq:KernelApprox}.  }
+\caption{Our estimate of $\widetilde{r}(\tau,\theta=0)$, the voltage response of the HERA dish at zenith (blue line) along with its square (green line) which falls off significantly faster with delay. The power kernel for identical dishes, $\widetilde{r}\star\widetilde{r}^*$, the voltage response convolved with itself, is plotted with a red line. Because the $\tau=0$ response of the dish is significantly larger than the reflections, linear terms in the convolution dominate the squared terms whose magnitude roughly corresponds to the green line. Hence, the power kernel is well approximated by $\widetilde{r}$ itself, verifying our result in equation~\ref{eq:KernelApprox}. We fit a double power law model to both the power kernel (solid black line) and the voltage response(dashed black line) and find that it is a good approximation for the long-time scale behavior of both.We also plot the falloff of reflections with $Y=0.1$ in equation~\ref{eq:ReflectionModel} which is representative of the measured and simulated reflection coefficient of the feed to waves at zenith. The observed reflections are significantly worse.}
+\label{fig:KernelCompare}
 \end{figure}
+
+Our simulations of the Dish response only extend to $\approx 300$\,ns, however, we wish to understand the impact of reflections on the frequency dependent gain of an interferometer like HERA, which has a spectral resolution of $100$\,kHz. Obtaining such frequency resolution would require a calculation of the voltage response out to $100$\,$\mu$s, over two orders of magnitude beyond the time limit of our current simulation. Fortunately, there exists a way of extrapolating our results which is highly physically motivated. We first note that $\widetilde{r}(\tau)$ exhibits a pivot at around $75$\,ns, falling rapidly for the first $\sim 60$\,ns or so before leveling out and following a much shallower trend that is characterized by periodic lobed structures every $\approx 30$\,ns. The initial falloff is likely the intrinsic response of the feed element itself, caused by residual currents that were excited by the incident wave. The scalloped structures that dominate the slower, long-term fall-off is almost certainly caused by reflections between the feed element and the vertex of the dish. This is due to the fact that the round-trip delay between the feed and the dish, $5$\,m below, is $\approx 30$\,ns. This long term falloff is precisely what we must model in order to extrapolate to the very long delays required to model $100$\,kHz structures and the reflections provide us with a simple physical model for doing so. Adopting the notation of \citep{Patra:2015}, we let $\Gamma_d$ represent the reflection coefficient of the Dish vertex and $\Gamma_f$ represent the reflection coefficient of the feed. An electromagnetic wave incident on the feed, at $t=0$, is accepted with amplitude $(1-\Gamma_f)$. The reflected component travels back to the dish and acquires an amplitude of $(\Gamma_f \Gamma_d)$ before returning at time, $\tau_d$ later where $(1-\Gamma_f)$ will be accepted and so forth. The time dependent voltage at the feed from these reflections is thus
+\begin{equation}
+\widetilde{v}_r(t) = \sum_m \left( \Gamma_f \Gamma_d \right)^m \widetilde{s}(t-m \tau_d)
+\end{equation}
+Hence
+\begin{equation}
+\widetilde{r}_r(\tau) = \sum_m \left( \Gamma_f \Gamma_d \right)^m \delta_D(\tau-m\tau_d)
+\end{equation}
+Since the number of reflections, $m=t/\tau_d$, than we can write the long-term delay response in discrete form as 
+\begin{equation}
+\widetilde{r}_n \approx (\Gamma_f \Gamma_d)^{n d\tau/\tau_d}
+\end{equation}
+which is a power law. We thus model our discrete voltage response as a sum of two power laws, one to describe the rapid falloff at small delays from residual currents in the feed, and another at large delay to describe the reflections in the dish. 
+\begin{equation}
+\widetilde{r} = A X^{(\tau/30\text{ns})} + (1-A) Y^{(\tau/30 \text{ns})}
+\end{equation}
+Strictly speaking, this equation is not correct in that it contains non-existent reflections at very small delays, however since the amplitude of these reflections is only several $\%$, the formula is still accurate here. 
+We fit our voltage response function and power-kernel to this function, finding a best fit model for the voltage kernel of $A\approx0.95$,$X \approx 0.18$, and $Y\approx 0.58$. The large $Y$ is unrepresentative of the feed reflection coefficient which has been simulated and measured to be $\approx 0.1$ for a head-on EM wave, suggesting that the reflections are arriving from the sides and potentially involve only a small component of the dish and feed. Plotting the die off for the feed reflection coefficient yields dramatically better performance than what is measured.  If the reflections are indeed originating from the sides, and a small component of the dish and feed arrangement, further suppression may be achieved through modifying this component. 
+
 
 \section{Comparison to Reflectometry Data}\label{sec:Comparison}
 \subsection{The Delay Response at Zenith}
@@ -180,7 +200,9 @@ Applying this transformtion to $S_{11}(f)$ and taking a DFT into the time domain
  After observing decent agreement between simulations and data, we now use our time-domain simulations to probe the side-lobe structure of the dish which are currently inaccessible to our experimental setup. Understanding the delay structure of the sidelobes is critical for several reasons. First, the sidelobes represent the largest delays occupied by foregrounds, hence the closest to the EoR window which we wish to keep foreground-free. While spectral leakage of sources at zenith may place them somewhere within the wedge, any spectral structure in the sidelobes is guaranteed to place these sources directly inside of the window. Second, the forshortening of diffuse structure near the horizon due to wide-field projection effects leads to a significant amount of foreground power entering at these delays, generally making them the most contaminated region of the wedge outside of the central lobe and leading to the so called ``pitchfork" \citep{Thyagarajan:2015a,Thyagarajan:2015b}. 
  
  We fist attempt to explore the Dish sidelobe structure by running high resolution spatial beam maps {\bf Rich fill in details of running 2D beam simulations}. However, comparison between individual frequency channels in both CST and FEKO indicates numerical precision errors {\bf Show a figure of an attempted beam and frequency artifacts at zenith.}
+ 
 
+Rather, we employ CST's time domain mode to simulate the response of the dish to plane waves incident off of zenith to understand the frequency dependence of the side-lobes using the same technique that was described in \S~\ref{ssec:Deconvolve}. In Fig.~\ref{fig:Comparison}, we show the delay structure of the sidelobe response functions we obtain on a N-S line $20^\circ$ and $30^\circ$ from zenith, which approximately correspond to the sidelobes of the beam. 
 
 \section{The Effect of the HERA dish Chromaticity on Foreground Leakage and Sensitivity}\label{sec:Foregrounds}
 
