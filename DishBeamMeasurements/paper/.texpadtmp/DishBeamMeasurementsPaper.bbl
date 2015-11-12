@@ -1,4 +1,4 @@
-\begin{thebibliography}{17}
+\begin{thebibliography}{18}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Ali} {et~al.}(2015{\natexlab{a}}){Ali}, {Parsons}, {Zheng}, {Pober},
@@ -48,6 +48,10 @@ Paciga, G., {et~al.} 2011, Monthly Notices of the Royal Astronomical Society,
 
 \bibitem[{{Parsons} \& {Backer}(2009)}]{parsonsandbacker}
 {Parsons}, A.~R., \& {Backer}, D.~C. 2009, \aj, 138, 219
+
+\bibitem[{{Parsons} \& {DeBoer}(2015)}]{heraMemo5}
+{Parsons}, A.~R., \& {DeBoer}, D.~R. 2015, Configuration of the HERA Element,
+  Tech. Rep.~5, HERA Memo Series
 
 \bibitem[{{Parsons} {et~al.}(2012){Parsons}, {Pober}, {Aguirre}, {Carilli},
   {Jacobs}, \& {Moore}}]{perbaselinetechnique}
