@@ -53,16 +53,16 @@ I({\bf \widehat{k}},f) \delta_D({\bf \hat{k}} - {\bf \hat{k}'})= \langle s({\bf 
  where $\delta_D$ is the Dirac delta function and $\langle \rangle_t$ indicates an average in time. We imagine that the electric field as a function of time, $\widetilde{s}({\bf \widehat{k}},t)$ arrives at an arbitrary origin at time $t$ and at the various $i^{th}$ antenna elements of an interferometer at locations ${\bf x_i}$ at times $\tau_i={\bf x_i} \cdot {\bf \widehat{k}} /c$. We now consider reflections within a single dish element described by a direction dependent reflection coefficient\footnote{Ignoring reflections between multiple dish elements which we treat in Appendix~\ref{app:Reflections}}, $\widetilde{r}_i({\bf \widehat{k}},\tau)$. which re-introduce the signal at later times $\tau$. The voltage signal measured at the $i^{th}$ antenna element, $\widetilde{v}_i$, is the integral over solid angle of the convolution of the electric field entering the antenna (delayed by $\tau_i$) with $r_i({\bf \widehat{k}},\tau')$.
 
 \begin{equation}
-\widetilde{v}_i(t) = \int d \Omega \int d \tau \widetilde{r}_i({\bf \widehat{k}},\tau') \widetilde{s}({\bf \widehat{k}},t+\tau_i - \tau)
+\widetilde{v}_i(t) = \int d \Omega \int d \tau \widetilde{r}_i({\bf \widehat{k}},\tau) \widetilde{s}({\bf \widehat{k}},t- \tau_i - \tau)
 \end{equation}
 
  An FX (or XF) correlator measures the time-averaged product of the fourier transform of the voltage streams between the $i^{th}$ and $j^{th}$ antenna. Fourier transforming the voltage stream from the $i^{th}$ antenna we obtain
 \begin{equation}
-v_i(f) = \int d \Omega \int d \tau' \widetilde{r}_i({\bf \widehat{k}},\tau') s({\bf \widehat{k}},f)e^{2 \pi i f(\tau'-\tau_i)}
+v_i(f) = \int d \Omega \int d \tau \widetilde{r}_i({\bf \widehat{k}},\tau) s({\bf \widehat{k}},f)e^{-2 \pi i f(\tau_i+\tau)}
 \end{equation}
 The time averaged product between the two antennas is
 \begin{equation}
-V_{ij}'(f) = \left \langle v_i(f) v_j^*(f) \right \rangle_t = \int d \Omega \int d \tau \widetilde{r}_i(\tau) d \tau' \widetilde{r}^*_j(\tau')e^{2 \pi i f (\tau'-\tau) } I({\bf \widehat{k}}, f) e^{- 2 \pi i \Delta \tau_{ij}f} 
+V_{ij}'(f) = \left \langle v_i(f) v_j^*(f) \right \rangle_t = \int d \Omega \int d \tau \widetilde{r}_i(\tau) d \tau' \widetilde{r}^*_j(\tau')e^{-2 \pi i f (\tau-\tau') } I({\bf \widehat{k}}, f) e^{- 2 \pi i \Delta \tau_{ij}f} 
 \end{equation}
 where $\Delta \tau_{ij} = \tau_i-\tau_j = ({\bf x_i - x_j}) \cdot {\bf \widehat{k}}/c$. We eliminated one of the solid angle integrals using equation~\ref{eq:Dirac}. 
 
@@ -86,7 +86,7 @@ where ${\bf b}_{ij} = ({\bf x}_i - {\bf x}_j )$ to use the usual $uv$ notation o
 
 In order to separate spectrally smooth foregrounds from our signal, we expect to use the {\it delay transform} over frequency, defined as \citep{Parsons:2012}
 \begin{equation}
-\widetilde{V}_{ij}(\tau) = \int d f e^{-2 \pi i \tau f} V_{ij}(f)
+\widetilde{V}_{ij}(\tau) = \int d f e^{2 \pi i \tau f} V_{ij}(f)
 \end{equation}
 Applying this to equation~\ref{eq:Visibility}, we obtain
 \begin{equation}
@@ -94,9 +94,9 @@ Applying this to equation~\ref{eq:Visibility}, we obtain
 \end{equation}
 Let's examine the quantity within the angular integral. For each ${\bf \hat{k}}$, we see that each source is mapped to a line $\tau ={\bf b}_{ij}\cdot{\bf \hat{k}}/c$, resulting in the much discussed ``wedge" \citep{Datta:2010,Vedantham:2012,Parsons:2012,Morales:2013,Thyagarajan:2013,Liu:2014a,Liu:2014b}. The presence of the frequency dependent beam causes each source line to be convolved in delay with the direction dependent kernel
 \begin{equation}\label{eq:Kernel}
-\widetilde{R}_{ij}({\bf \hat{k}},\tau) = \int d \tau \widetilde{r}_i({\bf \hat{k}},\tau - \Delta \tau) \widetilde{r}_j({\bf \hat{k}},\Delta \tau).
+\widetilde{R}_{ij}({\bf \hat{k}},\tau) = \int d \tau \widetilde{r}_i({\bf \widehat{k}},\tau - \Delta \tau) \widetilde{r}^*_j({\bf \widehat{k}},-\Delta \tau).
 \end{equation}
-which itself is the convolution of the delay response of the two voltage beams, $\widetilde{r}_i({\bf \widehat{k}},\tau)$,$\widetilde{r}_j({\bf \widehat{k}},\tau)$. Usually, beams have a different delay structure in each direction, and we demonstrate the effect of foreground smearing in Fig.~\ref{fig:Smearing} for a simple model with only three sources. Without reflections, the sources would form lines in $b-\tau$ space. With the reflections, the sources are smeared out, leading to supra-horizon emission. 
+which is the convolution of the delay response of voltage beam $i$ with the complex conjugate of voltage beam $j$ evaluated on a negative t-axis, $\widetilde{r}_i({\bf \widehat{k}},\tau)$,$\widetilde{r}_j({\bf \widehat{k}},\tau)$. Note that this is not equal to the convolution of the voltage response with its complex conjugate, which would lead to foreground power only being bled out to positive delays. Usually, beams have a different delay structure in each direction, and we demonstrate the effect of foreground smearing in Fig.~\ref{fig:Smearing} for a simple model with only three sources. Without reflections, the sources would form lines in $b-\tau$ space. With the reflections, the sources are smeared out, leading to supra-horizon emission. 
 \begin{figure*}[h!]
 \includegraphics[width=\textwidth]{figures/wedgeCompare.pdf}
 \caption{We demonstrate the impact on foregrounds of the frequency dependent beam. Left: The location of three sources in delay space assuming a frequency indepdendent beam (no reflections in the antenna element). Right: the presence of chromaticity due to reflections in the antenna smears the source in delay with the kernel given by equation~\ref{eq:Kernel}. Since the frequency response of the dish are a function of direction on the sky, the shape of the delay kernel is different for each source line. We see that this smearing can lead to substantial supra-horizon emission. Sources near zenith (low delay) tend to have a larger maximum since the beam gain is larger near zenith, but a more compact kernel (since beam bore-sights tend to have less spectral structure). Meanwhile, sources near the horizon have a much smaller maxima but have less compact kernels.}
@@ -202,11 +202,20 @@ Applying this transformtion to $S_{11}(f)$ and taking a DFT into the time domain
  We fist attempt to explore the Dish sidelobe structure by running high resolution spatial beam maps {\bf Rich fill in details of running 2D beam simulations}. However, comparison between individual frequency channels in both CST and FEKO indicates numerical precision errors {\bf Show a figure of an attempted beam and frequency artifacts at zenith.}
  
 
-Rather, we employ CST's time domain mode to simulate the response of the dish to plane waves incident off of zenith to understand the frequency dependence of the side-lobes using the same technique that was described in \S~\ref{ssec:Deconvolve}. In Fig.~\ref{fig:Comparison}, we show the delay structure of the sidelobe response functions we obtain on a N-S line $20^\circ$ and $30^\circ$ from zenith, which approximately correspond to the sidelobes of the beam. 
+Rather, we employ CST's time domain mode to simulate the response of the dish to plane waves incident off of zenith to understand the frequency dependence of the side-lobes using the same technique that was described in \S~\ref{ssec:Deconvolve}. In Fig.~\ref{fig:Sidelobes}, we show the delay structure of the sidelobe response functions we obtain on a N-S line $20^\circ$ and $30^\circ$ from zenith, which approximately corresponds to the first two nulls of the beam. Each response is normalized to the voltage response at zero delay and zenith. We see that at zero delay, the sidelobes are $\approx 20-25$\,dB down. However, at larger delays, $\approx 100$\,ns, the difference with the $20^\circ$ sidelobe is only $\approx 5-10$\,dB while the $30^\circ$ sidelobe maintains $\approx 15-20$\,dB separation with the zenith response. This behavior indicates that while the overall amplitude of the sidelobes is reduced at zero-delay, the enhanced frequency structure over the sidelobes can mitigate this advantage at high delays, leading for the brightness of sidelobe foregrounds, leaked at $\gtrsim 100$\,ns to appear just as bright as the leakage of foregrounds from zenith at $\gtrsim 100$\,ns.
 
-\section{The Effect of the HERA dish Chromaticity on Foreground Leakage and Sensitivity}\label{sec:Foregrounds}
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{figures/compareSidelobesNormalized.pdf}
+\caption{The modulus square of the voltage responses of the HERA dish to plane waves incident from zenith (blue line) along with $20^\circ$,$25^\circ$, and $30^\circ$ off-zenith along the NS line. While the sidelobes are suppressed to $\approx 20-25$\,dB at zero delay, they come within $5$\,dB of the zenith response at longer delays which can lead to the level of leakage for a soruce in the sidelobes being comparable to the leakage of a source from zenith. The fact that the sidelobes occupy a much larger solid angle with only moderate supression at $\sim 100$\,ns coupled with their proximity to the horizon, suggests that they will dominate supra-horizon emission.}
+\end{figure}
+
+\section{The Effect of the HERA dish Chromaticity on Foreground Leakage and Sensitivity}
+Having a thorough understanding of how the chromatic beam of the HERA dish leaks foregrounds into higher delays and a decent picture of the relevant voltage response of the dish itself, we are now in a position to explore the impact of the Dish's performance on the leakage of foregrounds beyond the wedge, and into the EoR window. Beyond the delay kernels considered in this paper and \citep{Patra:2015}, the extent of leakage will depend both on the angular structure of the primary beam, which is established in \citep{Neben:2015b} and the model of the foregrounds themselves. In this section, we investigate the amplitude of foreground leakage as a function of delay given an angular primary beam model and two models of the delay structure of the dish: one in which the frequency structure is constant in all directions, and another in which we take into account the increased spectral structure that we observed in \S~\ref{ssec:Sidelobes}. 
+
+
 
 \subsection{Simulating Foreground Visibilities with the Spectral Structure of the HERA Dish.}
+
 
 \subsection{How Deep Can we Clean?}
 The level of foreground subtraction possible depends on the number of time steps and redundant baselines that are averaged before performing the cleaning step. The standard deviation on the real and imaginary part of a single delay transformed visibility is given by \citep{Morales:2004}
@@ -228,6 +237,8 @@ where $A_e$ is the effective area of the dish, $B$ is the bandwidth, $T_{sys}$ i
 \caption{The delay transformed power spectra of foregrounds with (blue line) and without (green line) contamination from reflections in the dish. The residuals of these foregrounds, cleaned to $5\,\sigma$ after 2 minutes of integration, are plotted with (red dashed line) and without (cyan dashed line) dish reflections. We compare to the amplitude of the 21\,cm power spectrum (solid black line). Foreground contamination, leaked by reflections, extends out to $k_\parallel \approx 0.25$\,$h$Mpc$^{-1}$. The signals plummet to zero at $k=0$ is an artifact of the spatial extent of the simulation which does not probe extremely fine scales.}
 \label{fig:SignalCompare}
 \end{figure}
+
+\subsection{The Impact of Delay-Rate Filtering.}
 
 \subsection{The Implications of Dish Reflections on EoR Science}
 Since the amplitude of the 21\,cm signal is maximal at smaller $k$ values, a loss of large scale signal out to $0.25$\,$h$Mpc$^{-1}$ will eliminate some of the power spectrum modes that HERA will have the greatest SNR on, impacting our overall sensitivity. We address the change in SNR and its implications on HERA's ability to place constraints on reionization parameters in this section, using the Fisher Matrix Formalism. 
