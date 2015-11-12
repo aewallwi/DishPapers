@@ -172,7 +172,7 @@ We define antenna cross power pattern as  $\bm(\thhat,\nu)=\bmvolt_{1}(\thhat,\n
 In \citet{parsons_et_al2012a}, the Fourier transform of the visibility along the frequency axis was introduced,
 resulting in the delay spctrum:
 \begin{eqnarray}
-\tilde V(\vec b, \tau) & = & \int\!\!\int{\bm(\thhat,\nu) I_\sky(\thhat,\nu) \ifngexp d\Omega~e^{-2\pi i\nu\tau}d\nu}\nonumber\\	                        & = &   \int \left [ A(\vec b, \tau)\ast I_{sky}(\vec b, \tau) \ast \delta( \vec b, \tau )\right ] d\Omega 
+\tilde V(\vec b, \tau) & = & \int\!\!\int{\bm(\thhat,\nu) I_\sky(\thhat,\nu) \ifngexp d\Omega~e^{+2\pi i\nu\tau}d\nu}\nonumber\\	                        & = &   \int \left [ A(\thhat, \tau)\ast I_{sky}(\thhat, \tau) \ast \delta( \tau - \frac{{\vec {b} \cdot \thhat}}{c} )\right ] d\Omega 
 \label{eq3}
 \end{eqnarray}
 % XXX rethink how to express this equation (not correct about integrated over all sky)
@@ -250,7 +250,7 @@ and,
 && ....+ (1-\Gamma_{f})^{n}(\Gamma_{f}\Gamma_{d})^{n} (\dfngexp)^{n}] \ast \fngexp 
 \end{eqnarray}
 
-where $\Phi = 2\pi\nu\Delta \tau$. The relevant terms in the corresponding visibility and subsequently in the delay spectrum would be the ones which represent the correlation between the direct component of one antenna with the reflected components of the other resulting in higher order terms  in $\Sigma(\vec b, \nu)$. The corresponding instrument response may be written as, 
+The relevant terms in the corresponding visibility and subsequently in the delay spectrum would be the ones which represent the correlation between the direct component of one antenna with the reflected components of the other resulting in higher order terms  in $\Sigma(\vec b, \nu)$. The corresponding instrument response may be written as, 
 
 \begin{equation}
 \Sigma(\vec b, \nu) = a_{f} \left [ 1+ 2 \Re \left [(1-\Gamma_{f}) \Gamma_{f}\Gamma_{d} e^{i\phi}+ (1-\Gamma_{f})^{2}(\Gamma_{f}\Gamma_{d})^2e^{i2\phi}+ ....+(1-\Gamma_{f})^{n} (\Gamma_{f}\Gamma_{d})^{n}e^{in\phi} \right ]\right ]
@@ -258,8 +258,14 @@ where $\Phi = 2\pi\nu\Delta \tau$. The relevant terms in the corresponding visib
 
 and the measured visibility spectrum, integrated over all sky would be, 
 \begin{equation}\label{eqn:series1}
-\vis(\vec b, \nu)  = \int I_{sky}\Sigma(\vec b, \nu) d\Omega
+\vis(\vec b, \nu)  = \int I_{sky}(\vec b, \nu)\Sigma(\vec b, \nu) \fngexp d\Omega
 \end{equation}
+Corresponding delay spectrum would be, 
+\begin{eqnarray}
+\tilde V(\vec b, \tau) & = & \int \left [ \int I_{sky}(\vec b, \nu)\Sigma(\vec b, \nu) \fngexp  d\Omega \right ]  e^{-2\pi i\nu\tau} d\nu \nonumber \\
+  			      & = & \int \left [ I_{sky}(\thhat, \nu) \ast \Sigma(\thhat, \nu) \ast \delta( \tau - \frac{{\vec {b} \cdot \thhat}}{c} )  \right] d\Omega
+\end{eqnarray}
+
 
 The design specification of HERA elements requires that any
 signal, arriving at the feed at a delay $\Delta \tau$ with respect to the direct incidence, should be
