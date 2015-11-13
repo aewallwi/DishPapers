@@ -283,10 +283,97 @@ elevation beam response unprobed by our measurements. We run these simulations f
 lengths and orientations at different local sidereal times to study under when the leakage out of the wedge is 
 significant, and what regions of the EOR window are affected.
 
-In detail, we discuss the experimental setup of the beam mapping experiments and their systematics, then 
-review  the ORBCOMM beam measurement system, in Section 2. We discuss the electromagnetic design and 
-modeling of the dish in Section 3, present our power pattern measurements in Section 5. We conclude with 
-discussion in Section 6.
+In detail, we discuss the electromagnetic design and modeling of the dish in Section 3. We present the 
+experimental setup of the beam mapping experiments and discuss their systematics, then 
+review the ORBCOMM beam measurement system, in Section 3. We present our power pattern 
+measurements in Section 5. We conclude with discussion in Section 6.
+
+\section{Dish Design and Modeling}
+
+\subsection{Design of the HERA Dish}
+%- EM design
+%    - departure from large N—small D to economize data volume (mitigate
+%      data processing challenges)
+%        - easier to identify systematics, to rerun datasets, perform
+%          cross checks / jackknives
+%    - but this change must be done judiciously, one advantage of simple
+%      elements is that they have little or no frequency structure,
+%      while a dish+feed system introduces reflections in the time
+%      domain, amounting in ripples in the frequency response
+%    - how bad are these ripples and can we tune the dish to mitigate
+%      their effect in the science?
+%    - as discussed above, it is useful to think in the delay domain as
+%      the translation from frequency structure introduced by dish
+%      reflections and the foreground isolation within the horizon delay
+%      is straightforward
+%    - the smooth spectral structure of the foregrounds sets a maximum
+%      foreground isolation achievable of ~60ns with blackman-harris
+%      window
+%    - f/D =0.32 maximizes efficiency for a PAPER dipole suspended over
+%      the dish
+%    - with typical reflection dish/feed reflection coefs, attenuation
+%      after 3 round trips will be below 60dB, and 1 and 2 round trips
+%      are in wedge, isolated away from EOR window
+%    - 14m also falls near the minimum of the cost per performance model
+
+The 14\,m HERA dish design is a departure from the large N--small D approach used by 21\,cm 
+observatories like PAPER and the MWA. Both observatories are actively pursuing power 
+spectrum analyses using several year data runs, but the sheer data volume makes 
+characterization and removal of systematics, as well as repeated or complimentary analyses, 
+challenging. A larger element was chosen for HERA primarily to economize data volume. 
+The natural consequence of a larger antenna aperture is a smaller field of view, but this is a 
+small effect for 21\,cm power spectrum analyses as our leverage on $k$ modes in the 
+spherically averaged power spectrum comes primarily from $k_\parallel$ modes along the line 
+of sight (in the frequency dimension).
+
+However, such a turn from small, simpler antenna elements to larger, more complex dishes with 
+suspended feeds must be done judiciously, lest the chromatic antenna response smear otherwise 
+smooth spectrum foreground power into cosmological signal modes. For this reason the dish 
+design was carefully optimized for a foreground avoidance-based power spectrum spectrum 
+analysis, as detailed by \citet{heraMemo5} and discussed in the larger engineering context of 
+HERA by DeBoer et al (in prep). 
+
+We summarize here the logic leading to a 14\,m dish with $f/D\approx0.32$. As discussed 
+above, it is useful to think in delay-space, where a source ideally appears as a delta function 
+at the delay corresponding to the difference in light travel time to two antennas in a 
+baseline. In a real instrument, finite bandwidth and intrinsic source spectral structure 
+(synchrotron sources typically have $I\propto f^{-0.85}$) smear foreground power over a 
+kernel as wide as $\sim60$\,ns. All antennas have some frequency structure as well, though 
+dipole-like elements such as sleeved dipoles and bowties may be made relative frequency 
+independent over wide bands. Suspension of a feed over a dish introduces frequency 
+structure directly due to time domain reflections between the dish and feed. We optimize the 
+HERA dish so this frequency structure extends no farther into delay space than the 60\,ns 
+intrinsic width of foregrounds. This was accomplished first through numerical modeling of 
+the beam pattern with a PAPER dipole suspended over the dish aperture, and resulted in a 
+maximum efficiency of 73\% with $f/d\approx0.32$. From there, using realistic estimates of 
+reflection loss, a 14\,m dish was observed to have the property that the signal received at the 
+feed after two bounces (round trips between the dish and feed) is above -60\,dB but 
+contained in the wedge, but all higher order reflections in the EOR window are below 
+-60\,dB, and thus an order of magnitude smaller than the expected cosmological signal. 
+
+In reality, the HERA dishes are somewhat more complicated that these simple considerations 
+imply, and part of the purpose of the beam measurements presented in this paper is to 
+characterize their \textit{in situ} beam patterns. The dish is fabricated out of low cost 
+construction materials with an expected lifetime of $\sim5$ years, sufficient to detect the 21\,cm 
+power spectrum to high significance before the Square Kilometer Array builds a longer lasting 
+instrument to more fully characterize the Epoch of Reionization with imaging. The feed consists 
+of a sleeved dipole, suspended in a cage structure from from three ropes attaching to telephone 
+poles spaced around the dish. The dipole is mounted on a XX\,m mast over a XX\,m diameter backplane surrounded by a XX\,m long cylindrical ``skirt'' designed to reduce cross coupling with adjacent elements 
+by narrowing the feed's response. The dish surface consists of 12 wire mesh strips secured to 
+60\,mm PVC pipes forming the dish skeleton. A spar at 2.4\,m elevation is added to ensure 
+approximately parabolic shape. Note that we refer to this design as a \textit{faceted parabola} 
+given that the dish surface between PVC spars is not curved, though our design ensures the 
+Ruze loss is at the percent level. A door is engineered into one of these mesh strips to facilitate 
+feed maintenance.
+
+This work presents beam pattern measurements to verify the capabilities of this new dish, in particular the 
+position of the dish focus, the shape of the main lobe, the magnitude of the dish sidelobes, the 
+degree of beam symmetry, the actual dish/feed efficiency (i.e., collecting area), and the expected level of antenna-to-antenna variation.
+
+\subsection{Dish Modeling}
+\label{sec:dishmodels}
+
+ASK DAVE OR RICH TO WRITE A ONE OR TWO PARAGRAPH SUMMARY OF THE ELECTROMAGNETIC DISH SIMULATIONS
 
 \section{Experimental Setup}
 
@@ -398,35 +485,6 @@ The magnitude of these systematics is comparable to those observed in the two ot
 %\label{fig:null4}
 %\end{figure*}
 
-
-\section{Dish Design and Modeling}
-
-\subsection{Design of the HERA Dish}
-
-ASK DAVE DEBOER TO WRITE A TWO PARAGRAPH SUMMARY OF THE HERA ELEMENT AND HOW IT WAS DESIGNED
-
-\subsection{Dish Modeling}
-\label{sec:dishmodels}
-
-ASK DAVE OR RICH TO WRITE A ONE OR TWO PARAGRAPH SUMMARY OF THE ELECTROMAGNETIC DISH SIMULATIONS
-
-%\section{Feed Measurements}
-
-%Accurate modeling of both the dish and feed will be essential for final dish modeling. To that end, we deploy the feed on the ground facing the sky (Figure \ref{fig:feedpic}), replacing the north-most reference antenna in the \texttt{null3} configuration, to isolate the feed power pattern. 
-
-%Figure \ref{fig:feed0} shows the measured feed beams (top panel) and slices through the E and H planes (bottom panel). Due to intermittent connection problems to the DAQ computer, we collected only 157 high signal-to-background satellite passes over a few days. Still, the data agree very well with the CST model for $\theta<55^\circ$, outside of which the E plane response starts narrows compared to the model by up to 5\,dB at $\theta=70^\circ$. Still, the data are quite sparse in these low regions due to the connection problems, and so the usual quality control cuts are likely less effective than usual. 
-
-%\begin{figure*}[h]
-%\includegraphics[width=5in]{feed.jpg}
-%\caption{Feed deployed on the ground, facing the sky, replacing the north-most reference antenna in the \texttt{null3} configuration. }
-%\label{fig:feedpic}
-%\end{figure*}
-
-%\begin{figure*}[h]
-%\includegraphics[width=6.5in]{feed0_abs_old_ref_model.png}
-%\caption{Measurements of the feed power pattern, deployed so it faces the sky. The measurements agree well with the model for $\theta<55^\circ$, but start to diverge at large zenith angles, possibly due to quality control problems due to very sparse beam sampling.}
-%\label{fig:feed0}
-%\end{figure*}
 
 \section{Dish Measurements}
 
