@@ -427,11 +427,18 @@ reflections of interest occur. At low delays, our spectrum amplitude should be
 increased to represent the original sky signal, but we do not apply this
 correction because it is not relevant to our analysis.
 
-\begin{figure}[H]
+\begin{figure}
 \centering
-\includegraphics[totalheight=0.41\textheight]{plots/bh_vs_sq.png}
-\caption{Delay plot produced for the PAPER bandwidth ($100MHz-200MHz$) by taking the Fourier transform of the measured return loss using four different window functions: Blackman-Harris, square, Hamming, and Hanning.}
+\includegraphics[width=1.0\linewidth]{plots1/delayspectrum.png}
+\caption{Delay transform of the transfer function of the HERA element. The complex return loss of the element is measured between 50 to 400~MHz when the feed is kept at the focal plane of the dish at a focal height 4.5m. The delay spectrum is produced by taking the Fourier transform of the magnitude of the return loss measurement after limiting the measurements between 100 to 200~MHzusing Blackman-Harris window. The intersection of the horizontal and vertical dashed line shows the instrument performance specification as predicted by the theory of delay transform in order to detect the 21cm power spectrum.}
 \label{fig:window}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[totalheight=0.6\linewidth]{plots1/delayspectrum_feed.png}
+\caption{Delay transform of the transfer function of the HERA feed element. The feed is kept on the ground downside up so that the entire radiation from the feed is radiated out. Once again, the measurement is done between 50 to 450 MHz and the delay spectrum is produced between $100-200$~MHz by using a Blackman-Harris window. The black dashed lines illustrate the instrument specification.}
+\label{fig:outofthedish}
 \end{figure}
 
 \section{Results}
@@ -454,13 +461,6 @@ the feed was not encompassed in a cage for the Berkeley data (only a backplane).
 Fourier-transformed internally by the measuring device, while the $100-200MHz$
 data is analyzed post-measurement in the same way as the Green Bank data. 
 
-\begin{figure}[ht!]
-\centering
-\includegraphics[totalheight=0.41\textheight]{plots/delay3_window.png}
-\caption{Delay plots produced using a Hamming window function for 5 different cases. Three of the cases correspond to measurements taken in Green Bank for three frequency bandwidths: $50MHz-250MHz$ (HERA bandwidth), $100MHz-200MHz$ (PAPER bandwidth), and $140MHz-160MHz$ (typical power spectrum bandwidth). Two of the cases correspond to measurements taken in 2014 of the first prototype HERA dish in Berkeley (without a feed cage). Of these, we plot data for two frequency bandwidths: $100MHz-200MHz$ (PAPER bandwidth), and $50MHz-1000MHz$ (full bandwidth used by the VNA). For the PAPER bandwidth data, we follow the same Fourier-transform analysis as the others, while the full bandwidth data is produced directly by the VNA. The black dashed lines illustrate our ``60 by 60" specification.}
-\label{fig:3bands}
-\end{figure} 
-
 From the plot, we see that the delay response of a feed is dependent on the band chosen for the Fourier transform.  As one might expect, in regions
 where the feed return loss is low, reflections are minimized.  Thus, we cannot ignore that these measurements were performed
 using a PAPER-style feed tuned for efficient operation over a $100-200MHz$ bandwidth.  Fourier transforms taken over wider bands
@@ -476,12 +476,12 @@ In the $100-200MHz$ delay profile, we see a delay response of $-50dB$ at $60ns$,
 this does not achieve $-60dB$ attenuation at $60ns$, this indicates that the HERA system under test does not meet specification. However, we can learn additional information by evaluating
 different feed components. 
 
-\begin{figure}[ht!]
-\centering
-\includegraphics[totalheight=0.41\textheight]{plots/delay_heights_paper.png}
-\caption{Delay plots produced using a Hamming window function for 4 different feed heights and the PAPER bandwidth ($100MHz-200MHz$). The black dashed lines illustrate our ``60 by 60" specification.}
-\label{fig:elevator}
-\end{figure}
+%\begin{figure}[ht!]
+%\centering
+%\includegraphics[width=1.0\linewidth]{plots1/delayspectrum_height.png}
+%\caption{Delay transform of the transfer function of the HERA element keeping the feed at various heights. Delay transform is produced by taking the Fourier transform of the measurement using Blackman-Harris window.}
+%\label{fig:elevator}
+%\end{figure}
 
 Figure \ref{fig:elevator} is again a delay plot of the return loss, but for
 four different feed suspension heights. We use the PAPER bandwidth and note
@@ -501,12 +501,7 @@ that the cylindrical cage may be contributing up to $20ns$ to the width of the d
 on its coupling to structures around it. Structure beyond $60ns$ appears to scale
 with the height of the feed above the dish, making reflections off the dish the likely culprit.
 
-\begin{figure}[H]
-\centering
-\includegraphics[totalheight=0.41\textheight]{plots/delay_feed.png}
-\caption{Delay plots produced using a Hamming window function for different lone feed configurations and the PAPER bandwidth ($100MHz-200MHz$). The black dashed lines illustrate our ``60 by 60" specification.}
-\label{fig:outofthedish}
-\end{figure}
+
 
 \section{Conclusion}
 
