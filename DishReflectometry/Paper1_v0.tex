@@ -177,7 +177,7 @@ resulting in the delay spctrum:
 \end{eqnarray}
 % XXX rethink how to express this equation (not correct about integrated over all sky)
 % XXX define tau_g
-The convolution is carried out along the $\tau$ axis which is Fourier conjugate of the frequency $\nu$. In words, the sky delay spectrum from any direction $\thhat$ is convoluted with the delay spectrum of the instrument and would be located at the delay $\tau = {\vec b \cdot \thhat \over c}$ in the delay domain. The maximum geometric delay possible for a given base line would be $\tau_{g} ={ b \over c }$ for the direction of $\thhat = 0$ when the phase centre is halfway in between the two antennas. Hence, the sky contribution from any direction would be confined within $-\tau_{g}<\tau<\tau_{g}$. Due to chromaticity of the sky signal, the delay spectrum of the sky spills over the delay $\tau> \tau_{g}$ with decaying amplitude [Ref to the figure Parsons12]. Sky delay spectrum $I_{sky}(\tau)$ is contributed by the foreground  $I_{fg}(\tau)$  which is spectrally smooth and the 21~cm power spectrum $I_{21}(\tau)$ which contains spectral signatures. Therefore, in the spill over region $(\tau>\tau_{g})$, the relative strength of the smooth spectrum foreground with respect to the delay spectrum of the $I_{21}$ reduces and the 21~cm delay spectrum is detectable. 
+The convolution is carried out along the $\tau$ axis which is Fourier conjugate of the frequency $\nu$. In words, the sky delay spectrum from any direction $\thhat$ is convoluted with the delay spectrum of the instrument and would be located at the delay $\tau = {\vec b \cdot \thhat \over c}$ in the delay domain. The maximum geometric delay possible for a given base line would be $\tau_{g} ={ b \over c }$ for the direction of $\thhat = 0$ when the phase centre is halfway in between the two antennas. Hence, the sky contribution from any direction would be confined within $-\tau_{g}<\tau<\tau_{g}$. Due to chromaticity of the sky signal as well as instrument reponse, the delay spectrum of the sky spills over the delay $\tau> \tau_{g}$ with decaying amplitude [Ref to the figure Parsons12]. Sky delay spectrum $I_{sky}(\tau)$ is contributed by the foreground  $I_{fg}(\tau)$  which is spectrally smooth and the 21~cm power spectrum $I_{21}(\tau)$ which contains spectral signatures. Therefore, in the spill over region $(\tau>\tau_{g})$, the relative strength of the smooth spectrum foreground with respect to the delay spectrum of the $I_{21}$ reduces and the 21~cm delay spectrum could potentially be detectable. 
 
 \subsection{Delay spectrum: An estimate of the 21cm power spectrum}
 Add text here. 
@@ -185,20 +185,25 @@ Add text here.
 
 
 \section{Effects of additional reflections of the sky signal between the parabolic dish and the feed on the measured visibility}
- Plane waves incident on a parabolic dish are focussed at the feed which is kept at the focal plane of the dish. The mismatch between the impedance of free space and the feed and transmission line results in a partial coupling of the sky signal into the feed while the rest is reflected off the feed. The reflected signal illuminates the dish and most of it is reflected back into the space. However, a part of it reflects back and forth several times in between the feed and the vertex of the dish which is shadowed by the feed (dashed blue arrows in Figure \ref{fig:cartoon}). Such reflections generate multiple copies of the incident sky signal of reduced strength at various time/phase and thus produces spurious correlations in the visibilities of interferometric data. In this section we compute the visibility of a two element interferometer accounting for the additional reflections of the sky signal in between the feed and the dish vertex and the corresponding effects on the delay spectrum. 
+Response of any radio telescope is chromatic and modulates the true sky signal in the spectral domain. This results in the convolution of the instrument response kernel with the sky signal in the delay domain.
+This fundamentally limits the detectability of a 21~cm power spectrum. In this section, the effect of reflections on the visibility data and corresponding effect on the delay spectrum is discussed qualitatively.
+ 
+ Plane waves incident on a parabolic dish are focussed at the feed which is kept at the focal plane of the dish.
+The mismatch between the impedance of free space and the feed and transmission line results in a partial coupling of the sky signal into the feed while the rest is reflected off the feed. 
+The reflected signal illuminates the dish and most of it is reflected back into the space.
+However, a part of it reflects back and forth several times in between the feed and the vertex of the dish which is shadowed by the feed (dashed blue arrows in Figure \ref{fig:cartoon}).
+Such reflections generate multiple copies of the incident sky signal of reduced strength at various delay and phase and thus produces spurious correlations in the visibilities of interferometric data. 
+In this section we compute the visibility of a two element interferometer accounting for the additional reflections of the sky signal in between the feed and the dish vertex and the corresponding effects on the delay spectrum. 
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[totalheight=0.35\textheight]{plots/reflection_cartoon.png}
-\caption{The blue solid lines represent an original sky signal entering the
-feed. A small percentage of it (dashed blue) is reflected off the dish, and it
-is these reflections that we are concerned about. In our measurements however,
-the reflections measured contain most of the original pulse signal (solid red),
-so it is crucial to adjust for this difference in our analysis.}
+\caption{The propagation path of the sky signal entering the
+feed in receiving mode is shown in blue. Due to impedance mismatch between feed and the free space, a part of the signal (dashed blue) is reflected off the feed. This signal reflects off the dish apex several times and returns to the feed at multiple delays with reduced signal strength. The red line shows the signal path during measurements which is done in transmission mode. Appropriate corrections are made to derive the telescope response function during sky observation. }
 \label{fig:cartoon}
 \end{figure}
 
-Consider again a two element interferometer as described in section 2. Two antennas are assumed to be exactly identical so that their electrical parameters and the field pattern are identical i.e, $a_{1}(\thhat,\nu) = a_{2}(\thhat,\nu)$. We denote the voltage reflection coefficient of each feed by $\Gamma_{f}$. The voltage reflection coefficient of the reflector dish is denoted by $\Gamma_{d}$. Upon first incidence of the sky signal onto the dish, it is reflected from the entire dish and is focussed onto the feed. Hence, for first incidence $\Gamma_{d}=1$. Sky signal that would return to the dish after successive reflections off the feed and the dish is only reflected from a small area around the vertex of the dish and therefore, $\Gamma_{d}<1$. In our analysis, we consider one reflection of the sky power from the feed and subsequent reflection off the dish as one single reflection. If the focal length of the dish is $l$, assuming the feed is located at the focus, the roundtrip delay after first reflection will be $\Delta \tau = {2l \over c}$. 
+Consider again a two element interferometer as described in section 2. Two antennas are assumed to be exactly identical so that their electrical parameters and the field pattern are identical i.e, $a_{1}(\thhat,\nu) = a_{2}(\thhat,\nu)$. We denote the voltage reflection coefficient of each feed by $\Gamma_{f}$. The voltage reflection coefficient of the reflector dish is denoted by $\Gamma_{d}$. Upon first incidence of the sky signal onto the dish, it is reflected from the entire dish and is focussed onto the feed. Hence, for first incidence $\Gamma_{d}=1$. Sky signal that would return to the dish after successive reflections off the feed and the dish is reflected only from a small area around the vertex of the dish and therefore, $\Gamma_{d}<1$. In our analysis, we consider one reflection of the sky power from the feed and subsequent reflection off the dish as one single reflection. If the focal length of the dish is $l$, assuming the feed is located at the focus, the roundtrip delay after first reflection will be $\Delta \tau = {2l \over c}$. 
 
 
 \subsection{Effect of first order reflections on visibility and delay spectrum}
@@ -232,11 +237,12 @@ Frequency as well as angular dependence of the quantities are not written explic
 Instrumental response function acquires additional terms arising due to correlation between the directed and reflected component of the sky signal. The total visibility at any frequency would be the sum of the three visibilities contributed by three sources of correlated power. First term in the square bracket represents the cross correlation between the two antenna outputs contributed by the sky signal upon first direct incidence. The second term results from the cross correlation between two reflected signals in each antenna.The last term represents the cross correlation between the first direct incident signal of one antenna and the first reflected signal from the other antenna and vice versa.
 
 Fourier transform of this visibility spectrum along the frequency axis results in the delay spectrum. 
- Fourier transform of the visibility contributed by any two voltage components from two antennas with no mutual delay will be located at the same delay $\tau $ in the Fourier domain whereas any two voltage components from two antennas components having a mutual delay of $\Delta \tau$ will be centred at $\Delta \tau$. This additional delay extends the upper limit on the maximum geometric delay $\tau_{g}$ to $(\tau_{g}+\Delta \tau)$.
- Thus, the correlation between the reflected signal  from the feed and subsequently from the dish with the direct signal thus extends the foreground response to delays beyond the maximum geometric delay for a given baseline and contaminates the delay mode where 21~cm delay spectrum could potentially be detected. 
- If the dish vertex is so constructed such that the reflection from the dish vertex is negligible i.e, $\Gamma_{d}<<1\ or = 0$ then the second and the third term of the $\Sigma$ vanish. Also, the second term in the expression of $\Sigma(\vec b, \nu)$ is negligible compared to the first and the third term of the expression and, therefore, can be neglected. \\
+ Fourier transform of the visibility contributed by any two voltage components from two antennas with no mutual delay will be located at the same delay $\tau$ in the Fourier domain whereas any two voltage components from two antennas components having a mutual delay of $\Delta \tau$ will be centred at $\tau+\Delta \tau$. This additional delay extends the upper limit on the maximum geometric delay $\tau_{g}$ to $(\tau_{g}+\Delta \tau)$.
+ Thus, the correlation between the reflected signal  from the feed and subsequently from the dish with the direct signal extends the foreground response to delays beyond the maximum geometric delay for a given baseline and contaminates the delay mode where 21~cm delay spectrum could potentially be detected. 
+ 
+ %If the dish vertex is so constructed such that the reflection from the dish vertex is negligible i.e, $\Gamma_{d}<<1\ or = 0$ then the second and the third term of the $\Sigma$ vanish. Also, the second term in the expression of $\Sigma(\vec b, \nu)$ is negligible compared to the first and the third term of the expression and, therefore, can be neglected. \\
 
-\subsection{Effect of higher order reflection on the delay spectrum} 
+\subsection{Effect of multiple reflections on the delay spectrum} 
 Correlation between the higher order reflections of the signal in any antenna with the direct component of the other would result in a delay response at integral multiple of $\Delta \tau$ and vice versa. 
 If $I_{sky}$ is reflected n times in between the feed and the dish, the net voltage entering the feed after an
 $n^{th}$ reflection off the feed and the dish is written as:
@@ -252,15 +258,16 @@ and,
 
 The relevant terms in the corresponding visibility and subsequently in the delay spectrum would be the ones which represent the correlation between the direct component of one antenna with the reflected components of the other resulting in higher order terms  in $\Sigma(\vec b, \nu)$. The corresponding instrument response may be written as, 
 
-\begin{equation}
-\Sigma(\vec b, \nu) = a_{f} \left [ 1+ 2 \Re \left [(1-\Gamma_{f}) \Gamma_{f}\Gamma_{d} e^{i\phi}+ (1-\Gamma_{f})^{2}(\Gamma_{f}\Gamma_{d})^2e^{i2\phi}+ ....+(1-\Gamma_{f})^{n} (\Gamma_{f}\Gamma_{d})^{n}e^{in\phi} \right ]\right ]
-\end{equation}
+\begin{eqnarray}
+\Sigma(\vec b, \nu) & = & a_{f}  [ 1+ 2 \Re [(1-\Gamma_{f}) \Gamma_{f}\Gamma_{d} \dfngexp+ (1-\Gamma_{f})^{2}(\Gamma_{f}\Gamma_{d})^2(\dfngexp)^{2}+ \nonumber\\
+&&  ....+(1-\Gamma_{f})^{n} (\Gamma_{f}\Gamma_{d})^{n}(\dfngexp)^{n} ] ]
+\end{eqnarray}
 
-and the measured visibility spectrum, integrated over all sky would be, 
+and the measured visibility spectrum would be, 
 \begin{equation}\label{eqn:series1}
 \vis(\vec b, \nu)  = \int I_{sky}(\vec b, \nu)\Sigma(\vec b, \nu) \fngexp d\Omega
 \end{equation}
-Corresponding delay spectrum would be, 
+Taking the Fourier transform of the visibility we obtain the delay spectrum
 \begin{eqnarray}
 \tilde V(\vec b, \tau) & = & \int \left [ \int I_{sky}(\vec b, \nu)\Sigma(\vec b, \nu) \fngexp  d\Omega \right ]  e^{-2\pi i\nu\tau} d\nu \nonumber \\
   			      & = & \int \left [ I_{sky}(\thhat, \nu) \ast \Sigma(\thhat, \nu) \ast \delta( \tau - \frac{{\vec {b} \cdot \thhat}}{c} )  \right] d\Omega
