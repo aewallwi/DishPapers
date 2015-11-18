@@ -3,3 +3,5 @@
 *.log
 *.blg
 *.swp
+/ForegroundSimulations/eor.bib~
+/ForegroundSimulations/ms.tex~
