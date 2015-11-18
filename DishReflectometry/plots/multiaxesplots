@@ -1,0 +1,24 @@
+set title font "Times-roman,20"
+set xlabel font "Times-roman,20"
+set x2label font "Times-roman,20"
+set ylabel font "Times-roman,20"
+set ytics font "Times-roman,10"
+set y2tics font "Times-roman,10"
+set xtics font "Times-roman,10"
+set title "HERA feed:antenna impedance magnitude and phase"
+set xlabel "Frequency (MHz)"
+set ylabel "Magnitude (Ohm)"
+set y2label "Phase (degrees)"
+#set ytics nomirror
+#set y2tics
+#set tics out
+set autoscale  y
+set autoscale y2
+plot "/Users/Punthipatra/Documents/All_RESEARCH/EoR_Berkeley/Project_HERA/GB_reflectometry/alldata/Zout.csv" u 1:2 axes x1y1 w l lw 5 linecolor rgb "black" notitle  
+replot "/Users/Punthipatra/Documents/All_RESEARCH/EoR_Berkeley/Project_HERA/GB_reflectometry/alldata/Zout.csv" u 1:3 axes x2y2 w l lw 5 linecolor rgb "brown" notitle
+set term postscript enhanced color
+set output "Feed_impedance.eps"
+rep
+set term x11
+
+
