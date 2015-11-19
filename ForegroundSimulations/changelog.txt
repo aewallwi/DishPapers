@@ -1,3 +1,14 @@
+From 4a2bbb9 (master):
+=====================
+
+In epic.bib,
+
+(*) Add references to Paciga et al.(2013)
+
+In ms.tex,
+
+(*) Add some content under Introduction section 
+
 From c8df822 (master):
 =====================
 
