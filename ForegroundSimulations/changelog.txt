@@ -1,7 +1,18 @@
+From 8e89f11 (master):
+=====================
+
+(*) Add HERA-19_FG_delay_spectra.npz to git repo under the data
+directory. It contains simulations of foregrounds for use by Abraham
+
+In changelog.txt,
+
+(*) Correct the mention of epic.bib in one of the earlier commits to
+eor.bib
+
 From 4a2bbb9 (master):
 =====================
 
-In epic.bib,
+In eor.bib,
 
 (*) Add references to Paciga et al.(2013)
 
