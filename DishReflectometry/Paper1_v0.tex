@@ -284,11 +284,11 @@ foreground signals, which is estimated to be six orders of magnitude fainter
 horizon-limit (the wedge) that, with some buffer, sets a delay specification of
 $60ns$
 \citep{parsons_et_al2012b,vedantham_et_al2012,nithya_et_al2013,liu_et_al2014a,liu_et_al2014b}. Our goal is to determine the effect of the instrument response $\Sigma(\nu)$ on the delay spectrum measurement. 
-
+%%%%%%%%%%%%%%%
 \section{Measurements}
 We carried out reflectometry measurements at the HERA element prototype in Green
 Bank, WV (Figure \ref{fig:heradish}) in order to measure the instrument response of the feed and dish assembly and characterise its performance. An HERA element consists off a $14\,m$ diameter
-parabolic reflector and a crossed-dipole pair as a feed. The cross dipole antenna pair is identical to the feed of the PAPER antenna which is suspended at the focal plane of the dish with the support of three vertical poles. HERA elements are closely spaced with centre to centre distance between two reflections being equal to the dish diameter. Therefore, to reduce the coupling between the adjecent dishes, the crossed dipole feed along with the back plane is encased in a cylindrical cage. The feed is raised and
+parabolic reflector and a crossed-dipole pair as a feed. The cross dipole antenna pair is identical to the feed of the PAPER antenna which is suspended at the focal plane of the dish with the support of three vertical poles. HERA elements are closely spaced with centre to centre distance between two dishes are equal to the dish diameter. Therefore, to reduce the coupling between the adjacent dishes, the crossed dipole feed along with the back plane is encased in a cylindrical cage. The feed is raised and
 lowered by a three-pulley system mounted on the three poles. The focal height of the dish is $4.5m$
 ($\sim{14.76}$ft).  
 
@@ -299,21 +299,27 @@ lowered by a three-pulley system mounted on the three poles. The focal height of
 
 As given in the previous section, if the incident power from the sky signal is $I_{sky}$, the feed
 reflection coefficient is $\Gamma_{f}$, and the dish reflection
-coefficient is $\Gamma_{d}$, then the net power entering the feed after
-$n^{th}$ reflection off the feed and the dish (i.e, the sky integrated visibility spectrum) is:
+coefficient is $\Gamma_{d}$, then the net power entering a feed after
+$n^{th}$ reflection off the feed and the dish is:
 
-\begin{equation}\label{eqn:series1}
-I_{meas} =  I_{sky}A_{f}[1+ \Gamma_{f}\Gamma_{d} e^{i\phi}+ (\Gamma_{f}\Gamma_{d})^2e^{i2\phi}+ ....+ (\Gamma_{f}\Gamma_{d})^{n}e^{in\phi}]
-\end{equation}
-
-where, $\phi = 2\pi i\nu \Delta \tau$ is the roundtrip propagation delay of a lightwave of frequency $\nu$ due to a reflection over the focal distance $l$. It is noted that upon the first incidence, the sky signal is focussed onto the feed from the entire dish and the dish reflection coefficient $\Gamma_{d}$ is $1$ for this first incidence. The subsequent back and forth reflection of the signal in between the feed and the dish, however, occurs from only the part of the dish which is shadowed by the feed. Therefore, in this case, $\Gamma_{d} < 1$.
-
-Simplifying Equation \ref{eqn:series1}:
-\begin{eqnarray}\label{eqn:ratio1}
-{I_{in} \over I_{sky} } & = & A_{f}[1+ \Gamma_{f}\Gamma_{d} e^{i\phi}+ (\Gamma_{f}\Gamma_{d})^2e^{i2\phi}+ ....+ (\Gamma_{f}\Gamma_{d})^{n}e^{in\phi}] \nonumber\\
-      & = & A_{f} \displaystyle\sum\limits_{n=0}^{n} [\Gamma_{f}\Gamma_{d}e^{i \phi}]^{n}\nonumber\\
-      & = & A_{f}+A_{f} \displaystyle\sum\limits_{n=1}^{n} [\Gamma_{f}\Gamma_{d}e^{i \phi}]^{n}
+\begin{eqnarray}
+\tilde I_{meas}(\vec b, \nu) & = & \int I_{sky}(\vec b, \nu)\Sigma(\vec b, \nu) \fngexp d\Omega
 \end{eqnarray}
+
+
+
+where, $\Delta \tau$ is the roundtrip propagation delay of a frequency $\nu$ due to a reflection over the focal distance $l$. $I_{meas}$ is the auto correlated power obtained from a single HERA element. Upon our assumption that two adjacent antenna elements have identical electrical properties, this power is also a measure of the cross power or the visibility $\vis (\vec b, \nu)$ between the two antennas with a normalisation factor of $2$. Once again, it is to be noted that upon the first incidence, the sky signal is focussed onto the feed from the entire dish and the dish reflection coefficient $\Gamma_{d}$ is $1$ for this first incidence. The subsequent back and forth reflection of the signal in between the feed and the dish, however, occurs from only the part of the dish which is shadowed by the feed. Therefore, in this case, $\Gamma_{d} < 1$. For a given baseline $\vec b$, taking the ratio of the measured power and the incident power, 
+
+\begin{eqnarray}\label{eqn:ratio1}
+{I_{meas} \over I_{sky} } & = & \Sigma(\vec b, \nu) \nonumber\\
+      & = & a_{f}  [ 1+ 2 \Re [(1-\Gamma_{f}) \Gamma_{f}\Gamma_{d} \dfngexp+ (1-\Gamma_{f})^{2}(\Gamma_{f}\Gamma_{d})^2(\dfngexp)^{2}+ \nonumber\\
+&&  ....+(1-\Gamma_{f})^{n} (\Gamma_{f}\Gamma_{d})^{n}(\dfngexp)^{n} ] ]
+\end{eqnarray}
+
+The right hand side of this equation is the instrument response kernel of a single HERA element as well as a representative of the instrument response in the measured visibility data between a pair of antennas. Our goal is to measure this kernel as a function of frequency and determine its effect on the delay spectrum of the visibility. 
+\subsection{Method}
+
+
 
 In our experimental set-up, we use the feed as a transmitter and transmit a pulse. If the initial pulse is a broadband signal,
 $I_{tr}$, sent to the feed via a $75ft$ cable by a vector network
