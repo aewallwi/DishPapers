@@ -273,6 +273,7 @@ Taking the Fourier transform of the visibility we obtain the delay spectrum
 \begin{eqnarray}
 \tilde V(\vec b, \tau) & = & \int \left [ \int I_{sky}(\vec b, \nu)\Sigma(\vec b, \nu) \fngexp  d\Omega \right ]  e^{-2\pi i\nu\tau} d\nu \nonumber \\
   			      & = & \int \left [ I_{sky}(\thhat, \nu) \ast \Sigma(\thhat, \nu) \ast \delta( \tau - \frac{{\vec {b} \cdot \thhat}}{c} )  \right] d\Omega
+\label{eq7}
 \end{eqnarray}
 
 
@@ -316,6 +317,7 @@ where, $\Delta \tau$ is the roundtrip propagation delay of a frequency $\nu$ due
 {I_{meas} \over I_{sky} } & = & \Sigma(\vec b, \nu) \nonumber\\
   & = & { a_{f}\over \Gamma_{f} } \displaystyle\sum\limits_{n=1}^{n} [\Gamma_{f}\Gamma_{d}e^{i\phi}]^{n}
    \nonumber\\
+   \label{eq8}
 \end{eqnarray}
 
 The right hand side of this equation is the instrument response kernel of a single HERA element as well as a representative of the instrument response in the measured visibility data between a pair of antennas. Our goal is to measure this kernel as a function of frequency and determine its effect on the delay spectrum of the visibility. 
@@ -355,7 +357,7 @@ Simplifying:
  {I_{ret} \over I_{tr} } & = & \Gamma_{f}
   +  \Gamma_{d}(1-\Gamma_f)^{2} [e^{i\phi}+ \Gamma_{f}\Gamma_{d} e^{i2\phi}+  ....+ (\Gamma_{f}\Gamma_{d})^{n}e^{i n\phi}]\nonumber\\
   & = & \Gamma_{f} + { (1-\Gamma_f)a_{f}\over \Gamma_{f} } \displaystyle\sum\limits_{n=1}^{n} [\Gamma_{f}\Gamma_{d}e^{i\phi}]^{n}
-   \nonumber\\
+ \label{eq9}
 \end{eqnarray}
 
 The ratio in Equation \ref{eqn:ratio2} is the returned power to the VNA with
@@ -462,62 +464,52 @@ correction because it is not relevant to our analysis.
 \section{Results}
 
 Figure \ref{fig:freq} shows the return loss for a frequency bandwidth of $50$ to
-$500MHz$. This measurement was taken with the feed suspended at $4.26m$, which
-was our closest measurement to the actual focal height.  Because the return
-loss is the ratio of the power received to the power transmitted, higher
-reflections can clearly be seen outside of the PAPER bandwidth. This is not
-surprising, since the feed is tuned specifically for PAPER. The return loss
-minima are locations where our feed is well-matched to free space.
+$500MHz$, measured when the feed is suspended at the focal plane of the parabolic dish which is at $4.26m$ from the dish vertex. 
+This measurement is Fourier transformed to obtain the delay spectrum of the instrument in the receiving mode as given in equation \ref{eq3}.
+%In Figure \ref{fig:3bands}, the return loss we measure is plotted versus delay
+%for three chosen bandwidths: the HERA bandwidth, the PAPER bandwidth, and a
+%typical power spectra bandwidth when using a Hamming window function. Two
+%additional measurements, using data taken in 2014 with the first prototype HERA
+%dish near Berkeley, CA, are also plotted using two different bandwidths. One of
+%the main differences between the Green Bank and Berkeley measurements is that
+%the feed was not encompassed in a cage for the Berkeley data (only a backplane). Additionally, the $50-1000MHz$ data taken in Berkeley was
+%Fourier-transformed internally by the measuring device, while the $100-200MHz$
+%data is analyzed post-measurement in the same way as the Green Bank data. 
 
-In Figure \ref{fig:3bands}, the return loss we measure is plotted versus delay
-for three chosen bandwidths: the HERA bandwidth, the PAPER bandwidth, and a
-typical power spectra bandwidth when using a Hamming window function. Two
-additional measurements, using data taken in 2014 with the first prototype HERA
-dish near Berkeley, CA, are also plotted using two different bandwidths. One of
-the main differences between the Green Bank and Berkeley measurements is that
-the feed was not encompassed in a cage for the Berkeley data (only a backplane). Additionally, the $50-1000MHz$ data taken in Berkeley was
-Fourier-transformed internally by the measuring device, while the $100-200MHz$
-data is analyzed post-measurement in the same way as the Green Bank data. 
-
-From the plot, we see that the delay response of a feed is dependent on the band chosen for the Fourier transform.  As one might expect, in regions
-where the feed return loss is low, reflections are minimized.  Thus, we cannot ignore that these measurements were performed
-using a PAPER-style feed tuned for efficient operation over a $100-200MHz$ bandwidth.  Fourier transforms taken over wider bands
-become dominated by the feed performance in regions outside the operating band, making the resultant delay profiles less relevant
+The delay response of the instrument is dependent on the band chosen for the Fourier transform.
+%As one might expect, in regions where the feed return loss is low, reflections are minimized.  Thus, we cannot ignore that these measurements were performed
+%using a PAPER-style feed tuned for efficient operation over a $100-200MHz$ bandwidth. 
+The measurement bandwidth effects the amplitude and phase of the delay spectrum. Fourier transforms taken over wider bandwidth
+become dominated by the feed sidelobes outside the operating band, making the resultant delay profiles less relevant
 for the power spectrum performance of the HERA instrument.  Conversely, when performing Fourier transforms over much 
 narrow bands (the windowed $20MHz$ bands typical of PAPER analysis), the width of the resulting delay profile
 becomes dominated by sidelobes of low delay emission interacting with the narrow bandwidth kernel.  
-Although this may appear to be a relevant performance metric
-for PAPER-style power spectrum analysis, such an analysis typically pre-filters out low-delay emission using wide bandwidths precisely to avoid
-sidelobes from low-delay emission.  Hence, the most relevant delay-spectrum performance profile is that taken using the $100-200MHz$ band.
+Although this may appear to be a relevant performance metric for PAPER power spectrum analysis, such an analysis typically pre-filters out low-delay emission using wide bandwidths precisely to avoid sidelobes from low-delay emission.  Hence, the most relevant delay-spectrum performance profile is that taken using the $100-200MHz$ band. \textbf{In the $100-200MHz$ delay profile, we see a delay response of $-25dB$ at $60ns$, which slopes down to $-60dB$ at $\sim120ns$.  WRITE AGAIN}
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=1.0\linewidth]{plots1/delayspectrum_height.png}
+\caption{Delay transform of the transfer function of the HERA element keeping the feed at various heights. Delay transform is produced by taking the Fourier transform of the measurement using Blackman-Harris window.}
+\label{fig:elevator}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[totalheight=0.41\textheight]{plots/delay_feed.png}
+\caption{Delay plots produced using a Hamming window function for different feed only configurations and the PAPER bandwidth ($100MHz-200MHz$). The black dashed lines illustrate our ``60 by 60" specification.}
+\label{fig:outofthedish}
+\end{figure}
 
-In the $100-200MHz$ delay profile, we see a delay response of $-50dB$ at $60ns$, which slopes down to $-60dB$ at $\sim120ns$.  Because
-this does not achieve $-60dB$ attenuation at $60ns$, this indicates that the HERA system under test does not meet specification. However, we can learn additional information by evaluating
-different feed components. 
-
-%\begin{figure}[ht!]
-%\centering
-%\includegraphics[width=1.0\linewidth]{plots1/delayspectrum_height.png}
-%\caption{Delay transform of the transfer function of the HERA element keeping the feed at various heights. Delay transform is produced by taking the Fourier transform of the measurement using Blackman-Harris window.}
-%\label{fig:elevator}
-%\end{figure}
-
-Figure \ref{fig:elevator} is again a delay plot of the return loss, but for
-four different feed suspension heights. We use the PAPER bandwidth and note
-that the measurements are near identical at low delays, implying that low delay
-reflections are caused primarily by reflections within the feed cage. However,
-at higher delays we notice discrepancies between the different heights.
-
-In addition, Figure \ref{fig:outofthedish} presents measurements taken of the feed
-away from the dish. Echosorb is placed under the feed for some of the
+Figure \ref{fig:elevator} is again a delay plot of the return loss at four different feed suspension heights. 
+We use the PAPER bandwidth and note
+that the measurements are near identical at low delays, implying that low delay reflections are caused primarily by reflections within the feed cage. 
+However, at higher delays we notice discrepancies between the different heights.
+In addition, Figure \ref{fig:outofthedish} presents measurements taken of the feed only.away from the dish. Echosorb is placed under the feed for some of the
 measurements, with the expectation that it will prevent any reflections off the
-ground. Measurements are also taken of the feed inside its metal cage in
-various configurations. It is shown that the feed performs best without the cage and with the absorber. 
-
-
-From these various measurements, we find that the feed itself is responsible for a significant portion of the structure up to $60ns$ and
-that the cylindrical cage may be contributing up to $20ns$ to the width of the delay profile. We note that this depends strongly
-on its coupling to structures around it. Structure beyond $60ns$ appears to scale
-with the height of the feed above the dish, making reflections off the dish the likely culprit.
+ground.
+ Measurements are also taken of the feed inside its metal cage in various configurations. It is shown that the feed performs best without the cage and with the absorber. 
+All these measurements are suggestive of the  fact that the feed-cage assembly itself is responsible for a significant portion of the structure up to $60ns$ and
+that the cylindrical cage may be contributing up to $20ns$ to the width of the delay profile. 
+We note that this depends stronglyon its coupling to structures around it. 
+Structure beyond $60ns$ appears to scale with the height of the feed above the dish.
 
 
 
@@ -531,7 +523,7 @@ plane wave from the sky.  We also see that the choice of windowing function is c
 antenna delay response at higher delays, where sidelobes from much higher amplitude responses at small delays can easily
 dominate.  We find Hamming, Hanning, and Blackman-Harris windows to be generally adequate while square windowing functions are not.
 Given the critical nature of the windowing function, we recommend that all reflectometry measurements be performed in the
-frequency domain, so that the data analyst can manually implement the Fourier transform with the appropriate window.
+frequency domain, so that the data could be Fourier transformed with the appropriate window.
 
 Taken all together, we summarize that the first version of the HERA dish, with a PAPER-style feed and cylindrical cage, is close to meeting
 specification, but will require additional work to fall below $-60dB$ at $60ns$.  Given that the width of the delay response is a convolution
