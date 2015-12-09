@@ -1,3 +1,12 @@
+From 1ff4129 (master):
+=====================
+
+(*) Add three figures and notes.tex, notes.pdf to git repo. These
+figures go into the notes and are meant to illustrate initial findings
+from simulations of delay spectra of foregrounds and EoR signal. It is
+meant to be used for stimulating discussions on how much we understand
+our signal and foregrounds.
+
 From 8e89f11 (master):
 =====================
 
