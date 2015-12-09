@@ -1,3 +1,10 @@
+From c722691 (master):
+=====================
+
+In notes.tex,
+
+(*) Minor change in text describing figure 2.
+
 From 1ff4129 (master):
 =====================
 
