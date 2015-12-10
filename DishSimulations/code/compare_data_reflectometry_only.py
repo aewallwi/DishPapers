@@ -94,17 +94,22 @@ responsePAPERFreqDeep=(1.-s11PAPERDeep)
 
 
 delayResponsePAPER=fft.fftshift(fft.ifft(fft.fftshift(responsePAPERFreq*windowRB_PAPER)))
+delayResponsePAPERDeep=fft.fftshift(fft.ifft(fft.fftshift(responsePAPERFreqDeep*windowRB_PAPER)))
 delayResponsePAPER[tAxisPAPER<0]=0.
+delayResponsePAPERDeep[tAxisPAPER<0]=0.
+
+
 
 
 delayKernelPAPER=signal.fftconvolve(delayResponsePAPER,n.conj(delayResponsePAPER)[::-1],mode='same')
+delayKernelPAPERDeep=signal.fftconvolve(delayResponsePAPERDeep,n.conj(delayResponsePAPERDeep)[::-1],mode='same')
 #delayKernelPAPER=fft.fftshift(fft.ifft(fft.fftshift(n.abs(responsePAPERFreq)**2.*windowRB_PAPER)))
 #delayKernelPAPERDeep=fft.fftshift(fft.ifft(fft.fftshift(n.abs(responsePAPERFreqDeep)**2.*windowRB_PAPER)))
 #delayKernelPAPERCross=fft.fftshift(fft.ifft(fft.fftshift(n.conj(responsePAPERFreqDeep)*responsePAPERFreq*windowRB_PAPER)))
 
 
 p.plot(tAxisPAPER,10.*n.log10(n.abs(delayKernelPAPER)/n.abs(delayKernelPAPER).max()),label='PAPER Reflectometry RB')
-#p.plot(tAxisPAPER,10.*n.log10(n.abs(delayKernelPAPER)/n.abs(delayKernelPAPERDeep).max()),label='PAPER Reflectometry RB Deep')
+p.plot(tAxisPAPER,10.*n.log10(n.abs(delayKernelPAPERDeep)/n.abs(delayKernelPAPERDeep).max()),label='PAPER Reflectometry RB Deep')
 #p.plot(tAxisPAPER,10.*n.log10(n.abs(delayKernelPAPER)/n.abs(delayKernelPAPERCross).max()),label='PAPER Reflectometry RB Cross')
 
 
