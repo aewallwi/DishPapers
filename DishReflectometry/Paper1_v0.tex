@@ -46,12 +46,12 @@
 
 \section{Introduction}
 
-Since it was first proposed in \citet{shaver_et_al1999}, measuring 21~cm
+Since it was first proposed in \citep{Shaver_et_al1999} measuring 21~cm
 emission from neutral hydrogen in our early universe has gained attention as a
 powerful probe of both cosmology and astrophysics.  While the science case for
 21~cm cosmology, particularly during the Epoch of Reionization, is well
 established (see, e.g.,
-\citealt{furlanetto_et_al2006,morales_wyithe2010,furlanetto_loeb2014,pritchard_loeb2014}),
+\citep{furlanetto_et_al2006,morales_wyithe2010,pritchard_loeb2012}),
 the technical path toward measuring this signal has been more problematic.  The
 weakness of this hyperfine line keeps the 21~cm signal below opacity throughout
 cosmological history, but it also creates sensitivity and calibration
@@ -542,58 +542,5 @@ performance may indeed be adequate for the delay-domain power spectrum analysis 
 
 \bibliographystyle{apj}
 \bibliography{biblio.bib}
-%\begin{thebibliography}{}
-%
-%\bibitem[Parsons \& Backer(2009)]{ParsonsBacker2009}
-%Parsons, A., \& Backer, D. 2009, \apj, 138, 219
-%\bibitem[Parsons et al.(2012)]{Parsons2012}
-%Parsons, A., \& Pober, Jonathan C., \& Aguirre, James E., \& Carilli, Christopher L., \& Jacobs, Daniel C., \& Moore, David F. 2012, \apj 756, 165
-%\end{thebibliography}{}
-
 \end{document}
-
-
-%\begin{eqnarray}
-%V e^{i\phi}(\nu) & = & \int |A_{f}|^{2}|V_{sky}|^{2}|exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega \nonumber\\
-%&& +  \int |A_{f}|^{2}|V_{sky}|^{2} |(1-\Gamma_{f})|^{2}|\Gamma_{f}|^{2}|\Gamma_{d}|^{2} exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega \nonumber\\
-%&& + \int |A_{f}|^{2}|V_{sky}|^{2}| 2 \Re \left ((1-\Gamma_{f})\Gamma_{f}\Gamma_{d} e^{i\Phi} \right)exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega
-%\label{eq8}		        
-%\end{eqnarray}
-
- 
-%\subsection{Effect of first reflection on the delay spectrum}
-%We define $B(\vec \theta, \nu) =  A^{2}(\vec \theta, \nu) $ as the cross power pattern of the interferometer and $\Sigma_{rr}(\nu), \Sigma_{dr}(\nu)$ are the correlation coefficient between the two reflected signals in each antenna and the direct signal of one antenna with the reflected signal from the other antenna in the uv plane i.e, 
-
-%\begin{equation}
-%\Sigma_{rr}(\nu) =  \left [ |(1-\Gamma_{f})|^{2}|\Gamma_{f}|^{2}|\Gamma_{d}|^{2} \right ]
-%\end{equation}
-
-%\begin{equation}
-%\Sigma_{dr}(\nu) = \left [ 2 \Re \left ((1-\Gamma_{f})\Gamma_{f}\Gamma_{d} e^{i\Phi} \right) \right]
-%\end{equation}
-
-%and $\Delta \tau$ is the additional delay each reflected component suffers in addition to the intrinsic geometric delay 
-%$\tau_{g}$. Therefore, $\Sigma(\vec \theta, \nu) = B(\vec \theta, \nu) \left [ 1+\Sigma_{rr} +\Sigma_{dr} \right]$
-
-%As given in equation \ref{eq3}, the Fourier transform of this visibility spectrum along the frequency axis results in the delay spectrum. Hence, the all sky integrated delay spectrum could be written as, 
-%\begin{eqnarray}
-%\mathcal{F} \left [V e^{i\phi}\right] & = & \int \left [\int B I_{sky}exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega \right ] exp\left[ -2 \pi i\nu \tau \right] d\nu \nonumber\\
-%&& + \int \left [  \int B I_{sky} \Sigma_{rr} exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega \right] exp\left[ -2 \pi i\nu \tau \right] d\nu  \nonumber\\
-%&& +\int \left [ \int B I_{sky} \Sigma_{dr} exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega \right ] exp\left[ -2 \pi i\nu \tau \right] d\nu \nonumber\\	
-%&& + \int \left [  \int |A_{f}|^{2}|V_{sky}|^{2} |(1-\Gamma_{f})|^{2}|\Gamma_{f}|^{2}|\Gamma_{d}|^{2} exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega \right] exp\left[ -2 \pi i\nu \tau \right] d\nu  \nonumber\\
-%&& +\int \left [ \int |A_{f}|^{2}|V_{sky}|^{2} 2 \Re \left ((1-\Gamma_{f})\Gamma_{f}\Gamma_{d} e^{i\Phi} \right)exp({2\pi i \nu \vec{b}.\hat{s} \over c} ) d\Omega \right ] exp\left[ -2 \pi i\nu \tau \right] d\nu \nonumber\\			
-%			& = & \int \left [\int B I_{sky} exp({2\pi i \nu \tau_{g}} ) dl dm \right ] exp\left[ -2 \pi i\nu \tau \right] d\nu \nonumber\\
-%&& + \int \left [  \int B I_{sky} \Sigma_{rr} exp({2\pi i \nu \tau_{g}} ) dl dm \right] exp\left[ -2 \pi i\nu \tau \right] d\nu  \nonumber\\
-%&& +\int \left [ \int B I_{sky} \Sigma_{dr} exp({2\pi i \nu \tau_{g}} ) dl dm \right ] exp\left[ -2 \pi i\nu \tau \right] d\nu \nonumber\\
-%\label{eq9}
-%\end{eqnarray}
-%
-%\begin{eqnarray}			
-%\mathcal{F} \left [V e^{i\phi}\right] & = & \left [ B(\tau)\ast I_{sky}(\tau) \right ]\ast \delta(\tau+\tau_{g}) \nonumber\\
-%		&& +  \left [ B(\tau)\ast I_{sky}(\tau)* \Sigma_{rr}( \tau) \right ]\ast \delta(\tau+\tau_{g}) \nonumber\\
-%		&& +  \left [B(\tau)\ast I_{sky}(\tau)* \Sigma_{dr}( \tau) \right ]\ast \delta(\tau+\tau_{g}+ \Delta \tau)\nonumber\\
-%\label{eq10}
-%\end{eqnarray}
-
- %In words, the Fourier transform of the visibility contributed by any two voltage components from two antennas with no mutual delay is centred at a delay $\tau = \tau_{g}$ in the delay spectrum whereas any two voltage components from two antennas components having a mutual delay of $\Delta \tau$ will be centred at $\tau_{g} +\Delta \tau$. The correlation between the reflected signal  from the feed and subsequently from the dish with the direct signal thus extends the foreground response to delays beyond the maximum geometric delay for a given baseline and contaminates the delay mode where 21~cm delay spectrum could potentially be detected. Also, any reflections arriving at the feed at any non-zero  value of the delay $\Delta \tau$ which could be the result of reflections from the feed structures would generate non zero delay response at those delays. 
 
