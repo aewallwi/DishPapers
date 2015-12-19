@@ -1,3 +1,10 @@
+From 420f056 (master):
+=====================
+
+(*) Add visibilities simulated with achromatic beams supplied by
+Abraham (from Rich and Dave) at 137.5 MHz to the data directory in
+npz format
+
 From a1d43be (master):
 =====================
 
