@@ -1,0 +1,37 @@
+Aaron: 
+Details of simulations in delay space of HERA and PAPER
+Calibration off zenith vs. off-zenith (not possible in 2 weeks), -> spec instead of prediction
+Simulations are inconsistent off-zenith
+Could use Nithya FGs or own to compare with fg leakage to sensitivity, propagate to foreground constraints
+assumes cut at 460 ns, based on conservative simulation extrapolation
+will try to explore a range of delay profiles
+does not create a spec
+
+Nithya:
+Details of EoR and FG levels for HERA
+link science side to a spec for instrument
+pitchfork effect, spatial FG weighting using model beams
+show contamination as a function of lst, average contamination
+impact of inverse covariance weighting on delay kernel -> Parsons + Liu?
+match k spec with Aaron EW
+Need updated beams (DeBoer will simulate, Parsons or Aguirre will bin)
+
+Abraham:
+Orbcomm beam measurements w/ 2 feed heights
+Compare measurements to models
+Models go to achromatic models for Nithya
+Use range of models/measurements and foregrounds to explore error on horizon brightening
+Thermal noise predictions (beam area), carrying through to predictions of thermal noise pspec using 21cmsense
+Compare to Airy?
+
+Nipanjana:
+Reflectometry measurements
+Derivation of relationship of Reflectometry to delay spectrum performance
+Motivation for dishes vs dipoles
+comparison with simulations, autocorr measurements
+comparison with PAPER "establish heritage"
+compare reflectometry measurements with fg specs on dish performance
+
+
+
+
