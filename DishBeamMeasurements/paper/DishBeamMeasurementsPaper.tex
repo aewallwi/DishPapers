@@ -512,7 +512,7 @@ In order to compute beam collecting areas and assess foreground leakage we requi
 
 To illustrate the results of these smoothing operations we plot slices through the nominal focus dish beam along with the three model beams discussed in Sec. \ref{sec:dishmodels}. The H (E) plane slice of the main lobe is shown at the top (bottom). The plots in the left side zoom in on the main lobe, while those on the right show a zoomed out view of the entire sky pattern. 
 
-\subsection{Collecting Area}
+\subsection{Collecting Area and Power Spectrum Sensitivity}
 
 The collecting area of the antenna is related to the power pattern by the ratio of the beam gain to its beam-weighted solid angle as
 \begin{equation}
@@ -540,9 +540,41 @@ By definition, the Airy pattern has the largest collecting area equal to the dis
 
 Why does the collecting area increase as the feed is raised over the nominal focus? There are two computing effects here: (1) the reflected radiation is less well focused above the feed, decreasing the response; and (2) the tapered feed sees a larger dish as it is raised, allowing more radiation to reach the dipole as opposed to reflecting off the skirt. These data suggest that the second effect wins. Of course the reason for the skirt is to taper the feed beam in order to mitigate cross-talk and cross-coupling between the dishes. A larger collecting area may not be worth it in exchange for exacerbating these concerns.
 
-\section{Foreground Leakage and Residuals}
-\label{sec:foregroundleakage}
+\section{Implications for Foreground Suppression}
+\label{sec:foregrounds}
 
+ALSO MENTION DEPENDENCE ON BASELINE DIRECTION
+DISCUSS DELAY CLEANING TO THE 2min THERMAL NOISE LEVEL, THEN DELAY TRANSFORM AGAIN WITH REDUCED RESOLUTION, MEANING A LARGER BH WINDOW, AND THUS MORE LEAKAGE, THESE EFFECTS ARE DISCUSSED IN NITHYA'S PAPER, here we are focused on intrinsic delay distribution of foregrounds
+
+% summary of what sorts of science implications are important
+foreground separation of 21cm signal and foregrounds is the name of the game
+smooth spectrum foregrounds occupy only low k// modes, while rough 21cm signal dominates the higher higher modes
+in fact, the 21cm signal peaks at the smallest k// modes, but these 21cm modes are indistinguishable from foregrounds, so we can only detect 21cm at higher k
+thus, the better foregrounds are contained, to low k modes, the stronger the 21cm signal is
+
+% summarize again the wedge frequency structure
+foreground emission is intrinsically smooth spectrum, meaning it should live in the k//=0 mode with slight leakage into larger modes due to their smooth frequency dependence
+however, a baseline in an interferometer measures the sky multiplied by the frequency dependent fringe pattern, imprinting a frequency dependence on the source spectrum with a delay given by the light travel time between the two antennas as seen from the direction of the source
+If we fourier transform the visibility along the frequency axis we should see a peak at the delay of the source. Sources at high delay, near the horizon in the direction of the baseline, thus appear with more frequency structure, and sources at lower delay, perpendicular to the baseline and closer to zenith, have less. Sources exactly in line with the baseline have the maximum frequency dependence set by the baseline length in light travel time. Longer baselines have longer maximum delays, and thus larger contaminated regions of k space, this is the wedge. 
+
+% pitchfork and leakage
+Understanding the primary beam is important to characterize the delay distribution of foregrounds, and thus the foreground suppression strategy that should be pursued, the expected level of leakage into the EOR window, and thus the expected sensitivity. Nithya et al discuss a horizon brightening effect they term the 'pitchfork'. if the falloff of the beam sensitivity is less than the increase in solid angle at low elevations and potentially the rebrightening of the sky due down there if the galaxy is there, emission will appear as a brightening at the horizon delay, right at the edge of the EOR window where emission is most at risk of leaking in due to frequency dependent systematics such as beam frequency dependence or miscalibration. 
+
+Nithya et al discuss in detail the implications of these foreground delay spectra for suppression strategies, we are concerned here with the beam uncertainties on them
+We study these effects and their implications for foreground isolation by simulating delay spectra.
+we simulate visibilities using the GSM and point sources over 80MHz of bandwidth, the maximum delay resolution that delay CLEANing has to work with. delay CLEANing can only work within the wedge. 
+how much does our beam uncertainty affect these results? that's why we use different model beams
+only concerned with intrinsic delay spectra of the sources due to geometry, no chromatic beam patterns or gains. 
+we begin by simulating the delays for different LSTs using the HFSS beam
+as expected, the power at the horizon varies by several orders of magnitude over this range of LSTs depending on whether the center of the galaxy is just above or just below the horizon (SEE THE GSM MAPS FOR LST=2,62)
+DISCUSS THE TWO DIFFERENT BASELINE LENGTHS
+	at what k// do the FG spectra dip below the 21cm power spectra?
+	horizon brightening at short vs long baselines
+
+We plot the delay spectra for these two LSTs for both model beams, as well as for the airy beam. 
+the airy beam is an interesting comparison because Nithya's paper and sensitivity calculations assume an airy beam
+as expected, the difference between the beams is very small near zero delay, and largest when the horizon has a relative pitchfork brightening. If the horizon brightening is very small, the difference between the beams is correspondingly small
+NOTE THAT k// CAN BE CONVERTED TO k by adding k=0.005 or 0.02 in quadrature at z=8
 
 
 \begin{figure*}[h]
