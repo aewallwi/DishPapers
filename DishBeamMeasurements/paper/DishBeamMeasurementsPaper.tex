@@ -291,30 +291,20 @@ measurements in Section 5. We conclude with discussion in Section 6.
 \section{Dish Design and Modeling}
 
 \subsection{Design of the HERA Dish}
-%- EM design
-%    - departure from large N—small D to economize data volume (mitigate
-%      data processing challenges)
-%        - easier to identify systematics, to rerun datasets, perform
-%          cross checks / jackknives
-%    - but this change must be done judiciously, one advantage of simple
-%      elements is that they have little or no frequency structure,
-%      while a dish+feed system introduces reflections in the time
-%      domain, amounting in ripples in the frequency response
-%    - how bad are these ripples and can we tune the dish to mitigate
-%      their effect in the science?
-%    - as discussed above, it is useful to think in the delay domain as
-%      the translation from frequency structure introduced by dish
-%      reflections and the foreground isolation within the horizon delay
-%      is straightforward
-%    - the smooth spectral structure of the foregrounds sets a maximum
-%      foreground isolation achievable of ~60ns with blackman-harris
-%      window
-%    - f/D =0.32 maximizes efficiency for a PAPER dipole suspended over
-%      the dish
-%    - with typical reflection dish/feed reflection coefs, attenuation
-%      after 3 round trips will be below 60dB, and 1 and 2 round trips
-%      are in wedge, isolated away from EOR window
-%    - 14m also falls near the minimum of the cost per performance model
+
+\begin{figure}[h]
+\includegraphics[width=3.4in]{IMG_0353.JPG}
+\caption{Aerial photograph of the two reference dipoles deployed in Galford Meadow at the National Radio Astronomy Observatory--Green Bank 100\,m south of the HERA dish.}
+\label{fig:dishphoto}
+\end{figure}
+
+
+\begin{figure}[h]
+\includegraphics[width=3.4in]{feed.jpg}
+\caption{Aerial photograph of the two reference dipoles deployed in Galford Meadow at the National Radio Astronomy Observatory--Green Bank 100\,m south of the HERA dish.}
+\label{fig:dishphoto}
+\end{figure}
+
 
 The 14\,m HERA dish design is a departure from the large N--small D approach used by 21\,cm 
 observatories like PAPER and the MWA. Both observatories are actively pursuing power 
@@ -373,11 +363,19 @@ degree of beam symmetry, the actual dish/feed efficiency (i.e., collecting area)
 \subsection{Dish Modeling}
 \label{sec:dishmodels}
 
+\begin{figure*}
+\centering
+\includegraphics[width=7in]{dave197_rich195_airy_beams.pdf}
+\caption{Simulated delay spectra for the GSM and point sources at $0^\circ$ (top pair) and $60^\circ$ (bottom pair) LST for EW baselines of length 14\,m (left pair) and 42\,m (right pair). The beams are are assumed constant over frequency.}
+\label{fig:delayspec}
+\end{figure*}
+
 ASK DAVE OR RICH TO WRITE A ONE OR TWO PARAGRAPH SUMMARY OF THE ELECTROMAGNETIC DISH SIMULATIONS
 
 \section{Experimental Setup}
 
 \subsection{HERA--Green Bank: A three-element prototype array}
+
 
 A 3-element HERA engineering prototype array is being constructed at the National Radio 
 Astronomy Observatory--Green Bank. We performed the beam measurements presented in 
@@ -394,12 +392,6 @@ moist ground with possibly non-uniform properties. All these will contribute to 
 of the in-situ reference antenna relative to the electromagnetic model. We will discuss 
 below how we quantify these systematics with ``null experiments'' which compare the 
 beams of the two reference antennas.
-
-%\begin{figure*}[h]
-%\includegraphics[width=6.5in]{aerial.png}
-%\caption{Aerial photograph of the two reference dipoles deployed in Galford Meadow at the National Radio Astronomy Observatory--Green Bank 100\,m south of the HERA dish.}
-%\label{fig:aerial}
-%\end{figure*}
 
 \subsection{ORBCOMM Beam Mapping System Review}
 
@@ -453,6 +445,14 @@ values in each HEALPix cell.
 
 \subsection{Assessing Experimental Systematics}
 
+
+\begin{figure*}[h]
+\centering
+\includegraphics[width=6.7in]{null_expt_rel_beam_maps.pdf}
+\caption{null experiment beam ratio plots}
+\label{fig:nullexptplots}
+\end{figure*}
+
 As in \citet{neben15}, we assess systematics using a ``null experiment'' in which we use a second reference dipole as the antenna-under-test (AUT). Taking the ratio of its measured power pattern with the model beam pattern amounts to a ratio of the row power responses received by the two antennas. This test thus probes the level of environmental systematics (i.e., reflections and varying ground properties) and antenna fabrication imperfections which affect each antenna differently. This is not a probe of modeling imperfections common to both antennas, but we expect such errors to be subdominant as the physical properties of the antenna are easier to characterize, and thus simulate, than local environmental effects. 
 
 We run three null experiments with the reference dipoles deployed varying distances from the HERA dish and from each other.
@@ -467,24 +467,6 @@ Figure \ref{fig:null1} shows the  results from the \texttt{null1} experiment in 
 
 The magnitude of these systematics is comparable to those observed in the two other null experiments (Figures \ref{fig:null3} and \ref{fig:null4}), an their angular distribution appears largely unchanged. This suggests that the reference dipoles differ both due to varying environmental properties and perhaps intrinsic differences. In any case, these fractional errors propagate directly into the measured beampatterns of our subsequent feed and dish measurements.  
 
-%\begin{figure*}[h]
-%\includegraphics[width=6.5in]{null1_rel.png}
-%\caption{Top: ratio maps of the powers received by two reference dipoles separated by 50\,m, deployed 50\,m south of the HERA dish. Bottom: absolute beam power plots constructed by multiplying the relative power maps by a model beampattern. }
-%\label{fig:null1}
-%\end{figure*}
-
-%\begin{figure*}[h]
-%\includegraphics[width=6.5in]{null3_rel.png}
-%\caption{Same as the previous null experiment except the south reference dipole was moved 5\,m west. The systematics are largely unchanged.}
-%\label{fig:null3}
-%\end{figure*}
-
-%\begin{figure*}[h]
-%\includegraphics[width=6.5in]{null4_rel.png}
-%\caption{Same as the first null experiment except the reference dipoles are separated by 100\,m and deployed 100\,m south of the HERA dish. The systematics remain at the few percent level near zenith and increase to $\sim10\%$ farther out, with somewhat, but not entirely different angular structure. }
-%\label{fig:null4}
-%\end{figure*}
-
 
 \section{Dish Measurements}
 
@@ -496,29 +478,21 @@ Inspecting the E and H plane slices through the measured beams (bottom panels) i
 
 The sky coverage in these dish measurements extends out to typically $\theta\sim50-60^\circ$. Beyond that the ORBCOMM flux is sufficiently attenuated relative to diffuse galactic emission that a power ratio measurement between the two antennas is no longer a clean probe of their gains in the direction of the satellite. At these zenith angles, the beam sidelobes are roughly -30\,dB, and seem to be trending downward at the edge of the measured region.
 
-%\begin{figure*}[h]
-%\includegraphics[width=6.5in]{dish3_abs_old_ref_model.png}
-%\caption{Dish power pattern with the feed lowered 0.5\,m below nominal focus.}
-%\label{fig:dish3}
-%\end{figure*}
 
-%\begin{figure*}[h]
-%\includegraphics[width=6.5in]{dish1_abs_old_ref_model.png}
-%\caption{Dish power pattern with the feed at the nominal focus of 4.5\,m.}
-%\label{fig:dish1}
-%\end{figure*}
 
-%\begin{figure*}[h]
-%\includegraphics[width=6.5in]{dish2_abs_old_ref_model.png}
-%\caption{Dish power pattern with the feed raised 0.5\,m above nominal focus.}
-%\label{fig:dish2}
-%\end{figure*}
+\begin{figure*}[t]
+\centering
+\includegraphics[width=6.7in]{measured_beams_and_models_maps.pdf}
+\caption{null experiment beam ratio plots}
+\label{fig:measuredbeammaps}
+\end{figure*}
 
-%\begin{figure*}[h]
-%\includegraphics[width=6.5in]{dish4_abs_old_ref_model.png}
-%\caption{Dish power pattern with the feed raised to its maximum height of 0.8\,m above nominal focus.}
-%\label{fig:dish4}
-%\end{figure*}
+\begin{figure*}[t]
+\centering
+\includegraphics[width=6.7in]{measured_beams_and_models_slices.pdf}
+\caption{null experiment beam ratio plots}
+\label{fig:measuredbeamslices}
+\end{figure*}
 
 In order to compute beam collecting areas and assess foreground leakage we require a beam covering the entire visible sky. For each measured dish beam, we interpolate over the unmeasured cells at $\theta\lesssim60$, then extrapolate outward to the horizon. This amounts to a smooth continuation of the beam response at the same $\sim-30$\,dB level suggested by the fringes of our measurements. We take this as a first possible model of the full sky dish beam, and construct a second with a gaussian cutoff at $\theta=60^\circ$ with $\sigma=2.5^\circ$, the pair of which span the space of likely horizon responses. This procedure is depicted in Figure \ref{fig:interpbeams} where we plot the measured nominal focus beam, the beam after interpolation and extrapolation, and the beam after applying the gaussian cutoff. Figure \ref{fig:interpbeamsslice} shows the interpolated/extrapolated beam and the beam with the cutoff along with various models to illustrate the different horizon responses more clearly.
 
@@ -547,16 +521,17 @@ The collecting area of the antenna is related to the power pattern by the ratio 
 We evaluate the collecting area for four of the beams discussed above and present the numbers in Table 1. We are unable to quantify the collecting area of the beam from Dave's simulation because it was run at too coarse an angular resolution. For the measured beams, we compute the collecting area using the interpolated/extrapolated beams with and without the gaussian cutoff at $\theta=60^\circ$.
 
  \begin{table}[h]
- \caption{ \label{table:collectingareatable}Collecting area (m$^2$) for modeled and measured dish beams at 137\,MHz. For measured beams, we calculate the collecting area after interpolation/extrapolation, also with the $60^\circ$ gaussian cutoff (in parentheses).}
+ \caption{ \label{table:collectingareatable}Collecting area (m$^2$) of measured 137\,MHz beams and corresponding power spectrum SNR for HERA-127.}
 \begin{tabular}{| l | l | l |}
 \hline
-  Airy & 155\,  \\
-  CST sim & 67.0\,  \\
-  \hline
-  Measured, feed at 4\,m & 42.1 (44.3) \\
-  Measured, feed at 4.5\,m & 68.5 (73.6) \\ 
-  Measured, feed at 5\,m & 77.1 (82.6) \\
-  Measured, feed at 5.3\,m & 93.0 (97.9)\\
+Beam & $A_\text{eff}$ (m$^2$) & SNR (pess, mod, opt)\\
+\hline
+  Airy pattern & 155 & 9.1, 11.0, 37.2  \\
+  %CST sim & 67.0 &  \\
+  %Measured, feed at 4\,m & 44.3 &  \\
+    Measured, feed at 5.3\,m & 97.9 & 8.2, 8.3, 29.2 \\
+    Measured, feed at 5\,m & 82.6 & 6.8, 6.9, 26.5 \\
+    Measured, feed at 4.5\,m & 73.6 & 6.4, 6.5, 24.8 \\ 
   \hline
 \end{tabular}
 \end{table}
@@ -568,37 +543,34 @@ Why does the collecting area increase as the feed is raised over the nominal foc
 \section{Foreground Leakage and Residuals}
 \label{sec:foregroundleakage}
 
-We assess the level of foreground leakage into the EOR window due to beam shape, baseline length, and LST. In particular, we built on the study of \citet{nithya15} of the impact of beam shape and horizon response on foreground spectral structure and containment in the wedge.
-
-We simulate delay spectra for several model and measured beams on different baseline lengths for different LSTs and baseline orientations. All these factors affect the level of emission horizon brightening in delay space, the ``pitchfork'' effect, and the level of foreground leakage. We assume a constant beam pattern over that band, with leakage due only to the finite bandwidth and choice of window function. Actual frequency structure imprinted onto the foregrounds by variation of the beam angular pattern or overall gain with frequency (Patra et al.)
-
-We begin by simulating visibilities over a 20\,MHz bandwidth with  400\,kHz resolution centered on 137\,MHz on two different baselines for two model beams (airy, and CST sim) and two measured beams (measured nominal focus beam, and measured nominal focus beam with $60^\circ$ cutoff). We use the short and maximally redundant 14\,m baseline, most useful for delay spectrum analysis, as well as a longer 42\,m baseline, more useful for imaging analysis. From these frequency-sequenced visibilities we calculate the delay spectrum  \citep{perbaselinetechnique} using the Blackman-Harris window following \citet{nithya15}. This window reduces the noise equivalent bandwidth to 10\,MHz, corresponding to $\Delta z\sim0.5$, beyond which evolution of the cosmological signal become significant. Larger bandwidths, though, are useful for foreground estimation and delay-space deconvolution \citep{parsonsandbacker,paper32,paper64}. With this caveat, our simulated delay spectra show the worst case scenario, quantifying the level of foreground isolation without estimation and deconvolution.
-
-Our sky model is comprised of a deep MWA point source survey within 20$^\circ$ of R.A.(J2000) $= 0^\text{h}\,0^\text{m}\,0^\text{s}$ and decl.(J2000) $= -30^\circ\,0'\,0''$ (Carroll et al., in prep.), the shallower but wider MWA commissioning point source survey\citep{MWACS}, the Culgoora catalog\citep{Slee1995}, and the Global Sky Model of Galactic radio emission \citep{gsm}. 
-
-Figure \ref{fig:delayspec} shows the delay spectra at $0^\circ$ (top pair) and $60^\circ$ (bottom pair) LST for 14\,m (left pair) and 42\,m (right pair) EW baselines. For reference we plot a 1D model 21\,m power spectrum for $z\sim8$ from \citet{21cmfast}. Consider first the $0^\circ$ LST plots where the Galactic disk has nearly, but not completely set. The effect of horizon response is most visible on the longer 42\,m baseline where the measured beam (red) and CST model (yellow), both show significant brightening at the horizon delays (vertical black lines) due to roughly -30\,dB beam response near the horizon, as discussed by \citet{nithya15,nithya15}. In contrast, the airy model (black) and measured beam with cutoff (blue) show no significant brightening at the horizon, where they appear still to be dominated by the wings of the delay PSF from the emission closer to zero delay. 
-
-We also plot (green dashed line) the delay spectrum after subtracting the visibilities computed with the $\theta\sim60^\circ$ cutoff measured beam from those using the full measured beam. This curve may be interpreted as the uncertainty in the ``pitchfork'' horizon brightening due to uncertainty in the beam horizon response, or equivalently as the delay spectrum residual foregrounds after subtracting foregrounds in the well modeled region of the sky (Neben et al. 2015b, submitted). By construction, this subtraction leaves emission from the highest delay regions of the sky (near the horizon on opposite sides of the baseline), but also leaves some low delay emission on opposite sides of a line perpendicular to the baseline. However, this additional low delay emission near the horizon gets drowned out by that from near zenith where the beam is substantially stronger. 
-
-On the shorter 14\,m baseline, the horizon brightening is smaller because there is roughly an order of magnitude more emission at zero delay, whose thereby stronger delay wings, which are also relatively wider compared to the narrower foreground wedge, cover up much of the edge brightening. At $60^\circ$ LST, effect of horizon response is much smaller as the Galactic disk is now entirely below the horizon. 
-
-The level of leakage depends also on baseline orientation which sets which directions on the sky map to large delays. Figure \ref{fig:delayspec2} shows the delay spectra at $0^\circ$ LST on 14\,m NE (top pair) and SE (bottom pair) baselines. Both show increased edge brightening compared to the 14\,m EW baseline. \citet{nithya15} proposes to identify through modeling the baselines most susceptible to this edge brightening at any given time, and simply exclude them from the power spectrum analysis. 
 
 
+\begin{figure*}[h]
+\includegraphics[width=6.7in]{delay_spectra_dave_rich_airy_beams_manyLSTs.pdf}
+\caption{Simulated delay spectra for the GSM and point sources at $0^\circ$ (top pair) and $60^\circ$ (bottom pair) LST for EW baselines of length 14\,m (left pair) and 42\,m (right pair). The beams are are assumed constant over frequency.}
+\label{fig:delayspecmanyLSTs}
+\end{figure*}
 
-%\begin{figure*}[h]
-%\includegraphics[width=6.7in]{LST0deg_14m_42m_EWbaselines_dish1_blackman.png}
-%\includegraphics[width=6.7in]{LST60deg_14m_42m_EWbaselines_dish1_blackman.png}
-%\caption{Simulated delay spectra for the GSM and point sources at $0^\circ$ (top pair) and $60^\circ$ (bottom pair) LST for EW baselines of length 14\,m (left pair) and 42\,m (right pair). The beams are are assumed constant over frequency.}
-%\label{fig:delayspec}
-%\end{figure*}
+\begin{figure*}[h]
+\includegraphics[width=6.7in]{gsm_kelvin_LST_2deg_and_62deg.pdf}
+\caption{Simulated delay spectra for the GSM and point sources at $0^\circ$ (top pair) and $60^\circ$ (bottom pair) LST for EW baselines of length 14\,m (left pair) and 42\,m (right pair). The beams are are assumed constant over frequency.}
+\label{fig:gsmplots}
+\end{figure*}
 
-%\begin{figure*}[h]
-%\includegraphics[width=6.7in]{LST0deg_14m_42m_NEslantbaselines_dish1_blackman.png}
-%\includegraphics[width=6.7in]{LST0deg_14m_42m_SEslantbaselines_dish1_blackman.png}
-%\caption{Simulated delay spectra for the GSM and point sources at $0^\circ$ LST for NE (top pair) and SE (bottom pair) baselines of length 14\,m (left pair) and 42\,m (right pair). The beams are are assumed constant over frequency.}
-%\label{fig:delayspec2}
-%\end{figure*}
+
+\begin{figure*}[h]
+\includegraphics[width=6.7in]{delay_spectra_dave_rich_airy_beams_LST2deg.pdf}
+\caption{Simulated delay spectra for the GSM and point sources at $0^\circ$ (top pair) and $60^\circ$ (bottom pair) LST for EW baselines of length 14\,m (left pair) and 42\,m (right pair). The beams are are assumed constant over frequency.}
+\label{fig:delayspecbadLST}
+\end{figure*}
+
+\begin{figure*}[h]
+\includegraphics[width=6.7in]{delay_spectra_dave_rich_airy_beams_LST62deg.pdf}
+\caption{Simulated delay spectra for the GSM and point sources at $0^\circ$ (top pair) and $60^\circ$ (bottom pair) LST for EW baselines of length 14\,m (left pair) and 42\,m (right pair). The beams are are assumed constant over frequency.}
+\label{fig:delayspecgoodLST}
+\end{figure*}
+
+
 
 
 

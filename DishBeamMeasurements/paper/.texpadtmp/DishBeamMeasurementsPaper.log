@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  18 NOV 2015 11:05
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  22 DEC 2015 14:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -249,7 +249,11 @@ Class revtex4-1 Info: Robustifying \LaTeX's \boldmath command on input line 59.
 Class revtex4-1 Info: cite was not loaded (OK!) on input line 59.
 Class revtex4-1 Info: mcite was not loaded (OK!) on input line 59.
 Class revtex4-1 Info: multicol was not loaded (OK!) on input line 59.
- (/Users/abrahamn/Documents/Physics/papers/DishPapers/DishBeamMeasurements/paper/.texpadtmp/DishBeamMeasurementsPaper.aux)
+ (/Users/abrahamn/Documents/Physics/papers/DishPapers/DishBeamMeasurements/paper/.texpadtmp/DishBeamMeasurementsPaper.aux
+
+LaTeX Warning: Label `fig:dishphoto' multiply defined.
+
+)
 \openout1 = `DishBeamMeasurementsPaper.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
@@ -326,13 +330,74 @@ File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 LaTeX Font Info:    Try loading font information for U+msb on input line 100.
  (/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-) [1{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+) [1{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] <IMG_0353.JPG, id=19, 3276.24pt x 2457.18pt>
+File: IMG_0353.JPG Graphic file (type jpg)
+ <use IMG_0353.JPG>
+Package pdftex.def Info: IMG_0353.JPG used on input line 296.
+(pdftex.def)             Requested size: 245.71754pt x 184.28055pt.
 
-LaTeX Warning: Reference `fig:aerial' on page 3 undefined on input line 386.
+Underfull \hbox (badness 10000) in paragraph at lines 297--297
+$[]$
+ []
 
-[3]
+
+Underfull \hbox (badness 10000) in paragraph at lines 297--297
+
+ []
+
+<feed.jpg, id=20, 1606.0pt x 1204.5pt>
+File: feed.jpg Graphic file (type jpg)
+ <use feed.jpg>
+Package pdftex.def Info: feed.jpg used on input line 303.
+(pdftex.def)             Requested size: 245.71754pt x 184.2879pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--304
+$[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--304
+
+ []
+
+[2 <./IMG_0353.JPG> <./feed.jpg>] <dave197_rich195_airy_beams.pdf, id=24, 975.01515pt x 269.0348pt>
+File: dave197_rich195_airy_beams.pdf Graphic file (type pdf)
+ <use dave197_rich195_airy_beams.pdf>
+Package pdftex.def Info: dave197_rich195_airy_beams.pdf used on input line 368.
+(pdftex.def)             Requested size: 505.89pt x 139.591pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 369--369
+$[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 369--369
+
+ []
+
+
+LaTeX Warning: Reference `fig:aerial' on page 3 undefined on input line 384.
+
+[3] <null_expt_rel_beam_maps.pdf, id=29, 626.76143pt x 537.56926pt>
+File: null_expt_rel_beam_maps.pdf Graphic file (type pdf)
+ <use null_expt_rel_beam_maps.pdf>
+Package pdftex.def Info: null_expt_rel_beam_maps.pdf used on input line 451.
+(pdftex.def)             Requested size: 484.20877pt x 415.30765pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 452--452
+$[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 452--452
+
+ []
+
+
+Class revtex4-1 Warning: Float cannot be placed.
+
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 461.
- (/usr/local/texlive/2012/texmf-dist/tex/latex/base/omscmr.fd
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
@@ -347,24 +412,74 @@ LaTeX Warning: Reference `fig:null3' on page 4 undefined on input line 468.
 
 LaTeX Warning: Reference `fig:null4' on page 4 undefined on input line 468.
 
+[4 <./dave197_rich195_airy_beams.pdf>]
 
-LaTeX Warning: Reference `fig:dish3' on page 4 undefined on input line 495.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 476.
 
+[5 <./null_expt_rel_beam_maps.pdf>]
 
-LaTeX Warning: Reference `fig:dish1' on page 4 undefined on input line 495.
-
-
-LaTeX Warning: Reference `fig:dish2' on page 4 undefined on input line 495.
-
-
-LaTeX Warning: Reference `fig:dish4' on page 4 undefined on input line 495.
+LaTeX Warning: Reference `fig:dish3' on page 6 undefined on input line 477.
 
 
-LaTeX Warning: Reference `fig:interpbeams' on page 4 undefined on input line 523.
+LaTeX Warning: Reference `fig:dish1' on page 6 undefined on input line 477.
 
 
-LaTeX Warning: Reference `fig:interpbeamsslice' on page 4 undefined on input line 523.
+LaTeX Warning: Reference `fig:dish2' on page 6 undefined on input line 477.
 
+
+LaTeX Warning: Reference `fig:dish4' on page 6 undefined on input line 477.
+
+<measured_beams_and_models_maps.pdf, id=112, 894.49007pt x 963.39452pt>
+File: measured_beams_and_models_maps.pdf Graphic file (type pdf)
+ <use measured_beams_and_models_maps.pdf>
+Package pdftex.def Info: measured_beams_and_models_maps.pdf used on input line 485.
+(pdftex.def)             Requested size: 484.20877pt x 521.5189pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 486--486
+$[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 486--486
+
+ []
+
+<measured_beams_and_models_slices.pdf, id=113, 960.47585pt x 992.82478pt>
+File: measured_beams_and_models_slices.pdf Graphic file (type pdf)
+ <use measured_beams_and_models_slices.pdf>
+Package pdftex.def Info: measured_beams_and_models_slices.pdf used on input line 492.
+(pdftex.def)             Requested size: 484.20877pt x 500.51662pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 493--493
+$[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 493--493
+
+ []
+
+
+LaTeX Warning: Reference `fig:interpbeams' on page 6 undefined on input line 497.
+
+
+LaTeX Warning: Reference `fig:interpbeamsslice' on page 6 undefined on input line 497.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 524--524
+$[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 524--524
+
+ []
+
+<delay_spectra_dave_rich_airy_beams_manyLSTs.pdf, id=114, 984.87952pt x 435.08798pt>
+File: delay_spectra_dave_rich_airy_beams_manyLSTs.pdf Graphic file (type pdf)
+ <use delay_spectra_dave_rich_airy_beams_manyLSTs.pdf>
+Package pdftex.def Info: delay_spectra_dave_rich_airy_beams_manyLSTs.pdf used on input line 549.
+(pdftex.def)             Requested size: 484.20877pt x 213.90533pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 550--550
 $[]$
@@ -375,31 +490,104 @@ Underfull \hbox (badness 10000) in paragraph at lines 550--550
 
  []
 
-[4]
 
-LaTeX Warning: Reference `fig:delayspec' on page 5 undefined on input line 579.
+Class revtex4-1 Warning: Float cannot be placed.
+
+<gsm_kelvin_LST_2deg_and_62deg.pdf, id=115, 646.5662pt x 269.0348pt>
+File: gsm_kelvin_LST_2deg_and_62deg.pdf Graphic file (type pdf)
+ <use gsm_kelvin_LST_2deg_and_62deg.pdf>
+Package pdftex.def Info: gsm_kelvin_LST_2deg_and_62deg.pdf used on input line 555.
+(pdftex.def)             Requested size: 484.20877pt x 201.47592pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 556--556
+$[]$
+ []
 
 
-LaTeX Warning: Reference `fig:delayspec2' on page 5 undefined on input line 585.
+Underfull \hbox (badness 10000) in paragraph at lines 556--556
 
-(/Users/abrahamn/Documents/Physics/papers/DishPapers/DishBeamMeasurements/paper/.texpadtmp/DishBeamMeasurementsPaper.bbl [5]) [6] (/Users/abrahamn/Documents/Physics/papers/DishPapers/DishBeamMeasurements/paper/.texpadtmp/DishBeamMeasurementsPaper.aux)
+ []
+
+
+Class revtex4-1 Warning: Float cannot be placed.
+
+<delay_spectra_dave_rich_airy_beams_LST2deg.pdf, id=116, 984.87952pt x 435.08798pt>
+File: delay_spectra_dave_rich_airy_beams_LST2deg.pdf Graphic file (type pdf)
+ <use delay_spectra_dave_rich_airy_beams_LST2deg.pdf>
+Package pdftex.def Info: delay_spectra_dave_rich_airy_beams_LST2deg.pdf used on input line 562.
+(pdftex.def)             Requested size: 484.20877pt x 213.90533pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 563--563
+$[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 563--563
+
+ []
+
+
+Class revtex4-1 Warning: Float cannot be placed.
+
+<delay_spectra_dave_rich_airy_beams_LST62deg.pdf, id=117, 984.87952pt x 435.08798pt>
+File: delay_spectra_dave_rich_airy_beams_LST62deg.pdf Graphic file (type pdf)
+ <use delay_spectra_dave_rich_airy_beams_LST62deg.pdf>
+Package pdftex.def Info: delay_spectra_dave_rich_airy_beams_LST62deg.pdf used on input line 568.
+(pdftex.def)             Requested size: 484.20877pt x 213.90533pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 569--569
+$[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 569--569
+
+ []
+
+
+Class revtex4-1 Warning: Float cannot be placed.
+
+[6] [7 <./measured_beams_and_models_maps.pdf>] [8 <./measured_beams_and_models_slices.pdf>]
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 589.
+
+[9 <./delay_spectra_dave_rich_airy_beams_manyLSTs.pdf> <./gsm_kelvin_LST_2deg_and_62deg.pdf
+
+pdfTeX warning: /usr/local/texlive/2012/bin/x86_64-darwin/pdflatex (file ./gsm_kelvin_LST_2deg_and_62deg.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 589.
+
+
+Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
+
+
+LaTeX Warning: Reference `fig:delayspec2' on page 10 undefined on input line 590.
+
+(/Users/abrahamn/Documents/Physics/papers/DishPapers/DishBeamMeasurements/paper/.texpadtmp/DishBeamMeasurementsPaper.bbl) [10] [11 <./delay_spectra_dave_rich_airy_beams_LST2deg.pdf> <./delay_spectra_dave_rich_airy_beams_LST62deg.pdf
+
+pdfTeX warning: /usr/local/texlive/2012/bin/x86_64-darwin/pdflatex (file ./delay_spectra_dave_rich_airy_beams_LST62deg.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>] (/Users/abrahamn/Documents/Physics/papers/DishPapers/DishBeamMeasurements/paper/.texpadtmp/DishBeamMeasurementsPaper.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 4949 strings out of 493488
- 66042 string characters out of 3141326
- 175804 words of memory out of 3000000
- 8173 multiletter control sequences out of 15000+200000
+ 5020 strings out of 493488
+ 68145 string characters out of 3141326
+ 161684 words of memory out of 3000000
+ 8232 multiletter control sequences out of 15000+200000
  13042 words of font info for 54 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 39i,7n,26p,2445b,318s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on /Users/abrahamn/Documents/Physics/papers/DishPapers/DishBeamMeasurements/paper/.texpadtmp/DishBeamMeasurementsPaper.pdf (6 pages, 238117 bytes).
+ 39i,10n,26p,2445b,325s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on /Users/abrahamn/Documents/Physics/papers/DishPapers/DishBeamMeasurements/paper/.texpadtmp/DishBeamMeasurementsPaper.pdf (11 pages, 4869148 bytes).
 PDF statistics:
- 95 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
+ 565 PDF objects out of 1000 (max. 8388607)
+ 197 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
