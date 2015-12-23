@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  22 DEC 2015 14:26
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  23 DEC 2015 17:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -333,38 +333,51 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 ) [1{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] <IMG_0353.JPG, id=19, 3276.24pt x 2457.18pt>
 File: IMG_0353.JPG Graphic file (type jpg)
  <use IMG_0353.JPG>
-Package pdftex.def Info: IMG_0353.JPG used on input line 296.
+Package pdftex.def Info: IMG_0353.JPG used on input line 314.
 (pdftex.def)             Requested size: 245.71754pt x 184.28055pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 297--297
+Underfull \hbox (badness 10000) in paragraph at lines 315--315
 $[]$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 297--297
+Underfull \hbox (badness 10000) in paragraph at lines 315--315
 
  []
 
 <feed.jpg, id=20, 1606.0pt x 1204.5pt>
 File: feed.jpg Graphic file (type jpg)
  <use feed.jpg>
-Package pdftex.def Info: feed.jpg used on input line 303.
+Package pdftex.def Info: feed.jpg used on input line 321.
 (pdftex.def)             Requested size: 245.71754pt x 184.2879pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--304
+Underfull \hbox (badness 10000) in paragraph at lines 322--322
 $[]$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--304
+Underfull \hbox (badness 10000) in paragraph at lines 322--322
 
  []
 
-[2 <./IMG_0353.JPG> <./feed.jpg>] <dave197_rich195_airy_beams.pdf, id=24, 975.01515pt x 269.0348pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[2 <./IMG_0353.JPG>]
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 343.
+
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 343.
+
+
+Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
+
+<dave197_rich195_airy_beams.pdf, id=24, 974.84262pt x 269.0348pt>
 File: dave197_rich195_airy_beams.pdf Graphic file (type pdf)
  <use dave197_rich195_airy_beams.pdf>
 Package pdftex.def Info: dave197_rich195_airy_beams.pdf used on input line 368.
-(pdftex.def)             Requested size: 505.89pt x 139.591pt.
+(pdftex.def)             Requested size: 505.89pt x 139.61563pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 369--369
 $[]$
@@ -378,11 +391,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 369--369
 
 LaTeX Warning: Reference `fig:aerial' on page 3 undefined on input line 384.
 
-[3] <null_expt_rel_beam_maps.pdf, id=29, 626.76143pt x 537.56926pt>
+[3 <./feed.jpg>] <null_expt_rel_beam_maps.pdf, id=29, 626.76143pt x 537.56926pt>
 File: null_expt_rel_beam_maps.pdf Graphic file (type pdf)
  <use null_expt_rel_beam_maps.pdf>
 Package pdftex.def Info: null_expt_rel_beam_maps.pdf used on input line 451.
-(pdftex.def)             Requested size: 484.20877pt x 415.30765pt.
+(pdftex.def)             Requested size: 469.75499pt x 402.90527pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 452--452
 $[]$
@@ -412,162 +425,144 @@ LaTeX Warning: Reference `fig:null3' on page 4 undefined on input line 468.
 
 LaTeX Warning: Reference `fig:null4' on page 4 undefined on input line 468.
 
+<measured_beams_and_models_maps.pdf, id=30, 894.49007pt x 963.39452pt>
+File: measured_beams_and_models_maps.pdf Graphic file (type pdf)
+ <use measured_beams_and_models_maps.pdf>
+Package pdftex.def Info: measured_beams_and_models_maps.pdf used on input line 477.
+(pdftex.def)             Requested size: 469.75499pt x 505.9514pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 478--478
+$[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 478--478
+
+ []
+
+<measured_beams_and_models_slices.pdf, id=31, 960.47585pt x 992.82478pt>
+File: measured_beams_and_models_slices.pdf Graphic file (type pdf)
+ <use measured_beams_and_models_slices.pdf>
+Package pdftex.def Info: measured_beams_and_models_slices.pdf used on input line 484.
+(pdftex.def)             Requested size: 469.75499pt x 485.5643pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 485--485
+$[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 485--485
+
+ []
+
 [4 <./dave197_rich195_airy_beams.pdf>]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 476.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 490.
 
 [5 <./null_expt_rel_beam_maps.pdf>]
 
-LaTeX Warning: Reference `fig:dish3' on page 6 undefined on input line 477.
-
-
-LaTeX Warning: Reference `fig:dish1' on page 6 undefined on input line 477.
-
-
-LaTeX Warning: Reference `fig:dish2' on page 6 undefined on input line 477.
-
-
-LaTeX Warning: Reference `fig:dish4' on page 6 undefined on input line 477.
-
-<measured_beams_and_models_maps.pdf, id=112, 894.49007pt x 963.39452pt>
-File: measured_beams_and_models_maps.pdf Graphic file (type pdf)
- <use measured_beams_and_models_maps.pdf>
-Package pdftex.def Info: measured_beams_and_models_maps.pdf used on input line 485.
-(pdftex.def)             Requested size: 484.20877pt x 521.5189pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 486--486
-$[]$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 486--486
-
- []
-
-<measured_beams_and_models_slices.pdf, id=113, 960.47585pt x 992.82478pt>
-File: measured_beams_and_models_slices.pdf Graphic file (type pdf)
- <use measured_beams_and_models_slices.pdf>
-Package pdftex.def Info: measured_beams_and_models_slices.pdf used on input line 492.
-(pdftex.def)             Requested size: 484.20877pt x 500.51662pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 493--493
-$[]$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 493--493
-
- []
-
-
-LaTeX Warning: Reference `fig:interpbeams' on page 6 undefined on input line 497.
-
-
-LaTeX Warning: Reference `fig:interpbeamsslice' on page 6 undefined on input line 497.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 524--524
-$[]$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 524--524
-
- []
-
-<delay_spectra_dave_rich_airy_beams_manyLSTs.pdf, id=114, 984.87952pt x 435.08798pt>
-File: delay_spectra_dave_rich_airy_beams_manyLSTs.pdf Graphic file (type pdf)
- <use delay_spectra_dave_rich_airy_beams_manyLSTs.pdf>
-Package pdftex.def Info: delay_spectra_dave_rich_airy_beams_manyLSTs.pdf used on input line 549.
-(pdftex.def)             Requested size: 484.20877pt x 213.90533pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 550--550
-$[]$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 550--550
-
- []
-
-
-Class revtex4-1 Warning: Float cannot be placed.
-
-<gsm_kelvin_LST_2deg_and_62deg.pdf, id=115, 646.5662pt x 269.0348pt>
-File: gsm_kelvin_LST_2deg_and_62deg.pdf Graphic file (type pdf)
- <use gsm_kelvin_LST_2deg_and_62deg.pdf>
-Package pdftex.def Info: gsm_kelvin_LST_2deg_and_62deg.pdf used on input line 555.
-(pdftex.def)             Requested size: 484.20877pt x 201.47592pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 556--556
-$[]$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 556--556
-
- []
-
-
-Class revtex4-1 Warning: Float cannot be placed.
-
-<delay_spectra_dave_rich_airy_beams_LST2deg.pdf, id=116, 984.87952pt x 435.08798pt>
-File: delay_spectra_dave_rich_airy_beams_LST2deg.pdf Graphic file (type pdf)
- <use delay_spectra_dave_rich_airy_beams_LST2deg.pdf>
-Package pdftex.def Info: delay_spectra_dave_rich_airy_beams_LST2deg.pdf used on input line 562.
-(pdftex.def)             Requested size: 484.20877pt x 213.90533pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 563--563
-$[]$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 563--563
-
- []
-
-
-Class revtex4-1 Warning: Float cannot be placed.
-
-<delay_spectra_dave_rich_airy_beams_LST62deg.pdf, id=117, 984.87952pt x 435.08798pt>
-File: delay_spectra_dave_rich_airy_beams_LST62deg.pdf Graphic file (type pdf)
- <use delay_spectra_dave_rich_airy_beams_LST62deg.pdf>
-Package pdftex.def Info: delay_spectra_dave_rich_airy_beams_LST62deg.pdf used on input line 568.
-(pdftex.def)             Requested size: 484.20877pt x 213.90533pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--569
-$[]$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--569
-
- []
-
-
-Class revtex4-1 Warning: Float cannot be placed.
-
-[6] [7 <./measured_beams_and_models_maps.pdf>] [8 <./measured_beams_and_models_slices.pdf>]
-
-LaTeX Warning: A float is stuck (cannot be placed) on input line 589.
-
-[9 <./delay_spectra_dave_rich_airy_beams_manyLSTs.pdf> <./gsm_kelvin_LST_2deg_and_62deg.pdf
-
-pdfTeX warning: /usr/local/texlive/2012/bin/x86_64-darwin/pdflatex (file ./gsm_kelvin_LST_2deg_and_62deg.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->]
-
-LaTeX Warning: A float is stuck (cannot be placed) on input line 589.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 490.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
 
-LaTeX Warning: Reference `fig:delayspec2' on page 10 undefined on input line 590.
+LaTeX Warning: Reference `fig:dish3' on page 6 undefined on input line 491.
 
-(/Users/abrahamn/Documents/Physics/papers/DishPapers/DishBeamMeasurements/paper/.texpadtmp/DishBeamMeasurementsPaper.bbl) [10] [11 <./delay_spectra_dave_rich_airy_beams_LST2deg.pdf> <./delay_spectra_dave_rich_airy_beams_LST62deg.pdf
+
+LaTeX Warning: Reference `fig:dish1' on page 6 undefined on input line 491.
+
+
+LaTeX Warning: Reference `fig:dish2' on page 6 undefined on input line 491.
+
+
+LaTeX Warning: Reference `fig:dish4' on page 6 undefined on input line 491.
+
+
+LaTeX Warning: Reference `fig:interpbeams' on page 6 undefined on input line 495.
+
+
+LaTeX Warning: Reference `fig:interpbeamsslice' on page 6 undefined on input line 495.
+
+[6 <./measured_beams_and_models_maps.pdf>] [7 <./measured_beams_and_models_slices.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 522--522
+$[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 522--522
+
+ []
+
+
+Underfull \hbox (badness 2269) in paragraph at lines 546--548
+\OT1/cmr/m/n/10 2min THER-MAL NOISE LEVEL, THEN DE-LAY
+ []
+
+<delay_spectra_dave_rich_airy_beams_manyLSTs.pdf, id=220, 1000.86894pt x 434.50769pt>
+File: delay_spectra_dave_rich_airy_beams_manyLSTs.pdf Graphic file (type pdf)
+ <use delay_spectra_dave_rich_airy_beams_manyLSTs.pdf>
+Package pdftex.def Info: delay_spectra_dave_rich_airy_beams_manyLSTs.pdf used on input line 559.
+(pdftex.def)             Requested size: 433.62pt x 188.24686pt.
+ <delay_spectra_dave_rich_airy_beams_LST2deg.pdf, id=221, 1000.86894pt x 434.50769pt>
+File: delay_spectra_dave_rich_airy_beams_LST2deg.pdf Graphic file (type pdf)
+ <use delay_spectra_dave_rich_airy_beams_LST2deg.pdf>
+Package pdftex.def Info: delay_spectra_dave_rich_airy_beams_LST2deg.pdf used on input line 560.
+(pdftex.def)             Requested size: 433.62pt x 188.24686pt.
+ <delay_spectra_dave_rich_airy_beams_LST62deg.pdf, id=222, 1000.86894pt x 434.50769pt>
+File: delay_spectra_dave_rich_airy_beams_LST62deg.pdf Graphic file (type pdf)
+ <use delay_spectra_dave_rich_airy_beams_LST62deg.pdf>
+Package pdftex.def Info: delay_spectra_dave_rich_airy_beams_LST62deg.pdf used on input line 561.
+(pdftex.def)             Requested size: 433.62pt x 188.24686pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 562--562
+$[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 562--562
+
+ []
+
+
+Class revtex4-1 Warning: Float cannot be placed.
+
+<gsm_kelvin_LST_2deg_and_62deg.pdf, id=223, 646.5662pt x 269.0348pt>
+File: gsm_kelvin_LST_2deg_and_62deg.pdf Graphic file (type pdf)
+ <use gsm_kelvin_LST_2deg_and_62deg.pdf>
+Package pdftex.def Info: gsm_kelvin_LST_2deg_and_62deg.pdf used on input line 570.
+(pdftex.def)             Requested size: 433.62pt x 180.4289pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 571--571
+$[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 571--571
+
+ []
+
+
+Class revtex4-1 Warning: Float cannot be placed.
+
+[8]
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 576.
+
+[9 <./delay_spectra_dave_rich_airy_beams_manyLSTs.pdf> <./delay_spectra_dave_rich_airy_beams_LST2deg.pdf
+
+pdfTeX warning: /usr/local/texlive/2012/bin/x86_64-darwin/pdflatex (file ./delay_spectra_dave_rich_airy_beams_LST2deg.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./delay_spectra_dave_rich_airy_beams_LST62deg.pdf
 
 pdfTeX warning: /usr/local/texlive/2012/bin/x86_64-darwin/pdflatex (file ./delay_spectra_dave_rich_airy_beams_LST62deg.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] (/Users/abrahamn/Documents/Physics/papers/DishPapers/DishBeamMeasurements/paper/.texpadtmp/DishBeamMeasurementsPaper.aux)
+>]
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 576.
+
+
+Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
+
+(/Users/abrahamn/Documents/Physics/papers/DishPapers/DishBeamMeasurements/paper/.texpadtmp/DishBeamMeasurementsPaper.bbl) [10] [11 <./gsm_kelvin_LST_2deg_and_62deg.pdf>] (/Users/abrahamn/Documents/Physics/papers/DishPapers/DishBeamMeasurements/paper/.texpadtmp/DishBeamMeasurementsPaper.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -576,17 +571,17 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5020 strings out of 493488
- 68145 string characters out of 3141326
- 161684 words of memory out of 3000000
- 8232 multiletter control sequences out of 15000+200000
+ 4992 strings out of 493488
+ 67673 string characters out of 3141326
+ 158196 words of memory out of 3000000
+ 8204 multiletter control sequences out of 15000+200000
  13042 words of font info for 54 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  39i,10n,26p,2445b,325s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on /Users/abrahamn/Documents/Physics/papers/DishPapers/DishBeamMeasurements/paper/.texpadtmp/DishBeamMeasurementsPaper.pdf (11 pages, 4869148 bytes).
+Output written on /Users/abrahamn/Documents/Physics/papers/DishPapers/DishBeamMeasurements/paper/.texpadtmp/DishBeamMeasurementsPaper.pdf (11 pages, 5340367 bytes).
 PDF statistics:
- 565 PDF objects out of 1000 (max. 8388607)
+ 546 PDF objects out of 1000 (max. 8388607)
  197 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)

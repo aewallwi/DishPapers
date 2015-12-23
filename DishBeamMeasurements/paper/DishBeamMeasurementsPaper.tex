@@ -292,19 +292,6 @@ measurements in Section 5. We conclude with discussion in Section 6.
 
 \subsection{Design of the HERA Dish}
 
-\begin{figure}[h]
-\includegraphics[width=3.4in]{IMG_0353.JPG}
-\caption{Aerial photograph of the two reference dipoles deployed in Galford Meadow at the National Radio Astronomy Observatory--Green Bank 100\,m south of the HERA dish.}
-\label{fig:dishphoto}
-\end{figure}
-
-
-\begin{figure}[h]
-\includegraphics[width=3.4in]{feed.jpg}
-\caption{Aerial photograph of the two reference dipoles deployed in Galford Meadow at the National Radio Astronomy Observatory--Green Bank 100\,m south of the HERA dish.}
-\label{fig:dishphoto}
-\end{figure}
-
 
 The 14\,m HERA dish design is a departure from the large N--small D approach used by 21\,cm 
 observatories like PAPER and the MWA. Both observatories are actively pursuing power 
@@ -322,6 +309,19 @@ smooth spectrum foreground power into cosmological signal modes. For this reason
 design was carefully optimized for a foreground avoidance-based power spectrum spectrum 
 analysis, as detailed by \citet{heraMemo5} and discussed in the larger engineering context of 
 HERA by DeBoer et al (in prep). 
+
+\begin{figure}[h]
+\includegraphics[width=3.4in]{IMG_0353.JPG}
+\caption{Aerial photograph of the two reference dipoles deployed in Galford Meadow at the National Radio Astronomy Observatory--Green Bank 100\,m south of the HERA dish.}
+\label{fig:dishphoto}
+\end{figure}
+
+
+\begin{figure}[h]
+\includegraphics[width=3.4in]{feed.jpg}
+\caption{Aerial photograph of the two reference dipoles deployed in Galford Meadow at the National Radio Astronomy Observatory--Green Bank 100\,m south of the HERA dish.}
+\label{fig:dishphoto}
+\end{figure}
 
 We summarize here the logic leading to a 14\,m dish with $f/D\approx0.32$. As discussed 
 above, it is useful to think in delay-space, where a source ideally appears as a delta function 
@@ -367,7 +367,7 @@ degree of beam symmetry, the actual dish/feed efficiency (i.e., collecting area)
 \centering
 \includegraphics[width=7in]{dave197_rich195_airy_beams.pdf}
 \caption{Simulated delay spectra for the GSM and point sources at $0^\circ$ (top pair) and $60^\circ$ (bottom pair) LST for EW baselines of length 14\,m (left pair) and 42\,m (right pair). The beams are are assumed constant over frequency.}
-\label{fig:delayspec}
+\label{fig:modelbeams}
 \end{figure*}
 
 ASK DAVE OR RICH TO WRITE A ONE OR TWO PARAGRAPH SUMMARY OF THE ELECTROMAGNETIC DISH SIMULATIONS
@@ -448,7 +448,7 @@ values in each HEALPix cell.
 
 \begin{figure*}[h]
 \centering
-\includegraphics[width=6.7in]{null_expt_rel_beam_maps.pdf}
+\includegraphics[width=6.5in]{null_expt_rel_beam_maps.pdf}
 \caption{null experiment beam ratio plots}
 \label{fig:nullexptplots}
 \end{figure*}
@@ -472,27 +472,25 @@ The magnitude of these systematics is comparable to those observed in the two ot
 
 \subsection{Power pattern measurements}
 
-Having verified the feed power pattern, we deployed feed over the dish and proceed with dish measurements. We measure the power pattern with the feed at four different heights, 4\,m, 4.5\,m, 5\,m, and 5.3\,m, chosen to probe around the nominal focus of 4.5\,m (the nominal beam) and up to the maximum height of 5.3\,m allowed by pole height and rope stresses. Heights are measured from the dish surface to the feed backplane. 
-
-Inspecting the E and H plane slices through the measured beams (bottom panels) in Figures \ref{fig:dish3}, \ref{fig:dish1}, \ref{fig:dish2}, \ref{fig:dish4}, we generally see the main lobe narrow and the sidelobe level decrease. The improvement is also seen in the yellow and red main lobe in the beam maps (top panels) which narrow and approach the expected orientations: the EW (NS) main lobe is elongated in the NS (EW) direction. The last lift produced the smallest change in the beam suggesting it is quite near the best focus. 
-
-The sky coverage in these dish measurements extends out to typically $\theta\sim50-60^\circ$. Beyond that the ORBCOMM flux is sufficiently attenuated relative to diffuse galactic emission that a power ratio measurement between the two antennas is no longer a clean probe of their gains in the direction of the satellite. At these zenith angles, the beam sidelobes are roughly -30\,dB, and seem to be trending downward at the edge of the measured region.
-
-
-
 \begin{figure*}[t]
 \centering
-\includegraphics[width=6.7in]{measured_beams_and_models_maps.pdf}
+\includegraphics[width=6.5in]{measured_beams_and_models_maps.pdf}
 \caption{null experiment beam ratio plots}
 \label{fig:measuredbeammaps}
 \end{figure*}
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=6.7in]{measured_beams_and_models_slices.pdf}
+\includegraphics[width=6.5in]{measured_beams_and_models_slices.pdf}
 \caption{null experiment beam ratio plots}
 \label{fig:measuredbeamslices}
 \end{figure*}
+
+Having verified the feed power pattern, we deployed feed over the dish and proceed with dish measurements. We measure the power pattern with the feed at four different heights, 4\,m, 4.5\,m, 5\,m, and 5.3\,m, chosen to probe around the nominal focus of 4.5\,m (the nominal beam) and up to the maximum height of 5.3\,m allowed by pole height and rope stresses. Heights are measured from the dish surface to the feed backplane. 
+
+Inspecting the E and H plane slices through the measured beams (bottom panels) in Figures \ref{fig:dish3}, \ref{fig:dish1}, \ref{fig:dish2}, \ref{fig:dish4}, we generally see the main lobe narrow and the sidelobe level decrease. The improvement is also seen in the yellow and red main lobe in the beam maps (top panels) which narrow and approach the expected orientations: the EW (NS) main lobe is elongated in the NS (EW) direction. The last lift produced the smallest change in the beam suggesting it is quite near the best focus. 
+
+The sky coverage in these dish measurements extends out to typically $\theta\sim50-60^\circ$. Beyond that the ORBCOMM flux is sufficiently attenuated relative to diffuse galactic emission that a power ratio measurement between the two antennas is no longer a clean probe of their gains in the direction of the satellite. At these zenith angles, the beam sidelobes are roughly -30\,dB, and seem to be trending downward at the edge of the measured region.
 
 In order to compute beam collecting areas and assess foreground leakage we require a beam covering the entire visible sky. For each measured dish beam, we interpolate over the unmeasured cells at $\theta\lesssim60$, then extrapolate outward to the horizon. This amounts to a smooth continuation of the beam response at the same $\sim-30$\,dB level suggested by the fringes of our measurements. We take this as a first possible model of the full sky dish beam, and construct a second with a gaussian cutoff at $\theta=60^\circ$ with $\sigma=2.5^\circ$, the pair of which span the space of likely horizon responses. This procedure is depicted in Figure \ref{fig:interpbeams} where we plot the measured nominal focus beam, the beam after interpolation and extrapolation, and the beam after applying the gaussian cutoff. Figure \ref{fig:interpbeamsslice} shows the interpolated/extrapolated beam and the beam with the cutoff along with various models to illustrate the different horizon responses more clearly.
 
@@ -512,7 +510,7 @@ In order to compute beam collecting areas and assess foreground leakage we requi
 
 To illustrate the results of these smoothing operations we plot slices through the nominal focus dish beam along with the three model beams discussed in Sec. \ref{sec:dishmodels}. The H (E) plane slice of the main lobe is shown at the top (bottom). The plots in the left side zoom in on the main lobe, while those on the right show a zoomed out view of the entire sky pattern. 
 
-\subsection{Collecting Area and Power Spectrum Sensitivity}
+\subsection{Sensitivity}
 
 The collecting area of the antenna is related to the power pattern by the ratio of the beam gain to its beam-weighted solid angle as
 \begin{equation}
@@ -548,73 +546,58 @@ Why does the collecting area increase as the feed is raised over the nominal foc
 ALSO MENTION DEPENDENCE ON BASELINE DIRECTION
 DISCUSS DELAY CLEANING TO THE 2min THERMAL NOISE LEVEL, THEN DELAY TRANSFORM AGAIN WITH REDUCED RESOLUTION, MEANING A LARGER BH WINDOW, AND THUS MORE LEAKAGE, THESE EFFECTS ARE DISCUSSED IN NITHYA'S PAPER, here we are focused on intrinsic delay distribution of foregrounds
 
-We begin with a general discussion of foregrounds and the delay spectrum, then discuss our simulations of foreground delay spectra with different primary beam models under various observing conditions. 
+We simulate the power spectra of foregrounds with different primary beam models under various observing conditions. Broadly, beam models with more response near the horizon see smooth spectrum sources with more frequency dependence (higher delay), appearing closer to the nominally clean EOR window, making it more at risk of leaking power inside. We use the per-baseline approach of XX and XX, simulating visibilities measured by specific baselines as a function of frequency, then computing the Fourier transform over frequency (the delay transform) and normalizing the result into a cosmological power spectrum \citep{perbaselinetechnique}. 
 
-% summary of what sorts of science implications are important
-foreground separation of 21cm signal and foregrounds is the name of the game
-smooth spectrum foregrounds occupy only low k// modes, while rough 21cm signal dominates the higher higher modes
-in fact, the 21cm signal peaks at the smallest k// modes, but these 21cm modes are indistinguishable from foregrounds, so we can only detect 21cm at higher k
-thus, the better foregrounds are contained, to low k modes, the stronger the 21cm signal is
+We simulate visibilities for three beam models (HFSS, CST, and an Airy pattern for a 14\,m aperture) at various LSTs, modeling the sky as the sum of the Global Sky Model \citep{gsm} and a point source catalog (XX). We use a frequency spacing of 1\,MHz, sufficient to characterize delays within and just outside of the horizon limits on both baseline lengths we are concerned with, 14\,m and 42\,m. We use a total bandwidth of 80\,MHz (40\,MHz after applying the Blackman-Harris window) centered on 150\,MHz. This bandwidth is larger than the 10\,MHz thought to be safe from signal evolution over redshift, but is the bandwidth used in the power spectrum analysis of XX,XX to perform a high delay resolution empirical foreground subtraction (delay-space CLEANing) as described by XXX. We normalize the delay spectra into power spectra following   \citet{nithya15}.
 
-% summarize again the wedge frequency structure
-foreground emission is intrinsically smooth spectrum, meaning it should live in the k//=0 mode with slight leakage into larger modes due to their smooth frequency dependence
-however, a baseline in an interferometer measures the sky multiplied by the frequency dependent fringe pattern, imprinting a frequency dependence on the source spectrum with a delay given by the light travel time between the two antennas as seen from the direction of the source
-If we fourier transform the visibility along the frequency axis we should see a peak at the delay of the source. Sources at high delay, near the horizon in the direction of the baseline, thus appear with more frequency structure, and sources at lower delay, perpendicular to the baseline and closer to zenith, have less. Sources exactly in line with the baseline have the maximum frequency dependence set by the baseline length in light travel time. Longer baselines have longer maximum delays, and thus larger contaminated regions of k space, this is the wedge. 
+Nithya et al (submitted) detail the implications of these foreground delay spectra for suppression strategies. We are concerned here with the role of the beam in these predictions, in particular what our beam model and its uncertainties imply about foreground suppression strategies. We begin by simulating delay spectra, plotted in Figure \ref{fig:delayspec} (top panel) at various LSTs as outlined above using the nominal HFSS beam. As all these LSTs are high galactic latitudes far from the galactic center, the total visibility power (the level of the zero delay mode) varies by only an order of magnitude over these LSTs both on the 14\,m (left panel) and 42\,m (right panel). However the horizon limit at negative delay (corresponding to the western horizon) shows a peak that varies by three orders of magnitude on the 14\,m baseline and two orders of magnitude on the 42\,m baseline, showing the stark difference in pitchfork brightening when the galaxy is just above versus just below the horizon. 
 
-% pitchfork and leakage
-Understanding the primary beam is important to characterize the delay distribution of foregrounds, and thus the foreground suppression strategy that should be pursued, the expected level of leakage into the EOR window, and thus the expected sensitivity. Nithya et al discuss a horizon brightening effect they term the 'pitchfork'. if the falloff of the beam sensitivity is less than the increase in solid angle at low elevations and potentially the rebrightening of the sky due down there if the galaxy is there, emission will appear as a brightening at the horizon delay, right at the edge of the EOR window where emission is most at risk of leaking in due to frequency dependent systematics such as beam frequency dependence or miscalibration. 
-
-Nithya et al discuss in detail the implications of these foreground delay spectra for suppression strategies, we are concerned here with the beam uncertainties on them
-We study these effects and their implications for foreground isolation by simulating delay spectra.
-we simulate visibilities using the GSM and point sources over 80MHz of bandwidth, the maximum delay resolution that delay CLEANing has to work with. delay CLEANing can only work within the wedge. 
-how much does our beam uncertainty affect these results? that's why we use different model beams
-only concerned with intrinsic delay spectra of the sources due to geometry, no chromatic beam patterns or gains. 
-we begin by simulating the delays for different LSTs using the HFSS beam
-as expected, the power at the horizon varies by several orders of magnitude over this range of LSTs depending on whether the center of the galaxy is just above or just below the horizon (SEE THE GSM MAPS FOR LST=2,62)
-DISCUSS THE TWO DIFFERENT BASELINE LENGTHS
-	at what k// do the FG spectra dip below the 21cm power spectra?
-	horizon brightening at short vs long baselines
-
-We plot the delay spectra for these two LSTs for both model beams, as well as for the airy beam. 
-the airy beam is an interesting comparison because Nithya's paper and sensitivity calculations assume an airy beam
-as expected, the difference between the beams is very small near zero delay, and largest when the horizon has a relative pitchfork brightening. If the horizon brightening is very small, the difference between the beams is correspondingly small
-NOTE THAT k// CAN BE CONVERTED TO k by adding k=0.005 or 0.02 in quadrature at z=8
-
+In this figure we perform the approximate conversion from delay to k//, which we plot as a second x-axis at the top of the plot. For these short baselines, k// may be converted to k by adding kperp=0.005 or 0.02 in quadrature for these baselines at this redshift. These numbers are small compared to the range of k// plotted, and thus we interpret the k// axis as simply the k axis, and plot a 1D model power spectrum computed using 21cmFast as a dotted line for comparison. 
 
 \begin{figure*}[h]
-\includegraphics[width=6.7in]{delay_spectra_dave_rich_airy_beams_manyLSTs.pdf}
+\centering
+\includegraphics[width=6in]{delay_spectra_dave_rich_airy_beams_manyLSTs.pdf}
+\includegraphics[width=6in]{delay_spectra_dave_rich_airy_beams_LST2deg.pdf}
+\includegraphics[width=6in]{delay_spectra_dave_rich_airy_beams_LST62deg.pdf}
 \caption{Simulated delay spectra for the GSM and point sources at $0^\circ$ (top pair) and $60^\circ$ (bottom pair) LST for EW baselines of length 14\,m (left pair) and 42\,m (right pair). The beams are are assumed constant over frequency.}
-\label{fig:delayspecmanyLSTs}
+\label{fig:delayspec}
 \end{figure*}
 
+We study the differences between our three beam models on two of these LSTs, one with maximal horizon brightening ($2^\circ$), and one with minimal horizon brightening ($62^\circ$). Figure \ref{fig:gsmplots} shows the sine-projected Global Sky Model in horizontal coordinates with units of Kelvin for these two LSTs. Dashed lines mark zenith angles 20$^\circ$, 40$^\circ$, 60$^\circ$, 80$^\circ$. These plots confirm that the large negative delay peak at both baseline's horizon limits at the 2 degree LST originates from the center of the galaxy being just above the horizon. In contrast several hours later, the galactic center is fully below the western horizon, leaving only a slight brightening near the eastern horizon due to the much weaker galactic anticenter. 
+
 \begin{figure*}[h]
-\includegraphics[width=6.7in]{gsm_kelvin_LST_2deg_and_62deg.pdf}
+\centering
+\includegraphics[width=6in]{gsm_kelvin_LST_2deg_and_62deg.pdf}
 \caption{Simulated delay spectra for the GSM and point sources at $0^\circ$ (top pair) and $60^\circ$ (bottom pair) LST for EW baselines of length 14\,m (left pair) and 42\,m (right pair). The beams are are assumed constant over frequency.}
 \label{fig:gsmplots}
 \end{figure*}
 
+We turn now to the differences in foreground delay spectra in these two observing conditions with different beam models. Figure \ref{fig:delayspec} (middle panel) shows the delay spectra for all three beam models at $2^\circ$ LST, which has the worst horizon brightening. We use both numerical beam models with 5\,m feed heights, as well as the Airy pattern for a 14\,m aperture. The delay spectra for these beams agree out to delays of 10--20\,ns on the 14\,m baseline and 30--40\,ns on the 62m baseline. These limits suggest that the beams track each other fairly well out to 15--20$^\circ$ from zenith, beyond which they cease to be correlated. This is essentially what is observed in Figure \ref{fig:measuredbeamslices} (middle panel). At larger delays, especially near the negative delay horizon limit, all three model delay spectra diverge due to the significant edge brightening which effectively discriminates between these models. The CST, HFSS, and Airy beams reach roughly -35\,dB, -38\,dB, and -50\,dB at the horizon (Figure \ref{fig:modelbeams}), consistent with the fact that the CST beam has the largest horizon brightening, followed by the HFSS beam, and then the Airy beam. This is seen in the delay spectra from both baseline lengths, though the edge brightening is much more significant in the longer baseline where it is less diluted by the zero delay emission.  
 
-\begin{figure*}[h]
-\includegraphics[width=6.7in]{delay_spectra_dave_rich_airy_beams_LST2deg.pdf}
-\caption{Simulated delay spectra for the GSM and point sources at $0^\circ$ (top pair) and $60^\circ$ (bottom pair) LST for EW baselines of length 14\,m (left pair) and 42\,m (right pair). The beams are are assumed constant over frequency.}
-\label{fig:delayspecbadLST}
-\end{figure*}
-
-\begin{figure*}[h]
-\includegraphics[width=6.7in]{delay_spectra_dave_rich_airy_beams_LST62deg.pdf}
-\caption{Simulated delay spectra for the GSM and point sources at $0^\circ$ (top pair) and $60^\circ$ (bottom pair) LST for EW baselines of length 14\,m (left pair) and 42\,m (right pair). The beams are are assumed constant over frequency.}
-\label{fig:delayspecgoodLST}
-\end{figure*}
-
-
-
-
-
-
+In contrast, all three model agree much more closely when there is little or no edge brightening as in Figure \ref{fig:measuredbeamslices} (middle panel) where we plot the delay spectra for all three beams for 62$^\circ$ LST. There is still a modest edge brightening observed here, a flattening off near the horizon on the short baseline and a small peak on the long baseline, both due to the increasing solid angle per zenith angle at larger zenith angles. However as the emission at this LST at large delays is roughly the same temperature as emission from everywhere else on the sky, washing out the difference between the three beam models.
 
 \section{Discussion}
 
-add stuff here
+%- power spectrum analyses by first generation instruments are ongoing, but face many challenges
+%- that’s why HERA was designed to be optimized for 21cm
+
+%- in this paper we have characterized the HERA dish’s angular response
+%  down to 60deg zenith angle, -35dB from zenith
+%- confirms models to exquisite fidelity unachievable with celestial sources
+%- the level of model disagreement also gives us a handle on antenna-to-to antenna variation
+
+%- given the latest understanding of instrument chromaticity and
+%  foreground isolation (ie, Nithya), we simulate the effects of these
+%  beams on science
+ %   - taking into account uncertainties in near-horizon beam response unprobed by our measurements
+%- we make predictions for the level of horizon brightening at different LSTs, and discuss the uncertainties due to uncertain beam models (horizon brighting is an exquisite of the low elevation beam response, though an integrated statistic)
+% horizon brightening will dominated leakage into the outer window modes
+
+% frequency dependence of the beam pattern and overall gain (due to reflections) likely dominates leakage deep within the window, but the other papers in this series demonstrate that this leakage level is within our spec
+  
+   % - all this highlight the need for detailed antenna characterization
+     % and simulation of the implications for science analyses  in 21cm observatories 
+
 
 
 

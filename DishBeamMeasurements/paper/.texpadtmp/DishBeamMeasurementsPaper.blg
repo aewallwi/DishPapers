@@ -4,44 +4,44 @@ The top-level auxiliary file: /Users/abrahamn/Documents/Physics/papers/DishPaper
 The style file: ../apj.bst
 Database file #1: DishBeamMeasurementsPaperNotes.bib
 Database file #2: ../DishBeamMeasurements.bib
-You've used 18 entries,
+You've used 12 entries,
             2988 wiz_defined-function locations,
-            759 strings with 18022 characters,
-and the built_in function-call counts, 14442 in all, are:
-= -- 618
-> -- 2066
-< -- 4
-+ -- 691
-- -- 668
-* -- 1754
-:= -- 3025
-add.period$ -- 18
-call.type$ -- 18
-change.case$ -- 104
-chr.to.int$ -- 17
-cite$ -- 18
-duplicate$ -- 326
-empty$ -- 473
-format.name$ -- 736
-if$ -- 2539
-int.to.chr$ -- 2
+            723 strings with 15923 characters,
+and the built_in function-call counts, 11094 in all, are:
+= -- 413
+> -- 1714
+< -- 2
++ -- 574
+- -- 558
+* -- 1399
+:= -- 2356
+add.period$ -- 12
+call.type$ -- 12
+change.case$ -- 71
+chr.to.int$ -- 12
+cite$ -- 12
+duplicate$ -- 217
+empty$ -- 313
+format.name$ -- 605
+if$ -- 1914
+int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 17
-newline$ -- 58
-num.names$ -- 72
-pop$ -- 101
+missing$ -- 11
+newline$ -- 40
+num.names$ -- 48
+pop$ -- 70
 preamble$ -- 1
-purify$ -- 104
+purify$ -- 71
 quote$ -- 0
-skip$ -- 268
+skip$ -- 178
 stack$ -- 0
-substring$ -- 349
-swap$ -- 3
+substring$ -- 229
+swap$ -- 1
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 162
+type$ -- 108
 warning$ -- 0
-while$ -- 45
+while$ -- 27
 width$ -- 0
-write$ -- 183
+write$ -- 123
