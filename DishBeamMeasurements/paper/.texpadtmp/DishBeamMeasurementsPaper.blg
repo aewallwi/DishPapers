@@ -2,11 +2,10 @@ This is BibTeX, Version 0.99d (TeX Live 2012)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: /Users/abrahamn/Documents/Physics/papers/DishPapers/DishBeamMeasurements/paper/.texpadtmp/DishBeamMeasurementsPaper.aux
 The style file: ../apj.bst
-Database file #1: DishBeamMeasurementsPaperNotes.bib
-Database file #2: ../DishBeamMeasurements.bib
+Database file #1: ../DishBeamMeasurements.bib
 You've used 12 entries,
             2988 wiz_defined-function locations,
-            723 strings with 15923 characters,
+            722 strings with 15893 characters,
 and the built_in function-call counts, 11094 in all, are:
 = -- 413
 > -- 1714

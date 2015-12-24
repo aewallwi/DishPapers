@@ -16,8 +16,8 @@
 %\documentclass[manuscript]{aastex}
 %% preprint2 produces a double-column, single-spaced document:
 
-\documentclass{emulateapj}
-%\documentclass[preprint]{aastex}
+%\documentclass{emulateapj}
+\documentclass[preprint]{aastex}
 
 \usepackage{natbib}
 \usepackage{amsmath}
@@ -534,13 +534,13 @@ Beam & $A_\text{eff}$ (m$^2$) & SNR (pess, mod, opt)\\
 \end{tabular}
 \end{table}\
 
-NEED TO TALK ABOUT 21CMSENSE AND THE SNR CALCULATIONS
+NEED TO TALK ABOUT 21CMSENSE\footnote{https://github.com/jpober/21cmSense} AND THE SNR CALCULATIONS
 
 By definition, the Airy pattern has the largest collecting area equal to the dish cross section. The others model a realistic feed with a hanging screen (the skirt or ``kilt''), effectively tapering the dish response to radiation received from its fringes to mitigate cross-coupling and crosstalk between adjacent dishes. As expected, raising the height of the feed increases the illuminated area of the dish, and thus, its collecting area. As expected, the measured collecting area matches that of the CST model at the nominal focus height of 4.5\,m.
 
 Why does the collecting area increase as the feed is raised over the nominal focus? There are two computing effects here: (1) the reflected radiation is less well focused above the feed, decreasing the response; and (2) the tapered feed sees a larger dish as it is raised, allowing more radiation to reach the dipole as opposed to reflecting off the skirt. These data suggest that the second effect wins. Of course the reason for the skirt is to taper the feed beam in order to mitigate cross-talk and cross-coupling between the dishes. A larger collecting area may not be worth it in exchange for exacerbating these concerns.
 
-\section{Implications for Foreground Suppression}
+\section{Foreground Delay Spectra Simulations}
 \label{sec:foregrounds}
 
 ALSO MENTION DEPENDENCE ON BASELINE DIRECTION
@@ -581,23 +581,39 @@ In contrast, all three model agree much more closely when there is little or no 
 %- power spectrum analyses by first generation instruments are ongoing, but face many challenges
 %- that’s why HERA was designed to be optimized for 21cm
 
+Power spectrum analyses by first generation 21\,cm observatories are ongoing, but are contending with challenges ranging from calibration and foreground modeling to the computing time required to process thousands of hours of data. HERA draws the most successful ideas from these first generation instruments, pursuing a compact and redundant array layouts, large collecting area antenna elements, and per-baseline power spectrum analysis to make advances exactly where necessary to make a first detection and characterization of the 21\,cm signal from the EOR. In pursuing an array of dishes rather than one of fixed dipoles, HERA turns away from the large N--small d approach used by the MWA, LOFAR, PAPER, and other first generation instruments in order to achieve sufficient sensitivity at a reasonably data processing and analysis cost. The papers in this series characterize the 14\,m diameter dish used as HERA's antenna element using reflectometry measurements and simulations which probe the beams gain variation with frequency, as well as beam pattern measurements and simulations which probe the beams angular variation. 
+
 %- in this paper we have characterized the HERA dish’s angular response
 %  down to 60deg zenith angle, -35dB from zenith
 %- confirms models to exquisite fidelity unachievable with celestial sources
 %- the level of model disagreement also gives us a handle on antenna-to-to antenna variation
 
+We present in this paper beam pattern measurements at 137\,MHz and comparisons with beam models, as well as simulations of the foreground delay spectra using these modeled beams. We adapt the beam mapping system of \citet{neben15}, deploying it at the prototype three-element HERA array at the National Radio Astronomy Observatory--Green Bank. Only one dish had been constructed when these measurement were made. We present measured power patterns for three different feed heights above the dish covering much of the visible sky probing down to -30\,dB relative to the zenith response. The measured beams agree well with both models in the main lobe out to 10--20$^\circ$ from zenith, then roughly track the sidelobe levels at 20--30\,dB below zenith, though fail to reproduce the exact sidelobe amplitudes and locations. 
+
+These deviations are larger than the $\pm1$\,dB systematics observed in the null experiments designed to probe the accuracy of the ORBCOMM beam measurement system as deployed at this location, suggesting they are accurate measurement of the in situ beam pattern of the imperfect HERA dish. The most likely dish non-idealities are dish surface imperfections and feed misalignment, both of which may vary from antenna to antenna in the full HERA array. Characterizing this antenna-to-antenna beam variation and its effects on power spectrum analyses for HERA, in the way Neben et al (submitted) do for the MWA, is left as future work.
+
+%% sensitivity
+% collecting area 
+% power spectrum SNR
+We quantify the 21\,cm power spectrum sensitivity using our measured beam patterns by first computing the collecting area at different feed heights. We observe a reduction of 30--50\% from that of an ideal, unobstructed Airy pattern for a 14\,m dish. We convert these collecting areas into effective dish sizes to predict overall power spectrum sensitivities for HERA-127 using 21cmSense, and find SNRs of 6--8 in pessimistic and moderate foreground scenarios, and 24--29 in optimistic ones, to be compared with roughly 10 and 37 using the Airy dish. This is a certainly a reduction, but of course an unobstructed, perfectly azimuthally symmetric Airy pattern is unachievable, every dish required polarized feeds either placed on axis where they block the primary reflector, or placed off axis where they don't get the dish's full collecting area. Further, the XX\,m cylinder hung from the feed backplane around the dipole mitigates cross-coupling between adjacent dishes and reduces azimuthal asymmetry, both of which facilitate analysis despite the reduced sensitivity.
+
+%% foreground delay spectrum simsulations
 %- given the latest understanding of instrument chromaticity and
 %  foreground isolation (ie, Nithya), we simulate the effects of these
 %  beams on science
  %   - taking into account uncertainties in near-horizon beam response unprobed by our measurements
 %- we make predictions for the level of horizon brightening at different LSTs, and discuss the uncertainties due to uncertain beam models (horizon brighting is an exquisite of the low elevation beam response, though an integrated statistic)
 % horizon brightening will dominated leakage into the outer window modes
+Beyond simply sensitivity considerations, though, different beam models affect science analyses by reweighting celestial emission in different regions of the sky which are imprinted by the interferometer with different frequency dependence.  Understanding this ``wedge'' region in cylindrical fourier space has proved a fruitful advance in 21\,cm analyses over the past several years. Foregrounds acquire frequency dependence only from the changing baseline length in wavelengths with frequency, reaching a maximum fringe rate for a source at the horizon in line with the baseline. The complement of the wedge is the EOR window, which is where detection of the EOR signal is theoretically possible without foreground subtraction as it is nominally clear of foregrounds. 
+
+However Nithya has highlighted that distribution of foregrounds within the wedge is important as well. The beam response at low elevations determines whether there is a brightening at the geometric, horizon limit due to the increasing solid angle and a sufficiently shallow beam gradient at low elevations. This produces a characteristic ``pitchfork'' shape in the delay spectrum of a single baseline, with a zero delay peak due to near-zenith emission surrounded by tines at the negative and positive horizon limits due to emission from the two horizon directions in line with the baseline. These horizon peaks are most at risk of corrupting the outer modes of the EOR window due to leakage from the delay point spread function. 
+
+
+We have simulated foreground delay spectra for different baseline lengths and LSTs, finding that the level of this horizon brightening is largest when the galaxy is just above the horizon, and lowest when it is well below. When this pitchfork effect is large, our uncertainty in it due to beam modeling uncertainty is also large, as evidenced by the deviation of our HFSS and CST numerical beam models for these simulations. When the effect is small, the two beam models produce much more similar results, highlighting the delay spectrum as an exquisite probe of the challenging to measure beam response at very low elevations.
 
 % frequency dependence of the beam pattern and overall gain (due to reflections) likely dominates leakage deep within the window, but the other papers in this series demonstrate that this leakage level is within our spec
-  
-   % - all this highlight the need for detailed antenna characterization
-     % and simulation of the implications for science analyses  in 21cm observatories 
 
+As discussed by the other papers in this series, the frequency dependence of the beam power pattern and its overall gain widen the delay kernel of a source at some delay, leaking power farther into the EOR window. These papers demonstrate that in the best case, a combination of bandpass calibration and delay space CLEANing can mitigate foregrounds to a manageable level, while in the worst case, HERA can still achieve a XX--XX $\sigma$ detection of the EOR parameters from the power spectrum by simply excluding a very conservative buffer at the edge of the EOR window. All these considerations highlight the need for precision characterization of antenna elements and their implications for 21\,cm science analyses on the part of next generation observatories if we are to have any hope of detecting making this challenging measurement.
 
 
 
