@@ -2,45 +2,46 @@ This is BibTeX, Version 0.99d (TeX Live 2012)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: /Users/abrahamn/Documents/Physics/papers/DishPapers/DishBeamMeasurements/paper/.texpadtmp/DishBeamMeasurementsPaper.aux
 The style file: ../apj.bst
-Database file #1: ../DishBeamMeasurements.bib
-You've used 12 entries,
+Database file #1: DishBeamMeasurementsPaperNotes.bib
+Database file #2: ../DishBeamMeasurements.bib
+You've used 30 entries,
             2988 wiz_defined-function locations,
-            722 strings with 15893 characters,
-and the built_in function-call counts, 11094 in all, are:
-= -- 413
-> -- 1714
-< -- 2
-+ -- 574
-- -- 558
-* -- 1399
-:= -- 2356
-add.period$ -- 12
-call.type$ -- 12
-change.case$ -- 71
-chr.to.int$ -- 12
-cite$ -- 12
-duplicate$ -- 217
-empty$ -- 313
-format.name$ -- 605
-if$ -- 1914
-int.to.chr$ -- 1
+            833 strings with 22030 characters,
+and the built_in function-call counts, 20824 in all, are:
+= -- 1096
+> -- 2609
+< -- 7
++ -- 878
+- -- 837
+* -- 2355
+:= -- 4228
+add.period$ -- 30
+call.type$ -- 30
+change.case$ -- 187
+chr.to.int$ -- 29
+cite$ -- 30
+duplicate$ -- 558
+empty$ -- 827
+format.name$ -- 948
+if$ -- 3779
+int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 11
-newline$ -- 40
-num.names$ -- 48
-pop$ -- 70
+missing$ -- 28
+newline$ -- 94
+num.names$ -- 121
+pop$ -- 191
 preamble$ -- 1
-purify$ -- 71
+purify$ -- 187
 quote$ -- 0
-skip$ -- 178
+skip$ -- 477
 stack$ -- 0
-substring$ -- 229
-swap$ -- 1
-text.length$ -- 1
+substring$ -- 623
+swap$ -- 11
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 108
+type$ -- 267
 warning$ -- 0
-while$ -- 27
+while$ -- 88
 width$ -- 0
-write$ -- 123
+write$ -- 303

@@ -16,8 +16,8 @@
 %\documentclass[manuscript]{aastex}
 %% preprint2 produces a double-column, single-spaced document:
 
-%\documentclass{emulateapj}
-\documentclass[preprint]{aastex}
+\documentclass{emulateapj}
+%\documentclass[preprint]{aastex}
 
 \usepackage{natbib}
 \usepackage{amsmath}
@@ -119,15 +119,18 @@ A new generation of low frequency radio telescopes is coming online with the goa
  probing redshifted 21\,cm emission from the Cosmic Dawn. These observations will 
  complement indirect probes of the Dark Ages and Epoch of Reionization such as quasar 
  sightlines, deep galaxy surveys, and the CMB optical depth which leave the reionization 
- history of the universe only loosely constrained. Sensitivity and foreground removal are 
+ history of the universe only loosely constrained. (See \citet{FurlanettoReview, miguelreview, PritchardLoebReview, aviBook, zaroubi} for reviews) Sensitivity and foreground removal are 
  the main challenges in 21\,cm observations, as the expected cosmological signal is 4--5 
  orders of magnitude fainter than Galactic and extragalactic foregrounds. Radio 
- interferometers such as the MWA \citep{tingay13}, PAPER \citep{ali2015}, GMRT 
- \citep{Paciga2011}, and LOFAR \citep{lofar} are seeking a first detection of 
+ interferometers such as the Murchison Widefield Arry (MWA) \citep{tingay13,mwascience}, the Precision Array for Probing the Epoch of Reionization (PAPER) \citep{ali2015}, the Giant Meterwave Radio Telescope (GMRT) 
+ \citep{Paciga2011}, and the Low Frequency Array (LOFAR) \citep{lofar} are seeking a first detection of 
  cosmological 21\,cm emission in power spectrum measurements, where the smooth 
- frequency evolution of the foreground emission distinguishes itself from the spectrally 
- jagged cosmological signal whose frequency dimension is a redshift axis probing the 
+ frequency evolution of the foreground emission separates from the spectrally 
+ unsmooth cosmological signal whose frequency dimension probes the a line of sight through the 
  inhomogenous reionizing universe.
+
+
+The Hydrogen Epoch of Reionization Array (HERA) \citep[][, deBoer et al., submitted]{PoberNextGen} is drawing on lessons learned by the MWA and PAPER to reach the calibration and foreground isolation accuracy required to make a significant detection and characterization of the cosmological signal. HERA uses 14\,m diameter parabolic dishes arranged in a compact, hexagonal array to achieve coherent integration on the very low surface brightness 21\,cm signal. Redundant baselines also permit redundant calibration techniques which solve for internal degrees of freedom with only of parameters which must be estimated from the sky \citep{zheng14}, circumventing the sky model based calibration schemes which non-redundant arrays must pursue. HERA is pursuing a staged deployment of 19, 127, and finally 331 elements in progressively larger hex patterns, with scattered outriggers for imaging. A central lesson of first generation instruments is it is essential to characterize the instrument response to foreground emission lest instrument frequency dependence smear foreground power into cosmological signal modes. 
 
 %%- but instrumental frequency structure has been recognized as critical
 %  => wedge
@@ -140,36 +143,31 @@ A new generation of low frequency radio telescopes is coming online with the goa
 %      spectra ($k_\perp$, $k_\parallel$)
 
 It was initially thought that the foreground emission would be confined to the lowest few 
-line of sight Fourier modes, however it was later realized that the spectral structure of the 
-interferometer's point spread function smears foreground power into a ``wedge''-shaped 
-region in  $(k_\perp,k_\parallel)$ Fourier space. The complement of this corrupted region 
-is known as the ``EOR Window''. Here ($k_\perp,k_\parallel$) represent spatial modes 
-perpendicular and parallel to the line of sight. This effect is straightforward to understand 
-for a single baseline which measures the sky intensity weighted by the complex sky fringe 
-$e^{i \vec{k}\cdot\vec{b}}$, where $\vec{k}=\vec{k}(\theta,\phi)$ is the wave vector of 
-the incident radiation and $\vec{b}$ is the baseline vector in meters. A source at zenith 
-has $\vec{k}\perp\vec{b}$, and so appears in the visibility without any apparent 
-frequency dependence; however the visibility for a source near the horizon in line with the 
-baseline is maximally frequency dependent, and proportional to $e^{2\pi i f b/c}$. 
-
-Thus sources at different positions relative to the baseline vector manifest different 
+line of sight Fourier modes \citep[e.g.,][]{MoralesBowmanHewittFGsub}, however it was later realized that the  
+interferometer's frequency-dependent point spread function smears foreground power into a ``wedge'' shaped 
+region in  $(k_\perp,k_\parallel)$ Fourier space \citep{Dattapowerspec,X13, PoberWedge,MoralesPSShapes, VedanthamWedge, nithya13, CathWedge, AdrianWedge1, AdrianWedge2}. This effect is straightforward to understand for a single baseline which measures the sky intensity weighted by the complex sky fringe 
+$e^{i \vec{k}\cdot\vec{b}}$, where $\vec{k}=\vec{k}(\theta,\phi,f)$ is the wave vector of 
+the incident radiation, $\vec{b}$ is the baseline vector in meters, and $f$ is the observation frequency. Thus sources at different positions relative to the baseline vector manifest different 
 frequency structure despite their intrinsically smooth spectra, but are geometrically limited 
-by the baseline length so that maximum affected $k_\parallel$ mode is proportional to the 
-baseline length, and thus to $k_\perp$. It is convenient to phrase this description in terms 
+by the baseline length to a maximum frequency dependence of  $e^{2\pi i f b/c}$. This limits the foreground contamination 
+to a wedge shaped region in Fourier space with $k_\parallel<a k_\perp$, where $k_\perp$ and $k_\parallel$ represent spatial modes 
+perpendicular and parallel to the line of sight, and $a$ is a constant depending on the observational frequency and cosmology. The complement of the wedge is knows as the ``EOR window''.
+
+It is convenient to phrase this description in terms 
 of the delay in radiation arrival at the baseline's two antennas, $\tau$, where $\tau_
-\text{max}=b/c$. The interpretation is thus that sources at low delay have little frequency 
+\text{max}=b/c$. Sources at low delay have little frequency 
 structure, while those near $\tau=\tau_\text{max}$ acquire the maximum frequency 
 structure given the baseline length. 
 
-That sources acquire frequency dependence commensurate with their position in the sky 
-tells us already that the primary beam strongly affects the apparent frequency dependence 
+The fact that sources acquire frequency dependence based on with their position on the sky 
+tells us already that the primary beam strongly affects the aggregate frequency dependence 
 of the foregrounds. The high delay regions of the sky lie near the horizon while low delay 
 regions lie closer to zenith and also perpendicular to the baseline vector. \citet{nithya15} 
-simulate the foreground contamination seen with a dipole beam, a phased array of simple 
-dipoles, and a Airy dish, and find that the latter suffers minimal foreground contamination 
-into of nonzero $k_\parallel$ model due to its narrow main lobe and minimal sidelobe 
+simulate the foreground contamination seen with a dipole beam, a phased array, and a Airy dish,
+and find that the latter suffers the least foreground leakage into
+ $k_\parallel>0$ modes due to its narrow main lobe and minimal sidelobe 
 levels. To be sure, all are subject to the same geometric limits on foreground frequency-
-dependence, the wedge, but the emission from high delay is better suppressed using the 
+dependence limiting foreground bounding foreground emission within the wedge, but the emission from high delay is better suppressed using the 
 Airy dish leaving much of the wedge effectively empty. 
 
 %%- the beam affects the wedge
@@ -187,20 +185,18 @@ Airy dish leaving much of the wedge effectively empty.
 %    - highlights importance of beam characterization across the entire
 %      sky
 
-In principle, it is irrelevant how empty or full the wedge is of foreground power as it is 
-perfectly contained in it, however the finite bandwidth and imperfect frequency bandpass 
+So long as foreground emission is perfectly contained in the wedge it is irrelevant how much or 
+little of it there is, but the finite bandwidth and imperfect bandpass calibration 
 of real instruments smear power beyond the geometrical edge of the wedge into the EOR 
 window. Sources at higher delay appear closest to the edge of the wedge, and thus are 
 most at risk of leaking into the EOR window due to these effects. In fact, 
-\citet{nithya15,nithya15b} observe that while naively we might expect minimal emission 
+\citet{nithya15,nithya15b} observe in simulations and then in data that while naively we might expect minimal emission 
 at the very edge of the wedge because typical near-horizon beam responses are so small, 
-two effects cause a relative brightening of emission at those maximal delays after the 
-decline away from zero delay, creating a characteristic ``pitchfork'' shape. This horizon 
+two effects can cause a relative brightening of emission at those maximal delays, creating a characteristic ``pitchfork'' shape. This horizon 
 brightening is caused by the large solid angle subtended by the near-horizon regions of the 
-sky, and the apparent shortening of baselines when viewed on axis at these elevations. 
-This second effect makes intermediate length baselines sensitive to the very bright diffuse 
-emission they would not otherwise be sensitive due to its very weak coupling to longer 
-baselines. Together, these effects can over the decline in beam sensitivity near the horizon. 
+sky, as well as the apparent shortening of baselines when viewed nearly on axis at these elevations. 
+This second effect makes intermediate length baselines of tens to hundreds of meters sensitive to the very bright diffuse 
+emission would not see from near zenith. Together, these effects can overcome the decline in beam sensitivity near the horizon. 
 All these considerations highlight the antenna beam as a critical design parameter for 
 21\,cm observatories
 
@@ -226,7 +222,7 @@ All these considerations highlight the antenna beam as a critical design paramet
 %    - here we focus on the angular response of the dish, ie, its beam
 %      pattern
 
-This is the first paper in a series of four papers detailing the HERA element. We focus on the 
+This is the first in a series of four papers detailing the HERA element. In this work we study 
 angular response of the dish and its implications for power spectrum measurements. The three companion 
 papers present reflectometry measurements (Patra et al., submitted) and simulations (Ewall-Wice et al., 
 submitted) of the dish frequency response, as well as detailed 
@@ -273,25 +269,20 @@ array permitting redundant baseline calibration and coherent integration in $
 %          small to mitigate pitchfork effect and foreground leakage?
 
 In this paper we first characterize the angular response of a prototype HERA dish at the National Radio 
-Astronomy Observatory--Green Bank. We use the technique data acquisition system of \citet{neben15} to 
-measure the 137\,MHz beam pattern using the ORBCOMM satellite constellation, allowing beam 
-measurements down to roughly -35dB from zenith, corresponding to an elevation roughly $30^\circ$. We 
-perform these measurements with the feed suspended at different heights above the dish, and compare the 
-observed power patterns and collecting areas with models. We consider the science implications of these 
-results by simulating visibilities with these beam models, testing different models of the sub-$30^\circ$ 
-elevation beam response unprobed by our measurements. We run these simulations for baselines of different 
-lengths and orientations at different local sidereal times to study under when the leakage out of the wedge is 
-significant, and what regions of the EOR window are affected.
+Astronomy Observatory--Green Bank. We use the beam mapping system of \citet{neben15} to 
+measure the 137\,MHz beam pattern using the ORBCOMM satellite constellation. We obtain beam 
+measurements out to zenith angles of $\sim60^\circ$ where the beam response is -35\,dB relative to zenith, and compare with different numerical models. We characterize the dish beam at various feed heights to map out the focus and study beam errors due to feed misalignment. We compute the collecting areas and implied EOR power spectrum sensitivities of our measured beams. After verifying our numerical models, we consider the science implications of these 
+beam patterns by foreground delay spectra at different baseline lengths and observing conditions to study when the horizon brightening effect is strongest, and thus, when foreground are must at risk of leaking into the EOR window.
 
-In detail, we discuss the electromagnetic design and modeling of the dish in Section 3. We present the 
+In detail, we discuss the electromagnetic design and modeling of the dish in Section 2. We present the 
 experimental setup of the beam mapping experiments and discuss their systematics, then 
 review the ORBCOMM beam measurement system, in Section 3. We present our power pattern 
-measurements in Section 5. We conclude with discussion in Section 6.
+measurements in Section 4, and study the science implications of these beam measurements for foreground power spectra in Section 5, then conclude with discussion in Section 6.
 
 \section{Dish Design and Modeling}
 
 \subsection{Design of the HERA Dish}
-
+NEED EDITING
 
 The 14\,m HERA dish design is a departure from the large N--small D approach used by 21\,cm 
 observatories like PAPER and the MWA. Both observatories are actively pursuing power 
@@ -374,49 +365,30 @@ ASK DAVE OR RICH TO WRITE A ONE OR TWO PARAGRAPH SUMMARY OF THE ELECTROMAGNETIC 
 
 \section{Experimental Setup}
 
-\subsection{HERA--Green Bank: A three-element prototype array}
-
-
-A 3-element HERA engineering prototype array is being constructed at the National Radio 
-Astronomy Observatory--Green Bank. We performed the beam measurements presented in 
-this work on the first of these to be constructed, future work will characterize how its in-
-situ beam in the presence of the other two dishes once they are constructed. Figure 
-\ref{fig:aerial} shows the west-most HERA dish next to two planned dishes in Galford 
-Meadow. The two reference antennas 100\,m are positioned due south with a 100\,m 
-separation, and the Green Bank Telescope $\sim1$\,km northwest of the dish. The data 
-acquisition system is installed in the hut labeled ``Launch point'' on the image. 
-
-Note that unlike the full HERA site in the Karoo Desert Radio Astronomy Reserve in 
-South Africa, the Green Bank site has obstructions such as trees and foothills, as well as 
-moist ground with possibly non-uniform properties. All these will contribute to variation 
-of the in-situ reference antenna relative to the electromagnetic model. We will discuss 
-below how we quantify these systematics with ``null experiments'' which compare the 
-beams of the two reference antennas.
-
 \subsection{ORBCOMM Beam Mapping System Review}
 
 We briefly review the beam mapping system detailed by \citet{neben15}, then discuss 
-application of system to the prototype HERA array at NRAO--Green Bank. The system 
+application of system for HERA dish measurements. The system 
 takes advantage of the 137\,MHz communications satellites operated by ORBCOMM Inc. 
 as bright point sources which, by virtue of their number ($\sim30$), short orbital periods 
-($\sim90$ minutes), and orbital precession cover 65\% of the visible sky in just a few 
-days. The coverage is limited by the fact that the satellites' orbital inclinations are all less 
+($\sim90$ minutes), and orbital precession cover $\sim$65\% of the visible sky in just a few 
+days. The coverage from the Green Bank site is limited by the fact that the satellites' orbital inclinations are all less 
 than $45^\circ$. 
 
-In contrast to celestial source beam measurements, though, where the flux may be 
+Unlike celestial source beam measurements, where the flux may be 
 assumed constant over the timescale of the measurement, satellite fluxes can vary rapidly 
-due to varying distance, orientation, and transmission power. To correct for this, we 
+due to changing distance, orientation, and transmission power. To correct for this, we 
 measure the satellite flux in each ground polarization (EW and NS) using a simple, well-
 modeled reference antenna. Comparison of this measured power with that observed in the 
 Antenna-Under-Test (AUT) gives the AUT beam response in the direction of the satellite. 
-An equivalent interpretation is that the power ratio between the AUT and the reference 
+An equivalent interpretation of the measurement is that the power ratio between the AUT and the reference 
 antenna gives the relative beam response in the satellite direction, and multiplication by 
 the reference antenna model yields the desired AUT response. As discussed in 
-\citet{neben15}, despite the fact that satellite signals are generally polarized, this 
-procedure.
+\citet{neben15}, this procedure correctly measures the response of the AUT to unpolarized radiation
+ despite the fact that satellite signals are generally polarized.
 
-In detail, we measure the dual-polarization RMS powers for each antenna in 512 2\,kHz 
-bands across the 137--138\,MHz band. Each channel power is averaged over $\sim0.2$
+In detail, we measure the dual-polarization RMS power received by each antenna in 512 2\,kHz 
+channels across the 137--138\,MHz band. Each band power is averaged over $\sim0.2$
 \,sec. There are 0--3 satellites above the horizon at any given time transmitting on different 
 $\sim15$\,kHz wide sub-bands in 137--138\,MHz. By observing at many different 
 frequencies, we probe the beam response in all these directions simultaneously. We 
@@ -428,45 +400,42 @@ satellite frequencies vary occasionally to avoid interference within the constel
 satellites are in view. As our data acquisition system makes only total power 
 measurements, we instead use an ORBCOMM interface box (typically supplied to 
 commercial users of the network) to sync with passing satellites and record their identifier 
-and transmission frequency.
+and transmission frequency during each pass.
 
 In this way, beam measurements are built up along satellite tracks over the course of 
 several days of integration, yielding typically 200--300 satellite pass. Each pass is 
 processed separately to identify and exclude times of low signal-to-background when the 
 satellite is low in the sky or in the off state of of a pulsing sequence. At those times, then 
 satellite flux no longer dominates over that of the diffuse Galactic background, and a 
-power measurement no longer probes the response in the satellite direction. The beam 
-measurements are then gridded in horizontal coordinates in HEALPix with a resolution of 
+power measurement no longer probes the response in only the satellite direction. The beam 
+measurements are then gridded in horizontal coordinates in HEALPix \citep{healpix} with a resolution of 
 $1.8^\circ$ (nside=32). As a last quality control step to reject errant beam measurements 
 due to RFI, for instance, we keep only the central 90\% of $\sim50$ measured beam 
 values in each HEALPix cell.
 
-%Our power ratio measurement relies upon an accurately modeled reference dipole. We are developing a more comprehensive model of the physical reference antenna and ground screen design, improving on that used in \citep{neben15}. As yet, this improved model yields incorrect results, so more debugging is needed.
+
+\subsection{HERA--Green Bank: A three-element prototype array}
+
+A 3-element HERA engineering prototype is being constructed at the National Radio 
+Astronomy Observatory--Green Bank. We performed the beam measurements presented in 
+this work on the first of these dishes to be constructed, future work will characterize its beam in the presence of the other two dishes once they are constructed. The prototype array is situated in Galford Meadow, approximately 1\,km southwest of the Green Bank Telescope. Note that unlike the full HERA site in the Karoo Desert Radio Astronomy Reserve in 
+South Africa, the Green Bank site has trees and foothills, as well as moist ground. Our beam measurements
+are sensitive to these effects in addition to the construction imperfections of real world dishes.
+
+We use a simple dual-polarization dipole as our reference antenna. The dipole is constructed out of copper tubing covered by PVC for protection, mounted above a 2\,m $\times$ 2\,m ground plane. See \citet{neben15} for details. During the dish measurements the dipole is positioned 100\,m due south of the dish, though we experiment with other locations at first in our to characterize the environmental systematics of these measurements, as detailed in the next section.
 
 \subsection{Assessing Experimental Systematics}
-
 
 \begin{figure*}[h]
 \centering
 \includegraphics[width=6.5in]{null_expt_rel_beam_maps.pdf}
-\caption{null experiment beam ratio plots}
+\caption{We characterize the accuracy of the beam measurement system through null experiments in which a second reference antenna is taken as the AUT and ratio of both reference antenna power patterns is measured for EW (left) and NS (right) polarizations. The reference antennas are separated by 50\,m from each other and from the HERA dish in the first experiment (top), and by 100\,m from each other and from the HERA dish in the second experiment (bottom).}
 \label{fig:nullexptplots}
 \end{figure*}
 
-As in \citet{neben15}, we assess systematics using a ``null experiment'' in which we use a second reference dipole as the antenna-under-test (AUT). Taking the ratio of its measured power pattern with the model beam pattern amounts to a ratio of the row power responses received by the two antennas. This test thus probes the level of environmental systematics (i.e., reflections and varying ground properties) and antenna fabrication imperfections which affect each antenna differently. This is not a probe of modeling imperfections common to both antennas, but we expect such errors to be subdominant as the physical properties of the antenna are easier to characterize, and thus simulate, than local environmental effects. 
+As in \citet{neben15}, we assess systematics using a ``null experiment'' in which we use a second reference dipole as the antenna-under-test (AUT). Taking the ratio of its measured power pattern with the model beam pattern amounts to a ratio of the raw power responses received by the two antennas as a function of satellite direction. This probes the level of environmental systematics (i.e., reflections and varying ground properties) and antenna fabrication imperfections which affect each antenna differently. This is not a probe of modeling imperfections common to both antennas, but we expect such errors to be subdominant as the physical properties of the antenna are easier to characterize, and thus simulate, than misalignments and local environmental effects. 
 
-We run three null experiments with the reference dipoles deployed varying distances from the HERA dish and from each other.
-
-\begin{itemize}
-\item \texttt{null1}: reference dipoles deployed 50\,m apart on a NS line, 50\,m south of the HERA dish
-\item \texttt{null3}: same as \texttt{null1} but with the south-most reference antenna moved 5\,m west
-\item \texttt{null4}: same as \texttt{null1} but with 100\,m separation between both reference antennas and from the dish
-\end{itemize}
-
-Figure \ref{fig:null1} shows the  results from the \texttt{null1} experiment in the form of the ratio of the power responses of the two antennas (top panel), and slices through the E an H planes of the reconstructed power patterns (bottom panel). We collected roughly 100 satellite passes. Systematics at the few percent level are observed in  within $20^\circ$ of zenith, and at the $\sim10\%$ level farther out.
-
-The magnitude of these systematics is comparable to those observed in the two other null experiments (Figures \ref{fig:null3} and \ref{fig:null4}), an their angular distribution appears largely unchanged. This suggests that the reference dipoles differ both due to varying environmental properties and perhaps intrinsic differences. In any case, these fractional errors propagate directly into the measured beampatterns of our subsequent feed and dish measurements.  
-
+As we are not able to replace the HERA dish with a reference antenna, we run two null experiments with both reference dipoles deployed (1) 50\,m apart on a NS line, 50\,m south of the HERA dish; and (2) 100\,m apart on a NS line, 100,m south of the HERA dish. Figure \ref{fig:null1} shows the  results from these experiments in the form of the ratio of the power responses of the two antennas. We collected roughly 100 satellite passes. Systematics at the few percent level are observed in  within $20^\circ$ of zenith, and at the $10--20\%$ level farther out. The magnitude and angular distribution of these systematics changes modestly as the separation is changed, suggesting that the reference dipoles differ largely due to intrinsic differences, with some environmental variation. In any case, these fractional errors propagate directly into our measured dish power patterns.
 
 \section{Dish Measurements}
 
@@ -486,37 +455,22 @@ The magnitude of these systematics is comparable to those observed in the two ot
 \label{fig:measuredbeamslices}
 \end{figure*}
 
-Having verified the feed power pattern, we deployed feed over the dish and proceed with dish measurements. We measure the power pattern with the feed at four different heights, 4\,m, 4.5\,m, 5\,m, and 5.3\,m, chosen to probe around the nominal focus of 4.5\,m (the nominal beam) and up to the maximum height of 5.3\,m allowed by pole height and rope stresses. Heights are measured from the dish surface to the feed backplane. 
+We make three dish power pattern measurements with the feed at different heights: (1) 4.5\,m, the nominal dish focus; (2) 5.0\,m, an intermediate focus; and (3) 5.3\,m, the numerically determined focus of the dish/feed system, where all heights are measured from the dish surface to the feed back plane. In each configuration we collect data for 2--4 days, obtaining roughly 200 satellite passes. We exclude times when the received power is within 20\,dB of the background level determined at between passes, and then grid measured beam values into 1.8$^\circ$ HEALPix cells on the sky, rejecting outliers in the top or bottom 5\% in each cell as a final guard against rare satellite identification problems or ADC saturation issues.
 
-Inspecting the E and H plane slices through the measured beams (bottom panels) in Figures \ref{fig:dish3}, \ref{fig:dish1}, \ref{fig:dish2}, \ref{fig:dish4}, we generally see the main lobe narrow and the sidelobe level decrease. The improvement is also seen in the yellow and red main lobe in the beam maps (top panels) which narrow and approach the expected orientations: the EW (NS) main lobe is elongated in the NS (EW) direction. The last lift produced the smallest change in the beam suggesting it is quite near the best focus. 
+Figure \ref{fig:measuredbeammaps} shows the measured power patterns for these three feed heights for the EW (left panel) and the NS (right panel) feed polarization. These maps are plotted in sine-projection with dashed circles marking zenith angles of $20^\circ$, $40^\circ$, $60^\circ$, $80^\circ$. The sky coverage in these dish measurements extends out to typically $\theta\sim50-60^\circ$. Beyond that the ORBCOMM flux is sufficiently attenuated relative to diffuse galactic emission that a power ratio measurement between the two antennas is no longer a clean probe of their gains in the direction of the satellite. At these zenith angles, the beam sidelobes are roughly -30\,dB, and are trending downward at the edge of the measured region.
 
-The sky coverage in these dish measurements extends out to typically $\theta\sim50-60^\circ$. Beyond that the ORBCOMM flux is sufficiently attenuated relative to diffuse galactic emission that a power ratio measurement between the two antennas is no longer a clean probe of their gains in the direction of the satellite. At these zenith angles, the beam sidelobes are roughly -30\,dB, and seem to be trending downward at the edge of the measured region.
+The roughly $10^\circ$ main lobe narrows slightly as the feed is raised from 4.5\,m to 5.3\,m, and the sidelobes shrink both in size and in amplitude, confirming the numerically predicted focus of 5.3\,m. As expected, the EW main lobes are slightly wider in the NS direction. In theory, the only asymmetric part of the dish is the dipole feed, so the overall beam should have a $180^\circ$ azimuthal symmetry. We observe deviations from this symmetry at the few dB level in the sidelobes, suggesting dish surface and/or feed imperfections given that the systematics identified in the null experiment are smaller. 
 
-In order to compute beam collecting areas and assess foreground leakage we require a beam covering the entire visible sky. For each measured dish beam, we interpolate over the unmeasured cells at $\theta\lesssim60$, then extrapolate outward to the horizon. This amounts to a smooth continuation of the beam response at the same $\sim-30$\,dB level suggested by the fringes of our measurements. We take this as a first possible model of the full sky dish beam, and construct a second with a gaussian cutoff at $\theta=60^\circ$ with $\sigma=2.5^\circ$, the pair of which span the space of likely horizon responses. This procedure is depicted in Figure \ref{fig:interpbeams} where we plot the measured nominal focus beam, the beam after interpolation and extrapolation, and the beam after applying the gaussian cutoff. Figure \ref{fig:interpbeamsslice} shows the interpolated/extrapolated beam and the beam with the cutoff along with various models to illustrate the different horizon responses more clearly.
-
-%\begin{figure}[h]
-%\includegraphics[width=3.5in]{measbeam_raw.png}
-%\includegraphics[width=3.5in]{measbeam_interp.png}
-%\includegraphics[width=3.5in]{measbeam_interp_expcutoff.png}
-%\caption{We construct full sky beams as required for Section \ref{sec:foregroundleakage} by starting from the nominal focus beam (top left), interpolating over unobserved cells at $\theta\lesssim60^\circ$ and extrapolating to the horizon (top right), and applying a gaussian cutoff starting at $\theta=60^\circ$ with $\sigma=2.5^\circ$ (bottom left). These last two beams span the space of likely horizon responses. Circles denote $\theta=20^\circ,40^\circ,60^\circ,80^\circ$.}
-%\label{fig:interpbeams}
-%\end{figure}
-
-%\begin{figure}[h]
-%\includegraphics[width=3.5in]{ew_beams_slice.pdf}
-%\caption{We plot the interpolated/extrapolated measured nominal focus  beam itself (blue), and with the gaussian cutoff (cyan), along with various model beams to illustrate the varying horizon responses. }
-%\label{fig:interpbeamsslice}
-%\end{figure}
-
-To illustrate the results of these smoothing operations we plot slices through the nominal focus dish beam along with the three model beams discussed in Sec. \ref{sec:dishmodels}. The H (E) plane slice of the main lobe is shown at the top (bottom). The plots in the left side zoom in on the main lobe, while those on the right show a zoomed out view of the entire sky pattern. 
+Figure \ref{fig:measuredbeamslices} shows slices through the E and H planes of these power patterns along with the HFSS and CST numerical models discussed earlier. As in the previous plot, the EW and NS beams are shown it the left and right panels, while the different feed heights are shown in the different rows. The data agree with both models to within a dB in the main lobe, but begin to diverge in the sidelobes at zenith angles of $20^\circ$ and larger. Here the evolution of the sidelobes as the feed is raised is again seen starkly, as is the fact that the main lobes are slightly wider along the H planes than along the E planes. 
 
 \subsection{Sensitivity}
 
-The collecting area of the antenna is related to the power pattern by the ratio of the beam gain to its beam-weighted solid angle as
+We compute the effective collecting areas of these beam patterns by first interpolating over unmeasured cells and smoothly extrapolating the power pattern to the horizon. These operations produce a realistically smooth beam which reaches roughly -30\,dB at the horizon, as suggested by the numerical models. The collecting area is related to the power pattern as
 \begin{equation}
 	A=\frac{\lambda^2 B(0,0)}{\int B(\theta,\phi)d\Omega}
 \end{equation}
-We evaluate the collecting area for four of the beams discussed above and present the numbers in Table 1. We are unable to quantify the collecting area of the beam from Dave's simulation because it was run at too coarse an angular resolution. For the measured beams, we compute the collecting area using the interpolated/extrapolated beams with and without the gaussian cutoff at $\theta=60^\circ$.
+
+The collecting areas range are shown in Table 1 along with the maximal collecting area achieved by the Airy pattern for a 14\,m dish. The measured collecting areas are a 30--50\% lower than the geometric area. This is in line with expectations given that the Airy pattern has the largest possible collecting area, equal to the dish cross section, and the feed's backplane and cylindrical skirt reduce it. However we opt for this reduction over added collecting area in order to reduces the azimuthal beam asymmetry and minimize the cross-coupling between adjacent dishes.
 
  \begin{table}[h]
  \caption{ \label{table:collectingareatable}Collecting area (m$^2$) of measured 137\,MHz beams and corresponding power spectrum SNR for HERA-127.}
@@ -532,19 +486,20 @@ Beam & $A_\text{eff}$ (m$^2$) & SNR (pess, mod, opt)\\
     Measured, feed at 4.5\,m & 73.6 & 6.4, 6.5, 24.8 \\ 
   \hline
 \end{tabular}
-\end{table}\
+\end{table}
 
-NEED TO TALK ABOUT 21CMSENSE\footnote{https://github.com/jpober/21cmSense} AND THE SNR CALCULATIONS
+We run 21cmSense\footnote{https://github.com/jpober/21cmSense} to compute the overall SNR of a power spectrum detection with one season (6 hours per night for 180 nights) of HERA-127 data. To input these collecting areas into 21cmSense, we convert these measured dish collecting areas into effective dish diameters, which we input as the \texttt{dish\_size\_in\_lambda} parameter. We predict the SNRs with optimistic, moderate, and pessimistic foreground assumptions. In the optimistic case, $k$ modes inside the same $uv$ pixel are added coherently, and all modes whose frequency dependence is larger than that of source at the edge of the main lobe are used. In the moderate case, $k$ modes inside the same $uv$ pixel are added coherently and only modes whose frequency dependence falls outside of the horizon plus a buffer are used. In the pessimistic case, all baselines are added incoherently and only modes outside the horizon plus a buffer are used.
 
-By definition, the Airy pattern has the largest collecting area equal to the dish cross section. The others model a realistic feed with a hanging screen (the skirt or ``kilt''), effectively tapering the dish response to radiation received from its fringes to mitigate cross-coupling and crosstalk between adjacent dishes. As expected, raising the height of the feed increases the illuminated area of the dish, and thus, its collecting area. As expected, the measured collecting area matches that of the CST model at the nominal focus height of 4.5\,m.
-
-Why does the collecting area increase as the feed is raised over the nominal focus? There are two computing effects here: (1) the reflected radiation is less well focused above the feed, decreasing the response; and (2) the tapered feed sees a larger dish as it is raised, allowing more radiation to reach the dipole as opposed to reflecting off the skirt. These data suggest that the second effect wins. Of course the reason for the skirt is to taper the feed beam in order to mitigate cross-talk and cross-coupling between the dishes. A larger collecting area may not be worth it in exchange for exacerbating these concerns.
+The SNRs computed with the measured collecting areas fall from 9--11 for the Airy pattern  to 6--8 in the pessimistic and moderate cases. In the optimistic case, the SNR falls from 37 with the Airy pattern to 24--29 with the measured collecting areas. In all cases this reduction is a loss of sensitivity, but a power spectrum detection is still always very significant at the 6$\sigma$ level or better.
 
 \section{Foreground Delay Spectra Simulations}
 \label{sec:foregrounds}
 
 ALSO MENTION DEPENDENCE ON BASELINE DIRECTION
 DISCUSS DELAY CLEANING TO THE 2min THERMAL NOISE LEVEL, THEN DELAY TRANSFORM AGAIN WITH REDUCED RESOLUTION, MEANING A LARGER BH WINDOW, AND THUS MORE LEAKAGE, THESE EFFECTS ARE DISCUSSED IN NITHYA'S PAPER, here we are focused on intrinsic delay distribution of foregrounds
+
+We study in this section the effects of the beam power pattern on the apparent frequency dependence of the foregrounds, and in particular the uncertainties in these predictions due to beam modeling uncertainties. Thyagarajan et al., (submitted) 
+
 
 We simulate the power spectra of foregrounds with different primary beam models under various observing conditions. Broadly, beam models with more response near the horizon see smooth spectrum sources with more frequency dependence (higher delay), appearing closer to the nominally clean EOR window, making it more at risk of leaking power inside. We use the per-baseline approach of XX and XX, simulating visibilities measured by specific baselines as a function of frequency, then computing the Fourier transform over frequency (the delay transform) and normalizing the result into a cosmological power spectrum \citep{perbaselinetechnique}. 
 
