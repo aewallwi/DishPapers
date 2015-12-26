@@ -1,11 +1,17 @@
-\begin{thebibliography}{30}
+\begin{thebibliography}{36}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
-\bibitem[{{Ali} {et~al.}(2015){Ali}, {Parsons}, {Zheng}, {Pober}, {Liu},
-  {Aguirre}, {Bradley}, {Bernardi}, {Carilli}, {Cheng}, {DeBoer}, {Dexter},
-  {Grobbelaar}, {Horrell}, {Jacobs}, {Klima}, {MacMahon}, {Maree}, {Moore},
-  {Razavi}, {Stefan}, {Walbrugh}, \& {Walker}}]{ali2015}
-{Ali}, Z.~S., {et~al.} 2015, ArXiv e-prints
+\bibitem[{{Ali} {et~al.}(2015{\natexlab{a}}){Ali}, {Parsons}, {Zheng}, {Pober},
+  {Liu}, {Aguirre}, {Bradley}, {Bernardi}, {Carilli}, {Cheng}, {DeBoer},
+  {Dexter}, {Grobbelaar}, {Horrell}, {Jacobs}, {Klima}, {MacMahon}, {Maree},
+  {Moore}, {Razavi}, {Stefan}, {Walbrugh}, \& {Walker}}]{paper64}
+{Ali}, Z.~S., {et~al.} 2015{\natexlab{a}}, \apj, 809, 61
+
+\bibitem[{{Ali} {et~al.}(2015{\natexlab{b}}){Ali}, {Parsons}, {Zheng}, {Pober},
+  {Liu}, {Aguirre}, {Bradley}, {Bernardi}, {Carilli}, {Cheng}, {DeBoer},
+  {Dexter}, {Grobbelaar}, {Horrell}, {Jacobs}, {Klima}, {MacMahon}, {Maree},
+  {Moore}, {Razavi}, {Stefan}, {Walbrugh}, \& {Walker}}]{ali2015}
+---. 2015{\natexlab{b}}, ArXiv e-prints
 
 \bibitem[{Bowman {et~al.}(2013)Bowman, Cairns, Kaplan, Murphy, Oberoi,
   Staveley-Smith, Arcus, Barnes, Bernardi, Briggs, Brown, Bunton, Burgasser,
@@ -42,6 +48,17 @@ Furlanetto, S., Oh, S., \& Briggs, F. 2006, Physics Reports, 433, 181
 G\'{o}rski, K.~M., Hivon, E., Banday, A.~J., Wandelt, B.~D., Hansen, F.~K.,
   Reinecke, M., \& Bartelmann, M. 2005, The Astrophysical Journal, 622, 759
 
+\bibitem[{{Hurley-Walker} {et~al.}(2014){Hurley-Walker}, {Morgan}, {Wayth},
+  {Bell}, {Bernardi}, {Bhat}, Frank~{Briggs}, A., {Ewall-Wice}, {Feng},
+  {Hazelton}, {Hindson}, {Jacobs}, {Kaplan}, {Kudryavtseva}, {Lenc},
+  {McKinley}, {Mitchell}, {Pindor}, {Procopio}, {Oberoi}, {Offringa}, {Ord},
+  {Riding}, {Bowman}, {Cappallo}, {Corey}, {Emrich}, {Gaensler}, {Goeke},
+  {Greenhill}, {Hewitt}, {Johnston-Hollitt}, {Kasper}, {Kratzenberg},
+  {Lonsdale}, {Lynch}, {McWhirter}, {Morales}, {Morgan}, {Prabu}, {Rogers},
+  {Roshi}, {Shankar}, {Srivani}, {Subrahmanyan}, {Tingay}, {Waterson},
+  {Webster}, {Whitney}, {Williams}, \& {Williams}}]{MWACS}
+{Hurley-Walker}, N., {et~al.} 2014, PASA, 31, 45
+
 \bibitem[{{Liu} {et~al.}(2014{\natexlab{a}}){Liu}, {Parsons}, \&
   {Trott}}]{AdrianWedge1}
 {Liu}, A., {Parsons}, A.~R., \& {Trott}, C.~M. 2014{\natexlab{a}}, Phys. Rev.
@@ -54,6 +71,10 @@ G\'{o}rski, K.~M., Hivon, E., Banday, A.~J., Wandelt, B.~D., Hansen, F.~K.,
 \bibitem[{{Loeb} \& {Furlanetto}(2013)}]{aviBook}
 {Loeb}, A., \& {Furlanetto}, S.~R. 2013, The First Galaxies In The Universe
   (Princeton University Press, Princeton, NJ)
+
+\bibitem[{{Mesinger} {et~al.}(2011){Mesinger}, {Furlanetto}, \&
+  {Cen}}]{21cmfast}
+{Mesinger}, A., {Furlanetto}, S., \& {Cen}, R. 2011, \mnras, 411, 955
 
 \bibitem[{{Morales} {et~al.}(2006){Morales}, {Bowman}, \&
   {Hewitt}}]{MoralesBowmanHewittFGsub}
@@ -81,14 +102,24 @@ G\'{o}rski, K.~M., Hivon, E., Banday, A.~J., Wandelt, B.~D., Hansen, F.~K.,
 Paciga, G., {et~al.} 2011, Monthly Notices of the Royal Astronomical Society,
   413, 1174
 
+\bibitem[{{Parsons} {et~al.}(2012{\natexlab{a}}){Parsons}, {Pober}, {McQuinn},
+  {Jacobs}, \& {Aguirre}}]{parsons12b}
+{Parsons}, A., {Pober}, J., {McQuinn}, M., {Jacobs}, D., \& {Aguirre}, J.
+  2012{\natexlab{a}}, \apj, 753, 81
+
 \bibitem[{{Parsons} \& {DeBoer}(2015)}]{heraMemo5}
 {Parsons}, A.~R., \& {DeBoer}, D.~R. 2015, Configuration of the HERA Element,
   Tech. Rep.~5, HERA Memo Series
 
-\bibitem[{{Parsons} {et~al.}(2012){Parsons}, {Pober}, {Aguirre}, {Carilli},
-  {Jacobs}, \& {Moore}}]{perbaselinetechnique}
+\bibitem[{{Parsons} {et~al.}(2012{\natexlab{b}}){Parsons}, {Pober}, {Aguirre},
+  {Carilli}, {Jacobs}, \& {Moore}}]{parsons12a}
 {Parsons}, A.~R., {Pober}, J.~C., {Aguirre}, J.~E., {Carilli}, C.~L., {Jacobs},
-  D.~C., \& {Moore}, D.~F. 2012, \apj, 756, 165
+  D.~C., \& {Moore}, D.~F. 2012{\natexlab{b}}, \apj, 756, 165
+
+\bibitem[{{Parsons} {et~al.}(2014){Parsons}, {Liu}, {Aguirre}, {Ali},
+  {Bradley}, {Carilli}, {DeBoer}, {Dexter}, {Gugliucci}, {Jacobs}, {Klima},
+  {MacMahon}, {Manley}, {Moore}, {Pober}, {Stefan}, \& {Walbrugh}}]{paper32}
+{Parsons}, A.~R., {et~al.} 2014, \apj, 788, 106
 
 \bibitem[{{Pober} {et~al.}(2013){Pober}, {Parsons}, {Aguirre}, {Ali},
   {Bradley}, {Carilli}, {DeBoer}, {Dexter}, {Gugliucci}, {Jacobs}, {MacMahon},
@@ -103,6 +134,9 @@ Pober, J.~C., {et~al.} 2014, The Astrophysical Journal, 782, 66
 \bibitem[{{Pritchard} \& {Loeb}(2012)}]{PritchardLoebReview}
 {Pritchard}, J.~R., \& {Loeb}, A. 2012, Reports on Progress in Physics, 75,
   086901
+
+\bibitem[{{Slee}(1995)}]{Slee1995}
+{Slee}, O.~B. 1995, Australian Journal of Physics, 48, 143
 
 \bibitem[{Thyagarajan {et~al.}(2013)Thyagarajan, Shankar, Subrahmanyan, Arcus,
   Bernardi, Bowman, Briggs, Bunton, Cappallo, Corey, deSouza, Emrich, Gaensler,

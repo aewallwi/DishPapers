@@ -4,44 +4,49 @@ The top-level auxiliary file: /Users/abrahamn/Documents/Physics/papers/DishPaper
 The style file: ../apj.bst
 Database file #1: DishBeamMeasurementsPaperNotes.bib
 Database file #2: ../DishBeamMeasurements.bib
-You've used 30 entries,
+Repeated entry---line 783 of file ../DishBeamMeasurements.bib
+ : @article{21cmfast
+ :                  ,
+I'm skipping whatever remains of this entry
+You've used 36 entries,
             2988 wiz_defined-function locations,
-            833 strings with 22030 characters,
-and the built_in function-call counts, 20824 in all, are:
-= -- 1096
-> -- 2609
-< -- 7
-+ -- 878
-- -- 837
-* -- 2355
-:= -- 4228
-add.period$ -- 30
-call.type$ -- 30
-change.case$ -- 187
-chr.to.int$ -- 29
-cite$ -- 30
-duplicate$ -- 558
-empty$ -- 827
-format.name$ -- 948
-if$ -- 3779
-int.to.chr$ -- 2
+            866 strings with 24162 characters,
+and the built_in function-call counts, 24291 in all, are:
+= -- 1305
+> -- 2985
+< -- 8
++ -- 1005
+- -- 956
+* -- 2732
+:= -- 4923
+add.period$ -- 36
+call.type$ -- 36
+change.case$ -- 223
+chr.to.int$ -- 33
+cite$ -- 36
+duplicate$ -- 667
+empty$ -- 986
+format.name$ -- 1086
+if$ -- 4420
+int.to.chr$ -- 4
 int.to.str$ -- 1
-missing$ -- 28
-newline$ -- 94
-num.names$ -- 121
-pop$ -- 191
+missing$ -- 34
+newline$ -- 112
+num.names$ -- 145
+pop$ -- 224
 preamble$ -- 1
-purify$ -- 187
+purify$ -- 223
 quote$ -- 0
-skip$ -- 477
+skip$ -- 563
 stack$ -- 0
-substring$ -- 623
-swap$ -- 11
+substring$ -- 740
+swap$ -- 15
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 267
+type$ -- 321
 warning$ -- 0
-while$ -- 88
+while$ -- 106
 width$ -- 0
-write$ -- 303
+write$ -- 363
+(There was 1 error message)
