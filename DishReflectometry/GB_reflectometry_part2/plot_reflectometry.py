@@ -22,9 +22,9 @@ for filename in sys.argv[1:]:
     #d = 10**(db/10) * np.exp(2j*np.pi*ph/360) # power
     d = 10**(db/20) * np.exp(2j*np.pi*ph/360) # 20 to put into voltage amplitude, not power
 
-    valid = np.ones(fq.size, dtype=np.bool) # use entire sampled band
+    #valid = np.ones(fq.size, dtype=np.bool) # use entire sampled band
     #valid = np.where(fq < .250) # restrict to HERA band
-    #valid = np.where(np.logical_and(fq < .2, fq > .1)) # restrict to PAPER band
+    valid = np.where(np.logical_and(fq < .2, fq > .1)) # restrict to PAPER band
     fq, d = fq[valid], d[valid]
     tau = np.fft.fftfreq(fq.size, fq[1]-fq[0])
     window = a.dsp.gen_window(fq.size, WINDOW)
