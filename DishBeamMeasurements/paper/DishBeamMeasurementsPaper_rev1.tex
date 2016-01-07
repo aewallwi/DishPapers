@@ -68,21 +68,24 @@
 %% As in the title, use \\ to force line breaks.
 
 \author{Abraham R. Neben\altaffilmark{1},
+Richard F. Bradley\altaffilmark{2,3},
 Aaron Ewall-Wice\altaffilmark{1},
-Nipanjana Patra\altaffilmark{2},
-Nithyanandan Thyagarajan\altaffilmark{3},
-James E. Aguirre\altaffilmark{4},
-Zaki S. Ali\altaffilmark{2},
-Judd Bowman\altaffilmark{3}
-Carina Cheng\altaffilmark{2},
-David R. DeBoer\altaffilmark{2}
+Nipanjana Patra\altaffilmark{4},
+Nithyanandan Thyagarajan\altaffilmark{5},
+James E. Aguirre\altaffilmark{6},
+Zaki S. Ali\altaffilmark{4},
+Judd Bowman\altaffilmark{5}
+Carina Cheng\altaffilmark{4},
+David R. DeBoer\altaffilmark{4}
 Jacqueline N. Hewitt\altaffilmark{1},
-Aaron Parsons\altaffilmark{2}}
+Aaron Parsons\altaffilmark{4}}
 
 \affil{\altaffilmark{1}MIT Kavli Institute, Massachusetts Institute of Technology, Cambridge, MA, 02139 USA}
-\affil{\altaffilmark{2}Dept. of Astronomy, University of California, Berkeley, CA, USA}
-\affil{\altaffilmark{3}Arizona State University, School of Earth and Space Exploration, Tempe, AZ 85287, USA}
-\affil{\altaffilmark{4}Dept. of Physics and Astronomy, University of Pennsylvania, Philadelphia, PA}
+\affil{\altaffiltext{2}Dept. of Electrical and Computer Engineering, University of Virginia, Charlottesville, VA, 22904}
+\affil{\altaffiltext{3}National Radio Astronomy Obs., Charlottesville, VA}
+\affil{\altaffilmark{4}Dept. of Astronomy, University of California, Berkeley, CA, USA}
+\affil{\altaffilmark{5}Arizona State University, School of Earth and Space Exploration, Tempe, AZ 85287, USA}
+\affil{\altaffilmark{6}Dept. of Physics and Astronomy, University of Pennsylvania, Philadelphia, PA}
 
 %% Notice that each of these authors has alternate affiliations, which
 %% are identified by the \altaffilmark after each name.  Specify alternate
@@ -96,7 +99,7 @@ Aaron Parsons\altaffilmark{2}}
 %% editorial office after submission.
 
 \begin{abstract}
-The Hydrogen Epoch of Reionization Array (HERA) is a radio interferometer aiming to detect the power spectrum of 21\,cm fluctuations from neutral Hydrogen from the Epoch of Reionization. Drawing on lessons from the Murchison Widefield Array (MWA) and the Precision Array for Probing the Epoch of Reionization (PAPER), HERA is a hexagonal array of large (14\,m) dishes with suspended dipole feeds designed to maximize sensitivity while economizing data volume. This is the first of a series of four papers characterizing the frequency and angular response of the HERA dish element with simulations and measurements. In this work we measure the angular response at 137\,MHz using the ORBCOMM beam mapping system of \citet{neben15}. We measure collecting areas of 70--100\,m$^2$ and estimate power spectrum SNRs of 6--8 with one season of HERA-127 observations, making very conservative foreground assumptions. Lastly we simulate foreground visibilities using numerical beam models and study the foreground distribution in Fourier space as a function of LST, and the uncertainties in these predictions due to beam modeling uncertainties. Future measurements will study the dish beam in the presence of adjacent dishes, quantifying levels of cross-talk and cross-coupling.
+The Hydrogen Epoch of Reionization Array (HERA) is a radio interferometer aiming to detect the power spectrum of 21\,cm fluctuations from neutral Hydrogen from the Epoch of Reionization. Drawing on lessons from the Murchison Widefield Array (MWA) and the Precision Array for Probing the Epoch of Reionization (PAPER), HERA is a hexagonal array of large (14\,m) dishes with suspended dipole feeds designed to maximize sensitivity while economizing data volume. This is the first of a series of four papers characterizing the frequency and angular response of the HERA dish element with simulations and measurements. In this work we measure the angular response at 137\,MHz using the ORBCOMM beam mapping system of \citet{neben15}. We measure collecting areas of 70--100\,m$^2$ and predict power spectrum SNRs. With optimistic foreground and analysis assumptions, HERA-127 should detect the EOR with an SNR of 25--30 with a single season of observations. Even with more pessimistic assumptions, the significance of an EOR detection remains above $5\sigma$. Lastly we simulate foreground visibilities using numerical beam models and study the foreground distribution in Fourier space as a function of LST, and the uncertainties in these predictions due to beam modeling uncertainties. Future measurements will study the dish beam in the presence of adjacent dishes, quantifying levels of cross-talk and cross-coupling.
 \end{abstract}
 
 \keywords{instrumentation: interferometers --- techniques: interferometric --- cosmology: observations --- dark ages, reionization, first stars}
@@ -117,7 +120,7 @@ The Hydrogen Epoch of Reionization Array (HERA) is a radio interferometer aiming
 A new generation of low frequency radio telescopes is coming online with the goal of
  probing redshifted 21\,cm emission from the Cosmic Dawn. These observations will 
  complement indirect probes of the Dark Ages and Epoch of Reionization such as quasar 
- sightlines, deep galaxy surveys, and the CMB optical depth which leave the reionization 
+ sightlines, and the CMB optical depth which leave the reionization 
  history of the universe only loosely constrained. (See \citet{FurlanettoReview, miguelreview, PritchardLoebReview, aviBook, zaroubi} for reviews) Sensitivity and foreground removal are 
  the main challenges in 21\,cm observations, as the expected cosmological signal is 4--5 
  orders of magnitude fainter than Galactic and extragalactic foregrounds. Radio 
@@ -184,7 +187,7 @@ Airy dish leaving much of the wedge effectively empty.
 %    - highlights importance of beam characterization across the entire
 %      sky
 
-So long as foreground emission is perfectly contained in the wedge it is irrelevant how much or 
+From the point of view of power spectrum estimation, so long as foreground emission is perfectly contained in the wedge it is irrelevant how much or 
 little of it there is, but the finite bandwidth and imperfect bandpass calibration 
 of real instruments smear power beyond the geometrical edge of the wedge into the EOR 
 window. Sources at higher delay appear closest to the edge of the wedge, and thus are 
@@ -287,11 +290,11 @@ The 14\,m HERA dish design is a departure from the large N--small D approach use
 observatories like PAPER and the MWA. Both observatories are actively pursuing power 
 spectrum analyses using several year data runs, but the sheer data volume makes 
 characterization and removal of systematics, as well as repeated or complimentary analyses, 
-challenging. A larger element was chosen for HERA primarily to economize data volume. 
+challenging. A larger element was chosen for HERA primarily to reduce correlation and data processing costs. 
 
 The HERA element is a 14\,m diameter parabolic dish ($f/D\approx0.32$) with a dual-polarized dipole feed (Fig. \ref{fig:feedphoto}) suspended at prime focus. The dish surface is formed by sheets of wire attached to PVC tubes attached to supports at the edge of the dish and to a hub at the base. The feed is suspended with cables attached to three telephone poles around the dish. For feed maintenance purposes, a door is engineered into the dish surface on one mesh panel. The feed stands 17\,in off a mesh back plane surrounded by a XX\,in deep cylinder. The nominal dish focus is at 4.5\,m from the dish surface to the feed back plane, though numerical models suggest the focus is closer to 5.3\,m. The feed is designed to make the beams for both polarizations more similar to each other, and also to taper the dipole beam towards the edge of the dish to mitigate dish-dish coupling. 
 
-Feed/dish optimization studies are ongoing and these parameters may change in the final HERA array, but in this work we use the feed with these dimensions and study the beam the feed suspended at different heights. We study the position of the dish focus, the shape of the main lobe, the magnitude of the dish sidelobes, the degree of beam symmetry, the actual dish/feed efficiency (i.e., collecting area), and the expected level of antenna-to-antenna variation.
+Feed/dish optimization studies are ongoing and these parameters may change in the final HERA array, but in this work we use the feed with these dimensions and study the beam with the feed suspended at different heights. We study the position of the dish focus, the shape of the main lobe, the magnitude of the dish sidelobes, the degree of beam symmetry, the actual dish/feed efficiency (i.e., collecting area), and the expected level of antenna-to-antenna variation.
 
 \begin{figure}[h]
 \includegraphics[width=3.4in]{feed.jpg}
@@ -312,7 +315,11 @@ small effect for 21\,cm power spectrum analyses as our leverage on $k$ modes com
 \label{fig:modelbeams}
 \end{figure*}
 
-I EMAILED DAVE AND RICH TO ASK THEM TO WRITE A FEW SENTENCES ABOUT THE CST AND HFSS DISH MODELS
+We numerically model the HERA dish in both HFSS and in CST, making slightly different assumptions, in order to study the dependence of the beam pattern on modeling imperfections. In particular, we suspect that the near horizon beam response, which sets the level of horizon brightening, is quite sensitive to modeling assumptions. Modeling is also useful to probe the best focus of the dish--feed system. The nominal focus is at 4.5\,m given that the dish has $f/D=0.32$, though the feed back plane and skirt are expected to move the focus slightly.
+
+The HFSS model uses a 14\,m paraboloid with $f/D=0.32$ as the dish, with a 1\,m hole at vertex. In reality the 1\,m diameter at the vertex is filled with concrete and supports the PVC pipes which suspend the mesh panels, but we effectively assume here it is perfectly absorbant.  The feed is modeled as a PAPER dipole suspended 17\,in below a 78\,in diameter circular backplane inside a 30\,in deep skirt hanging from the backplane (DOES DAVE'S MODEL HAVE THE 0.5IN GAP BETWEEN THE BACKPLANE AND THE SKIRT??). All these surfaces are modeled as solid aluminum, as are the dipole ``sleeves'', circular disks just above and below the dipole plane designed to broaden its frequency response. The dipoles themselves is modeled as a copper pipe of diameter XX, we neglect the dielectric PVC in which the copper pipe is actually enclosed. In the simulations, we excite one of the dipoles using a modal port and measure the total gain response in each direction to 137.5\,MHz radiation.
+
+In the CST model we again model the dish as a 14\,m diameter solid aluminum paraboloid with $f/D=0.32$ but now neglect the 1\,m hole at zenith, effectively assuming the concrete and earth ground behind it are perfectly reflective. The actual material properties are somewhere in between, though difficult to predict theoretically. The feed model has the same dimensions as in the HFSS model. The simulations are done by exciting one of the dipoles with band-limited noise (100--200\,MHz). The beam pattern is then obtained at a given frequency using a farfield monitor after the excitation pulse energy within the structure decays to below -80\,dB.
 
 \section{Experimental Setup}
 
@@ -452,7 +459,7 @@ The SNRs computed with the measured collecting areas fall from 9--11 for the Air
 \section{Foreground Delay Spectrum Simulations}
 \label{sec:foregrounds}
 
-We turn in this section to the effects of the beam power pattern on the apparent frequency dependence of the foregrounds. Thyagarajan et al., (submitted) discuss the apparent frequency dependence of foregrounds in more detail as well as methods to mitigate to mitigate it such as delay space CLEANing. We focus on this section on the uncertainties in these foreground power spectrum simulations due to beam modeling uncertainties, but we must first discuss these foreground simulations themselves and their dependence on observing conditions. 
+We turn in this section to the effects of the beam power pattern on the apparent frequency dependence of the foregrounds. Thyagarajan et al., (submitted) discuss the apparent frequency dependence of foregrounds in more detail as well as methods to mitigate it such as delay space CLEANing. We focus on this section on the uncertainties in these foreground power spectrum simulations due to beam modeling uncertainties, but we must first discuss these foreground simulations themselves and their dependence on observing conditions. 
 
 We simulate foreground power spectra using different primary beam models at various local sidereal times (LSTs). Given that our measured dish power patterns agree well with both numerical models (HFSS and CST) in the main lobe but deviate in the sidelobes, and that these models make somewhat different assumptions about the dish surface, we take them as a representative pair of possible dish models. We use a feed height of 5\,m, a compromise between larger collecting area and smaller risk of coupling to adjacent dishes. We also include the Airy pattern for comparison as \citet{nithya15}. Beam models with weaker response near the horizon (such as the Airy pattern) downweight sources in this direction of high apparent frequency dependence. This reduces the magnitude of emission near the edge of the EOR window, reducing the risk it leaks inside. We use the per-baseline approach of \citet{parsons12a,parsons12b}, simulating visibilities measured by specific baselines as a function of frequency, then computing the Fourier transform over frequency (delay transform) and normalizing the result into a cosmological power spectrum following \citet{nithya15}. 
 
@@ -518,7 +525,7 @@ We predict the magnitude of this effect for the HERA element as well as its depe
 
 % frequency dependence of the beam pattern and overall gain (due to reflections) likely dominates leakage deep within the window, but the other papers in this series demonstrate that this leakage level is within our spec
 
-As discussed by the other papers in this series, the frequency dependence of the beam power pattern and its overall gain widen the delay kernel of a source, leaking power into the EOR window. These papers demonstrate that in the best case, a combination of bandpass calibration and delay space CLEANing can mitigate foregrounds to a manageable level, while in the worst case, HERA can still achieve a XX--XX $\sigma$ detection of the EOR parameters from the power spectrum by simply excluding a very conservative buffer outside the wedge. All these considerations highlight the need for precision characterization of antenna elements and their implications for 21\,cm science analyses on the part of next generation observatories if we are to have any hope of detecting making this challenging measurement.
+As discussed by the other papers in this series, the frequency dependence of the beam power pattern and its overall gain widen the delay kernel of a source, leaking power into the EOR window. These papers demonstrate that in the best case, a combination of bandpass calibration and delay space CLEANing can mitigate foregrounds to a manageable level, while in the worst case, HERA can still achieve a XX--XX $\sigma$ detection of the EOR parameters from the power spectrum by simply excluding a very conservative buffer outside the wedge. All these considerations highlight the need for precision characterization of antenna elements and their implications for 21\,cm science analyses on the part of next generation observatories if we are to have any hope of making this challenging measurement.
 
 
 
