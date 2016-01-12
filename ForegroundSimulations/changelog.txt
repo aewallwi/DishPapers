@@ -1,3 +1,13 @@
+From e87f065 (master):
+=====================
+
+(*) Add simulations in .npz format from achromatic Rich and Dave beams
+to git repo
+
+In ms.tex,
+
+(*) Add a paragraph under section "foreground model"
+
 From 4deee37 (master):
 =====================
 
