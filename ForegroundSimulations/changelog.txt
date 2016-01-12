@@ -1,3 +1,12 @@
+From 689699b (master):
+=====================
+
+Add .eps figures to git repo
+
+In ms.tex,
+
+(*) Reorganize section and subsection headings
+
 From 420f056 (master):
 =====================
 
