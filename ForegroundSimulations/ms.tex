@@ -222,6 +222,8 @@ When expressed in the coordinate system of power spectrum measurements described
 
 \section{The Hydrogen Epoch of Reionization Array}\label{sec:HERA}
 
+DeBoer~et~al.(2016)
+
 \section{Delay Spectrum}\label{sec:delay-spectrum}
 
 \citep{par12b}
@@ -232,7 +234,7 @@ When expressed in the coordinate system of power spectrum measurements described
 
 \section{Simulations}\label{sec:sim}
 
-We describe the instrument and foreground models used in our simulations. 
+We simulate wide-field visibilities for 19-element HERA from all-sky antenna power pattern and foreground models using the PRISim\footnote{The Precision Radio Interferometry Simulator (PRISim) is publicly available at \href{https://github.com/nithyanandan/PRISim}{https://github.com/nithyanandan/PRISim}} software package. The simulations cover 24~hr of observation in {\it drift} mode consisting of 80 accumulations spanning 1080~s each. The total bandwidth is 100~MHz centered on 150~MHz consisting of 128 channels with 781.125~kHz frequency resolution each. Models of the antenna power pattern and foregrounds are described below.
 
 \subsection{Antenna Power Pattern}
 
@@ -240,9 +242,13 @@ We describe the instrument and foreground models used in our simulations.
 
 \subsection{Foreground Model}\label{sec:foreground}
 
-Our all-sky foreground model is the same as the one in \citet{thy15a}. It consists of diffuse emission \citep{deo08} and point sources. The latter is obtained from a combination of the NRAO VLA Sky Survey \citep[NVSS;][]{con98} at 1.4~GHz and the Sydney University Molonglo Sky Survey \citep[SUMSS;][]{boc99,mau03} at 843~MHz with a mean spectral index of -0.83. 
+Our all-sky foreground model is the same as the one in \citet{thy15a}. It consists of diffuse emission \citep{deo08} and point sources. The latter is obtained from a combination of the NRAO VLA Sky Survey \citep[NVSS;][]{con98} at 1.4~GHz and the Sydney University Molonglo Sky Survey \citep[SUMSS;][]{boc99,mau03} at 843~MHz with a mean spectral index of -0.83. The diffuse sky model has an angular resolution of 13\farcm 74.
 
 \section{Chromaticity of Power Pattern}
+
+The equation for delay spectrum describes the mapping between sky location of a foreground object and delay. The chromatic nature (variation with frequency) of the antenna power pattern results in a convolution of the geometrical mapping with the delay response of spectral chromaticity of the power pattern. This can result in a significant spillover of foreground power beyond the horizon delay limits especially in the case of foregrounds near the horizon. 
+
+Fig.~\ref{fig:off-axis-beam-chromaticity} demonstrates the beyond-the-horizon spillover even from a flat-spectrum point source at different off-axis angles. The three panels correspond to delay spectra from different positions of the point source -- 0\arcdeg (left), 45\arcdeg (middle) and 89\arcdeg (right) -- from the zenith. The phase centers are located at the source positions and hence the delay spectra are centered on $\tau = 0$~ns. The response of the simulated dish power pattern (dashed line) is comapred with that from an {\it Airy} pattern resulting from a nominal uniformly illuminated circular disk (solid line). The gray vertical lines correspond to the horizon limits at $\pm 48.7$~ns for a 14.6~m antenna spacing.
 
 \begin{figure*}[htb]
 \centering
@@ -250,6 +256,12 @@ Our all-sky foreground model is the same as the one in \citet{thy15a}. It consis
 \caption{Chromaticity of antenna power pattern at directions off-axis. }
 \label{fig:off-axis-beam-chromaticity}
 \end{figure*}
+
+At 0\arcdeg off-axis, the {\it Airy} pattern has no spectral variation and thus appears as a straight vertical line centered at $\tau = 0$~ns whereas the simulated power pattern is found to exhibit some spectral variation giving rise to the wings on either side of $\tau = 0$~ns. As off-axis angle increases to 45\arcdeg, both the power patterns clearly exhibit chromaticity. They have similar magnitudes inside the horizon limits but the chromaticity of the simulated power pattern is $\sim 100$ times higher than that of an {\it Airy} pattern outside the horizon limits. In contrast, at 89\arcdeg off-axis, the two patterns have similar chromaticity in delay modes outside the horizon limits but the simulated power pattern has $\sim 100$ times more power inside the horizon limits indicating that the overall amplitude of the pattern at this location is higher relative to the nominal {\it Airy} pattern.
+
+It is important to note that in a generic scenario where visibilities are not phased to a specific foreground location, the chromaticity of the power pattern will imprint itself on location of the foreground objects in delay space and will give rise to significant spillover especially from foregrounds near the horizon. 
+
+We investigate the effects of spectral chromaticity of the power pattern in more detail below.
 
 \subsection{Directional Chromaticity}
 
