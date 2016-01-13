@@ -263,7 +263,22 @@ It is important to note that in a generic scenario where visibilities are not ph
 
 We investigate the effects of spectral chromaticity of the power pattern in more detail below.
 
-\subsection{Directional Chromaticity}
+\subsection{Directional Chromaticity of Power Pattern}
+
+We generalize the analysis above by computing the delay power spectrum of the power pattern along its spectral axis in every direction in an effort to study its performance as a function of angle on the sky. 
+\begin{align}
+  A^\prime(l,m,\tau) &= \int A(l,m,f)\,e^{-j 2\pi f\tau} \,\dif f
+\end{align}
+
+We define the directional chromaticity of antenna power pattern as:
+\begin{align}
+  C(l,m) &= \frac{ \int\limits_{|\tau|>60\,\textrm{ns}} |A^\prime|^2 \,\dif\tau }{\int\limits_{|\tau|>60\,\textrm{ns}} \dif\tau}
+\end{align}
+where, the limit $|\tau|>60$~ns was chosen to represent a region well beyond the horizon limits ($\pm 48.7$~ns) for a 14.6~m antenna spacing. It thus measures the average power arising out of chromaticity in each delay mode beyond $|\tau|>60$~ns. 
+
+Fig.~\ref{fig:directional-beam-chromaticity} shows the directional chromaticity, $C(l,m)$, of the power patterns of an {\it Airy} disk for reference (left) and a simulated disk (middle) on an orthographic projection onto direction cosines. Their color scale is shown at the top for reference. The chromaticity of the {\it Airy} pattern is symmetric and always below 500. On the other hand,  a simulated disk exhibits higher levels of chromaticity in the range 100--50,000. The ratio of their chromaticities is shown on the right with corresponding color scale on its right. The simulated disk is more chromatic than the nominal {\it Airy} disk by a factor between 100 and up to 10000. However, chromaticity in regions near the horizon which map to the horizon limits in the delay spectrum and have the most significant impact on spillover into the {\it EoR window} in the simulated disk are higher than that of an {\it Airy} disk only by factors $\lesssim 4$. Thus the simulated disk for HERA achieves reasonable control on the chromaticity near the horizon despite the very high levels near the center. 
+
+Also shown are the tracks (black dots) of point sources brighter than 50~Jy in the LST range 0--12~hrs. The solid circle near the bottom denotes the south celestial pole. It is noted that there are a few bright point sources that spend a majority of time in this LST range near the northern and southern horizons which will contaminate the measured visibilities on north-south antenna spacings. Future simulations of the dish power pattern must take the bright foreground locations, especially near the horizon, into account.
 
 \begin{figure*}[htb]
 \centering
