@@ -471,9 +471,9 @@ In this figure we perform the approximate conversion from delay $\tau$ to $k_\pa
 
 \begin{figure*}[h]
 \centering
-\includegraphics[width=6in]{delay_spectra_dave_rich_airy_beams_manyLSTs.pdf}
-\includegraphics[width=6in]{delay_spectra_dave_rich_airy_beams_LST2deg.pdf}
-\includegraphics[width=6in]{delay_spectra_dave_rich_airy_beams_LST62deg.pdf}
+\includegraphics[width=6in]{nithya_fg_pspec_all_lst.pdf}
+\includegraphics[width=6in]{nithya_fg_pspec_lst0deg.pdf}
+\includegraphics[width=6in]{nithya_fg_pspec_lst60deg.pdf}
 \caption{Simulated foreground delay spectra using the HFSS beam at various LSTs (top panel). We plot the delay spectra at two LSTs spanning the range of possible horizon brightening for three different beam models. The maximum horizon brightening at the negative horizon occurs at 2$^\circ$ LST (middle panel), and the three beam models thus differ markedly in their predicted delay spectra near the horizon. In contrast, when the horizon brightening effect is smaller at 2$^\circ$ LST, the foreground delay spectra from all three beams agree much more closely.}
 \label{fig:delayspec}
 \end{figure*}
@@ -487,6 +487,7 @@ To characterize the effect of beam modeling uncertainties on this horizon bright
 \label{fig:gsmplots}
 \end{figure*}
 
+NEED TO REVISE THIS PARAGRAPH FOR NITHYA'S SIMULATIONS, ALSO COMMENT ON THE CST-HFSS CURVE
 How much do the predicted foreground power spectra differ between the three model dish power patterns? Figure \ref{fig:delayspec} (middle panel) shows the simulated delay spectra for all three beams at $2^\circ$ LST, when the horizon brightening is worst. All three delay spectra agree out to delays of 10--20\,ns on the 14\,m baseline and 30--40\,ns on the 40\,m baseline. These numbers suggest that the beams track each other fairly well out to 15--20$^\circ$ from zenith, beyond which they diverge. This is roughly what is observed in Figure \ref{fig:measuredbeamslices} (middle panel). At larger delays, especially near the negative delay horizon limit, all three model delay spectra diverge due to the significant edge brightening which effectively discriminates between these models. The CST, HFSS, and Airy beams reach roughly -35\,dB, -38\,dB, and -50\,dB at the horizon (Figure \ref{fig:modelbeams}), consistent with the fact that the CST beam has the largest horizon brightening, followed by the HFSS beam, and then by the Airy beam. This is seen in the delay spectra for both baseline lengths, though the edge brightening is much clearer on the longer baseline where it less diluted by zero delay emission.  
 
 In contrast, all three model agree much more closely when there is little or no edge brightening as in Figure \ref{fig:measuredbeamslices} (bottom panel) where we plot the delay spectra for all three beams for 62$^\circ$ LST. There is still a modest flattening off near the horizon on the 14\,m baseline and a slight peak on the 42\,m baseline due to the large solid angle near the horizon. However as the near horizon emission at this LST is roughly the same temperature as emission from everywhere else on the sky, the difference between the three beam models is greatly reduced.
