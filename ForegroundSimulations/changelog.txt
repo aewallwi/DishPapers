@@ -1,3 +1,17 @@
+From b10582e (master):
+=====================
+
+In ms.tex,
+
+(*) Add content under section 5.3
+
+From 72bc820 (master):
+=====================
+
+In ms.tex,
+
+(*) Add content under section 5.2
+
 From 3f4f12c (master):
 =====================
 
