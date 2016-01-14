@@ -267,13 +267,15 @@ A drift scan instrument, HERA will be capable of observing the sky at any LST wi
 \end{figure}
 
 
-Computing the power spectra, we inspect the amplitude of foregrounds given the chromaticity and angular pattern of the HERA dish for several different baselines of different lengths. 
+Computing the power spectra, we inspect the amplitude of foregrounds given the chromaticity and angular pattern of the HERA dish for several different baselines. We first inspect a $14.6$ meter baseline in Fig.~\ref{fig:shortBaseline} and find that foregrounds contaminate a significant fraction of modes outside of the horizon for many redshifts. Inspecting a longer 29.2 meter baseline in Fig.~\ref{fig:longBaseline}, we find that significant regions of the visibility are foreground free. In both baselines, we find that the residuals after cleaning tend to be at similar levels except at the subband centered at $z=8.5$ (150\,MHz), in which foreground residuals remain above the signal level out to $k_\parallel=0.3$\,$h$Mpc$^{-1}$. 
+
+To get a more global view of which baselines are significantly affected by foreground leakage, I we plot the median of the ratio between the 21\,cm power and foreground leakage between $k=0.15$\,$h$Mpc$^{-1}$ and $k=1.00$\,$h$Mpc$^{-1}$ for a subset of the short HERA baselines and plot them in Fig.~\ref{fig:Medians}. For all redshifts investigated, the majority of the $14.6$ meter baselines show significant contamination from diffuse foregrounds. Additionally, EW baselines contain a significant degree of foreground residuals as noted in \citet{Thyagarajan:2015a}. 
 
 
 \begin{figure*}
 \includegraphics[width=\textwidth]{figures/ps_compare_nithya_lst4hr_1024ch_7p3ew_12p6ns.pdf}
 \caption{The power spectrum computed from the delay transform of a 14.6 meter baseline in equation~\ref{eq:PS} with (solid green line) and without (solid blue line) the presence of reflections in the HERA dish. The residuals after cleaning within the dashed black lines down to three times the level of thermal noise after 20 minutes of integration with (dashed cyan) and without (red dashed) the dish chromaticity are also plotted. We find that for this short baseline, clean residuals are on a similar level as the 21\,cm signal (solid black line), indicating that a redesign of the array with fewer short baselines may be necessary to maximize its sensitivity on foreground free modes.}
-\label{figure:shortBaseline}
+\label{fig:shortBaseline}
 \end{figure*}
 
 
@@ -283,6 +285,11 @@ Computing the power spectra, we inspect the amplitude of foregrounds given the c
 \label{figure:shortBaseline}
 \end{figure*}
 
+\begin{figure*}
+\includegraphics[width=\textwidth]{figures/ps_compare_nithya_lst4hr_snrVbaselineMedian.pdf}
+\caption{The median of the ratio between foreground residuals with the chromaticity of the HERA primary beam between $k_\parallel=0.15$\,$h$Mpc$^{-1}$ and $k_\parallel=1.0$\,$h$Mpc$^{-1}$, the range of k values over which HERA will derive the majority of its sensitivity. We see that the shortest baselines tend to have relatively low signal to foreground ratios due to the presence of high amplitude Galactic synchrotron emission.}
+\label{fig:Medians}
+\end{figure*}
 
 \subsection{The Implications of Dish Reflections on EoR Science}
 The primary goal 21\,cm EoR observations is to obtain information about the nature of the sources that drove reionization. Since the amplitude of the 21\,cm signal is maximal at smaller $k$ values, a loss of large scale signal due to foreground leakage eliminates the the modes that HERA would otherwise have the greatest signal to noise detections, impacting our overall sensitivity and its ability to derive this information. In this section, we estimate the impact of foreground leakage on HERA's sensitivity along with its ability to determine the astrophysics of reionization. We do so using the Fisher Matrix formalism. The Fisher Matrix allows us to forecast the covariances and errors on reionization parameters given errors on power spectrum observations due to the uncertainties caused by thermal noise which is in turn determined by the $uv$ coverage and observing time of the interferometer. The covariance between the parameters of some model ${\bf \theta}$ is given by the inverse of the Fisher matrix, ${\bf F}$ which for Gaussian and independently determined power spectrum bins may be written approximately as \citep{Pober:2014,EwallWice:2015a},
