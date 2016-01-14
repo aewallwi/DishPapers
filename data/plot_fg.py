@@ -10,6 +10,7 @@ import sys, scipy, csv
 # 'eor_power' -- EoR power in power spectrum units and is an array of size n(bl) x n(eor_lags) x n(lst)
 
 npz = n.load(sys.argv[-1])
+print npz.files
 
 LST = 0
 
@@ -28,7 +29,7 @@ fg = n.average(fg[:3], axis=0)
 eor = n.average(eor[:3], axis=0)
 fg_mdl = n.where(fg > 1e7, fg, 0)
 
-for kpl_cut in [0.08, 0.1, 0.12][::-1]: # h Mpc^-1
+for kpl_cut in [0.08, 0.1, 0.12, 0.15][::-1]: # h Mpc^-1
     tau_cut = kpl_cut / dk_deta
     tau2_cut = n.argmin(n.abs(tau2 - tau_cut))
     SZ = eor.shape[0]
