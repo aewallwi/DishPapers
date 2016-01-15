@@ -21,6 +21,10 @@
 {de Oliveira-Costa}, A., {Tegmark}, M., {Gaensler}, B.~M., {et~al.} 2008,
   \mnras, 388, 247
 
+\bibitem[{{Furlanetto} {et~al.}(2006){Furlanetto}, {Oh}, \&
+  {Briggs}}]{furlanetto_et_al2006}
+{Furlanetto}, S.~R., {Oh}, S.~P., \& {Briggs}, F.~H. 2006, \physrep, 433, 181
+
 \bibitem[{{Ghosh} {et~al.}(2011){Ghosh}, {Bharadwaj}, {Ali}, \&
   {Chengalur}}]{ghosh_et_al2011}
 {Ghosh}, A., {Bharadwaj}, S., {Ali}, S.~S., \& {Chengalur}, J.~N. 2011, \mnras,
@@ -41,13 +45,44 @@ Liu, A., Parsons, A.~R., \& Trott, C.~M. 2014{\natexlab{a}}, Phys. Rev. D, 90,
   Trott}]{liu_et_al2014b}
 ---. 2014{\natexlab{b}}, Phys. Rev. D, 90, 023019
 
+\bibitem[{{Morales} \& {Wyithe}(2010)}]{morales_wyithe2010}
+{Morales}, M.~F., \& {Wyithe}, J.~S.~B. 2010, \araa, 48, 127
+
+\bibitem[{{Parsons} {et~al.}(2012{\natexlab{a}}){Parsons}, {Pober}, {McQuinn},
+  {Jacobs}, \& {Aguirre}}]{parsons_et_al2012a}
+{Parsons}, A., {Pober}, J., {McQuinn}, M., {Jacobs}, D., \& {Aguirre}, J.
+  2012{\natexlab{a}}, \apj, 753, 81
+
 \bibitem[{{Parsons} \& {DeBoer}(2015)}]{parsons_deboer_memo}
 {Parsons}, A.~R., \& {DeBoer}, D.~D. 2015
 
-\bibitem[{{Parsons} {et~al.}(2012){Parsons}, {Pober}, {Aguirre}, {Carilli},
-  {Jacobs}, \& {Moore}}]{parsons_et_al2012b}
-{Parsons}, A.~R., {Pober}, J.~C., {Aguirre}, J.~E., {et~al.} 2012, \apj, 756,
-  165
+\bibitem[{{Parsons} {et~al.}(2012{\natexlab{b}}){Parsons}, {Pober}, {Aguirre},
+  {Carilli}, {Jacobs}, \& {Moore}}]{parsons_et_al2012b}
+{Parsons}, A.~R., {Pober}, J.~C., {Aguirre}, J.~E., {et~al.}
+  2012{\natexlab{b}}, \apj, 756, 165
+
+\bibitem[{{Parsons} {et~al.}(2010){Parsons}, {Backer}, {Foster}, {Wright},
+  {Bradley}, {Gugliucci}, {Parashare}, {Benoit}, {Aguirre}, {Jacobs},
+  {Carilli}, {Herne}, {Lynch}, {Manley}, \& {Werthimer}}]{parsons_et_al2010}
+{Parsons}, A.~R., {Backer}, D.~C., {Foster}, G.~S., {et~al.} 2010, \aj, 139,
+  1468
+
+\bibitem[{{Parsons} {et~al.}(2014){Parsons}, {Liu}, {Aguirre}, {Ali},
+  {Bradley}, {Carilli}, {DeBoer}, {Dexter}, {Gugliucci}, {Jacobs}, {Klima},
+  {MacMahon}, {Manley}, {Moore}, {Pober}, {Stefan}, \&
+  {Walbrugh}}]{parsons_et_al2014}
+{Parsons}, A.~R., {Liu}, A., {Aguirre}, J.~E., {et~al.} 2014, \apj, 788, 106
+
+\bibitem[{{Pober} {et~al.}(2013){Pober}, {Parsons}, {Aguirre}, {Ali},
+  {Bradley}, {Carilli}, {DeBoer}, {Dexter}, {Gugliucci}, {Jacobs}, {Klima},
+  {MacMahon}, {Manley}, {Moore}, {Stefan}, \& {Walbrugh}}]{pober_et_al2013}
+{Pober}, J.~C., {Parsons}, A.~R., {Aguirre}, J.~E., {et~al.} 2013, \apjl, 768,
+  L36
+
+\bibitem[{{Presley} {et~al.}(2015){Presley}, {Liu}, \&
+  {Parsons}}]{presley_et_al2015}
+{Presley}, M., {Liu}, A., \& {Parsons}, A. 2015, ArXiv e-prints: 1501.01633,
+  arXiv:1501.01633
 
 \bibitem[{{Santos} {et~al.}(2005){Santos}, {Cooray}, \&
   {Knox}}]{santos_et_al2005}
