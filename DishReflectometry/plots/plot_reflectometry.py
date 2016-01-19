@@ -13,36 +13,47 @@ for filename in sys.argv[1:]:
     BASE = filename[:-len('.csv')]
     db_file = BASE + '_DB.csv'
     ph_file = BASE + '_P.csv'
+    fft_file = BASE + '_FFT.csv'
 
     WINDOW = 'blackman-harris'
     #WINDOW = 'hamming'
 
     fq,db = fromcsv(db_file)
     fq,ph = fromcsv(ph_file)
+    tau,fft = fromcsv(fft_file)
+    if True:
+        fft *= fft[np.argmin(np.abs(tau))]
+    plt.subplot(122); plt.semilogy(tau*1e18, fft)
     #d = 10**(db/10) * np.exp(2j*np.pi*ph/360) # power
     d = 10**(db/20) * np.exp(2j*np.pi*ph/360) # 20 to put into voltage amplitude, not power
 
-    d = np.abs(d)**2
-    valid = np.ones(fq.size, dtype=np.bool) # use entire sampled band
+    #valid = np.ones(fq.size, dtype=np.bool) # use entire sampled band
     #valid = np.where(fq < .250) # restrict to HERA band
-    #valid = np.where(np.logical_and(fq < .2, fq > .1)) # restrict to PAPER band
+    #valid = np.where(np.logical_and(fq < .25, fq > .05)) # restrict to HERA band
+    valid = np.where(np.logical_and(fq < .2, fq > .1)) # restrict to PAPER band
     fq, d = fq[valid], d[valid]
+    plt.subplot(121)
+    plt.plot(fq, np.abs(d))
+    plt.plot(fq, np.abs(d)**2)
     tau = np.fft.fftfreq(fq.size, fq[1]-fq[0])
     window = a.dsp.gen_window(fq.size, WINDOW)
+
+    d = np.abs(d)**2
     _d = np.fft.ifft(d)
     _dw = np.fft.ifft(d*window) / window.mean() # compensate for window amplitude
 
     if True: # approx account for 1st reflection of sky signal off of feed
-        _dw *= np.abs(_d[0])
+        print np.abs(_d[0]), np.abs(_dw[0])
+        _dw *= np.abs(_dw[0])
         _d *= np.abs(_d[0])
-
-    print np.abs(_d[0])
     #plt.figure(1); plt.semilogy(fq, np.abs(d)**2, label=BASE)
 
+    plt.subplot(122)
     #plt.figure(2)
     #plt.semilogy(np.fft.fftshift(tau), np.fft.fftshift(np.abs(_d)**2))
     #plt.semilogy(np.fft.fftshift(tau), np.fft.fftshift(np.abs(_dw)), label=BASE)
     #plt.semilogy(np.fft.fftshift(tau), np.fft.fftshift(np.abs(_dw)**2), label=BASE)
+    #plt.semilogy(np.fft.fftshift(tau), np.fft.fftshift(np.abs(_d)))
     plt.semilogy(np.fft.fftshift(tau), np.fft.fftshift(np.abs(_dw)), label=BASE)
 
 #plt.figure(1); plt.legend(loc='best')

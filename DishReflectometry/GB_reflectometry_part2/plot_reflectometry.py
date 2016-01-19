@@ -10,7 +10,7 @@ def fromcsv(filename):
     return x[:,0]/1e9, x[:,1]
 
 for filename in sys.argv[1:]:
-    BASE = filename[:-len('.csv')]
+    BASE = filename[:-len('_DB.csv')]
     db_file = BASE + '_DB.csv'
     ph_file = BASE + '_P.csv'
 

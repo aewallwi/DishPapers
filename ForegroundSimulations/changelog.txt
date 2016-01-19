@@ -1,3 +1,72 @@
+From d08e9d43 (master): 
+======================
+
+(*) Update simulation .npz files with achromatic beams
+
+From 5f2ece4 (master):
+=====================
+
+(*) Add simulation .npz files to git repo
+
+From b10582e (master):
+=====================
+
+In ms.tex,
+
+(*) Add content under section 5.3
+
+From 72bc820 (master):
+=====================
+
+In ms.tex,
+
+(*) Add content under section 5.2
+
+From 3f4f12c (master):
+=====================
+
+(*) Add simulation .npz file made with Airy pattern to git repo
+
+From 08b0572 (master):
+=====================
+
+In ms.tex,
+
+(*) Add content under section 5.1
+
+From af51c8f (master):
+=====================
+
+In ms.tex,
+
+(*) Add content under section 5
+
+From e87f065 (master):
+=====================
+
+(*) Add simulations in .npz format from achromatic Rich and Dave beams
+to git repo
+
+In ms.tex,
+
+(*) Add a paragraph under section "foreground model"
+
+From 4deee37 (master):
+=====================
+
+In ms.tex,
+
+(*) Include figures under appropriate sections
+
+From 689699b (master):
+=====================
+
+Add .eps figures to git repo
+
+In ms.tex,
+
+(*) Reorganize section and subsection headings
+
 From 420f056 (master):
 =====================
 

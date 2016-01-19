@@ -68,21 +68,24 @@
 %% As in the title, use \\ to force line breaks.
 
 \author{Abraham R. Neben\altaffilmark{1},
+Richard F. Bradley\altaffilmark{2,3},
 Aaron Ewall-Wice\altaffilmark{1},
-Nipanjana Patra\altaffilmark{2},
-Nithyanandan Thyagarajan\altaffilmark{3},
-James E. Aguirre\altaffilmark{4},
-Zaki S. Ali\altaffilmark{2},
-Judd Bowman\altaffilmark{3}
-Carina Cheng\altaffilmark{2},
-David R. DeBoer\altaffilmark{2}
+Nipanjana Patra\altaffilmark{4},
+Nithyanandan Thyagarajan\altaffilmark{5},
+James E. Aguirre\altaffilmark{6},
+Zaki S. Ali\altaffilmark{4},
+Judd Bowman\altaffilmark{5}
+Carina Cheng\altaffilmark{4},
+David R. DeBoer\altaffilmark{4}
 Jacqueline N. Hewitt\altaffilmark{1},
-Aaron Parsons\altaffilmark{2}}
+Aaron Parsons\altaffilmark{4}}
 
 \affil{\altaffilmark{1}MIT Kavli Institute, Massachusetts Institute of Technology, Cambridge, MA, 02139 USA}
-\affil{\altaffilmark{2}Dept. of Astronomy, University of California, Berkeley, CA, USA}
-\affil{\altaffilmark{3}Arizona State University, School of Earth and Space Exploration, Tempe, AZ 85287, USA}
-\affil{\altaffilmark{4}Dept. of Physics and Astronomy, University of Pennsylvania, Philadelphia, PA}
+\affil{\altaffiltext{2}Dept. of Electrical and Computer Engineering, University of Virginia, Charlottesville, VA, 22904}
+\affil{\altaffiltext{3}National Radio Astronomy Obs., Charlottesville, VA}
+\affil{\altaffilmark{4}Dept. of Astronomy, University of California, Berkeley, CA, USA}
+\affil{\altaffilmark{5}Arizona State University, School of Earth and Space Exploration, Tempe, AZ 85287, USA}
+\affil{\altaffilmark{6}Dept. of Physics and Astronomy, University of Pennsylvania, Philadelphia, PA}
 
 %% Notice that each of these authors has alternate affiliations, which
 %% are identified by the \altaffilmark after each name.  Specify alternate
@@ -96,7 +99,7 @@ Aaron Parsons\altaffilmark{2}}
 %% editorial office after submission.
 
 \begin{abstract}
-The Hydrogen Epoch of Reionization Array (HERA) is a radio interferometer aiming to detect the power spectrum of 21\,cm fluctuations from neutral Hydrogen from the Epoch of Reionization. Drawing on lessons from the Murchison Widefield Array (MWA) and the Precision Array for Probing the Epoch of Reionization (PAPER), HERA is a hexagonal array of large (14\,m) dishes with suspended dipole feeds designed to maximize sensitivity while economizing data volume. This is the first of a series of four papers characterizing the frequency and angular response of the HERA dish element with simulations and measurements. In this work we measure the angular response at 137\,MHz using the ORBCOMM beam mapping system of \citet{neben15}. We measure collecting areas of 70--100\,m$^2$ and estimate power spectrum SNRs of 6--8 with one season of HERA-127 observations, making very conservative foreground assumptions. Lastly we simulate foreground visibilities using numerical beam models and study the foreground distribution in Fourier space as a function of LST, and the uncertainties in these predictions due to beam modeling uncertainties. Future measurements will study the dish beam in the presence of adjacent dishes, quantifying levels of cross-talk and cross-coupling.
+The Hydrogen Epoch of Reionization Array (HERA) is a radio interferometer aiming to detect the power spectrum of 21\,cm fluctuations from neutral Hydrogen from the Epoch of Reionization. Drawing on lessons from the Murchison Widefield Array (MWA) and the Precision Array for Probing the Epoch of Reionization (PAPER), HERA is a hexagonal array of large (14\,m) dishes with suspended dipole feeds designed to maximize sensitivity while economizing data volume. This is the first of a series of four papers characterizing the frequency and angular response of the HERA dish element with simulations and measurements. In this work we measure the angular response at 137\,MHz using the ORBCOMM beam mapping system of \citet{neben15}. We measure collecting areas of 70--100\,m$^2$ and predict power spectrum SNRs. With optimistic foreground and analysis assumptions, HERA-127 should detect the EOR with an SNR of 25--30 with a single season of observations. Even with more pessimistic assumptions, the significance of an EOR detection remains above $5\sigma$. Lastly we simulate foreground visibilities using numerical beam models and study the foreground distribution in Fourier space as a function of LST, and the uncertainties in these predictions due to beam modeling uncertainties. Future measurements will study the dish beam in the presence of adjacent dishes, quantifying levels of cross-talk and cross-coupling.
 \end{abstract}
 
 \keywords{instrumentation: interferometers --- techniques: interferometric --- cosmology: observations --- dark ages, reionization, first stars}
@@ -117,7 +120,7 @@ The Hydrogen Epoch of Reionization Array (HERA) is a radio interferometer aiming
 A new generation of low frequency radio telescopes is coming online with the goal of
  probing redshifted 21\,cm emission from the Cosmic Dawn. These observations will 
  complement indirect probes of the Dark Ages and Epoch of Reionization such as quasar 
- sightlines, deep galaxy surveys, and the CMB optical depth which leave the reionization 
+ sightlines, and the CMB optical depth which leave the reionization 
  history of the universe only loosely constrained. (See \citet{FurlanettoReview, miguelreview, PritchardLoebReview, aviBook, zaroubi} for reviews) Sensitivity and foreground removal are 
  the main challenges in 21\,cm observations, as the expected cosmological signal is 4--5 
  orders of magnitude fainter than Galactic and extragalactic foregrounds. Radio 
@@ -184,7 +187,7 @@ Airy dish leaving much of the wedge effectively empty.
 %    - highlights importance of beam characterization across the entire
 %      sky
 
-So long as foreground emission is perfectly contained in the wedge it is irrelevant how much or 
+From the point of view of power spectrum estimation, so long as foreground emission is perfectly contained in the wedge it is irrelevant how much or 
 little of it there is, but the finite bandwidth and imperfect bandpass calibration 
 of real instruments smear power beyond the geometrical edge of the wedge into the EOR 
 window. Sources at higher delay appear closest to the edge of the wedge, and thus are 
@@ -287,11 +290,11 @@ The 14\,m HERA dish design is a departure from the large N--small D approach use
 observatories like PAPER and the MWA. Both observatories are actively pursuing power 
 spectrum analyses using several year data runs, but the sheer data volume makes 
 characterization and removal of systematics, as well as repeated or complimentary analyses, 
-challenging. A larger element was chosen for HERA primarily to economize data volume. 
+challenging. A larger element was chosen for HERA primarily to reduce correlation and data processing costs. 
 
 The HERA element is a 14\,m diameter parabolic dish ($f/D\approx0.32$) with a dual-polarized dipole feed (Fig. \ref{fig:feedphoto}) suspended at prime focus. The dish surface is formed by sheets of wire attached to PVC tubes attached to supports at the edge of the dish and to a hub at the base. The feed is suspended with cables attached to three telephone poles around the dish. For feed maintenance purposes, a door is engineered into the dish surface on one mesh panel. The feed stands 17\,in off a mesh back plane surrounded by a XX\,in deep cylinder. The nominal dish focus is at 4.5\,m from the dish surface to the feed back plane, though numerical models suggest the focus is closer to 5.3\,m. The feed is designed to make the beams for both polarizations more similar to each other, and also to taper the dipole beam towards the edge of the dish to mitigate dish-dish coupling. 
 
-Feed/dish optimization studies are ongoing and these parameters may change in the final HERA array, but in this work we use the feed with these dimensions and study the beam the feed suspended at different heights. We study the position of the dish focus, the shape of the main lobe, the magnitude of the dish sidelobes, the degree of beam symmetry, the actual dish/feed efficiency (i.e., collecting area), and the expected level of antenna-to-antenna variation.
+Feed/dish optimization studies are ongoing and these parameters may change in the final HERA array, but in this work we use the feed with these dimensions and study the beam with the feed suspended at different heights. We study the position of the dish focus, the shape of the main lobe, the magnitude of the dish sidelobes, the degree of beam symmetry, the actual dish/feed efficiency (i.e., collecting area), and the expected level of antenna-to-antenna variation.
 
 \begin{figure}[h]
 \includegraphics[width=3.4in]{feed.jpg}
@@ -312,7 +315,11 @@ small effect for 21\,cm power spectrum analyses as our leverage on $k$ modes com
 \label{fig:modelbeams}
 \end{figure*}
 
-I EMAILED DAVE AND RICH TO ASK THEM TO WRITE A FEW SENTENCES ABOUT THE CST AND HFSS DISH MODELS
+We numerically model the HERA dish in both HFSS and in CST, making slightly different assumptions, in order to study the dependence of the beam pattern on modeling imperfections. In particular, we suspect that the near horizon beam response, which sets the level of horizon brightening, is quite sensitive to modeling assumptions. Modeling is also useful to probe the best focus of the dish--feed system. The nominal focus is at 4.5\,m given that the dish has $f/D=0.32$, though the feed back plane and skirt are expected to move the focus slightly.
+
+The HFSS model uses a 14\,m paraboloid with $f/D=0.32$ as the dish, with a 1\,m hole at vertex. In reality the 1\,m diameter at the vertex is filled with concrete and supports the PVC pipes which suspend the mesh panels, but we effectively assume here it is perfectly absorbant.  The feed is modeled as a PAPER dipole suspended 17\,in below a 78\,in diameter circular backplane inside a 30\,in deep skirt hanging 0.5\,in below the backplane. All these surfaces are modeled as solid aluminum, as are the dipole ``sleeves'', circular disks just above and below the dipole plane designed to broaden its frequency response. The dipoles themselves is modeled as a copper pipe of diameter XX, we neglect the dielectric PVC in which the copper pipe is actually enclosed. In the simulations, we excite one of the dipoles using a modal port and measure the total gain response in each direction to 137.5\,MHz radiation.
+
+In the CST model we again model the dish as a 14\,m diameter solid aluminum paraboloid with $f/D=0.32$ but now neglect the 1\,m hole at zenith, effectively assuming the concrete and earth ground behind it are perfectly reflective. The actual material properties are somewhere in between, though difficult to predict theoretically. The feed model has the same dimensions as in the HFSS model. The simulations are done by exciting one of the dipoles with band-limited noise (100--200\,MHz). The beam pattern is then obtained at a given frequency using a farfield monitor after the excitation pulse energy within the structure decays to below -80\,dB.
 
 \section{Experimental Setup}
 
@@ -452,7 +459,7 @@ The SNRs computed with the measured collecting areas fall from 9--11 for the Air
 \section{Foreground Delay Spectrum Simulations}
 \label{sec:foregrounds}
 
-We turn in this section to the effects of the beam power pattern on the apparent frequency dependence of the foregrounds. Thyagarajan et al., (submitted) discuss the apparent frequency dependence of foregrounds in more detail as well as methods to mitigate to mitigate it such as delay space CLEANing. We focus on this section on the uncertainties in these foreground power spectrum simulations due to beam modeling uncertainties, but we must first discuss these foreground simulations themselves and their dependence on observing conditions. 
+We turn in this section to the effects of the beam power pattern on the apparent frequency dependence of the foregrounds. Thyagarajan et al., (submitted) discuss the apparent frequency dependence of foregrounds in more detail as well as methods to mitigate it such as delay space CLEANing. We focus on this section on the uncertainties in these foreground power spectrum simulations due to beam modeling uncertainties, but we must first discuss these foreground simulations themselves and their dependence on observing conditions. 
 
 We simulate foreground power spectra using different primary beam models at various local sidereal times (LSTs). Given that our measured dish power patterns agree well with both numerical models (HFSS and CST) in the main lobe but deviate in the sidelobes, and that these models make somewhat different assumptions about the dish surface, we take them as a representative pair of possible dish models. We use a feed height of 5\,m, a compromise between larger collecting area and smaller risk of coupling to adjacent dishes. We also include the Airy pattern for comparison as \citet{nithya15}. Beam models with weaker response near the horizon (such as the Airy pattern) downweight sources in this direction of high apparent frequency dependence. This reduces the magnitude of emission near the edge of the EOR window, reducing the risk it leaks inside. We use the per-baseline approach of \citet{parsons12a,parsons12b}, simulating visibilities measured by specific baselines as a function of frequency, then computing the Fourier transform over frequency (delay transform) and normalizing the result into a cosmological power spectrum following \citet{nithya15}. 
 
@@ -460,18 +467,18 @@ In detail, we simulate visibilities for each beam model at various LSTs, modelin
 
 Figure \ref{fig:delayspec} (top panel) shows simulated foreground delay spectra at various LSTs using the nominal HFSS beam. As all these LSTs are high galactic latitudes far from the galactic center, the total visibility power (the level of the zero delay mode) varies only by a factor of a few over these LSTs on both baseline lengths (14\,m (left panel), 42\,m (right panel)). However the negative delay horizon limit (corresponding to the western horizon) has a peak that varies by over three orders of magnitude on the 14\,m baseline and by two orders of magnitude on the 42\,m baseline, demonstrating the stark difference in horizon brightening when the galaxy is just above versus just below the horizon. 
 
-In this figure we perform the approximate conversion from delay $\tau$ to $k_\parallel$, which we plot as a second $x$-axis at the top of the plot. For these short baselines, $k_\parallel$ may be converted to $k$ by adding $k_\perp=0.005$ for the 14\,m baseline or $k_\perp=0.02$ for the 42\,m baseline in quadrature. These numbers are small compared to the range of $k_\parallel$ plotted, and thus we interpret the $k_\parallel$ axis as simply the $k$ axis, and plot a 1D model power spectrum computed using 21cmFast \citep{21cmfast} as a dotted line for comparison. 
+In this figure we perform the approximate conversion from delay $\tau$ to $k_\parallel$, which we plot as a second $x$-axis at the top of the plot. For these short baselines, $k_\parallel$ may be converted to $k$ by adding $k_\perp=0.005$ for the 14.6\,m baseline or $k_\perp=0.02$ for the 42\,m baseline in quadrature. These numbers are small compared to the range of $k_\parallel$ plotted, and thus we interpret the $k_\parallel$ axis as simply the $k$ axis, and plot a 1D model power spectrum computed using 21cmFast \citep{21cmfast} as a dotted line for comparison. 
 
 \begin{figure*}[h]
 \centering
-\includegraphics[width=6in]{delay_spectra_dave_rich_airy_beams_manyLSTs.pdf}
-\includegraphics[width=6in]{delay_spectra_dave_rich_airy_beams_LST2deg.pdf}
-\includegraphics[width=6in]{delay_spectra_dave_rich_airy_beams_LST62deg.pdf}
-\caption{Simulated foreground delay spectra using the HFSS beam at various LSTs (top panel). We plot the delay spectra at two LSTs spanning the range of possible horizon brightening for three different beam models. The maximum horizon brightening at the negative horizon occurs at 2$^\circ$ LST (middle panel), and the three beam models thus differ markedly in their predicted delay spectra near the horizon. In contrast, when the horizon brightening effect is smaller at 2$^\circ$ LST, the foreground delay spectra from all three beams agree much more closely.}
+\includegraphics[width=6in]{nithya_fg_pspec_all_lst.pdf}
+\includegraphics[width=6in]{nithya_fg_pspec_lst0deg.pdf}
+\includegraphics[width=6in]{nithya_fg_pspec_lst60deg.pdf}
+\caption{Simulated foreground delay spectra using the HFSS beam at various LSTs (top panel). We also plot the delay spectra at two LSTs spanning the range of possible horizon brightening for three different beam models. The maximum horizon brightening at the positive horizon occurs close to 0$^\circ$ LST (middle panel), and the three beam models thus differ markedly in their predicted delay spectra near the horizon. In contrast, when the horizon brightening effect is smaller at 60$^\circ$ LST, the foreground delay spectra from all three beams agree much more closely.}
 \label{fig:delayspec}
 \end{figure*}
 
-To characterize the effect of beam modeling uncertainties on this horizon brightening, we select two of these LSTs, one with maximal horizon brightening ($2^\circ$), and one with minimal horizon brightening ($62^\circ$). Figure \ref{fig:gsmplots} shows the sine-projected Global Sky Model, which dominates the horizon brightening effect, in horizontal coordinates with units of Kelvin for both LSTs. Dashed lines mark zenith angles 20$^\circ$, 40$^\circ$, 60$^\circ$, 80$^\circ$. These plots confirm that the large negative delay peak at the 2$^\circ$ LST is due to the center of the galaxy just above the horizon. In contrast several hours later, the galactic center is fully below the western horizon, leaving only a slight brightening near the eastern horizon due to the weaker galactic anticenter. 
+To characterize the effect of beam modeling uncertainties on this horizon brightening, we select two of these LSTs, one with maximal horizon brightening ($2^\circ$), and one with minimal horizon brightening ($62^\circ$). Figure \ref{fig:gsmplots} shows the sine-projected Global Sky Model, which dominates the horizon brightening effect, in horizontal coordinates with units of Kelvin for both LSTs. Dashed lines mark zenith angles 20$^\circ$, 40$^\circ$, 60$^\circ$, 80$^\circ$. These plots confirm that the large negative delay peak at the 0$^\circ$ LST is due to the center of the galaxy just above the horizon. In contrast several hours later, the galactic center is fully below the western horizon, leaving only a slight brightening near the eastern horizon due to the weaker galactic anticenter. 
 
 \begin{figure*}[h]
 \centering
@@ -480,9 +487,9 @@ To characterize the effect of beam modeling uncertainties on this horizon bright
 \label{fig:gsmplots}
 \end{figure*}
 
-How much do the predicted foreground power spectra differ between the three model dish power patterns? Figure \ref{fig:delayspec} (middle panel) shows the simulated delay spectra for all three beams at $2^\circ$ LST, when the horizon brightening is worst. All three delay spectra agree out to delays of 10--20\,ns on the 14\,m baseline and 30--40\,ns on the 40\,m baseline. These numbers suggest that the beams track each other fairly well out to 15--20$^\circ$ from zenith, beyond which they diverge. This is roughly what is observed in Figure \ref{fig:measuredbeamslices} (middle panel). At larger delays, especially near the negative delay horizon limit, all three model delay spectra diverge due to the significant edge brightening which effectively discriminates between these models. The CST, HFSS, and Airy beams reach roughly -35\,dB, -38\,dB, and -50\,dB at the horizon (Figure \ref{fig:modelbeams}), consistent with the fact that the CST beam has the largest horizon brightening, followed by the HFSS beam, and then by the Airy beam. This is seen in the delay spectra for both baseline lengths, though the edge brightening is much clearer on the longer baseline where it less diluted by zero delay emission.  
+How much do the predicted foreground power spectra differ between the three model dish power patterns? Figure \ref{fig:delayspec} (middle panel) shows the simulated delay spectra for all three beams at $0^\circ$ LST, when the horizon brightening is worst. Both numerical models agree out to delays of roughly 20\,ns on the 14.6\,m baseline and 50\,ns on the 43.8\,m baseline. These numbers suggest that the beams track each other fairly well out to 25$^\circ$ from zenith, beyond which they diverge. This is roughly what is observed in Figure \ref{fig:measuredbeamslices} (middle panel). At larger delays, especially near the positive delay horizon limit, all three model delay spectra diverge due to the significant edge brightening which effectively discriminates between these models. The CST, HFSS, and Airy beams reach roughly -35\,dB, -38\,dB, and -50\,dB at the horizon (Figure \ref{fig:modelbeams}), consistent with the fact that the CST beam has the largest horizon brightening, followed by the HFSS beam, and then by the Airy beam. This is seen in the delay spectra for both baseline lengths, though the edge brightening is much clearer on the longer baseline where it less diluted by zero delay emission.  
 
-In contrast, all three model agree much more closely when there is little or no edge brightening as in Figure \ref{fig:measuredbeamslices} (bottom panel) where we plot the delay spectra for all three beams for 62$^\circ$ LST. There is still a modest flattening off near the horizon on the 14\,m baseline and a slight peak on the 42\,m baseline due to the large solid angle near the horizon. However as the near horizon emission at this LST is roughly the same temperature as emission from everywhere else on the sky, the difference between the three beam models is greatly reduced.
+In contrast, all three model agree much more closely when there is little or no edge brightening as in Figure \ref{fig:measuredbeamslices} (bottom panel) where we plot the delay spectra for all three beams for 60$^\circ$ LST. There is still a modest flattening off near the horizon on the 14.6\,m baseline and a slight peak on the 43.8\,m baseline due to the large solid angle near the horizon. However as the near horizon emission at this LST is roughly the same temperature as emission from everywhere else on the sky, the difference between the three beam models is greatly reduced.
 
 \section{Discussion}
 
@@ -518,7 +525,7 @@ We predict the magnitude of this effect for the HERA element as well as its depe
 
 % frequency dependence of the beam pattern and overall gain (due to reflections) likely dominates leakage deep within the window, but the other papers in this series demonstrate that this leakage level is within our spec
 
-As discussed by the other papers in this series, the frequency dependence of the beam power pattern and its overall gain widen the delay kernel of a source, leaking power into the EOR window. These papers demonstrate that in the best case, a combination of bandpass calibration and delay space CLEANing can mitigate foregrounds to a manageable level, while in the worst case, HERA can still achieve a XX--XX $\sigma$ detection of the EOR parameters from the power spectrum by simply excluding a very conservative buffer outside the wedge. All these considerations highlight the need for precision characterization of antenna elements and their implications for 21\,cm science analyses on the part of next generation observatories if we are to have any hope of detecting making this challenging measurement.
+As discussed by the other papers in this series, the frequency dependence of the beam power pattern and its overall gain widen the delay kernel of a source, leaking power into the EOR window. These papers demonstrate that in the best case, a combination of bandpass calibration and delay space CLEANing can mitigate foregrounds to a manageable level, while in the worst case, HERA can still achieve a XX--XX $\sigma$ detection of the EOR parameters from the power spectrum by simply excluding a very conservative buffer outside the wedge. All these considerations highlight the need for precision characterization of antenna elements and their implications for 21\,cm science analyses on the part of next generation observatories if we are to have any hope of making this challenging measurement.
 
 
 
