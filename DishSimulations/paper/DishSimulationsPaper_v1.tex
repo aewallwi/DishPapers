@@ -11,11 +11,11 @@ Ewall-Wice Aaron\altaffilmark{1,2},
 Richard Bradley\altaffilmark{3,4},
 Abraham Neben\altaffilmark{1,2},
 Nipanjana Patra\altaffilmark{5},
-Thyagarajan Nithyanandan\altaffilmark{6},
+Nithyanandan Thyagarajan \altaffilmark{6},
 Jacqueline Hewitt\altaffilmark{1,2},
-Ali S. Zaki\altaffilmark{5},
-Bowman Judd\altaffilmark{6},
-Cheng Carina\altaffilmark{5},
+Zaki S. Ali\altaffilmark{5},
+Judd Bowman\altaffilmark{6},
+Carina Cheng\altaffilmark{5},
 Deboer David\altaffilmark{5},
 Parsons Aaron\altaffilmark{5},
 Venter Mariet\altaffilmark{7}
@@ -176,6 +176,7 @@ We plot the delay transform of the voltage response of the dish in Figure~\ref{f
 
 \subsection{The Delay Response of Subbands}\label{ssec:Subbands}
 While we observe a long term falloff due to reflections between the feed and dish element, it is possible that these reflections are localized in frequency and do no effect certain sub-bands. To determine whether the reflections are localized in frequency, we compute the voltage delay response and power kernel for three different subbands: $100-130$\,MHz, $130-160$\,MHz, and $160-190$\,MHz. In order to maintain decent resolution of the kernel itself, we use frequency ranges are larger than the actual subbands that will be used for EoR power spectrum estimation $\sim 10$\,MHz which is set by the interval over which the statistics of the cosmological HI signal are expected to be stationary. We plot the delay transforms of the voltage gain in Fig.~\ref{fig:GainDelaySubbands} and the power kernels in Fig.~\ref{fig:KernelsSubbands}. The central lobe of the delay kernel is significantly wider due to the the wider window functions incurred by the reduced bandwidth, however, the shallow long-term falloff is only visible within the central $125-175$\,MHz band, indicating that long term reflections are isolated near $150$\,MHz and will not effect power spectrum measurements outside of the very center of our band.
+To further illustrate the observed isolation of fine frequency structure in the center of the bandpass, we fit the $10$\,MHz intervals of the absolute value of the simulated gains to a sixth order polynomial and compare the residuals in Fig.~\ref{fig:Residuals}. We find that the gain residuals on the sixth order fit are an order of magnitude greater over the $145-155$\,MHz subband than over any other frequency interval. 
 
 \begin{figure}[h!]
 \includegraphics[width=.5\textwidth]{figures/voltageResponseSubbands.pdf}
@@ -188,6 +189,14 @@ While we observe a long term falloff due to reflections between the feed and dis
 \caption{The power kernel for the three subbands discussed in in \S~\ref{ssec:Subbands} along with the kernel for the full bandwidth response function. While the long term falloff from reflections is prominent between $130-160$\,MHz, it appears at a much lower level in the other two subbands which fall below the central subband by $\sim 20$\,dB at $\sim 300$\,ns. $k_\parallel$ values for each delay are computed at $150$\,MHz. The wider central lobe below 150\,ns for the subband gains is an artifact of the delay resolution of a smaller bandwidth.}
 \label{fig:KernelsSubbands}
 \end{figure}
+
+
+\begin{figure*}
+\includegraphics[width=\textwidth]{figures/frequency_domain_residuals.pdf}
+\caption{Residuals on the absolute value of the gain over several subbands after fitting to a sixth order polynomial. Consistent with our findings in Fig.~\ref{fig:KernelsSubbands}, the fine frequency residuals in the 145-155\,MHz subband are over an order of magnitude greater than those in the other subbands.}
+\label{fig:Residuals}
+\end{figure*}
+
 
 \subsection{Extrapolating the Bandpass and Power Kernel}
 Our deconvolution gives us the time-domain voltage response of the PAPER and HERA antenna elements. We plot the absolute value of this response in Fig.~\ref{fig:SimulationsCompare}, seeing that it drops to $-30$\,dB after $\approx 100$\,ns. The power-kernel that convolves visibilities to higher delays is the convolution of $\widetilde{r}(\tau)$ with its time-reversed complex conjugate, which we plot as the red line. The convolution is in very good agreement with the voltage response itself which is explained by the fact that second order terms of the convolution, approximately given by $|\widetilde{r}(\tau)|^2$ (green line) are over two orders of magnitude smaller above $50$\,ns.
@@ -251,7 +260,7 @@ where $A_e$ is the effective area of the dish, $B$ is the bandwidth, $T_{sys}$ i
 
 To form estimates of the 21\,cm power spectrum, we split each visibility into BlackmanHarris windowed sub-bands centered at redshift intervals of $\Delta z = 0.5$ and each with an equivalent bandwidth of $10\,MHz$, corresponding to the redshift interval over which the statistics of the brightness temperature fluctuations are expected to be stationary. For each windowed interval, we use the flat sky approximation and  Fourier transform in frequency, square, and multiply by a set of prefactors to obtain a power spectrum estimate \citep{Parsons:2014},
 \begin{equation}\label{eq:PS}
-\widehat{P}({\bf k}) = \left( \frac{2 k_B}{\lambda^2} \right)^2 \frac{X^2 Y}{B \Omega_{pp}} | \widetilde{V}({\bf u}) |^2.
+\widehat{P}({\bf k}) = \left( \frac{2 k_B}{\lambda^2} \right)^2 \frac{X^2 Y}{B_{pp} \Omega_{pp}} | \widetilde{V}({\bf u}) |^2.
 \end{equation}
 Here, $\lambda$ is the central wavelength of the observation, $k_B$ is the Boltzmann constant, $B$ is the bandwidth of the Fourier transform, and $\Omega_{pp}$ is the integrated solid angle of the primary beam squared. $X$ is a linear factor converting between $uv$ wavelengths and $k_\perp$, and $Y$ is a linear factor converting between $k_\parallel$ and the Fourier dual to frequency, $\eta$. 
 
@@ -267,29 +276,35 @@ A drift scan instrument, HERA will be capable of observing the sky at any LST wi
 \end{figure}
 
 
-Computing the power spectra, we inspect the amplitude of foregrounds given the chromaticity and angular pattern of the HERA dish for several different baselines. We first inspect a $14.6$ meter baseline in Fig.~\ref{fig:shortBaseline} and find that foregrounds contaminate a significant fraction of modes outside of the horizon for many redshifts. Inspecting a longer 29.2 meter baseline in Fig.~\ref{fig:longBaseline}, we find that significant regions of the visibility are foreground free. In both baselines, we find that the residuals after cleaning tend to be at similar levels except at the subband centered at $z=8.5$ (150\,MHz), in which foreground residuals remain above the signal level out to $k_\parallel=0.3$\,$h$Mpc$^{-1}$. 
+Computing the power spectra, we inspect the amplitude of foregrounds given the chromaticity and angular pattern of the HERA dish for several different baselines. We first inspect a $14.6$ and $29.2$ meter baseline in Fig.~\ref{fig:BothBaselines} and find that significant regions of the visibility are foreground free. In both baselines, we find that the residuals after cleaning tend to be at similar levels except at the subband centered at $z=8.5$ (150\,MHz), in which foreground residuals remain above the signal level out to $k_\parallel=0.23$\,$h$Mpc$^{-1}$. Several other baselines especially those oriented entirely in the E-W direction, which we do not show, contain up to two orders of magnitude greater foreground contamination as is noted in \citep{Thyagarajan:2015b}. In a real power spectrum analysis, these baselines would be down-weighted or discarded so that they do not bias our final estimate. 
 
-To get a more global view of which baselines are significantly affected by foreground leakage, I we plot the median of the ratio between the 21\,cm power and foreground leakage between $k=0.15$\,$h$Mpc$^{-1}$ and $k=1.00$\,$h$Mpc$^{-1}$ for a subset of the short HERA baselines and plot them in Fig.~\ref{fig:Medians}. For all redshifts investigated, the majority of the $14.6$ meter baselines show significant contamination from diffuse foregrounds. Additionally, EW baselines contain a significant degree of foreground residuals as noted in \citet{Thyagarajan:2015a}. 
-
+The level of the foregrounds in Fig.~\ref{fig:BothBaselines} was derived with no attempt to apply inverse covariance weighting \citep{Parsons:2014,Ali:2015} or fringe rate filtering \citep{Parsons:2015}. In order to avoid biases in a maximum likelihood analysis that determines astrophysical and cosmological parameters from our power spectra, the foregrounds should ideally be below the anticipated level of thermal noise which is shown in \citep{Pober:2014} to be on the order of a few percent the anticipated level of the cosmological signal for the full HERA deployment. Hence, as long as we can suppress our foregrounds below 1-10\,\% the signal level, they should not interfere significantly with a maximum likelihood analysis. Thus, the residuals in Fig.~\ref{fig:BothBaselines} serve as a specification for any inverse covariance weighting pipeline which will need to suppress foregrounds by between a factor of $\sim 1-10$ to bring the worst contaminated regions below the level of the signal. Applications of inverse covariance filters in recent PAPER observations have yielded improvements at and above this level, hence our simulations show that even with the presence of beam chromaticity, HERA will be able to isolate foregrounds below below the level of thermal noise in most of the EoR window. 
 
 \begin{figure*}
-\includegraphics[width=\textwidth]{figures/ps_compare_nithya_lst4hr_1024ch_7p3ew_12p6ns.pdf}
-\caption{The power spectrum computed from the delay transform of a 14.6 meter baseline in equation~\ref{eq:PS} with (solid green line) and without (solid blue line) the presence of reflections in the HERA dish. The residuals after cleaning within the dashed black lines down to three times the level of thermal noise after 20 minutes of integration with (dashed cyan) and without (red dashed) the dish chromaticity are also plotted. We find that for this short baseline, clean residuals are on a similar level as the 21\,cm signal (solid black line), indicating that a redesign of the array with fewer short baselines may be necessary to maximize its sensitivity on foreground free modes.}
-\label{fig:shortBaseline}
+\includegraphics[width=\textwidth]{figures/ps_compare_nithya_bothBaselines.pdf}
+\caption{}
+\label{fig:BothBaselines}
 \end{figure*}
 
 
-\begin{figure*}
-\includegraphics[width=\textwidth]{figures/ps_compare_nithya_lst4hr_1024ch_14p6ew_25p3ns.pdf}
-\caption{The same as Fig.~\ref{fig:shortBaseline} except now for a 29.2 meter baseline. We see that the level of foregrounds is down relative to our 14.6 meter baseline by two orders of magnitude, likely due to the fact that we are now outside of the region with significant contamination from the Galaxy. The presence of reflections tends to extend the $k_\parallel$ at which foregrounds drop below the level of the signal between $k_\parallel=0.15$\,$h$Mpc$^{-1}$ and $k_\parallel=0.22$\,$h$Mpc$^{-1}$ with the most severe contamination occurring at the $z=8.5$ subband where the reflections where observed to be worst in Fig.~\ref{fig:KernelsSubbands}. }
-\label{figure:shortBaseline}
-\end{figure*}
+%\begin{figure*}
+%\includegraphics[width=\textwidth]{figures/ps_compare_nithya_lst4hr_1024ch_7p3ew_12p6ns.pdf}
+%\caption{The power spectrum computed from the delay transform of a 14.6 meter baseline in equation~\ref{eq:PS} with (solid green line) and without (solid blue line) the presence of reflections in the HERA dish. The residuals after cleaning within the dashed black lines down to three times the level of thermal noise after 20 minutes of integration with (dashed cyan) and without (red dashed) the dish chromaticity are also plotted. We find that for this short baseline, clean residuals are on a similar level as the 21\,cm signal (solid black line), indicating that a redesign of the array with fewer short baselines may be necessary to maximize its sensitivity on foreground free modes.}
+%\label{fig:shortBaseline}
+%\end{figure*}
 
-\begin{figure*}
-\includegraphics[width=\textwidth]{figures/ps_compare_nithya_lst4hr_snrVbaselineMedian.pdf}
-\caption{The median of the ratio between foreground residuals with the chromaticity of the HERA primary beam between $k_\parallel=0.15$\,$h$Mpc$^{-1}$ and $k_\parallel=1.0$\,$h$Mpc$^{-1}$, the range of k values over which HERA will derive the majority of its sensitivity. We see that the shortest baselines tend to have relatively low signal to foreground ratios due to the presence of high amplitude Galactic synchrotron emission.}
-\label{fig:Medians}
-\end{figure*}
+
+%\begin{figure*}
+%\includegraphics[width=\textwidth]{figures/ps_compare_nithya_lst4hr_1024ch_14p6ew_25p3ns.pdf}
+%\caption{The same as Fig.~\ref{fig:shortBaseline} except now for a 29.2 meter baseline. We see that the level of foregrounds is down relative to our 14.6 meter baseline by two orders of magnitude, likely due to the fact that we are now outside of the region with significant contamination from the Galaxy. The presence of reflections tends to extend the $k_\parallel$ at which foregrounds drop below the level of the signal between $k_\parallel=0.15$\,$h$Mpc$^{-1}$ and $k_\parallel=0.22$\,$h$Mpc$^{-1}$ with the most severe contamination occurring at the $z=8.5$ subband where the reflections where observed to be worst in Fig.~\ref{fig:KernelsSubbands}. }
+%\label{figure:shortBaseline}
+%\end{figure*}
+
+%\begin{figure*}
+%\includegraphics[width=\textwidth]{figures/ps_compare_nithya_lst4hr_snrVbaselineMedian.pdf}
+%\caption{The median of the ratio between foreground residuals with the chromaticity of the HERA primary beam between $k_\parallel=0.15$\,$h$Mpc$^{-1}$ and $k_\parallel=1.0$\,$h$Mpc$^{-1}$, the range of k values over which HERA will derive the majority of its sensitivity. We see that the shortest baselines tend to have relatively low signal to foreground ratios due to the presence of high amplitude Galactic synchrotron emission.}
+%\label{fig:Medians}
+%\end{figure*}
 
 \subsection{The Implications of Dish Reflections on EoR Science}
 The primary goal 21\,cm EoR observations is to obtain information about the nature of the sources that drove reionization. Since the amplitude of the 21\,cm signal is maximal at smaller $k$ values, a loss of large scale signal due to foreground leakage eliminates the the modes that HERA would otherwise have the greatest signal to noise detections, impacting our overall sensitivity and its ability to derive this information. In this section, we estimate the impact of foreground leakage on HERA's sensitivity along with its ability to determine the astrophysics of reionization. We do so using the Fisher Matrix formalism. The Fisher Matrix allows us to forecast the covariances and errors on reionization parameters given errors on power spectrum observations due to the uncertainties caused by thermal noise which is in turn determined by the $uv$ coverage and observing time of the interferometer. The covariance between the parameters of some model ${\bf \theta}$ is given by the inverse of the Fisher matrix, ${\bf F}$ which for Gaussian and independently determined power spectrum bins may be written approximately as \citep{Pober:2014,EwallWice:2015a},
@@ -310,25 +325,56 @@ What about $\sigma^2(k,z)$? $\sigma^2$ represents the noise on each 1 dimensiona
 
 
 \begin{figure}
-\includegraphics[width=.5\textwidth]{figures/sensitivity_comparison.pdf}
-\caption{Comparison between sensitivities with and without reflections.}
+\includegraphics[width=.5\textwidth]{figures/sensitivity_comparison_v2.pdf}
+\caption{A comparison between the sensitivity achieved by HERA at redshift $8.5$ with and without the presence of beam chromaticity due to the reflections studied in this work. We saw in Fig.~\ref{fig:BothBaselines} that with reflections, foregrounds exceed the signal level out to $k=0.2$\,$h$Mpc$^{-1}$ at $z=8.5$ which we assume are unusable, forcing us to ignore modes out to $350$\,ns beyond the horizon, leading to the sensitivity projected in the red curve. The absence of these reflections allows us to work within $250$\,ns of the horizon (green curve), leading to an increase in sensitivity by a factor of $\approx 1.5$. }
+\label{fig:Sensitivity}
 \end{figure}
-
 
 
 
 \begin{figure*}[h!]
-\includegraphics[width=\textwidth]{figures/sigmaVsZ_reionization.pdf}
-\caption{Fractional Errors on reionization and heating parameters as a function of maximal observed redshift.}
+\includegraphics[width=\textwidth]{figures/sigmaVsZ_reionization_v2.pdf}
+\caption{Fractional Errors on reionization and heating parameters as a function of maximal observed redshift out to the low end of HERA's initial observing band at $z=12$. The presence of strong reflections contained within a small subband at $z=8.5$ has a minimal impact on our overall constraints on reionization parameters. If these reflections are not localized they can lead to a factor of two loss in sensitivity to some parameters such as $T_\text{vir}^\text{min}$.}
+\label{fig:Errors}
 \end{figure*}
 
 \begin{figure}[h!]
-\includegraphics[width=.5\textwidth]{figures/reionization_triangle_compare_v1.pdf}
-\caption{95\% confidence regions with and without reflections assuming that observations are taken over the redshifts between 5 and 25 are observed.}
+\includegraphics[width=.5\textwidth]{figures/reionization_triangle_compare_v2.pdf}
+\caption{95\% confidence regions with and without reflections assuming that observations are taken over the redshifts between 7.5 and 10. The presence of the reflections leads to an increase in the major axes of these confidence regions by a factor of one to two.}
+\label{fig:Confidence}
 \end{figure}
 
 
+We have seen in Fig.~\ref{fig:BothBaselines} that the simulated chromaticity of the dish leaks foregrounds beyond the horizon to varying degrees depending on the subband with the worst leakage occuring at $z=8.5$ centered at 150\,MHz in which foregrounds exceed the signal out to $\sim 380$\,ns which for a $14.6$\,m baseline is $\approx 330$\,ns beyond the horizon. At all other redshifts, the leakage due to beam chromaticity only extends to $\approx 250$\,ns beyond the horizon. To determine the potential impact of our observed beam chromaticity on HERA's ability to constrain the astrophysics of reionization, we consider three different scenarios for beam chromaticity that capture a range of possibilities allowed by our simulation. 
+
+
+\begin{itemize}
+\item {\bf Optimistic: The observed reflections are an artifact of the simulation.} It is possible that the long term reflections observed in the center of our gain are artifacts of our modeling and that effects such as dissipative effects due to unmodeled non-idealities in the geometry of the disk will allow reflected radio waves to be better absorbed or escape into space, suppressing these reflections. In our most optimistic scenario, we assume their absence in which case the foregrounds pass below the level of the signal at $240$\,ns beyond the horizon at all redshifts between $z=7$ and $10$, consistent with what is observed in the bands where the dish chromaticity is less severe or when it is not present at all. We do not consider the possibility that optimal inverse covariance weighting of the foregrounds  may actually decrease the minimal delays accessible to below the $250$\,ns above the horizon observed in our simulations. Hence, this scenario is actually somewhat conservative and certainly more pessimistic than the ones considered in \citep{Pober:2014,Greig:2015a,EwallWice:2015b}. 
+ 
+\item {\bf Moderate: The Simulations accurately capture the chromaticity of the dish.} In this case, we assume that the reflections cause foregrounds to pass below the level of the signal at $250$\,ns except at redshift $8.5$ where they pass below the foregrounds at $350$\,ns. 
+
+
+\item {\bf Pessimistic: The reflections are present in all sub-bands.} In this scenario, we assume that the spectral structure observed in the neighborhood of $150$\,MHz is present throughout the entire $100$-$200$\,MHz frequency range covered by HERA. While more pessimistic than anything we actually observe in our simulations, this scenario serves as a reasonable upper bound.
+ 
+\end{itemize}
+In Fig.~\ref{fig:Sensitivity}, we compare the level of $1\sigma$ thermal noise for our optimistic and moderate scenarios at $z=8.5$ to the amplitude of the 21\,cm signal. While the level of thermal noise monotonically increases with $k$, there is a small upturn at the smallest $k$ values due to an increase in sample variance caused by the knee like maximum in the 21\,cm power spectrum at $k \approx 0.1$\,$h$Mpc$^{-1}$ and the shrinking number of measurements within each 1d $k$-bin. Despite this upturn, the smallest $k$ modes are still the highest signal to noise measurements that HERA is expected to obtain, leading to a reduction in the maximal signal to noise ratio of $\approx 1.5$ and a reduction in the number of modes that the instrument is able to measure. 
+
+Folding our calculations of thermal noise and the derivatives of $\Delta^2$ into equation~\ref{eq:Fisher} and inverting, we obtain the covariance matrix for model parameters from which we calculate $95\%$ confidence regions which we plot in Fig.~\ref{fig:Confidence}. The presence of reflections within a limited sub-band about $z=8.5$ leads to an almost neglible increase in the extent of our confidence intervals while the presence of the reflections across the entire band causes the length and width of our confidence ellipses to increase by a factor of $\approx 2$. The diagonal elements of our covariance gives us error bars on each parameter which we plot in Fig.~\ref{fig:Errors}. We see that similar to our confidence regions, the error bars on reionization parameters for our optimistic and moderate scenarios are nearly indestinguishable. In our worst case where reflections of a similar level as observed in the middle of our band are present everywhere, we see an increase in our error bars by a factor of $\approx 2$. 
+
+The error bars on reionization parameters, even for our most optismtic model, are a factor of a few larger than the ``moderate" errors predicted in previous works using the Fisher Matrix such as \citet{Pober:2014}, \citet{EwallWice:2015a}, and \citet{Liu:2015a,Liu:2015b}. There are several reasons for this. Firstly, in our most optimistic scenario, we assumed that foregrounds cause the signal to be inaccessible below $250$\,ns beyond the edge of the wedge while in all previous works, a comoving $k$ of $k_\text{min}=0.1$\,$h$Mpc$^{-1}$, rather than a delay was used. In particular, this delay corresponds to a comoving $k\approx0.15$\,$h$Mpc$^{-1}$ at $z=8.5$, in significant excess of the values used in previous works. However, we do not consider the potential for inverse covariance techniques to further isolate foregrounds and potentially allowing us to work closer to the wedge than a naive Fourier transform. Because of this, our work is significantly more conservative than previous estimates. Secondly, previous studies assumed a fully illuminated HERA aperture, which for a $14$\,m dish predicts and effective area of $\approx155$\,m$^2$ at $150$\,MHz. Electromagnetic simulations and mapping of the primary beam of the HERA dish described in \citep{Neben:2015c} indicate are in good agreement that the effective area of the antenna element is actually $\approx 98$\,m$^2$ at $150$\,MHz which leads to an increase in the overall thermal noise levels by a factor of $\approx 1.5$. 
+
 \section{Conclusions}
+In this paper, we have formally described the impact of instrumental chromaticity on foreground contamination of the 21\,cm signal. We have also used simulations of electromagnetic waves incident from zenith on the primary antenna element on HERA to determine the extent to which reflections and other frequency dependent structure might leak foregrounds into the EoR window. The results of our simulations of the zenith gain of the instrument are broadly consistent with data obtained using reflectometry described in \citep{Patra:2015} and can be summarized in the following points. 
+\begin{itemize}
+\item The 14-m dish and inverted dipole feed configuration introduces reflections and, as a result, spectral structure, that is in excess of that observed in the antenna design for HERA's predecessor, PAPER. The dish design is intended to greatly increase array collecting area over PAPER without significantly raising the number of correlated elements but we find that in doing so, some degree of spectral smoothness has been sacrificed. Because foreground filtering in delay space cannot distinguish between signal and foregrounds, any regions of $k$-space contaminated by these reflections are effectively unusable in a 21\,cm measurement unless they can be modeled to high fidelity and removed. 
+
+\item Fortunately, these reflections appear to be contained within the central $10$\,MHz of the HERA band, indicating a resonance that, in principle can be identified in the dish design and mitigated. It is also possible that the  non-ideal properties of an actual antenna will allow these reflections to escape the dish after a short time or be dissipated, rather than reflecting continually to long delays. Because estimates of the power spectrum are obtained from sub-intervals of $\approx10$\,MHz, the reflections that we have simulated will only impact a single redshift.
+
+\item Simulating the impact of these reflections on foreground leakage using the foreground model described in \citet{Thyagarajan:2015c}, we find that the beam chromaticity extends foregrounds above the level of the cosmological signal to $\approx 350$\,ns beyond the horizon while without the reflections, foregrounds extend above the signal to $\approx 250$\,ns beyond the horizon. These observations are pessimistic in that no attempt to inversely weight the foregrounds by their covaranciances has been attempted. 
+
+\item If the reflections are contained within a $10$\,MHz subband around $150$\,MHz, than the overall constraints that HERA will be able to place on the astrophysics of reionization are minimally impacted. If the reflections somehow contaminate the entire band, than our constraints on reionization parameters will suffer a factor of two increase in uncertainty but still remain on the order of $10$\%. 
+\end{itemize}
+
 \label{sec:Conclusion}
 \bibliographystyle{apj}
 \bibliography{DishSimulation_paper_v0}
