@@ -1,3 +1,12 @@
+From 01c8a7d (master):
+=====================
+
+(*) Update figures 1 and 2
+
+In ms.tex,
+
+(*) Change text in accordance with updated figures
+
 From d08e9d43 (master): 
 ======================
 
