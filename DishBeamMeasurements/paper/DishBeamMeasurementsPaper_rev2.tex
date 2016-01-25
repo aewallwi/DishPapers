@@ -99,7 +99,7 @@ Aaron Parsons\altaffilmark{4}}
 %% editorial office after submission.
 
 \begin{abstract}
-The Hydrogen Epoch of Reionization Array (HERA) is a radio interferometer aiming to detect the power spectrum of 21\,cm fluctuations from neutral Hydrogen from the Epoch of Reionization. Drawing on lessons from the Murchison Widefield Array (MWA) and the Precision Array for Probing the Epoch of Reionization (PAPER), HERA is a hexagonal array of large (14\,m) dishes with suspended dipole feeds designed to maximize sensitivity while economizing data volume. This is the first of a series of four papers characterizing the frequency and angular response of the HERA dish element with simulations and measurements. In this work we measure the angular response at 137\,MHz using the ORBCOMM beam mapping system of \citet{neben15}. We measure collecting areas of 70--100\,m$^2$ and predict power spectrum SNRs. With optimistic foreground and analysis assumptions, HERA-127 should detect the EOR with an SNR of 25--30 with a single season of observations. Even with more pessimistic assumptions, the significance of an EOR detection remains above $5\sigma$. Lastly we simulate foreground visibilities using numerical beam models and study the foreground distribution in Fourier space as a function of LST, and the uncertainties in these predictions due to beam modeling uncertainties. Future measurements will study the dish beam in the presence of adjacent dishes, quantifying levels of cross-talk and cross-coupling.
+The Hydrogen Epoch of Reionization Array (HERA) is a radio interferometer aiming to detect the power spectrum of 21\,cm fluctuations from neutral Hydrogen from the Epoch of Reionization. Drawing on lessons from the Murchison Widefield Array (MWA) and the Precision Array for Probing the Epoch of Reionization (PAPER), HERA is a hexagonal array of large (14\,m) dishes with suspended dipole feeds with element collecting area of 100\,m$^2$. This is the first of a series of four papers characterizing the frequency and angular response of the HERA dish element with simulations and measurements. In this work we measure the angular response at 137\,MHz using the ORBCOMM beam mapping system of \citet{neben15}. We measure collecting areas of 70--100\,m$^2$ and predict power spectrum SNRs. With optimistic foreground and analysis assumptions, HERA-127 should detect the EOR with a signal-to-noise of 25--30 with a single season of observations. Even pessimistically assuming that only previously demonstrated techniques are used, the significance of an EOR detection remains above $5\sigma$. Lastly we simulate foreground visibilities using numerical beam models and study the foreground distribution in Fourier space as a function of LST, and the uncertainties in these predictions due to beam modeling uncertainties.
 \end{abstract}
 
 \keywords{instrumentation: interferometers --- techniques: interferometric --- cosmology: observations --- dark ages, reionization, first stars}
@@ -120,7 +120,7 @@ The Hydrogen Epoch of Reionization Array (HERA) is a radio interferometer aiming
 A new generation of low frequency radio telescopes is coming online with the goal of
  probing redshifted 21\,cm emission from the Cosmic Dawn. These observations will 
  complement indirect probes of the Dark Ages and Epoch of Reionization such as quasar 
- sightlines, and the CMB optical depth which leave the reionization 
+ sightlines and the CMB optical depth which leave the reionization 
  history of the universe only loosely constrained. (See \citet{FurlanettoReview, miguelreview, PritchardLoebReview, aviBook, zaroubi} for reviews) Sensitivity and foreground removal are 
  the main challenges in 21\,cm observations, as the expected cosmological signal is 4--5 
  orders of magnitude fainter than Galactic and extragalactic foregrounds. Radio 
@@ -132,7 +132,7 @@ A new generation of low frequency radio telescopes is coming online with the goa
  inhomogenous reionizing universe.
 
 
-The Hydrogen Epoch of Reionization Array (HERA) \citep[][, deBoer et al., submitted]{PoberNextGen} is drawing on lessons learned by the MWA and PAPER to reach the calibration and foreground isolation accuracy required to make a significant detection and characterization of the cosmological signal. HERA uses 14\,m diameter parabolic dishes arranged in a compact, hexagonal array to achieve coherent integration on the very low surface brightness 21\,cm signal. Redundant baselines also permit redundant calibration techniques which solve for internal degrees of freedom with only of parameters which must be estimated from the sky \citep{zheng14}, circumventing the sky model based calibration schemes which non-redundant arrays must pursue. HERA is pursuing a staged deployment of 19, 127, and finally 331 elements in progressively larger hex patterns, with scattered outriggers for imaging. A central lesson of first generation instruments is it is essential to characterize the instrument response to foreground emission lest instrument frequency dependence smear foreground power into cosmological signal modes. 
+The Hydrogen Epoch of Reionization Array (HERA) \citep[][, deBoer et al., submitted]{PoberNextGen} is drawing on lessons learned by the MWA and PAPER to reach the calibration and foreground isolation accuracy required to make a significant detection and characterization of the cosmological signal. HERA uses 14\,m diameter parabolic dishes arranged in a compact, hexagonal array to achieve coherent integration on the very low surface brightness 21\,cm signal. Redundant baselines also permit redundant calibration techniques which solve for the relative calibration between all antennas \citep{zheng14}, and use a sky model only to set the frequency dependent flux scale. In contrast, non-redundant arrays are pursuing fully sky model-based calibration schemes which risk frequency-dependent calibration systematics due to sky modeling inaccuracy \citep{braun2013}. HERA is pursuing a staged deployment of 19, 127, and finally 331 elements in progressively larger hex patterns, with scattered outriggers for imaging. A central lesson of first generation instruments is it is essential to characterize the instrument response to foreground emission lest instrument frequency dependence smear foreground power into cosmological signal modes. 
 
 %%- but instrumental frequency structure has been recognized as critical
 %  => wedge
@@ -144,8 +144,8 @@ The Hydrogen Epoch of Reionization Array (HERA) \citep[][, deBoer et al., submit
 %    - this gives rise to the “wedge” in cylindrically averaged power
 %      spectra ($k_\perp$, $k_\parallel$)
 
-It was initially thought that the foreground emission would be confined to the lowest few 
-line of sight Fourier modes \citep[e.g.,][]{MoralesBowmanHewittFGsub}, however it was later realized that the  
+In an ideal achromatic instrument the foreground emission would be confined to the lowest few 
+line of sight Fourier modes \citep[e.g.,][]{MoralesBowmanHewittFGsub}, however  the  
 interferometer's frequency-dependent point spread function smears foreground power into a ``wedge'' shaped 
 region in  $(k_\perp,k_\parallel)$ Fourier space \citep{Dattapowerspec,X13, PoberWedge,MoralesPSShapes, VedanthamWedge, nithya13, CathWedge, AdrianWedge1, AdrianWedge2}. This effect is straightforward to understand for a single baseline which measures the sky intensity weighted by the complex sky fringe 
 $e^{i \vec{k}\cdot\vec{b}}$, where $\vec{k}=\vec{k}(\theta,\phi,f)$ is the wave vector of 

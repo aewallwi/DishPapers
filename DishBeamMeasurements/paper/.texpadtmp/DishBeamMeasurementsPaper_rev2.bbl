@@ -1,4 +1,4 @@
-\begin{thebibliography}{35}
+\begin{thebibliography}{36}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Ali} {et~al.}(2015{\natexlab{a}}){Ali}, {Parsons}, {Zheng}, {Pober},
@@ -23,6 +23,9 @@
   Subrahmanyan, Tingay, Wayth, Waterson, Webster, Whitney, Williams, Williams,
   \& Wyithe}]{mwascience}
 Bowman, J.~D., {et~al.} 2013, TrottObservingModes, 30
+
+\bibitem[{Braun(2013)}]{braun2013}
+Braun, R. 2013, Astronomy and Astrophysics, 551
 
 \bibitem[{{Datta} {et~al.}(2010){Datta}, {Bowman}, \&
   {Carilli}}]{Dattapowerspec}
