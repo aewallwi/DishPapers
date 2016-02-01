@@ -248,7 +248,7 @@ Our all-sky foreground model is the same as the one in \citet{thy15a}. It consis
 
 The equation for delay spectrum describes the mapping between sky location of a foreground object and delay. The chromatic nature (variation with frequency) of the antenna power pattern results in a convolution of the geometrical mapping with the delay response of spectral chromaticity of the power pattern. This can result in a significant spillover of foreground power beyond the horizon delay limits especially in the case of foregrounds near the horizon. 
 
-Fig.~\ref{fig:off-axis-beam-chromaticity} demonstrates the beyond-the-horizon spillover even from a flat-spectrum point source at different off-axis angles. The three panels correspond to delay spectra from different positions of the point source -- 0\arcdeg (left), 45\arcdeg (middle) and 89\arcdeg (right) -- from the zenith. The phase centers are located at the source positions and hence the delay spectra are centered on $\tau = 0$~ns. The response of the simulated dish power pattern (dashed line) is comapred with that from an {\it Airy} pattern resulting from a nominal uniformly illuminated circular disk (solid line). The gray vertical lines correspond to the horizon limits at $\pm 48.7$~ns for a 14.6~m antenna spacing.
+Fig.~\ref{fig:off-axis-beam-chromaticity} demonstrates the beyond-the-horizon spillover even from a flat-spectrum point source at different off-axis angles. The three panels correspond to delay spectra from different positions of the point source -- 0\arcdeg (left), 45\arcdeg (middle) and 89\arcdeg (right) -- from the zenith. The phase centers are located at the source positions and hence the delay spectra are centered on $\tau = 0$~ns. The response of the simulated dish power pattern (dashed line) is comapred with that from an {\it Airy} pattern resulting from a nominal uniformly illuminated circular disk (solid line). The gray vertical lines correspond to the horizon limits at $\pm 48.7$~ns for a 14.6~m antenna spacing. In all these cases, a {\it Blackman-Harris} window function has been applied along the spectral axis. 
 
 \begin{figure*}[htb]
 \centering
@@ -257,7 +257,7 @@ Fig.~\ref{fig:off-axis-beam-chromaticity} demonstrates the beyond-the-horizon sp
 \label{fig:off-axis-beam-chromaticity}
 \end{figure*}
 
-At 0\arcdeg off-axis, the {\it Airy} pattern has no spectral variation and thus appears as a straight vertical line centered at $\tau = 0$~ns whereas the simulated power pattern is found to exhibit some spectral variation giving rise to the wings on either side of $\tau = 0$~ns. As off-axis angle increases to 45\arcdeg, both the power patterns clearly exhibit chromaticity. They have similar magnitudes inside the horizon limits but the chromaticity of the simulated power pattern is $\sim 100$ times higher than that of an {\it Airy} pattern outside the horizon limits. In contrast, at 89\arcdeg off-axis, the two patterns have similar chromaticity in delay modes outside the horizon limits but the simulated power pattern has $\sim 100$ times more power inside the horizon limits indicating that the overall amplitude of the pattern at this location is higher relative to the nominal {\it Airy} pattern.
+At 0\arcdeg off-axis, the {\it Airy} pattern has no spectral variation except that introduced by the {\it Blackman-Harris} window function and thus reproduces its Fourier response centered at $\tau = 0$~ns whereas the simulated power pattern is found to exhibit some spectral variation giving rise to the wings on either side of $\tau = 0$~ns. As off-axis angle increases to 45\arcdeg, both the power patterns clearly exhibit chromaticity. The simulated pattern not only has a higher magnitude inside the horizon limits (by a factor $\sim 10$) but also exhibits higher chromaticity (by many orders of magnitude) in modes beyond the horizon relative to that of an {\it Airy} pattern. In contrast, at 89\arcdeg off-axis, not only does the simulated pattern have higher chromaticity in high delay modes but is also two orders of magnitude higher in amplitude inside the horizon limits relative to the nominal {\it Airy} pattern.
 
 It is important to note that in a generic scenario where visibilities are not phased to a specific foreground location, the chromaticity of the power pattern will imprint itself on location of the foreground objects in delay space and will give rise to significant spillover especially from foregrounds near the horizon. 
 
@@ -293,15 +293,22 @@ Now we consider the effect of chromaticity of the power pattern on the delay pow
 
 We simulate visibilities from our foreground model using three different models for the antenna power pattern -- {\it Airy} pattern, simulated dish, and a pattern at 150~MHz of the simulated dish assumed to be achromatic over the entire band. 
 
-Fig.~\ref{fig:asm-dps-beam-chromaticity} shows the delay power spectra of foregrounds obtained with the aforementioned models for power pattern. In all these panels, power spectra obtained with achromatic, {\it Airy} disk and simulated disk are shown in black, red, and blue respectively. The vertical gray lines denote the horizon limits for a 14.6~m antenna spacing. The full band delay power spectra of the foregrounds measured on a 14.6~m antenna spacing oriented eastward is shown in the top left panel. A clear trend of broadening of spillover-wings outside the horizon limits is seen with increasing chromaticity. For instance, the spillover from foreground delay power spectrum obtained with simulated dish pattern extends out to $k_\parallel \approx \pm 0.14\,h$~Mpc$^{-1}$, with the {\it Airy} pattern it extends out to $k_\parallel \approx \pm 0.08\,h$~Mpc$^{-1}$, while the achromatic beam extends it only out to $k_\parallel \approx \pm 0.05\,h$~Mpc$^{-1}$. Thus an increase in chromaticity extends the foreground spillover into higher $k_\parallel$-modes making them inaccessible for EoR H{\sc i} signal detection.
+Fig.~\ref{fig:asm-dps-beam-chromaticity-14.6m-baseline} shows the delay power spectra of foregrounds obtained with the aforementioned models for power pattern. In all these panels, power spectra obtained with achromatic, {\it Airy} disk and simulated disk are shown in black, red, and blue respectively. The vertical gray lines denote the horizon limits for a 14.6~m antenna spacing. The full band delay power spectra of the foregrounds measured on a 14.6~m antenna spacing oriented eastward is shown in the top left panel. A clear trend of broadening of spillover-wings outside the horizon limits is seen with increasing chromaticity. For instance, the spillover from foreground delay power spectrum obtained with simulated dish pattern extends out to $k_\parallel \approx \pm 0.14\,h$~Mpc$^{-1}$, with the {\it Airy} pattern it extends out to $k_\parallel \approx \pm 0.08\,h$~Mpc$^{-1}$, while the achromatic beam extends it only out to $k_\parallel \approx \pm 0.05\,h$~Mpc$^{-1}$. Thus an increase in chromaticity extends the foreground spillover into higher $k_\parallel$-modes making them inaccessible for EoR H{\sc i} signal detection.
 
 Following the foreground removal strategy, the top middle panel shows these foreground delay spectra deconvolved using the complex delay CLEAN algorithm \citep{tay99,par09,par12b}. The CLEAN window covers delay bins between the horizon delay limits and extends further by three delays bins on each side of the horizon limit where a delay bin is of size inverse of the bandwidth. The panel at the top right shows the residuals left behind after deconvolution. 
 
 \begin{figure*}[htb]
 \centering
-\includegraphics[width=\linewidth]{asm_beam_chromaticity_subband_150_MHz.eps}
-\caption{Effect of chromaticity of antenna power pattern on foreground delay power spectra. }
-\label{fig:asm-dps-beam-chromaticity}
+\includegraphics[width=\linewidth]{asm_beam_chromaticity_bl2_LST_3.96_hrs_subband_150.0_MHz.eps}
+\caption{Effect of chromaticity of antenna power pattern on foreground delay power spectra for a 14.6~m baseline.}
+\label{fig:asm-dps-beam-chromaticity-14.6m-baseline}
+\end{figure*}
+
+\begin{figure*}[htb]
+\centering
+\includegraphics[width=\linewidth]{asm_beam_chromaticity_bl8_LST_3.96_hrs_subband_150.0_MHz.eps}
+\caption{Effect of chromaticity of antenna power pattern on foreground delay power spectra for a 29.2~m baseline.}
+\label{fig:asm-dps-beam-chromaticity-29.2m-baseline}
 \end{figure*}
 
 Owing to the chromaticity of power patterns, the spillover from foregrounds extends beyond the horizon limits, most severely in the simulated disk pattern. As a result the residuals have significant power remaining on either side of the horizon limits since the window for deconvolution is narrower than the extent of spillover along $k_\parallel$. The two peaks on either side is most severe for the simulated disk pattern followed by that for the {\it Airy} disk pattern and least for an achromatic power pattern. 
