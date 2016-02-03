@@ -1,4 +1,4 @@
-\begin{thebibliography}{38}
+\begin{thebibliography}{42}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Ali} {et~al.}(2015{\natexlab{a}}){Ali}, {Parsons}, {Zheng}, {Pober},
@@ -13,6 +13,24 @@
   {Moore}, {Razavi}, {Stefan}, {Walbrugh}, \& {Walker}}]{ali2015}
 ---. 2015{\natexlab{b}}, ArXiv e-prints
 
+\bibitem[{{Asad} {et~al.}(2015){Asad}, {Koopmans}, {Jeli{\'c}}, {Pandey},
+  {Ghosh}, {Abdalla}, {Bernardi}, {Brentjens}, {de Bruyn}, {Bus}, {Ciardi},
+  {Chapman}, {Daiboo}, {Fernandez}, {Harker}, {Iliev}, {Jensen},
+  {Martinez-Rubi}, {Mellema}, {Mevius}, {Offringa}, {Patil}, {Schaye},
+  {Thomas}, {van der Tol}, {Vedantham}, {Yatawatta}, \& {Zaroubi}}]{asad2015}
+{Asad}, K.~M.~B., {et~al.} 2015, ArXiv e-prints
+
+\bibitem[{{Bernardi} {et~al.}(2013){Bernardi}, {Greenhill}, {Mitchell}, {Ord},
+  {Hazelton}, {Gaensler}, {de Oliveira-Costa}, {Morales}, {Udaya Shankar},
+  {Subrahmanyan}, {Wayth}, {Lenc}, {Williams}, {Arcus}, {Arora}, {Barnes},
+  {Bowman}, {Briggs}, {Bunton}, {Cappallo}, {Corey}, {Deshpande}, {deSouza},
+  {Emrich}, {Goeke}, {Herne}, {Hewitt}, {Johnston-Hollitt}, {Kaplan}, {Kasper},
+  {Kincaid}, {Koenig}, {Kratzenberg}, {Lonsdale}, {Lynch}, {McWhirter},
+  {Morgan}, {Oberoi}, {Pathikulangara}, {Prabu}, {Remillard}, {Rogers},
+  {Roshi}, {Salah}, {Sault}, {Srivani}, {Stevens}, {Tingay}, {Waterson},
+  {Webster}, {Whitney}, {Williams}, \& {Wyithe}}]{giannisurvey}
+{Bernardi}, G., {et~al.} 2013, \apj, 771, 105
+
 \bibitem[{Bowman {et~al.}(2013)Bowman, Cairns, Kaplan, Murphy, Oberoi,
   Staveley-Smith, Arcus, Barnes, Bernardi, Briggs, Brown, Bunton, Burgasser,
   Cappallo, Chatterjee, Corey, Coster, Deshpande, deSouza, Emrich, Erickson,
@@ -23,9 +41,6 @@
   Subrahmanyan, Tingay, Wayth, Waterson, Webster, Whitney, Williams, Williams,
   \& Wyithe}]{mwascience}
 Bowman, J.~D., {et~al.} 2013, TrottObservingModes, 30
-
-\bibitem[{Braun(2013)}]{braun2013}
-Braun, R. 2013, Astronomy and Astrophysics, 551
 
 \bibitem[{{Datta} {et~al.}(2010){Datta}, {Bowman}, \&
   {Carilli}}]{Dattapowerspec}
@@ -62,6 +77,12 @@ G\'{o}rski, K.~M., Hivon, E., Banday, A.~J., Wandelt, B.~D., Hansen, F.~K.,
   {Webster}, {Whitney}, {Williams}, \& {Williams}}]{MWACS}
 {Hurley-Walker}, N., {et~al.} 2014, PASA, 31, 45
 
+\bibitem[{Jeli\'{c} {et~al.}(2010)Jeli\'{c}, Zaroubi, Labropoulos, Bernardi,
+  de~Bruyn, \& Koopmans}]{jelic2010}
+Jeli\'{c}, V., Zaroubi, S., Labropoulos, P., Bernardi, G., de~Bruyn, A.~G., \&
+  Koopmans, L. V.~E. 2010, Monthly Notices of the Royal Astronomical Society,
+  409, 1647
+
 \bibitem[{{Liu} {et~al.}(2014{\natexlab{a}}){Liu}, {Parsons}, \&
   {Trott}}]{AdrianWedge1}
 {Liu}, A., {Parsons}, A.~R., \& {Trott}, C.~M. 2014{\natexlab{a}}, Phys. Rev.
@@ -83,6 +104,16 @@ G\'{o}rski, K.~M., Hivon, E., Banday, A.~J., Wandelt, B.~D., Hansen, F.~K.,
 \bibitem[{{Mesinger} {et~al.}(2011){Mesinger}, {Furlanetto}, \&
   {Cen}}]{21cmfast}
 {Mesinger}, A., {Furlanetto}, S., \& {Cen}, R. 2011, \mnras, 411, 955
+
+\bibitem[{{Moore} {et~al.}(2015){Moore}, {Aguirre}, {Parsons}, {Ali},
+  {Bradley}, {Carilli}, {DeBoer}, {Dexter}, {Gugliucci}, {Jacobs}, {Klima},
+  {Liu}, {MacMahon}, {Manley}, {Pober}, {Stefan}, \& {Walbrugh}}]{moore2015}
+{Moore}, D., {et~al.} 2015, ArXiv e-prints
+
+\bibitem[{Moore {et~al.}(2013)Moore, Aguirre, Parsons, Jacobs, \&
+  Pober}]{moore2013}
+Moore, D.~F., Aguirre, J.~E., Parsons, A.~R., Jacobs, D.~C., \& Pober, J.~C.
+  2013, The Astrophysical Journal, 769, 154
 
 \bibitem[{{Morales} {et~al.}(2006){Morales}, {Bowman}, \&
   {Hewitt}}]{MoralesBowmanHewittFGsub}
