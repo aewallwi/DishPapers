@@ -1,9 +1,17 @@
+From 2c71b8a (master):
+=====================
+
+In changelog.txt,
+
+(*) Update previous commit message to indicate updates to section 3
+instead of section 2
+
 From 5193a76 (master):
 =====================
 
 In ms.tex,
 
-(*) Update section 2
+(*) Update section 3
 
 From c14f775 (master):
 =====================
