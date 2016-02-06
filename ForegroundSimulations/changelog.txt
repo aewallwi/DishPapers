@@ -1,3 +1,10 @@
+From c14f775 (master):
+=====================
+
+In ms.tex,
+
+(*) Update Introduction section
+
 From 99b2e96 (master):
 =====================
 

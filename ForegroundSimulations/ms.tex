@@ -28,7 +28,7 @@
 %% \bibliographystyle{mn2e}
 %% \bibliographystyle{apj}
 
-\shorttitle{Characterization of Beam Chromaticity in EoR Power Spectra Measurements}
+\shorttitle{Effects of Beam Chromaticity in EoR Power Spectra Measurements}
 \shortauthors{Thyagarajan et~al.}
 
 \def\ASU{\altaffilmark{1}}
@@ -218,7 +218,11 @@ The redshifted neutral hydrogen from the IGM in this epoch has been identified t
 
 The most significant challenge to low frequency EoR observations arises from the extremely bright Galactic and extragalactic foreground synchrotron emission which are $\sim 10^4$ times stronger than the desired EoR signal \citep{dim02,ali08,ber09,ber10,gho12}. All the current and future instruments rely on the inherent differences in spatial isotropy and spectral smoothness between the EoR signal and the foregrounds to extract the EoR power spectrum \citep[see, e.g.,][]{fur04,mor04,zal04,san05,fur06,mcq06,mor06,wan06,gle08}. 
 
-When expressed in the coordinate system of power spectrum measurements described by the three-dimensional wavenumber ($k$), the foreground emission is restricted to a wedge-shaped region commonly referred to as the {\it foreground wedge} \citep{bow09,liu09,liu14a,liu14b,dat10,liu11,gho12,mor12,par12b,tro12,ved12,dil13,pob13,thy13,dil14} whereas the EoR signal has spherical symmetry due to its isotropy which appears elongated along line of sight $k$ modes due to peculiar velocity effects when dominated by matter density perturbations during early stages of reionization. The extreme dynamic range required to subtract foregrounds precisely demands high precision modeling of foregrounds as observed by modern wide-field instruments \citep{,thy15a,thy15b}. 
+When expressed in the coordinate system of power spectrum measurements described by the three-dimensional wavenumber ($k$), the foreground emission is restricted to a wedge-shaped region commonly referred to as the {\it foreground wedge} \citep{bow09,liu09,liu14a,liu14b,dat10,liu11,gho12,mor12,par12b,tro12,ved12,dil13,pob13,thy13,dil14} whereas the EoR signal has spherical symmetry due to its isotropy which appears elongated along line of sight $k$ modes due to peculiar velocity effects when dominated by matter density perturbations during early stages of reionization. 
+
+The extreme dynamic range required to subtract foregrounds precisely demands high precision modeling of foregrounds as observed by modern wide-field instruments \citep{thy15a,thy15b}. Their studies of effects of wide-field measurements of EoR power spectra have demonstrated the {\it pitchfork} effect wherein foreshortening of baselines causes a prominent enhancement of foreground power near the horizon limits of the {\it foreground wedge} as well in the contamination beyond. In this paper, we explore yet another phenomenon that inherently extends foreground power beyond the {\it wedge}, namely, that arising from the chromaticity of the antenna power pattern. % We specifically use the current design of 14~m dish of HERA as an example in our study.
+
+This paper is organized as follows. \S\ref{sec:HERA} introduces the HERA instrument. A brief summary of the delay spectrum technique used extensively in this analysis and the recently confirmed {\it pitchfork} effect are presented in \S\ref{sec:delay-spectrum}. \S\ref{sec:sim} describes foreground simulations including antenna beam pattern and all-sky foreground models. \S\ref{sec:beam-chromaticity} investigates the effects of chromaticity of antenna beam on the resulting delay power spectrum and the cosmologically motivated constraints it places on dish reflectometry. Our findings are summarized in \S\ref{sec:summary}.
 
 \section{The Hydrogen Epoch of Reionization Array}\label{sec:HERA}
 
@@ -244,7 +248,7 @@ We simulate wide-field visibilities for 19-element HERA from all-sky antenna pow
 
 Our all-sky foreground model is the same as the one in \citet{thy15a}. It consists of diffuse emission \citep{deo08} and point sources. The latter is obtained from a combination of the NRAO VLA Sky Survey \citep[NVSS;][]{con98} at 1.4~GHz and the Sydney University Molonglo Sky Survey \citep[SUMSS;][]{boc99,mau03} at 843~MHz with a mean spectral index of -0.83. The diffuse sky model has an angular resolution of 13\farcm 74.
 
-\section{Chromaticity of Power Pattern}
+\section{Chromaticity of Power Pattern}\label{sec:beam-chromaticity}
 
 The equation for delay spectrum describes the mapping between sky location of a foreground object and delay. The chromatic nature (variation with frequency) of the antenna power pattern results in a convolution of the geometrical mapping with the delay response of spectral chromaticity of the power pattern. This can result in a significant spillover of foreground power beyond the horizon delay limits especially in the case of foregrounds near the horizon. 
 
@@ -263,7 +267,7 @@ It is important to note that in a generic scenario where visibilities are not ph
 
 We investigate the effects of spectral chromaticity of the power pattern in more detail below.
 
-\subsection{Directional Chromaticity of Power Pattern}
+\subsection{Directional Chromaticity of Power Pattern}\label{sec:directional-chromaticity}
 
 We generalize the analysis above by computing the delay power spectrum of the power pattern along its spectral axis in every direction in an effort to study its performance as a function of angle on the sky. 
 \begin{align}
@@ -287,28 +291,49 @@ Also shown are the tracks (black dots) of point sources brighter than 50~Jy in t
 \label{fig:directional-beam-chromaticity}
 \end{figure*}
 
-\subsection{Effect on Delay Power Spectrum}
+\subsection{Effect on Delay Power Spectrum}\label{sec:chromaticity-delay-spectrum}
 
 Now we consider the effect of chromaticity of the power pattern on the delay power spectrum. 
 
 We simulate visibilities from our foreground model using three different models for the antenna power pattern -- {\it Airy} pattern, simulated dish, and a pattern at 150~MHz of the simulated dish assumed to be achromatic over the entire band. 
 
-Fig.~\ref{fig:asm-dps-beam-chromaticity-14.6m-baseline} shows the delay power spectra of foregrounds obtained with the aforementioned models for power pattern. In all these panels, power spectra obtained with achromatic, {\it Airy} disk and simulated disk are shown in black, red, and blue respectively. The vertical gray lines denote the horizon limits for a 14.6~m antenna spacing. The full band delay power spectra of the foregrounds measured on a 14.6~m antenna spacing oriented eastward is shown in the top left panel. A clear trend of broadening of spillover-wings outside the horizon limits is seen with increasing chromaticity. For instance, the spillover from foreground delay power spectrum obtained with simulated dish pattern extends out to $k_\parallel \approx \pm 0.14\,h$~Mpc$^{-1}$, with the {\it Airy} pattern it extends out to $k_\parallel \approx \pm 0.08\,h$~Mpc$^{-1}$, while the achromatic beam extends it only out to $k_\parallel \approx \pm 0.05\,h$~Mpc$^{-1}$. Thus an increase in chromaticity extends the foreground spillover into higher $k_\parallel$-modes making them inaccessible for EoR H{\sc i} signal detection.
+Fig.~\ref{fig:asm-dps-beam-chromaticity-baselines} shows the delay power spectra of foregrounds obtained with the aforementioned models for power pattern. In all these panels, power spectra obtained with achromatic, {\it Airy} disk and simulated disk are shown in black, red, and blue respectively. The vertical gray lines denote the horizon limits for a 14.6~m antenna spacing. The full band delay power spectra of the foregrounds measured on a 14.6~m antenna spacing oriented eastward is shown in the top left panel. A clear trend of broadening of spillover-wings outside the horizon limits is seen with increasing chromaticity. For instance, the spillover from foreground delay power spectrum obtained with simulated dish pattern extends out to $k_\parallel \approx \pm 0.14\,h$~Mpc$^{-1}$, with the {\it Airy} pattern it extends out to $k_\parallel \approx \pm 0.08\,h$~Mpc$^{-1}$, while the achromatic beam extends it only out to $k_\parallel \approx \pm 0.05\,h$~Mpc$^{-1}$. Thus an increase in chromaticity extends the foreground spillover into higher $k_\parallel$-modes making them inaccessible for EoR H{\sc i} signal detection.
 
 Following the foreground removal strategy, the top middle panel shows these foreground delay spectra deconvolved using the complex delay CLEAN algorithm \citep{tay99,par09,par12b}. The CLEAN window covers delay bins between the horizon delay limits and extends further by three delays bins on each side of the horizon limit where a delay bin is of size inverse of the bandwidth. The panel at the top right shows the residuals left behind after deconvolution. 
 
+% \begin{figure*}[htb]
+% \centering
+% \includegraphics[width=\linewidth]{asm_beam_chromaticity_bl2_LST_3.96_hrs_subband_150.0_MHz.eps}
+% \caption{Effect of chromaticity of antenna power pattern on foreground delay power spectra for a 14.6~m baseline.}
+% \label{fig:asm-dps-beam-chromaticity-14.6m-baseline}
+% \end{figure*}
+
+% \begin{figure*}[htb]
+% \centering
+% \includegraphics[width=\linewidth]{asm_beam_chromaticity_bl8_LST_3.96_hrs_subband_150.0_MHz.eps}
+% \caption{Effect of chromaticity of antenna power pattern on foreground delay power spectra for a 29.2~m baseline.}
+% \label{fig:asm-dps-beam-chromaticity-29.2m-baseline}
+% \end{figure*}
+
 \begin{figure*}[htb]
 \centering
-\includegraphics[width=\linewidth]{asm_beam_chromaticity_bl2_LST_3.96_hrs_subband_150.0_MHz.eps}
-\caption{Effect of chromaticity of antenna power pattern on foreground delay power spectra for a 14.6~m baseline.}
-\label{fig:asm-dps-beam-chromaticity-14.6m-baseline}
+\includegraphics[width=\linewidth]{asm_foreground_eor_beam_chromaticity_fullband.eps}
+\caption{Effect of chromaticity of antenna power pattern on foreground delay power spectra for different baselines.}
+\label{fig:asm-dps-beam-chromaticity-baselines}
 \end{figure*}
 
 \begin{figure*}[htb]
 \centering
-\includegraphics[width=\linewidth]{asm_beam_chromaticity_bl8_LST_3.96_hrs_subband_150.0_MHz.eps}
-\caption{Effect of chromaticity of antenna power pattern on foreground delay power spectra for a 29.2~m baseline.}
-\label{fig:asm-dps-beam-chromaticity-29.2m-baseline}
+\includegraphics[width=\linewidth]{sim_asm_foreground_eor_beam_chromaticity_150.0_MHz_subband.eps}
+\caption{Effect of chromaticity of antenna power pattern on foreground delay power spectra obtained from the 150~MHz subband for different baseline lengths.}
+\label{fig:asm-dps-beam-chromaticity-baselines-150-subband}
+\end{figure*}
+
+\begin{figure*}[htb]
+\centering
+\includegraphics[width=\linewidth]{sim_asm_foreground_eor_beam_chromaticity_170.0_MHz_subband.eps}
+\caption{Effect of chromaticity of antenna power pattern on foreground delay power spectra obtained from the 170~MHz subband for different baseline lengths.}
+\label{fig:asm-dps-beam-chromaticity-baselines-170-subband}
 \end{figure*}
 
 Owing to the chromaticity of power patterns, the spillover from foregrounds extends beyond the horizon limits, most severely in the simulated disk pattern. As a result the residuals have significant power remaining on either side of the horizon limits since the window for deconvolution is narrower than the extent of spillover along $k_\parallel$. The two peaks on either side is most severe for the simulated disk pattern followed by that for the {\it Airy} disk pattern and least for an achromatic power pattern. 
@@ -319,7 +344,7 @@ Following a delay-deconvolution based foreground removal strategy, we apply the 
 
 In both strategies, the EoR H{\sc i} signal power spectrum obtained by simulations with 21cmFAST (Mesinger et al. 2008) is shown for reference (dashed black lines) in the bottom panels. 
 
-\subsection{Constraints on Reflections between Antennas}
+\subsection{Constraints on Reflections between Antennas}\label{sec:reflectometry}
 
 Patra~et~al.~2015 (submitted) and Ewall-Wice~et~al.~2015 (submitted) discuss the measured and simulated reflections between a dish and its feed. We provide a related discussion by estimating the attenuation in power required to keep the foreground power reflected between adjacent antennas below the expected EoR H{\sc i} signal level for the different models of power patterns used in our study.
 
@@ -335,7 +360,7 @@ Fig.~\ref{fig:fg-reflections} shows $\Gamma_{k_\parallel}(\tau)$ (in dB) for sel
 
 \begin{figure*}[htb]
 \centering
-\includegraphics[width=\linewidth]{spec_on_foreground_reflected_power_21cmfast.eps}
+\includegraphics[width=\linewidth]{spec_on_foreground_reflected_power_21cmfast_14.6m_150.0_MHz_subband_v2.eps}
 \caption{Attenuation of foreground power (in dB) from antenna-to-antenna reflections required to keep the reflected foreground power below EoR H{\sc i} signal power.}
 \label{fig:fg-reflections}
 \end{figure*}
