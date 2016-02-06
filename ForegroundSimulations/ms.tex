@@ -230,7 +230,36 @@ DeBoer~et~al.(2016)
 
 \section{Delay Spectrum}\label{sec:delay-spectrum}
 
-\citep{par12b}
+A brief description of the delay spectrum technique \citep{par12a,par12b} is provided here. We borrow the notation used in \citet{thy15a}. 
+
+{\it Visibilities} measured by an interferometer are given by \citep{van34,zer38,tho01}:
+\begin{align}\label{eqn:obsvis}
+  V_b(f) &= \iint\limits_\textrm{sky} A(\hat{\boldsymbol{s}},f)\,I(\hat{\boldsymbol{s}},f)\,e^{-i2\pi f\frac{\boldsymbol{b}\cdot\hat{\boldsymbol{s}}}{c}}\,\dif\Omega,
+\end{align}
+where, $\boldsymbol{b}$ is the vector joining antenna pairs (commonly referred to as the baseline vector), $\hat{\boldsymbol{s}}$ is the unit vector denoting direction on the sky, $f$ denotes frequency, $c$ is the speed of light, $\dif\Omega$ is the solid angle element to which $\hat{\boldsymbol{s}}$ is the unit normal vector, $I(\hat{\boldsymbol{s}},f)$ and $A(\hat{\boldsymbol{s}},f)$ are the sky brightness and antenna's directional power pattern, respectively, as a function of $\hat{\boldsymbol{s}}$ and $f$. The {\it delay spectrum}, $\tilde{V}_b(\tau)$, is defined as the inverse Fourier transform of $V_b(f)$ along the frequency coordinate:
+\begin{align}\label{eqn:delay-transform}
+  \tilde{V}_b(\tau) &\equiv \int V_b(f)\,W(f)\,e^{i2\pi f\tau}\,\dif f,
+\end{align}
+where, $W(f)$ is a spectral weighting function which can be chosen to control the quality of the delay spectrum \citep{ved12,thy13}, and $\tau$ represents the signal delay between antenna pairs:
+\begin{equation}\label{eqn:delay}
+  \tau = \frac{\boldsymbol{b}\cdot\hat{\boldsymbol{s}}}{c}.
+\end{equation}
+
+The delay spectrum has a close resemblance to cosmological H~{\sc i} spatial power spectrum. Thus, the delay power spectrum is defined as:
+\begin{align}\label{eqn:delay-power-spectrum}
+  P_\textrm{d}(\boldsymbol{k}_\perp,k_\parallel) &\equiv |\tilde{V}_b(\tau)|^2\left(\frac{1}{\Omega\Delta B}\right)\left(\frac{D^2\Delta D}{\Delta B}\right)\left(\frac{\lambda^2}{2k_\textrm{B}}\right)^2,
+\end{align}
+with
+\begin{align}
+  \boldsymbol{k}_\perp &\equiv \frac{2\pi(\frac{\boldsymbol{b}}{\lambda})}{D}, \\
+  k_\parallel &\equiv \frac{2\pi\tau\,f_{21}H_0\,E(z)}{c(1+z)^2}, 
+\end{align}
+where, $\Delta B$ is the bandwidth, $\lambda$ is the wavelength of the band center, $k_\textrm{B}$ is the Boltzmann constant, $f_{21}$ is the rest frame frequency of the 21~cm spin flip transition of H~{\sc i}, $z$ is the redshift, $D\equiv D(z)$ is the transverse comoving distance, $\Delta D$ is the comoving depth along the line of sight corresponding to $\Delta B$, and $h$, $H_0$ and $E(z)\equiv [\Omega_\textrm{M}(1+z)^3+\Omega_\textrm{k}(1+z)^2+\Omega_\Lambda]^{1/2}$ are standard terms in cosmology, and following \citet{par14},
+\begin{align}
+  \Omega\Delta B &= \iint \left|A(\hat{\boldsymbol{s}},f)\,W(f)\right|^2\,\dif\Omega\,\dif f.
+\end{align}
+
+In this paper, we use $\Omega_\textrm{M}=0.27$, $\Omega_\Lambda=0.73$, $\Omega_\textrm{K}=1-\Omega_\textrm{M}-\Omega_\Lambda$, $H_0=100\,$km$\,$s$^{-1}\,$Mpc$^{-1}$, and $P_\textrm{d}(\boldsymbol{k}_\perp,k_\parallel)$ is in units of K$^2 (h^{-1}$~Mpc$)^3$.
 
 \subsection{The Wide-Field ``Pitchfork'' Effect}\label{sec:wide-field}
 

@@ -1,3 +1,10 @@
+From 5193a76 (master):
+=====================
+
+In ms.tex,
+
+(*) Update section 2
+
 From c14f775 (master):
 =====================
 
