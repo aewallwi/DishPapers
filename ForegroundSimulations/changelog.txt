@@ -1,3 +1,10 @@
+From b2391d0 (master):
+=====================
+
+In ms.tex,
+
+(*) Add description of antenna models in section 4.1
+
 From ace91c7 (master):
 =====================
 

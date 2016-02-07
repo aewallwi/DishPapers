@@ -271,13 +271,17 @@ In this paper, we investigate the spectral properties of the proposed dish desig
 
 We simulate wide-field visibilities for 19-element HERA from all-sky antenna power pattern and foreground models using the PRISim\footnote{The Precision Radio Interferometry Simulator (PRISim) is publicly available at \href{https://github.com/nithyanandan/PRISim}{https://github.com/nithyanandan/PRISim}} software package. The simulations cover 24~hr of observation in {\it drift} mode consisting of 80 accumulations spanning 1080~s each. The total bandwidth is 100~MHz centered on 150~MHz consisting of 256 channels with 390.625~kHz frequency resolution. Models of the antenna power pattern and foregrounds are described below.
 
-\subsection{Antenna Power Pattern}
+\subsection{Antenna Power Pattern}\label{sec:beam-model}
 
-\citep{neb15}
+The High Frequency Structural Simulator (HFSS) was used to model the dish and its angular response used in this study. The HFSS model used prime focus optics with a 14~m faceted parabola with a spar f/D ratio of 0.32.  The model has a 1~m central hole in the aluminum surface which is filled with a dielectric material similar to dry soil. The feed used a full PAPER dipole inside of a cylindrical backplane, the backplane is modeled as an aluminum surface. For the metal parts of the dipole, the discs were modeled as aluminum at the actual size, and the arms and terminals were modeled as copper. Dielectric stand-offs and supporting members were included. For the calculations, one pair of arms was excited using a modal port. These models cover a frequency range of 100--200~MHz in intervals of 1~MHz. Please refer to DeBoer~et~al.~(2016) for a complete description of the dish model. 
+
+For reference, we use two other models for the antenna power pattern. The first is a nominal {\it Airy} pattern corresponding to a uniformly illuminated circular aperture of 14~m diameter and the second is an achromatic model where the response of the design at 150~MHz of the HFSS model described above was fixed as the hypothetical response at all frequencies covering the entire band. This frequency independent model will be used to isolate the effects of spectral structures in the antenna power pattern (or beam chromaticity) on foreground delay power spectra.
+
+In a related series of papers, Neben et~al. (2016; submitted) discuss the agreement of these model antenna beam patterns with actual measurements and Ewall-Wice et~al. (2016; submitted) model the reflections and return loss expected in the proposed antenna-receiver assembly. Our focus in this paper is to investigate chromaticity of antenna power patterns from the point of view of their impact on foreground contamination in delay power spectra.
 
 \subsection{Foreground Model}\label{sec:foreground}
 
-Our all-sky foreground model is the same as the one in \citet{thy15a}. It consists of diffuse emission \citep{deo08} and point sources. The latter is obtained from a combination of the NRAO VLA Sky Survey \citep[NVSS;][]{con98} at 1.4~GHz and the Sydney University Molonglo Sky Survey \citep[SUMSS;][]{boc99,mau03} at 843~MHz with a mean spectral index of -0.83. The diffuse sky model has an angular resolution of 13\farcm 74.
+Our all-sky foreground model is the same as the one in \citet{thy15a}. It consists of diffuse emission \citep{deo08} and point sources. The latter is obtained from a combination of the NRAO VLA Sky Survey \citep[NVSS;][]{con98} at 1.4~GHz and the Sydney University Molonglo Sky Survey \citep[SUMSS;][]{boc99,mau03} at 843~MHz with a mean spectral index of -0.83. The diffuse sky model has an angular resolution of 13\farcm 74 and a spectral index estimated for every pixel.
 
 \section{Chromaticity of Power Pattern}\label{sec:beam-chromaticity}
 
