@@ -1,3 +1,10 @@
+From ace91c7 (master):
+=====================
+
+In ms.tex,
+
+(*) Add discussion about pitchfork effect in section 3
+
 From 2c71b8a (master):
 =====================
 
