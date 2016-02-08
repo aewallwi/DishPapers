@@ -10,7 +10,7 @@
 \newcommand{\vis}{{V}}
 \newcommand{\sky}{{\rm sky}}
 \newcommand{\bmvolt}{{a}}
-%\newcommand{\bm}{{A}}
+\newcommand{\beam}{{A}}
 \newcommand{\thhat}{{\hat\theta}}
 \newcommand{\fngexp}{{e^{\frac{2\pi i\nu\vec{b}\cdot\thhat}{c}}}}
 \newcommand{\ifngexp}{{e^{-\frac{2\pi i\nu\vec{b}\cdot\thhat}{c}}}}
@@ -202,23 +202,40 @@ feed in receiving mode is shown in blue. Due to impedance mismatch between feed 
 Consider again a two element interferometer as described in section 2. Two antennas are assumed to be exactly identical so that their electrical parameters and the field pattern are identical i.e, $a_{1}(\thhat,\nu) = a_{2}(\thhat,\nu)$. We denote the voltage reflection coefficient of each feed by $\Gamma_{f}$. The voltage reflection coefficient of the reflector dish is denoted by $\Gamma_{d}$. Upon first incidence of the sky signal onto the dish, it is reflected from the entire dish and is focussed onto the feed. Hence, for first incidence $\Gamma_{d}=1$. Sky signal that would return to the dish after successive reflections off the feed and the dish is reflected only from a small area around the vertex of the dish and therefore, $\Gamma_{d}<1$. In our analysis, we consider one reflection of the sky power from the feed and subsequent reflection off the dish as one single reflection. If the focal length of the dish is $l$, assuming the feed is located at the focus, the roundtrip delay after first reflection will be $\Delta \tau = {2l \over c}$. 
 
 
-\subsection{Effect of first order reflections on visibility and delay spectrum}
-Upon first incidence of the sky signal $\volt_{sky}$, $\Gamma_{f}$ fraction of the voltage is reflected off the feed while $(1-\Gamma_{f})$ fraction is coupled to the feed. The reflected voltage then further reflected off the dish and $(1-\Gamma_{f}) $ fraction of it reenters the feed with a roundtrip time delay $\Delta \tau$. Hence, the net voltage at the output of the two antennas could be written as,    
+\subsection{Visibility and delay spectrum computation considering multiple reflections}
+Upon first incidence of the sky signal $\volt_{sky}$, $\Gamma_{f}$ fraction of the voltage is reflected off the feed while $(1-\Gamma_{f})$ fraction is coupled to the feed. The reflected voltage then further reflected off the dish and $(1-\Gamma_{f}) $ fraction of it reenters the feed with a roundtrip time delay $\Delta \tau$. Hence, if $I_{sky}$ is reflected n times in between the feed and the dish, the net voltage entering the feed after an
+$n^{th}$ reflection off the feed and the dish is written as:
 \begin{eqnarray}
-\volt_{1} & = & a \volt_{sky}(1-\Gamma_{f}) + a \volt_{sky} \Gamma_{f} \Gamma_{d} \dfngexp  (1-\Gamma_{f})^{2}\nonumber\\
-         & = & a \volt_{sky} (1-\Gamma_{f}) \left [ 1+ (1-\Gamma_{a})\Gamma_{f} \Gamma_{d} e^{2\pi i\nu \Delta \tau} \right]\nonumber
+\volt_{1} & = &  a_{f} \volt_{sky}[1+ (1-\Gamma_{f})\Gamma_{f}\Gamma_{d} \dfngexp \nonumber \\
+	&& + (1-\Gamma_{f})^{2} (\Gamma_{f}\Gamma_{d})^2  (\dfngexp)^{2}+ \nonumber \\
+&&  ....+ (1-\Gamma_{f})^{n}(\Gamma_{f}\Gamma_{d})^{n} (\dfngexp)^{n}] \nonumber
 \end{eqnarray}
-\begin{eqnarray}
-\volt_{2} & = & \left [ a \volt_{sky}(1-\Gamma_{f}) + a \volt_{sky} \Gamma_{f} \Gamma_{d} \dfngexp (1-\Gamma_{f})^{2}\right ] \fngexp \nonumber\\
-         & = & a \volt_{sky} (1-\Gamma_{f}) \left [ 1+(1-\Gamma_{a}) \Gamma_{f} \Gamma_{d} \dfngexp  \right] \fngexp \nonumber
-\end{eqnarray}
-Frequency as well as angular dependence of the quantities are not written explicitly for notational simplicity. We also absorb the common gain term $(1-\Gamma_{f})$ with antenna field pattern $a$ and denote them as $a_{f}= a(1-\Gamma_{f})$ here after and define the antenna cross power pattern as $\bm_{f}(\thhat,\nu)=\bmvolt_{f}(\thhat,\nu)\bmvolt_{f}^{*}(\thhat,\nu)$ . Hence, the complex visibility could be, 
+and, 
 
 \begin{eqnarray}
-\vis(\vec b, \nu) & = & \int \volt_{1}\volt_{2}^{*} d\Omega \nonumber\\
-		        & = & \int \bm_{f} \volt_{sky}|^{2} |\left [ 1+(1-\Gamma_{f}) \Gamma_{f} \Gamma_{d} \dfngexp  \right]|^{2} \fngexp  d\Omega
-\label{eq4}		        
+\volt_{2} & = &  a_{f} \volt_{sky}[1+ (1-\Gamma_{f})\Gamma_{f}\Gamma_{d} \dfngexp \nonumber\\
+&&+ (1-\Gamma_{f})^{2} (\Gamma_{f}\Gamma_{d})^2  (\dfngexp)^{2}+ \nonumber \\
+&& ....+ (1-\Gamma_{f})^{n}(\Gamma_{f}\Gamma_{d})^{n} (\dfngexp)^{n}] \ast \fngexp \nonumber
 \end{eqnarray}
+
+
+
+
+%\begin{eqnarray}
+%\volt_{1} & = & a \volt_{sky}(1-\Gamma_{f}) + a \volt_{sky} \Gamma_{f} \Gamma_{d} \dfngexp  (1-\Gamma_{f})^{2}\nonumber\\
+   %      & = & a \volt_{sky} (1-\Gamma_{f}) \left [ 1+ (1-\Gamma_{a})\Gamma_{f} \Gamma_{d} e^{2\pi i\nu \Delta \tau} \right]\nonumber
+%\end{eqnarray}
+%\begin{eqnarray}
+%\volt_{2} & = & \left [ a \volt_{sky}(1-\Gamma_{f}) + a \volt_{sky} \Gamma_{f} \Gamma_{d} \dfngexp (1-\Gamma_{f})^{2}\right ] \fngexp \nonumber\\
+   %      & = & a \volt_{sky} (1-\Gamma_{f}) \left [ 1+(1-\Gamma_{a}) \Gamma_{f} \Gamma_{d} \dfngexp  \right] \fngexp \nonumber
+%\end{eqnarray}
+Frequency as well as angular dependence of the quantities are not written explicitly for notational simplicity. We also absorb the common gain term $(1-\Gamma_{f})$ with antenna field pattern $a$ and denote them as $a_{f}= a(1-\Gamma_{f})$ here after and define the antenna cross power pattern as $\beam_{f}(\thhat,\nu)=\bmvolt_{f}(\thhat,\nu)\bmvolt_{f}^{*}(\thhat,\nu)$ . Hence, the complex visibility could be, 
+
+%\begin{eqnarray}
+%\vis(\vec b, \nu) & = & \int \volt_{1}\volt_{2}^{*} d\Omega \nonumber\\
+%		        & = & \int \beam_{f} \volt_{sky}|^{2} |\left [ 1+(1-\Gamma_{f}) \Gamma_{f} \Gamma_{d} \dfngexp  \right]|^{2} \fngexp  d\Omega
+%\label{eq4}		        
+%\end{eqnarray}
 
 
  Furthermore, combining all the terms that contain instrument response we define a common instrument parameter, written as, 
@@ -238,19 +255,7 @@ Fourier transform of this visibility spectrum along the frequency axis results i
 
 \subsection{Effect of multiple reflections on the delay spectrum} 
 Correlation between the higher order reflections of the signal in any antenna with the direct component of the other would result in a delay response at integral multiple of $\Delta \tau$ and vice versa. 
-If $I_{sky}$ is reflected n times in between the feed and the dish, the net voltage entering the feed after an
-$n^{th}$ reflection off the feed and the dish is written as:
-\begin{eqnarray}
-\volt_{1} & = &  a_{f} \volt_{sky}[1+ (1-\Gamma_{f})\Gamma_{f}\Gamma_{d} \dfngexp + (1-\Gamma_{f})^{2} (\Gamma_{f}\Gamma_{d})^2  (\dfngexp)^{2}+ \nonumber \\
-&&  ....+ (1-\Gamma_{f})^{n}(\Gamma_{f}\Gamma_{d})^{n} (\dfngexp)^{n}] \nonumber
-\end{eqnarray}
-and, 
-
-\begin{eqnarray}
-\volt_{2} & = &  a_{f} \volt_{sky}[1+ (1-\Gamma_{f})\Gamma_{f}\Gamma_{d} \dfngexp + (1-\Gamma_{f})^{2} (\Gamma_{f}\Gamma_{d})^2  (\dfngexp)^{2}+ \nonumber \\
-&& ....+ (1-\Gamma_{f})^{n}(\Gamma_{f}\Gamma_{d})^{n} (\dfngexp)^{n}] \ast \fngexp \nonumber
-\end{eqnarray}
-
+-----
 The relevant terms in the corresponding visibility and subsequently in the delay spectrum would be the ones which represent the correlation between the direct component of one antenna with the reflected components of the other resulting in higher order terms  in $\Sigma(\vec b, \nu)$. The corresponding instrument response may be written as, 
 
 \begin{eqnarray}
