@@ -1,3 +1,10 @@
+From 200e790 (master):
+=====================
+
+In ms.tex,
+
+(*) Add subsection 4.3 introducing EoR models
+
 From 70d2a40 (master):
 =====================
 
