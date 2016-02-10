@@ -1,3 +1,63 @@
+From 200e790 (master):
+=====================
+
+In ms.tex,
+
+(*) Add subsection 4.3 introducing EoR models
+
+From 70d2a40 (master):
+=====================
+
+(*) Add subband data files in .npz format to git repo for handoff to
+Berkeley
+
+From 6e413b4 (master):
+=====================
+
+In ms.tex,
+
+(*) Update sections 5, 5.1 and 5.2
+
+In eor.bib,
+
+(*) add citation to Ali et al. (2015)
+
+From b2391d0 (master):
+=====================
+
+In ms.tex,
+
+(*) Add description of antenna models in section 4.1
+
+From ace91c7 (master):
+=====================
+
+In ms.tex,
+
+(*) Add discussion about pitchfork effect in section 3
+
+From 2c71b8a (master):
+=====================
+
+In changelog.txt,
+
+(*) Update previous commit message to indicate updates to section 3
+instead of section 2
+
+From 5193a76 (master):
+=====================
+
+In ms.tex,
+
+(*) Update section 3
+
+From c14f775 (master):
+=====================
+
+In ms.tex,
+
+(*) Update Introduction section
+
 From 99b2e96 (master):
 =====================
 
