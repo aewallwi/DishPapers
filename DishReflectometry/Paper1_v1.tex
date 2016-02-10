@@ -229,7 +229,7 @@ and,
 %\volt_{2} & = & \left [ a \volt_{sky}(1-\Gamma_{f}) + a \volt_{sky} \Gamma_{f} \Gamma_{d} \dfngexp (1-\Gamma_{f})^{2}\right ] \fngexp \nonumber\\
    %      & = & a \volt_{sky} (1-\Gamma_{f}) \left [ 1+(1-\Gamma_{a}) \Gamma_{f} \Gamma_{d} \dfngexp  \right] \fngexp \nonumber
 %\end{eqnarray}
-Frequency as well as angular dependence of the quantities are not written explicitly for notational simplicity. We also absorb the common gain term $(1-\Gamma_{f})$ with antenna field pattern $a$ and denote them as $a_{f}= a(1-\Gamma_{f})$ here after and define the antenna cross power pattern as $\beam_{f}(\thhat,\nu)=\bmvolt_{f}(\thhat,\nu)\bmvolt_{f}^{*}(\thhat,\nu)$ . Hence, the complex visibility could be, 
+Frequency as well as angular dependence of the quantities are not written explicitly for notational simplicity. We also absorb the common gain term $(1-\Gamma_{f})$ with antenna field pattern $a$ and denote them as $a_{f}= a(1-\Gamma_{f})$ here after and define the antenna cross power pattern as $\beam_{f}(\thhat,\nu)=\bmvolt_{f}(\thhat,\nu)\bmvolt_{f}^{*}(\thhat,\nu)$ . 
 
 %\begin{eqnarray}
 %\vis(\vec b, \nu) & = & \int \volt_{1}\volt_{2}^{*} d\Omega \nonumber\\
@@ -239,41 +239,39 @@ Frequency as well as angular dependence of the quantities are not written explic
 
 
  Furthermore, combining all the terms that contain instrument response we define a common instrument parameter, written as, 
-\begin{eqnarray}
-\Sigma(\vec b, \nu) & = & \bm_{f} |\left [ 1+ (1-\Gamma_{f}) \Gamma_{f} \Gamma_{d} e^{2\pi i\nu \Delta \tau} \right]|^{2}\nonumber\\
- 	    & = &  \bm_{f}  \left[ 1+ |(1-\Gamma_{f})|^{2}|\Gamma_{f}|^{2}|\Gamma_{d}|^{2} + 2 \Re \left ( (1-\Gamma_{f})\Gamma_{f}\Gamma_{d} \dfngexp \right) \right] 
-\label{eq{5}}	    
-\end{eqnarray} 
-
-Instrumental response function acquires additional terms arising due to correlation between the directed and reflected component of the sky signal. The total visibility at any frequency would be the sum of the three visibilities contributed by three sources of correlated power. First term in the square bracket represents the cross correlation between the two antenna outputs contributed by the sky signal upon first direct incidence. The second term results from the cross correlation between two reflected signals in each antenna.The last term represents the cross correlation between the first direct incident signal of one antenna and the first reflected signal from the other antenna and vice versa.
-
-Fourier transform of this visibility spectrum along the frequency axis results in the delay spectrum. 
- Fourier transform of the visibility contributed by any two voltage components from two antennas with no mutual delay will be located at the same delay $\tau$ in the Fourier domain whereas any two voltage components from two antennas components having a mutual delay of $\Delta \tau$ will be centred at $\tau+\Delta \tau$. This additional delay extends the upper limit on the maximum geometric delay $\tau_{g}$ to $(\tau_{g}+\Delta \tau)$.
- Thus, the correlation between the reflected signal  from the feed and subsequently from the dish with the direct signal extends the foreground response to delays beyond the maximum geometric delay for a given baseline and contaminates the delay mode where 21~cm delay spectrum could potentially be detected. 
  
- %If the dish vertex is so constructed such that the reflection from the dish vertex is negligible i.e, $\Gamma_{d}<<1\ or = 0$ then the second and the third term of the $\Sigma$ vanish. Also, the second term in the expression of $\Sigma(\vec b, \nu)$ is negligible compared to the first and the third term of the expression and, therefore, can be neglected. \\
-
-\subsection{Effect of multiple reflections on the delay spectrum} 
-Correlation between the higher order reflections of the signal in any antenna with the direct component of the other would result in a delay response at integral multiple of $\Delta \tau$ and vice versa. 
------
-The relevant terms in the corresponding visibility and subsequently in the delay spectrum would be the ones which represent the correlation between the direct component of one antenna with the reflected components of the other resulting in higher order terms  in $\Sigma(\vec b, \nu)$. The corresponding instrument response may be written as, 
-
-\begin{eqnarray}
-\Sigma(\vec b, \nu) & = & a_{f}  [ 1+ 2 \Re [(1-\Gamma_{f}) \Gamma_{f}\Gamma_{d} \dfngexp+ (1-\Gamma_{f})^{2}(\Gamma_{f}\Gamma_{d})^2(\dfngexp)^{2}+ \nonumber\\
+ 
+ \begin{eqnarray}
+\Sigma(\vec b, \nu) & = & a_{f}  [ 1+ 2 \Re [(1-\Gamma_{f}) \Gamma_{f}\Gamma_{d} \dfngexp \nonumber\\
+&& + (1-\Gamma_{f})^{2}(\Gamma_{f}\Gamma_{d})^2(\dfngexp)^{2}+ \nonumber\\
 &&  ....+(1-\Gamma_{f})^{n} (\Gamma_{f}\Gamma_{d})^{n}(\dfngexp)^{n} ] ]\\
 & = & { a_{f}\over \Gamma_{f} } \displaystyle\sum\limits_{n=1}^{n} [\Gamma_{f}\Gamma_{d}e^{i\phi}]^{n}
    \nonumber\\
    \label{eq6}
 \end{eqnarray}
+ 
+ 
+ 
+%\begin{eqnarray}
+%\Sigma(\vec b, \nu) & = & \bm_{f} |\left [ 1+ (1-\Gamma_{f}) \Gamma_{f} \Gamma_{d} e^{2\pi i\nu \Delta \tau} \right]|^{2}\nonumber\\
+ %	    & = &  \bm_{f}  \left[ 1+ |(1-\Gamma_{f})|^{2}|\Gamma_{f}|^{2}|\Gamma_{d}|^{2} + 2 \Re \left ( (1-\Gamma_{f})\Gamma_{f}\Gamma_{d} \dfngexp \right) \right] 
+%\label{eq{5}}	    
+%\end{eqnarray} 
 
-and the measured visibility spectrum would be, 
+Instrumental response function acquires additional terms arising due to correlation between the direct and reflected component of the sky signal. Fourier transform of this visibility spectrum along the frequency axis results in the delay spectrum. 
+Fourier transform of the visibility contributed by any two voltage components from two antennas with no mutual delay will be located at the same delay $\tau = 0$ in the Fourier domain whereas any two voltage components from two antennas components having a mutual delay of $\Delta \tau$ will be centred at $\tau+\Delta \tau$. This additional delay extends the upper limit on the maximum geometric delay $\tau_{g}$ to $(\tau_{g}+\Delta \tau)$.
+ Thus, the correlation between the reflected signal  from the feed and subsequently from the dish with the direct signal extends the foreground response to delays beyond the maximum geometric delay for a given baseline and contaminates the delay mode where 21~cm delay spectrum could potentially be detected. 
+ 
+ %If the dish vertex is so constructed such that the reflection from the dish vertex is negligible i.e, $\Gamma_{d}<<1\ or = 0$ then the second and the third term of the $\Sigma$ vanish. Also, the second term in the expression of $\Sigma(\vec b, \nu)$ is negligible compared to the first and the third term of the expression and, therefore, can be neglected. \\
+%===================================
+
+The respective visibility as well as the dealy spectrum would be, 
 \begin{equation}\label{eqn:series1}
 \vis(\vec b, \nu)  = \int I_{sky}(\vec b, \nu)\Sigma(\vec b, \nu) \fngexp d\Omega
 \end{equation}
-Taking the Fourier transform of the visibility we obtain the delay spectrum
 \begin{eqnarray}
-\tilde V(\vec b, \tau) & = & \int \left [ \int I_{sky}(\vec b, \nu)\Sigma(\vec b, \nu) \fngexp  d\Omega \right ]  e^{-2\pi i\nu\tau} d\nu \nonumber \\
-  			      & = & \int \left [ I_{sky}(\thhat, \nu) \ast \Sigma(\thhat, \nu) \ast \delta( \tau - \frac{{\vec {b} \cdot \thhat}}{c} )  \right] d\Omega
+%\tilde V(\vec b, \tau) & = & \int \left [ \int I_{sky}(\vec b, \nu)\Sigma(\vec b, \nu) \fngexp  d\Omega \right ]  e^{-2\pi i\nu\tau} d\nu \nonumber \\
+\tilde V(\vec b, \tau) & = & \int \left [ I_{sky}(\thhat, \nu) \ast \Sigma(\thhat, \nu) \ast \delta( \tau - \frac{{\vec {b} \cdot \thhat}}{c} )  \right] d\Omega
 \label{eq7}
 \end{eqnarray}
 
@@ -287,7 +285,7 @@ foreground signals, which is estimated to be six orders of magnitude fainter
 \citep{santos_et_al2005,ali_et_al2008,deoliveira2008,jelic_et_al2008,bernardi_et_al2009,bernardi_et_al2010,ghosh_et_al2011}. Additionally, the $14m$ HERA baselines set a foreground containing
 horizon-limit (the wedge) that, with some buffer, sets a delay specification of
 $60ns$
-\citep{parsons_et_al2012b,vedantham_et_al2012,nithya_et_al2013,liu_et_al2014a,liu_et_al2014b}. Our goal is to determine the effect of the instrument response $\Sigma(\nu)$ on the delay spectrum measurement. 
+\citep{parsons_et_al2012b,vedantham_et_al2012,nithya_et_al2013,liu_et_al2014a,liu_et_al2014b}. Our goal is to measure the instrument response $\Sigma(\nu)$ and its effect on the power spectrum measurements. 
 %%%%%%%%%%%%%%%
 \section{Measurements}
 We carried out reflectometry measurements at the HERA element prototype in Green
