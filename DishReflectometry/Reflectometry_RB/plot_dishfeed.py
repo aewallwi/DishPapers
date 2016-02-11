@@ -26,18 +26,20 @@ def load_rb_data(filename):
 def dly_coeff_transform(fq, dish_volt, feed_volt):
     window = ap.dsp.gen_window(fq.size, 'blackman-harris')
     tau = np.fft.fftfreq(fq.size, fq[1]-fq[0])
-    refl_coeff = np.abs(feed_volt)**2
-    tran_coeff = 1 - refl_coeff
-    coeff = refl_coeff / tran_coeff
-    _dw = np.fft.ifft(window * np.abs(dish_volt)**2 * coeff) / window.mean() # compensate for window amplitude
+    #refl_coeff = np.abs(feed_volt)**2
+    #tran_coeff = 1 - refl_coeff
+    #coeff = refl_coeff / tran_coeff
+    #_dw = np.fft.ifft(window * np.abs(dish_volt)**2 * coeff) / window.mean() # compensate for window amplitude
+    dish_refl = (dish_volt - feed_volt) / (1 - feed_volt) 
+    _dw = np.fft.ifft(window * np.abs((1-feed_volt) + feed_volt*dish_refl)**2) / window.mean() # compensate for window amplitude
     return np.fft.fftshift(tau), np.fft.fftshift(_dw)
 
-def dly_transform(fq, d_volt):
+def dly_transform(fq, d_volt): # XXX deprecated
     window = ap.dsp.gen_window(fq.size, 'blackman-harris')
     tau = np.fft.fftfreq(fq.size, fq[1]-fq[0])
     _d = np.fft.ifft(np.abs(d_volt)**2)
     _dw = np.fft.ifft(window * np.abs(d_volt)**2) / window.mean() # compensate for window amplitude
-    if True: # approx account for 1st reflection of sky signal off of feed
+    if False: # approx account for 1st reflection of sky signal off of feed
         _dw *= np.abs(_d[0])
     return np.fft.fftshift(tau), np.fft.fftshift(_dw)
 
@@ -53,14 +55,22 @@ fq,feed = load_rb_data('FeedOnly/DATA02.d1')
 fq,paper = load_rb_data('PAPER/DATA03.d1')
 fq,balun = load_rb_data('PAPER/DATA02.d1')
 tau,_dish = dly_coeff_transform(fq, dish, feed)
+tau,_dish2 = dly_coeff_transform(fq, dish, paper)
+tau,_dish3 = dly_transform(fq, dish)
 #tau,_paper = dly_transform(fq, paper)
 tau,_paper = dly_coeff_transform(fq, paper, feed)
-tau,_balun = dly_transform(fq, balun)
+tau,_paper2 = dly_coeff_transform(fq, paper, paper)
+tau,_paper3 = dly_transform(fq, paper)
+#tau,_balun = dly_transform(fq, balun)
 fig = plt.figure(figsize=(6,5))
 fig.subplots_adjust(left=.15, top=.95, bottom=.15, right=.95)
 plt.plot(tau, 10*np.log10(np.abs(_dish)), label='HERA reflect')
+plt.plot(tau, 10*np.log10(np.abs(_dish2)), label='HERA2 reflect')
+plt.plot(tau, 10*np.log10(np.abs(_dish3)), label='HERA3 reflect')
 plt.plot(tau, 10*np.log10(np.abs(_paper)), label='PAPER reflect')
-plt.plot(tau[800:805], 10*np.log10(np.abs(_balun[800:805])), label='Received')
+plt.plot(tau, 10*np.log10(np.abs(_paper2)), label='PAPER2 reflect')
+plt.plot(tau, 10*np.log10(np.abs(_paper3)), label='PAPER3 reflect')
+#plt.plot(tau[800:805], 10*np.log10(np.abs(_balun[800:805])), label='Received')
 plt.ylim(-65,0)
 plt.xlim(0,500)
 plt.ylabel('Power [dB]')
