@@ -5,8 +5,10 @@ import sys, optparse, capo
 o = optparse.OptionParser()
 opts,args = o.parse_args(sys.argv[1:])
 
+#window function to apply to data (in quad est) if necessary
 WINDOW='none'
 PLOT=True
+HALF=True
 
 
 def cov(m):
@@ -19,17 +21,21 @@ def cov(m):
     return (n.dot(X, X.T.conj()) / fact).squeeze()
 
 def get_Q(mode, n_k):
+    '''Gets the Q matrix in the quadratic estimator formalism. 
+       See Ali et. al. eq.12'''
     _m = n.zeros((n_k,), dtype=n.complex)
     _m[mode] = 1.
     m = n.fft.fft(n.fft.ifftshift(_m)) * a.dsp.gen_window(nchan, WINDOW)
     Q = n.einsum('i,j', m, m.conj())
     return Q
 
-def read_npz(f):
+def read_npz(f, half=HALF):
     '''Return dictionary with keys [bl][cent] = vis'''
-    data = {}
-    subdata = {}
-    datawind = {}
+    data = {} # full visibility data (all chans)
+    subdata = {} #a subset of the channels corresponding to the windowed channels but no window applied.
+    datawind = {} #windowed data with blackman harris. Subset of chans
+    wfreqs = {}
+    hfreqs = {}
     npz = n.load(f)
     bls = npz['bl'] #30X3, 20 bls by x,y,z
     freq = npz['freq'] #256, in hz
@@ -45,13 +51,21 @@ def read_npz(f):
         data[i]=  vis[i,:,:]
         for k,midch in enumerate(subcent):
             mask = n.where(fwgts[k]>0.0)
-            subdata[i][midch] = bandvis[i,k,mask,:]
-            datawind[i][midch] = vis[i,mask,:]
-    return data, datawind, subdata, lst, freq, bls, fwgts
+            wfreqs[midch] = mask
+            datawind[i][midch] = bandvis[i,k,mask,:]
+            if half:
+                #half the bandwidth for subdata
+                nchan = len(mask[0])
+                mask=mask[0][nchan-nchan/2-1:nchan+nchan/2]
+                hfreqs[midch] = mask
+                subdata[i][midch] = vis[i,mask,:]
+            else:
+                subdata[i][midch] = vis[i,mask,:]
 
-def delay_filter(data, bl, nchan, sdf):
-    bin_dly = 1./(nchan*sdf)
-#    return bls, freq, lst, subcent, fwgts, vis, bandvis
+    return data, datawind, subdata, lst, freq, bls, fwgts, wfreqs, hfreqs
+
+def etas(freqs):
+    return n.fft.fftshift(capo.pspec.f2eta(freqs))
 
 #!!!!need to figure out normalization!!!!
 
@@ -64,8 +78,14 @@ files = args
 #'skyvis_freq' (size 30x256x80) Full band visibilities (in Jy) on all baselines, frequencies and LST
 #'subband_skyvis_freq' (size 30x3x256x80) subband visibilities (in Jy) on all baselines, subbands, frequencies, and LST
 
+#scalars to convert to K. (l^2/2kb)^2 * X^2Y/(omega*B) for each frequency window
+scalardict = { 'achr': n.array([6.42416224e-09, 4.62634957e-09, 3.39232286e-09]),
+               'chrm': n.array([6.40467344e-09, 4.57932240e-09, 3.87532971e-09]),
+               'func': n.array([9.84182143e-09, 8.11682276e-09, 6.73087936e-09]) }
+
 tmp = n.load(files[0])
 nchan = len(tmp['freq'][tmp['freq_wts'][0]>0]) #take windowed frequencies.
+if WINDOW=='none': nchan = nchan/2 + 1 #make it an odd number
 nbls = len(tmp['bl']) #number of baselines
 #get Q matrix
 Q = [get_Q(i, nchan) for i in xrange(nchan)]
@@ -73,11 +93,18 @@ Q = [get_Q(i, nchan) for i in xrange(nchan)]
 #q^hat = x^t*C^-1*Q_alpha*C^-1*x
 #p = Mq where W is a normalization matrix related to the M matrix
 
-banddataC = n.zeros(shape=(3, nbls, 49)) #array that holds baseline pspec for three bands
+if HALF:
+    banddataC = n.zeros(shape=(3, nbls, 25)) #array that holds baseline pspec for three band
+    banddataC_norm = n.zeros(shape=(3, nbls, 25)) #array that holds baseline pspec for three band
+else:
+    banddataC = n.zeros(shape=(3, nbls, 49)) #array that holds baseline pspec for three band
+    banddataC_norm = n.zeros(shape=(3, nbls, 49)) #array that holds baseline pspec for three band
 banddataI = n.zeros(shape=(3, nbls, 49)) #array that holds baseline pspec for three bands
+banddataI_norm = n.zeros(shape=(3, nbls, 49)) #array that holds baseline pspec for three bands
 #get power spectra for each baseline and frequency. 
 for f in files:
-    x, xs, xw, lst, freq, bls, fwgts = read_npz(f)
+    x, xw, xs, lst, freq, bls, fwgts, wfreqs, hfreqs = read_npz(f)
+    #need to take half the channels for xs since not being windowed
     fin = {}# dictionary for final pspecs. bls only
     C,_C,_Cx,_CQ = {},{},{},{}
     for bl in xs.keys():
@@ -148,9 +175,16 @@ for f in files:
             xs[bl][band]= xs[bl][band].squeeze()
             win = a.dsp.gen_window(nchan, window='blackman-harris')
             win.shape = (-1,1)
-            dp = n.fft.ifft(win*xs[bl][band],axis=0)*n.conj(n.fft.ifft(win*xs[bl][band],axis=0)) 
+            #dp = n.fft.ifft(win*xs[bl][band],axis=0)*n.conj(n.fft.ifft(win*xs[bl][band],axis=0)) 
+            dp = n.fft.ifft(xw[bl][band],axis=1)*n.conj(n.fft.ifft(xw[bl][band],axis=1)) 
+            dp = dp.squeeze()
             banddataC[bb][bl] = n.average(pC, axis=-1)
-            banddataI[bb][bl] = n.average(dp, axis=1)
+            banddataI[bb][bl] = n.fft.fftshift(n.average(dp, axis=-1))
+
+            scalar = scalardict[f[:4]][bb]
+            banddataC_norm[bb][bl] = banddataC[bb][bl]*scalar*(nchan*(freq[2]-freq[1]))**2 #need extra factor of bw
+            banddataI_norm[bb][bl] = banddataI[bb][bl]*scalar*(nchan*(freq[2]-freq[1]))**2
+            
             #dp = dp.squeeze()
             #import IPython; IPython.embed()
             if PLOT and 0:
@@ -161,10 +195,14 @@ for f in files:
                 p.suptitle('[ '+', '.join(map(str,bls[bl])) + ' ] at ' + str(band))
                 p.show()
 
-            if PLOT and 0:
-                p.subplot(111); p.semilogy(n.abs(n.average(pC, axis=-1)))
-                p.subplot(111); p.semilogy(n.fft.fftshift(n.abs(n.average(dp, axis=1)),axes=0), color='g')
+            if PLOT and 0 :
+                p.subplot(111); p.semilogy(etas(freq[hfreqs[band]]),n.abs(banddataC[bb][bl]))
+                p.subplot(111); p.semilogy(etas(freq[hfreqs[band]]),n.abs(banddataC_norm[bb][bl]))
+                p.subplot(111); p.semilogy(etas(freq[wfreqs[band]]),n.abs(banddataI[bb][bl]), color='g')
+                p.subplot(111); p.semilogy(etas(freq[wfreqs[band]]),n.abs(banddataI_norm[bb][bl]), color='m')
                 p.suptitle('[ '+', '.join(map(str,bls[bl])) + ' ] at ' + str(band))
                 p.show()
 
-    n.savez('pspecs_'+f.split('/')[-1], bls=bls, pC=banddataC, pI=banddataI)
+            
+
+    n.savez('pspecs_'+f.split('/')[-1], bls=bls, pC=banddataC, pI=banddataI, pCnorm=banddataC_norm, pInorm=banddataI_norm)
