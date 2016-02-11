@@ -133,7 +133,7 @@ Bank, WV (Figure \ref{fig:heradish}) and the results are interpreted in the ligh
 \begin{figure*}
 \centering
 \includegraphics[trim={2cm 20cm 30cm 15cm},clip, totalheight=0.3\textheight]{plots/heradish.jpg}
-\caption{HERA dish and feed at the Green Bank NRAO site.}
+\caption{HERA dish feed at the Green Bank NRAO site.}
 \label{fig:heradish}
 \end{figure*}
 
@@ -250,7 +250,16 @@ Frequency as well as angular dependence of the quantities are not written explic
    \label{eq6}
 \end{eqnarray}
  
- 
+ The respective visibility as well as the dealy spectrum would be, 
+\begin{equation}\label{eqn:series1}
+\vis(\vec b, \nu)  = \int I_{sky}(\vec b, \nu)\Sigma(\vec b, \nu) \fngexp d\Omega
+\end{equation}
+\begin{eqnarray}
+%\tilde V(\vec b, \tau) & = & \int \left [ \int I_{sky}(\vec b, \nu)\Sigma(\vec b, \nu) \fngexp  d\Omega \right ]  e^{-2\pi i\nu\tau} d\nu \nonumber \\
+\tilde V(\vec b, \tau) & = & \int \left [ I_{sky}(\thhat, \nu) \ast \Sigma(\thhat, \nu) \ast \delta( \tau - \frac{{\vec {b} \cdot \thhat}}{c} )  \right] d\Omega
+\label{eq7}
+\end{eqnarray}
+
  
 %\begin{eqnarray}
 %\Sigma(\vec b, \nu) & = & \bm_{f} |\left [ 1+ (1-\Gamma_{f}) \Gamma_{f} \Gamma_{d} e^{2\pi i\nu \Delta \tau} \right]|^{2}\nonumber\\
@@ -265,15 +274,6 @@ Fourier transform of the visibility contributed by any two voltage components fr
  %If the dish vertex is so constructed such that the reflection from the dish vertex is negligible i.e, $\Gamma_{d}<<1\ or = 0$ then the second and the third term of the $\Sigma$ vanish. Also, the second term in the expression of $\Sigma(\vec b, \nu)$ is negligible compared to the first and the third term of the expression and, therefore, can be neglected. \\
 %===================================
 
-The respective visibility as well as the dealy spectrum would be, 
-\begin{equation}\label{eqn:series1}
-\vis(\vec b, \nu)  = \int I_{sky}(\vec b, \nu)\Sigma(\vec b, \nu) \fngexp d\Omega
-\end{equation}
-\begin{eqnarray}
-%\tilde V(\vec b, \tau) & = & \int \left [ \int I_{sky}(\vec b, \nu)\Sigma(\vec b, \nu) \fngexp  d\Omega \right ]  e^{-2\pi i\nu\tau} d\nu \nonumber \\
-\tilde V(\vec b, \tau) & = & \int \left [ I_{sky}(\thhat, \nu) \ast \Sigma(\thhat, \nu) \ast \delta( \tau - \frac{{\vec {b} \cdot \thhat}}{c} )  \right] d\Omega
-\label{eq7}
-\end{eqnarray}
 
 
 The design specification of HERA elements requires that any
@@ -288,6 +288,15 @@ $60ns$
 \citep{parsons_et_al2012b,vedantham_et_al2012,nithya_et_al2013,liu_et_al2014a,liu_et_al2014b}. Our goal is to measure the instrument response $\Sigma(\nu)$ and its effect on the power spectrum measurements. 
 %%%%%%%%%%%%%%%
 \section{Measurements}
+\begin{figure*}
+\centering
+\includegraphics[trim={2cm 10cm 20cm 5cm},clip, totalheight=0.3\textheight]{plots/herafeed.jpg}
+\vspace{1.0 em}
+\caption{HERA feed consists of a pair of crossed dipole ove xxx mt diameter backplane made of wire mesh. The backplane is surrounded by xxx m wire mesh around the edge resulting in encasing the cross dipole in a cylindrical cage.}
+\label{fig:herafeed}
+\end{figure*}
+
+
 We carried out reflectometry measurements at the HERA element prototype in Green
 Bank, WV (Figure \ref{fig:heradish}) in order to measure the instrument response of the feed and dish assembly and characterise its performance. An HERA element consists off a $14\,m$ diameter
 parabolic reflector and a crossed-dipole pair as a feed. The cross dipole antenna pair is identical to the feed of the PAPER antenna which is suspended at the focal plane of the dish with the support of three vertical poles. HERA elements are closely spaced with centre to centre distance between two dishes are equal to the dish diameter. Therefore, to reduce the coupling between the adjacent dishes, the crossed dipole feed along with the back plane is encased in a cylindrical cage. The feed is raised and
@@ -310,11 +319,13 @@ $n^{th}$ reflection off the feed and the dish is:
 
 
 
-where, $\Delta \tau$ is the roundtrip propagation delay of a frequency $\nu$ due to a reflection over the focal distance $l$. $I_{meas}$ is the auto correlated power obtained from a single HERA element. Upon our assumption that two adjacent antenna elements have identical electrical properties, this power is also a measure of the cross power or the visibility $\vis (\vec b, \nu)$ between the two antennas with a normalisation factor of $2$. Once again, it is to be noted that upon the first incidence, the sky signal is focussed onto the feed from the entire dish and the dish reflection coefficient $\Gamma_{d}$ is $1$ for this first incidence. The subsequent back and forth reflection of the signal in between the feed and the dish, however, occurs from only the part of the dish which is shadowed by the feed. Therefore, in this case, $\Gamma_{d} < 1$. For a given baseline $\vec b$, taking the ratio of the measured power and the incident power, 
+%where, $\Delta \tau$ is the roundtrip propagation delay of a frequency $\nu$ due to a reflection over the focal distance $l$. 
+
+$I_{meas}$ is the auto correlated power obtained from a single HERA element. Upon our assumption that two adjacent antenna elements have identical electrical properties, this power is also a measure of the cross power or the visibility $\vis (\vec b, \nu)$ between the two antennas with a normalisation factor of $2$. Once again, it is to be noted that upon the first incidence, the sky signal is focussed onto the feed from the entire dish and the dish reflection coefficient $\Gamma_{d}$ is $1$ for this first incidence. The subsequent back and forth reflection of the signal in between the feed and the dish, however, occurs from only the part of the dish which is shadowed by the feed. Therefore, in this case, $\Gamma_{d} < 1$. For a given baseline $\vec b$, taking the ratio of the measured power and the incident power, 
 
 \begin{eqnarray}\label{eqn:ratio1}
 {I_{meas} \over I_{sky} } & = & \Sigma(\vec b, \nu) \nonumber\\
-  & = & { a_{f}\over \Gamma_{f} } \displaystyle\sum\limits_{n=1}^{n} [\Gamma_{f}\Gamma_{d}e^{i\phi}]^{n}
+  & = & { a_{f}\over \Gamma_{f} } \displaystyle\sum\limits_{n=1}^{n} [\Gamma_{f}\Gamma_{d}\fngexp]^{n}
    \nonumber\\
    \label{eq8}
 \end{eqnarray}
@@ -323,31 +334,33 @@ The right hand side of this equation is the instrument response kernel of a sing
 
 %%%%%%%%%%%%%%%%%
 \subsection{Method}
-The instrument response kernel is measured by measuring the return loss of the antenna element at the output port of the feed using a vector network analyser. The vector network analyser transmits a broadband noise of known amplitude and phase via a $75ft$ cable up to the feed. While a part of this signal  is returns to the VNA post reflection from the feed due to mismatch between the cable and the antenna impedance resulting in the primary return loss, rest of the signal is radiated out by the antenna and illuminates the dish and radiated into the space. However, the reflected signal from the dish vertex returns to
+The instrument response kernel is measured by measuring the return loss of the HERA element at the output port of the feed using a vector network analyser. The vector network analyser transmits a broadband noise of known amplitude and phase via a $50ft$ cable up to the feed. While a part of this signal  is returns to the VNA post reflection from the feed due to mismatch between the cable and the antenna impedance resulting in the primary return loss, rest of the signal is radiated out by the antenna and illuminates the dish and radiated into the space. However, the reflected signal from the dish vertex returns to
 the feed. This incident signal is now
 reflected back and forth in between the feed and the dish much like the sky
 signal reflection discussed previously.
 
-If $I_{tr}$ is the signal transmitted by the VNA , $\Gamma_{f}$ is the feed reflection coefficient, $I_{r}$
-is the power incident back on the feed after reflection from the dish then the reflected power, $I_{refl}$,
+If $I_{tr}$ is the signal transmitted by the VNA and $\Gamma_{f}$ is the feed reflection coefficient, $\Gamma_{f}$ fraction of this transmitted power would be reflected back to the VNA while $\(1-\Gamma_{f})$ fraction would be radiated. This radiated power will be reflected back and forth in between the feed and the dish with partial coupling of the signal into the feed at each reflection. If  $I_{r}$ is the
+is the total reflected power incident back on the feed after n reflection from the dish then the total reflected power, $I_{refl}$,
 back into the VNA would be:
-\begin{equation}\label{eqn:series2}
-I_{refl} =  I_{r}A_{f}[1+ \Gamma_{f}\Gamma_{d} e^{i\phi}+ (\Gamma_{f}\Gamma_{d})^2e^{i2\phi}+ ....+ (\Gamma_{f}\Gamma_{d})^{n}e^{in\phi}]
-\end{equation}
+\begin{eqnarray}\label{eqn:series2}
+I_{refl} & = &  I_{r}A_{f}[1+ \Gamma_{f}\Gamma_{d} \fngexp + (\Gamma_{f}\Gamma_{d})^2 (\fngexp)^{2}\nonumber\\
+&&+ ....+ (\Gamma_{f}\Gamma_{d})^{n}(\fngexp)^{2}]
+\end{eqnarray}
  
 Once again, we consider one reflection from the feed and its subsequent reflection from the dish as one reflection in total. Equation \ref{eqn:series2} is similar to Equation \ref{eqn:series1}, with different incident powers.
 
 $I_{r}$ is the power that is incident back on the feed, which is just the feed radiated power reflected off the dish:
  
 \begin{equation}
-I_{r}= \Gamma_{d}(1-\Gamma_f)e^{i\phi} I_{tr}
+I_{r}= \Gamma_{d}(1-\Gamma_f)\fngexp I_{tr}
 \end{equation}
 
 Hence the total returned power $P_{ret}$, to the VNA  would be:
 
 \begin{eqnarray}
 I_{ret} & = & \Gamma_{f}I_{tr} \nonumber\\ 
- & + &   \Gamma_{d}(1-\Gamma_f)e^{i\phi} I_{tr}(1-\Gamma_{f}) [1+ \Gamma_{f}\Gamma_{d} e^{i\phi}+  ....+ (\Gamma_{f}\Gamma_{d})^{n}e^{in\phi}]\nonumber\\
+ &&  + \Gamma_{d}(1-\Gamma_f)\fngexp I_{tr}(1-\Gamma_{f}) [1+ \Gamma_{f}\Gamma_{d}\fngexp \nonumber\\
+&& +  ....+ (\Gamma_{f}\Gamma_{d})^{n}(\fngexp)^{n}]\nonumber\\
  \end{eqnarray}
  
 Simplifying:
