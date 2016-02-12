@@ -139,7 +139,7 @@ Bank, WV (Figure \ref{fig:heradish}) and the results are interpreted in the ligh
 
 \section{Visibility measurements by a two element interferometer and the delay spectrum}
 
-Consider a two element interferometer with a baseline $\vec b$ and antenna field pattern $A(\thhat, \nu)$. If we denote the electric field sky signal in direction $\thhat$ by $\volt_\sky(\vec \theta, \nu)$ and the receiver noise of each element as $\volt_{rec}(\nu)$ then the voltage output of each antenna may be written as,  
+Consider a two element interferometer with a baseline $\vec b$ and antenna field pattern $\bmvolt(\thhat, \nu)$. If we denote the electric field sky signal in direction $\thhat$ by $\volt_\sky(\vec \theta, \nu)$ and the receiver noise of each element as $\volt_{rec}(\nu)$ then the voltage output of each antenna may be written as,  
 \begin{equation}
 \volt_{1}(\thhat, \nu) = \bmvolt_{1}(\thhat,\nu)\volt_\sky(\thhat,\nu)\nonumber\\
 \end{equation}
@@ -154,9 +154,9 @@ Hence, the time averaged visibility measured by the interferometer may be writte
 \label{eq1}
 \end{equation}
 
-We define antenna cross power pattern as  $\bm(\thhat,\nu)=\bmvolt_{1}(\thhat,\nu)\bmvolt_{2}^{*}(\thhat,\nu)$ and denote the sky intensity as  $I_\sky(\thhat,\nu)=\volt_\sky(\thhat,\nu)\volt_\sky^{*}(\thhat,\nu)$. Hence, 
+We define antenna cross power pattern as  $\beam(\thhat,\nu)=\bmvolt_{1}(\thhat,\nu)\bmvolt_{2}^{*}(\thhat,\nu)$ and denote the sky intensity as  $I_\sky(\thhat,\nu)=\volt_\sky(\thhat,\nu)\volt_\sky^{*}(\thhat,\nu)$. Hence, 
 \begin{equation}
-\vis(\vec b,\nu) = \int \bm(\thhat, \nu) I_\sky(\thhat,\nu) \ifngexp d\Omega
+\vis(\vec b,\nu) = \int \beam(\thhat, \nu) I_\sky(\thhat,\nu) \ifngexp d\Omega
 	%	& = & \int B(l,m, \nu) I_{sky}(l,m,\nu) exp(-2\pi i \nu \tau_{g} ) dl dm \nonumber\\
  	%	& = & B(\vec u,\nu) \ast P_{sky}(\vec u,\nu ) \nonumber\\
 	%	& = & B(\nu { |\vec b| \over c} , \nu) \ast P_{sky}(\nu { |\vec b| \over c} , \nu) \nonumber\\
@@ -168,7 +168,7 @@ We define antenna cross power pattern as  $\bm(\thhat,\nu)=\bmvolt_{1}(\thhat,\n
 In \citet{parsons_et_al2012a}, the Fourier transform of the visibility along the frequency axis was introduced,
 resulting in the delay spctrum:
 \begin{eqnarray}
-\tilde V(\vec b, \tau) & = & \int\!\!\int{\bm(\thhat,\nu) I_\sky(\thhat,\nu) \ifngexp d\Omega~e^{+2\pi i\nu\tau}d\nu}\nonumber\\	                        & = &   \int \left [ A(\thhat, \tau)\ast I_{sky}(\thhat, \tau) \ast \delta( \tau - \frac{{\vec {b} \cdot \thhat}}{c} )\right ] d\Omega 
+\tilde V(\vec b, \tau) & = & \int\!\!\int{\beam(\thhat,\nu) I_\sky(\thhat,\nu) \ifngexp d\Omega~e^{+2\pi i\nu\tau}d\nu}\nonumber\\	                        & = &   \int \left [ A(\thhat, \tau)\ast I_{sky}(\thhat, \tau) \ast \delta( \tau - \frac{{\vec {b} \cdot \thhat}}{c} )\right ] d\Omega 
 \label{eq3}
 \end{eqnarray}
 % XXX rethink how to express this equation (not correct about integrated over all sky)
@@ -199,28 +199,23 @@ feed in receiving mode is shown in blue. Due to impedance mismatch between feed 
 \label{fig:cartoon}
 \end{figure}
 
-Consider again a two element interferometer as described in section 2. Two antennas are assumed to be exactly identical so that their electrical parameters and the field pattern are identical i.e, $a_{1}(\thhat,\nu) = a_{2}(\thhat,\nu)$. We denote the voltage reflection coefficient of each feed by $\Gamma_{f}$. The voltage reflection coefficient of the reflector dish is denoted by $\Gamma_{d}$. Upon first incidence of the sky signal onto the dish, it is reflected from the entire dish and is focussed onto the feed. Hence, for first incidence $\Gamma_{d}=1$. Sky signal that would return to the dish after successive reflections off the feed and the dish is reflected only from a small area around the vertex of the dish and therefore, $\Gamma_{d}<1$. In our analysis, we consider one reflection of the sky power from the feed and subsequent reflection off the dish as one single reflection. If the focal length of the dish is $l$, assuming the feed is located at the focus, the roundtrip delay after first reflection will be $\Delta \tau = {2l \over c}$. 
+Consider again a two element interferometer as described in section 2. Two antennas are assumed to be exactly identical so that their electrical parameters and the field pattern are identical i.e, $a_{1}(\thhat,\nu) = a_{2}(\thhat,\nu) = a(\thhat, \nu)$. We denote the voltage reflection coefficient of each feed by $\Gamma_{f}$. The voltage reflection coefficient of the reflector dish is denoted by $\Gamma_{d}$. Upon first incidence of the sky signal onto the dish, it is reflected from the entire dish and is focussed onto the feed. Hence, for first incidence $\Gamma_{d}=1$. Sky signal that would return to the dish after successive reflections off the feed and the dish is reflected only from a small area around the vertex of the dish and therefore, $\Gamma_{d}<1$. In our analysis, we consider one reflection of the sky power from the feed and subsequent reflection off the dish as one single reflection. If the focal length of the dish is $l$, assuming the feed is located at the focus, the roundtrip delay after first reflection will be $\Delta \tau = {2l \over c}$. 
 
 
 \subsection{Visibility and delay spectrum computation considering multiple reflections}
 Upon first incidence of the sky signal $\volt_{sky}$, $\Gamma_{f}$ fraction of the voltage is reflected off the feed while $(1-\Gamma_{f})$ fraction is coupled to the feed. The reflected voltage then further reflected off the dish and $(1-\Gamma_{f}) $ fraction of it reenters the feed with a roundtrip time delay $\Delta \tau$. Hence, if $I_{sky}$ is reflected n times in between the feed and the dish, the net voltage entering the feed after an
 $n^{th}$ reflection off the feed and the dish is written as:
 \begin{eqnarray}
-\volt_{1} & = &  a_{f} \volt_{sky}[1+ (1-\Gamma_{f})\Gamma_{f}\Gamma_{d} \dfngexp \nonumber \\
-	&& + (1-\Gamma_{f})^{2} (\Gamma_{f}\Gamma_{d})^2  (\dfngexp)^{2}+ \nonumber \\
-&&  ....+ (1-\Gamma_{f})^{n}(\Gamma_{f}\Gamma_{d})^{n} (\dfngexp)^{n}] \nonumber
+\volt_{1} & = &  \bmvolt (1-\Gamma_{f}) \volt_{sky}[1+ \Gamma_{f}\Gamma_{d} \dfngexp \nonumber \\
+	&& + (\Gamma_{f}\Gamma_{d})^2  (\dfngexp)^{2}+ \nonumber \\
+&&  ....+ (\Gamma_{f}\Gamma_{d})^{n} (\dfngexp)^{n}] \nonumber
 \end{eqnarray}
 and, 
-
 \begin{eqnarray}
-\volt_{2} & = &  a_{f} \volt_{sky}[1+ (1-\Gamma_{f})\Gamma_{f}\Gamma_{d} \dfngexp \nonumber\\
-&&+ (1-\Gamma_{f})^{2} (\Gamma_{f}\Gamma_{d})^2  (\dfngexp)^{2}+ \nonumber \\
-&& ....+ (1-\Gamma_{f})^{n}(\Gamma_{f}\Gamma_{d})^{n} (\dfngexp)^{n}] \ast \fngexp \nonumber
+\volt_{2} & = &  \bmvolt (1-\Gamma_{f}) \volt_{sky}[1+ \Gamma_{f}\Gamma_{d} \dfngexp \nonumber\\
+&&+  (\Gamma_{f}\Gamma_{d})^2  (\dfngexp)^{2}+ \nonumber \\
+&& ....+ (\Gamma_{f}\Gamma_{d})^{n} (\dfngexp)^{n}] \ast \fngexp \nonumber
 \end{eqnarray}
-
-
-
-
 %\begin{eqnarray}
 %\volt_{1} & = & a \volt_{sky}(1-\Gamma_{f}) + a \volt_{sky} \Gamma_{f} \Gamma_{d} \dfngexp  (1-\Gamma_{f})^{2}\nonumber\\
    %      & = & a \volt_{sky} (1-\Gamma_{f}) \left [ 1+ (1-\Gamma_{a})\Gamma_{f} \Gamma_{d} e^{2\pi i\nu \Delta \tau} \right]\nonumber
@@ -229,37 +224,30 @@ and,
 %\volt_{2} & = & \left [ a \volt_{sky}(1-\Gamma_{f}) + a \volt_{sky} \Gamma_{f} \Gamma_{d} \dfngexp (1-\Gamma_{f})^{2}\right ] \fngexp \nonumber\\
    %      & = & a \volt_{sky} (1-\Gamma_{f}) \left [ 1+(1-\Gamma_{a}) \Gamma_{f} \Gamma_{d} \dfngexp  \right] \fngexp \nonumber
 %\end{eqnarray}
-Frequency as well as angular dependence of the quantities are not written explicitly for notational simplicity. We also absorb the common gain term $(1-\Gamma_{f})$ with antenna field pattern $a$ and denote them as $a_{f}= a(1-\Gamma_{f})$ here after and define the antenna cross power pattern as $\beam_{f}(\thhat,\nu)=\bmvolt_{f}(\thhat,\nu)\bmvolt_{f}^{*}(\thhat,\nu)$ . 
-
-%\begin{eqnarray}
-%\vis(\vec b, \nu) & = & \int \volt_{1}\volt_{2}^{*} d\Omega \nonumber\\
-%		        & = & \int \beam_{f} \volt_{sky}|^{2} |\left [ 1+(1-\Gamma_{f}) \Gamma_{f} \Gamma_{d} \dfngexp  \right]|^{2} \fngexp  d\Omega
-%\label{eq4}		        
-%\end{eqnarray}
-
-
- Furthermore, combining all the terms that contain instrument response we define a common instrument parameter, written as, 
+Frequency as well as angular dependence of the quantities are not written explicitly for notational simplicity. We also absorb the common gain term $(1-\Gamma_{f})$ with antenna field pattern $a$ and denote them as $\bmvolt_{f}= \bmvolt(1-\Gamma_{f})$ here after. The cross power generated by $v_{1}$ and $v_{2}$ would have spurious visibility response due to mutual correlation between multiply reflected voltages. Fourier transform of this visibility spectrum along the frequency axis results in the delay spectrum. 
+In the delay domain, visibility contributed by any two voltage components from two antennas with no mutual delay will be located at the delay $\tau = 0$ whereas any two voltage components from two antennas components having a mutual delay of $n\Delta \tau$ will be centred at $n\Delta \tau$. These will broaden the width of the delay spectrum which finally interferes with the 21cm power spectrum detection. Combining these terms, the expression of visibility will be,
  
- 
+\begin{eqnarray}\label{eqn:series1}
+\vis(\vec b, \nu) & = & \int \volt_{1}\volt_{2}^{*} d\Omega \nonumber\\
+			& = & \int I_{sky}(\vec b, \nu)\Sigma(\vec b, \nu) \fngexp d\Omega
+\end{eqnarray}
+
+where we define a combined common instrument parameter, written as, 
  \begin{eqnarray}
-\Sigma(\vec b, \nu) & = & a_{f}  [ 1+ 2 \Re [(1-\Gamma_{f}) \Gamma_{f}\Gamma_{d} \dfngexp \nonumber\\
-&& + (1-\Gamma_{f})^{2}(\Gamma_{f}\Gamma_{d})^2(\dfngexp)^{2}+ \nonumber\\
-&&  ....+(1-\Gamma_{f})^{n} (\Gamma_{f}\Gamma_{d})^{n}(\dfngexp)^{n} ] ]\\
-& = & { a_{f}\over \Gamma_{f} } \displaystyle\sum\limits_{n=1}^{n} [\Gamma_{f}\Gamma_{d}e^{i\phi}]^{n}
+\Sigma(\vec b, \nu) & = & \beam_{f}  [ 1+  \Gamma_{f}\Gamma_{d} \dfngexp \nonumber\\
+&& + (\Gamma_{f}\Gamma_{d})^2(\dfngexp)^{2}+ \nonumber\\
+&&  ....+(\Gamma_{f}\Gamma_{d})^{n}(\dfngexp)^{n}  ]\\
+& = & \beam_{f}\displaystyle\sum\limits_{n=1}^{n} [\Gamma_{f}\Gamma_{d}e^{i\phi}]^{n}
    \nonumber\\
    \label{eq6}
 \end{eqnarray}
- 
- The respective visibility as well as the dealy spectrum would be, 
-\begin{equation}\label{eqn:series1}
-\vis(\vec b, \nu)  = \int I_{sky}(\vec b, \nu)\Sigma(\vec b, \nu) \fngexp d\Omega
-\end{equation}
+where, $\beam_{f}=\bmvolt_{f}\bmvolt_{f}^{*}$ is the antenna cross power pattern.
+and the delay spectrum would be, 
 \begin{eqnarray}
 %\tilde V(\vec b, \tau) & = & \int \left [ \int I_{sky}(\vec b, \nu)\Sigma(\vec b, \nu) \fngexp  d\Omega \right ]  e^{-2\pi i\nu\tau} d\nu \nonumber \\
 \tilde V(\vec b, \tau) & = & \int \left [ I_{sky}(\thhat, \nu) \ast \Sigma(\thhat, \nu) \ast \delta( \tau - \frac{{\vec {b} \cdot \thhat}}{c} )  \right] d\Omega
 \label{eq7}
 \end{eqnarray}
-
  
 %\begin{eqnarray}
 %\Sigma(\vec b, \nu) & = & \bm_{f} |\left [ 1+ (1-\Gamma_{f}) \Gamma_{f} \Gamma_{d} e^{2\pi i\nu \Delta \tau} \right]|^{2}\nonumber\\
@@ -267,8 +255,8 @@ Frequency as well as angular dependence of the quantities are not written explic
 %\label{eq{5}}	    
 %\end{eqnarray} 
 
-Instrumental response function acquires additional terms arising due to correlation between the direct and reflected component of the sky signal. Fourier transform of this visibility spectrum along the frequency axis results in the delay spectrum. 
-Fourier transform of the visibility contributed by any two voltage components from two antennas with no mutual delay will be located at the same delay $\tau = 0$ in the Fourier domain whereas any two voltage components from two antennas components having a mutual delay of $\Delta \tau$ will be centred at $\tau+\Delta \tau$. This additional delay extends the upper limit on the maximum geometric delay $\tau_{g}$ to $(\tau_{g}+\Delta \tau)$.
+%Instrumental response function acquires additional terms arising due to correlation between the direct and reflected component of the sky signal. Fourier transform of this visibility spectrum along the frequency axis results in the delay spectrum. 
+%Fourier transform of the visibility contributed by any two voltage components from two antennas with no mutual delay will be located at the same delay $\tau = 0$ in the Fourier domain whereas any two voltage components from two antennas components having a mutual delay of $\Delta \tau$ will be centred at $\tau+\Delta \tau$. This additional delay extends the upper limit on the maximum geometric delay $\tau_{g}$ to $(\tau_{g}+\Delta \tau)$.
  Thus, the correlation between the reflected signal  from the feed and subsequently from the dish with the direct signal extends the foreground response to delays beyond the maximum geometric delay for a given baseline and contaminates the delay mode where 21~cm delay spectrum could potentially be detected. 
  
  %If the dish vertex is so constructed such that the reflection from the dish vertex is negligible i.e, $\Gamma_{d}<<1\ or = 0$ then the second and the third term of the $\Sigma$ vanish. Also, the second term in the expression of $\Sigma(\vec b, \nu)$ is negligible compared to the first and the third term of the expression and, therefore, can be neglected. \\
@@ -325,7 +313,7 @@ $I_{meas}$ is the auto correlated power obtained from a single HERA element. Upo
 
 \begin{eqnarray}\label{eqn:ratio1}
 {I_{meas} \over I_{sky} } & = & \Sigma(\vec b, \nu) \nonumber\\
-  & = & { a_{f}\over \Gamma_{f} } \displaystyle\sum\limits_{n=1}^{n} [\Gamma_{f}\Gamma_{d}\fngexp]^{n}
+  & = & \beam_{f} \displaystyle\sum\limits_{n=1}^{n} [\Gamma_{f}\Gamma_{d}\fngexp]^{n}
    \nonumber\\
    \label{eq8}
 \end{eqnarray}
@@ -334,41 +322,42 @@ The right hand side of this equation is the instrument response kernel of a sing
 
 %%%%%%%%%%%%%%%%%
 \subsection{Method}
-The instrument response kernel is measured by measuring the return loss of the HERA element at the output port of the feed using a vector network analyser. The vector network analyser transmits a broadband noise of known amplitude and phase via a $50ft$ cable up to the feed. While a part of this signal  is returns to the VNA post reflection from the feed due to mismatch between the cable and the antenna impedance resulting in the primary return loss, rest of the signal is radiated out by the antenna and illuminates the dish and radiated into the space. However, the reflected signal from the dish vertex returns to
+The instrument response kernel is measured by measuring the return loss of the HERA element at the output port of the feed using a vector network analyser. The vector network analyser transmits a broadband noise of known amplitude and phase via a $50ft$ cable up to the feed. While a part of this signal  returns to the VNA post reflection from the feed due to mismatch between the cable and the antenna impedance resulting in the primary return loss, rest of the signal is radiated out by the antenna and illuminates the dish and radiated into the space. However, the reflected signal from the dish vertex returns to
 the feed. This incident signal is now
 reflected back and forth in between the feed and the dish much like the sky
 signal reflection discussed previously.
 
-If $I_{tr}$ is the signal transmitted by the VNA and $\Gamma_{f}$ is the feed reflection coefficient, $\Gamma_{f}$ fraction of this transmitted power would be reflected back to the VNA while $\(1-\Gamma_{f})$ fraction would be radiated. This radiated power will be reflected back and forth in between the feed and the dish with partial coupling of the signal into the feed at each reflection. If  $I_{r}$ is the
-is the total reflected power incident back on the feed after n reflection from the dish then the total reflected power, $I_{refl}$,
-back into the VNA would be:
-\begin{eqnarray}\label{eqn:series2}
-I_{refl} & = &  I_{r}A_{f}[1+ \Gamma_{f}\Gamma_{d} \fngexp + (\Gamma_{f}\Gamma_{d})^2 (\fngexp)^{2}\nonumber\\
-&&+ ....+ (\Gamma_{f}\Gamma_{d})^{n}(\fngexp)^{2}]
-\end{eqnarray}
- 
-Once again, we consider one reflection from the feed and its subsequent reflection from the dish as one reflection in total. Equation \ref{eqn:series2} is similar to Equation \ref{eqn:series1}, with different incident powers.
-
-$I_{r}$ is the power that is incident back on the feed, which is just the feed radiated power reflected off the dish:
- 
+If $I_{tr}$ is the signal transmitted by the VNA and $\Gamma_{f}$ is the feed reflection coefficient, $\Gamma_{f}$ fraction of this transmitted power would be reflected back to the VNA while $(1-\Gamma_{f})$ fraction would be radiated. $\Gamma_{d}$ fraction of this radiated power will be reflected back and forth in between the feed and the dish with partial coupling of the signal into the feed at each reflection. The power radiated out of the feed, denoted by $I_{r}$ is , 
 \begin{equation}
-I_{r}= \Gamma_{d}(1-\Gamma_f)\fngexp I_{tr}
+I_{r}= \beam_{f} I_{tr}
 \end{equation}
 
-Hence the total returned power $P_{ret}$, to the VNA  would be:
-
-\begin{eqnarray}
-I_{ret} & = & \Gamma_{f}I_{tr} \nonumber\\ 
- &&  + \Gamma_{d}(1-\Gamma_f)\fngexp I_{tr}(1-\Gamma_{f}) [1+ \Gamma_{f}\Gamma_{d}\fngexp \nonumber\\
-&& +  ....+ (\Gamma_{f}\Gamma_{d})^{n}(\fngexp)^{n}]\nonumber\\
- \end{eqnarray}
+The total reflected power, returned to the VNA, denoted byt $I_{ret}$ would be:
+\begin{eqnarray}\label{eqn:series2}
+I_{ret} & = & \Gamma_{f}I_{tr}+ I_{r}(1-\Gamma_{f}) [\Gamma_{d} \fngexp + \Gamma_{f}\Gamma_{d}^{2} (\fngexp)^{2}\nonumber\\
+&&+ ....+ \Gamma_{f}^{(n-1)}\Gamma_{d})^{n}(\fngexp)^{n}]
+\end{eqnarray}
  
-Simplifying:
+%Once again, we consider one reflection from the feed and its subsequent reflection from the dish as one reflection in total. Equation \ref{eqn:series2} is similar to Equation \ref{eqn:series1}, with different incident powers.
+
+%$I_{r}$ is the power that is incident back on the feed, which is just the feed radiated power reflected off the dish:
+ 
+
+
+%Hence the total returned power $P_{ret}$, to the VNA  would be:
+
+%\begin{eqnarray}
+%I_{ret} & = & \Gamma_{f}I_{tr} \nonumber\\ 
+ %&&  + \Gamma_{d}(1-\Gamma_f)\fngexp I_{tr}(1-\Gamma_{f}) [1+ \Gamma_{f}\Gamma_{d}\fngexp \nonumber\\
+%&& +  ....+ (\Gamma_{f}\Gamma_{d})^{n}(\fngexp)^{n}]\nonumber\\
+ %\end{eqnarray}
+ 
+Using the value of $I_{r}$ and simplifying:
  
   \begin{eqnarray}\label{eqn:ratio2}
  {I_{ret} \over I_{tr} } & = & \Gamma_{f}
-  +  \Gamma_{d}(1-\Gamma_f)^{2} [e^{i\phi}+ \Gamma_{f}\Gamma_{d} e^{i2\phi}+  ....+ (\Gamma_{f}\Gamma_{d})^{n}e^{i n\phi}]\nonumber\\
-  & = & \Gamma_{f} + { (1-\Gamma_f)a_{f}\over \Gamma_{f} } \displaystyle\sum\limits_{n=1}^{n} [\Gamma_{f}\Gamma_{d}e^{i\phi}]^{n}
+  +  \Gamma_{d}(1-\Gamma_f) \beam_{f} I_{tr} [e^{i\phi}+ \Gamma_{f}\Gamma_{d} e^{i2\phi}+  ....+ (\Gamma_{f}\Gamma_{d})^{n}e^{i n\phi}]\nonumber\\
+  & = & \Gamma_{f} + { (1-\Gamma_f)\beam_{f}\over \Gamma_{f} } \displaystyle\sum\limits_{n=1}^{n} [\Gamma_{f}\Gamma_{d}e^{i\phi}]^{n}
  \label{eq9}
 \end{eqnarray}
 
