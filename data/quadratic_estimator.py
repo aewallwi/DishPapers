@@ -51,6 +51,7 @@ def read_npz(f, half=HALF):
         data[i]=  vis[i,:,:]
         for k,midch in enumerate(subcent):
             mask = n.where(fwgts[k]>0.0)
+            #mask = [ mask[0]-1, mask, mask[-1]+1 ]
             wfreqs[midch] = mask
             datawind[i][midch] = bandvis[i,k,mask,:]
             if half:
@@ -94,13 +95,13 @@ Q = [get_Q(i, nchan) for i in xrange(nchan)]
 #p = Mq where W is a normalization matrix related to the M matrix
 
 if HALF:
-    banddataC = n.zeros(shape=(3, nbls, 25)) #array that holds baseline pspec for three band
-    banddataC_norm = n.zeros(shape=(3, nbls, 25)) #array that holds baseline pspec for three band
+    banddataC = n.zeros(shape=(3, nbls, 25,80), dtype=n.complex64) #array that holds baseline pspec for three band
+    banddataC_norm = n.zeros(shape=(3, nbls, 25,80), dtype=n.complex64) #array that holds baseline pspec for three band
 else:
     banddataC = n.zeros(shape=(3, nbls, 49)) #array that holds baseline pspec for three band
     banddataC_norm = n.zeros(shape=(3, nbls, 49)) #array that holds baseline pspec for three band
-banddataI = n.zeros(shape=(3, nbls, 49)) #array that holds baseline pspec for three bands
-banddataI_norm = n.zeros(shape=(3, nbls, 49)) #array that holds baseline pspec for three bands
+banddataI = n.zeros(shape=(3, nbls, 49,80), dtype=n.complex64) #array that holds baseline pspec for three bands
+banddataI_norm = n.zeros(shape=(3, nbls, 49,80), dtype=n.complex64) #array that holds baseline pspec for three bands
 #get power spectra for each baseline and frequency. 
 for f in files:
     x, xw, xs, lst, freq, bls, fwgts, wfreqs, hfreqs = read_npz(f)
@@ -137,6 +138,8 @@ for f in files:
     FC = n.zeros((nchan,nchan), dtype=n.complex)
     qC = n.zeros((nchan, _Cx.values()[0].values()[0].shape[1]), dtype=n.complex)
     Q_Cx = {}
+    hetas = n.zeros(shape=(3,25))
+    wetas = n.zeros(shape=(3,49))
     for bl in xs.keys():
         if not Q_Cx.has_key(bl): Q_Cx[bl] = {}
         for bb,band in  enumerate(xs[bl].keys()):
@@ -176,14 +179,18 @@ for f in files:
             win = a.dsp.gen_window(nchan, window='blackman-harris')
             win.shape = (-1,1)
             #dp = n.fft.ifft(win*xs[bl][band],axis=0)*n.conj(n.fft.ifft(win*xs[bl][band],axis=0)) 
-            dp = n.fft.ifft(xw[bl][band],axis=1)*n.conj(n.fft.ifft(xw[bl][band],axis=1)) 
+            sdf = freq[2] - freq[1]
+            dp = n.fft.ifft(sdf*xw[bl][band].shape[1]*xw[bl][band],axis=1)*n.conj(n.fft.ifft(sdf*xw[bl][band].shape[1]*xw[bl][band],axis=1)) 
+#            if bl==2:
+#                import IPython; IPython.embed()
             dp = dp.squeeze()
-            banddataC[bb][bl] = n.average(pC, axis=-1)
-            banddataI[bb][bl] = n.fft.fftshift(n.average(dp, axis=-1))
+            banddataC[bb][bl] = pC
+            banddataI[bb][bl] = n.fft.fftshift(dp, axes=0)
 
             scalar = scalardict[f[:4]][bb]
             banddataC_norm[bb][bl] = banddataC[bb][bl]*scalar*(nchan*(freq[2]-freq[1]))**2 #need extra factor of bw
-            banddataI_norm[bb][bl] = banddataI[bb][bl]*scalar*(nchan*(freq[2]-freq[1]))**2
+            banddataI_norm[bb][bl] = banddataI[bb][bl]*scalar#*(nchan*(freq[2]-freq[1]))**2
+            
             
             #dp = dp.squeeze()
             #import IPython; IPython.embed()
@@ -195,6 +202,8 @@ for f in files:
                 p.suptitle('[ '+', '.join(map(str,bls[bl])) + ' ] at ' + str(band))
                 p.show()
 
+            hetas[bb] = etas(freq[hfreqs[band]])
+            wetas[bb] = etas(freq[wfreqs[band]])
             if PLOT and 0 :
                 p.subplot(111); p.semilogy(etas(freq[hfreqs[band]]),n.abs(banddataC[bb][bl]))
                 p.subplot(111); p.semilogy(etas(freq[hfreqs[band]]),n.abs(banddataC_norm[bb][bl]))
@@ -205,4 +214,4 @@ for f in files:
 
             
 
-    n.savez('pspecs_'+f.split('/')[-1], bls=bls, pC=banddataC, pI=banddataI, pCnorm=banddataC_norm, pInorm=banddataI_norm)
+    n.savez('pspecs_'+f.split('/')[-1], bls=bls, pC=banddataC, pI=banddataI, pCnorm=banddataC_norm, pInorm=banddataI_norm, hetas=hetas, wetas=wetas)
