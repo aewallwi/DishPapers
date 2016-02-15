@@ -237,7 +237,7 @@ where we define a combined common instrument parameter, written as,
 \Sigma(\vec b, \nu) & = & \beam_{f}  [ 1+  \Gamma_{f}\Gamma_{d} \dfngexp \nonumber\\
 && + (\Gamma_{f}\Gamma_{d})^2(\dfngexp)^{2}+ \nonumber\\
 &&  ....+(\Gamma_{f}\Gamma_{d})^{n}(\dfngexp)^{n}  ]\\
-& = & \beam_{f}\displaystyle\sum\limits_{n=1}^{n} [\Gamma_{f}\Gamma_{d}e^{i\phi}]^{n}
+& = & \beam_{f}\displaystyle\sum\limits_{n=1}^{n} [\Gamma_{f}\Gamma_{d}\dfngexp]^{n}
    \nonumber\\
    \label{eq6}
 \end{eqnarray}
@@ -302,7 +302,7 @@ coefficient is $\Gamma_{d}$, then the net power entering a feed after
 $n^{th}$ reflection off the feed and the dish is:
 
 \begin{eqnarray}
-\tilde I_{meas}(\vec b, \nu) & = & \int I_{sky}(\vec b, \nu)\Sigma(\vec b, \nu) \fngexp d\Omega
+\tilde I_{meas}(\vec b, \nu) & = & \int I_{sky}(\vec b, \nu)\Sigma(\vec b, \nu) \dfngexp d\Omega
 \end{eqnarray}
 
 
@@ -313,7 +313,7 @@ $I_{meas}$ is the auto correlated power obtained from a single HERA element. Upo
 
 \begin{eqnarray}\label{eqn:ratio1}
 {I_{meas} \over I_{sky} } & = & \Sigma(\vec b, \nu) \nonumber\\
-  & = & \beam_{f} \displaystyle\sum\limits_{n=1}^{n} [\Gamma_{f}\Gamma_{d}\fngexp]^{n}
+  & = & \beam_{f} \displaystyle\sum\limits_{n=1}^{n} [\Gamma_{f}\Gamma_{d}\dfngexp]^{n}
    \nonumber\\
    \label{eq8}
 \end{eqnarray}
@@ -334,100 +334,26 @@ I_{r}= \beam_{f} I_{tr}
 
 The total reflected power, returned to the VNA, denoted byt $I_{ret}$ would be:
 \begin{eqnarray}\label{eqn:series2}
-I_{ret} & = & \Gamma_{f}I_{tr}+ I_{r}(1-\Gamma_{f}) [\Gamma_{d} \fngexp + \Gamma_{f}\Gamma_{d}^{2} (\fngexp)^{2}\nonumber\\
-&&+ ....+ \Gamma_{f}^{(n-1)}\Gamma_{d})^{n}(\fngexp)^{n}]
+I_{ret} & = & \Gamma_{f}I_{tr}+ I_{r}(1-\Gamma_{f}) [\Gamma_{d} \dfngexp + \Gamma_{f}\Gamma_{d}^{2} (\dfngexp)^{2}\nonumber\\
+&&+ ....+ \Gamma_{f}^{n-1}\Gamma_{d})^{n}(\dfngexp)^{n}]
 \end{eqnarray}
- 
-%Once again, we consider one reflection from the feed and its subsequent reflection from the dish as one reflection in total. Equation \ref{eqn:series2} is similar to Equation \ref{eqn:series1}, with different incident powers.
 
-%$I_{r}$ is the power that is incident back on the feed, which is just the feed radiated power reflected off the dish:
- 
-
-
-%Hence the total returned power $P_{ret}$, to the VNA  would be:
-
-%\begin{eqnarray}
-%I_{ret} & = & \Gamma_{f}I_{tr} \nonumber\\ 
- %&&  + \Gamma_{d}(1-\Gamma_f)\fngexp I_{tr}(1-\Gamma_{f}) [1+ \Gamma_{f}\Gamma_{d}\fngexp \nonumber\\
-%&& +  ....+ (\Gamma_{f}\Gamma_{d})^{n}(\fngexp)^{n}]\nonumber\\
- %\end{eqnarray}
- 
 Using the value of $I_{r}$ and simplifying:
  
   \begin{eqnarray}\label{eqn:ratio2}
  {I_{ret} \over I_{tr} } & = & \Gamma_{f}
-  +  \Gamma_{d}(1-\Gamma_f) \beam_{f} I_{tr} [e^{i\phi}+ \Gamma_{f}\Gamma_{d} e^{i2\phi}+  ....+ (\Gamma_{f}\Gamma_{d})^{n}e^{i n\phi}]\nonumber\\
+  +  \Gamma_{d}(1-\Gamma_f) \beam_{f} I_{tr} [e^{i\phi}+ \Gamma_{f}\Gamma_{d} e^{i2\phi}\nonumber\\ 
+  && +  ....+ (\Gamma_{f}\Gamma_{d})^{n}e^{i n\phi}]\nonumber\\
   & = & \Gamma_{f} + { (1-\Gamma_f)\beam_{f}\over \Gamma_{f} } \displaystyle\sum\limits_{n=1}^{n} [\Gamma_{f}\Gamma_{d}e^{i\phi}]^{n}
  \label{eq9}
 \end{eqnarray}
 
-The ratio in Equation \ref{eqn:ratio2} is the returned power to the VNA with
-respect to the transmitted power sent by the VNA. It is identical to the sky
-observation case in Equation \ref{eqn:ratio1} but differs by two factors. The
+The ratio in Equation \ref{eqn:ratio2} is identical to the ratio in the sky
+observation in Equation \ref{eqn:ratio1} except in two factors. The
 first factor corresponds to an additive amplitude difference arising from
 $\Gamma_{f}$, which physically accounts for the initial reflection at the feed.
-The second difference is a multiplicative term which informs us about the first
-reflection. Both of these terms need to be corrected for in order to relate our
-measurements to real observations.
-%Therefore, because our measurement is carried out in transmitting mode
-%while a sky observation would be carried out in receiving mode, we correct our
-%results in order to map them real observations.
+The second difference is the multiplicative ${ (1-\Gamma_f)\over \Gamma_{f} }$. Our measurement is corrected  for these two terms to map the instrument response measurements from transmission mode in which the measurement is taken to receiving mode in which the sky observation is done. 
 
-The VNA measures the magnitude and phase of the quantity ${I_{ret}\over I_{tr}}$
-as a function of frequency as shown in Figure \ref{fig:freq}. The magnitude and phase of the complex return loss is measured between 50 to 500MHz over 1024 frequency channels which gives a frequency resolution of 0.44MHz. The delay resolution of the measurements is ?t = 2.22ns. In our measurement
-set-up, the first reflection occurs at the feed $\Gamma_{f}$, so
-$({I_{ret} \over I_{tr} }  - \Gamma_{f}) $ gives an estimate of the delay
-spectrum of the sky signal. In delay domain, the relative signal strength at
-zero delay represents the factor $\Gamma_{f}$ while the signal strength at any
-other delay represents any delayed signal that enters the feed after being
-reflected from the feed surroundings. 
-
-%\section{Methodology}{\label{sec:methods}}
-
-%Our reflectometry measurements are made using a prototype HERA dish at NRAO in Green Bank, WV. The dish is a $14\,m$ diameter
-%parabolic reflector structurally supported with 3 telephone poles. The
-%reflective material is made up of wire mesh that is attached to PVC
-%pipes, forming the parabolic shape of the dish. With the current iteration of
-%the HERA dish, the feed consists of a PAPER dipole encased in a cylindrical cage
-%encompassing the backplane. The PAPER feed and the backplane (which is aimed at
-%preventing feed-to-feed interaction between neighboring dishes) is raised and
-%lowered by a three-pulley system. The focal height of the dish is $4.5m$
-%($\sim{14.76}$ft).  
-
-%The heights measured in our experiment were made from
-%the balun to the top of the concrete hub. However, the focal height should be
-%measured from the backplane to point where the wire mesh would intersect the
-%concrete hub at the vertex of the dish. To account for this height discrepency,
-%we add 1.96 ft to all of our measured heights. These are the heights quoted in
-%the plots.[XXX not done yet but will be done]
-%Our measurements are made with a FieldFox in VNA mode. In this mode, a pulse
-%is generated in the FieldFox and sent through a $75ft$ $50\Omega$ cable that
-%connects to the feed with a 4:1 passive balun. The magnitude and phase of the complex return loss is measured between 50 to $500MHz$ over 1024 frequency channels which gives a frequency resolution of 0.44MHz. The delay resolution of the measurements is $\Delta{t}=2.22ns$.
-%In addition, we note that the round trip of a reflection from the feed to the dish
-%is $9m$, which corresponds to a delay of $30ns$.
-
-
-%Feed heights quoted in our measurements represent the distance from the balun to
-%the top of the central concrete hub. However, the actual focal height
-%of the dish represents the distance from the backplane of the feed to the dish's
-%wire mesh, which intersects the concrete hub between the ground and the top of
-%the hub. A 
-%XXX get discrepancy distance from DaveD. (1.7 ft from the bottom plate of
-%sandwich to the top of the the cage and .26 ft from the top of the concrete hub
-%to the middle where the parabola starts)
-
-%need to add in third : Antenna feed focal length 4.5 m which corresponds to a
-%signal propagation delay of 0.3 ns. Hence, subsequent reflections from the dish
-%vertex are expected to be at a delay which is integral multiple of 0.3 nS.
-\begin{figure*}
-\centering
-\includegraphics[totalheight=0.3\textheight]{plots/frequency_amp_phase_fullbw.png}
-\caption{Amplitude and phase of the measured return loss. Colored dashed lines
-mark three different frequency bands: $140-160MHz$ (typical power spectrum bandwidth),
-$100-200MHz$ (PAPER bandwidth), and
-$50-250MHz$ (HERA bandwidth).}
-\label{fig:freq}
-\end{figure*}
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 \subsection{Estimation of the delay spectrum of the instrument}
@@ -465,23 +391,22 @@ correction because it is not relevant to our analysis.
 \end{figure*}
 
 \section{Results}
+\begin{figure*}
+\centering
+\includegraphics[totalheight=0.3\textheight]{plots/frequency_amp_phase_fullbw.png}
+\caption{Amplitude and phase of the measured return loss. Colored dashed lines
+mark three different frequency bands: $140-160MHz$ (typical power spectrum bandwidth),
+$100-200MHz$ (PAPER bandwidth), and
+$50-250MHz$ (HERA bandwidth).}
+\label{fig:freq}
+\end{figure*}
 
-Figure \ref{fig:freq} shows the return loss for a frequency bandwidth of $50$ to
-$500MHz$, measured when the feed is suspended at the focal plane of the parabolic dish which is at $4.26m$ from the dish vertex. 
+Figure \ref{fig:freq} shows the return loss measured between $50$ to
+$500MHz$, measured when the feed is suspended at the focal plane of the parabolic dish which is at $5m$ from the dish vertex. 
 This measurement is Fourier transformed to obtain the delay spectrum of the instrument in the receiving mode as given in equation \ref{eq3}.
-%In Figure \ref{fig:3bands}, the return loss we measure is plotted versus delay
-%for three chosen bandwidths: the HERA bandwidth, the PAPER bandwidth, and a
-%typical power spectra bandwidth when using a Hamming window function. Two
-%additional measurements, using data taken in 2014 with the first prototype HERA
-%dish near Berkeley, CA, are also plotted using two different bandwidths. One of
-%the main differences between the Green Bank and Berkeley measurements is that
-%the feed was not encompassed in a cage for the Berkeley data (only a backplane). Additionally, the $50-1000MHz$ data taken in Berkeley was
-%Fourier-transformed internally by the measuring device, while the $100-200MHz$
-%data is analyzed post-measurement in the same way as the Green Bank data. 
+
 
 The delay response of the instrument is dependent on the band chosen for the Fourier transform.
-%As one might expect, in regions where the feed return loss is low, reflections are minimized.  Thus, we cannot ignore that these measurements were performed
-%using a PAPER-style feed tuned for efficient operation over a $100-200MHz$ bandwidth. 
 The measurement bandwidth effects the amplitude and phase of the delay spectrum. Fourier transforms taken over wider bandwidth
 become dominated by the feed sidelobes outside the operating band, making the resultant delay profiles less relevant
 for the power spectrum performance of the HERA instrument.  Conversely, when performing Fourier transforms over much 
