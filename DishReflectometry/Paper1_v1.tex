@@ -338,18 +338,36 @@ Figure \ref{fig:freq} shows the return loss measured between $50$ to
 $500MHz$ when the feed is suspended at the focal plane of the parabolic dish which is at $5m$ from the dish vertex. This measurement is Fourier transformed to obtain the delay spectrum of the instrument in the receiving mode as given in equation \ref{eq3}. Measurement bandwidth is kept much larger than the bandwidth of operation to achieve higher delay resolution.
 
 \subsection{Estimation of the delay spectrum of the instrument}
-At first, the frequency domain data is Fourier-transformed to compute the response of the system in the delay domain. The signal transmitted by the VNA is reflected first from the feed. In delay domain, this appears at the zero delay bin. In a second iteration , we subtract this value from the measured data and divide the the data by a factor ${(1-\Gamma_{a})\over \Gamma_{f}}$ to map the delay spectrum of the system from transmitting mode to receiving mode during sky observation.  
+At first, the frequency domain data is Fourier-transformed to compute the response of the system in the delay domain. The signal transmitted by the VNA is reflected first from the feed. In delay domain, this appears at the zero delay bin. In a second iteration , we subtract this value from the measured data and divide the the data by a factor ${(1-\Gamma_{f})\over \Gamma_{f}}$ to map the delay spectrum of the system from transmitting mode to receiving mode during sky observation.  
 
 \begin{figure}
 \centering
-\includegraphics[width=\linewidth]{plots/delay_spectrum_50_500_blackmanHarris.png}
+\includegraphics[width=\linewidth]{plots/delay_spectrum_100_200_blackman_Harris.png}
 \caption{Delay spectrum of the HERA element computed by taking the Fourier transform of the measured return loss of power at the feed output. The complex return loss of the element is measured between 50 to 500~MHz when the feed is kept at the focal plane of the dish at a focal height 5m.}
 \label{fig:window}
 \end{figure}
 
-\subsubsection{Effect of dish and the feed on delay spectrum estimation}
-\subsubsection{Effect of feed height on delay spectrum estimation}
+\subsubsection{Effect of antenna beam pattern and feed return loss on delay spectrum estimation}
+The return loss $\Gamma_{f}$ determines the amount of power coupled to the system via the feed antenna. Additionally, with each reflections, the power coupled to the system reduces by a factor of $\Gamma_{f}^{2}$. Since reflected signal results in system response in higher delay, mutiple reflections of the signal off the feed and the dish would result in an exponential envelope in the delay spectrum.  The return loss of power results from the antenna impedance mismatch with the free space as well as the transmission line. The complex feed antenna impedance is shown in the figure \ref{fig:feed_impedance}.
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{plots/Feed_impedance.png}
+\caption{Complex antenna impedance of the HERA feed element.}
+\label{fig:feed_impedance}
+\end{figure} 
+While antenna beam pattern $A_{f}$ is a smooth function of frequency and should have its imprint confined to lower delays, the return loss $\Gamma_{f}$ broadens the delay spectrum. However, a smaller return loss will result in vertical shift of the delay spectrum at lower values and therefore can make the higher order reflections insignificant. Given the antenna impedance and the 50 Ohm transmission line the measurements are done using the passive balun with a 2:1 impedance ratio providing a net retrun loss of power between the sky, the antenna and the transmission line shown in the figure \ref{fig:freq}. This provides the maximum impedance matching. \\
 \subsubsection{Effect of frequency bandwidth on delay spectrum estimation}
+Estimation of the delay spectrum by taking the Fourier transform of the measured return loss is sensitive to the frequency bandwidth of operation. Since the measurements are done in the spectral domain, measurement between two frequencies is analogous to windowing the frequency domain data by a square window function. In the delay domain, Fourier transform of this would result in multiple side lobes at higher delays. Therefore, appropriate windowing of the data is  necessary prior to taking the Fourier transform of the measured data. Figure \ref{fig:window} shows the delay spectrum estimated from the measured data using a square window as well as Blackman Harris window. Windowing the data prior to Fourier transform significantlu reduces the system response higher delays.  
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{plots/window.png}
+\caption{Effect of finite bandwidth on estimation of delay spectrum: Blue line shows the delay spectrum of the HERA element computed from the measured data which is band limited between 100 to 200MHz. Green line shows the delay spectrum estimated from the same data set after multiplying the data by a Blackman Harris window. The delay spectrum of the windowed data set shows significant reduction in the instrument response at higher delays.}
+\label{fig:window}
+\end{figure} 
+
+\subsubsection{Effect of dish and the feed on delay spectrum estimation}
+The delay spectrum of the instrument is the combined response due to the dish and the feed reflections. Any additional reflections also contributes to the measured return loss and thus contributed to the delay spectrum at various delays. Figure \ref{fig:feed_only} shows the delay spectrum of the feed alone while the feed is kept upside down on the ground.  
+\subsubsection{Effect of feed height on delay spectrum estimation}
 \subsection{Comparison with PAPER antenna}
 \section{Comparison with simulations}
 \section{Effect of instrument delay spectrum on 21cm power spectrum measurements }
