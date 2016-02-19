@@ -30,8 +30,8 @@
 
 \author{Nipanjana Patra\altaffilmark{1} }
 \email{Contact author email: nipanjana@berkeley.edu}
-\author{Zaki Ali\altaffilmark{1}, Carina Cheng\altaffilmark{1}, Dave DeBoer\altaffilmark{1}}
-\author{Gilbert Hsyu\altaffilmark{2}, Tsz Kuk Leung\altaffilmark{2}, Aaron Parsons\altaffilmark{1}}
+\author{Aaron Parsons\altaffilmark{1}, Dave DeBoer, Zaki Ali\altaffilmark{1}, Cherie Day\altaffilmark{1}, Carina Cheng\altaffilmark{1}}
+\author{Gilbert Hsyu\altaffilmark{2}, Tsz Kuk Leung\altaffilmark{2}}
 \altaffiltext{1}{University of California, Berkeley, nipanjana@berkeley.edu}
 \altaffiltext{2}{To be inserted}
 
@@ -323,28 +323,28 @@ The second difference is the multiplicative ${ (1-\Gamma_f)\over \Gamma_{f} }$. 
 \begin{figure*}[ht]
 \begin{minipage}[b]{0.5\linewidth}
 \centering
-\includegraphics[angle=0, width=\linewidth]{plots/s11_mag_fullband.png}
+\includegraphics[angle=0, width=\linewidth]{plots/s11_HERA_feed_PAPER_mag.png}
 \end{minipage}
 \hspace{0.1cm}
 \begin{minipage}[b]{0.5\linewidth}
 \centering
-\includegraphics[angle=0, width=\linewidth]{plots/s11_ph_fullband.png}
+\includegraphics[angle=0, width=\linewidth]{plots/s11_HERA_feed_PAPER_ph.png}
 \end{minipage}
-\caption{Left: Magnitude of the return loss of power measured in between 50 to 500 MHz using vector network analyser. Right panel shows the corresponding phase.}
+\caption{Left: Magnitude of the return loss of power measured in between 100 to 200 MHz using vector network analyser. Right panel shows the corresponding phase.HERA feed design is derived from modified PAPER antenna and therefore the return loss closely relates to the PAPER antenna response with slight frequency shift. The return loss measured when the HERA feed is suspended over the dish is, however, show deviation from the feed performance. }
 \label{fig:freq}       
 \end{figure*}
 
-Figure \ref{fig:freq} shows the return loss measured between $50$ to
-$500MHz$ when the feed is suspended at the focal plane of the parabolic dish which is at $5m$ from the dish vertex. This measurement is Fourier transformed to obtain the delay spectrum of the instrument in the receiving mode as given in equation \ref{eq3}. Measurement bandwidth is kept much larger than the bandwidth of operation to achieve higher delay resolution.
+Figure \ref{fig:freq} shows the return loss measured between $100$ to
+$200MHz$ when the feed is suspended at the focal plane of the parabolic dish which is at $5m$ from the dish vertex. This measurement is Fourier transformed to obtain the delay spectrum of the instrument in the receiving mode as given in equation \ref{eq3}. Measurement bandwidth is kept much larger than the bandwidth of operation to achieve higher delay resolution.
 
 \subsection{Estimation of the delay spectrum of the instrument}
 At first, the frequency domain data is Fourier-transformed to compute the response of the system in the delay domain. The signal transmitted by the VNA is reflected first from the feed. In delay domain, this appears at the zero delay bin. In a second iteration , we subtract this value from the measured data and divide the the data by a factor ${(1-\Gamma_{f})\over \Gamma_{f}}$ to map the delay spectrum of the system from transmitting mode to receiving mode during sky observation.  
 
 \begin{figure}
 \centering
-\includegraphics[width=\linewidth]{plots/delay_spectrum_100_200_blackman_Harris.png}
-\caption{Delay spectrum of the HERA element computed by taking the Fourier transform of the measured return loss of power at the feed output. The complex return loss of the element is measured between 50 to 500~MHz when the feed is kept at the focal plane of the dish at a focal height 5m.}
-\label{fig:window}
+\includegraphics[width=\linewidth]{plots/delay_spectrum_100_200_BH.png}
+\caption{Delay spectrum of the HERA element, the PAPER element and the HERA feed estimated by taking the Fourier transform of the measured return loss of power at the feed output. HERA feed design is driven by the PAPER element with improved response at all delays. The feed, when suspended on the dish results in a more complex return loss and corresponding delay response is shown in the figure.}
+\label{fig:delay_spectrum}
 \end{figure}
 
 \subsubsection{Effect of antenna beam pattern and feed return loss on delay spectrum estimation}
@@ -364,13 +364,14 @@ Estimation of the delay spectrum by taking the Fourier transform of the measured
 \caption{Effect of finite bandwidth on estimation of delay spectrum: Blue line shows the delay spectrum of the HERA element computed from the measured data which is band limited between 100 to 200MHz. Green line shows the delay spectrum estimated from the same data set after multiplying the data by a Blackman Harris window. The delay spectrum of the windowed data set shows significant reduction in the instrument response at higher delays.}
 \label{fig:window}
 \end{figure} 
-
 \subsubsection{Effect of dish and the feed on delay spectrum estimation}
-Measurement equations shows the effects of mutiple reflections of the sky signal between the feed and the dish. Any other reflections off the feed structure and/or any other part of the dish-feed assembly would appear at arbitrary delays. The estimated delay spectrum of the instrument is collectively contributed by all the reflections. We measure the return loss of the feed alone keeping it on the ground facing the sky shown in the Figure \ref{fig:freq}. Delay spectrum estimated from this measurement provides the lowest limit of the delay spectrum of the instrument considering there is no significant multiple reflections in between the feed and the dish. 
- Any additional reflections also contributes to the measured return loss and thus contributed to the delay spectrum at various delays. Figure \ref{fig:feed_only} shows the delay spectrum of the feed alone while the feed is kept upside down on the ground.  
-\subsubsection{Effect of feed height on delay spectrum estimation}
-\subsection{Comparison with PAPER antenna}
-\section{Comparison with simulations}
+Measurement equations shows the effects of multiple reflections of the sky signal between the feed and the dish. Any other reflections off the feed structure and/or any other part of the dish-feed assembly would appear at arbitrary delays. The estimated delay spectrum of the instrument is collectively contributed by all the reflections. We measure the return loss of the feed alone keeping it on the ground facing the sky shown in the Figure \ref{fig:freq}. Delay spectrum estimated from this measurement provides the lowest limit of the delay spectrum of the instrument considering there is no multiple reflections in between the feed and the dish. 
+ Any additional reflections also contributes to the measured return loss and thus contributed to the delay spectrum at various delays. Figure \ref{fig:delay_spectrum} shows the delay spectrum of the feed while it is kept upside down on the ground in green, as well as that of a HERA antenna with the feed suspended at the focal plane in blue. Red line shows shows the delay spectrum of the PAPER antenna in comparison with the HERA element.
+%\subsubsection{Effect of feed height on delay spectrum estimation}
+\subsubsection{Comparison of performance of HERA with PAPER}
+While PAPER has established the till date the most stringent upper limit on the 21cm power spectrum measurement, the need to increase the measurement sensitivity called for increased collecting area per PAPER antenna. This has driven to the parabolic reflector antenna based design of the PAPER successor HERA where essentially the PAPER antenna with minor modification of the ground plane-side plane assembly works as the feed and thus having larger collecting area per element. Figure \ref{fig:freq} shows the return loss measurement of power of the PAPER antenna and figure \ref{fig:delay_spectrum} shows (red line) the corresponding delay spectrum. The feed element shows improved delay response compared to the PAPER element across all delays $>50~ns$ with marginal improvement at delays $<50~ns$. The delay response of the HERA element degrades marginally as the feed is suspended over the dish due to multiple reflections between the feed and the dish.  It is evident that majority of the response at lower delays are contributed due to the feed and its supporting structure at lower delays which is somewhat common to all three measurements. At the lower delays, the structures in the delay response remains unaltered even with the variation of the feed height relative to the dish vertex. It is essentially these structures set lower limits on the $k_{||}$ that could be probed and any redshift $z$ above the instrument footprint. 
+
+\subsubsection{Comparison with simulations}
 \section{Effect of instrument delay spectrum on 21cm power spectrum measurements }
 
 The delay response of the instrument is dependent on the band chosen for the Fourier transform.
@@ -380,18 +381,7 @@ for the power spectrum performance of the HERA instrument.  Conversely, when per
 narrow bands (the windowed $20MHz$ bands typical of PAPER analysis), the width of the resulting delay profile
 becomes dominated by sidelobes of low delay emission interacting with the narrow bandwidth kernel.  
 Although this may appear to be a relevant performance metric for PAPER power spectrum analysis, such an analysis typically pre-filters out low-delay emission using wide bandwidths precisely to avoid sidelobes from low-delay emission.  Hence, the most relevant delay-spectrum performance profile is that taken using the $100-200MHz$ band. \textbf{In the $100-200MHz$ delay profile, we see a delay response of $-25dB$ at $60ns$, which slopes down to $-60dB$ at $\sim120ns$.  WRITE AGAIN}
-\begin{figure}
-\centering
-\includegraphics[width=\linewidth]{plots1/delayspectrum_height.png}
-\caption{Delay transform of the transfer function of the HERA element keeping the feed at various heights. Delay transform is produced by taking the Fourier transform of the measurement using Blackman-Harris window.}
-\label{fig:elevator}
-\end{figure}
-\begin{figure}[H]
-\centering
-\includegraphics[width=\linewidth]{plots/delay_feed.png}
-\caption{Delay plots produced using a Hamming window function for different feed only configurations and the PAPER bandwidth ($100MHz-200MHz$). The black dashed lines illustrate our ``60 by 60" specification.}
-\label{fig:outofthedish}
-\end{figure}
+
 
 Figure \ref{fig:elevator} is again a delay plot of the return loss at four different feed suspension heights. 
 We use the PAPER bandwidth and note
