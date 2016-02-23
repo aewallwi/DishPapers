@@ -58,7 +58,11 @@ sky-averaged 21~cm monopole experiments such as
 (BIGHORNS; ~\citealt{XXX}),
 (SARAS; ~\citealt{patra_et_al2014}),
 (SCIHI; ~\citealt{voytek_et_al2014}),
+<<<<<<< HEAD
 (HyPerion; ~\citealt{presley_et_al2015})
+=======
+(HYPERION; ~\citealt{presley_et_al2015})
+>>>>>>> 5ace9d1b4c585c4d89229f86cf2f2c1006648b62
 % XXX others?
 and 21~cm reionization power spectrum experiments such as
 the LOw Frequency ARray (LOFAR; ~\citealt{XXX}),
@@ -246,8 +250,12 @@ signal, arriving at the feed at a delay $\Delta \tau$ with respect to the direct
 at the level of $-60dB$ at a delay of $60ns$ relative to the first incident
 signal at the feed ~\citep{parsons_deboer_memo}. This specification was
 approximated based on the power level of the cosmological signal in relation to
+<<<<<<< HEAD
 foreground signals, which is estimated to be six orders of magnitude fainter
 ~\citep{santos_et_al2005,ali_et_al2008,deoliveira2008,jelic_et_al2008,bernardi_et_al2009,bernardi_et_al2010,ghosh_et_al2011}. Additionally, the $14m$ HERA baselines set a foreground containing
+=======
+foreground signals, which is estimated to be six orders of magnitude fainter ~\citep{santos_et_al2005,ali_et_al2008,deoliveira2008,jelic_et_al2008,bernardi_et_al2009,bernardi_et_al2010,ghosh_et_al2011}. Additionally, the $14m$ HERA baselines set a foreground containing
+>>>>>>> 5ace9d1b4c585c4d89229f86cf2f2c1006648b62
 horizon-limit (the wedge) that, with some buffer, sets a delay specification of
 $60ns$
 ~\citep{parsons_et_al2012b,vedantham_et_al2012,nithya_et_al2013,liu_et_al2014a,liu_et_al2014b}. Our goal is to measure the instrument response $\Sigma(\nu)$ and its effect on the power spectrum measurements. 
@@ -357,7 +365,7 @@ The return loss $\Gamma_{f}$ determines the amount of power coupled to the syste
 \end{figure} 
 While antenna beam pattern $A_{f}$ is a smooth function of frequency and should have its imprint confined to lower delays, the return loss $\Gamma_{f}$ broadens the delay spectrum. However, a smaller return loss will result in vertical shift of the delay spectrum at lower values and therefore can make the higher order reflections insignificant. Given the antenna impedance and the 50 Ohm transmission line the measurements are done using the passive balun with a 2:1 impedance ratio providing a net retrun loss of power between the sky, the antenna and the transmission line shown in the figure \ref{fig:freq}. This provides the maximum impedance matching. \\
 \subsubsection{Effect of frequency bandwidth on delay spectrum estimation}
-Estimation of the delay spectrum by taking the Fourier transform of the measured return loss is sensitive to the frequency bandwidth of operation. Since the measurements are done in the spectral domain, measurement between two frequencies is analogous to windowing the frequency domain data by a square window function. In the delay domain, Fourier transform of this would result in multiple side lobes at higher delays. Therefore, appropriate windowing of the data is  necessary prior to taking the Fourier transform of the measured data. Figure \ref{fig:window} shows the delay spectrum estimated from the measured data using a square window as well as Blackman Harris window. Windowing the data prior to Fourier transform significantlu reduces the system response higher delays.  
+Estimation of the delay spectrum by taking the Fourier transform of the measured return loss is sensitive to the frequency bandwidth of operation. Since the measurements are done in the spectral domain, measurement between two frequencies is analogous to windowing the frequency domain data by a square window function. In the delay domain, Fourier transform of this would result in multiple side lobes at higher delays. Therefore, appropriate windowing of the data is  necessary prior to taking the Fourier transform of the measured data. Figure \ref{fig:window} shows the delay spectrum estimated from the measured data using a square window as well as Blackman Harris window. Windowing the data prior to Fourier transform significantly reduces the system response higher delays.  
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{plots/window.png}
@@ -422,7 +430,10 @@ HERA of $-60dB$ attenuation at $60ns$, we recommend reinvestigating this specifi
 the element's current delay performance on HERA science.  We suspect that, at the level of $-50dB$ at $60ns$ and $-60dB$ at $120ns$, this
 performance may indeed be adequate for the delay-domain power spectrum analysis for which HERA has been optimized.
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5ace9d1b4c585c4d89229f86cf2f2c1006648b62
 \bibliography{biblio.bib}{}
 \bibliographystyle{apj}
 \end{document}
