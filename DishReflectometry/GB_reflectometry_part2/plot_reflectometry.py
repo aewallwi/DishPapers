@@ -10,7 +10,7 @@ def fromcsv(filename):
     return x[:,0]/1e9, x[:,1]
 
 for filename in sys.argv[1:]:
-    BASE = filename[:-len('_DB.csv')]
+    BASE = filename[:-len('.csv')]
     db_file = BASE + '_DB.csv'
     ph_file = BASE + '_P.csv'
 
@@ -24,8 +24,8 @@ for filename in sys.argv[1:]:
 
     #valid = np.ones(fq.size, dtype=np.bool) # use entire sampled band
     #valid = np.where(fq < .250) # restrict to HERA band
-    valid = np.where(np.logical_and(fq < .2, fq > .1)) # restrict to PAPER band
-    fq, d = fq[valid], d[valid]
+    valid = np.where(np.logical_and(fq < .170, fq > .130)) # restrict to PAPER band
+    fq, d, db, ph = fq[valid], d[valid], db[valid], ph[valid]
     tau = np.fft.fftfreq(fq.size, fq[1]-fq[0])
     window = a.dsp.gen_window(fq.size, WINDOW)
     
@@ -33,26 +33,73 @@ for filename in sys.argv[1:]:
     _dw = np.fft.ifft((np.abs(d))**2*window) / window.mean() # compensate for window amplitude
 
     if True: # approx account for 1st reflection of sky signal off of feed
-        _dw *= np.abs(_d[0])
-        _d *= np.abs(_d[0])
-
+        #_dw *= np.abs(_d[0])
+        #_d *= np.abs(_d[0])
+        
+        #d -= np.abs(_d[0])
+        d *= np.abs(_dw[0])/(1-np.abs(_dw[0]))
+        _d = np.fft.ifft((np.abs(d))**2)
+        _dww = np.fft.ifft((np.abs(d))**2*window) /window.mean()# compensate for window amplitude
+    
+    
     print np.abs(_d[0])
-    #plt.figure(1); plt.semilogy(fq, np.abs(d)**2, label=BASE)
+    H0=100#h Km/sec/Mpc
+    c = 3*10**5# Km/sec
+    f21 = 1420#GHz
+    Omega_m = 0.27
+    Omega_lambda = 0.73
+    Omega_k = (1-Omega_m-Omega_lambda)
+    z = 8.0
+    Ez = Omega_m*(1+z)**3+Omega_k*(1+z)**2+Omega_lambda*(1+z)
+    k_ll = (f21*H0*Ez)/(c*(1+z)**2)
+    
+    #x1 = np.fft.fftshift(tau)
+    #x2 = 2*np.pi*x1*k_ll
+    #y1 = 10.0*np.log10(np.fft.fftshift(np.abs(_dww)))
+    #fig = plt.figure()
+    #ax2 = fig.add_subplot(111)
+    #ax1 = ax2.twinx()
+    
+   # line1, = ax2.plot(x1, y1, linewidth=2.5, label=BASE.replace('_', ' '))
+   # line2, = ax1.plot(x1, 10.0*np.log10(np.fft.fftshift(np.abs(_dww))), linewidth=2.5, label=BASE.replace('_', ' '))
+    
+    
+   #plt.plot(np.fft.fftshift(tau), 10.0*np.log10(np.fft.fftshift(np.abs(_d))), linewidth=2.5, label= 'Square Window')
+    plt.plot(np.fft.fftshift(tau), 10.0*np.log10(np.fft.fftshift(np.abs(_dww))), linewidth=2.5, label=BASE.replace('_', ' '))
+    
+    #plt.plot(fq, db,linewidth=2.5, label=BASE.replace('_', ' '))
+    #plt.plot(fq, ph, linewidth=2.5, label=BASE.replace('_', ' '))
+   
 
-    #plt.figure(2)
-    #plt.semilogy(np.fft.fftshift(tau), np.fft.fftshift(np.abs(_d)**2))
-    #plt.semilogy(np.fft.fftshift(tau), np.fft.fftshift(np.abs(_dw)), label=BASE)
-    #plt.semilogy(np.fft.fftshift(tau), np.fft.fftshift(np.abs(_dw)**2), label=BASE)
-    plt.plot(np.fft.fftshift(tau), 10.0*np.log10(np.fft.fftshift(np.abs(_dw))), linewidth=2.5, label=BASE.replace('_', ' '))#label='Feed with backplane only on dish')
-    #plt.plot(np.fft.fftshift(tau), 10.0*np.log10(np.fft.fftshift(np.abs(_dw))), label='Feed on dish')
-
-
-#np.savetxt('FC_NC41_UD.txt', np.fft.fftshift(np.abs(_dw)**2))
-#plt.figure(1); plt.legend(loc='best')
-#plt.figure(2)
-plt.xlim(-30,350)
-#plt.ylim(-145,-110)
+#-----------------plotting returnloss magnitude--------------
+#plt.plot(fq, 10.0*np.log10((np.abs(d)**2)), label='Feed on dish')
+#plt.xlim(-350,350)
+plt.xlabel('Frequency (GHz)')
+plt.ylabel('Return loss magnitude (dB)')
 plt.grid()
-plt.legend(loc='best')
-
+plt.legend(loc='lower right')
 plt.show()
+
+#-----------------plotting returnloss phase--------------
+#plt.plot(fq, ph, label='Feed on dish')
+#plt.xlabel('Frequency (GHz)')
+#plt.ylabel('Phase (Degree)')
+#plt.grid()
+#plt.legend(loc='lower right')
+#plt.show()
+#-----------------plotting delay spectrum--------------
+#plt.plot(np.fft.fftshift(tau), 10.0*np.log10(np.fft.fftshift(np.abs(_dw))), linewidth=2.5, label=BASE.replace('_', ' '))
+#plt.xlim(-350,350)
+#plt.xlabel('Delay(ns)')
+#plt.ylabel('Delay spectrum (dB)')
+#plt.grid()
+#plt.legend(loc='lower right')
+#plt.show()
+	
+
+
+
+
+
+
+
