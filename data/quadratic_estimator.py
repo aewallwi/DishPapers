@@ -244,7 +244,7 @@ for f in files:
 
             hetas[bb] = etas(freq[hfreqs[band]])
             wetas[bb] = etas(freq[wfreqs[band]])
-            if PLOT and 1 :
+            if PLOT and 0:
                 p.subplot(111); p.semilogy(etas(freq[hfreqs[band]]),n.abs(banddataC[bb][bl][:,12]),color='c')
                 p.subplot(111); p.semilogy(etas(freq[hfreqs[band]]),n.abs(banddataC_norm[bb][bl][:,12]), color='k')
                 p.subplot(111); p.semilogy(etas(freq[wfreqs[band]]),n.abs(banddataI[bb][bl][:,12]), color='g')
@@ -254,4 +254,4 @@ for f in files:
 
             
 
-    n.savez('pspecs_'+f.split('/')[-1], bls=bls, pC=banddataC, pI=banddataI, pCnorm=banddataC_norm, pInorm=banddataI_norm, hetas=hetas, wetas=wetas)
+    n.savez('pspecs_'+f.split('/')[-1]+'_%d'%ntimes, bls=bls, pC=banddataC, pI=banddataI, pCnorm=banddataC_norm, pInorm=banddataI_norm, hetas=hetas, wetas=wetas)
