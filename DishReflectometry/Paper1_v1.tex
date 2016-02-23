@@ -58,7 +58,11 @@ sky-averaged 21~cm monopole experiments such as
 (BIGHORNS; ~\citealt{XXX}),
 (SARAS; ~\citealt{patra_et_al2014}),
 (SCIHI; ~\citealt{voytek_et_al2014}),
+<<<<<<< HEAD
+(HyPerion; ~\citealt{presley_et_al2015})
+=======
 (HYPERION; ~\citealt{presley_et_al2015})
+>>>>>>> 5ace9d1b4c585c4d89229f86cf2f2c1006648b62
 % XXX others?
 and 21~cm reionization power spectrum experiments such as
 the LOw Frequency ARray (LOFAR; ~\citealt{XXX}),
@@ -144,7 +148,7 @@ Consider a two element interferometer with a baseline $\vec b$ and antenna field
 \volt_{1}(\thhat, \nu) = \bmvolt_{1}(\thhat,\nu)\volt_\sky(\thhat,\nu)\nonumber\\
 \end{equation}
 \begin{equation}
-\volt_{2} (\thhat, \nu)= \bmvolt_{2}(\thhat,\nu)\volt_\sky(\thhat,\nu)\dfngexp\nonumber\\
+\volt_{2} (\thhat, \nu)= \bmvolt_{2}(\thhat,\nu)\volt_\sky(\thhat,\nu)\fngexp\nonumber\\
 \end{equation}
 where $\bmvolt_{1}(\thhat,\nu)$ and $\bmvolt_{2}(\thhat,\nu)$ are the electric field response patterns 
 of the two antennas.
@@ -173,9 +177,13 @@ resulting in the delay spctrum:
 \end{eqnarray}
 % XXX rethink how to express this equation (not correct about integrated over all sky)
 % XXX define tau_g
+<<<<<<< HEAD
 The convolution is carried out along the $\tau$ axis which is Fourier conjugate of the frequency $\nu$. In words, the sky delay spectrum from any direction $\thhat$ is convoluted with the delay spectrum of the instrument and would be located at the delay $\tau = {\vec b \cdot \thhat \over c}$ %defined this differently earlier
  in the delay domain. The maximum geometric delay possible for a given base line would be $\tau_{g} ={ b \over c }$ for the direction of $\thhat = 0$ when the phase centre is halfway in between the two antennas. %The phase center is elsewhere defined as being at the center of one of the antennas.
  Hence, the sky contribution from any direction would be confined within $-\tau_{g}<\tau<\tau_{g}$. Due to chromaticity of the sky signal as well as instrument reponse, the delay spectrum of the sky spills over the delay $\tau> \tau_{g}$ with decaying amplitude [Ref to the figure Parsons12]. Sky delay spectrum $I_{sky}(\tau)$ is contributed by the foreground  $I_{fg}(\tau)$  which is spectrally smooth and the 21~cm power spectrum $I_{21}(\tau)$ which contains spectral signatures. Therefore, in the spill over region $(\tau>\tau_{g})$, the relative strength of the smooth spectrum foreground with respect to the delay spectrum of the $I_{21}$ reduces and the 21~cm delay spectrum could potentially be detectable. 
+=======
+The convolution is carried out along the $\tau$ axis which is Fourier conjugate of the frequency $\nu$. In words, the sky delay spectrum from any direction $\thhat$ is convolved with the delay spectrum of the instrument and would be located at the delay $\tau = {\vec b \cdot \thhat \over c}$ in the delay domain. The maximum geometric delay possible for a given base line would be $\tau_{g} ={ b \over c }$ for the direction of $\thhat = 0$ when the phase centre is halfway in between the two antennas. Hence, the sky contribution from any direction would be confined within $-\tau_{g}<\tau<\tau_{g}$. Due to chromaticity of the sky signal as well as instrument reponse, the delay spectrum of the sky spills over the delay $\tau> \tau_{g}$ with decaying amplitude [Ref to the figure Parsons12]. Sky delay spectrum $I_{sky}(\tau)$ is contributed by the foreground  $I_{fg}(\tau)$  which is spectrally smooth and the 21~cm power spectrum $I_{21}(\tau)$ which contains spectral signatures. Therefore, in the spill over region $(\tau>\tau_{g})$, the relative strength of the smooth spectrum foreground with respect to the delay spectrum of the $I_{21}$ reduces and the 21~cm delay spectrum could potentially be detectable. 
+>>>>>>> ee76a29b011fac5b5ef562a552658c4a0e828364
 
 %\subsection{Delay spectrum: An estimate of the 21cm power spectrum}
 %Add text here. 
@@ -248,7 +256,12 @@ signal, arriving at the feed at a delay $\Delta \tau$ with respect to the direct
 at the level of $-60dB$ at a delay of $60ns$ relative to the first incident
 signal at the feed ~\citep{parsons_deboer_memo}. This specification was
 approximated based on the power level of the cosmological signal in relation to
+<<<<<<< HEAD
+foreground signals, which is estimated to be six orders of magnitude fainter
+~\citep{santos_et_al2005,ali_et_al2008,deoliveira2008,jelic_et_al2008,bernardi_et_al2009,bernardi_et_al2010,ghosh_et_al2011}. Additionally, the $14m$ HERA baselines set a foreground containing
+=======
 foreground signals, which is estimated to be six orders of magnitude fainter ~\citep{santos_et_al2005,ali_et_al2008,deoliveira2008,jelic_et_al2008,bernardi_et_al2009,bernardi_et_al2010,ghosh_et_al2011}. Additionally, the $14m$ HERA baselines set a foreground containing
+>>>>>>> 5ace9d1b4c585c4d89229f86cf2f2c1006648b62
 horizon-limit (the wedge) that, with some buffer, sets a delay specification of
 $60ns$
 ~\citep{parsons_et_al2012b,vedantham_et_al2012,nithya_et_al2013,liu_et_al2014a,liu_et_al2014b}. Our goal is to measure the instrument response $\Sigma(\nu)$ and its effect on the power spectrum measurements. 
@@ -423,6 +436,10 @@ HERA of $-60dB$ attenuation at $60ns$, we recommend reinvestigating this specifi
 the element's current delay performance on HERA science.  We suspect that, at the level of $-50dB$ at $60ns$ and $-60dB$ at $120ns$, this
 performance may indeed be adequate for the delay-domain power spectrum analysis for which HERA has been optimized.
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 5ace9d1b4c585c4d89229f86cf2f2c1006648b62
 \bibliography{biblio.bib}{}
 \bibliographystyle{apj}
 \end{document}
