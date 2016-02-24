@@ -307,16 +307,16 @@ If $I_{tr}$ is the signal transmitted by the VNA and $\Gamma_{f}$ is the feed re
 I_{r}= \beam_{f} I_{tr}
 \end{equation}
 
-The total reflected power, returned to the VNA, denoted by $I_{ret}$ would be:
+The total reflected power returned to the VNA, as measured by the VNA would be:
 \begin{eqnarray}\label{eqn:series2}
-I_{ret} & = & \Gamma_{f}I_{tr}+ I_{r}(1-\Gamma_{f}) [\Gamma_{d} \dfngexp + \Gamma_{f}\Gamma_{d}^{2} (\dfngexp)^{2}\nonumber\\
+I_{meas} & = & \Gamma_{f}I_{tr}+ I_{r}(1-\Gamma_{f}) [\Gamma_{d} \dfngexp + \Gamma_{f}\Gamma_{d}^{2} (\dfngexp)^{2}\nonumber\\
 &&+ ....+ \Gamma_{f}^{n-1}\Gamma_{d})^{n}(\dfngexp)^{n}]
 \end{eqnarray}
 
 Using the value of $I_{r}$ and simplifying:
  
   \begin{eqnarray}\label{eqn:ratio2}
- {I_{ret} \over I_{tr} } & = & \Gamma_{f}
+ {I_{meas} \over I_{tr} } & = & \Gamma_{f}
   +  \Gamma_{d}(1-\Gamma_f) \beam_{f} I_{tr} [e^{i\phi}+ \Gamma_{f}\Gamma_{d} e^{i2\phi}\nonumber\\ 
   && +  ....+ (\Gamma_{f}\Gamma_{d})^{n}e^{i n\phi}]\nonumber\\
   & = & \Gamma_{f} + { (1-\Gamma_f)\beam_{f}\over \Gamma_{f} } \displaystyle\sum\limits_{n=1}^{n} [\Gamma_{f}\Gamma_{d}e^{i\phi}]^{n}
@@ -327,8 +327,12 @@ The ratio in Equation \ref{eqn:ratio2} is identical to the ratio in the sky
 observation in Equation \ref{eqn:ratio1} except in three factors. The
 first factor corresponds to an additive amplitude difference arising from
 $\Gamma_{f}$, which physically accounts for the initial reflection at the feed.
-The second difference is the multiplicative ${ (1-\Gamma_f)\over \Gamma_{f} }$. In addition, in order to estimate the true response of the system to the sky signal in the receiving mode, we add the term $A_{f}$.  These corrections map the measured instrument response from transmission mode in which the measurement is taken to receiving mode in which the sky observation is done. 
-
+The second difference is the multiplicative ${ (1-\Gamma_f)\over \Gamma_{f} }$. In addition, in order to estimate the true response of the system to the sky signal in the receiving mode, we add the term $A_{f}$.  These corrections map the measured instrument response from transmission mode in which the measurement is taken to receiving mode in which the sky observation is done. The corrected measurement could be written as
+ \begin{eqnarray}\label{eqn:ratio2}
+ \left[{I_{meas} \over I_{tr}}-\Gamma_{f}\right]{ \Gamma_{f} \over (1-\Gamma_{f})} + \beam_{f}  & = & \beam_{f}+ \beam_{f} \displaystyle\sum\limits_{n=1}^{n} [\Gamma_{f}\Gamma_{d}e^{i\phi}]^{n}\nonumber\\
+ & = & {I_{meas} \over I_{sky} }
+ \label{eq9}
+\end{eqnarray}
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++
 \section{Results}
 \begin{figure*}[ht]
