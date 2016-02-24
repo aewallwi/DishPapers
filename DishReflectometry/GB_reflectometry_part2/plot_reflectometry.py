@@ -38,8 +38,8 @@ for i,v in enumerate(valids.keys()):
     #valid3 = np.where(np.logical_and(fq < .190, fq > .160))
 #if i==0:
       fq, d, db, ph = fq[valid[v]], d[valid[v]], db[valid[v]], ph[valid[v]]
-#elif i==1:
- #   fq, d, db, ph = fq[valid2], d[valid2], db[valid2], ph[valid2]
+    elif v == '130-160 MHz':
+      fq, d, db, ph = fq[valid2], d[valid2], db[valid2], ph[valid2]
 #elif i==2:    
   #  fq, d, db, ph = fq[valid3], d[valid3], db[valid3], ph[valid3]
     

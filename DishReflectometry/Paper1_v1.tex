@@ -238,11 +238,11 @@ where we define a combined common instrument parameter, written as,
 \Sigma(\vec b, \nu) & = & \beam_{f}  [ 1+  \Gamma_{f}\Gamma_{d} \dfngexp \nonumber\\
 && + (\Gamma_{f}\Gamma_{d})^2(\dfngexp)^{2}+ \nonumber\\
 &&  ....+(\Gamma_{f}\Gamma_{d})^{n}(\dfngexp)^{n}  ]\\
-& = & \beam_{f}\displaystyle\sum\limits_{n=1}^{n} [\Gamma_{f}\Gamma_{d}\dfngexp]^{n}
-   \nonumber\\
+& = & \beam_{f}+\beam_{f} \displaystyle\sum\limits_{n=1}^{n} [\Gamma_{f}\Gamma_{d}\dfngexp]^{n}
+   \nonumber\\ 
    \label{eq6}
 \end{eqnarray}
-where, $\beam_{f}=\bmvolt_{f}\bmvolt_{f}^{*}$ is the antenna cross power pattern.
+where, $\beam_{f}=\bmvolt_{f}\bmvolt_{f}^{*}= |a(1-\Gamma_{f})|^{2}$ is the antenna cross power pattern.
 and the delay spectrum would be, 
 \begin{eqnarray}
 %\tilde V(\vec b, \tau) & = & \int \left [ \int I_{sky}(\vec b, \nu)\Sigma(\vec b, \nu) \fngexp  d\Omega \right ]  e^{-2\pi i\nu\tau} d\nu \nonumber \\
@@ -256,12 +256,9 @@ signal, arriving at the feed at a delay $\Delta \tau$ with respect to the direct
 at the level of $-60dB$ at a delay of $60ns$ relative to the first incident
 signal at the feed ~\citep{parsons_deboer_memo}. This specification was
 approximated based on the power level of the cosmological signal in relation to
-<<<<<<< HEAD
 foreground signals, which is estimated to be six orders of magnitude fainter
-~\citep{santos_et_al2005,ali_et_al2008,deoliveira2008,jelic_et_al2008,bernardi_et_al2009,bernardi_et_al2010,ghosh_et_al2011}. Additionally, the $14m$ HERA baselines set a foreground containing
-=======
-foreground signals, which is estimated to be six orders of magnitude fainter ~\citep{santos_et_al2005,ali_et_al2008,deoliveira2008,jelic_et_al2008,bernardi_et_al2009,bernardi_et_al2010,ghosh_et_al2011}. Additionally, the $14m$ HERA baselines set a foreground containing
->>>>>>> 5ace9d1b4c585c4d89229f86cf2f2c1006648b62
+~\citep{santos_et_al2005,  ali_et_al2008,deoliveira2008, jelic_et_al2008, bernardi_et_al2009,bernardi_et_al2010, ghosh_et_al2011}. Additionally, the $14m$ HERA baselines set a foreground containing
+Additionally, the $14m$ HERA baselines set a foreground containing
 horizon-limit (the wedge) that, with some buffer, sets a delay specification of
 $60ns$
 ~\citep{parsons_et_al2012b,vedantham_et_al2012,nithya_et_al2013,liu_et_al2014a,liu_et_al2014b}. Our goal is to measure the instrument response $\Sigma(\nu)$ and its effect on the power spectrum measurements. 
@@ -291,7 +288,7 @@ $I_{meas}$ is the auto correlated power obtained from a single HERA element. Upo
 
 \begin{eqnarray}\label{eqn:ratio1}
 {I_{meas} \over I_{sky} } & = & \Sigma(\vec b, \nu) \nonumber\\
-  & = & \beam_{f} \displaystyle\sum\limits_{n=1}^{n} [\Gamma_{f}\Gamma_{d}\dfngexp]^{n}
+  & = & \beam_{f}+ \beam_{f} \displaystyle\sum\limits_{n=1}^{n} [\Gamma_{f}\Gamma_{d}\dfngexp]^{n}
    \nonumber\\
    \label{eq8}
 \end{eqnarray}
@@ -327,10 +324,10 @@ Using the value of $I_{r}$ and simplifying:
 \end{eqnarray}
 
 The ratio in Equation \ref{eqn:ratio2} is identical to the ratio in the sky
-observation in Equation \ref{eqn:ratio1} except in two factors. The
+observation in Equation \ref{eqn:ratio1} except in three factors. The
 first factor corresponds to an additive amplitude difference arising from
 $\Gamma_{f}$, which physically accounts for the initial reflection at the feed.
-The second difference is the multiplicative ${ (1-\Gamma_f)\over \Gamma_{f} }$. Our measurement is corrected  for these two terms to map the instrument response measurements from transmission mode in which the measurement is taken to receiving mode in which the sky observation is done. 
+The second difference is the multiplicative ${ (1-\Gamma_f)\over \Gamma_{f} }$. In addition, in order to estimate the true response of the system to the sky signal in the receiving mode, we add the term $A_{f}$.  These corrections map the measured instrument response from transmission mode in which the measurement is taken to receiving mode in which the sky observation is done. 
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++
 \section{Results}
