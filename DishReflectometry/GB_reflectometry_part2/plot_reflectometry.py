@@ -3,6 +3,11 @@
 import numpy as np, pylab as plt, aipy as a
 import sys, csv
 
+def fromcsv1(filename):
+    print 'Reading', filename
+    d = csv.reader(open(filename,'r'), delimiter=',')
+    x = np.array(list(d)[18:-1], dtype=np.float)
+    return x[:,0]/1e3, x[:,1]
 def fromcsv(filename):
     print 'Reading', filename
     d = csv.reader(open(filename,'r'), delimiter=',')
@@ -16,50 +21,63 @@ for filename in sys.argv[1:]:
 
     WINDOW = 'blackman-harris'
     #WINDOW = 'hamming'
-
-    fq,db = fromcsv(db_file)
-    fq,ph = fromcsv(ph_file)
+    
+    fq,db = fromcsv(db_file) # Reading the magnitude and the phase of the datafile to be processed
+    fq,ph = fromcsv(ph_file) 
+    fq_rb,db_rb = fromcsv1('measurement_dishAndFeed_DB.csv')
+    fq_rb,ph_rb = fromcsv1('measurement_dishAndFeed_P.csv')
+    d_rb = 10**(db_rb/20) * np.exp(2j*np.pi*ph_rb/360) # 20 to put into voltage amplitude, not power 
+    
+    fq_f,db_f = fromcsv('HERA_FEED_DB.csv') # Reading the magnitude and phase of the feed only datafile to calibrate for the zero point/ 
+    fq_f,ph_f = fromcsv('HERA_FEED_P.csv')
     #d = 10**(db/10) * np.exp(2j*np.pi*ph/360) # power
     d = 10**(db/20) * np.exp(2j*np.pi*ph/360) # 20 to put into voltage amplitude, not power
-    valids = {
-          '100- 130 MHz'  : np.where(np.logical_and(fq>.100 ,fq<.130)), 
-          '130 - 160 MHz' : np.where(np.logical_and(fq>.130 ,fq<.160)), 
-          '160 - 190 MHz' : np.where(np.logical_and(fq>.160 ,fq<.190)),
-          }
+    d_f = 10**(db_f/20) * np.exp(2j*np.pi*ph_f/360) # 20 to put into voltage amplitude, not power
+    
+#    valids = {
+#          '100- 130 MHz'  : np.where(np.logical_and(fq>.100 ,fq<.130)), 
+#          '130 - 160 MHz' : np.where(np.logical_and(fq>.130 ,fq<.160)), 
+#          '160 - 190 MHz' : np.where(np.logical_and(fq>.160 ,fq<.190)),
+#          }
           
 
-for i,v in enumerate(valids.keys()):
+#for i,v in enumerate(valids.keys()):
 
     #valid = np.ones(fq.size, dtype=np.bool) # use entire sampled band
     #valid = np.where(fq < .250) # restrict to HERA band
-    if v == '100-130 MHz': 
-    #valid1 = np.where(np.logical_and(fq < .130, fq > .100)) # restrict to PAPER band
-    #valid2 = np.where(np.logical_and(fq < .160, fq > .130)) # restrict to PAPER band
-    #valid3 = np.where(np.logical_and(fq < .190, fq > .160))
-#if i==0:
-      fq, d, db, ph = fq[valid[v]], d[valid[v]], db[valid[v]], ph[valid[v]]
-    elif v == '130-160 MHz':
-      fq, d, db, ph = fq[valid2], d[valid2], db[valid2], ph[valid2]
-#elif i==2:    
-  #  fq, d, db, ph = fq[valid3], d[valid3], db[valid3], ph[valid3]
+#    if v == '100-130 MHz': 
+    valid = np.where(np.logical_and(fq < .200, fq > .100)) # restrict to PAPER band
+    
+    fq, d, db, ph, d_f, db_f, ph_f = fq[valid], d[valid], db[valid], ph[valid], d_f[valid], db_f[valid],ph_f[valid]
+    fq_rb, d_rb, db_rb, ph_rb = fq_rb[valid], d_rb[valid], db_rb[valid], ph_rb[valid]
+    #elif v == '130-160 MHz':
+     # fq, d, db, ph = fq[valids[v]], d[valids[v]], db[valids[v]], ph[valids[v]]
+      #print np.abs(d[0])
+    #elif v == '160-190 MHz':    
+     # fq, d, db, ph = fq[valids[v]], d[valids[v]], db[valids[v]], ph[valids[v]]
     
     tau = np.fft.fftfreq(fq.size, fq[1]-fq[0])
     window = a.dsp.gen_window(fq.size, WINDOW)
     
     _d = np.fft.ifft((np.abs(d))**2)
     _dw = np.fft.ifft((np.abs(d))**2*window) / window.mean() # compensate for window amplitude
+    _dw_rb = np.fft.ifft((np.abs(d_rb))**2*window) / window.mean() # compensate for window amplitude
 
     if True: # approx account for 1st reflection of sky signal off of feed
         #_dw *= np.abs(_d[0])
         #_d *= np.abs(_d[0])
         
         #d -= np.abs(_d[0])
-        d *= np.abs(_dw[0])/(1-np.abs(_dw[0]))
-        _d = np.fft.ifft((np.abs(d))**2)
-        _dww = np.fft.ifft((np.abs(d))**2*window) /window.mean()# compensate for window amplitude
+        d1 = np.abs(d)*np.abs(d_f)/(1-np.abs(d_f))+ (1-np.abs(d_f))
+        d1_rb = np.abs(d_rb)*np.abs(d_f)/(1-np.abs(d_f))+ (1-np.abs(d_f))
+#        d1 = (1+d_f)
+        
+        #d1 *= np.abs(_dw[0])/(1-np.abs(_dw[0]))
+        _d = np.fft.ifft((np.abs(d1))**2)
+        _dww = np.fft.ifft((np.abs(d1))**2*window) /window.mean()# compensate for window amplitude
+        _dww_rb = np.fft.ifft((np.abs(d1_rb))**2*window) / window.mean() # compensate for window amplitude
     
-    
-    print np.abs(_d[0])
+    print np.abs(d[0])
     H0=100#h Km/sec/Mpc
     c = 3*10**5# Km/sec
     f21 = 1420#GHz
@@ -83,6 +101,8 @@ for i,v in enumerate(valids.keys()):
     
    #plt.plot(np.fft.fftshift(tau), 10.0*np.log10(np.fft.fftshift(np.abs(_d))), linewidth=2.5, label= 'Square Window')
     plt.plot(np.fft.fftshift(tau), 10.0*np.log10(np.fft.fftshift(np.abs(_dww))), linewidth=2.5, label=BASE.replace('_', ' '))
+    plt.plot(np.fft.fftshift(tau), 10.0*np.log10(np.fft.fftshift(np.abs(_dww_rb))), linewidth=2.5, label='measurement_dishAndFeed_DB'.replace('_', ' '))
+    
     
     #plt.plot(fq, 10.0*np.log10((np.abs(_dww)**2)), label=BASE.replace('_', ' '))
     #plt.plot(fq, db,linewidth=2.5, label=BASE.replace('_', ' '))

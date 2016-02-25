@@ -1,0 +1,5 @@
+plotting program for aipy : plot_uv.py -h (-h is for help)
+this shows all the options for plot_uv.py
+plot_uv.py -.... filename
+plot_uv.py -a 90_91 -p xx zen.2456895.51490* -t 10  --plot_each=time --share -d 
+---- to plot baseline 90_91 polarization xx delay spectrum of 10 time samples across frequency.
