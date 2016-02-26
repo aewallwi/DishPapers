@@ -24,15 +24,23 @@ for filename in sys.argv[1:]:
     
     fq,db = fromcsv(db_file) # Reading the magnitude and the phase of the datafile to be processed
     fq,ph = fromcsv(ph_file) 
-    fq_rb,db_rb = fromcsv1('measurement_dishAndFeed_DB.csv')
-    fq_rb,ph_rb = fromcsv1('measurement_dishAndFeed_P.csv')
-    d_rb = 10**(db_rb/20) * np.exp(2j*np.pi*ph_rb/360) # 20 to put into voltage amplitude, not power 
     
     fq_f,db_f = fromcsv('HERA_FEED_DB.csv') # Reading the magnitude and phase of the feed only datafile to calibrate for the zero point/ 
     fq_f,ph_f = fromcsv('HERA_FEED_P.csv')
-    #d = 10**(db/10) * np.exp(2j*np.pi*ph/360) # power
+    
     d = 10**(db/20) * np.exp(2j*np.pi*ph/360) # 20 to put into voltage amplitude, not power
     d_f = 10**(db_f/20) * np.exp(2j*np.pi*ph_f/360) # 20 to put into voltage amplitude, not power
+    
+    fq_rb,db_rb = fromcsv1('measurement_dishAndFeed_DB.csv')# Reading Rich's dish+feed measurements magnitude and phase file.
+    fq_rb,ph_rb = fromcsv1('measurement_dishAndFeed_P.csv')
+    
+    fq_rb_f,db_rb_f = fromcsv1('measurement_FeedOnly_DB.csv')#Reading Rich's feed only file to do the zero delay corrections.
+    fq_rb_f,ph_rb_f = fromcsv1('measurement_FeedOnly_P.csv')
+    
+    d_rb = 10**(db_rb/20) * np.exp(2j*np.pi*ph_rb/360) # 20 to put into voltage amplitude, not power 
+    d_rb_f = 10**(db_rb_f/20) * np.exp(2j*np.pi*ph_rb_f/360) # 20 to put into voltage amplitude, not power 
+    
+    
     
 #    valids = {
 #          '100- 130 MHz'  : np.where(np.logical_and(fq>.100 ,fq<.130)), 
@@ -49,7 +57,7 @@ for filename in sys.argv[1:]:
     valid = np.where(np.logical_and(fq < .200, fq > .100)) # restrict to PAPER band
     
     fq, d, db, ph, d_f, db_f, ph_f = fq[valid], d[valid], db[valid], ph[valid], d_f[valid], db_f[valid],ph_f[valid]
-    fq_rb, d_rb, db_rb, ph_rb = fq_rb[valid], d_rb[valid], db_rb[valid], ph_rb[valid]
+    fq_rb, d_rb, db_rb, ph_rb, fq_rb_f,d_rb_f,db_rb_f,ph_rb_f = fq_rb[valid], d_rb[valid], db_rb[valid], ph_rb[valid], fq_rb_f[valid],d_rb_f[valid],db_rb_f, ph_rb_f[valid]
     #elif v == '130-160 MHz':
      # fq, d, db, ph = fq[valids[v]], d[valids[v]], db[valids[v]], ph[valids[v]]
       #print np.abs(d[0])
@@ -58,24 +66,24 @@ for filename in sys.argv[1:]:
     
     tau = np.fft.fftfreq(fq.size, fq[1]-fq[0])
     window = a.dsp.gen_window(fq.size, WINDOW)
-    
-    _d = np.fft.ifft((np.abs(d))**2)
-    _dw = np.fft.ifft((np.abs(d))**2*window) / window.mean() # compensate for window amplitude
-    _dw_rb = np.fft.ifft((np.abs(d_rb))**2*window) / window.mean() # compensate for window amplitude
+   
 
     if True: # approx account for 1st reflection of sky signal off of feed
         #_dw *= np.abs(_d[0])
         #_d *= np.abs(_d[0])
         
         #d -= np.abs(_d[0])
-        d1 = np.abs(d)*np.abs(d_f)/(1-np.abs(d_f))+ (1-np.abs(d_f))
-        d1_rb = np.abs(d_rb)*np.abs(d_f)/(1-np.abs(d_f))+ (1-np.abs(d_f))
+        #d1 = (np.abs(d)-np.abs(d_f))*np.abs(d_f)/(1-np.abs(d_f))+ (1-np.abs(d_f))
+        d_t_rb = 1+d_rb_f
+        d2 = (d_rb-d_rb_f)/d_rb_f+d_t_rb
+        d_t =1+d_f
+        d1 = ((d-d_f)*d_f/d_t )+ d_t
 #        d1 = (1+d_f)
         
         #d1 *= np.abs(_dw[0])/(1-np.abs(_dw[0]))
         _d = np.fft.ifft((np.abs(d1))**2)
         _dww = np.fft.ifft((np.abs(d1))**2*window) /window.mean()# compensate for window amplitude
-        _dww_rb = np.fft.ifft((np.abs(d1_rb))**2*window) / window.mean() # compensate for window amplitude
+        _dww_rb = np.fft.ifft((np.abs(d2))**2*window) / window.mean() # compensate for window amplitude
     
     print np.abs(d[0])
     H0=100#h Km/sec/Mpc
@@ -101,7 +109,7 @@ for filename in sys.argv[1:]:
     
    #plt.plot(np.fft.fftshift(tau), 10.0*np.log10(np.fft.fftshift(np.abs(_d))), linewidth=2.5, label= 'Square Window')
     plt.plot(np.fft.fftshift(tau), 10.0*np.log10(np.fft.fftshift(np.abs(_dww))), linewidth=2.5, label=BASE.replace('_', ' '))
-    plt.plot(np.fft.fftshift(tau), 10.0*np.log10(np.fft.fftshift(np.abs(_dww_rb))), linewidth=2.5, label='measurement_dishAndFeed_DB'.replace('_', ' '))
+    plt.plot(np.fft.fftshift(tau), 10.0*np.log10(np.fft.fftshift(np.abs(_dww_rb))), linewidth=2.5, label='DishandFeed_RB'.replace('_', ' '))
     
     
     #plt.plot(fq, 10.0*np.log10((np.abs(_dww)**2)), label=BASE.replace('_', ' '))
@@ -111,7 +119,7 @@ for filename in sys.argv[1:]:
 
 #-----------------plotting returnloss magnitude--------------
 #plt.plot(fq, 10.0*np.log10((np.abs(d)**2)), label='Feed on dish')
-plt.xlim(-350,350)
+#plt.xlim(-350,350)
 plt.xlabel('Frequency (GHz)')
 plt.ylabel('Return loss magnitude (dB)')
 plt.grid()
