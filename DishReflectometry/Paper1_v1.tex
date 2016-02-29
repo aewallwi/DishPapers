@@ -160,7 +160,7 @@ Defining $a=\volt_{rec}/\volt_{sky}$ and we see that
 a  =   (1+\Gamma_d)(1+\Gamma_{f}) \displaystyle\sum\limits_{n=0}^{N} [\Gamma_{f}\Gamma_{d}\dfngexp]^{n}
    \label{eq:Sigma}
 \end{equation}
-Note that $n=0$ is when the initial wave enters the cable at the feed (where we assume we have set our reference plane).  We may identify $(1+\Gamma_d)$ as the voltage reception pattern of the antenna, denoted $p_n(\hat{\theta})$, which is a function of angle on the sky.  Additionally, $(1+\Gamma_f$) is the voltage efficiency for the feed (not a function of angle), denoted $\eta_f$.
+Note that $n=0$ is when the initial wave enters the cable at the feed (where we assume we have set our reference plane).  We may identify $(1+\Gamma_d)$ as the voltage reception pattern of the antenna, denoted $p_n(\hat{\theta})$, which is a function of angle on the sky.  Additionally, $(1+\Gamma_f$) is the voltage efficiency for the feed (not a function of angle).
 
 As an aside, note that the sum in Eq. \ref{eq:Sigma} may be evaluated we may rewrite
 \begin{equation}
@@ -194,11 +194,11 @@ Comparing to Eq. \ref{eq:Sigma} and we find that
 \begin{equation}
 a = (1+\Gamma_d)\frac{\Gamma_f}{(1+\Gamma_{f})}\left(s_{11} + \frac{(1+\Gamma_f)^2}{\Gamma_f}- \Gamma_f\right)
 \end{equation}
-After rearranging and plugging in for $p_n(\hat{\theta})$ and $\eta_f$ we find
+After rearranging and plugging in for $p_n(\hat{\theta})$ we find
 \begin{equation}
-a = p_n(\hat{\theta})\left[\eta_f + \frac{\Gamma_f}{\eta_f}\left(s_{11} - \Gamma_f\right)\right]
+a = p_n(\hat{\theta})\left[(1+\Gamma_f) + \frac{\Gamma_f}{(1+\Gamma_f)}\left(s_{11} - \Gamma_f\right)\right]
 \end{equation}
-By measuring the feed separately, we may use that result for $\Gamma_f = s_{11,f}$ and $\eta_f = 1 + s_{11,f}$.
+By measuring the feed separately, we may use that result for $\Gamma_f = s_{11,f}$.
 
 For power, we want the squared magnitude, or:
 \begin{equation}
@@ -206,10 +206,10 @@ For power, we want the squared magnitude, or:
 A(\hat{\theta}) = |aa^*|^2 =  P_n(\hat{\theta})\times ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nonumber
 \end{equation}
 \begin{equation}
-             \left[\epsilon_f +  2\operatorname{Re}\left(\frac{\Gamma_f}{\eta_f}(s_{11} - \Gamma_f)\right) 
-                              + \frac{|\Gamma_f|^2}{\epsilon_{f}}|s_{11} - \Gamma_f|^2 \right]
+             \left[|1+\Gamma_f|^2 +  2\operatorname{Re}\left(\frac{\Gamma_f}{(1+\Gamma_f)}(s_{11} - \Gamma_f)\right) 
+                              + \frac{|\Gamma_f|^2}{|1+\Gamma_{f}|^2}|s_{11} - \Gamma_f|^2 \right]
 \end{equation}
-where $P_n(\hat{\theta})= |p_n(\hat{\theta})|^2$ is the normalized power pattern, and $\epsilon_f=|\eta_f|^2$ is the feed efficiency.
+where $P_n(\hat{\theta})= |p_n(\hat{\theta})|^2$ is the normalized power pattern.  Note that $|1+\Gamma_f|^2$ is the feed efficiency ($\epsilon_f$).
 
 
 \section{Visibility measurements by a two element interferometer and the delay spectrum}
