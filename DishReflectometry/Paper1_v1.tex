@@ -154,22 +154,22 @@ $n^{th}$ reflection may be written as:
 \end{figure}
 
 \noindent
-Defining $\Sigma_{\nu}=\volt_{rec}/\volt_{sky}$ and we see that 
+Defining $a=\volt_{rec}/\volt_{sky}$ and we see that 
  \begin{equation}
-\Sigma_{\nu}  =   (1+\Gamma_d)(1+\Gamma_{f}) \displaystyle\sum\limits_{n=0}^{N} [\Gamma_{f}\Gamma_{d}\dfngexp]^{n}
+a  =   (1+\Gamma_d)(1+\Gamma_{f}) \displaystyle\sum\limits_{n=0}^{N} [\Gamma_{f}\Gamma_{d}\dfngexp]^{n}
    \label{eq:Sigma}
 \end{equation}
-Note that $n=0$ is when the initial wave enters the cable at the feed (where we assume we have set our reference plane).  We may identify $(1+\Gamma_d)$ as the voltage reception pattern of the antenna, denoted $p_n(\theta,\phi)$, which is a function of angle on the sky.  Additionally, $(1+\Gamma_f$) is the voltage efficiency for the feed (not a function of angle), denoted $\eta_f$.
+Note that $n=0$ is when the initial wave enters the cable at the feed (where we assume we have set our reference plane).  We may identify $(1+\Gamma_d)$ as the voltage reception pattern of the antenna, denoted $p_n(\hat{\theta})$, which is a function of angle on the sky.  Additionally, $(1+\Gamma_f$) is the voltage efficiency for the feed (not a function of angle), denoted $\eta_f$.
 
-(As an aside, note that the sum in Eq. \ref{eq:Sigma} equals:
+As an aside, note that the sum in Eq. \ref{eq:Sigma} may be evaluated we may rewrite
 \begin{equation}
-\Sigma_{\nu} =  (1+\Gamma_d)(1+\Gamma_{f})\frac{1+\Gamma_{f}^{N+1}\Gamma_{d}^{N+1}e^{(N+1)i\theta}}{1+\Gamma_{f}\Gamma_{d}e^{i\theta}} \nonumber
+a =  (1+\Gamma_d)(1+\Gamma_{f})\frac{1+\Gamma_{f}^{N+1}\Gamma_{d}^{N+1}(\dfngexp)^{N+1}}{1+\Gamma_{f}\Gamma_{d}\dfngexp} \nonumber
 \end{equation}
 which, in the limit becomes:
 \begin{equation}
-\Sigma_{\nu} = \frac{ (1+\Gamma_d)(1+\Gamma_{f})}{1+\Gamma_{f}\Gamma_{d}e^{i\theta}} \nonumber
+a = \frac{ (1+\Gamma_d)(1+\Gamma_{f})}{1+\Gamma_{f}\Gamma_{d}\dfngexp} \nonumber
 \end{equation} 
-since $|\Gamma_d|$ and $|\Gamma_f|$ are less than one.)
+since $|\Gamma_d|$ and $|\Gamma_f|$ are less than one.
 
 To measure this quantity, we may connect a vector network analyzer (VNA) to the feed, calibrate it to the end of the cable at the feed and measure. 
 In this case, we ignore $\volt_{sky}$, and we see that $\Gamma_f \volt_{trans}$ gets reflected back from the feed connection and $(1+\Gamma_f)\volt_{trans}$ is emitted, where $\volt_{trans}$ is the signal from the VNA.   $\Gamma_d$ of that is reflected back towards the feed and $(1+\Gamma_f)$ is received by the VNA suitably delayed.  The received voltage after $n$ reflections (where again $n=0$ is the first reflected signal at the reference plane) is therefore:
@@ -191,37 +191,34 @@ s_{11} +\frac{(1+\Gamma_f)^2}{\Gamma_f}-\Gamma_f = \frac{(1+\Gamma_f)^2}{\Gamma_
 \end{equation}
 Comparing to Eq. \ref{eq:Sigma} and we find that
 \begin{equation}
-\Sigma_{\nu} = (1+\Gamma_d)\frac{\Gamma_f}{(1+\Gamma_{f})}\left(s_{11} + \frac{(1+\Gamma_f)^2}{\Gamma_f}- \Gamma_f\right)
+a = (1+\Gamma_d)\frac{\Gamma_f}{(1+\Gamma_{f})}\left(s_{11} + \frac{(1+\Gamma_f)^2}{\Gamma_f}- \Gamma_f\right)
 \end{equation}
-After rearranging and plugging in for $p_n(\theta,\phi)$ and $\eta_f$ we find
+After rearranging and plugging in for $p_n(\hat{\theta})$ and $\eta_f$ we find
 \begin{equation}
-\Sigma_{\nu} = p_n(\theta,\phi)\left[\frac{\Gamma_f}{\eta_f}\left(s_{11} - \Gamma_f\right) + \eta_f\right]
+a = p_n(\hat{\theta})\left[\eta_f + \frac{\Gamma_f}{\eta_f}\left(s_{11} - \Gamma_f\right)\right]
 \end{equation}
 By measuring the feed separately, we may use that result for $\Gamma_f = s_{11,f}$ and $\eta_f = 1 + s_{11,f}$.
 
 For power, we want the squared magnitude, or:
 \begin{equation}
 \raggedright
-|\Sigma_{\nu}|^2 =  P_n(\theta,\phi)\times ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nonumber
+A(\hat{\theta}) = |aa^*|^2 =  P_n(\hat{\theta})\times ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nonumber
 \end{equation}
 \begin{equation}
              \left[\epsilon_f +  2\operatorname{Re}\left(\frac{\Gamma_f}{\eta_f}(s_{11} - \Gamma_f)\right) 
                               + \frac{|\Gamma_f|^2}{\epsilon_{f}}|s_{11} - \Gamma_f|^2 \right]
 \end{equation}
-where $P_n(\theta,\phi)= |p_n(\theta,\phi)|^2$ is the normalized power pattern, and $\epsilon_f=|\eta_f|^2$ is the feed efficiency.
+where $P_n(\hat{\theta})= |p_n(\hat{\theta})|^2$ is the normalized power pattern, and $\epsilon_f=|\eta_f|^2$ is the feed efficiency.
 
 
 \section{Visibility measurements by a two element interferometer and the delay spectrum}
-
-Consider a two element interferometer with a baseline $\vec b$ and antenna field pattern $\bmvolt(\thhat, \nu)$. If we denote the electric field sky signal in direction $\thhat$ by $\volt_\sky(\vec \theta, \nu)$ and the receiver noise of each element as $\volt_{rec}(\nu)$ then the voltage output of each antenna may be written as,  
+Now consider a two element interferometer with a baseline $\vec b$. If we denote the electric field sky signal in direction $\thhat$ by $\volt_\sky(\vec \theta, \nu)$  then the voltage output of each antenna may be written as,  
 \begin{equation}
 \volt_{1}(\thhat, \nu) = \bmvolt_{1}(\thhat,\nu)\volt_\sky(\thhat,\nu)\nonumber\\
 \end{equation}
 \begin{equation}
 \volt_{2} (\thhat, \nu)= \bmvolt_{2}(\thhat,\nu)\volt_\sky(\thhat,\nu)\fngexp\nonumber\\
 \end{equation}
-where $\bmvolt_{1}(\thhat,\nu)$ and $\bmvolt_{2}(\thhat,\nu)$ are the electric field response patterns 
-of the two antennas.
 Hence, the time averaged visibility measured by the interferometer may be written as, 
 \begin{equation}
 \vis(\vec b, \nu) =  \int  \volt_{1}(\thhat,\nu)  \volt_{2}^{*} (\thhat, \nu) \ifngexp d\Omega 
