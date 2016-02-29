@@ -137,17 +137,88 @@ Bank, WV (Figure \ref{fig:heradish}) and the results are interpreted in the ligh
 \label{fig:heradish}
 \end{figure*}
 
-\section{Visibility measurements by a two element interferometer and the delay spectrum}
+\section{Antenna Reception With Multiple Reflections}
+To examine the performance of an antenna and feed in the presence of multiple reflections, think of the system as a screen at a distance $F$ from a feed (see Fig. \ref{fig:sys}), noting that this does ignore the sky pattern of the feed itself.  The screen reflects voltage as $\Gamma_d$ and transmits $(1+\Gamma_d)$ (see, {\em e.g.} Pozar).  Similarly, the feed reflects $\Gamma_f$ and transmits $(1+\Gamma_f)$.  The voltage pattern $\volt_{sky}$ is incident onto that system and  $(1+\Gamma_{d})(1+\Gamma_{f})$ is coupled into the cable leading from the feed. 
+Additionally however, the voltage pattern is reflected off the feed ($\Gamma_f$), then the dish ($\Gamma_d$) and subsequently $(1+\Gamma_{f})$ of it reenters the feed with a roundtrip time delay $\Delta \tau=2F/c$. Hence, if $v_{sky}$ is reflected $n$ times in between the feed and the dish, the net voltage entering the feed after the
+$n^{th}$ reflection may be written as:
+\begin{eqnarray}
+\volt_{rec} & = &  (1+\Gamma_d) (1+\Gamma_{f}) \volt_{sky}[1+ \Gamma_{f}\Gamma_{d} \dfngexp \nonumber \\
+	&& + (\Gamma_{f}\Gamma_{d})^2  (\dfngexp)^{2}+ \nonumber \\
+&&  ....+ (\Gamma_{f}\Gamma_{d})^{n} (\dfngexp)^{n}]
+\end{eqnarray}
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{microsys.pdf}
+\caption{System}
+\label{fig:sys}
+\end{figure}
 
-Consider a two element interferometer with a baseline $\vec b$ and antenna field pattern $\bmvolt(\thhat, \nu)$. If we denote the electric field sky signal in direction $\thhat$ by $\volt_\sky(\vec \theta, \nu)$ and the receiver noise of each element as $\volt_{rec}(\nu)$ then the voltage output of each antenna may be written as,  
+\noindent
+Defining $a=\volt_{rec}/\volt_{sky}$ and we see that 
+ \begin{equation}
+a  =   (1+\Gamma_d)(1+\Gamma_{f}) \displaystyle\sum\limits_{n=0}^{N} [\Gamma_{f}\Gamma_{d}\dfngexp]^{n}
+   \label{eq:Sigma}
+\end{equation}
+Note that $n=0$ is when the initial wave enters the cable at the feed (where we assume we have set our reference plane).  We may identify $(1+\Gamma_d)$ as the voltage reception pattern of the antenna, denoted $p_n(\hat{\theta})$, which is a function of angle on the sky.  Additionally, $(1+\Gamma_f$) is the voltage efficiency for the feed (not a function of angle), denoted $\eta_f$.
+
+As an aside, note that the sum in Eq. \ref{eq:Sigma} may be evaluated we may rewrite
+\begin{equation}
+a =  (1+\Gamma_d)(1+\Gamma_{f})\frac{1+\Gamma_{f}^{N+1}\Gamma_{d}^{N+1}(\dfngexp)^{N+1}}{1+\Gamma_{f}\Gamma_{d}\dfngexp} \nonumber
+\end{equation}
+which, in the limit becomes:
+\begin{equation}
+a = \frac{ (1+\Gamma_d)(1+\Gamma_{f})}{1+\Gamma_{f}\Gamma_{d}\dfngexp} \nonumber
+\end{equation} 
+since $|\Gamma_d|$ and $|\Gamma_f|$ are less than one.
+
+To measure this quantity, we may connect a vector network analyzer (VNA) to the feed, calibrate it to the end of the cable at the feed and measure. 
+In this case, we ignore $\volt_{sky}$, and we see that $\Gamma_f \volt_{trans}$ gets reflected back from the feed connection and $(1+\Gamma_f)\volt_{trans}$ is emitted, where $\volt_{trans}$ is the signal from the VNA.   $\Gamma_d$ of that is reflected back towards the feed and $(1+\Gamma_f)$ is received by the VNA suitably delayed.  The received voltage after $n$ reflections (where again $n=0$ is the first reflected signal at the reference plane) is therefore:
+
+\begin{eqnarray}
+\volt_{rec} & = &  \Gamma_f \volt_{trans} \nonumber \\
+         && + \volt_{trans} (1+\Gamma_f)^2 \Gamma_{d} \dfngexp \nonumber \\
+         && + \volt_{trans} (1+\Gamma_f)^2 \Gamma_{d} \dfngexp \Gamma_d\Gamma_f\dfngexp \nonumber \\
+         && + \volt_{trans} (1+\Gamma_f)^2 \Gamma_{d} \dfngexp (\Gamma_d\Gamma_f\dfngexp)^2 \nonumber \\
+&&  ....+ \volt_{trans} (1+\Gamma_f)^2 \Gamma_{d} \dfngexp (\Gamma_d\Gamma_f\dfngexp)^n
+\end{eqnarray}
+Defining $s_{11}=\volt_{rec}/\volt_{trans}$ (the VNA measured quantity), this may be factored to yield
+\begin{equation}
+s_{11} = \Gamma_f + \frac{(1+\Gamma_f)^2}{\Gamma_{f}} \displaystyle\sum\limits_{n=1}^{N} [\Gamma_{f}\Gamma_{d}\dfngexp]^{n}
+\end{equation}
+Adding in the zeroth term and rearranging, we have
+\begin{equation}
+s_{11} +\frac{(1+\Gamma_f)^2}{\Gamma_f}-\Gamma_f = \frac{(1+\Gamma_f)^2}{\Gamma_{f}} \displaystyle\sum\limits_{n=0}^{N} [\Gamma_{f}\Gamma_{d}\dfngexp]^{n}
+\end{equation}
+Comparing to Eq. \ref{eq:Sigma} and we find that
+\begin{equation}
+a = (1+\Gamma_d)\frac{\Gamma_f}{(1+\Gamma_{f})}\left(s_{11} + \frac{(1+\Gamma_f)^2}{\Gamma_f}- \Gamma_f\right)
+\end{equation}
+After rearranging and plugging in for $p_n(\hat{\theta})$ and $\eta_f$ we find
+\begin{equation}
+a = p_n(\hat{\theta})\left[\eta_f + \frac{\Gamma_f}{\eta_f}\left(s_{11} - \Gamma_f\right)\right]
+\end{equation}
+By measuring the feed separately, we may use that result for $\Gamma_f = s_{11,f}$ and $\eta_f = 1 + s_{11,f}$.
+
+For power, we want the squared magnitude, or:
+\begin{equation}
+\raggedright
+A(\hat{\theta}) = |aa^*|^2 =  P_n(\hat{\theta})\times ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nonumber
+\end{equation}
+\begin{equation}
+             \left[\epsilon_f +  2\operatorname{Re}\left(\frac{\Gamma_f}{\eta_f}(s_{11} - \Gamma_f)\right) 
+                              + \frac{|\Gamma_f|^2}{\epsilon_{f}}|s_{11} - \Gamma_f|^2 \right]
+\end{equation}
+where $P_n(\hat{\theta})= |p_n(\hat{\theta})|^2$ is the normalized power pattern, and $\epsilon_f=|\eta_f|^2$ is the feed efficiency.
+
+
+\section{Visibility measurements by a two element interferometer and the delay spectrum}
+Now consider a two element interferometer with a baseline $\vec b$. If we denote the electric field sky signal in direction $\thhat$ by $\volt_\sky(\vec \theta, \nu)$  then the voltage output of each antenna may be written as,  
 \begin{equation}
 \volt_{1}(\thhat, \nu) = \bmvolt_{1}(\thhat,\nu)\volt_\sky(\thhat,\nu)\nonumber\\
 \end{equation}
 \begin{equation}
 \volt_{2} (\thhat, \nu)= \bmvolt_{2}(\thhat,\nu)\volt_\sky(\thhat,\nu)\fngexp\nonumber\\
 \end{equation}
-where $\bmvolt_{1}(\thhat,\nu)$ and $\bmvolt_{2}(\thhat,\nu)$ are the electric field response patterns 
-of the two antennas.
 Hence, the time averaged visibility measured by the interferometer may be written as, 
 \begin{equation}
 \vis(\vec b, \nu) =  \int  \volt_{1}(\thhat,\nu)  \volt_{2}^{*} (\thhat, \nu) \ifngexp d\Omega 
