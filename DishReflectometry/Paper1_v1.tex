@@ -224,15 +224,15 @@ In the delay domain, visibility contributed by any two voltage components from t
  
 \begin{eqnarray}\label{eqn:series1}
 \vis(\vec b, \nu) & = & \int \volt_{1}\volt_{2}^{*} d\Omega \nonumber\\
-			& = & \int I_{sky}(\vec b, \nu)\Sigma(\nu) \fngexp d\Omega
+			& = & \int I_{sky}(\vec b, \nu)\Sigma(\thhat,\nu) \ifngexp d\Omega
 \end{eqnarray}
 
 where we define a combined common instrument parameter, written as, 
  \begin{eqnarray}
-\Sigma( \nu) & = & \beam_{f}  [ 1+  \Gamma_{f}\Gamma_{d} \dfngexp \nonumber\\
+\Sigma(\thhat, \nu) & = & \beam_{f}  [ 1+  \Gamma_{f}\Gamma_{d} \dfngexp \nonumber\\
 && + (\Gamma_{f}\Gamma_{d})^2(\dfngexp)^{2}+ \nonumber\\
 &&  ....+(\Gamma_{f}\Gamma_{d})^{n}(\dfngexp)^{n}  ]\\
-& = & \beam_{f}+\beam_{f} \displaystyle\sum\limits_{n=1}^{n} [\Gamma_{f}\Gamma_{d}\dfngexp]^{n}
+& = & \beam_{f}+\beam_{f} \displaystyle\sum\limits_{n=1}^{n} [2\Re( \Gamma_{f}\Gamma_{d}\dfngexp)]^{n}
    \nonumber\\ 
    \label{eq6}
 \end{eqnarray}
@@ -240,7 +240,7 @@ where, $\beam_{f}=\bmvolt_{f}\bmvolt_{f}^{*}= |a(1-\Gamma_{f})|^{2}$ is the ante
 and the delay spectrum would be, 
 \begin{eqnarray}
 %\tilde V(\vec b, \tau) & = & \int \left [ \int I_{sky}(\vec b, \nu)\Sigma(\vec b, \nu) \fngexp  d\Omega \right ]  e^{-2\pi i\nu\tau} d\nu \nonumber \\
-\tilde V(\vec b, \tau) & = & \int \left [ I_{sky}(\thhat, \nu) \ast \Sigma(\thhat, \nu) \ast \delta( \tau - \frac{{\vec {b} \cdot \thhat}}{c} )  \right] d\Omega
+\tilde V(\vec b, \tau) & = & \int \left [ I_{sky}(\vec b, \nu) \ast \Sigma(\vec b, \nu) \right]\dfngexp d\Omega
 \label{eq7}
 \end{eqnarray}
  
@@ -282,7 +282,7 @@ $I_{meas}$ is the auto correlated power obtained from a single HERA element. Upo
 
 \begin{eqnarray}\label{eqn:ratio1}
 {I_{meas} \over I_{sky} } & = & \Sigma(\vec b, \nu) \nonumber\\
-  & = & \beam_{f}+ \beam_{f} \displaystyle\sum\limits_{n=1}^{n} [\Gamma_{f}\Gamma_{d}\dfngexp]^{n}
+  & = & \beam_{f}+ \beam_{f} \displaystyle\sum\limits_{n=1}^{n} [2\Re(\Gamma_{f}\Gamma_{d}\dfngexp)]^{n}
    \nonumber\\
    \label{eq8}
 \end{eqnarray}
@@ -304,7 +304,7 @@ I_{r}= \beam_{f} I_{tr}
 The total reflected power returned to the VNA, as measured by the VNA would be:
 \begin{eqnarray}\label{eqn:series2}
 I_{meas} & = & \Gamma_{f}I_{tr}+ I_{r}(1-\Gamma_{f}) [\Gamma_{d} \dfngexp + \Gamma_{f}\Gamma_{d}^{2} (\dfngexp)^{2}\nonumber\\
-&&+ ....+ \Gamma_{f}^{n-1}\Gamma_{d})^{n}(\dfngexp)^{n}]
+&&+ ....+ \Gamma_{f}^{n-1}\Gamma_{d}^{n}(\dfngexp)^{n}]
 \end{eqnarray}
 
 Using the value of $I_{r}$ and simplifying:
