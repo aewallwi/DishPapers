@@ -292,42 +292,58 @@ For reference, we use two models of EoR. In the first, simulations of the H{\sc 
 
 The equation for delay spectrum describes the mapping between sky location of a foreground object and delay. The chromatic nature (variation with frequency) of the antenna power pattern results in a convolution of the geometrical mapping with the delay response of spectral chromaticity of the power pattern. This can result in a significant spillover of foreground power beyond the horizon delay limits especially in the case of foregrounds near the horizon. 
 
-\subsection{Directional Chromaticity of Power Pattern}\label{sec:directional-chromaticity}
+\subsection{Effects on Foreground Contamination}\label{sec:effects-fgdps}
 
-Fig.~\ref{fig:off-axis-beam-chromaticity} demonstrates the beyond-the-horizon spillover even from a flat-spectrum point source at different off-axis angles. The three panels correspond to delay spectra from different positions of the point source -- 0\arcdeg (left), 45\arcdeg (middle) and 89\arcdeg (right) -- from the zenith. The phase centers are located at the source positions and hence the delay spectra are centered on $\tau = 0$~ns. The response of the simulated dish power pattern (dashed line) is comapred with that from an {\it Airy} pattern resulting from a nominal uniformly illuminated circular disk (solid line). The gray vertical lines correspond to the horizon limits at $\pm 48.7$~ns for a 14.6~m antenna spacing. In all these cases, a {\it Blackman-Harris} window function has been applied along the spectral axis. 
-
-\begin{figure*}[htb]
-\centering
-\includegraphics[width=\linewidth]{off-axis_point_source_beam_chromaticity.eps}
-\caption{Chromaticity of antenna power pattern at directions off-axis. }
-\label{fig:off-axis-beam-chromaticity}
-\end{figure*}
-
-At 0\arcdeg off-axis, the {\it Airy} pattern has no spectral variation except that introduced by the {\it Blackman-Harris} window function and thus reproduces its Fourier response centered at $\tau = 0$~ns whereas the simulated power pattern is found to exhibit some spectral variation giving rise to the wings on either side of $\tau = 0$~ns. As off-axis angle increases to 45\arcdeg, both the power patterns clearly exhibit chromaticity. The simulated pattern not only has a higher magnitude inside the horizon limits (by a factor $\sim 10$) but also exhibits higher chromaticity (by many orders of magnitude) in modes beyond the horizon relative to that of an {\it Airy} pattern. In contrast, at 89\arcdeg off-axis, not only does the simulated pattern have higher chromaticity in high delay modes but is also two orders of magnitude higher in amplitude inside the horizon limits relative to the nominal {\it Airy} pattern.
-
-It is important to note that in a generic scenario where visibilities are not phased to a specific foreground location, the chromaticity of the power pattern will imprint itself on location of the foreground objects in delay space and will give rise to significant spillover especially from foregrounds near the horizon. 
-
-We generalize the analysis above by computing the delay power spectrum of the power pattern along its spectral axis in every direction in an effort to study its performance as a function of angle on the sky. 
+In the estimation of power spectrum, specific choices for spectral weighting function, $W(f)$, has been found to be effective in reducing foreground contamination by many orders of magnitude \citep{thy13} and is regularly used in EoR data analysis \citep{par12a}. For instance, a {\it Blackman-Harris} function \citep{har78} has a dynamic range of $\sim$100 -- 120~dB in delay power spectrum and a reduced effective bandwidth, where, we define effective bandwidth as:
 \begin{align}
-  A^\prime(l,m,\tau) &= \int A(l,m,f)\,e^{-j 2\pi f\tau} \,\dif f
+  B_\textrm{eff} &= \int_{-B/2}^{+B/2} |W(f)|^2\,\dif f.
 \end{align}
+For a {\it Blackman-Harris} window function denoted by $W_\textrm{BH}(f)$, $B_\textrm{eff} \approx B/2$. Hence, the window spans a total of $2N$ frequency channels each of width $\Delta f$ to have $B_\textrm{eff} \approx N\,\Delta f$. 
 
-We define the directional chromaticity of antenna power pattern as:
+Considering that the dynamic range required to suppress foreground contamination in the {\it EoR window} may be even higher than that provided by a {\it Blackman-Harris} window function, we use a modified version given by the convolution of a {\it Blackman-Harris} window with itself:
 \begin{align}
-  C(l,m) &= \frac{ \int\limits_{|\tau|>60\,\textrm{ns}} |A^\prime|^2 \,\dif\tau }{\int\limits_{|\tau|>60\,\textrm{ns}} \dif\tau}
+  W(f) &= W_\textrm{BH}(f) \ast W_\textrm{BH}(f).
 \end{align}
-where, the limit $|\tau|>60$~ns was chosen to represent a region well beyond the horizon limits ($\pm 48.7$~ns) for a 14.6~m antenna spacing. It thus measures the average power arising out of chromaticity in each delay mode beyond $|\tau|>60$~ns. 
+In delay spectrum, this window has a response that is obtained by squaring of the {\it Blackman-Harris} window response and thus improves the dynamic range further in the response by another 100 -- 120~dB. 
 
-Fig.~\ref{fig:directional-beam-chromaticity} shows the directional chromaticity, $C(l,m)$, of the power patterns of an {\it Airy} disk for reference (left) and a simulated disk (middle) on an orthographic projection onto direction cosines. Their color scale is shown at the top for reference. The chromaticity of the {\it Airy} pattern is symmetric and always below 500. On the other hand,  a simulated disk exhibits higher levels of chromaticity in the range 100--50,000. The ratio of their chromaticities is shown on the right with corresponding color scale on its right. The simulated disk is more chromatic than the nominal {\it Airy} disk by a factor between 100 and up to 10000. However, chromaticity in regions near the horizon which map to the horizon limits in the delay spectrum and have the most significant impact on spillover into the {\it EoR window} in the simulated disk are higher than that of an {\it Airy} disk only by factors $\lesssim 4$. Thus the simulated disk for HERA achieves reasonable control on the chromaticity near the horizon despite the very high levels near the center. 
+\subsection{Constraints on Reflections in the Instrument}\label{sec:constraints-reflectometry}
 
-Also shown are the tracks (black dots) of point sources brighter than 50~Jy in the LST range 0--12~hrs. The solid circle near the bottom denotes the south celestial pole. It is noted that there are a few bright point sources that spend a majority of time in this LST range near the northern and southern horizons which will contaminate the measured visibilities on north-south antenna spacings. Simulations of the antenna power pattern must take the bright foreground locations, especially near the horizon, into account.
+% \subsection{Directional Chromaticity of Power Pattern}\label{sec:directional-chromaticity}
 
-\begin{figure*}[htb]
-\centering
-\includegraphics[width=\linewidth]{directional_high_delay_average_in_beam.eps}
-\caption{All-sky directional chromaticity of antenna power pattern. }
-\label{fig:directional-beam-chromaticity}
-\end{figure*}
+% Fig.~\ref{fig:off-axis-beam-chromaticity} demonstrates the beyond-the-horizon spillover even from a flat-spectrum point source at different off-axis angles. The three panels correspond to delay spectra from different positions of the point source -- 0\arcdeg (left), 45\arcdeg (middle) and 89\arcdeg (right) -- from the zenith. The phase centers are located at the source positions and hence the delay spectra are centered on $\tau = 0$~ns. The response of the simulated dish power pattern (dashed line) is comapred with that from an {\it Airy} pattern resulting from a nominal uniformly illuminated circular disk (solid line). The gray vertical lines correspond to the horizon limits at $\pm 48.7$~ns for a 14.6~m antenna spacing. In all these cases, a {\it Blackman-Harris} window function has been applied along the spectral axis. 
+
+% \begin{figure*}[htb]
+% \centering
+% \includegraphics[width=\linewidth]{off-axis_point_source_beam_chromaticity.eps}
+% \caption{Chromaticity of antenna power pattern at directions off-axis. }
+% \label{fig:off-axis-beam-chromaticity}
+% \end{figure*}
+
+% At 0\arcdeg off-axis, the {\it Airy} pattern has no spectral variation except that introduced by the {\it Blackman-Harris} window function and thus reproduces its Fourier response centered at $\tau = 0$~ns whereas the simulated power pattern is found to exhibit some spectral variation giving rise to the wings on either side of $\tau = 0$~ns. As off-axis angle increases to 45\arcdeg, both the power patterns clearly exhibit chromaticity. The simulated pattern not only has a higher magnitude inside the horizon limits (by a factor $\sim 10$) but also exhibits higher chromaticity (by many orders of magnitude) in modes beyond the horizon relative to that of an {\it Airy} pattern. In contrast, at 89\arcdeg off-axis, not only does the simulated pattern have higher chromaticity in high delay modes but is also two orders of magnitude higher in amplitude inside the horizon limits relative to the nominal {\it Airy} pattern.
+
+% It is important to note that in a generic scenario where visibilities are not phased to a specific foreground location, the chromaticity of the power pattern will imprint itself on location of the foreground objects in delay space and will give rise to significant spillover especially from foregrounds near the horizon. 
+
+% We generalize the analysis above by computing the delay power spectrum of the power pattern along its spectral axis in every direction in an effort to study its performance as a function of angle on the sky. 
+% \begin{align}
+%   A^\prime(l,m,\tau) &= \int A(l,m,f)\,e^{-j 2\pi f\tau} \,\dif f
+% \end{align}
+
+% We define the directional chromaticity of antenna power pattern as:
+% \begin{align}
+%   C(l,m) &= \frac{ \int\limits_{|\tau|>60\,\textrm{ns}} |A^\prime|^2 \,\dif\tau }{\int\limits_{|\tau|>60\,\textrm{ns}} \dif\tau}
+% \end{align}
+% where, the limit $|\tau|>60$~ns was chosen to represent a region well beyond the horizon limits ($\pm 48.7$~ns) for a 14.6~m antenna spacing. It thus measures the average power arising out of chromaticity in each delay mode beyond $|\tau|>60$~ns. 
+
+% Fig.~\ref{fig:directional-beam-chromaticity} shows the directional chromaticity, $C(l,m)$, of the power patterns of an {\it Airy} disk for reference (left) and a simulated disk (middle) on an orthographic projection onto direction cosines. Their color scale is shown at the top for reference. The chromaticity of the {\it Airy} pattern is symmetric and always below 500. On the other hand,  a simulated disk exhibits higher levels of chromaticity in the range 100--50,000. The ratio of their chromaticities is shown on the right with corresponding color scale on its right. The simulated disk is more chromatic than the nominal {\it Airy} disk by a factor between 100 and up to 10000. However, chromaticity in regions near the horizon which map to the horizon limits in the delay spectrum and have the most significant impact on spillover into the {\it EoR window} in the simulated disk are higher than that of an {\it Airy} disk only by factors $\lesssim 4$. Thus the simulated disk for HERA achieves reasonable control on the chromaticity near the horizon despite the very high levels near the center. 
+
+% Also shown are the tracks (black dots) of point sources brighter than 50~Jy in the LST range 0--12~hrs. The solid circle near the bottom denotes the south celestial pole. It is noted that there are a few bright point sources that spend a majority of time in this LST range near the northern and southern horizons which will contaminate the measured visibilities on north-south antenna spacings. Simulations of the antenna power pattern must take the bright foreground locations, especially near the horizon, into account.
+
+% \begin{figure*}[htb]
+% \centering
+% \includegraphics[width=\linewidth]{directional_high_delay_average_in_beam.eps}
+% \caption{All-sky directional chromaticity of antenna power pattern. }
+% \label{fig:directional-beam-chromaticity}
+% \end{figure*}
 
 \subsection{Effect on Delay Power Spectrum}\label{sec:chromaticity-delay-spectrum}
 
@@ -416,6 +432,8 @@ where, $P_\textrm{H{\sc i}}(k_\parallel)$ is the EoR H{\sc i} power spectrum for
 Fig.~\ref{fig:fg-reflections} shows $\Gamma_{k_\parallel}(\tau)$ (in dB) for selected $k_\parallel$ at 0.08~$h$~Mpc$^{-1}$ (left), 0.1~$h$~Mpc$^{-1}$ (middle), and 0.12~$h$~Mpc$^{-1}$ (right) as a function of delays due to reflections from other antenna spacings. The light, medium and dark shaded curves show $\Gamma_{k_\parallel}(\tau)$ for achromatic, {\it Airy}, and chromatic antenna power patterns respectively. These curves set an upper limit to the reflected foreground power below the EoR H{\sc i} signal power as a function of delays caused by antenna-to-antenna reflections. It is noted that a chromatic simulated power pattern sets the most severe upper limit in all three chosen $k_\parallel$ for delays $\tau < 80$~ns (left), $\tau < 120$~ns (middle), and $\tau < 160$~ns. 
 
 The required attenuation is also a sensitive function of the chosen $k_\parallel$ mode. For instance, at $k_\parallel=0.08\,h$~Mpc$^{-1}$, the reflections with delays 70~ns require to be attenuated by at $\gtrsim 85$~dB for the simulated power pattern, $\gtrsim 82$~dB for the {\it Airy} pattern, and $\gtrsim 70$~dB for the achromatic pattern. However, at $k_\parallel=0.1\,h$~Mpc$^{-1}$ for the same delay of reflection, the requirement on attenuation is lowered to $\gtrsim 75$~dB, $\gtrsim 30$~dB and $\gtrsim 22$~dB respectively. If the chosen $k_\parallel$ is instead 0.12~$h$~Mpc$^{-1}$, the required attenuation is further relaxed to $\gtrsim 60$~dB, $\gtrsim 15$~dB and $\gtrsim 15$~dB respectively. This further reinforces the significance of reducing the chromaticity of the antenna power pattern to further relax the constraint on the system to achieve the attenuation required to contain the reflected foreground power from other antennas from contaminating the sensitive EoR H{\sc i} signal modes in the {\it EoR window}.
+
+\section{EoR Sensitivity}\label{sec:eor-sensitivity}
 
 \section{Summary}\label{sec:summary}
 

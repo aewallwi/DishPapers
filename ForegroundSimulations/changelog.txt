@@ -1,3 +1,15 @@
+From 508edb8 (restructure):
+==========================
+
+In eor.bib,
+
+(*) Add an entry for Harris (1978) on window functions
+
+In ms.tex,
+
+(*) Rearrange section and subsection titles
+(*) Add couple of paragraphs on new spectral window function 
+
 From e0b14ff (master):
 =====================
 
