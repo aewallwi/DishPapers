@@ -339,18 +339,32 @@ Hence it is clearly demonstrated that higher the beam chromaticity, the farther 
 
 \begin{figure*}[htb]
 \centering
-\includegraphics[width=\linewidth]{asm_foreground_eor_beam_chromaticity_fullband.eps}
+\includegraphics[width=\linewidth]{asm_foreground_eor_beam_chromaticity_fullband_bhw2.0.eps}
 \caption{Effect of chromaticity of antenna power pattern on foreground delay power spectra for different baselines.}
 \label{fig:asm-dps-beam-chromaticity-baselines}
 \end{figure*}
 
 It must be emphasized that such a significant spillover is not limited by the horizon limits of the {\it foreground wedge} because this is caused by spectral structure in the antenna beam pattern in addition to that caused by position-dependent geometric phase in the visibility spectra. As a result delay-based complex deconvolution techniques such as CLEAN \citep{tay99,par09,par12b} that rely on smoothness of foreground spectra and only spectral window shape will not have adequate information to accurately deconvolve intrinsic supra-horizon spillover arising from the chromaticity of the antenna beam. Thus, we leave delay power spectrum estimation using {\it foreground removal} strategy to future work and use {\it foreground avoidance} approach in this study.
 
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\linewidth]{spec_on_achrmbeam_foreground_reflected_power_21cmfast_14.6m_150.0_MHz_subband_v2.eps}
+\caption{Attenuation of foreground power (in dB) from antenna-to-antenna reflections required to keep the reflected foreground power below EoR H{\sc i} signal power.}
+\label{fig:fg-reflections-achrmbeam}
+\end{figure}
+
+\begin{figure*}[htb]
+\centering
+\includegraphics[width=\linewidth]{spec_on_foreground_reflected_power_21cmfast_14.6m_150.0_MHz_subband_v2.eps}
+\caption{Attenuation of foreground power (in dB) from antenna-to-antenna reflections required to keep the reflected foreground power below EoR H{\sc i} signal power.}
+\label{fig:fg-reflections}
+\end{figure*}
+
 We investigate the effect of chromaticity of power pattern in a {\it foreground avoidance} strategy that avoids the aforementioned deconvolution of delay spectrum. Application of window functions with high sidelobe suppression have been discussed for mitigating foreground contamination \citep{thy13}. In line with the {\it foreground avoidance} strategy, Fig.~\ref{fig:asm-dps-beam-chromaticity-baselines-150-subband} shows delay spectra after applying a {\it Blackman-Harris} window function extending 10~MHz on each side centered on 150~MHz with effective bandwidth of 10~MHz. The 8 panels correspond to those shown in Fig.~\ref{fig:asm-dps-beam-chromaticity-baselines}. As a result of narrowed subband, the resolution in delay space (and $k_\parallel$) has coarsened. The cyan and gray lines denote power spectra of EoR models 1 and 2 respectively. 
 
 \begin{figure*}[htb]
 \centering
-\includegraphics[width=\linewidth]{sim_asm_foreground_eor_beam_chromaticity_150.0_MHz_subband.eps}
+\includegraphics[width=\linewidth]{sim_asm_foreground_eor_beam_chromaticity_150.0_MHz_subband_win_method_bhw2.0.eps}
 \caption{Effect of chromaticity of antenna power pattern on foreground delay power spectra obtained from the 150~MHz subband for different baseline lengths.}
 \label{fig:asm-dps-beam-chromaticity-baselines-150-subband}
 \end{figure*}
@@ -361,12 +375,23 @@ Fig.~\ref{fig:asm-dps-beam-chromaticity-baselines-170-subband} is similar to Fig
 
 \begin{figure*}[htb]
 \centering
-\includegraphics[width=\linewidth]{sim_asm_foreground_eor_beam_chromaticity_170.0_MHz_subband.eps}
+\includegraphics[width=\linewidth]{sim_asm_foreground_eor_beam_chromaticity_170.0_MHz_subband_win_method_bhw2.0.eps}
 \caption{Effect of chromaticity of antenna power pattern on foreground delay power spectra obtained from the 170~MHz subband for different baseline lengths.}
 \label{fig:asm-dps-beam-chromaticity-baselines-170-subband}
 \end{figure*}
 
 It must be emphasized that these are obtained only with windowing techniques and do not represent the best sensitivity achievable with sophisticated tools such as optimal covariance-based weighting schemes \citep{liu14a,liu14b,ali15,dil15}. Thus assuming the data is limited by foregrounds and not by thermal noise, this demonstrates that even with no sophistication in power spectrum estimation, a direct detection based on simple windowing and delay spectrum technique is possible on a majority of HERA baselines and will further allow distinguishing between different EoR models. This finding holds even in the most conservative scenario where the modeled beam pattern with most severe chromaticity inherently results in significant and inherent foreground contamination outside the {\it foreground wedge}.
+
+\begin{figure*}[htb]
+\centering
+\subfloat[][Power patterns]{\label{fig:21cmfast-fg-ratio-150}\includegraphics[width=0.45\linewidth]{eor_fg_ratio_llim_21cmfast_chrmbeam_sim_150.0_MHz_subband.eps}}
+\subfloat[][Power patterns]{\label{fig:lidz-fg-ratio-150}\includegraphics[width=0.45\linewidth]{eor_fg_ratio_llim_lidz_chrmbeam_sim_150.0_MHz_subband.eps}} \\
+\subfloat[][Power patterns]{\label{fig:21cmfast-fg-ratio-170}\includegraphics[width=0.45\linewidth]{eor_fg_ratio_llim_21cmfast_chrmbeam_sim_170.0_MHz_subband.eps}}
+\subfloat[][Power patterns]{\label{fig:lidz-fg-ratio-170}\includegraphics[width=0.45\linewidth]{eor_fg_ratio_llim_lidz_chrmbeam_sim_170.0_MHz_subband.eps}}
+\caption{}
+\label{fig:eor-fg-ratios}
+\end{figure*}
+
 
 % Owing to the chromaticity of power patterns, the spillover from foregrounds extends beyond the horizon limits, most severely in the simulated disk pattern. As a result the residuals have significant power remaining on either side of the horizon limits since the window for deconvolution is narrower than the extent of spillover along $k_\parallel$. The two peaks on either side is most severe for the simulated disk pattern followed by that for the {\it Airy} disk pattern and least for an achromatic power pattern. 
 
@@ -389,13 +414,6 @@ We define the required attenuation as the ratio:
 where, $P_\textrm{H{\sc i}}(k_\parallel)$ is the EoR H{\sc i} power spectrum for the chosen antenna spacing, $P_\textrm{FG}(k_\parallel)$ is the foreground delay power spectrum obtained with a Blackman-Harris window function applied over the full band of the three uniquely oriented 14.6~m antenna spacings further averaged over a 0--12 hr LST range and over both positive and negative $k_\parallel$ modes, $\tau$ is the delay caused by reflections, and $\dif k_\parallel/\dif \tau$ is the {\it jacobian} in the transformation of $\tau$ to $k_\parallel$. 
 
 Fig.~\ref{fig:fg-reflections} shows $\Gamma_{k_\parallel}(\tau)$ (in dB) for selected $k_\parallel$ at 0.08~$h$~Mpc$^{-1}$ (left), 0.1~$h$~Mpc$^{-1}$ (middle), and 0.12~$h$~Mpc$^{-1}$ (right) as a function of delays due to reflections from other antenna spacings. The light, medium and dark shaded curves show $\Gamma_{k_\parallel}(\tau)$ for achromatic, {\it Airy}, and chromatic antenna power patterns respectively. These curves set an upper limit to the reflected foreground power below the EoR H{\sc i} signal power as a function of delays caused by antenna-to-antenna reflections. It is noted that a chromatic simulated power pattern sets the most severe upper limit in all three chosen $k_\parallel$ for delays $\tau < 80$~ns (left), $\tau < 120$~ns (middle), and $\tau < 160$~ns. 
-
-\begin{figure*}[htb]
-\centering
-\includegraphics[width=\linewidth]{spec_on_foreground_reflected_power_21cmfast_14.6m_150.0_MHz_subband_v2.eps}
-\caption{Attenuation of foreground power (in dB) from antenna-to-antenna reflections required to keep the reflected foreground power below EoR H{\sc i} signal power.}
-\label{fig:fg-reflections}
-\end{figure*}
 
 The required attenuation is also a sensitive function of the chosen $k_\parallel$ mode. For instance, at $k_\parallel=0.08\,h$~Mpc$^{-1}$, the reflections with delays 70~ns require to be attenuated by at $\gtrsim 85$~dB for the simulated power pattern, $\gtrsim 82$~dB for the {\it Airy} pattern, and $\gtrsim 70$~dB for the achromatic pattern. However, at $k_\parallel=0.1\,h$~Mpc$^{-1}$ for the same delay of reflection, the requirement on attenuation is lowered to $\gtrsim 75$~dB, $\gtrsim 30$~dB and $\gtrsim 22$~dB respectively. If the chosen $k_\parallel$ is instead 0.12~$h$~Mpc$^{-1}$, the required attenuation is further relaxed to $\gtrsim 60$~dB, $\gtrsim 15$~dB and $\gtrsim 15$~dB respectively. This further reinforces the significance of reducing the chromaticity of the antenna power pattern to further relax the constraint on the system to achieve the attenuation required to contain the reflected foreground power from other antennas from contaminating the sensitive EoR H{\sc i} signal modes in the {\it EoR window}.
 
