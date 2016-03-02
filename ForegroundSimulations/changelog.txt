@@ -1,3 +1,10 @@
+From 0e115e5 (restructure):
+==========================
+
+In eor.bib,
+
+(*) Add references to Neben et al.(2016) and Ewall-Wice et al.(2016)
+
 From a653e3f (restructure):
 ==========================
 
