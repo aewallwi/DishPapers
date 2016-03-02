@@ -266,7 +266,7 @@ It was recently discovered that in wide-field measurements diffuse foreground em
 
 It was also demonstrated in these studies that design of antenna power pattern, specifically its amplitude near the horizon, is an important tool in mitigating foreground contamination caused by these wide-field effects. A dish characterized by a nominal {\it Airy} pattern was found to mitigate this contamination by over four and two orders of magnitude relative to a dipole and a phased array of dipoles respectively. HERA has significantly based its antenna design principles on these findings in choosing its antenna geometry while paying close attention to the properties of the resulting antenna power pattern. 
 
-In this paper, we investigate the spectral properties of the proposed dish design through their effects on the resultant foreground delay power spectrum and the constraints they place on attenuation required to suppress reflections between the dish-receiver assembly to within tolerable limits. 
+In this paper, we investigate the spectral properties of the proposed dish design through their effects on the resultant foreground delay power spectrum and the constraints they place on attenuation required to suppress reflections between the dish-receiver assembly and antenna pairs to within tolerable limits. 
 
 \section{Simulations}\label{sec:sim}
 
@@ -276,9 +276,9 @@ We simulate wide-field visibilities for 19-element HERA from all-sky antenna pow
 
 The High Frequency Structural Simulator (HFSS) was used to model the dish and its angular response used in this study. The HFSS model used prime focus optics with a 14~m faceted parabola with a spar f/D ratio of 0.32.  The model has a 1~m central hole in the aluminum surface which is filled with a dielectric material similar to dry soil. The feed used a full PAPER dipole inside of a cylindrical backplane, the backplane is modeled as an aluminum surface. For the metal parts of the dipole, the discs were modeled as aluminum at the actual size, and the arms and terminals were modeled as copper. Dielectric stand-offs and supporting members were included. For the calculations, one pair of arms was excited using a modal port. These models cover a frequency range of 100--200~MHz in intervals of 1~MHz. Refer to DeBoer~et~al.~(2016) for a complete description of the dish model. 
 
-For reference, we use two other models for the antenna power pattern. The first is a nominal {\it Airy} pattern corresponding to a uniformly illuminated circular aperture of 14~m diameter and the second is an achromatic model where the response of the design at 150~MHz of the HFSS model described above was fixed as the hypothetical response at all frequencies covering the entire band. This frequency independent model will be used to isolate the effects of spectral structures in the antenna power pattern (or beam chromaticity) on foreground delay power spectra.
+For reference, we use two other models for the antenna power pattern. The first is a nominal {\it Airy} pattern corresponding to a uniformly illuminated circular aperture of 14~m diameter and the second is an achromatic model where the response of the design at 150~MHz of the HFSS model described above was fixed as the hypothetical response at all frequencies covering the entire band. This frequency independent model will be used to isolate the effects of spectral structures in the antenna power pattern (or beam chromaticity) on foreground delay power spectra. Hereafter, we refer to these three beams as `simulated', `{\it Airy}' and `achromatic' models.
 
-In a related series of papers, Neben et~al. (2016; submitted) discuss the agreement of these model antenna beam patterns with actual measurements and Ewall-Wice et~al. (2016; submitted) model the reflections and return loss expected in the proposed antenna-receiver assembly. Our focus in this paper is to investigate chromaticity of antenna power patterns from the point of view of their impact on foreground contamination in delay power spectra.
+In a related series of papers, Neben et~al. (2016; submitted) discuss the agreement of these simulated antenna beam patterns with actual measurements and Ewall-Wice et~al. (2016; submitted) model the reflections and return loss expected in the proposed antenna-receiver assembly. Our focus in this paper is to investigate chromaticity of antenna power patterns from the point of view of their impact on foreground contamination in delay power spectra.
 
 \subsection{Foreground Model}\label{sec:foreground}
 
@@ -292,19 +292,41 @@ For reference, we use two models of EoR. In the first, simulations of the H{\sc 
 
 The equation for delay spectrum describes the mapping between sky location of a foreground object and delay. The chromatic nature (variation with frequency) of the antenna power pattern results in a convolution of the geometrical mapping with the delay response of spectral chromaticity of the power pattern. This can result in a significant spillover of foreground power beyond the horizon delay limits especially in the case of foregrounds near the horizon. 
 
-\subsection{Effects on Foreground Contamination}\label{sec:effects-fgdps}
+\subsection{Effect on Foreground Contamination}\label{sec:effects-fgdps}
 
-In the estimation of power spectrum, specific choices for spectral weighting function, $W(f)$, has been found to be effective in reducing foreground contamination by many orders of magnitude \citep{thy13} and is regularly used in EoR data analysis \citep{par12a}. For instance, a {\it Blackman-Harris} function \citep{har78} has a dynamic range of $\sim$100 -- 120~dB in delay power spectrum and a reduced effective bandwidth, where, we define effective bandwidth as:
-\begin{align}
-  B_\textrm{eff} &= \int_{-B/2}^{+B/2} |W(f)|^2\,\dif f.
+Since our aim in this paper is to quantify foreground contamination and EoR sensitivity without employing any sophisticated {\it foreground removal} techniques, we turn out attention to {\it foreground avoidance} strategy that employs spectral weighting technique. In such an estimation of power spectrum, specific choices for spectral weighting function, $W(f)$, have been found to be effective in reducing foreground contamination by many orders of magnitude \citep{thy13} and is regularly used in EoR data analysis \citep{par12a}. For instance, a {\it Blackman-Harris} function \citep{har78} has a dynamic range of $\sim$100 -- 120~dB in delay power spectrum and a reduced effective bandwidth, with:
+\begin{align}\label{eqn:Beff}
+  \epsilon &= \frac{1}{B} \int_{-B/2}^{+B/2} |W(f)|^2\,\dif f, \\
+  \textrm{and,}\quad B_\textrm{eff} &= \epsilon\,B,
+  % B_\textrm{eff} &= \int_{-B/2}^{+B/2} |W(f)|^2\,\dif f.
 \end{align}
-For a {\it Blackman-Harris} window function denoted by $W_\textrm{BH}(f)$, $B_\textrm{eff} \approx B/2$. Hence, the window spans a total of $2N$ frequency channels each of width $\Delta f$ to have $B_\textrm{eff} \approx N\,\Delta f$. 
+where, $1-\epsilon$ is the loss in overall spectral sensitivity and $B_\textrm{eff}$ is the effective bandwidth. For a {\it Blackman-Harris} window function denoted by $W_\textrm{BH}(f)$, $\epsilon \approx 50\%$. Hence, the window spans a total of $2N$ frequency channels each of width $\Delta f$ to have $B_\textrm{eff} \approx N\,\Delta f$.
 
-Considering that the dynamic range required to suppress foreground contamination in the {\it EoR window} may be even higher than that provided by a {\it Blackman-Harris} window function, we use a modified version given by the convolution of a {\it Blackman-Harris} window with itself:
-\begin{align}
+Considering that the dynamic range required to suppress foreground contamination in the {\it EoR window} may probably be even higher than that provided by a {\it Blackman-Harris} window function, we use a modified version given by the convolution of a {\it Blackman-Harris} window with itself:
+\begin{align}\label{eqn:bhw2}
   W(f) &= W_\textrm{BH}(f) \ast W_\textrm{BH}(f).
 \end{align}
-In delay spectrum, this window has a response that is obtained by squaring of the {\it Blackman-Harris} window response and thus improves the dynamic range further in the response by another 100 -- 120~dB. 
+In its Fourier domain, this window has a response that is obtained by squaring of the {\it Blackman-Harris} window response and thus improves the dynamic range further in the power response by another 100 -- 120~dB while $\epsilon\approx 42\%$. This is an enormous gain in sidelobe characteristics for a negligible loss in over sensitivity relative to a simple {\it Blackman-Harris} weighting. This will ensure that the contamination resulting from spillover of foregrounds along the line-of-sight $k$-modes are limited by intrinsic spectral structures in the foregrounds and the beam patterns and not by sidelobes from spectral weighting. In this paper, we apply this modified spectral weighting function defined in equation~\ref{eqn:bhw2} whenever foregrounds are represented in the Fourier delay domain. 
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=\linewidth]{window_function_modifications.eps}
+  \caption{Choices for spectral weighting functions, $W(f)$ ({\it top}) and their delay power spectrum responses, $|\widetilde{W}(\tau)|^2$ ({\it bottom}). The gray curves correspond to a {\it Blackman-Harris} window while those in black correspond to a {\it Blackman-Harris} window convolved with itself. The overall sensitivity of the former is $\epsilon \approx 50\%$ of a rectangular window while that of the latter is $\epsilon \approx 42\%$. Hence, the latter is narrower than the former. As a result, the main lobe of the convolved window function response is wider than that of a {\it Blackman-Harris} window. However, the sidelobes from the convolved window function are suppressed by more than ten orders of magnitude relative to that of a nominal {\it Blackman-Harris} window for only a slight loss of resolution.}
+  \label{fig:window-functions}
+\end{figure}
+
+In HERA-19 array layout, there are 30 unique baseline vectors and 8 unique baseline lengths. Fig.~\ref{fig:asm-dps-beam-chromaticity-baselines} shows the delay power spectra of foregrounds on the 8 unique baseline lengths obtained with the aforementioned models for power pattern. In all these panels, the full-band spectrally weighted foreground delay power spectra obtained with achromatic, {\it Airy} and fully chromatic simulated beam patterns are shown in black, red, and blue respectively. The brightening of foreground power near the horizon limits (vertical dotted lines) due to the {\it pitchfork} effect \citep{thy15a,thy15b} is prominently seen in all cases. A clear trend of broadening of spillover-wings outside the horizon limits is seen with increasing chromaticity as the beam is changed from the achromatic to the {\it Airy} to the chromatic simulated model. For instance, the spillover from foreground delay power spectrum obtained with chromatic beam pattern is restricted to $|k_\parallel| \lesssim 0.2\,h$~Mpc$^{-1}$, with the {\it Airy} pattern it is restricted to $|k_\parallel| \lesssim 0.15\,h$~Mpc$^{-1}$, while with the achromatic beam it is restricted to $|k_\parallel| \lesssim 0.12\,h$~Mpc$^{-1}$ even on longest baseline lengths. It is also noted that despite the extreme dynamic range of the employed spectral weighting function, the tail of the foreground spillover at $|k_\parallel| \gtrsim 0.2\,h$~Mpc$^{-1}$ with an {\it Airy} beam pattern is many orders of magnitude higher than that using an achromatic beam while that from the simulated chromatic beam is even higher than from an {\it Airy} pattern by a few orders of magnitude. This signals that the foreground spillover shown are truly limited by intrinsic spectral features in the antenna beam patterns. 
+
+\begin{figure*}[htb]
+  \centering
+  \includegraphics[width=\linewidth]{asm_foreground_eor_beam_chromaticity_fullband_bhw2.0.eps}
+  \caption{Foreground delay power spectra on unique baseline lengths of HERA-19 at arbitrary local sidereal times (LST). The baseline length and orientation (anti-clockwise from East) are annotated at the top right corner of each panel. Black, red and blue curves correspond to delay power spectra obtained with achromatic, {\it Airy} and chromatic simulated antenna beams respectively. The achromatic beam has no spectral structure, the simulated chromatic beam has maximum chromaticity while a nominal {\it Airy} pattern has intermediate level of chromaticity. The {\it pitchfork} effect is clearly visible as peaks around the horizon limits. With increase in chromaticity of the antenna beam the foreground spillover beyond the {\it foreground wedge} becomes progressively worse - the extent of foreground-spillover wings beyond the horizon limits (vertical dotted lines) and the amplitude of spillover beyond $k_\parallel\gtrsim 0.2\,h$~Mpc$^{-1}$ is most severe for the chromatic simulated beam, intermediate for an {\it Airy} pattern and negligible for an achromatic beam.}
+  \label{fig:asm-dps-beam-chromaticity-baselines}
+\end{figure*}
+
+It is clearly demonstrated that higher the beam chromaticity, the farther the foreground contamination inherently extends along $k_\parallel$. Thus, the chromaticity of antenna beam needs to be carefully controlled in EoR experiments in order to not allow sensitive $k_\parallel$-modes to become inaccessible for EoR H{\sc i} signal detection.
+
+It must be emphasized that such a significant spillover is not limited by the horizon limits of the {\it foreground wedge} because this is caused by spectral structure in the antenna beam pattern in addition to that caused by position-dependent geometric phase in the visibility spectra. As a result delay-based complex deconvolution techniques such as CLEAN \citep{tay99,par09,par12b} that rely on smoothness of foreground spectra and only spectral window shape will not have adequate information to accurately deconvolve intrinsic supra-horizon spillover arising from the chromaticity of the antenna beam. We leave delay power spectrum estimation using {\it foreground removal} strategy that accounts for direction-dependent and beam chromaticity-dependent effects to future work and use only simple {\it foreground avoidance} approach in this study.
 
 \subsection{Constraints on Reflections in the Instrument}\label{sec:constraints-reflectometry}
 
@@ -347,21 +369,6 @@ In delay spectrum, this window has a response that is obtained by squaring of th
 
 \subsection{Effect on Delay Power Spectrum}\label{sec:chromaticity-delay-spectrum}
 
-Now we consider the effect of chromaticity of the power pattern on the delay power spectrum. 
-
-In HERA-19 array layout configuration, there are 30 unique baseline vectors and 8 unique baseline lengths. Fig.~\ref{fig:asm-dps-beam-chromaticity-baselines} shows the delay power spectra of foregrounds on the 8 unique baseline lengths obtained with the aforementioned models for power pattern. In all these panels, the full-band foreground delay power spectra obtained with achromatic, {\it Airy} and chromatic beam patterns are shown in black, red, and blue respectively. The vertical dotted lines denote the horizon limits for baseline lengths indicated in each panel. A clear trend of broadening of spillover-wings outside the horizon limits is seen with increasing chromaticity. For instance, the spillover from foreground delay power spectrum obtained with chromatic beam pattern is restricted to $|k_\parallel| \lesssim 0.2\,h$~Mpc$^{-1}$, with the {\it Airy} pattern it is restricted to $|k_\parallel| \lesssim 0.15\,h$~Mpc$^{-1}$, while with the achromatic beam it is restricted to $|k_\parallel| \lesssim 0.12\,h$~Mpc$^{-1}$ even on longest baseline lengths. Thus an increase in chromaticity extends the foreground spillover into higher $k_\parallel$-modes making them inaccessible for EoR H{\sc i} signal detection.
-
-Hence it is clearly demonstrated that higher the beam chromaticity, the farther the foreground contamination inherently extends beyond the horizon limits of the {\it foreground wedge}. The {\it Airy} pattern typically creates one secondary peak whereas the chromatic beam is found to produce multiple secondary peaks outside the {\it foreground wedge} on each side.
-
-\begin{figure*}[htb]
-\centering
-\includegraphics[width=\linewidth]{asm_foreground_eor_beam_chromaticity_fullband_bhw2.0.eps}
-\caption{Effect of chromaticity of antenna power pattern on foreground delay power spectra for different baselines.}
-\label{fig:asm-dps-beam-chromaticity-baselines}
-\end{figure*}
-
-It must be emphasized that such a significant spillover is not limited by the horizon limits of the {\it foreground wedge} because this is caused by spectral structure in the antenna beam pattern in addition to that caused by position-dependent geometric phase in the visibility spectra. As a result delay-based complex deconvolution techniques such as CLEAN \citep{tay99,par09,par12b} that rely on smoothness of foreground spectra and only spectral window shape will not have adequate information to accurately deconvolve intrinsic supra-horizon spillover arising from the chromaticity of the antenna beam. Thus, we leave delay power spectrum estimation using {\it foreground removal} strategy to future work and use {\it foreground avoidance} approach in this study.
-
 \begin{figure}[htb]
 \centering
 \includegraphics[width=\linewidth]{spec_on_achrmbeam_foreground_reflected_power_21cmfast_14.6m_150.0_MHz_subband_v2.eps}
@@ -380,21 +387,28 @@ We investigate the effect of chromaticity of power pattern in a {\it foreground 
 
 \begin{figure*}[htb]
 \centering
-\includegraphics[width=\linewidth]{sim_asm_foreground_eor_beam_chromaticity_150.0_MHz_subband_win_method_bhw2.0.eps}
-\caption{Effect of chromaticity of antenna power pattern on foreground delay power spectra obtained from the 150~MHz subband for different baseline lengths.}
-\label{fig:asm-dps-beam-chromaticity-baselines-150-subband}
+\subfloat[][Power patterns]{\label{fig:asm-dps-beam-chromaticity-baselines-150-subband}\includegraphics[width=\linewidth]{sim_asm_foreground_eor_beam_chromaticity_150.0_MHz_subband_win_method_bhw2.0.eps}} \\
+\subfloat[][Power patterns]{\label{fig:asm-dps-beam-chromaticity-baselines-170-subband}\includegraphics[width=\linewidth]{sim_asm_foreground_eor_beam_chromaticity_170.0_MHz_subband_win_method_bhw2.0.eps}}
+\label{fig:subbands}
 \end{figure*}
+
+% \begin{figure*}[htb]
+% \centering
+% \includegraphics[width=\linewidth]{sim_asm_foreground_eor_beam_chromaticity_150.0_MHz_subband_win_method_bhw2.0.eps}
+% \caption{Effect of chromaticity of antenna power pattern on foreground delay power spectra obtained from the 150~MHz subband for different baseline lengths.}
+% \label{fig:asm-dps-beam-chromaticity-baselines-150-subband}
+% \end{figure*}
 
 Firstly, it is noted that the coarsening of delay resolution significantly absorbs the distinct differences caused by beams of different chromaticities as seen in the full band foreground delay spectra outside the {\it foreground wedge} in Fig.~\ref{fig:asm-dps-beam-chromaticity-baselines}. Secondly, it is also found that barring the shortest baselines ($|\boldsymbol{b}| \leq $~29.2~m), which have the most severe foreground contamination especially from diffuse emission, foreground contamination on baselines longer than $\gtrsim 29.2$~m is lesser than EoR signal power for $|k_\parallel| \gtrsim 0.22\,h$~Mpc$^{-1}$ in either of the models. 
 
 Fig.~\ref{fig:asm-dps-beam-chromaticity-baselines-170-subband} is similar to Fig.~\ref{fig:asm-dps-beam-chromaticity-baselines-150-subband} except it is obtained with a subband {\it Blackman-Harris} window function centered on 170~MHz. In this subband relative to that centered on 150~MHz, the ratio of powers of the EoR signal and foregrounds is even higher outside the wedge thus indicating a stronger potential for direct detectability without the use of optimal power spectrum estimation techniques on almost all baseline lengths. 
 
-\begin{figure*}[htb]
-\centering
-\includegraphics[width=\linewidth]{sim_asm_foreground_eor_beam_chromaticity_170.0_MHz_subband_win_method_bhw2.0.eps}
-\caption{Effect of chromaticity of antenna power pattern on foreground delay power spectra obtained from the 170~MHz subband for different baseline lengths.}
-\label{fig:asm-dps-beam-chromaticity-baselines-170-subband}
-\end{figure*}
+% \begin{figure*}[htb]
+% \centering
+% \includegraphics[width=\linewidth]{sim_asm_foreground_eor_beam_chromaticity_170.0_MHz_subband_win_method_bhw2.0.eps}
+% \caption{Effect of chromaticity of antenna power pattern on foreground delay power spectra obtained from the 170~MHz subband for different baseline lengths.}
+% \label{fig:asm-dps-beam-chromaticity-baselines-170-subband}
+% \end{figure*}
 
 It must be emphasized that these are obtained only with windowing techniques and do not represent the best sensitivity achievable with sophisticated tools such as optimal covariance-based weighting schemes \citep{liu14a,liu14b,ali15,dil15}. Thus assuming the data is limited by foregrounds and not by thermal noise, this demonstrates that even with no sophistication in power spectrum estimation, a direct detection based on simple windowing and delay spectrum technique is possible on a majority of HERA baselines and will further allow distinguishing between different EoR models. This finding holds even in the most conservative scenario where the modeled beam pattern with most severe chromaticity inherently results in significant and inherent foreground contamination outside the {\it foreground wedge}.
 

@@ -1,3 +1,16 @@
+From a653e3f (restructure):
+==========================
+
+(*) Update foreground delay power spectrum figures
+(*) Add spectral weghting function figure to git repo
+
+In ms.tex,
+
+(*) Use updated foreground delay power spectrum figures
+(*) Major changes to section 5.1 - introduce spectral weighting
+functions and text on effects of beam chromaticity on foreground
+delay spectra
+
 From 508edb8 (restructure):
 ==========================
 
