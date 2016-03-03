@@ -366,9 +366,9 @@ Increase in beam chromaticity makes the lower limits on attenuating reflections 
 
 It may be noted here that designing a dish whose antenna beam closely resembles a nominal {\it Airy} pattern will have a significantly higher ceiling of tolerance for allowing antenna-to-antenna reflections and yet remain very effective for EoR signal detection. The HERA collaboration is actively pursuing constant improvement of its dish design to keep minimize limitations from such chromatic systematics.
 
-\subsection{Effect on Delay Power Spectrum}\label{sec:chromaticity-delay-spectrum}
+\section{EoR Sensitivity}\label{sec:eor-sensitivity}
 
-We investigate the effect of chromaticity of power pattern in a {\it foreground avoidance} strategy that avoids the aforementioned deconvolution of delay spectrum. Application of window functions with high sidelobe suppression have been discussed for mitigating foreground contamination \citep{thy13}. In line with the {\it foreground avoidance} strategy, Fig.~\ref{fig:asm-dps-beam-chromaticity-baselines-150-subband} shows delay spectra after applying a {\it Blackman-Harris} window function extending 10~MHz on each side centered on 150~MHz with effective bandwidth of 10~MHz. The 8 panels correspond to those shown in Fig.~\ref{fig:asm-dps-beam-chromaticity-baselines}. As a result of narrowed subband, the resolution in delay space (and $k_\parallel$) has coarsened. The cyan and gray lines denote power spectra of EoR models 1 and 2 respectively. 
+In line with the {\it foreground avoidance} strategy, Fig.~\ref{fig:asm-dps-beam-chromaticity-baselines-150-subband} shows delay spectra after applying a {\it Blackman-Harris} spectral weighting function defined in equation~\ref{eqn:bhw2} with $B_\textrm{eff}=10$~MHz. The 8 panels correspond to those shown in Fig.~\ref{fig:asm-dps-beam-chromaticity-baselines}. As a result of narrowed subband, the resolution in delay space (and $k_\parallel$) has coarsened. The cyan and gray lines denote power spectra of EoR models 1 and 2 respectively. 
 
 \begin{figure*}[htb]
 \centering
@@ -415,8 +415,6 @@ It must be emphasized that these are obtained only with windowing techniques and
 % Following a delay-deconvolution based foreground removal strategy, we apply the Blackman-Harris window of effective bandwidth 10~MHz on the unsubtracted foreground residuals (top right panel) in frequency domain and obtain the delay power spectrum shown in the bottom right panel. It is noted that lesser the chromaticity the more effective the deconvolution process is in lowering the residuals in and around the horizon limits. For instance, the peak of the delay power spectrum using the achromatic beam is lowered by four orders of magnitude relative to the original peak whereas the residuals of delay power spectra with chromatic {\it Airy} and simulated power patterns is lowered only by two orders of magnitude. However, owing to the ineffective subtraction of the response extended beyond the horizon limits, the sidelobe levels have not been lowered significantly and are within an order of magnitude of each other.
 
 % In both strategies, the EoR H{\sc i} signal power spectrum obtained by simulations with 21cmFAST (Mesinger et al. 2008) is shown for reference (dashed black lines) in the bottom panels. 
-
-\section{EoR Sensitivity}\label{sec:eor-sensitivity}
 
 \section{Summary}\label{sec:summary}
 

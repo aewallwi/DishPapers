@@ -1,3 +1,10 @@
+From 3e3495b (restructure):
+==========================
+
+In ms.tex,
+
+(*) Make minor changes to EoR sensitivity section
+
 From 4497f7b (restructure):
 ==========================
 
