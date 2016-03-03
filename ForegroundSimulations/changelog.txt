@@ -1,3 +1,10 @@
+From 4497f7b (restructure):
+==========================
+
+In ms.tex,
+
+(*) Update subsection 5.2 on reflectometry specs
+
 From 9ba1a46 (restructure):
 ==========================
 
