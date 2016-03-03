@@ -1,3 +1,8 @@
+From 9ba1a46 (restructure):
+==========================
+
+(*) Update figures on reflection specs
+
 From 0e115e5 (restructure):
 ==========================
 
