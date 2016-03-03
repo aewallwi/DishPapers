@@ -1,3 +1,10 @@
+From e4fc215 (restructure):
+==========================
+
+In ms.tex,
+
+(*) Comment some lines in EoR sensitivity section
+
 From 3e3495b (restructure):
 ==========================
 
