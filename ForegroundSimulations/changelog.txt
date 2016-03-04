@@ -1,3 +1,12 @@
+From fe435fa (fgsim):
+====================
+
+(*) Update 150 MHz subband delay spectra figure
+
+In ms.tex,
+
+(*) Add content to section 6
+
 From e4fc215 (restructure):
 ==========================
 
