@@ -1,3 +1,14 @@
+From d6a3635 (fgsim):
+====================
+
+In eor.bib,
+
+(*) Add two references - Pober et al.(2015, 2016)
+
+In ms.tex,
+
+(*) Update Introduction section
+
 From 9e6a4f7 (fgsim):
 ====================
 
