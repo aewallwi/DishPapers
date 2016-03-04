@@ -1,3 +1,10 @@
+From 9e6a4f7 (fgsim):
+====================
+
+In ms.tex,
+
+(*) Add paragraph in Delay Spectrum section
+
 From d4fc481 (fgsim):
 ====================
 
