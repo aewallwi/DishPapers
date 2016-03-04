@@ -1,3 +1,14 @@
+From ff20950 (fgsim):
+====================
+
+In eor.bib,
+
+(*) Add few more references
+
+In ms.tex,
+
+(*) Update section 2 on HERA Instrument
+
 From d6a3635 (fgsim):
 ====================
 
