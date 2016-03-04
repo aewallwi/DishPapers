@@ -330,11 +330,9 @@ It must be emphasized that such a significant spillover is not limited by the ho
 
 \subsection{Constraints on Reflections in the Instrument}\label{sec:constraints-reflectometry}
 
-One of the primary causes for spectral structure in antenna power patterns is reflections in the instrument. Patra~et~al.~2015 (in preparation) and \citet{ewa16} discuss the measured and simulated reflections respectively between a dish and its feed. Reflection between structures and signal paths from different antennas also causes chromaticity in the antenna beam. In this section, we provide cosmologically motivated upper limits on instrument systematics caused by these two types of reflections. % a related discussion by estimating the attenuation in power required to keep the foreground power reflected between adjacent antennas below the expected EoR H{\sc i} signal level for the different models of power patterns used in our study.
+One of the primary causes for spectral structure in antenna power patterns is reflections in the instrument. Patra~et~al.~2015 (in preparation) and \citet{ewa16} discuss the measured and simulated reflections respectively between a dish and its feed. Reflection between structures and signal paths from different antennas also causes chromaticity in the antenna beam. In this section, we provide cosmologically motivated upper limits on instrument systematics caused by these two types of reflections. 
 
 The effect of reflections it to shift the measured foreground power to higher modes in $\tau$ (or equivalently in $k_\parallel$) and thus cause further contamination in these higher $k_\parallel$ modes which are considered sensitive for EoR H{\sc i} signal detection. Equivalently, these delay shifts introduce ripples in the spectrum. The net chromaticity in the measurements is the product of spectral structure arising out of the intrinsic nature of foreground emission, the baseline-dependent frequency structure of the fringes, the spectral features in the antenna power pattern besides any other spectral structures in the instrument unaccounted for. Equivalently, in the Fourier domain these factors have a convolving effect. In order to isolate the requirements on beam chromaticity from other sources of chromaticity, we start with an antenna beam in which those spectral structures are absent but the intrinsic chromaticity of foregrounds and the baseline fringes are included. 
-
-% We estimate the attenuation required at specific modes of interest $|k_\parallel|>k_\textrm{p}$ to contain reflected foreground power between antennas below expected EoR H{\sc i} power, both corresponding to a 14.6~m antenna spacing. 
 
 We define the required attenuation on the reflected foreground power as the ratio: 
 \begin{align}\label{eqn:attenuation}
@@ -390,30 +388,43 @@ From Fig.~\ref{fig:subbands}, it is clearly demonstrated that HERA has significa
 
 \subsection{Sensitivity on Baseline-RA Parameter Space}\label{sec:baseline-LST}
 
+We investigate the EoR sensitivity in two dimensional parameter space formed by baselines and pointings in Right Ascension (RA$\equiv\alpha$) to highlight capabilities of HERA and provide clues for the best observing window. 
+
+In this section, we assume that the H{\sc i} power spectrum is isotropic (no sample variance) and hence, independent of $\alpha$. However, it is dependent on the center of the subband, $f_0$, where $f_0 = f_{21}/(1+z)$. The foreground delay power spectra depends on both $f_0$ and $\alpha$. Thus, we rewrite the EoR H{\sc i} and foreground delay power spectra explicitly as a function of these quantities as $P_\textrm{H{\sc i}}(|\boldsymbol{b}|,k_\parallel,f_0)$ and $P_\textrm{FG}(\boldsymbol{b},k_\parallel,f_0,\alpha)$ respectively.
+
+We define baseline-dependent $k_\parallel$-modes of interest for {\it foreground avoidance} as $|k_\parallel| > k_\parallel^\textrm{FA}(\boldsymbol{b})$, with:
+\begin{align}
+  k_\parallel^\textrm{FA}(\boldsymbol{b}) &= \frac{2\pi\,f_{21}H_0\,E(z)}{c(1+z)^2}\,\left(\frac{|\boldsymbol{b}|}{c} + \frac{\zeta}{B_\textrm{eff}}\right), \label{eqn:kprll-limit}
+\end{align}
+where, the first term inside the parenthesis denotes the horizon limit, the second relates to the resolution due to subband bandwidth, $B_\textrm{eff}$, and $\zeta$ denotes a buffer to ensure $k_\parallel^\textrm{FA}(|\boldsymbol{b}|)$ threshold ``avoids'' the main lobe of foreground power.
+
+We estimate the worst case sensitivity in the $\boldsymbol{b}$--$\alpha$ parameter space as:
+\begin{align}
+  \rho(\boldsymbol{b},f_0,\alpha) &= \min_{|k_\parallel|>k_\parallel^\textrm{FA}(|\boldsymbol{b}|)}\left\{\frac{P_\textrm{H{\sc i}}(|\boldsymbol{b}|,k_\parallel,f_0)}{P_\textrm{FG}(\boldsymbol{b},k_\parallel,f_0,\alpha)}\right\}
+\end{align}
+We consider the foreground power spectrum obtained with the simulated chromatic antenna beam, and EoR models 1 and 2, in each of the 150~MHz and 170~MHz subbands. Fig.~\ref{fig:eor-fg-ratios} shows the worst case sensitivity, $\rho(\boldsymbol{b},f_0,\alpha)$, for all 30 unique HERA baselines over 24 hours of $\alpha$ for the two EoR models and two subbands used in this study. 
+
 \begin{figure*}[htb]
 \centering
-\subfloat[][Power patterns]{\label{fig:21cmfast-fg-ratio-150}\includegraphics[width=0.45\linewidth]{eor_fg_ratio_llim_21cmfast_chrmbeam_sim_150.0_MHz_subband.eps}}
-\subfloat[][Power patterns]{\label{fig:lidz-fg-ratio-150}\includegraphics[width=0.45\linewidth]{eor_fg_ratio_llim_lidz_chrmbeam_sim_150.0_MHz_subband.eps}} \\
-\subfloat[][Power patterns]{\label{fig:21cmfast-fg-ratio-170}\includegraphics[width=0.45\linewidth]{eor_fg_ratio_llim_21cmfast_chrmbeam_sim_170.0_MHz_subband.eps}}
-\subfloat[][Power patterns]{\label{fig:lidz-fg-ratio-170}\includegraphics[width=0.45\linewidth]{eor_fg_ratio_llim_lidz_chrmbeam_sim_170.0_MHz_subband.eps}}
+\subfloat[][EoR model 1, 150~MHz subband ]{\label{fig:21cmfast-fg-ratio-150}\includegraphics[width=0.45\linewidth]{eor_fg_ratio_llim_21cmfast_chrmbeam_sim_150.0_MHz_subband.eps}}
+\subfloat[][EoR model 2, 150~MHz subband ]{\label{fig:lidz-fg-ratio-150}\includegraphics[width=0.45\linewidth]{eor_fg_ratio_llim_lidz_chrmbeam_sim_150.0_MHz_subband.eps}} \\
+\subfloat[][EoR model 1, 170~MHz subband ]{\label{fig:21cmfast-fg-ratio-170}\includegraphics[width=0.45\linewidth]{eor_fg_ratio_llim_21cmfast_chrmbeam_sim_170.0_MHz_subband.eps}}
+\subfloat[][EoR model 2, 170~MHz subband ]{\label{fig:lidz-fg-ratio-170}\includegraphics[width=0.45\linewidth]{eor_fg_ratio_llim_lidz_chrmbeam_sim_170.0_MHz_subband.eps}}
 \caption{}
 \label{fig:eor-fg-ratios}
 \end{figure*}
 
+In general, sensitivity increases with longer baselines. We attribute this to the much steeper dependence of foreground emission on baseline length than that of EoR H{\sc i} power. This is also confirmed from Fig.~\ref{fig:subbands} where the peak and sidelobe levels of foreground power obtained with the simulated chromatic antenna beam on the 14.6~m baseline, which is sensitive to diffuse emission, progressively drops by two orders of magnitude on the 58.4~m baseline where diffuse emission is not as dominant. Hence, from a foreground contamination standpoint, the shortest baselines are less sensitive than the longer ones in the HERA-19 layout.
 
-% Owing to the chromaticity of power patterns, the spillover from foregrounds extends beyond the horizon limits, most severely in the simulated disk pattern. As a result the residuals have significant power remaining on either side of the horizon limits since the window for deconvolution is narrower than the extent of spillover along $k_\parallel$. The two peaks on either side is most severe for the simulated disk pattern followed by that for the {\it Airy} disk pattern and least for an achromatic power pattern. 
+However, in all four cases considered here, the worst case signal-noise ratio lies above unity in most of this parameter space. It demonstrates that HERA will detect the EoR signal with a very high signal-noise ratio on all baselines in a vast majority of the pointings. 
 
-% We investigate the effect of chromaticity of power pattern in a foreground avoidance strategy that avoids the aforementioned deconvolution of delay spectrum. Application of window functions with high sidelobe suppression have been discussed for mitigating foreground contamination \citep{thy13}. In line with the foreground avoidance strategy, the visibilities from the full band foreground simulation (whose delay power spectrum is shown on the top left) are multiplied by a Blackman-Harris window function of 10~MHz effective bandwidth. The delay power spectra so produced are shown in the panel on the bottom left. Due to the decreased effective bandwidth the resolution of the delay power spectrum appears decreased. Hence, only the $|k_\parallel| \gtrsim 0.14\,h$~Mpc$^{-1}$ modes remain accessible. Due to the overall lower amplitude of the {\it Airy} power pattern relative to the simulated dish power pattern and the achromatic pattern, the sidelobe levels of foreground delay power spectra from an {\it Airy} pattern are lower than the other models by almost two orders of magnitude. 
-
-% Following a delay-deconvolution based foreground removal strategy, we apply the Blackman-Harris window of effective bandwidth 10~MHz on the unsubtracted foreground residuals (top right panel) in frequency domain and obtain the delay power spectrum shown in the bottom right panel. It is noted that lesser the chromaticity the more effective the deconvolution process is in lowering the residuals in and around the horizon limits. For instance, the peak of the delay power spectrum using the achromatic beam is lowered by four orders of magnitude relative to the original peak whereas the residuals of delay power spectra with chromatic {\it Airy} and simulated power patterns is lowered only by two orders of magnitude. However, owing to the ineffective subtraction of the response extended beyond the horizon limits, the sidelobe levels have not been lowered significantly and are within an order of magnitude of each other.
-
-% In both strategies, the EoR H{\sc i} signal power spectrum obtained by simulations with 21cmFAST (Mesinger et al. 2008) is shown for reference (dashed black lines) in the bottom panels. 
+We reiterate that these estimates are obtained from a conservative scenario wherein only simple spectral weighting technique in the {\it foreground avoidance} limit is used, without any foreground removal or sophisticated weighting strategies using inverse-covariance. Further, these estimates represent worst-case lower limits demonstrating that HERA-19 and its successors will be extremely sensitive for EoR experiments and will benefit even further with more optimal foreground suppression strategies.
 
 \section{Summary}\label{sec:summary}
 
 \acknowledgments
 
-This work was supported by the U. S. National Science Foundation (NSF) through award AST-1109257. DCJ is supported by an NSF Astronomy and Astrophysics Postdoctoral Fellowship under award AST-1401708. 
+This work was supported by the U. S. National Science Foundation (NSF) through award AST-1109257. 
 
 % \appendix
 

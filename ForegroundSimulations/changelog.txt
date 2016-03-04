@@ -1,3 +1,10 @@
+From d4fc481 (fgsim):
+====================
+
+In ms.tex,
+
+(*) Update section 6.2 under EoR sensitivity
+
 From fe435fa (fgsim):
 ====================
 
