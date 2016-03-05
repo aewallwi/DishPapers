@@ -1,3 +1,10 @@
+From c96a1f7 (fgsim):
+====================
+
+In eor.bib,
+
+(*) Update Dillon et al.(2015) reference
+
 From d67699b (fgsim):
 ====================
 
