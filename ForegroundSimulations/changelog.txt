@@ -1,3 +1,10 @@
+From 0f8f59c (fgsim):
+====================
+
+In ms.tex,
+
+(*) Add caption to figure 6
+
 From 475858c (fgsim):
 ====================
 
