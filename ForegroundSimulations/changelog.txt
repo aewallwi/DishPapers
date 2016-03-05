@@ -1,3 +1,10 @@
+From d67699b (fgsim):
+====================
+
+In ms.tex,
+
+(*) Update Summary section
+
 From ff20950 (fgsim):
 ====================
 
