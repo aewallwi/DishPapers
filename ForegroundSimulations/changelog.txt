@@ -1,3 +1,12 @@
+From f3ce757 (fgsim):
+====================
+
+In ms.tex,
+
+(*) Add Abstract
+(*) Update caption of figure 6
+(*) Minor edits throughout
+
 From 0f8f59c (fgsim):
 ====================
 
