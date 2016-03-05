@@ -1,3 +1,10 @@
+From f2cbdf8 (fgsim):
+====================
+
+In ms.tex,
+
+(*) Update title, authors list, affiliations and keywords
+
 From f3ce757 (fgsim):
 ====================
 
