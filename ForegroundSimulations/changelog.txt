@@ -1,3 +1,10 @@
+From 475858c (fgsim):
+====================
+
+In ms.tex,
+
+(*) Update acknowledgements 
+
 From c96a1f7 (fgsim):
 ====================
 
