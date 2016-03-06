@@ -1,3 +1,10 @@
+From 3f81d66 (fgsim):
+====================
+
+In ms.tex,
+
+(*) Correct typos
+
 From ed32dfb (fgsim):
 ====================
 
