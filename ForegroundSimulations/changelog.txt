@@ -1,3 +1,13 @@
+From ed32dfb (fgsim):
+====================
+
+(*) Update sensitivity figures
+
+In ms.tex,
+
+(*) Minor edits throughout
+(*) Use updated sensitivity figures
+
 From f2cbdf8 (fgsim):
 ====================
 
