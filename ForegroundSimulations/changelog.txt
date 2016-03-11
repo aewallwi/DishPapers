@@ -1,3 +1,10 @@
+From 50bc153 (fgsim):
+====================
+
+In ms.tex,
+
+(*) Incorporate comments from Dave DeBoer
+
 From 3f81d66 (fgsim):
 ====================
 

@@ -104,7 +104,7 @@ The redshifted neutral hydrogen from the IGM in this epoch has been identified t
 
 The most significant challenge to low frequency EoR observations arises from the extremely bright Galactic and extragalactic foreground synchrotron emission which are $\sim 10^4$ times stronger than the desired EoR signal \citep{dim02,ali08,ber09,ber10,gho12}. All the current and future instruments rely on the inherent differences in spatial isotropy and spectral smoothness between the EoR signal and the foregrounds to extract the EoR power spectrum \citep[see, e.g.,][]{fur04b,mor04,zal04,san05,fur06,mcq06,mor06,wan06,gle08}. 
 
-When expressed in the coordinate system of power spectrum measurements described by the three-dimensional wavenumber ($k$), the foreground emission is restricted to a wedge-shaped region commonly referred to as the {\it foreground wedge} \citep{bow09,liu09,liu14a,liu14b,dat10,liu11,gho12,mor12,par12b,tro12,ved12,dil13,pob13,thy13,dil14}, whereas the EoR signal has spherical symmetry due to its isotropy which appears elongated along line of sight $k$ modes due to peculiar velocity effects when dominated by matter density perturbations during early stages of reionization. 
+When expressed in the coordinate system of power spectrum measurements described by the three-dimensional wavenumber ($k$), the foreground emission is restricted to a wedge-shaped region commonly referred to as the {\it foreground wedge} \citep{bow09,liu09,liu14a,liu14b,dat10,liu11,gho12,mor12,par12b,tro12,ved12,dil13,pob13,thy13,dil14} bounded by the horizon limits \citep{par12b}, whereas the EoR signal has spherical symmetry due to its isotropy which appears elongated along line of sight $k$ modes due to peculiar velocity effects when dominated by matter density perturbations during early stages of reionization. The region of $k$-space excluding the {\it foreground wedge} is commonly referred to as the {\it EoR window} since it is expected to be relatively free of foreground contamination.
 
 However, despite attempts to exploit this knowledge about differences in spectral and spatial symmetry in lengthy observations, analysis from the first-generation experiments has at best only led to weak constraints on reionization models \citep{ali15,dil15,pob15}. This is because their sensitivity is primarily limited by instrumental and foreground systematics. The extreme dynamic range required to suppress foreground and instrument systematics demands high precision modeling of foregrounds as observed by modern wide-field instruments. One such study was undertaken by \citet{thy15a,thy15b}. Their studies of effects of wide-field measurements of EoR power spectra have demonstrated the {\it pitchfork} effect wherein foreshortening of baselines causes a prominent enhancement of foreground power near the horizon limits of the {\it foreground wedge} as well as in the contamination beyond. It highlighted the importance of controlling the response of wide-field instruments near the horizon. The need for precise subtraction of foregrounds in wide-field measurements was also highlighted in \citet{pob16}.
 
@@ -114,7 +114,7 @@ This paper is organized as follows. \S\ref{sec:HERA} introduces the HERA instrum
 
 \section{The Hydrogen Epoch of Reionization Array}\label{sec:HERA}
 
-\citet{deb16} describe the HERA instrument in detail. Here, we provide a brief summary.
+\citet{deb16} describe the HERA instrument in detail. Here, we provide a brief summary of the telescope currently under construction on the South African SKA site.
 
 The primary science goal of HERA is to widen our understanding of the first stars, galaxies, and black holes, and their role in driving reionization. Through power-spectral measurements of the redshifted 21cm line of H{\sc i} in the primordial IGM, HERA aims to directly constrain the topology and evolution of reionization, opening a unique window into the complex astrophysical interplay between the first luminous objects and their environments. HERA builds on the advances of first-generation 21cm EoR experiments, particularly PAPER, MWA, the MIT EoR experiment \citep[MITEoR;][]{zhe14} and the Experiment to Detect the Global EoR Step \citep[EDGES;][]{bow10}.
 
@@ -122,7 +122,7 @@ HERA will deploy 14~m fixed zenith-pointing parabolic dishes that strike an opti
 
 320 core elements of HERA will be arranged in a compact hexagonal grid, split into three displaced segments to cover the $uv$-plane with sub-element sampling density. The core will be supplemented by 30 additional outrigger elements to tile the $uv$-plane with instantaneously complete sub-aperture sampling out to $250\lambda$ and complete aperture-scale sampling out to $350\lambda$ (at 150~MHz). The layout and its advantages are discussed in \citet{dil16}.
 
-In this study, we use the HERA-19 hexagonal array layout, a small subset of the planned layout. Without loss of generality, the analysis and results in this paper will apply to the full proposed layout as well.
+In this study, we use the HERA-19 hexagonal array layout, a small subset of the planned layout that are currently in use. Without loss of generality, the analysis and results in this paper will apply to the full proposed layout as well.
 
 \section{Delay Spectrum}\label{sec:delay-spectrum}
 
@@ -150,10 +150,11 @@ with
   \boldsymbol{k}_\perp &\equiv \frac{2\pi(\frac{\boldsymbol{b}}{\lambda})}{D}, \label{eqn:kperp-baseline}\\
   k_\parallel &\equiv \frac{2\pi\tau\,f_{21}H_0\,E(z)}{c(1+z)^2}, \label{eqn:kprll-delay}
 \end{align}
-where, $\Delta B$ is the bandwidth, $\lambda$ is the wavelength of the band center, $k_\textrm{B}$ is the Boltzmann constant, $f_{21}$ is the rest frame frequency of the 21~cm spin flip transition of H~{\sc i}, $z$ is the redshift, $D\equiv D(z)$ is the transverse comoving distance, $\Delta D$ is the comoving depth along the line of sight corresponding to $\Delta B$, and $h$, $H_0$ and $E(z)\equiv [\Omega_\textrm{M}(1+z)^3+\Omega_\textrm{k}(1+z)^2+\Omega_\Lambda]^{1/2}$ are standard terms in cosmology, and following \citet{par14},
+where, $\Delta B$ is the bandwidth, $\lambda$ is the wavelength of the band center, $k_\textrm{B}$ is the Boltzmann constant, $\boldsymbol{k}_\perp$ and $k_\parallel$ are the transverse (on the sky) and line-of-sight (into the sky) wavenumbers respectively, $f_{21}$ is the rest frame frequency of the 21~cm spin flip transition of H~{\sc i}, $z$ is the redshift, $D\equiv D(z)$ is the transverse comoving distance, $\Delta D$ is the comoving depth along the line of sight corresponding to $\Delta B$, and $h$, $H_0$ and $E(z)\equiv [\Omega_\textrm{M}(1+z)^3+\Omega_\textrm{k}(1+z)^2+\Omega_\Lambda]^{1/2}$ are standard terms in cosmology, and following \citet{par14},
 \begin{align}
-  \Omega\Delta B &= \iint \left|A(\hat{\boldsymbol{s}},f)\,W(f)\right|^2\,\dif\Omega\,\dif f.
+  \Omega\Delta B &= \iint \left|A(\hat{\boldsymbol{s}},f)\,W(f)\right|^2\,\dif\Omega\,\dif f,
 \end{align}
+which is related to the cosmic volume probed by the instrument.
 
 In this paper, we use $\Omega_\textrm{M}=0.27$, $\Omega_\Lambda=0.73$, $\Omega_\textrm{K}=1-\Omega_\textrm{M}-\Omega_\Lambda$, $H_0=100\,$km$\,$s$^{-1}\,$Mpc$^{-1}$, and $P_\textrm{d}(\boldsymbol{k}_\perp,k_\parallel)$ is in units of K$^2 (h^{-1}$~Mpc$)^3$.
 
@@ -171,11 +172,11 @@ We simulate wide-field visibilities for 19-element HERA from all-sky antenna pow
 
 \subsection{Antenna Power Pattern}\label{sec:beam-model}
 
-The High Frequency Structural Simulator (HFSS) was used to model the dish and its angular response used in this study. The HFSS model used prime focus optics with a 14~m faceted parabola with a spar f/D ratio of 0.32.  The model has a 1~m central hole in the aluminum surface which is filled with a dielectric material similar to dry soil. The feed used a full PAPER dipole inside of a cylindrical backplane, the backplane is modeled as an aluminum surface. For the metal parts of the dipole, the discs were modeled as aluminum at the actual size, and the arms and terminals were modeled as copper. Dielectric stand-offs and supporting members were included. For the calculations, one pair of arms was excited using a modal port. These models cover a frequency range of 100--200~MHz in intervals of 1~MHz. Refer to \citet{deb16} for a complete description of the dish model. 
+The High Frequency Structural Simulator (HFSS) was used to model the dish and its angular response used in this study. The HFSS model used prime focus optics with a 14~m faceted parabola with a spar f/D ratio of 0.32.  The model has a 1~m central hole in the aluminum surface which is filled with a dielectric material similar to dry soil. The feed used a full PAPER dipole inside of a cylindrical backplane, the backplane is modeled as an aluminum surface. For the metal parts of the dipole, the discs were modeled as aluminum at the actual size, and the arms and terminals were modeled as copper. Dielectric stand-offs and supporting members were included. For the calculations, one pair of arms was excited using a modal port. These models cover a frequency range of 90--210~MHz in intervals of 1~MHz \citep{deb16}. 
 
 For reference, we use two other models for the antenna power pattern. The first is a nominal {\it Airy} pattern corresponding to a uniformly illuminated circular aperture of 14~m diameter and the second is an achromatic model where the response of the design at 150~MHz of the HFSS model described above was fixed as the hypothetical response at all frequencies covering the entire band. This frequency independent model will be used to isolate the effects of spectral structures in the antenna power pattern (or beam chromaticity) on foreground delay power spectra. Hereafter, we refer to these three beams as `simulated', `{\it Airy}' and `achromatic' models.
 
-In a related series of papers, \citet{neb16} discuss the agreement of these simulated antenna beam patterns with actual measurements and \citet{ewa16} model the reflections and return loss expected in the proposed antenna-feed assembly. Our focus in this paper is to investigate chromaticity of antenna power patterns from the point of view of their impact on foreground contamination in delay power spectra.
+In a related series of papers, \citet{neb16} discuss the agreement of these simulated antenna beam patterns with actual measurements, \citet{ewa16} model the reflections and return loss expected in the proposed antenna-feed assembly, and \citet{pat16} present measurements quantifying the reflections. Our focus in this paper is to investigate chromaticity of antenna power patterns from the point of view of their impact on foreground contamination in delay power spectra.
 
 \subsection{Foreground Model}\label{sec:foreground}
 
@@ -316,7 +317,7 @@ We consider the foreground power spectrum obtained with the simulated chromatic 
 
 In general, sensitivity increases with longer baselines. We attribute this to the much steeper dependence of foreground emission on baseline length than that of EoR H{\sc i} power. This is also confirmed from Fig.~\ref{fig:subbands} where the peak and sidelobe levels of foreground power obtained with the simulated chromatic antenna beam on the 14.6~m baseline, which is sensitive to diffuse emission, progressively drops by two orders of magnitude on the 58.4~m baseline where diffuse emission is not as dominant. Hence, from a foreground contamination standpoint, the shortest baselines are less sensitive than the longer ones in the HERA-19 layout.
 
-However, in all four cases considered here, the worst case signal-noise ratio lies above unity in most of this parameter space. It demonstrates that HERA will detect the EoR signal with a very high signal-noise ratio on all baselines in a vast majority of the pointings. 
+However, in all four cases considered here, the worst case signal-noise ratio lies above unity in most of this parameter space. It demonstrates that HERA should detect the EoR signal with a very high signal-noise ratio on all baselines in a vast majority of the pointings. 
 
 We reiterate that these estimates are obtained in a conservative scenario wherein only simple spectral weighting technique in the {\it foreground avoidance} limit is used, without any foreground removal or sophisticated weighting strategies using inverse-covariance. Further, these estimates represent worst-case lower limits demonstrating that HERA-19 and its successors will be extremely sensitive for EoR experiments and will benefit even further with more optimal foreground suppression strategies.
 
@@ -328,7 +329,7 @@ Using a new high dynamic range spectral weighting function obtained by convolvin
 
 We note that the inevitable reflections in the antenna-feed assembly and between reflecting structures across multiple antennas are also significant factors that contaminate the cosmological signal in high $k_\parallel$-modes inside the {\it EoR window}. Using a novel approach, we provide a formalism to set cosmologically-motivated constraints directly on the level of suppression required on these reflections in the instrument. Ongoing reflectometry studies clearly indicate HERA will exceed the lower limits prescribed here.
 
-Taking into account the effects of these instrumental systematics, if data is not limited by thermal noise, we demonstrate that HERA will detect EoR with high significance with s simple spectral weighting even under a conservative analysis criterion which does not involve {\it foreground removal} strategies. All baselines of HERA-19 will not only detect but also help in filtering highly likely EoR models. 
+Taking into account the effects of these instrumental systematics, if data is not limited by thermal noise, we demonstrate that HERA should detect EoR with high significance with s simple spectral weighting even under a conservative analysis criterion which does not involve {\it foreground removal} strategies. All baselines of HERA-19 will not only detect but also help in filtering highly likely EoR models. 
 
 We are also investigating advanced strategies for foreground removal that will robustly eliminate these systematics further. More optimal analysis techniques and further design improvements will make HERA not only clear the obstacles limiting first-generation experiments but also become transformational for next-generation low frequency cosmology experiments.
 
