@@ -1,3 +1,15 @@
+From ea7bb98 (fgsim):
+====================
+
+In ms.tex,
+
+(*) Incorporate comments from Judd
+(*) Fix some math errors
+
+In eor.bib,
+
+(*) Sort Thyagarajan et al. (2015a) and Thyagarajan et al. (2015b)
+
 From 50bc153 (fgsim):
 ====================
 
