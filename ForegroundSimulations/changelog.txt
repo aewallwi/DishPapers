@@ -1,3 +1,10 @@
+From 3b0f6bb (fgsim):
+====================
+
+In ms.tex,
+
+(*) Trim text throughout
+
 From cbfc31c (fgsim):
 ====================
 
