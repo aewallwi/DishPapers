@@ -1,3 +1,8 @@
+From 1133af9 (fgsim):
+====================
+
+(*) Update figure 6 on EoR-FG ratios
+
 From ea7bb98 (fgsim):
 ====================
 
