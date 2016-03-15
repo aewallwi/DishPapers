@@ -1,3 +1,10 @@
+From cbfc31c (fgsim):
+====================
+
+In ms.tex,
+
+(*) Trim text in Abstract and Introduction
+
 From 1caedff (fgsim):
 ====================
 
