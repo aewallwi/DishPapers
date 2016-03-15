@@ -1,3 +1,10 @@
+From 10a4726 (fgsim):
+====================
+
+In ms.tex,
+
+(*) Replace usage of "sensitivity" with "dynamic range" throughout
+
 From 1133af9 (fgsim):
 ====================
 
