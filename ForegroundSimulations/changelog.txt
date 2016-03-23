@@ -1,3 +1,11 @@
+From bbb5b82 (fgsim-arxiv):
+==========================
+
+In ms.tex,
+
+(*) Append contents of ms.bbl in bibliography to be compatible to
+arXiv
+
 From ffe0557 (fgsim):
 ====================
 
