@@ -1,3 +1,14 @@
+From bbb5b82 (fgsim):
+====================
+
+In eor.bib,
+
+(*) Add WMAP9 and Planck references for cosmological parameters
+
+In ms.tex,
+
+(*) Make updates suggested by Aaron Parsons
+
 From ffe0557 (fgsim):
 ====================
 
