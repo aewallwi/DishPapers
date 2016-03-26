@@ -1,3 +1,10 @@
+From 4b3c3b1 (fgsim):
+====================
+
+In ms.tex,
+
+(*) Incorporate Judd's suggestions in Abstract
+
 From bbb5b82 (fgsim):
 ====================
 
