@@ -1,3 +1,10 @@
+From dbd4f78 (fgsim):
+====================
+
+In ms.tex,
+
+(*) Incorporate Aaron EW's comments in Abstract
+
 From 4b3c3b1 (fgsim):
 ====================
 
