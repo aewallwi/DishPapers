@@ -1,3 +1,8 @@
+From 6b7f22d (fgsim-arxiv), d4fb025 (fgsim):
+===========================================
+
+(*) Merge bbb5b82 (fgsim-arxiv) + ce9972b (fgsim)
+
 From bbb5b82 (fgsim-arxiv):
 ==========================
 
@@ -5,6 +10,40 @@ In ms.tex,
 
 (*) Append contents of ms.bbl in bibliography to be compatible to
 arXiv
+
+From ce9972b (fgsim):
+====================
+
+(*) Add numbered figures to repo
+
+In ms.tex,
+
+(*) Add commented lines for numbered figures
+
+From dbd4f78 (fgsim):
+====================
+
+In ms.tex,
+
+(*) Incorporate Aaron EW's comments in Abstract
+
+From 4b3c3b1 (fgsim):
+====================
+
+In ms.tex,
+
+(*) Incorporate Judd's suggestions in Abstract
+
+From bbb5b82 (fgsim):
+====================
+
+In eor.bib,
+
+(*) Add WMAP9 and Planck references for cosmological parameters
+
+In ms.tex,
+
+(*) Make updates suggested by Aaron Parsons
 
 From ffe0557 (fgsim):
 ====================
