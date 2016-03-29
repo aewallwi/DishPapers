@@ -1,3 +1,12 @@
+From ce9972b (fgsim):
+====================
+
+(*) Add numbered figures to repo
+
+In ms.tex,
+
+(*) Add commented lines for numbered figures
+
 From dbd4f78 (fgsim):
 ====================
 
