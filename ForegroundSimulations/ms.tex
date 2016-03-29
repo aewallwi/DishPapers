@@ -99,22 +99,15 @@ Unaccounted for systematics from foregrounds and instruments can severely limit 
 
 \section{Introduction}\label{intro}
 
-% The period in the history of the Universe characterized by the transition of neutral hydrogen in the intergalactic medium (IGM) to a fully ionized state due to the formation of radiating objects such as the first stars and galaxies is referred to as the Epoch of Reionization (EoR). This is an important period of nonlinear growth of matter density perturbations and astrophysical evolution leading to the large scale structure observed currently in the Universe. And yet, this period in the Universe's history has remained poorly probed to date. 
-
 The Epoch of Reionization (EoR) is an important period of nonlinear growth of matter density perturbations and astrophysical evolution leading to the large scale structure observed currently in the Universe. The redshifted neutral hydrogen in this epoch has been identified to be one of the most promising and direct probes of the EoR \citep{sun72,sco90,mad97,toz00,ili02}. 
 
 Numerous experiments using low frequency radio telescopes targeting the redshifted 21~cm line from the spin-flip transition of H{\sc i} in this epoch have become operational such as the Murchison Widefield Array \citep[MWA;][]{lon09,bow13,tin13}, the Donald~C.~Backer Precision Array for Probing the Epoch of Reionization \citep[PAPER;][]{par10}, the Low Frequency Array \citep[LOFAR;][]{van13} and the Giant Metrewave Radio Telescope EoR experiment \citep[GMRT;][]{pac13}. Many of these instruments have sufficient sensitivity for a statistical detection of the EoR signal by estimating the spatial power spectrum of the redshifted H{\sc i} spin temperature fluctuations \citep{bea13,thy13}. These instruments are precursors and pathfinders to the next generation of low frequency radio observatories such as the Hydrogen Epoch of Reionization Array\footnote{\url{http://reionization.org/}} \citep[HERA;][]{deb16} and the Square Kilometre Array\footnote{\url{https://www.skatelescope.org/}} (SKA). These next-generation instruments will advance the capability from a statistical detection of the signal to a direct three-dimensional tomographic imaging of H{\sc i} from the EoR. 
 
-The most significant challenge to low frequency EoR observations arises from the extremely bright Galactic and extragalactic foreground synchrotron emission which are $\sim 10^4$ times stronger than the desired EoR signal \citep{dim02,ali08,ber09,ber10,gho12}. However, there are inherent differences in spatial isotropy and spectral smoothness between the EoR signal and the foregrounds \citep[see, e.g.,][]{fur04b,mor04,zal04,san05,fur06,mcq06,mor06,wan06,gle08}. % All the current and future instruments rely on the inherent differences in spatial isotropy and spectral smoothness between the EoR signal and the foregrounds to extract the EoR power spectrum \citep[see, e.g.,][]{fur04b,mor04,zal04,san05,fur06,mcq06,mor06,wan06,gle08}. 
+The most significant challenge to low frequency EoR observations arises from the extremely bright Galactic and extragalactic foreground synchrotron emission which are $\sim 10^4$ times stronger than the desired EoR signal \citep{dim02,ali08,ber09,ber10,gho12}. However, there are inherent differences in spatial isotropy and spectral smoothness between the EoR signal and the foregrounds \citep[see, e.g.,][]{fur04b,mor04,zal04,san05,fur06,mcq06,mor06,wan06,gle08}. 
 
-When expressed in the coordinate system of power spectrum measurements described by the three-dimensional wavenumber ($k$), the foreground emission is restricted to a wedge-shaped region commonly referred to as the {\it foreground wedge} \citep{bow09,liu09,liu14a,liu14b,dat10,liu11,gho12,mor12,par12b,tro12,ved12,dil13,pob13,thy13,dil14} bounded by the horizon limits \citep{par12b}, whereas the EoR signal has spherical symmetry due to its isotropy. % which appears elongated along line-of-sight $k$-modes due to peculiar velocity effects when dominated by matter density perturbations during early stages of reionization. 
-The region of $k$-space excluding the {\it foreground wedge} is commonly referred to as the {\it EoR window} since it is expected to be relatively free of foreground contamination.
-
-% Despite attempts to exploit this knowledge about differences in spectral and spatial symmetry, first-generation experiments have at best only led to weak constraints on reionization models \citep{ali15,dil15,pob15}. This is because their sensitivity is primarily limited by instrumental and foreground systematics. The extreme dynamic range required to suppress foreground and instrument systematics demands high precision modeling of foregrounds as observed by modern wide-field instruments. 
+When expressed in the coordinate system of power spectrum measurements described by the three-dimensional wavenumber ($k$), the foreground emission is restricted to a wedge-shaped region commonly referred to as the {\it foreground wedge} \citep{bow09,liu09,liu14a,liu14b,dat10,liu11,gho12,mor12,par12b,tro12,ved12,dil13,pob13,thy13,dil14} bounded by the horizon limits \citep{par12b}, whereas the EoR signal has spherical symmetry due to its isotropy. The region of $k$-space excluding the {\it foreground wedge} is commonly referred to as the {\it EoR window} since it is expected to be relatively free of foreground contamination.
 
 Using this knowledge, experiments have begun constraining reionization models \citep{par14,ali15,pob15}. While this progress is encouraging, efforts are slowed by struggles to increase collecting area while contending with foreground and instrumental systematics. The extreme dynamic range required to suppress foreground and instrument systematics demands high precision modeling of foregrounds as observed by modern wide-field instruments. 
-
-% One such study was undertaken by \citet{thy15a,thy15b}. Their studies of effects of wide-field measurements of EoR power spectra have demonstrated the {\it pitchfork} effect wherein foreshortening of baselines causes a prominent enhancement of foreground power near the horizon limits of the {\it foreground wedge} as well as in the contamination beyond. It highlighted the importance of controlling the response of wide-field instruments near the horizon. The need for precise subtraction of foregrounds in wide-field measurements was also highlighted in \citet{pob16}.
 
 Along with companion papers \citep{ewa16,neb16,pat16}, we focus on determining whether larger antenna elements can be viable for EoR experiments. In this paper, we explore the impact of chromaticity in the antenna power pattern on extending foreground power beyond the {\it wedge}. While highlighting the importance of such instrumental systematics on future EoR experiments, we demonstrate that the current HERA instrument design will exceed these specifications to detect the EoR signal with high significance. This will hold true when data is limited by foregrounds and systematics even in the most conservative scenario which involves neither foreground subtraction nor optimal analysis techniques but only relies on a simple spectral weighting scheme. 
 
@@ -196,17 +189,14 @@ We use two models of EoR. In the first, simulations of the H{\sc i} signal were 
 
 The equation for delay spectrum defines the interplay between foregrounds and antenna power pattern, and the mapping between geometric phases of baselines and delays. We discuss the spillover of foreground power beyond the horizon delay limits caused by the chromatic nature of the antenna power pattern.
 
-% The equation for delay spectrum describes the mapping between sky location of a foreground object and delay. The chromatic nature (variation with frequency) of the antenna power pattern appears multiplicatively in the frequency axis and thus results in convolving its delay response with that of the foregrounds and the geometric phases measured by the baseline vector. We discuss the resulting spillover of foreground power beyond the horizon delay limits.
-
 \subsection{Effect on Foreground Contamination}\label{sec:effects-fgdps}
 
 Since our aim in this paper is to quantify EoR-foreground power ratio without employing any sophisticated {\it foreground removal} techniques, we turn our attention to {\it foreground avoidance} strategy that employs spectral weighting technique. Specific choices for spectral weighting function, $W(f)$, have been found to be effective in reducing foreground contamination by many orders of magnitude \citep{thy13} and is regularly used in redshifted 21~cm data analysis \citep{par12a,par12b}. For instance, a {\it Blackman-Harris} function \citep{har78} has a dynamic range of $\sim$100 -- 120~dB in delay power spectrum and a reduced effective bandwidth, with:
 \begin{align}\label{eqn:Beff}
   \epsilon &= \frac{1}{B} \int_{-B/2}^{+B/2} |W(f)|^2\,\dif f, \\
   \textrm{and,}\quad B_\textrm{eff} &= \epsilon\,B,
-  % B_\textrm{eff} &= \int_{-B/2}^{+B/2} |W(f)|^2\,\dif f.
 \end{align}
-where, $B$ denotes the end-to-end range of the observing band, $1-\epsilon$ is the loss in overall spectral sensitivity and $B_\textrm{eff}$ is the effective bandwidth. The {\it noise equivalent width} is defined as $w_\textrm{ne}\equiv \sum_i |\widetilde{W}(\tau_i)|^2 / |\widetilde{W}(0)|^2$. For a {\it Blackman-Harris} window function denoted by $W_\textrm{BH}(f)$, $\epsilon \approx 50\%$ and $w_\textrm{ne} \approx 2$. % Hence, the window spans a total of $2N$ frequency channels each of width $\Delta f$ to have $B_\textrm{eff} \approx N\,\Delta f$.
+where, $B$ denotes the end-to-end range of the observing band, $1-\epsilon$ is the loss in overall spectral sensitivity and $B_\textrm{eff}$ is the effective bandwidth. The {\it noise equivalent width} is defined as $w_\textrm{ne}\equiv \sum_i |\widetilde{W}(\tau_i)|^2 / |\widetilde{W}(0)|^2$. For a {\it Blackman-Harris} window function denoted by $W_\textrm{BH}(f)$, $\epsilon \approx 50\%$ and $w_\textrm{ne} \approx 2$. 
 
 As the dynamic range required to suppress foreground contamination in the {\it EoR window} may probably be even higher than that provided by a {\it Blackman-Harris} window function, we use a modified version given by convolving a {\it Blackman-Harris} window with itself:
 \begin{align}\label{eqn:bhw2}
@@ -217,8 +207,8 @@ Fig.~\ref{fig:window-functions} shows the {\it Blackman-Harris} window (gray) an
 
 \begin{figure}[htb]
   \centering
-  \includegraphics[width=\linewidth]{window_function_modifications.eps}
-  % \includegraphics[width=\linewidth]{f1.eps}
+  % \includegraphics[width=\linewidth]{window_function_modifications.eps}
+  \includegraphics[width=\linewidth]{f1.eps}
   \caption{Choices for spectral weighting functions, $W(f)$ ({\it top}) and their delay power spectrum responses, $|\widetilde{W}(\tau)|^2$ ({\it bottom}). The gray curves correspond to a {\it Blackman-Harris} window while those in black correspond to a {\it Blackman-Harris} window convolved with itself. The overall sensitivity of the former is $\epsilon \approx 50\%$ of a rectangular window while that of the latter is $\epsilon \approx 42\%$. As a result, the main lobe of the convolved window function response is slightly wider than that of a {\it Blackman-Harris} window. However, the sidelobes from the convolved window function are suppressed by more than ten orders of magnitude relative to that of a nominal {\it Blackman-Harris} window.}
   \label{fig:window-functions}
 \end{figure}
@@ -229,8 +219,8 @@ In HERA-19 array layout, there are 30 unique baseline vectors and 8 unique basel
 
 \begin{figure*}[htb]
   \centering
-  \includegraphics[width=\linewidth]{asm_foreground_eor_beam_chromaticity_fullband_bhw2.0.eps}
-  % \includegraphics[width=\linewidth]{f2.eps}
+  % \includegraphics[width=\linewidth]{asm_foreground_eor_beam_chromaticity_fullband_bhw2.0.eps}
+  \includegraphics[width=\linewidth]{f2.eps}
   \caption{Foreground delay power spectra in units of K$^2 (h^{-1}$~Mpc$)^3$ on unique baseline lengths of HERA-19 at arbitrary sky pointings. The baseline length and orientation (anti-clockwise from East) are annotated at the top right corner of each panel. Black, red and blue curves correspond to delay power spectra obtained with achromatic, {\it Airy} and chromatic simulated antenna beams respectively. The achromatic beam has no spectral structure, the simulated chromatic beam has maximum chromaticity while a nominal {\it Airy} pattern has intermediate level of chromaticity. The {\it pitchfork} effect is clearly visible as peaks around the horizon limits. With increase in chromaticity of the antenna beam the foreground spillover beyond the {\it foreground wedge} becomes progressively worse - the extent of foreground-spillover wings beyond the horizon limits (vertical dotted lines) and the amplitude of spillover beyond $k_\parallel\gtrsim 0.2\,h$~Mpc$^{-1}$ is most severe for the chromatic simulated beam, intermediate for an {\it Airy} pattern and negligible for an achromatic beam.}
   \label{fig:asm-dps-beam-chromaticity-baselines}
 \end{figure*}
@@ -263,8 +253,8 @@ For reflections caused by dish-feed assembly, we use $P_\textrm{FG}(k_\parallel)
 
 \begin{figure}[htb]
   \centering
-  \includegraphics[width=\linewidth]{spec_on_achrmbeam_foreground_reflected_power_21cmfast_14.6m_150.0_MHz_subband_v2.eps}
-  % \includegraphics[width=\linewidth]{f3.eps}
+  % \includegraphics[width=\linewidth]{spec_on_achrmbeam_foreground_reflected_power_21cmfast_14.6m_150.0_MHz_subband_v2.eps}
+  \includegraphics[width=\linewidth]{f3.eps}
   \caption{Minimum required attenuation (in dB) for internal dish-feed reflections required to keep the reflected foreground power below EoR H{\sc i} signal power for all $k_\parallel$-modes greater than $0.1\,h$~Mpc$^{-1}$ (solid), $0.15\,h$~Mpc$^{-1}$ (dashed) and $0.2\,h$~Mpc$^{-1}$ (dotted). This is obtained on 14.6~m antenna spacing for EoR model 1 at 150~MHz ($z\approx 8.47$) and foreground power obtained with an achromatic antenna beam model. For EoR to be detectable in respective $k_\parallel$-modes despite these systematics, the attenuation of reflections must exceed these limits (outside the shaded regions).}
   \label{fig:fg-reflections-achrmbeam}
 \end{figure}
@@ -277,8 +267,8 @@ Similarly, for reflections arising out of structures and interfaces across diffe
 
 \begin{figure*}[htb]
   \centering
-  \includegraphics[width=\linewidth]{spec_on_foreground_reflected_power_21cmfast_14.6m_150.0_MHz_subband_v2.eps}
-  % \includegraphics[width=\linewidth]{f4.eps}
+  % \includegraphics[width=\linewidth]{spec_on_foreground_reflected_power_21cmfast_14.6m_150.0_MHz_subband_v2.eps}
+  \includegraphics[width=\linewidth]{f4.eps}
   \caption{Minimum required attenuation (in dB) for antenna-to-antenna reflections to keep reflected foreground power below EoR H{\sc i} signal power for all $k_\parallel$-modes greater than $0.1\,h$~Mpc$^{-1}$ (left), $0.15\,h$~Mpc$^{-1}$ (middle) and $0.2\,h$~Mpc$^{-1}$ (right). This is obtained on 14.6~m antenna spacing for EoR model 1 at 150~MHz ($z\approx 8.47$) and foreground power obtained with an {\it Airy} (dashed) and simulated chromatic (solid) antenna beam models. Regions excluding shaded regions indicate EoR will be detectable in respective $k_\parallel$-modes despite these reflections. Increase in beam chromaticity makes the requirement on attenuation more severe. For instance, $k_\parallel > 0.1\,h$~Mpc$^{-1}$ modes will be inaccessible with the simulated chromatic beam if these reflections are taken into account. However, for the same beam the instrument will have much higher tolerance despite these reflections if the modes of interest are $k_\parallel > 0.2\,h$~Mpc$^{-1}$. Due to lower chromaticity, an {\it Airy} beam offers more tolerance to reflections than the simulated chromatic beam.}
 \label{fig:fg-reflections}
 \end{figure*}
@@ -291,8 +281,7 @@ Similar design limits on reflections on various antenna spacings were also studi
 
 \section{EoR-Foreground Dynamic Range}\label{sec:eor-sensitivity}
 
-We estimate the EoR-foreground dynamic range (ratio of EoR signal and foreground powers) for both EoR models in the presence of antenna beam chromaticity, using HERA as an example. % As stated earlier, we estimate this ratio for HERA in the most conservative scenario where we consider only {\it foreground avoidance} under simple spectral weighting scheme. We emphasize that other strategies involving {\it foreground removal} and inverse covariance-based weighting schemes will produce more optimal results than presented here. 
-In order to avoid signal evolution across the entire band, we use subbands in which EoR signal evolution is not expected to be significant. These subbands with $B_\textrm{eff}=10$~MHz are defined by spectral weights in equation~\ref{eqn:bhw2}. These subbands are centered at 150~MHz and 170~MHz to estimate EoR-foreground dynamic range at $z \approx 8.47$ and $z \approx 7.36$ respectively.
+We estimate the EoR-foreground dynamic range (ratio of EoR signal and foreground powers) for both EoR models in the presence of antenna beam chromaticity, using HERA as an example. In order to avoid signal evolution across the entire band, we use subbands in which EoR signal evolution is not expected to be significant. These subbands with $B_\textrm{eff}=10$~MHz are defined by spectral weights in equation~\ref{eqn:bhw2}. These subbands are centered at 150~MHz and 170~MHz to estimate EoR-foreground dynamic range at $z \approx 8.47$ and $z \approx 7.36$ respectively.
 
 \subsection{Dependence on Baseline-$k_\parallel$ Parameter Space}\label{sec:baseline-kprll}
 
@@ -300,17 +289,17 @@ We estimate EoR-foreground dynamic range for HERA using antenna beams of differe
 
 \begin{figure*}[htb]
   \centering
-  \subfloat[][150~MHz subband ($z \approx 8.47$)]{\label{fig:asm-dps-beam-chromaticity-baselines-150-subband}\includegraphics[width=\linewidth]{sim_asm_foreground_eor_beam_chromaticity_150.0_MHz_subband_win_method_bhw2.0.eps}} \\
-  \subfloat[][170~MHz subband ($z \approx 7.36$)]{\label{fig:asm-dps-beam-chromaticity-baselines-170-subband}\includegraphics[width=\linewidth]{sim_asm_foreground_eor_beam_chromaticity_170.0_MHz_subband_win_method_bhw2.0.eps}}
-  % \subfloat[][150~MHz subband ($z \approx 8.47$)]{\label{fig:asm-dps-beam-chromaticity-baselines-150-subband}\includegraphics[width=\linewidth]{f5a.eps}} \\
-  % \subfloat[][170~MHz subband ($z \approx 7.36$)]{\label{fig:asm-dps-beam-chromaticity-baselines-170-subband}\includegraphics[width=\linewidth]{f5b.eps}}
+  % \subfloat[][150~MHz subband ($z \approx 8.47$)]{\label{fig:asm-dps-beam-chromaticity-baselines-150-subband}\includegraphics[width=\linewidth]{sim_asm_foreground_eor_beam_chromaticity_150.0_MHz_subband_win_method_bhw2.0.eps}} \\
+  % \subfloat[][170~MHz subband ($z \approx 7.36$)]{\label{fig:asm-dps-beam-chromaticity-baselines-170-subband}\includegraphics[width=\linewidth]{sim_asm_foreground_eor_beam_chromaticity_170.0_MHz_subband_win_method_bhw2.0.eps}}
+  \subfloat[][150~MHz subband ($z \approx 8.47$)]{\label{fig:asm-dps-beam-chromaticity-baselines-150-subband}\includegraphics[width=\linewidth]{f5a.eps}} \\
+  \subfloat[][170~MHz subband ($z \approx 7.36$)]{\label{fig:asm-dps-beam-chromaticity-baselines-170-subband}\includegraphics[width=\linewidth]{f5b.eps}}
   \caption{EoR signal and foreground delay power spectrum in units of K$^2 (h^{-1}$~Mpc$)^3$ in 150~MHz (top) and 170~MHz (bottom) subbands ($B_\textrm{eff}=10$~MHz) on eight unique baseline lengths of HERA-19 at arbitrary sky pointings. The length and orientation of the baseline vector corresponding to each panel is annotated on the top right corner. EoR models 1 and 2 are shown in cyan and gray respectively. The foregrounds obtained with achromatic, {\it Airy} and simulated chromatic antenna beams are shown in black, red and blue respectively. EoR-foreground dynamic range is highest for antenna beam with least chromaticity and vice versa. Even for the simulated chromatic antenna beam pattern, which has the highest chromaticity among the antenna beam models considered, foreground power will be lower than signal power from the two independent EoR models by more than two orders of magnitude for $|k_\parallel| \gtrsim 0.2\,h$~Mpc$^{-1}$ on all HERA baselines.}
   \label{fig:subbands}
 \end{figure*}
 
 Due to narrower subbands, the resolution of the foreground delay spectrum is coarser and the central region of foreground contamination extends to $|k_\parallel| \lesssim 0.2\,h$~Mpc$^{-1}$. The coarsening of delay resolution significantly absorbs the distinct differences caused by beams of different chromaticities as seen in the full-band foreground delay spectra outside the {\it foreground wedge} in Fig.~\ref{fig:asm-dps-beam-chromaticity-baselines}. This means the foreground spillover wings that extend beyond the horizon even in the case of simulated chromatic beam are on spectral scales larger than the 10~MHz effective bandwidth. Hence, this results in an EoR signal-foreground crossover at $|k_\parallel| \gtrsim 0.2\,h$~Mpc$^{-1}$ independent of different antenna beam chromaticities used in this analysis. 
 
-From Fig.~\ref{fig:subbands}, it is clearly demonstrated that across all baselines and subbands, HERA should detect EoR by more than two orders of magnitude above foreground contamination obtained with any level of antenna beam chromaticity. % While this clearly includes foregrounds obtained with the currently simulated chromatic beam pattern, the sensitivity against foregrounds obtained with achromatic and {\it Airy} antenna power patterns are even higher by many orders of magnitude. This only further reiterates that efforts to keep lowering systematic spectral effects in the antenna beam must be undertaken continuously, as is the case with HERA.
+From Fig.~\ref{fig:subbands}, it is clearly demonstrated that across all baselines and subbands, HERA should detect EoR by more than two orders of magnitude above foreground contamination obtained with any level of antenna beam chromaticity. 
 
 \subsection{Dependence on Baseline-RA Parameter Space}\label{sec:baseline-RA}
 
@@ -333,15 +322,15 @@ This denotes the minimum EoR-foreground dynamic range in $k_\parallel$-modes of 
 We consider the foreground power spectrum obtained with the simulated chromatic antenna beam, and EoR models 1 and 2, in each of the 150~MHz and 170~MHz subbands. Fig.~\ref{fig:eor-fg-ratios} shows $\rho(\boldsymbol{b},f_0,\alpha)$ for all 30 unique HERA baselines over 24 hours of $\alpha$ for the two EoR models and two subbands used in this study. 
 
 \begin{figure*}[htb]
-  \centering
-  \subfloat[][EoR model 1, 150~MHz subband ]{\label{fig:21cmfast-fg-ratio-150}\includegraphics[width=0.45\linewidth]{eor_fg_ratio_llim_21cmfast_chrmbeam_sim_150.0_MHz_subband.eps}}
-  \subfloat[][EoR model 2, 150~MHz subband ]{\label{fig:lidz-fg-ratio-150}\includegraphics[width=0.45\linewidth]{eor_fg_ratio_llim_lidz_chrmbeam_sim_150.0_MHz_subband.eps}} \\
-  \subfloat[][EoR model 1, 170~MHz subband ]{\label{fig:21cmfast-fg-ratio-170}\includegraphics[width=0.45\linewidth]{eor_fg_ratio_llim_21cmfast_chrmbeam_sim_170.0_MHz_subband.eps}}
-  \subfloat[][EoR model 2, 170~MHz subband ]{\label{fig:lidz-fg-ratio-170}\includegraphics[width=0.45\linewidth]{eor_fg_ratio_llim_lidz_chrmbeam_sim_170.0_MHz_subband.eps}}
-  % \subfloat[][EoR model 1, 150~MHz subband ]{\label{fig:21cmfast-fg-ratio-150}\includegraphics[width=0.45\linewidth]{f6a.eps}}
-  % \subfloat[][EoR model 2, 150~MHz subband ]{\label{fig:lidz-fg-ratio-150}\includegraphics[width=0.45\linewidth]{f6b.eps}} \\
-  % \subfloat[][EoR model 1, 170~MHz subband ]{\label{fig:21cmfast-fg-ratio-170}\includegraphics[width=0.45\linewidth]{f6c.eps}}
-  % \subfloat[][EoR model 2, 170~MHz subband ]{\label{fig:lidz-fg-ratio-170}\includegraphics[width=0.45\linewidth]{f6d.eps}}
+  % \centering
+  % \subfloat[][EoR model 1, 150~MHz subband ]{\label{fig:21cmfast-fg-ratio-150}\includegraphics[width=0.45\linewidth]{eor_fg_ratio_llim_21cmfast_chrmbeam_sim_150.0_MHz_subband.eps}}
+  % \subfloat[][EoR model 2, 150~MHz subband ]{\label{fig:lidz-fg-ratio-150}\includegraphics[width=0.45\linewidth]{eor_fg_ratio_llim_lidz_chrmbeam_sim_150.0_MHz_subband.eps}} \\
+  % \subfloat[][EoR model 1, 170~MHz subband ]{\label{fig:21cmfast-fg-ratio-170}\includegraphics[width=0.45\linewidth]{eor_fg_ratio_llim_21cmfast_chrmbeam_sim_170.0_MHz_subband.eps}}
+  % \subfloat[][EoR model 2, 170~MHz subband ]{\label{fig:lidz-fg-ratio-170}\includegraphics[width=0.45\linewidth]{eor_fg_ratio_llim_lidz_chrmbeam_sim_170.0_MHz_subband.eps}}
+  \subfloat[][EoR model 1, 150~MHz subband ]{\label{fig:21cmfast-fg-ratio-150}\includegraphics[width=0.45\linewidth]{f6a.eps}}
+  \subfloat[][EoR model 2, 150~MHz subband ]{\label{fig:lidz-fg-ratio-150}\includegraphics[width=0.45\linewidth]{f6b.eps}} \\
+  \subfloat[][EoR model 1, 170~MHz subband ]{\label{fig:21cmfast-fg-ratio-170}\includegraphics[width=0.45\linewidth]{f6c.eps}}
+  \subfloat[][EoR model 2, 170~MHz subband ]{\label{fig:lidz-fg-ratio-170}\includegraphics[width=0.45\linewidth]{f6d.eps}}
   \caption{Worst case EoR-foreground dynamic range, $\rho(\boldsymbol{b},f_0,\alpha)$, in {\it foreground avoidance} modes for different HERA-19 baselines as a function of RA ($\alpha$) of pointing on the sky. Each panel corresponds to the EoR model and subband indicated. The baseline vector is specified by its length (in m) and orientation (in degrees) at the bottom and top of the $x$-axis respectively. The color scale is logarithmic. Even in the worst case, HERA will be able detect EoR drawn from independent models on all baselines for a large fraction of a full 24~hour sky transit cycle. $\rho(\boldsymbol{b},f_0,\alpha)$ is seen to increase with increasing baseline length. This is because the loss in sensitivity to diffuse foreground power with increase in antenna spacings is faster than in the case of the EoR signal.}
   \label{fig:eor-fg-ratios}
 \end{figure*}
@@ -349,8 +338,6 @@ We consider the foreground power spectrum obtained with the simulated chromatic 
 For the baselines considered, $\rho(\boldsymbol{b},f_0,\alpha)$ increases with baseline length. We attribute this to the much steeper dependence of foreground emission (predominantly diffuse emission) on baseline length than that of EoR H{\sc i} power. This is also confirmed from Fig.~\ref{fig:subbands} where the peak and sidelobe levels of foreground power obtained with the simulated chromatic antenna beam on the 14.6~m baseline, progressively drops by two orders of magnitude on the 58.4~m baseline. Hence, from a foreground contamination standpoint, the shortest baselines are less sensitive than longer ones in HERA-19 layout.
 
 However, in all four cases considered here, except when the Galactic center appears overhead in the RA range roughly in the range 16-19 hr, the worst case signal-foreground ratio lies above unity in most of this parameter space. It demonstrates that HERA should detect the EoR signal with a very high signal-foreground ratio on all baselines over a majority of the pointings. 
-
-% We reiterate that these estimates are obtained in a conservative scenario wherein only simple spectral weighting technique in the {\it foreground avoidance} limit is used, without any foreground removal or sophisticated weighting strategies using inverse-covariance. Further, these estimates represent worst-case limits demonstrating that HERA-19 and its successors will be extremely sensitive for EoR experiments and will benefit even further with more optimal foreground suppression strategies.
 
 \section{Summary}\label{sec:summary}
 

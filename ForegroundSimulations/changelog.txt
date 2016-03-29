@@ -1,3 +1,10 @@
+From d4fb025 (fgsim):
+====================
+
+In ms.tex,
+
+(*) Remove commented lines
+
 From ce9972b (fgsim):
 ====================
 
