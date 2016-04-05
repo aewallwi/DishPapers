@@ -82,7 +82,8 @@ contaminating spectral modes that might
 otherwise be used to measure reionization ~\citep{XXX}.  Moreover, the chromaticity of
 a telescope's response scales linearly with diameter, putting the
 needs of foreground suppression and signal sensitivity in direct tension with one
-another.
+another. In addition to that, systematic effects are unique to each instruments and their manifestation 
+is different in each dataset.
 
 A major step forward for the field of 21~cm cosmology has been the development
 of a mathematical description of telescope chromaticity, how it varies with
@@ -108,16 +109,8 @@ the chromaticity of the elements in isolation from the chromaticity inherent to
 element separation in an interferometric baseline.}.  In promising avoidance-based
 foreground strategy employed by PAPER ~\citep{parsons_et_al2014,ali_et_al2015}, these modes
 may be targeted as the lowest risk path for contraining 21~cm reionization in the near term.
-
-In this paper, we examine the performance of a new prototype HERA element in the context of
-this new wedge-based framework.  In coordination with ~\citet{XXXsisterpapers}, we compare 
-reflectometry measurements with
-a specification for the spectral performance of an element, given models of the relative brightness of
-foreground and 21~cm reionization modes in $k$-space.  
+  
 % XXX document map
-
-
-
 The efficacy of the techniques of foreground removal from the measured data critically limits the 21~cm power spectrum measurements. The delay transformation technique of foreground removal, introduced by  ~\citep{ParsonsBacker2009,Parsons2012} computes the Fourier transform of the visibility measured by an interferometer and produces a spectrum, referred to as delay spectrum hereafter, which is a function of the geometric time delay corresponding to the physical length of the baseline between two antennas. For the visibilities measured over a wide field across wide frequency bandwidth, the delay spectrum is constituted by the instrument response, the foreground signal and 21cm power spectrum, hereafter referred to as EoR signal.
 %The complex visibility measured by an interferometer is a convolution of the instrument response with the true sky response in the UV plane. Therefore, when Fourier transformed, the delay spectrum is the multiplication of the sky response with the instrument response in the delay domain.
 The technique exploits the smooth spectral characteristics of the foreground and for a widefield wide bandwidth visibility measurement by an interferometer with a baseline $b$, confines the foreground contribution to the computed delay spectrum within the largest possible time delay $\tau = b/c$ corresponding to the given baseline length. Such techniques also assumes a spectrally smooth instrumental response whose contribution to the measured data, much as the contribution of the smooth spectrum foreground, also has an upper bound in the delay space imposed by the largest geometric delay of the given baseline. 
@@ -125,10 +118,13 @@ Beyond this limit, for an ideal system performance, the delay spectrum would be 
 The interaction between the sky signal and instrument response can alter the relative contribution of the foreground, instrument response and the EoR signal at a given delay and thus influence the detectability of the EoR signal. Such interactions may cause the foreground and systematics to spill over at higher delays and thus push the upper limit of the foreground and systematic contaminated delay modes to much higher delays. In this process, the EoR signal over large spatial scale will be lost.
 
 The Hydrogen Epoch of Reionization Array (HERA) is a proposed array consisting of 568 14-m dishes in South Africa which will measure the 21~cm power spectrum between 100 to 200~MHz.
-In this paper, we investigate the performance of the individual HERA elements and resulting contribution of the instrument response to the delay spectrum.
+In this paper, we investigate the performance of an individual HERA element and resulting contribution of the instrument response to the delay spectrum.
  Reflectometry measurements  are carried out across wide bandwidth on a prototype HERA element in Green
-Bank, WV (Figure \ref{fig:heradish}) and the results are interpreted in the light of delay spectrum technique. Section 2 describes the delay spectrum for the ideal and non-ideal performance of a two element interferometer. Reflectometry measurements are described in section 3. Section 4 qualifies the performance of the HERA element as an interferometer for detection of the 21~cm power spectrum.
-
+Bank, WV (Figure \ref{fig:heradish}) and the results are interpreted in the light of delay spectrum technique. Section 2 describes the delay spectrum for the ideal and non-ideal performance of a two element interferometer. Reflectometry measurements are described in section 3. Section 4 describes the performance of the HERA element as an interferometer for detection of the 21~cm power spectrum.
+In coordination with ~\citet{XXXsisterpapers}, we compare 
+reflectometry measurements with
+a specification for the spectral performance of an element, given models of the relative brightness of
+foreground and 21~cm reionization modes in $k$-space in section 5.
 
 \begin{figure*}
 \centering
@@ -137,83 +133,8 @@ Bank, WV (Figure \ref{fig:heradish}) and the results are interpreted in the ligh
 \label{fig:heradish}
 \end{figure*}
 
-\section{Antenna Reception With Multiple Reflections}
-\label{sec:multiple}
-To examine the performance of an antenna and feed in the presence of multiple reflections, think of the system as a screen at a distance $F$ from a feed (see Fig. \ref{fig:sys}), noting that this does ignore the sky pattern of the feed itself.  The screen reflects voltage as $\Gamma_d$ and transmits $(1+\Gamma_d)$ (see, {\em e.g.} Pozar).  Similarly, the feed reflects $\Gamma_f$ and transmits $(1+\Gamma_f)$.  The voltage pattern $\volt_{sky}$ is incident onto that system and  $(1+\Gamma_{d})(1+\Gamma_{f})$ is coupled into the cable leading from the feed. 
-Additionally however, the voltage pattern is reflected off the feed ($\Gamma_f$), then the dish ($\Gamma_d$) and subsequently $(1+\Gamma_{f})$ of it reenters the feed with a roundtrip time delay $\Delta \tau=2F/c$. Hence, if $v_{sky}$ is reflected $n$ times in between the feed and the dish, the net voltage entering the feed after the
-$n^{th}$ reflection may be written as:
-\begin{eqnarray}
-\volt_{rec} & = &  (1+\Gamma_d) (1+\Gamma_{f}) \volt_{sky}[1+ \Gamma_{f}\Gamma_{d} \dfngexp \nonumber \\
-	&& + (\Gamma_{f}\Gamma_{d})^2  (\dfngexp)^{2}+ \nonumber \\
-&&  ....+ (\Gamma_{f}\Gamma_{d})^{n} (\dfngexp)^{n}]
-\end{eqnarray}
-\begin{figure}
-\centering
-\includegraphics[width=0.5\textwidth]{plots/microsys.pdf}
-\caption{System}
-\label{fig:sys}
-\end{figure}
-
-\noindent
-Defining $a=\volt_{rec}/\volt_{sky}$ and we see that 
- \begin{equation}
-a  =   (1+\Gamma_d)(1+\Gamma_{f}) \displaystyle\sum\limits_{n=0}^{N} [\Gamma_{f}\Gamma_{d}\dfngexp]^{n}
-   \label{eq:Sigma}
-\end{equation}
-Note that $n=0$ is when the initial wave enters the cable at the feed (where we assume we have set our reference plane).  We may identify $(1+\Gamma_d)$ as the voltage reception pattern of the antenna, denoted $p_n(\hat{\theta})$, which is a function of angle on the sky.  Additionally, $(1+\Gamma_f$) is the voltage efficiency for the feed (not a function of angle).
-
-As an aside, note that the sum in Eq. \ref{eq:Sigma} may be evaluated we may rewrite
-\begin{equation}
-a =  (1+\Gamma_d)(1+\Gamma_{f})\frac{1+\Gamma_{f}^{N+1}\Gamma_{d}^{N+1}(\dfngexp)^{N+1}}{1+\Gamma_{f}\Gamma_{d}\dfngexp} \nonumber
-\end{equation}
-which, in the limit becomes:
-\begin{equation}
-a = \frac{ (1+\Gamma_d)(1+\Gamma_{f})}{1+\Gamma_{f}\Gamma_{d}\dfngexp} \nonumber
-\end{equation} 
-since $|\Gamma_d|$ and $|\Gamma_f|$ are less than one.
-
-To measure this quantity, we may connect a vector network analyzer (VNA) to the feed, calibrate it to the end of the cable at the feed and measure. 
-In this case, we ignore $\volt_{sky}$, and we see that $\Gamma_f \volt_{trans}$ gets reflected back from the feed connection and $(1+\Gamma_f)\volt_{trans}$ is emitted, where $\volt_{trans}$ is the signal from the VNA.   $\Gamma_d$ of that is reflected back towards the feed and $(1+\Gamma_f)$ is received by the VNA suitably delayed.  The received voltage after $n$ reflections (where again $n=0$ is the first reflected signal at the reference plane) is therefore:
-
-\begin{eqnarray}
-\volt_{rec} & = &  \Gamma_f \volt_{trans} \nonumber \\
-         && + \volt_{trans} (1+\Gamma_f)^2 \Gamma_{d} \dfngexp \nonumber \\
-         && + \volt_{trans} (1+\Gamma_f)^2 \Gamma_{d} \dfngexp \Gamma_d\Gamma_f\dfngexp \nonumber \\
-         && + \volt_{trans} (1+\Gamma_f)^2 \Gamma_{d} \dfngexp (\Gamma_d\Gamma_f\dfngexp)^2 \nonumber \\
-&&  ....+ \volt_{trans} (1+\Gamma_f)^2 \Gamma_{d} \dfngexp (\Gamma_d\Gamma_f\dfngexp)^n
-\end{eqnarray}
-Defining $s_{11}=\volt_{rec}/\volt_{trans}$ (the VNA measured quantity), this may be factored to yield
-\begin{equation}
-s_{11} = \Gamma_f + \frac{(1+\Gamma_f)^2}{\Gamma_{f}} \displaystyle\sum\limits_{n=1}^{N} [\Gamma_{f}\Gamma_{d}\dfngexp]^{n}
-\end{equation}
-Adding in the zeroth term and rearranging, we have
-\begin{equation}
-s_{11} +\frac{(1+\Gamma_f)^2}{\Gamma_f}-\Gamma_f = \frac{(1+\Gamma_f)^2}{\Gamma_{f}} \displaystyle\sum\limits_{n=0}^{N} [\Gamma_{f}\Gamma_{d}\dfngexp]^{n}
-\end{equation}
-Comparing to Eq. \ref{eq:Sigma} and we find that
-\begin{equation}
-a = (1+\Gamma_d)\frac{\Gamma_f}{(1+\Gamma_{f})}\left(s_{11} + \frac{(1+\Gamma_f)^2}{\Gamma_f}- \Gamma_f\right)
-\end{equation}
-After rearranging and plugging in for $p_n(\hat{\theta})$ we find
-\begin{equation}
-a = p_n(\hat{\theta})\left[(1+\Gamma_f) + \frac{\Gamma_f}{(1+\Gamma_f)}\left(s_{11} - \Gamma_f\right)\right]
-\end{equation}
-By measuring the feed separately, we may use that result for $\Gamma_f = s_{11,f}$.
-
-For power, we want the squared magnitude, or:
-\begin{equation}
-\raggedright
-A(\hat{\theta}) = |aa^*|^2 =  P_n(\hat{\theta})\times ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nonumber
-\end{equation}
-\begin{equation}
-             \left[|1+\Gamma_f|^2 +  2\operatorname{Re}\left(\frac{\Gamma_f}{(1+\Gamma_f)}(s_{11} - \Gamma_f)\right) 
-                              + \frac{|\Gamma_f|^2}{|1+\Gamma_{f}|^2}|s_{11} - \Gamma_f|^2 \right]
-\end{equation}
-where $P_n(\hat{\theta})= |p_n(\hat{\theta})|^2$ is the normalized power pattern.  Note that $|1+\Gamma_f|^2$ is the feed efficiency ($\epsilon_f$).
-
-
 \section{Visibility measurements by a two element interferometer and the delay spectrum}
-Now consider a two element interferometer with a baseline $\vec b$. If we denote the electric field sky signal in direction $\thhat$ by $\volt_\sky(\vec \theta, \nu)$  then the voltage output of each antenna may be written as,  
+Consider a two element interferometer with a baseline $\vec b$. If we denote the electric field sky signal in direction $\thhat$ by $\volt_\sky(\vec \theta, \nu)$  then the voltage output of each antenna may be written as,  
 \begin{equation}
 \volt_{1}(\thhat, \nu) = \bmvolt_{1}(\thhat,\nu)\volt_\sky(\thhat,\nu)\nonumber\\
 \end{equation}
@@ -245,10 +166,35 @@ resulting in the delay spctrum:
 \end{eqnarray}
 % XXX rethink how to express this equation (not correct about integrated over all sky)
 % XXX define tau_g
-The convolution is carried out along the $\tau$ axis which is Fourier conjugate of the frequency $\nu$. In words, the sky delay spectrum from any direction $\thhat$ is convoluted with the delay spectrum of the instrument and would be located at the delay $\tau = {\vec b \cdot \thhat \over c}$ %defined this differently earlier
+The convolution is carried out along the $\tau$ axis which is Fourier conjugate of the frequency $\nu$. 
+The redshifted 21 cm spatial power spectrum is defined as
+\begin{equation}
+  P(k_\perp,k_\parallel) = |\tilde V(\vec b, \tau)|^{2} \left(\frac{1}{\Omega\Delta B}\right)\left(\frac{D^2\Delta D}{\Delta B}\right)\left(\frac{\lambda^2}{2k_\textrm{B}}\right)^2,
+\label{eq:delay-power-spectrum}
+\end{equation}
+where
+\begin{equation}
+  k_\perp = \frac{2\pi f}{D}({b\over c}), \\
+  k_\parallel = \frac{2\pi\tau\,f_{21}H_0\,E(z)}{c(1+z)^2}, 
+\end{equation}
+The power spectrum is a function of cosmological as well as instrumental parameters which are:\\
+$f_{21}$:rest frame frequency of the 21~cm radiation.\\
+$f$: observation frequency.\\
+$z$: cosmological redshift corresponding to frequency of observation.\\
+ $\Delta B$: bandwidth centered at the observation frequency.\\
+ $k_\textrm{B}$: Boltzmann constant.\\
+ $D\equiv D(z)$ comoving distance along the line of sight\\
+ $\Delta D$ the comoving distance along the line of sight corresponding to bandwidth of observation $\Delta B$.\\
+$E(z)= [\Omega_\textrm{M}(1+z)^3+\Omega_\textrm{k}(1+z)^2+\Omega_\Lambda]^{1/2}$ \\
+ 
+In this paper, we use $\Omega_{M}=0.27$, $\Omega_{\Lambda}=0.73$, $\Omega_{K}=1-\Omega_{M}-\Omega_{\Lambda}$, $H_0=100\,$km$\,$s$^{-1}\,$Mpc$^{-1}$, and $P_\textrm{d}(k_\perp,k_\parallel)$ is in units of K$^2 (h^{-1}$~Mpc$)^3$.
+
+
+Since both $k_{\perp}$ and $k_{\parallel}$ are functions of the delay $\tau$ corresponding to the given baseline length, the redshifted 21 cm power spectrum could be estimated from the measurement of delay spectrum of visibility by an interferometer. Sky delay spectrum from any direction $\thhat$ is convolved with the delay spectrum of the instrument and would be located at the delay $\tau = {\vec b \cdot \thhat \over c}$ %defined this differently earlier
  in the delay domain. The maximum geometric delay possible for a given base line would be $\tau_{g} ={ b \over c }$ for the direction of $\thhat = 0$ when the phase centre is halfway in between the two antennas. %The phase center is elsewhere defined as being at the center of one of the antennas.
- Hence, the sky contribution from any direction would be confined within $-\tau_{g}<\tau<\tau_{g}$. Due to chromaticity of the sky signal as well as instrument reponse, the delay spectrum of the sky spills over the delay $\tau> \tau_{g}$ with decaying amplitude [Ref to the figure Parsons12]. Sky delay spectrum $I_{sky}(\tau)$ is contributed by the foreground  $I_{fg}(\tau)$  which is spectrally smooth and the 21~cm power spectrum $I_{21}(\tau)$ which contains spectral signatures. Therefore, in the spill over region $(\tau>\tau_{g})$, the relative strength of the smooth spectrum foreground with respect to the delay spectrum of the $I_{21}$ reduces and the 21~cm delay spectrum could potentially be detectable.
-The convolution is carried out along the $\tau$ axis which is Fourier conjugate of the frequency $\nu$. In words, the sky delay spectrum from any direction $\thhat$ is convolved with the delay spectrum of the instrument and would be located at the delay $\tau = {\vec b \cdot \thhat \over c}$ in the delay domain. The maximum geometric delay possible for a given base line would be $\tau_{g} ={ b \over c }$ for the direction of $\thhat = 0$ when the phase centre is halfway in between the two antennas. Hence, the sky contribution from any direction would be confined within $-\tau_{g}<\tau<\tau_{g}$. Due to chromaticity of the sky signal as well as instrument reponse, the delay spectrum of the sky spills over the delay $\tau> \tau_{g}$ with decaying amplitude [Ref to the figure Parsons12]. Sky delay spectrum $I_{sky}(\tau)$ is contributed by the foreground  $I_{fg}(\tau)$  which is spectrally smooth and the 21~cm power spectrum $I_{21}(\tau)$ which contains spectral signatures. Therefore, in the spill over region $(\tau>\tau_{g})$, the relative strength of the smooth spectrum foreground with respect to the delay spectrum of the $I_{21}$ reduces and the 21~cm delay spectrum could potentially be detectable. 
+ Hence, the sky contribution from any direction would be confined within $-\tau_{g}<\tau<\tau_{g}$. Due to chromaticity of the sky signal as well as instrument reponse, the delay spectrum of the sky spills over the delay $\tau> \tau_{g}$ with decaying amplitude [Ref to the figure Parsons12]. Sky delay spectrum $P_{sky}(\tau)$ is contributed by the foreground  $P_{fg}(\tau)$  which is spectrally smooth and the 21~cm power spectrum $P_{21}(\tau)$ which contains spectral signatures.Therefore, in the spill over region $(\tau>\tau_{g})$, the relative strength of the smooth spectrum foreground with respect to the delay spectrum of the $I_{21}$ reduces and the 21~cm delay spectrum could be detectable.
+
+ %In words, the sky delay spectrum from any direction $\thhat$ is convolved with the delay spectrum of the instrument and would be located at the delay $\tau = {\vec b \cdot \thhat \over c}$ in the delay domain. The maximum geometric delay possible for a given base line would be $\tau_{g} ={ b \over c }$ for the direction of $\thhat = 0$ when the phase centre is halfway in between the two antennas. Hence, the sky contribution from any direction would be confined within $-\tau_{g}<\tau<\tau_{g}$. Due to chromaticity of the sky signal as well as instrument reponse, the delay spectrum of the sky spills over the delay $\tau> \tau_{g}$ with decaying amplitude [Ref to the figure Parsons12]. Sky delay spectrum $I_{sky}(\tau)$ is contributed by the foreground  $I_{fg}(\tau)$  which is spectrally smooth and the 21~cm power spectrum $I_{21}(\tau)$ which contains spectral signatures. Therefore, in the spill over region $(\tau>\tau_{g})$, the relative strength of the smooth spectrum foreground with respect to the delay spectrum of the $I_{21}$ reduces and the 21~cm delay spectrum could potentially be detectable. 
 
 
 %\subsection{Delay spectrum: An estimate of the 21cm power spectrum}
@@ -257,49 +203,100 @@ The convolution is carried out along the $\tau$ axis which is Fourier conjugate 
 
 
 \section{Effects of multiple reflections on visibility and delay spectrum}
-Response of any radio telescope is chromatic and modulates the true sky signal in the spectral domain. This results in the convolution of the instrument response kernel with the sky signal in the delay domain.
-This fundamentally limits the detectability of a 21~cm power spectrum. In this section, the effect of reflections on the visibility data and corresponding effect on the delay spectrum is discussed qualitatively.
- 
 The Hydrogen Epoch of Reionization Array consists of parabolic dishes which provide increased collecting area per array element compared to its predecessor experiment PAPER. Plane waves incident on a parabolic dish are focussed at the feed which is kept at the focal plane of the dish.
 The mismatch between the impedance of free space and the feed and transmission line results in a partial coupling of the sky signal into the feed while the rest is reflected off the feed. 
 The reflected signal illuminates the dish and most of it is reflected back into the space.
 However, a part of it reflects back and forth several times in between the feed and the vertex of the dish which is shadowed by the feed (dashed blue arrows in Figure \ref{fig:cartoon}).
 Such reflections generate multiple copies of the incident sky signal of reduced strength at various delay and phase and thus produces spurious correlations in the visibilities of interferometric data.  Identical spurious visibilities could be resulted due to reflections internal to the system causing delay space distortion. Therefore, it is necessary to measure and understand the instrument delay spectrum in order to qualify the system for the measurement of 21cm power spectrum. 
-In this section we compute the visibility of a two element interferometer accounting for the additional reflections of the sky signal in between the feed and the dish vertex and the corresponding effects on the delay spectrum, using the multiple reflection formulation of Sec. \ref{sec:multiple}.
-
-%%%\begin{figure}[ht!]
-%%%\centering
-%%%\includegraphics[totalheight=0.35\textheight]{plots/reflection_cartoon.png}
-%%%\caption{The propagation path of the sky signal entering the
-%%%feed in receiving mode is shown in blue. Due to impedance mismatch between feed and the free space, a part of the signal (dashed blue) is reflected off the feed. This signal reflects off the dish apex several times and returns to the feed at multiple delays with reduced signal strength. The red line shows the signal path during measurements which is done in transmission mode. Appropriate corrections are made to derive the telescope response function during sky observation. }
-%%%\label{fig:cartoon}
-%%%\end{figure}
-%%%
-%%%Consider again a two element interferometer as described in section 2. Two antennas are assumed to be exactly identical so that their electrical parameters and the field pattern are identical i.e, $a_{1}(\thhat,\nu) = a_{2}(\thhat,\nu) = a(\thhat, \nu)$. We denote the voltage reflection coefficient of each feed by $\Gamma_{f}$. The voltage reflection coefficient of the reflector dish is denoted by $\Gamma_{d}$. Upon first incidence of the sky signal onto the dish, it is reflected from the entire dish and is focussed onto the feed. Hence, for first incidence $\Gamma_{d}=1$. Sky signal that would return to the dish after successive reflections off the feed and the dish is reflected only from a small area around the vertex of the dish and therefore, $\Gamma_{d}<1$. In our analysis, we consider one reflection of the sky power from the feed and subsequent reflection off the dish as one single reflection. If the focal length of the dish is $l$, assuming the feed is located at the focus, the roundtrip delay after first reflection will be $\Delta \tau = {2l \over c}$. 
-%%%
-%%%%\subsection{Visibility and delay spectrum computation considering multiple reflections}
-%%%Upon first incidence of the sky signal $\volt_{sky}$, $\Gamma_{f}$ fraction of the voltage is reflected off the feed while $(1-\Gamma_{f})$ fraction is coupled to the feed. The reflected voltage then further reflected off the dish and $(1-\Gamma_{f}) $ fraction of it reenters the feed with a roundtrip time delay $\Delta \tau$. Hence, if $I_{sky}$ is reflected n times in between the feed and the dish, the net voltage entering the feed after an
-%%%$n^{th}$ reflection off the feed and the dish is written as:
-%%%\begin{eqnarray}
-%%%\volt_{1} & = &  \bmvolt (1-\Gamma_{f}) \volt_{sky}[1+ \Gamma_{f}\Gamma_{d} \dfngexp \nonumber \\
-%%%	&& + (\Gamma_{f}\Gamma_{d})^2  (\dfngexp)^{2}+ \nonumber \\
-%%%&&  ....+ (\Gamma_{f}\Gamma_{d})^{n} (\dfngexp)^{n}] \nonumber
-%%%\end{eqnarray}
-%%%and, 
-%%%\begin{eqnarray}
-%%%\volt_{2} & = &  \bmvolt (1-\Gamma_{f}) \volt_{sky}[1+ \Gamma_{f}\Gamma_{d} \dfngexp \nonumber\\
-%%%&&+  (\Gamma_{f}\Gamma_{d})^2  (\dfngexp)^{2}+ \nonumber \\
-%%%&& ....+ (\Gamma_{f}\Gamma_{d})^{n} (\dfngexp)^{n}] \fngexp \nonumber
-%%%\end{eqnarray}
-%%%Frequency as well as angular dependence of the quantities are not written explicitly for notational simplicity. We also absorb the common gain term $(1-\Gamma_{f})$ with antenna field pattern $a$ and denote them as $\bmvolt_{f}= \bmvolt(1-\Gamma_{f})$ here after. 
-
-The cross power generated by $v_{1}$ and $v_{2}$ would have spurious visibility response due to mutual correlation between multiply reflected voltages. Fourier transform of this visibility spectrum along the frequency axis results in the delay spectrum. 
-In the delay domain, visibility contributed by any two voltage components from two antennas with no mutual delay will be located at the delay $\tau = 0$ whereas any two voltage components from two antennas components having a mutual delay of $n\Delta \tau$ will be centred at $n\Delta \tau$. These will broaden the width of the delay spectrum which finally interferes with the 21cm power spectrum detection. Combining these terms, the expression of visibility will be,
- 
-\begin{eqnarray}\label{eqn:series1}
-\vis(\vec b, \nu) & = & \int \volt_{1}\volt_{2}^{*} d\Omega \nonumber\\
-			& = & \int I_{sky}(\vec b, \nu)A(\thhat,\nu) \ifngexp d\Omega
+In this section we compute the visibility of a two element interferometer accounting for the additional reflections of the sky signal in between the feed and the dish vertex and the corresponding effects on the delay spectrum, using the multiple reflection formulation of Sec. \ref{sec:multiple}. In this section, the effect of reflections on the visibility data and corresponding effect on the delay spectrum is discussed in detail. We assume two antennas with identical geometry and electrical parameters i.e, $\bmvolt_{1}(\thhat,\nu)=\bmvolt_{2}(\thhat,\nu) = \bmvolt(\thhat,\nu)$. 
+ \subsection{Antenna Reception With Multiple Reflections}
+\label{sec:multiple}
+To examine the performance of an antenna and feed in the presence of multiple reflections, think of the system as a screen at a distance $F$ from a feed (see Fig. \ref{fig:sys}), noting that this does ignore the sky pattern of the feed itself.  The screen reflects voltage as $\Gamma_d$ and transmits $(1+\Gamma_d)$ (see, {\em e.g.} Pozar).  Similarly, the feed reflects $\Gamma_f$ and transmits $(1+\Gamma_f)$.  The voltage pattern $\volt_{sky}$ is incident onto that system and  $(1+\Gamma_{d})(1+\Gamma_{f})$ is coupled into the cable leading from the feed. 
+Additionally however, the voltage pattern is reflected off the feed ($\Gamma_f$), then the dish ($\Gamma_d$) and subsequently $(1+\Gamma_{f})$ of it reenters the feed with a roundtrip time delay $\Delta \tau=2F/c$. Hence, if $v_{sky}$ is reflected $n$ times in between the feed and the dish, the net voltage entering the feed after the
+$n^{th}$ reflection may be written as:
+\begin{eqnarray}
+\volt_{rec} & = &  (1+\Gamma_d) (1+\Gamma_{f}) \volt_{sky}[1+ \Gamma_{f}\Gamma_{d} \dfngexp \nonumber \\
+	&& + (\Gamma_{f}\Gamma_{d})^2  (\dfngexp)^{2}+ \nonumber \\
+&&  ....+ (\Gamma_{f}\Gamma_{d})^{n} (\dfngexp)^{n}]
 \end{eqnarray}
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{plots/microsys.pdf}
+\caption{System}
+\label{fig:sys}
+\end{figure}
+
+\noindent
+%Defining $a=\volt_{rec}/\volt_{sky}$ and we see that 
+Hence,
+ \begin{eqnarray}
+{\volt_{rec}\over \volt_{sky} } & = &   (1+\Gamma_d)(1+\Gamma_{f}) \displaystyle\sum\limits_{n=0}^{N} [\Gamma_{f}\Gamma_{d}\dfngexp]^{n}\nonumber\\
+& = & \frac{ (1+\Gamma_d)(1+\Gamma_{f})}{1+\Gamma_{f}\Gamma_{d}\dfngexp} 
+ \label{eq:Sigma}
+\end{eqnarray}
+Note that $n=0$ is when the initial wave enters the cable at the feed (where we assume we have set our reference plane).  We may identify $(1+\Gamma_d)(1+\Gamma_{a})$ as the voltage reception pattern of the antenna, denoted $\bmvolt(\thhat,\nu)$, which is a function of angle on the sky.  Additionally, $(1+\Gamma_f$) is the voltage efficiency for the feed (not a function of angle).
+
+%As an aside, note that the sum in Eq. \ref{eq:Sigma} may be evaluated we may rewrite
+%\begin{equation}
+%{\volt_{rec}\over \volt_{sky} } =  (1+\Gamma_d)(1+\Gamma_{f})\frac{1+\Gamma_{f}^{N+1}\Gamma_{d}^{N+1}(\dfngexp)^{N+1}}{1+\Gamma_{f}%\Gamma_{d}\dfngexp} \nonumber
+%\end{equation}
+%which, in the limit becomes:
+%\begin{equation}
+%{\volt_{rec}\over \volt_{sky} } = \frac{ (1+\Gamma_d)(1+\Gamma_{f})}{1+\Gamma_{f}\Gamma_{d}\dfngexp} \nonumber
+%\end{equation} 
+%since $|\Gamma_d|$ and $|\Gamma_f|$ are less than one.
+
+Accurate measurement of this quantity requires receiving the $v_{sky}$ from a well calibrated wideband source in the sky in the far field of the HERA antenna element with significant isotropic emission. While this condition is hard to achieve in practice, due to reciprocity of the antenna performance in the transmission and reception mode, the right hand side of the equation \ref{eq:Sigma} could be measured using the returnloss measurement technique with a vector network analyser. 
+A vector network analyzer (VNA) is connected to the HERA element via a 50 feet long cable. The VNA transmit a broadband noise voltage  $\volt_{trans}$. $(1+\Gamma_f)$ fraction of this voltage is radiated by the feed while the fraction $\Gamma_{f}$ returns to the VNA. While the radiated signal illuminated the dish and most of it is radiated into the space,  $\Gamma_d$ fraction of this signal is reflected back towards the feed and $(1+\Gamma_f)$ is received by the VNA.  The received voltage after $n$ reflections between the dish and the feed, (where again $n=0$ is the first reflected signal at the reference plane) is therefore:
+
+\begin{eqnarray}
+\volt_{rec} & = &  \Gamma_f \volt_{trans} \nonumber \\
+         && + \volt_{trans} (1+\Gamma_f)^2 \Gamma_{d} \dfngexp \nonumber \\
+         && + \volt_{trans} (1+\Gamma_f)^2 \Gamma_{d} \dfngexp \Gamma_d\Gamma_f\dfngexp \nonumber \\
+         && + \volt_{trans} (1+\Gamma_f)^2 \Gamma_{d} \dfngexp (\Gamma_d\Gamma_f\dfngexp)^2 \nonumber \\
+&&  ....+ \volt_{trans} (1+\Gamma_f)^2 \Gamma_{d} \dfngexp (\Gamma_d\Gamma_f\dfngexp)^n
+\end{eqnarray}
+Therefore, 
+\begin{equation}
+{\volt_{rec}\over \volt_{trans} } = \Gamma_f + \frac{(1+\Gamma_f)^2}{\Gamma_{f}} \displaystyle\sum\limits_{n=1}^{N} [\Gamma_{f}\Gamma_{d}\dfngexp]^{n}
+\label{eq:s11}
+\end{equation}
+The VNA measures the quantity $\volt_{rec}/\volt_{trans}=s_{11}$ which is the voltage reflection coefficient of the HERA element.
+The fundamental difference between the righ hand side of the equation \ref{eq:Sigma} and \ref{eq:s11} are the $n=0$ term and the multiplicative factor in front of the convergent series $\displaystyle\sum\limits_{n=1}^{N} [\Gamma_{f}\Gamma_{d}\dfngexp]^{n}$ that represents the contribution of the delayed voltage components at the VNA input arising due to multiple signal reflection between the feed and the dish. Finally, writing $\volt_{rec}/\volt_{trans}=s_{11}$, equation \ref{eq:s11} could be written as,
+\begin{equation}
+s_{11} +\frac{(1+\Gamma_f)^2}{\Gamma_f}-\Gamma_f = \frac{(1+\Gamma_f)^2}{\Gamma_{f}} \displaystyle\sum\limits_{n=0}^{N} [\Gamma_{f}\Gamma_{d}\dfngexp]^{n}
+\end{equation}
+Comparing to Eq. \ref{eq:Sigma} and we find that
+\begin{eqnarray}
+{\volt_{rec}\over \volt_{sky} } & = & (1+\Gamma_d)\left[(1+\Gamma_f) + \frac{\Gamma_f}{(1+\Gamma_f)}\left(s_{11} - \Gamma_f\right)\right] \nonumber\\
+ & = & \bmvolt(\thhat,\nu) \left[(1+\Gamma_f) + \frac{\Gamma_f}{(1+\Gamma_f)}\left(s_{11} - \Gamma_f\right)\right]
+\end{eqnarray}
+When the feed return loss is measured separately, all the higher order terms of the equation \ref{eq:s11} does not exist. In this case $\Gamma_f = s_{11}^{f}$. Using this measurements and VNA measurement of $s11$, the quantity $v_{rec}\over v_{sky}$ is estimated.
+
+From this, for a two element interferometer with identical antenna elements, the ratio of the received sky intensity to true sky intensity will be, 
+\begin{eqnarray}
+{I_{rec}\over I_{sky} } & = & |{\volt_{rec}\over \volt_{sky} }|^2 =  \beam(\thhat,\nu)\times \nonumber\\
+             && \left[|1+\Gamma_f|^2 +  2\operatorname{Re}\left(\frac{\Gamma_f}{(1+\Gamma_f)}(s_{11} - \Gamma_f)\right)\right] + \nonumber\\ 
+             &&  \left[ \frac{|\Gamma_f|^2}{|1+\Gamma_{f}|^2}|s_{11} - \Gamma_f|^2  \right]  \nonumber\\
+\label{eq:power_ratio}             
+\end{eqnarray}
+
+In terms of visibility, the same could be written as,  
+\begin{eqnarray}
+\vis^{mul}(\vec b,\nu) & = & \int \beam(\thhat,\nu)\times \nonumber\\
+             && \left[|1+\Gamma_f|^2 +  2\operatorname{Re}\left(\frac{\Gamma_f}{(1+\Gamma_f)}(s_{11} - \Gamma_f)\right)\right] + \nonumber\\ 
+             &&  \left[ \frac{|\Gamma_f|^2}{|1+\Gamma_{f}|^2}|s_{11} - \Gamma_f|^2  \right]  I_{sky} \ifngexp d\Omega
+\label{visibility_mul}
+\end{eqnarray}
+
+Comparing eq \ref{eq:power_ratio} with \ref{eq2}, the cross power generated by $v_{1}$ and $v_{2}$ would have spurious visibility response due to mutual correlation between multiply reflected voltages represented by the second and the third term of the right hand side of the equation \ref{eq:power_ratio}. In ideal case, $\Gamma_{f}=0$ in which case equation \ref{eq:power_ratio} results in equation \ref{eq2}.  Fourier transform of this visibility spectrum along the frequency axis results in the delay spectrum. 
+In the delay domain, visibility contributed by any two voltage components from two antennas with no mutual delay will be located at the delay $\tau = 0$ whereas any two voltage components from two antennas components having a mutual delay of $n\Delta \tau$ will be centred at $n\Delta \tau$. These will broaden the width of the delay spectrum which finally interferes with the 21cm power spectrum detection.
+% Combining these terms, the expression of visibility will be,
+ 
+%\begin{eqnarray}\label{eqn:series1}
+%\vis(\vec b, \nu) & = & \int \volt_{1}\volt_{2}^{*} d\Omega \nonumber\\
+%			& = & \int I_{sky}(\vec b, \nu)A(\thhat,\nu) \ifngexp d\Omega
+%\end{eqnarray}
 %%%where we define a combined common instrument parameter, written as, 
 %%% \begin{eqnarray}
 %%%\Sigma(\thhat, \nu) & = & \beam_{f}  [ 1+  \Gamma_{f}\Gamma_{d} \dfngexp \nonumber\\
@@ -310,25 +307,39 @@ In the delay domain, visibility contributed by any two voltage components from t
 %%%   \label{eq6}
 %%%\end{eqnarray}
 %%%where, $\beam_{f}=\bmvolt_{f}\bmvolt_{f}^{*}= |a(1-\Gamma_{f})|^{2}$ is the antenna cross power pattern.
-and the delay spectrum would be, 
-\begin{eqnarray}
+%and the delay spectrum would be, 
+%\begin{eqnarray}
 %\tilde V(\vec b, \tau) & = & \int \left [ \int I_{sky}(\vec b, \nu)\Sigma(\vec b, \nu) \fngexp  d\Omega \right ]  e^{-2\pi i\nu\tau} d\nu \nonumber \\
-\tilde V(\vec b, \tau) & = & \int \left [ I_{sky}(\vec b, \nu) \ast A(\vec b, \nu) \right]\dfngexp d\Omega
-\label{eq7}
-\end{eqnarray}
+%\tilde V(\vec b, \tau) & = & \int \left [ I_{sky}(\vec b, \nu) \ast A(\vec b, \nu) \right]\dfngexp d\Omega
+%\label{eq7}
+%\end{eqnarray}
  
- Thus, the correlation between the reflected signal  from the feed and subsequently from the dish with the direct signal extends the foreground response to delays beyond the maximum geometric delay for a given baseline and contaminates the delay mode where 21~cm delay spectrum could potentially be detected. \\
-The design specification of HERA elements requires that any
-signal, arriving at the feed at a delay $\Delta \tau$ with respect to the direct incidence, should be
-at the level of $-60dB$ at a delay of $60ns$ relative to the first incident
-signal at the feed ~\citep{parsons_deboer_memo}. This specification was
-approximated based on the power level of the cosmological signal in relation to
-foreground signals, which is estimated to be six orders of magnitude fainter
-~\citep{santos_et_al2005,  ali_et_al2008,deoliveira2008, jelic_et_al2008, bernardi_et_al2009,bernardi_et_al2010, ghosh_et_al2011}. Additionally, the $14m$ HERA baselines set a foreground containing
-Additionally, the $14m$ HERA baselines set a foreground containing
-horizon-limit (the wedge) that, with some buffer, sets a delay specification of
-$60ns$
-~\citep{parsons_et_al2012b,vedantham_et_al2012,nithya_et_al2013,liu_et_al2014a,liu_et_al2014b}. Our goal is to measure the instrument response $\Sigma(\nu)$ and its effect on the power spectrum measurements. 
+% Thus, the correlation between the reflected signal  from the feed and subsequently from the dish with the direct signal extends the foreground response to delays beyond the maximum geometric delay for a given baseline and contaminates the delay mode where 21~cm delay spectrum could potentially be detected. \\
+In a related series of papers, (Thyagarajan et al 2016) has shown the detailed sensitivity calculations of HERA is using a comprehensive foreground as well as model for EoR power spectrum for various simulated antenna element response (\ref{fig:sim_limit_delay}) From this simulations, the figure \ref{fig:sim_limit_delay} (Thyagarajan et al) shows the level of attenuation required for the multiple reflected sky signal in order to reduce the foreground contaminations at the delay modes significant for power spectrum measurements. Ewall-Wice et al 2016 has simulated the time domain response of the HERA element considering multiple reflections between the feed and the dish.  Figure \ref{fig:sim_limit_delay} shows the simulated cross-power response of a pair of HERA antenna as a function of time(Ewall-wice et al). These simulations set up the performance criterion for the HERA antenna element.
+ \begin{figure*}[ht]
+\begin{minipage}[b]{0.5\linewidth}
+\centering
+\includegraphics[angle=0, width=\linewidth]{plots/sim_limit.jpg}
+\end{minipage}
+\hspace{0.1cm}
+\begin{minipage}[b]{0.5\linewidth}
+\centering
+\includegraphics[angle=0, width=\linewidth]{plots/sim_delay.jpg}
+\end{minipage}
+\caption{Left: Signal attenuation required for the reflected sky power arriving at the feed at higher delay as estimated from the simulated antenna beam and froeground models (Thyagarajan et al). The three different contour shows three different system performance requirements set based on the simulated response of HERA element for a measurement frequency of 150MHz corresponding to the redshift of $z=8.47$ and a 14.5m baseline. The instrumental requirements become extremely stringent for the detection of the smaller $k_\parallel$ values corresponding to very large spatial scales. Right: The simulated cross power response kernel for HERA. The simulation assumes and achromatic beam with the chromaticity attributed entirely by the multiple reflections between the dish and the feed. This shows the levels to which the multiple reflections at the higher delays is expected to be reduced following the dish and the feed design.}
+\label{fig:sim_limit_delay}       
+\end{figure*}
+  
+%signal, arriving at the feed at a delay $\Delta \tau$ with respect to the direct incidence, should be
+%at the level of $-60dB$ at a delay of $60ns$ relative to the first incident
+%signal at the feed ~\citep{parsons_deboer_memo}. This specification was
+%approximated based on the power level of the cosmological signal in relation to
+%foreground signals, which is estimated to be six orders of magnitude fainter
+%~\citep{santos_et_al2005,  ali_et_al2008,deoliveira2008, jelic_et_al2008, bernardi_et_al2009,bernardi_et_al2010, ghosh_et_al2011}. Additionally, the $14m$ HERA baselines set a foreground containing
+%Additionally, the $14m$ HERA baselines set a foreground containing
+%horizon-limit (the wedge) that, with some buffer, sets a delay specification of
+%$60ns$
+%~\citep{parsons_et_al2012b,vedantham_et_al2012,nithya_et_al2013,liu_et_al2014a,liu_et_al2014b}. Our goal is to measure the instrument response $\Sigma(\nu)$ and its effect on the power spectrum measurements. 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++
 \section{Reflectometry measurements}
 \begin{figure*}
@@ -338,71 +349,22 @@ $60ns$
 \caption{HERA feed consists of a pair of crossed dipole ove xxx mt diameter backplane made of wire mesh. The backplane is surrounded by xxx m wire mesh around the edge resulting in encasing the cross dipole in a cylindrical cage.}
 \label{fig:herafeed}
 \end{figure*}
-We carried out reflectometry measurements at the HERA element prototype in Green
-Bank, WV (Figure \ref{fig:heradish}) in order to measure the instrument response of the feed and dish assembly and characterise its performance. An HERA element consists off a $14\,m$ diameter
+Reflectometry measurements are carried out at the HERA element prototype in Green
+Bank, WV (Figure \ref{fig:heradish}) in order to measure the instrument response of the feed and dish assembly and characterise the performance.  HERA element consists off a $14\,m$ diameter
 parabolic reflector and a crossed-dipole pair as a feed. The cross dipole antenna pair is identical to the feed of the PAPER antenna which is suspended at the focal plane of the dish with the support of three vertical poles. HERA elements are closely spaced with centre to centre distance between two dishes are equal to the dish diameter. Therefore, to reduce the coupling between the adjacent dishes, the crossed dipole feed along with the back plane is encased in a cylindrical cage. The feed is raised and
-lowered by a three-pulley system mounted on the three poles. The focal height of the dish is $5m$.  
-As given in the previous section, if the incident power from the sky signal is $I_{sky}$, the feed
-reflection coefficient is $\Gamma_{f}$, and the dish reflection
-coefficient is $\Gamma_{d}$, then the net power entering a feed after
-$n^{th}$ reflection off the feed and the dish is:
+lowered by a three-pulley system mounted on the three poles. The focal height of the dish is $5m$.  The detail geometry and electromagnetic design of of the feed is presented in deBoer et al 2016 (in prep). \\
+A vector network analyser is connected via a 50feet long cable at the feed output of the HERA element and the return loss $(s_{11})$ of the HERA element is measured as a function of frequencies while the feed is suspended at the focal plane of the dish. This measurement is 
+Section 3 laid the mathematical framework of how the delay spectrum is estimated from the return loss measurement. 
+%, if the incident power from the sky signal is $I_{sky}$, the feed
+%reflection coefficient is $\Gamma_{f}$, and the dish reflection
+%coefficient is $\Gamma_{d}$, then the net power entering a feed after
+%$n^{th}$ reflection off the feed and the dish is:
 
-\begin{eqnarray}
-\tilde I_{meas}(\vec b, \nu) & = & \int I_{sky}(\vec b, \nu)A(\vec b, \nu) \dfngexp d\Omega
-\end{eqnarray}
+%\begin{eqnarray}
+%\tilde I_{meas}(\vec b, \nu) & = & \int I_{sky}(\vec b, \nu)A(\vec b, \nu) \dfngexp d\Omega
+%\end{eqnarray}
 
-$I_{meas}$ is the auto correlated power obtained from a single HERA element. Upon our assumption that two adjacent antenna elements have identical electrical properties, this power is also a measure of the cross power or the visibility $\vis (\vec b, \nu)$ between the two antennas with a normalisation factor of $2$. 
-
-%%%Once again, it is to be noted that upon the first incidence, the sky signal is focussed onto the feed from the entire dish and the dish reflection coefficient $\Gamma_{d}$ is $1$ for this first incidence. The subsequent back and forth reflection of the signal in between the feed and the dish, however, occurs from only the part of the dish which is shadowed by the feed. Therefore, in this case, $\Gamma_{d} < 1$. For a given baseline $\vec b$, taking the ratio of the measured power and the incident power, 
-%%%
-%%%\begin{eqnarray}\label{eqn:ratio1}
-%%%{I_{meas} \over I_{sky} } & = & \Sigma(\vec b, \nu) \nonumber\\
-%%%  & = & \beam_{f}+ \beam_{f} \displaystyle\sum\limits_{n=1}^{n} [2\Re(\Gamma_{f}\Gamma_{d}\dfngexp)]^{n}
-%%%   \nonumber\\
-%%%   \label{eq8}
-%%%\end{eqnarray}
-%%%
-%%%The right hand side of this equation is the instrument response kernel of a single HERA element as well as a representative of the instrument response in the measured visibility data between a pair of antennas. Our goal is to measure this kernel as a function of frequency and determine its effect on the delay spectrum of the visibility. 
-%%%
-%%%%%%%%%%%%%%%%%%%%
-%%%\subsection{Measurement equations}
-%%%The instrument response kernel is measured by measuring the return loss of the HERA element at the output port of the feed using a vector network analyser. The vector network analyser transmits a broadband noise of known amplitude and phase via a $50ft$ cable up to the feed. While a part of this signal  returns to the VNA post reflection from the feed due to mismatch between the cable and the antenna impedance resulting in the primary return loss, rest of the signal is radiated out by the antenna and illuminates the dish and radiated into the space. However, the reflected signal from the dish vertex returns to
-%%%the feed. This incident signal is now
-%%%reflected back and forth in between the feed and the dish much like the sky
-%%%signal reflection discussed previously.
-%%%
-%%%If $I_{tr}$ is the signal transmitted by the VNA and $\Gamma_{f}$ is the feed reflection coefficient, $\Gamma_{f}$ fraction of this transmitted power would be reflected back to the VNA while $(1-\Gamma_{f})$ fraction would be radiated. $\Gamma_{d}$ fraction of this radiated power will be reflected back and forth in between the feed and the dish with partial coupling of the signal into the feed at each reflection. The power radiated out of the feed, denoted by $I_{r}$ is , 
-%%%\begin{equation}
-%%%I_{r}= \beam_{f} I_{tr}
-%%%\end{equation}
-%%%
-%%%The total reflected power returned to the VNA, as measured by the VNA would be:
-%%%\begin{eqnarray}\label{eqn:series2}
-%%%I_{meas} & = & \Gamma_{f}I_{tr}+ I_{r}(1-\Gamma_{f}) [\Gamma_{d} \dfngexp + \Gamma_{f}\Gamma_{d}^{2} (\dfngexp)^{2}\nonumber\\
-%%%&&+ ....+ \Gamma_{f}^{n-1}\Gamma_{d}^{n}(\dfngexp)^{n}]
-%%%\end{eqnarray}
-%%%
-%%%Using the value of $I_{r}$ and simplifying:
-%%% 
-%%%  \begin{eqnarray}\label{eqn:ratio2}
-%%% {I_{meas} \over I_{tr} } & = & \Gamma_{f}
-%%%  +  \Gamma_{d}(1-\Gamma_f) \beam_{f} I_{tr} [e^{i\phi}+ \Gamma_{f}\Gamma_{d} e^{i2\phi}\nonumber\\ 
-%%%  && +  ....+ (\Gamma_{f}\Gamma_{d})^{n}e^{i n\phi}]\nonumber\\
-%%%  & = & \Gamma_{f} + { (1-\Gamma_f)\beam_{f}\over \Gamma_{f} } \displaystyle\sum\limits_{n=1}^{n} [\Gamma_{f}\Gamma_{d}e^{i\phi}]^{n}
-%%% \label{eq9}
-%%%\end{eqnarray}
-%%%
-%%%The ratio in Equation \ref{eqn:ratio2} is identical to the ratio in the sky
-%%%observation in Equation \ref{eqn:ratio1} except in three factors. The
-%%%first factor corresponds to an additive amplitude difference arising from
-%%%$\Gamma_{f}$, which physically accounts for the initial reflection at the feed.
-%%%The second difference is the multiplicative ${ (1-\Gamma_f)\over \Gamma_{f} }$. In addition, in order to estimate the true response of the system to the sky signal in the receiving mode, we add the term $A_{f}$.  These corrections map the measured instrument response from transmission mode in which the measurement is taken to receiving mode in which the sky observation is done. The corrected measurement could be written as
-%%% \begin{eqnarray}\label{eqn:ratio2}
-%%% \left[{I_{meas} \over I_{tr}}-\Gamma_{f}\right]{ \Gamma_{f} \over (1-\Gamma_{f})} + \beam_{f}  & = & \beam_{f}+ \beam_{f} \displaystyle\sum\limits_{n=1}^{n} [\Gamma_{f}\Gamma_{d}e^{i\phi}]^{n}\nonumber\\
-%%% & = & {I_{meas} \over I_{sky} }
-%%% \label{eq9}
-%%%\end{eqnarray}
-%++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Return loss measurements are similar to auto correlation measurement from a single HERA element. Upon our assumption that two adjacent antenna elements have identical design parameters and electrical properties, this power is also a measure of the cross power or the visibility $\vis (\vec b, \nu)$ between the two antennas with a normalisation factor of $2$. 
 \section{Results}
 \begin{figure*}[ht]
 \begin{minipage}[b]{0.5\linewidth}
@@ -419,10 +381,13 @@ $I_{meas}$ is the auto correlated power obtained from a single HERA element. Upo
 \end{figure*}
 
 Figure \ref{fig:freq} shows the return loss measured between $100$ to
-$200MHz$ when the feed is suspended at the focal plane of the parabolic dish which is at $5m$ from the dish vertex. This measurement is Fourier transformed to obtain the delay spectrum of the instrument in the receiving mode as given in equation \ref{eq3}. Measurement bandwidth is kept much larger than the bandwidth of operation to achieve higher delay resolution.
+$200MHz$ when the feed is suspended at the focal plane of the parabolic dish which is at $5m$ from the dish vertex. This measurement is Fourier transformed to obtain the delay spectrum of the instrument in the receiving mode as given in equation \ref{eq3}. Measurement bandwidth is kept much larger than the bandwidth of operation to achieve higher delay resolution. A number of systematic effects as well as mathematical artefacts that are critical to this measurements are taken in to account in determination of the delay spectrum and described below. 
 
 \subsection{Estimation of the delay spectrum of the instrument}
-At first, the frequency domain data is Fourier-transformed to compute the response of the system in the delay domain. The signal transmitted by the VNA is reflected first from the feed. In delay domain, this appears at the zero delay bin. In a second iteration , we subtract this value from the measured data and divide the the data by a factor ${(1-\Gamma_{f})\over \Gamma_{f}}$ to map the delay spectrum of the system from transmitting mode to receiving mode during sky observation.  
+%At first, the frequency domain measurement of s11 is Fourier-transformed to compute the response of the system in the delay domain. 
+
+While measuring the return loss of the dish-feed assembly, the signal transmitted by the VNA is reflected first off the feed. This essentially represents a mismatch in between the feed and the 50 Ohm transmission line. In delay domain, this appears at the zero delay bin. The for the feed, the zero delay response is identical whether or not the feed is suspended on the dish and  Therefore, we measure this response by measuring the feed return loss alone while the feed is kept on the ground facing the sky. This results in feed response alone including the feed cage structure but excluding the dish response. The using the return loss measurement of the feed $(\Gamma_{f})$, the return loss measurement $s_{11}$ of the dish and feed assembly is corrected via equation \ref{eq:power_ratio} and the quantity of interest ${I_{rec}\overI_{sky}}$ is estimated. 
+
 
 \begin{figure}
 \centering
