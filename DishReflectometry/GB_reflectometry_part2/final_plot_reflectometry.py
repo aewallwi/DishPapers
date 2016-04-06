@@ -94,16 +94,16 @@ for filename in sys.argv[1:]:
 
         _d = np.fft.ifft(np.abs(d)**2*window)/window.mean()
         _df = np.fft.ifft(np.abs(d_f)**2*window)/window.mean() #Take the Fourier transform of the SQUARE of the absolute MAGNITUDE of the voltage return loss of the feed.
-        _dt = np.fft.ifft(np.abs(d_t)**2*window)/window.mean() #Take the Fourier transform of the SQUARE of the absolute MAGNITUDE of the voltage return loss of the feed.
-        _dopen = np.fft.ifft(np.abs(d_open)**2*window)/window.mean() #Take the Fourier transform of the SQUARE of the absolute magnitude of the voltage return loss of the feed.
-        _dgamma2 = np.fft.ifft(np.abs(gamma_vna_open)**2*window)/window.mean() #Take the Fourier transform of the SQUARE of the absolute magnitude of the voltage return loss of the feed.
+        _dt = np.fft.ifft(np.abs(d_t)**2*window)/window.mean() #Take the Fourier transform of the SQUARE of the absolute MAGNITUDE of the voltage transmission of the feed.
+        _dopen = np.fft.ifft(np.abs(d_open)**2*window)/window.mean() #Take the Fourier transform of the SQUARE of the absolute magnitude of the voltage return loss of the open.
+        _dgamma2 = np.fft.ifft(np.abs(gamma_vna_open)**2*window)/window.mean() #Take the Fourier transform of the SQUARE of the absolute magnitude of the voltage return loss of the vna input.
         _dH = np.fft.ifft(np.abs(d2)**2*window) /window.mean()#Take the Fourier transform of the SQUARE of the absolute magnitude of the voltage return loss  of the HERA element.
         
         #_dopen[[np.where((np.fft.fftshift(tau) <= -90) & (np.fft.fftshift(tau) >= -170))]]=0.0
         
     	#plt.plot(np.fft.fftshift(tau),pwr(np.fft.fftshift(np.abs(_d))),linewidth=2.5,label='feed')
-    	plt.plot(np.fft.fftshift(tau),pwr(np.fft.fftshift(np.abs(_dt))),linewidth=2.5,label='gammaopen')
-    	plt.plot(np.fft.fftshift(tau),pwr(np.fft.fftshift(np.abs(_df))),linewidth=2.5,label='gamma2')
+    	plt.plot(np.fft.fftshift(tau),pwr(np.fft.fftshift(np.abs(_d))),linewidth=2.5,label='gammaopen')
+    	plt.plot(np.fft.fftshift(tau),pwr(np.fft.fftshift(np.abs(_dH))),linewidth=2.5,label='gamma2')
     	
     	#filtered_x = np.array([np.where((np.fft.fftshift(tau) <= -90) & (np.fft.fftshift(tau) >= -170))])
  #       plt.plot((np.fft.fftshift(tau))[filtered_x], pwr(np.fft.fftshift(np.abs(_dopen)))[filtered_x], linewidth=2.0)
