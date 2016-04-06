@@ -47,10 +47,10 @@ for i,v in enumerate(valids):
     fq,phs = fromcsv(file_base + str(v) + phs_end)
     #bandwidth = n.where(n.logical_and(fq>.05 ,fq<.25)) #HERA bandwidth
     #bandwidth = n.where(n.logical_and(fq>.1,fq<.2)) #PAPER bandwidth
-    bandwidth = n.where(n.logical_and(fq>.05,fq<.5)) #full bandwidth
+    bandwidth = n.where(n.logical_and(fq>.100,fq<.200)) #full bandwidth
     dw, d, tau = take_delay(amps[bandwidth], phs[bandwidth], fq[bandwidth])
-#    p.plot(tau, 10*n.log10(n.abs(dw)**2), linewidth=2, label=('%s'%v)+'ft', color=colors[i])
-    ax.plot(tau, 10*n.log10(n.abs(dw)**2), linewidth=2, label=labels[i], color=colors[i])
+    #p.plot(fq, dw, linewidth=2, label=('%s'%v)+'ft', color=colors[i])
+    ax.plot(tau, (dw)**1, linewidth=2, label=labels[i], color=colors[i])
 p.xlim(-30,350)
 p.ylim(-100, 1)
 p.vlines(60, -100,100, linestyle='--', linewidth=2)

@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+ls#! /usr/bin/env python
 
 import numpy as np, pylab as plt, aipy as a
 import sys, csv
