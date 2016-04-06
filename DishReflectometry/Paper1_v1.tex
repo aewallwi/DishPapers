@@ -369,24 +369,26 @@ Return loss measurements are similar to auto correlation measurement from a sing
 \begin{figure*}[ht]
 \begin{minipage}[b]{0.5\linewidth}
 \centering
-\includegraphics[angle=0, width=\linewidth]{plots/s11_HERA_feed_PAPER_mag.png}
+\includegraphics[angle=0, width=\linewidth]{plots/RL_mag.png}
 \end{minipage}
 \hspace{0.1cm}
 \begin{minipage}[b]{0.5\linewidth}
 \centering
-\includegraphics[angle=0, width=\linewidth]{plots/s11_HERA_feed_PAPER_ph.png}
+\includegraphics[angle=0, width=\linewidth]{plots/RL_phse.png}
 \end{minipage}
-\caption{Left: Magnitude of the return loss of power measured in between 100 to 200 MHz using vector network analyser. Right panel shows the corresponding phase.HERA feed design is derived from modified PAPER antenna and therefore the return loss closely relates to the PAPER antenna response with slight frequency shift. The return loss measured when the HERA feed is suspended over the dish is, however, show deviation from the feed performance. }
+\caption{Left: Magnitude of the return loss of power measured in between 100 to 200 MHz using vector network analyser. Right panel shows the corresponding phase. Return loss of the feed alone is shown in green while the same for the feed+dish assembly is shown in blue. Finally, the quantity of interest ${I_{rec}\over I_{sky}}$ is shown in red. In ideal condition 100\% of the sky power is to be received and ${I_{rec}\over I_{sky}} = 1$ or 0dB. Finite return loss at the antenna input deviate this quantity from its ideal value and ${I_{rec}\over I_{sky}} < 1$. Also, frequency dependence of the feed and the dish as well as the multiple reflections introduces the small scale fluctuations as shown in the red curve. }
+% HERA feed design is derived from modified PAPER antenna and therefore the return loss closely relates to the PAPER antenna response with slight frequency shift. The return loss measured when the HERA feed is suspended over the dish is, however, show deviation from the feed performance. }
 \label{fig:freq}       
 \end{figure*}
 
 Figure \ref{fig:freq} shows the return loss measured between $100$ to
-$200MHz$ when the feed is suspended at the focal plane of the parabolic dish which is at $5m$ from the dish vertex. This measurement is Fourier transformed to obtain the delay spectrum of the instrument in the receiving mode as given in equation \ref{eq3}. Measurement bandwidth is kept much larger than the bandwidth of operation to achieve higher delay resolution. A number of systematic effects as well as mathematical artefacts that are critical to this measurements are taken in to account in determination of the delay spectrum and described below. 
+$200MHz$ when the feed is suspended at the focal plane of the parabolic dish which is at $5m$ from the dish vertex. This measurement is Fourier transformed to obtain the delay spectrum of the instrument in the receiving mode as given in equation \ref{eq3}. Measurement bandwidth is kept much larger than the bandwidth of operation to achieve higher delay resolution. A number of systematic effects as well as mathematical artefacts that are critical to this measurements and corresponding estimation of the delay spectrum are taken in to account in determination of the delay spectrum and described below. 
 
-\subsection{Estimation of the delay spectrum of the instrument}
+\subsection{Feed effect:zero delay correction}
 %At first, the frequency domain measurement of s11 is Fourier-transformed to compute the response of the system in the delay domain. 
 
-While measuring the return loss of the dish-feed assembly, the signal transmitted by the VNA is reflected first off the feed. This essentially represents a mismatch in between the feed and the 50 Ohm transmission line. In delay domain, this appears at the zero delay bin. The for the feed, the zero delay response is identical whether or not the feed is suspended on the dish and  Therefore, we measure this response by measuring the feed return loss alone while the feed is kept on the ground facing the sky. This results in feed response alone including the feed cage structure but excluding the dish response. The using the return loss measurement of the feed $(\Gamma_{f})$, the return loss measurement $s_{11}$ of the dish and feed assembly is corrected via equation \ref{eq:power_ratio} and the quantity of interest ${I_{rec}\overI_{sky}}$ is estimated. 
+While measuring the return loss of the dish-feed assembly, the signal transmitted by the VNA is reflected first off the feed. This is represented by $\Gamma_{f}$ in equation \ref{eq:power_ratio}. This essentially represents a mismatch in between the feed and the 50 Ohm transmission line. In delay domain, this appears at the zero delay bin. The zero delay response is identical whether or not the feed is suspended on the dish and  Therefore, we measure this response by measuring the feed return loss alone while the feed is kept on the ground facing the sky. This results in feed return loss alone including the surrounding cage structure but excluding the dish response. While $\Gamma_{f}$ fraction of power is reflected off the feed, $1+\Gamma_{f}$ fraction of the power gets transmitted. In receiving mode, upon initial incidence, $\Gamma_{f}$ fraction of voltage is reflected back in to the space while $1+\Gamma_{f}$ voltage enters the feed. In receiving mode, in delay domain, this appears at the zero delay bin.
+The using the return loss measurement of the feed $(\Gamma_{f})$, the return loss measurement $s_{11}$ of the dish and feed assembly is corrected via equation \ref{eq:power_ratio} for the zero delay component and the quantity of interest ${I_{rec}\over I_{sky}}$ is estimated. 
 
 
 \begin{figure}
