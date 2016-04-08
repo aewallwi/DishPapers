@@ -1,3 +1,9 @@
+From a48f9c5 (master):
+=====================
+
+(*) Add data for figures 3 and 4 in the Foreground Simulations paper
+in the data folder
+
 From d4fb025 (fgsim):
 ====================
 
