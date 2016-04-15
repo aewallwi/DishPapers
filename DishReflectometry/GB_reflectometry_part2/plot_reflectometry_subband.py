@@ -16,21 +16,23 @@ def take_delay(db, db_f, ph, ph_f, fq, window='blackman-harris'):
        Returns windowed and non windowed delay spectra for input spectrum.'''    
     d = 10**(db/20) * np.exp(2j*np.pi*ph/360) # 20 to put into voltage amplitude, not power
     d_f = 10**(db_f/20) * np.exp(2j*np.pi*ph_f/360) # 20 to put into voltage amplitude, not power
-    d1 = d
+    d_t =1+d_f # Computing the transmission coefficient
+    d1 = ((d-d_f)*d_f/d_t ) # Reflections corrected to produce system bandpass in the receiving mode 
+    d2 = d1+d_t # Zero term added for final correction
     #d1 = (np.abs(d)-np.abs(d_f))
     #d1 = (np.abs(d)-np.abs(d_f))*np.abs(d_f)/(1-np.abs(d_f))+ (1-np.abs(d_f))
     tau = np.fft.fftfreq(fq.size, fq[1]-fq[0])
     window = a.dsp.gen_window(fq.size, window)
-    _d = np.fft.ifft(np.abs(d1)**2.0)
-    _dw = np.fft.ifft(np.abs(d1)**2.0*window) / window.mean() #compensate for window amplitude
+    _d = np.fft.ifft(np.abs(d2)**2.0)
+    _dw = np.fft.ifft(np.abs(d2)**2.0*window) / window.mean() #compensate for window amplitude
     
     if True:
     #if False:
         
-        _dw *= ( np.abs(_dw[0])/ (1- np.abs(_dw[0])))  # these should be changed to the dc bin of the windowed data.
-        _d *= ( np.abs(_d[0])/ (1- np.abs(_d[0])))  # these should be changed to the dc bin of the windowed data.
+        #_dw *= ( np.abs(_dw[0])/ (1- np.abs(_dw[0])))  # these should be changed to the dc bin of the windowed data.
+        #_d *= ( np.abs(_d[0])/ (1- np.abs(_d[0])))  # these should be changed to the dc bin of the windowed data.
 
-    return np.fft.fftshift(_dw), np.fft.fftshift(_d), np.fft.fftshift(tau)
+     return np.fft.fftshift(_dw), np.fft.fftshift(_d), np.fft.fftshift(tau)
 
 colors = np.array([(31,119,180), (255,127,14), (44,160,44), (214,39,40), (148,103,189)])/255.
 
@@ -50,7 +52,7 @@ for filename in sys.argv[1:]:
 
 
 valids = {
-	          '100- 130 MHz'  : np.where(np.logical_and(fq>.100 ,fq<.130)), 
+	          '100 - 130 MHz'  : np.where(np.logical_and(fq>.100 ,fq<.130)), 
     	      '130 - 160 MHz' : np.where(np.logical_and(fq>.130 ,fq<.160)), 
         	  '160 - 190 MHz' : np.where(np.logical_and(fq>.160 ,fq<.190)),
          }
@@ -75,7 +77,7 @@ names = np.array(names)
 plt.xlim(-350,350) 
 #plt.ylim(-10, 1)
 plt.xlabel('delay (ns)')
-plt.ylabel('return loss (dB)')
+plt.ylabel('Delay spectrum (dB)')
 plt.grid(1)
 #plots = plots[[2,1,3,0,4]]
 #print names
