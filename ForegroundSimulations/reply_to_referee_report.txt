@@ -1,0 +1,116 @@
+Referee Report 
+
+Reviewer's Comments:
+
+While 21cm cosmology promises a tremendous amount of new information in both astrophysics and cosmology, the weakness of the signal combined with the dominance of foregrounds poses daunting requirements on instrument characterization. The work presented in this manuscript directly addresses some of the most urgent yet poorly understood aspects of 21 cm instruments, so it is highly valuable to the field and timely for the deployment and future expansion of the HERA project. Therefore, I recommend this work for publication, with minor modifications to address my comments below:
+
+Major comments:
+
+1) It is not clear if the design of HERA dish is good enough or not. In sections 2 and 6, the authors convey the message that HERA dish design is good enough (even "optimal"), whereas in section 5 it is clear that more dish measurements and possible design tweaks are needed. It is important to present a more coherent picture on this front.
+
+Response: The intention of this paper and companion papers is to illustrate that HERA is basing its design after comprehensive analysis of its effects on detectability of the EoR signal. Though many parameters of the HERA design are close to being final, efforts are ongoing to fine-tune the instrument based on measurements. I have rephrased statements to emphasize this picture. 
+
+2) Section 4.1 needs to be more explicit regarding the assumptions and limitations in the HFSS simulation, especially those related to effects investigated in this work. For example, does the HFSS consider multiple reflections between the feed and the dish? How about between dishes?
+
+Response: Added a sentence at the end of first paragraph under section 4.1 that the models include mutiple reflections between the dish and the feed but not those between dishes.
+
+3) The choice of arbitrary pointing in section 5.1 undermines the credibility of this work. I understand that the choice of pointing may not be very important here, but an arbitrary choice with no further explanation is not acceptable. Fig. 6 seems to suggest certain sky directions (around RA hour 17) can have very different impacts on the results.
+
+Response: I have now noted in section 5.1 that choice of pointing is immaterial for HERA as long as pointings that have the Galactic plane overhead (in RA range 16-19 hours) are avoided. In fact, no one specific pointing was chosen only to demonstrate that HERA is robust to all pointings except for a narrow range in RA.
+
+4) For figures 2 and 5, it seems that presenting curves for all 8 baseline lengths conveys little more information than presenting just the shortest and longest baselines. Maybe less can be more in this case?
+
+Response: I have noted in section 5.1 that foreground contamination depends on baseline length, orientation, pointing direction and spatial structure of emitting source. Hence, I chose a range of baseline lengths and orientations. I used all unique baseline lengths to demonstrate that all baselines individually will be sensitive to the EoR signal.
+
+Minor comments:
+
+Abstract:
+1) "with high significance": this sounds vague. Is there a sigma value or a signal-to-noise ratio (SNR) to quote?
+
+Response: Unless thermal noise is included it is difficult to quote a SNR. Here I have assumed data is not thermal noise limited but only limited by foregrounds and systematics studied in this paper. In such a scenario the significance of detection again varies anywhere from 10 to more than 1000.
+
+2) "All baselines...are capable": does this mean each baseline individually can make the detection, or all of them combined? Since this work focuses on beam chromaticity and just assumes sufficient SNR, it is not clear if such statement regarding detection is truly justifiable in the scope of this work.
+
+Response: It is meant to imply all baselines individually can make the detection as long as they are not thermal-noise limited but only limited by foreground and instrumental systematics studied here. Hence the sentence is now prefixed with "Under these conditions" which refers to data that is limited by foregrounds and such systematics discussed in this paper. 
+
+Section 1:
+1) "there are inherent differences in spatial isotropy and spectral smoothness between the EoR signal and the foregrounds": explicitly describe the difference in one sentence?
+
+Response: Added a sentence as suggested.
+
+2) "whereas the EoR signal has spherical symmetry due to its isotropy": two issues here. First, the 'whereas' is a strange transition. The wedge bounded by horizon limits versus the isotropy of EoR signal do not prove any point as far as I can tell. The wedge is there even if the foreground were also isotropic, and EoR signal is subject to the horizon limits just like the foreground. Second, EoR signal is statistically isotropic, so saying the signal is spherically symmetric might be misleading for readers not familiar with the subject.
+
+Response: Reworded to indicate foregrounds are inside the wedge due to the horizon limits and smooth spectrum while the EoR power spectrum is spherically symmetric due to statistical isotropy and fluctuating in its spectrum.
+
+Section 2:
+
+1) "currently under construction on the South African SKA site": nit-picking here (everywhere?), but it might sound confusing why HERA is built on the SKA site. Maybe just omit the SKA site information since it is not relevant?
+
+Response: Replaced SKA site with "South African Karoo Radio Astronomy Reserve".
+
+2) "strike an optimal balance between sensitivity and systematics": this is directly related to my major comments #1. First of all, even if that were the case, it is not quite appropriate to state it as a matter of fact in the introduction, since it is what this work is setting out to prove. Secondly, it seems clear in this work that the dish design has not truly achieved the optimum. Sections 5.2.1 and 5.2.2 explicitly state that 'measurements are under way" and "the HERA collaboration constantly pursues improvement of its dish design".
+
+Response: Removed the word "optimal". The balance between sensitivity and systematics was initially studied in DeBoer and Parsons (2015) - a HERA memo - to which a citation has now been added. This study was specific to choice of dish size and preliminary estimates of specifications for dish based on sensitivity and systematics. Our current work along with companion papers are a much more comprehensive effort to further reinforce findings of that preliminary study. It is in this context that sentence was used. It is true that the dish design is not finalized yet and is still being fine-tuned for optimum performance. Hence, removal of the word "optimum" is consistent with other statements about measurements and fine-tuning of the dish design.
+
+3) I think it is never explained in this section that HERA 19 is already built, and full HERA with 320 elements is being proposed?
+
+Response: The last paragraph in section 2 does mention this.
+
+Section 4:
+1) It would be helpful to explain in half a sentence what kind of software HFSS is. Is it a commercial simulation software, or a customized HERA software?
+
+Response: Added a brief description
+
+2) The authors go into great detail as to what the materials are used in simulation, which leaves the reader wondering: are they the same as what are actually used in the dish? For example, "the backplane is modeled as an aluminum surface", but is it actually an aluminum surface? A nice picture of an actual HERA dish may help here.
+
+Response: TBD
+
+3) Can the authors briefly comment on the relative importance of point sources versus the diffuse emission in the simulation? Are the point sources relevant for the 14 m baselines? What about the 60 m ones?
+
+Response: TBD
+
+Section 5:
+1) "The equation for delay spectrum": explicit \eqref (that is, identify the equation)
+
+Response: Explicitly refer to equations 1 and 2 as suggested
+
+2) "by convolving a Blackman-Harris window with itself": I might be wrong here, but Fig. 1 looks like a multiplication in frequency and convolution in delay domain? If it is squared in the delay domain, where do the ripples come from in the BH*BH curve in the delay domain since the BH curve is smooth?
+
+Response: It is definitely a multiplication in delay domain as equation 10 indicates. This is what leads to the squaring and increase in dynamic range in delay domain. However, it is not a squaring of the same exact BH delay domain curve (gray) shown in figure 1 (bottom). This is because after convolving in frequency the resultant window must fit in a 100 MHz band end-to-end. An auto-convolution of the BH curve shown in figure 1 (which already already occupies 100 MHz end-to-end) will result in a curve that takes up 200 MHz end-to-end. Hence a new BH curve with appropriate width is chosen such that after auto-convolution, the resultant curve occupies 100 MHz. In other words, the black curve in top panel is not obtained by convolving gray curve with itself but from a slightly different BH curve of different (smaller) width with itself. This is the reason the null-like dips in delay domain are not aligned between the two. I have added a few sentences to describe this subtlety.
+
+The ripples seen could be because of the aforementioned adjustments in frequency domain. Also being at the level of 10**-8 to 10**-5 they are insignificant compared to the overall dynamic range. In other words, even if the gray curve had ripples at this level, in a log scale plot they will not appear as ripples when superimposed on the tail which is at the level of 10 to 10**4. Thus it will not be surprising that the gray curve will still appear smooth despite these ripples.
+
+3) If the square of the Blackman-Harris window works so much better, why not the third or fourth power?
+
+Response: With higher order powers of the delay domain response, they start getting broader in delay and narrower in frequency. This results in loss of thermal noise senstivity due to loss of effective bandwidth. And viewing from a Fourier domain perspective, due to loss of delay resolution, sensitivity to large scale structure will reduce. In conclusion, it is possible to use higher order powers but depending on the application, this may result in loss of sensitivity especially on large scales. In this paper, we found that squaring was sufficient to achieve the dynamic range required for our purposes. I have added a small note highlighting this trade-off.
+
+4) Fig 1: the axis labels for the top plot have non math mode fonts, which are inconsistent with all other plots.
+
+Response: Corrected as suggested
+
+5) Fig 1: 'as a result' is a strange transition since the previous sentence is talking about epsilon.
+
+Response: Removed the phrase "As a result"
+
+6) "cause further contamination": it is not clear what 'further' is being compared to. What is the original contamination?
+
+Response: Added a sentence to indicate this contamination is in addition to that due to other spectral structures in the foregrounds and the instrument.
+
+7) "small amplitude differences": Fig. 5 (a) seems to show as much as 2 orders of magnitude difference between the two EoR models?
+
+Response: Qualified as relatively small differences when only the relevant modes $k_\parallel > k_p$ are considered.
+
+Section 6:
+1) The transition between sections 5 and 6 can use a few more sentences. It is not very clear how the dynamic range relates to the dish's reflectometry.
+
+Response: Added a transition sentence at the beginning of the first paragraph in section 6.
+
+2) Fig. 6: comment on the dark stripe around RA hour 17?
+
+Response: The last paragraph in section 6 discusses this. I have also added a sentence describing it in the caption of figure 6.
+
+Section 7:
+1) "robustly eliminate these systematics further": robustly and further sound strange together.
+
+Response: Changed to "effectively reduce these systematics further"
+
