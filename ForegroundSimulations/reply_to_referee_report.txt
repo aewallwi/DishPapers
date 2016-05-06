@@ -16,18 +16,18 @@ Response: Added a sentence at the end of first paragraph under section 4.1 that 
 
 3) The choice of arbitrary pointing in section 5.1 undermines the credibility of this work. I understand that the choice of pointing may not be very important here, but an arbitrary choice with no further explanation is not acceptable. Fig. 6 seems to suggest certain sky directions (around RA hour 17) can have very different impacts on the results.
 
-Response: I have now noted in section 5.1 that choice of pointing is immaterial for HERA as long as pointings that have the Galactic plane overhead (in RA range 16-19 hours) are avoided. In fact, no one specific pointing was chosen only to demonstrate that HERA is robust to all pointings except for a narrow range in RA.
+Response: I have now noted in section 5.1 that choice of pointing is immaterial for HERA as long as pointings that have the Galactic plane overhead (in RA range 16-19 hours) are avoided. In fact, no one specific pointing was chosen only to demonstrate that HERA is robust to all pointings except for a narrow range in RA. Figure 6 is now renumbered as figure 8.
 
 4) For figures 2 and 5, it seems that presenting curves for all 8 baseline lengths conveys little more information than presenting just the shortest and longest baselines. Maybe less can be more in this case?
 
-Response: I have noted in section 5.1 that foreground contamination depends on baseline length, orientation, pointing direction and spatial structure of emitting source. Hence, I chose a range of baseline lengths and orientations. I used all unique baseline lengths to demonstrate that all baselines individually will be sensitive to the EoR signal.
+Response: I have noted in section 5.1 that foreground contamination depends on baseline length, orientation, pointing direction and spatial structure of emitting source. Hence, I chose a range of baseline lengths and orientations. I used all unique baseline lengths to demonstrate that all baselines individually will be sensitive to the EoR signal. Figures 2 and 5 are now renumbered as 4 and 7 respectively.
 
 Minor comments:
 
 Abstract:
 1) "with high significance": this sounds vague. Is there a sigma value or a signal-to-noise ratio (SNR) to quote?
 
-Response: Unless thermal noise is included it is difficult to quote a SNR. Here I have assumed data is not thermal noise limited but only limited by foregrounds and systematics studied in this paper. In such a scenario the significance of detection again varies anywhere from 10 to more than 1000. The exact detection significance will depend on the analysis methods and weighting schemes used.
+Response: Unless thermal noise is included it is hard to quote a SNR. Here I have assumed data is not thermal noise limited but only limited by foregrounds and systematics studied in this paper. In such a scenario the significance of detection again varies anywhere from 10 to more than 1000. The exact detection significance will depend on the analysis methods and weighting schemes used.
 
 2) "All baselines...are capable": does this mean each baseline individually can make the detection, or all of them combined? Since this work focuses on beam chromaticity and just assumes sufficient SNR, it is not clear if such statement regarding detection is truly justifiable in the scope of this work.
 
@@ -54,7 +54,7 @@ Response: Removed the word "optimal". The balance between sensitivity and system
 
 3) I think it is never explained in this section that HERA 19 is already built, and full HERA with 320 elements is being proposed?
 
-Response: The last paragraph in section 2 mentions this.
+Response: The last paragraph in section 2 mentions this. A figure (now numbered 1) has been introduced to show the actual HERA-19 layout built on site.
 
 Section 4:
 1) It would be helpful to explain in half a sentence what kind of software HFSS is. Is it a commercial simulation software, or a customized HERA software?
@@ -63,7 +63,7 @@ Response: Added a brief description
 
 2) The authors go into great detail as to what the materials are used in simulation, which leaves the reader wondering: are they the same as what are actually used in the dish? For example, "the backplane is modeled as an aluminum surface", but is it actually an aluminum surface? A nice picture of an actual HERA dish may help here.
 
-Response: TBD
+Response: A picture has been added (now figure 2). The dipoles are modeled using the actual materials used. The dish and backplane are made of meshed surfaces which are computationally hard to model with HFSS. Instead they have been modeled as aluminum surfaces. At these frequencies, the cross-welded mesh electrical properties are well modeled as a good conductor like aluminum. A paragraph has been added in section 4.1 that describes these details.  
 
 3) Can the authors briefly comment on the relative importance of point sources versus the diffuse emission in the simulation? Are the point sources relevant for the 14 m baselines? What about the 60 m ones?
 
@@ -76,21 +76,21 @@ Response: Explicitly refer to equations 1 and 2 as suggested
 
 2) "by convolving a Blackman-Harris window with itself": I might be wrong here, but Fig. 1 looks like a multiplication in frequency and convolution in delay domain? If it is squared in the delay domain, where do the ripples come from in the BH*BH curve in the delay domain since the BH curve is smooth?
 
-Response: It is definitely a multiplication in delay domain as equation 10 indicates. This is what leads to the squaring and increase in dynamic range in delay domain. However, it is not a squaring of the same exact BH delay domain curve (gray) shown in figure 1 (bottom). This is because after convolving in frequency the resultant window must fit in a 100 MHz band end-to-end. An auto-convolution of the BH curve shown in figure 1 (which already already occupies 100 MHz end-to-end) will result in a curve that takes up 200 MHz end-to-end. Hence a new BH curve with appropriate width is chosen such that after auto-convolution, the resultant curve occupies 100 MHz. In other words, the black curve in top panel is not obtained by convolving gray curve with itself but from a slightly different BH curve of different (smaller) width with itself. This is the reason the null-like dips in delay domain are not aligned between the two. I have added a few sentences to describe this subtlety.
+Response: It is definitely a multiplication in delay domain as equation 10 indicates. This is what leads to the squaring and increase in dynamic range in delay domain. However, it is not a squaring of the same exact BH delay domain curve (gray) shown in the bottom of figure 1 (now fig. 3). This is because after convolving in frequency the resultant window must fit in a 100 MHz band end-to-end. An auto-convolution of the BH curve shown in the figure (which already already occupies 100 MHz end-to-end) will result in a curve that takes up 200 MHz end-to-end. Hence a new BH curve with appropriate width is chosen such that after auto-convolution, the resultant curve occupies 100 MHz. In other words, the black curve in top panel is not obtained by convolving gray curve with itself but from a slightly different BH curve of different (smaller) width with itself. This is the reason the null-like dips in delay domain are not aligned between the two. I have added a few sentences to describe this subtlety.
 
 The ripples seen could be because of the aforementioned adjustments in frequency domain. Also being at the level of 10**-8 to 10**-5 they are insignificant compared to the overall dynamic range. In other words, even if the gray curve had ripples at this level, in a log scale plot they will not appear as ripples when superimposed on the tail which is at the level of 10 to 10**4. Thus it will not be surprising that the gray curve will still appear smooth despite these ripples.
 
 3) If the square of the Blackman-Harris window works so much better, why not the third or fourth power?
 
-Response: With higher order powers of the delay domain response, they start getting broader in delay and narrower in frequency. This results in loss of thermal noise senstivity due to loss of effective bandwidth. And viewing from a Fourier domain perspective, due to loss of delay resolution, sensitivity to large scale structure will reduce. In conclusion, it is possible to use higher order powers but depending on the application, this may result in loss of sensitivity especially on large scales. In this paper, we found that squaring was sufficient to achieve the dynamic range required for our purposes. I have added a small note highlighting this trade-off.
+Response: With higher order powers of the delay domain response, they start getting broader in delay and narrower in frequency. This results in loss of thermal noise senstivity due to loss of effective bandwidth. And viewing from a Fourier domain perspective, due to loss of delay resolution, sensitivity to large scale structure will reduce slightly. In conclusion, it is possible to use higher order powers but depending on the application, this may result in loss of sensitivity especially on large scales. In this paper, we found that squaring was sufficient to achieve the dynamic range required for our purposes. I have added a small note highlighting this trade-off.
 
 4) Fig 1: the axis labels for the top plot have non math mode fonts, which are inconsistent with all other plots.
 
-Response: Corrected as suggested
+Response: Corrected as suggested. Now figure 3.
 
 5) Fig 1: 'as a result' is a strange transition since the previous sentence is talking about epsilon.
 
-Response: Removed the phrase "As a result"
+Response: Removed the phrase "As a result" in what is now figure 3.
 
 6) "cause further contamination": it is not clear what 'further' is being compared to. What is the original contamination?
 
@@ -107,7 +107,7 @@ Response: Added a transition sentence at the beginning of the first paragraph in
 
 2) Fig. 6: comment on the dark stripe around RA hour 17?
 
-Response: The last paragraph in section 6 discusses this. I have also added a sentence describing it in the caption of figure 6.
+Response: The last paragraph in section 6 discusses this. I have also added a sentence describing it in the caption of figure (now #8).
 
 Section 7:
 1) "robustly eliminate these systematics further": robustly and further sound strange together.

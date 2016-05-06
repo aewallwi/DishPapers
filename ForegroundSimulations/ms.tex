@@ -123,7 +123,14 @@ HERA is deploying 14~m fixed zenith-pointing parabolic dishes that {\bf aim to} 
 
 320 core elements of HERA will be arranged in a compact hexagonal grid, split into three displaced segments to cover the $uv$-plane with sub-element sampling density. The core will be supplemented by 30 additional outrigger elements to tile the $uv$-plane with instantaneously complete sub-aperture sampling out to $250\lambda$ and complete aperture-scale sampling out to $350\lambda$ (at 150~MHz). The layout is discussed in \citet{dil16}.
 
-In this study, we use the HERA-19 hexagonal array layout, a small subset of the planned layout that {\bf is} currently in use. Without loss of generality, the analysis and results in this paper will apply to the full proposed layout as well.
+In this study, we use the HERA-19 hexagonal array layout, a small subset of the planned layout that {\bf is} currently in use {\bf (see Figure~\ref{fig:HERA-19})}. Without loss of generality, the analysis and results in this paper will apply to the full proposed layout as well.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=\linewidth]{hera19.eps}
+  \caption{{\bf 19-element HERA layout used in this study, a subset of the full proposed layout. It is located in the South African Karoo Radio Astronomy Reserve.}}
+  \label{fig:HERA-19}
+\end{figure}
 
 \section{Delay Spectrum}\label{sec:delay-spectrum}
 
@@ -171,7 +178,18 @@ We simulate wide-field visibilities for 19-element HERA from all-sky antenna pow
 
 \subsection{Antenna Power Pattern}\label{sec:beam-model}
 
-The High Frequency Structural Simulator (HFSS), {\bf a commercial finite element method solver for electromagnetic structures from Ansys,} was used to model the dish and its angular response used in this study. The HFSS model used prime focus optics with a 14~m faceted parabola with a spar f/D ratio of 0.32.  The model has a 1~m central hole in the aluminum surface which is filled with a dielectric material similar to dry soil. The feed used a full PAPER dipole inside of a cylindrical backplane, the backplane is modeled as an aluminum surface. For the metal parts of the dipole, the discs were modeled as aluminum at the actual size, and the arms and terminals were modeled as copper. Dielectric stand-offs and supporting members were included. For the calculations, one pair of arms was excited using a modal port. These models cover a frequency range of 90--210~MHz in intervals of 1~MHz {\bf and include multiple reflections between the dish and the feed but not those between dishes} \citep{deb16}. 
+The High Frequency Structural Simulator (HFSS), {\bf a commercial finite element method solver for electromagnetic structures from Ansys,} was used to model the dish and its angular response used in this study. The HFSS model used prime focus optics with a 14~m faceted parabola with a spar $f/D$ ratio of 0.32.  The model has a 1~m central hole in the surface which is filled with a dielectric material similar to dry soil. The feed used a full PAPER dipole inside a cylindrical backplane. Dielectric stand-offs and supporting members were included. For the calculations, one pair of arms was excited using a modal port. 
+
+{\bf The dipoles were modeled with the actual materials used -- aluminum for the discs and copper for the arms and terminals. The dish and the backplane are actually meshed surfaces. For computational feasibility, they were modeled as aluminum surfaces in HFSS. At these frequencies, the cross-welded mesh electrical properties are well modeled as a good conductor like aluminum.} 
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=\linewidth]{hfssHERA.eps}
+  \caption{{\bf Schematic representation of the HERA dish-feed assembly used in the HFSS model. The dish surface is modeled as a 14~m faceted parabola. The feed uses a PAPER dipole surrounded by a cylindrical backplane. A $f/D$ ratio of 0.32 is used. A length scale of 200~inches ($\approx 5$~m) is shown at the bottom for reference.}}
+  \label{fig:HFSS-HERA}
+\end{figure}
+
+These models cover a frequency range of 90--210~MHz in intervals of 1~MHz {\bf and include multiple reflections between the dish and the feed but not those between dishes} \citep{deb16}. 
 
 For reference, we use two other models for the antenna power pattern. The first is a nominal {\it Airy} pattern corresponding to a uniformly illuminated circular aperture of 14~m diameter and the second is an achromatic model where the response of the design at 150~MHz of the HFSS model described above was fixed as the hypothetical response at all frequencies covering the entire band. This frequency independent model will be used to isolate the effects of spectral structures in the antenna power pattern (or beam chromaticity) on foreground delay power spectra. Hereafter, we refer to these three beams as `simulated', `{\it Airy}' and `achromatic' models.
 

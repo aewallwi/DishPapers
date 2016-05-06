@@ -1,3 +1,14 @@
+From 83d99a7 (fgsim):
+====================
+
+(*) Add hera19.eps and hfssHERA.eps to git repo
+
+In ms.tex,
+
+(*) Address referee comment on HFSS modeling details
+(*) Include HERA-19 layout and HFSS schematic figures with
+corresponding texts
+
 From a2e7bab (fgsim):
 ====================
 
