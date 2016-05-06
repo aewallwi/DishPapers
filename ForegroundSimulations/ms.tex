@@ -163,7 +163,7 @@ It was recently discovered that in wide-field measurements diffuse foreground em
 
 It was also demonstrated in these studies that design of antenna power pattern, specifically its amplitude near the horizon, is an important tool in mitigating foreground contamination caused by these wide-field effects. A dish characterized by a nominal {\it Airy} pattern was found to mitigate this contamination by over four and two orders of magnitude relative to a dipole and a phased array of dipoles respectively. HERA has significantly based its antenna design principles on these findings in choosing its antenna geometry.
 
-In this paper, we investigate the spectral properties of the proposed dish design from a foreground contamination standpoint and the constraints they place on attenuation required to suppress reflections in the instrument. 
+In this paper, we investigate the spectral properties of the proposed HERA {\bf element (dish and feed)} design from a foreground contamination standpoint and the constraints they place on attenuation required to suppress reflections in the instrument. 
 
 \section{Simulations}\label{sec:sim}
 
@@ -275,9 +275,9 @@ Similarly, for reflections arising out of structures and interfaces across diffe
 \label{fig:fg-reflections}
 \end{figure*}
 
-Increase in beam chromaticity makes the lower limits on attenuating reflections more severe relative to that from an achromatic beam. For instance, for $k_\textrm{p}=0.1\,h$~Mpc$^{-1}$ there is no delay at which the required attenuation is unconstrained to the left of the elbow-shaped turnover, including at $\tau=0$. This means that when additional chromaticity from antenna-to-antenna reflections is taken into account, the requirement that all $k_\parallel$-modes with $k_\parallel > 0.1\,h$~Mpc$^{-1}$ be accessible for EoR signal detection will not be satisfied with the currently simulated chromatic beam for HERA. For $k_\textrm{p}=0.15\,h$~Mpc$^{-1}$, there is a narrow range of allowed attenuation which is unconstrained for $\tau \lesssim 50$~ns. However, for $k_\parallel > 0.2\,h$~Mpc$^{-1}$, the foreground power spectrum using simulated chromatic dish beam will have enough room to be effective for EoR signal detection despite additional chromaticity arising from antenna-to-antenna reflections. 
+Increase in beam chromaticity makes the lower limits on attenuating reflections more severe relative to that from an achromatic beam. For instance, for $k_\textrm{p}=0.1\,h$~Mpc$^{-1}$ there is no delay at which the required attenuation is unconstrained to the left of the elbow-shaped turnover, including at $\tau=0$. This means that when additional chromaticity from antenna-to-antenna reflections is taken into account, the requirement that all $k_\parallel$-modes with $k_\parallel > 0.1\,h$~Mpc$^{-1}$ be accessible for EoR signal detection will not be satisfied with the currently simulated chromatic beam for HERA. For $k_\textrm{p}=0.15\,h$~Mpc$^{-1}$, there is a narrow range of allowed attenuation which is unconstrained for $\tau \lesssim 50$~ns. However, for $k_\parallel > 0.2\,h$~Mpc$^{-1}$, the foreground power spectrum using simulated chromatic beam will have enough room to be effective for EoR signal detection despite additional chromaticity arising from antenna-to-antenna reflections. 
 
-We note here that designing a dish whose antenna beam closely resembles a nominal {\it Airy} pattern will have a significantly higher tolerance for allowing antenna-to-antenna reflections and yet remain very effective for EoR signal detection. The HERA collaboration constantly pursues improvement of its dish design to minimize limitations from such chromatic systematics.
+We note here that designing {\bf an antenna element whose beam} closely resembles a nominal {\it Airy} pattern will have a significantly higher tolerance for allowing antenna-to-antenna reflections and yet remain very effective for EoR signal detection. The HERA collaboration constantly pursues improvement of its {\bf antenna element} design to minimize limitations from such chromatic systematics.
 
 Similar design limits on reflections on various antenna spacings were also studied. With increase in baseline length, the amplitude of foreground power decreases but the {\it foreground window} also widens. This means the amplitude of reflections required to be suppressed is lower but there is lesser room along delay axis before the reflected foreground modes shift to and contaminate the $k_\parallel$-modes of interest. As a result, the elbow-shaped design constraints shift upward and leftward. For instance, in the presence of dish-feed reflections, it will still be feasible to probe only $k_\parallel > 0.15\,h$~Mpc$^{-1}$ with the 58.4~m baselines.
 
@@ -313,7 +313,7 @@ We define baseline-dependent $k_\parallel$-modes of interest for {\it foreground
 \begin{align}
   k_\parallel^\textrm{FA}(\boldsymbol{b}) &= \frac{2\pi\,f_{21}H_0\,E(z)}{c(1+z)^2}\,\left(\frac{|\boldsymbol{b}|}{c} + \frac{\zeta}{B_\textrm{eff}}\right), \label{eqn:kprll-limit}
 \end{align}
-where, the first term inside the parenthesis denotes the horizon limit, the second relates to the resolution due to subband bandwidth, $B_\textrm{eff}$, and $\zeta$ denotes a buffer to ensure the $k_\parallel^\textrm{FA}(|\boldsymbol{b}|)$ threshold ``safely'' avoids the main lobe of foreground power. In this study, we use $\zeta=3.5$.
+where, the first term inside the parenthesis denotes the horizon limit, the second relates to the resolution due to subband bandwidth, $B_\textrm{eff}$, and $\zeta$ denotes a buffer to ensure the $k_\parallel^\textrm{FA}(|\boldsymbol{b}|)$ threshold ``safely'' avoids the main lobe of foreground power \citep{thy13}. In this study, we use $\zeta=3.5$.
 
 We estimate the worst case EoR-foreground dynamic range in the $\boldsymbol{b}$--$\alpha$ parameter space as:
 \begin{align}
@@ -337,9 +337,9 @@ We consider the foreground power spectrum obtained with the simulated chromatic 
   \label{fig:eor-fg-ratios}
 \end{figure*}
 
-For the baselines considered, $\rho(\boldsymbol{b},f_0,\alpha)$ increases with baseline length. We attribute this to the much steeper dependence of foreground emission (predominantly diffuse emission) on baseline length than that of EoR H{\sc i} power. This is also confirmed from Fig.~\ref{fig:subbands} where the peak and sidelobe levels of foreground power obtained with the simulated chromatic antenna beam on the 14.6~m baseline, progressively drops by two orders of magnitude on the 58.4~m baseline. Hence, from a foreground contamination standpoint, the shortest baselines are less sensitive than longer ones in HERA-19 layout.
+For the baselines considered, $\rho(\boldsymbol{b},f_0,\alpha)$ increases with baseline length. We attribute this to the much steeper dependence of foreground emission on baseline length than that of EoR H{\sc i} power. {\bf This trend demonstrates that it is predominantly due to diffuse emission}. This is also confirmed from Fig.~\ref{fig:subbands} where the peak and sidelobe levels of foreground power obtained with the simulated chromatic antenna beam on the 14.6~m baseline, progressively drops by two orders of magnitude on the 58.4~m baseline. Hence, from a foreground contamination standpoint, the shortest baselines are less sensitive than longer ones in HERA-19 layout. % {\bf With the full proposed layout emission from point sources may become significant on longer baselines}. 
 
-However, in all four cases considered here, except when the Galactic {\bf plane} appears overhead {\bf roughly between 16 and 19 hours of RA}, the worst case signal-foreground ratio lies above unity in most of this parameter space. It demonstrates that HERA should detect the EoR signal with a very high signal-foreground ratio on all baselines over a majority of the pointings. 
+In all four cases considered here, except when the Galactic {\bf plane} appears overhead {\bf roughly between 16 and 19 hours of RA}, the worst case signal-foreground ratio lies above unity in most of this parameter space. It demonstrates that HERA should detect the EoR signal with a very high signal-foreground ratio on all baselines over a majority of the pointings. 
 
 \section{Summary}\label{sec:summary}
 

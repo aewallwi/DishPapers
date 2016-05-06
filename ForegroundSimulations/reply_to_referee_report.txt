@@ -8,7 +8,7 @@ Major comments:
 
 1) It is not clear if the design of HERA dish is good enough or not. In sections 2 and 6, the authors convey the message that HERA dish design is good enough (even "optimal"), whereas in section 5 it is clear that more dish measurements and possible design tweaks are needed. It is important to present a more coherent picture on this front.
 
-Response: The intention of this paper and companion papers is to illustrate that HERA is basing its design after comprehensive analysis of its effects on detectability of the EoR signal. Though many parameters of the HERA design are close to being final, efforts are ongoing to fine-tune the instrument based on measurements. I have rephrased statements to emphasize this picture. 
+Response: The intention of this paper and companion papers is to illustrate that HERA is basing its design after comprehensive analysis of its effects on detectability of the EoR signal. Though many parameters of the HERA design are close to being final, efforts are ongoing to fine-tune the instrument based on measurements. I have rephrased statements to emphasize this picture. It must also be noted that the dish design is close to final while efforts are ongoing to obtain an optimal feed design.
 
 2) Section 4.1 needs to be more explicit regarding the assumptions and limitations in the HFSS simulation, especially those related to effects investigated in this work. For example, does the HFSS consider multiple reflections between the feed and the dish? How about between dishes?
 
@@ -27,11 +27,11 @@ Minor comments:
 Abstract:
 1) "with high significance": this sounds vague. Is there a sigma value or a signal-to-noise ratio (SNR) to quote?
 
-Response: Unless thermal noise is included it is difficult to quote a SNR. Here I have assumed data is not thermal noise limited but only limited by foregrounds and systematics studied in this paper. In such a scenario the significance of detection again varies anywhere from 10 to more than 1000.
+Response: Unless thermal noise is included it is difficult to quote a SNR. Here I have assumed data is not thermal noise limited but only limited by foregrounds and systematics studied in this paper. In such a scenario the significance of detection again varies anywhere from 10 to more than 1000. The exact detection significance will depend on the analysis methods and weighting schemes used.
 
 2) "All baselines...are capable": does this mean each baseline individually can make the detection, or all of them combined? Since this work focuses on beam chromaticity and just assumes sufficient SNR, it is not clear if such statement regarding detection is truly justifiable in the scope of this work.
 
-Response: It is meant to imply all baselines individually can make the detection as long as they are not thermal-noise limited but only limited by foreground and instrumental systematics studied here. Hence the sentence is now prefixed with "Under these conditions" which refers to data that is limited by foregrounds and such systematics discussed in this paper. 
+Response: It is meant to imply all baselines individually can make the detection as long as they are not thermal-noise limited but only limited by foreground and instrumental systematics studied here. Hence the sentence is now prefixed/qualified with "Under these conditions" which refers to data that is limited by foregrounds and such systematics discussed in this paper. 
 
 Section 1:
 1) "there are inherent differences in spatial isotropy and spectral smoothness between the EoR signal and the foregrounds": explicitly describe the difference in one sentence?
@@ -50,11 +50,11 @@ Response: Replaced SKA site with "South African Karoo Radio Astronomy Reserve".
 
 2) "strike an optimal balance between sensitivity and systematics": this is directly related to my major comments #1. First of all, even if that were the case, it is not quite appropriate to state it as a matter of fact in the introduction, since it is what this work is setting out to prove. Secondly, it seems clear in this work that the dish design has not truly achieved the optimum. Sections 5.2.1 and 5.2.2 explicitly state that 'measurements are under way" and "the HERA collaboration constantly pursues improvement of its dish design".
 
-Response: Removed the word "optimal". The balance between sensitivity and systematics was initially studied in DeBoer and Parsons (2015) - a HERA memo - to which a citation has now been added. This study was specific to choice of dish size and preliminary estimates of specifications for dish based on sensitivity and systematics. Our current work along with companion papers are a much more comprehensive effort to further reinforce findings of that preliminary study. It is in this context that sentence was used. It is true that the dish design is not finalized yet and is still being fine-tuned for optimum performance. Hence, removal of the word "optimum" is consistent with other statements about measurements and fine-tuning of the dish design.
+Response: Removed the word "optimal". The balance between sensitivity and systematics was initially studied in DeBoer and Parsons (2015) - a HERA memo - to which a citation has now been added. This study was specific to choice of dish size and preliminary estimates of specifications for dish based on sensitivity and systematics. Our current work along with companion papers are a much more comprehensive effort to further reinforce findings of that preliminary study. It is in this context that sentence was used. Unlike the dish design, it is true that the feed design is not finalized yet and is still being fine-tuned for optimum performance. Hence, removal of the word "optimum" is consistent with other statements about measurements and fine-tuning of the HERA element (dish and feed together) design.
 
 3) I think it is never explained in this section that HERA 19 is already built, and full HERA with 320 elements is being proposed?
 
-Response: The last paragraph in section 2 does mention this.
+Response: The last paragraph in section 2 mentions this.
 
 Section 4:
 1) It would be helpful to explain in half a sentence what kind of software HFSS is. Is it a commercial simulation software, or a customized HERA software?
@@ -67,7 +67,7 @@ Response: TBD
 
 3) Can the authors briefly comment on the relative importance of point sources versus the diffuse emission in the simulation? Are the point sources relevant for the 14 m baselines? What about the 60 m ones?
 
-Response: TBD
+Response: For the HERA-19 layout the diffuse emission has a dominant effect. This can be seen from how the foreground emission peak drops with increasing baseline length and how the dynamic range in figure 6 increases with baseline length. I have added a sentence in the penultimate paragraph of section 6.2 to highlight this.
 
 Section 5:
 1) "The equation for delay spectrum": explicit \eqref (that is, identify the equation)

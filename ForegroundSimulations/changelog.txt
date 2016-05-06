@@ -1,3 +1,17 @@
+From 31e2ef7 (fgsim):
+====================
+
+In ms.tex,
+
+(*) Change "dish design" to "element design"
+(*) Add some sentences to indicate relative significance of diffuse
+and point source emission
+
+In reply_to_referee_report.txt,
+
+(*) Address referee comment on relative significance of diffuse and
+point source emission
+
 From 9e3f5a4 (master):
 =====================
 
