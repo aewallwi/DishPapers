@@ -1,3 +1,16 @@
+From 1ab992f (fgsim):
+====================
+
+(*) Rename and renumber figures
+
+In reply_to_referee_report.txt,
+
+(*) Fine-tune response to referee report
+
+In ms.tex,
+
+(*) Minor changes throughout
+
 From 83d99a7 (fgsim):
 ====================
 

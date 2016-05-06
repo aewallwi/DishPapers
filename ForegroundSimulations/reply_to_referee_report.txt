@@ -1,3 +1,11 @@
+We thank the reviewer for a thorough review of our paper whose comments have helped improve the quality of the manuscript tremendously. We are delighted to hear from the reviewer that this paper is interesting and merits timely publication. My response (on behalf) of the authors is provided below.
+
+Some overall changes in the manuscript not covered by the specific queries of the reviewer are:
+1) changes are highlighted in bold face
+2) two new figures have been added illustrating the HERA-19 layout and the HFSS model schematic for HERA dish-feed assembly.
+
+Please find below my responses to all the specific concerns raised by the reviewer.
+
 Referee Report 
 
 Reviewer's Comments:
@@ -63,7 +71,7 @@ Response: Added a brief description
 
 2) The authors go into great detail as to what the materials are used in simulation, which leaves the reader wondering: are they the same as what are actually used in the dish? For example, "the backplane is modeled as an aluminum surface", but is it actually an aluminum surface? A nice picture of an actual HERA dish may help here.
 
-Response: A picture has been added (now figure 2). The dipoles are modeled using the actual materials used. The dish and backplane are made of meshed surfaces which are computationally hard to model with HFSS. Instead they have been modeled as aluminum surfaces. At these frequencies, the cross-welded mesh electrical properties are well modeled as a good conductor like aluminum. A paragraph has been added in section 4.1 that describes these details.  
+Response: A picture has been added (now figure 2) that shows a schematic view of the HFSS model. The newly added figure 1 shows the actual dishes and the layout. The dipoles are modeled using the actual materials used. The dish and backplane are made of meshed surfaces which are computationally hard to model with HFSS. Instead they have been modeled as aluminum surfaces. At these frequencies, the cross-welded mesh electrical properties are well modeled as a good conductor like aluminum. A paragraph has been added in section 4.1 that describes these details.  
 
 3) Can the authors briefly comment on the relative importance of point sources versus the diffuse emission in the simulation? Are the point sources relevant for the 14 m baselines? What about the 60 m ones?
 
@@ -78,7 +86,7 @@ Response: Explicitly refer to equations 1 and 2 as suggested
 
 Response: It is definitely a multiplication in delay domain as equation 10 indicates. This is what leads to the squaring and increase in dynamic range in delay domain. However, it is not a squaring of the same exact BH delay domain curve (gray) shown in the bottom of figure 1 (now fig. 3). This is because after convolving in frequency the resultant window must fit in a 100 MHz band end-to-end. An auto-convolution of the BH curve shown in the figure (which already already occupies 100 MHz end-to-end) will result in a curve that takes up 200 MHz end-to-end. Hence a new BH curve with appropriate width is chosen such that after auto-convolution, the resultant curve occupies 100 MHz. In other words, the black curve in top panel is not obtained by convolving gray curve with itself but from a slightly different BH curve of different (smaller) width with itself. This is the reason the null-like dips in delay domain are not aligned between the two. I have added a few sentences to describe this subtlety.
 
-The ripples seen could be because of the aforementioned adjustments in frequency domain. Also being at the level of 10**-8 to 10**-5 they are insignificant compared to the overall dynamic range. In other words, even if the gray curve had ripples at this level, in a log scale plot they will not appear as ripples when superimposed on the tail which is at the level of 10 to 10**4. Thus it will not be surprising that the gray curve will still appear smooth despite these ripples.
+The ripples seen could be due to the aforementioned adjustments in frequency domain. Also being at the level of 10**-8 to 10**-5 they are insignificant compared to the overall dynamic range. In other words, even if the gray curve had ripples at this level, in a log scale plot they will not appear as ripples when superimposed on the tail which is at the level of 10 to 10**4. Thus it will not be surprising that the gray curve will still appear smooth despite these ripples.
 
 3) If the square of the Blackman-Harris window works so much better, why not the third or fourth power?
 

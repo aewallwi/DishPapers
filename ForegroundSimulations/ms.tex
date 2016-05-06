@@ -127,8 +127,8 @@ In this study, we use the HERA-19 hexagonal array layout, a small subset of the 
 
 \begin{figure}[htb]
   \centering
-  \includegraphics[width=\linewidth]{hera19.eps}
-  \caption{{\bf 19-element HERA layout used in this study, a subset of the full proposed layout. It is located in the South African Karoo Radio Astronomy Reserve.}}
+  \includegraphics[width=\linewidth]{f1.eps}
+  \caption{{\bf 19-element HERA layout used in this study, a subset of the full proposed 350-element layout. It is located in the South African Karoo Radio Astronomy Reserve.}}
   \label{fig:HERA-19}
 \end{figure}
 
@@ -178,18 +178,18 @@ We simulate wide-field visibilities for 19-element HERA from all-sky antenna pow
 
 \subsection{Antenna Power Pattern}\label{sec:beam-model}
 
-The High Frequency Structural Simulator (HFSS), {\bf a commercial finite element method solver for electromagnetic structures from Ansys,} was used to model the dish and its angular response used in this study. The HFSS model used prime focus optics with a 14~m faceted parabola with a spar $f/D$ ratio of 0.32.  The model has a 1~m central hole in the surface which is filled with a dielectric material similar to dry soil. The feed used a full PAPER dipole inside a cylindrical backplane. Dielectric stand-offs and supporting members were included. For the calculations, one pair of arms was excited using a modal port. 
-
-{\bf The dipoles were modeled with the actual materials used -- aluminum for the discs and copper for the arms and terminals. The dish and the backplane are actually meshed surfaces. For computational feasibility, they were modeled as aluminum surfaces in HFSS. At these frequencies, the cross-welded mesh electrical properties are well modeled as a good conductor like aluminum.} 
+The High Frequency Structural Simulator (HFSS), {\bf a commercial finite element method solver for electromagnetic structures from Ansys,} was used to model the dish and its angular response used in this study. The HFSS model used prime focus optics with a 14~m faceted parabola with a spar $f/D$ ratio of 0.32.  The model has a 1~m central hole in the surface which is filled with a dielectric material similar to dry soil. The feed used a full PAPER dipole inside a cylindrical backplane. Dielectric stand-offs and supporting members were included. For the calculations, one pair of arms was excited using a modal port. {\bf Fig.~\ref{fig:HFSS-model} shows a schematic view of the dish-feed assembly modeled using HFSS.}
 
 \begin{figure}[htb]
   \centering
-  \includegraphics[width=\linewidth]{hfssHERA.eps}
-  \caption{{\bf Schematic representation of the HERA dish-feed assembly used in the HFSS model. The dish surface is modeled as a 14~m faceted parabola. The feed uses a PAPER dipole surrounded by a cylindrical backplane. A $f/D$ ratio of 0.32 is used. A length scale of 200~inches ($\approx 5$~m) is shown at the bottom for reference.}}
-  \label{fig:HFSS-HERA}
+  \includegraphics[width=\linewidth]{f2.eps}
+  \caption{{\bf Schematic view of the HERA dish-feed assembly used in the HFSS model. The dish surface is modeled as a 14~m faceted parabola. The feed uses a PAPER dipole surrounded by a cylindrical backplane. A $f/D$ ratio of 0.32 is used. A length scale of 200~inches ($\approx 5$~m) is shown at the bottom for reference.}}
+  \label{fig:HFSS-model}
 \end{figure}
 
-These models cover a frequency range of 90--210~MHz in intervals of 1~MHz {\bf and include multiple reflections between the dish and the feed but not those between dishes} \citep{deb16}. 
+{\bf The dipoles were modeled with the actual materials used -- aluminum for the discs and copper for the arms and terminals. The dish and the backplane are actually meshed surfaces. For computational feasibility, they were modeled as aluminum surfaces in HFSS. At these frequencies, the cross-welded mesh electrical properties are well modeled as a good conductor like aluminum.} 
+
+These models cover a frequency range of 90--210~MHz in intervals of 1~MHz. {\bf They include multiple reflections between the dish and the feed but not those between dishes} \citep{deb16}. 
 
 For reference, we use two other models for the antenna power pattern. The first is a nominal {\it Airy} pattern corresponding to a uniformly illuminated circular aperture of 14~m diameter and the second is an achromatic model where the response of the design at 150~MHz of the HFSS model described above was fixed as the hypothetical response at all frequencies covering the entire band. This frequency independent model will be used to isolate the effects of spectral structures in the antenna power pattern (or beam chromaticity) on foreground delay power spectra. Hereafter, we refer to these three beams as `simulated', `{\it Airy}' and `achromatic' models.
 
@@ -226,21 +226,23 @@ Fig.~\ref{fig:window-functions} shows the {\it Blackman-Harris} window (gray) an
 \begin{figure}[htb]
   \centering
   % \includegraphics[width=\linewidth]{window_function_modifications.eps}
-  \includegraphics[width=\linewidth]{f1.eps}
+  \includegraphics[width=\linewidth]{f3.eps}
   \caption{Choices for spectral weighting functions, $W(f)$ ({\it top}) and their delay power spectrum responses, $|\widetilde{W}(\tau)|^2$ ({\it bottom}). The gray curves correspond to a {\it Blackman-Harris} window while those in black correspond to a {\it Blackman-Harris} window convolved with itself. The overall sensitivity of the former is $\epsilon \approx 50\%$ of a rectangular window while that of the latter is $\epsilon \approx 42\%$. The main lobe of the convolved window function response is slightly wider than that of a {\it Blackman-Harris} window. However, the sidelobes from the convolved window function are suppressed by more than ten orders of magnitude relative to that of a nominal {\it Blackman-Harris} window.}
   \label{fig:window-functions}
 \end{figure}
 
 This is an enormous gain in sidelobe characteristics for a small loss of sensitivity relative to a {\it Blackman-Harris} weighting. This will ensure that the contamination resulting from spillover of foregrounds along the line-of-sight $k$-modes are limited only by intrinsic spectral structures in the foregrounds or beam patterns and not by sidelobes from spectral weighting. In this paper, we apply this modified spectral weighting function defined in equation~\ref{eqn:bhw2} whenever foregrounds are represented in the Fourier delay domain. 
 
-{\bf It must be noted that in order to obtain this modified window function over a band of 100~MHz after convolution, the original {\it Blackman-Harris} window used in the convolution must occupy a band narrower than 100~MHz. This is why the modified window has a wider response in delay domain. This loss of delay-domain resolution, or equivalently, narrower effective bandwidth results in a slight reduction of sensitivity towards noise as well as small $k$-modes. While higher order powers could be used instead of the squared response we employ, there is a trade-off between the dynamic range and sensitivity. A squared response was found to be sufficient for our purposes.}
+{\bf It must be noted that in order to obtain this modified window function over a band of 100~MHz after convolution, the original {\it Blackman-Harris} window used in the convolution must occupy a band narrower than 100~MHz. This is why the modified window has a wider response in delay domain. This loss of delay-domain resolution, or equivalently, narrower effective bandwidth results in a slight reduction of noise sensitivity and delay resolution. While higher order powers could be used instead of the squared response we employ, there is a trade-off between the dynamic range, delay resolution, and sensitivity. A squared response was found to be sufficient for our purposes.}
 
-In HERA-19 array layout, there are 30 unique baseline vectors and 8 unique baseline lengths. {\bf \citet{thy15a} showed that foreground contamination depends not only on the baseline length but also on its orientation, pointing direction on the sky, and whether the source of emission is diffuse or compact}. Fig.~\ref{fig:asm-dps-beam-chromaticity-baselines} shows the delay power spectra of foregrounds on the 8 unique baseline lengths obtained with the aforementioned models for power pattern at {\bf certain chosen} pointings on the sky. {\bf It will be shown later in \S\ref{sec:baseline-RA} that choice of pointing is immaterial for HERA as long as pointings with the Galactic plane overhead are avoided}. In all these panels, the full-band foreground delay power spectra obtained with achromatic, {\it Airy} and chromatic simulated beam patterns are shown in black, red, and blue respectively. The brightening of foreground power near the horizon limits (vertical dotted lines) due to the {\it pitchfork} effect \citep{thy15a,thy15b} is prominently seen in all cases. A clear broadening of spillover-wings outside the horizon limits is seen with increasing chromaticity as the beam is changed from the achromatic to the {\it Airy} to the chromatic simulated model. For instance, the spillover from foreground delay power spectrum obtained with chromatic beam pattern is restricted to $|k_\parallel| \lesssim 0.2\,h$~Mpc$^{-1}$, with the {\it Airy} pattern it is restricted to $|k_\parallel| \lesssim 0.15\,h$~Mpc$^{-1}$, while with the achromatic beam it is restricted to $|k_\parallel| \lesssim 0.12\,h$~Mpc$^{-1}$ even on longest baseline lengths. It is also noted that despite the extreme dynamic range of the spectral weighting function employed, the tail of the foreground spillover at $|k_\parallel| \gtrsim 0.2\,h$~Mpc$^{-1}$ with an {\it Airy} beam pattern is many orders of magnitude higher than that using an achromatic beam while that from the simulated chromatic beam is even higher than from an {\it Airy} pattern by a few orders of magnitude. Thus, the foreground spillover shown is truly limited by intrinsic spectral features in the antenna beam patterns. 
+In HERA-19 array layout, there are 30 unique baseline vectors and 8 unique baseline lengths. {\bf \citet{thy15a} showed that foreground contamination depends not only on the baseline length but also on its orientation, pointing direction on the sky, and whether the source of emission is diffuse or compact}. Fig.~\ref{fig:asm-dps-beam-chromaticity-baselines} shows the delay power spectra of foregrounds on the 8 unique baseline lengths obtained with the aforementioned models for power pattern at {\bf certain chosen} pointings on the sky. {\bf It will be shown later in \S\ref{sec:baseline-RA} that choice of pointing is immaterial for HERA as long as pointings with the Galactic plane overhead are avoided}. 
+
+In all these panels, the full-band foreground delay power spectra obtained with achromatic, {\it Airy} and chromatic simulated beam patterns are shown in black, red, and blue respectively. The brightening of foreground power near the horizon limits (vertical dotted lines) due to the {\it pitchfork} effect \citep{thy15a,thy15b} is prominently seen in all cases. A clear broadening of spillover-wings outside the horizon limits is seen with increasing chromaticity as the beam is changed from the achromatic to the {\it Airy} to the chromatic simulated model. For instance, the spillover from foreground delay power spectrum obtained with chromatic beam pattern is restricted to $|k_\parallel| \lesssim 0.2\,h$~Mpc$^{-1}$, with the {\it Airy} pattern it is restricted to $|k_\parallel| \lesssim 0.15\,h$~Mpc$^{-1}$, while with the achromatic beam it is restricted to $|k_\parallel| \lesssim 0.12\,h$~Mpc$^{-1}$ even on longest baseline lengths. It is also noted that despite the extreme dynamic range of the spectral weighting function employed, the tail of the foreground spillover at $|k_\parallel| \gtrsim 0.2\,h$~Mpc$^{-1}$ with an {\it Airy} beam pattern is many orders of magnitude higher than that using an achromatic beam while that from the simulated chromatic beam is even higher than from an {\it Airy} pattern by a few orders of magnitude. Thus, the foreground spillover shown is truly limited by intrinsic spectral features in the antenna beam patterns. 
 
 \begin{figure*}[htb]
   \centering
   % \includegraphics[width=\linewidth]{asm_foreground_eor_beam_chromaticity_fullband_bhw2.0.eps}
-  \includegraphics[width=\linewidth]{f2.eps}
+  \includegraphics[width=\linewidth]{f4.eps}
   \caption{Foreground delay power spectra in units of K$^2 (h^{-1}$~Mpc$)^3$ on unique baseline lengths of HERA-19 at {\bf certain chosen} sky pointings. The baseline length and orientation (anti-clockwise from East) are annotated at the top right corner of each panel. Black, red and blue curves correspond to delay power spectra obtained with achromatic, {\it Airy} and chromatic simulated antenna beams respectively. The achromatic beam has no spectral structure, the simulated chromatic beam has maximum chromaticity while a nominal {\it Airy} pattern has intermediate level of chromaticity. The {\it pitchfork} effect is clearly visible as peaks around the horizon limits. With increase in chromaticity of the antenna beam the foreground spillover beyond the {\it foreground wedge} becomes progressively worse - the extent of foreground-spillover wings beyond the horizon limits (vertical dotted lines) and the amplitude of spillover beyond $k_\parallel\gtrsim 0.2\,h$~Mpc$^{-1}$ is most severe for the chromatic simulated beam, intermediate for an {\it Airy} pattern and negligible for an achromatic beam.}
   \label{fig:asm-dps-beam-chromaticity-baselines}
 \end{figure*}
@@ -274,7 +276,7 @@ For reflections caused by dish-feed assembly, we use $P_\textrm{FG}(k_\parallel)
 \begin{figure}[htb]
   \centering
   % \includegraphics[width=\linewidth]{spec_on_achrmbeam_foreground_reflected_power_21cmfast_14.6m_150.0_MHz_subband_v2.eps}
-  \includegraphics[width=\linewidth]{f3.eps}
+  \includegraphics[width=\linewidth]{f5.eps}
   \caption{Minimum required attenuation (in dB) for internal dish-feed reflections required to keep the reflected foreground power below EoR H{\sc i} signal power for all $k_\parallel$-modes greater than $0.1\,h$~Mpc$^{-1}$ (solid), $0.15\,h$~Mpc$^{-1}$ (dashed) and $0.2\,h$~Mpc$^{-1}$ (dotted). This is obtained on 14.6~m antenna spacing for EoR model 1 at 150~MHz ($z\approx 8.47$) and foreground power obtained with an achromatic antenna beam model. For EoR to be detectable in respective $k_\parallel$-modes despite these systematics, the attenuation of reflections must exceed these limits (outside the shaded regions).}
   \label{fig:fg-reflections-achrmbeam}
 \end{figure}
@@ -288,7 +290,7 @@ Similarly, for reflections arising out of structures and interfaces across diffe
 \begin{figure*}[htb]
   \centering
   % \includegraphics[width=\linewidth]{spec_on_foreground_reflected_power_21cmfast_14.6m_150.0_MHz_subband_v2.eps}
-  \includegraphics[width=\linewidth]{f4.eps}
+  \includegraphics[width=\linewidth]{f6.eps}
   \caption{Minimum required attenuation (in dB) for antenna-to-antenna reflections to keep reflected foreground power below EoR H{\sc i} signal power for all $k_\parallel$-modes greater than $0.1\,h$~Mpc$^{-1}$ (left), $0.15\,h$~Mpc$^{-1}$ (middle) and $0.2\,h$~Mpc$^{-1}$ (right). This is obtained on 14.6~m antenna spacing for EoR model 1 at 150~MHz ($z\approx 8.47$) and foreground power obtained with an {\it Airy} (dashed) and simulated chromatic (solid) antenna beam models. Regions excluding shaded regions indicate EoR will be detectable in respective $k_\parallel$-modes despite these reflections. Increase in beam chromaticity makes the requirement on attenuation more severe. For instance, $k_\parallel > 0.1\,h$~Mpc$^{-1}$ modes will be inaccessible with the simulated chromatic beam if these reflections are taken into account. However, for the same beam the instrument will have much higher tolerance despite these reflections if the modes of interest are $k_\parallel > 0.2\,h$~Mpc$^{-1}$. Due to lower chromaticity, an {\it Airy} beam offers more tolerance to reflections than the simulated chromatic beam.}
 \label{fig:fg-reflections}
 \end{figure*}
@@ -297,11 +299,11 @@ Increase in beam chromaticity makes the lower limits on attenuating reflections 
 
 We note here that designing {\bf an antenna element whose beam} closely resembles a nominal {\it Airy} pattern will have a significantly higher tolerance for allowing antenna-to-antenna reflections and yet remain very effective for EoR signal detection. The HERA collaboration constantly pursues improvement of its {\bf antenna element} design to minimize limitations from such chromatic systematics.
 
-Similar design limits on reflections on various antenna spacings were also studied. With increase in baseline length, the amplitude of foreground power decreases but the {\it foreground window} also widens. This means the amplitude of reflections required to be suppressed is lower but there is lesser room along delay axis before the reflected foreground modes shift to and contaminate the $k_\parallel$-modes of interest. As a result, the elbow-shaped design constraints shift upward and leftward. For instance, in the presence of dish-feed reflections, it will still be feasible to probe only $k_\parallel > 0.15\,h$~Mpc$^{-1}$ with the 58.4~m baselines.
+Similar design limits on reflections on various antenna spacings were also studied. With increase in baseline length, the amplitude of foreground power decreases but the {\it foreground window} also widens. This means the amplitude of reflections required to be suppressed is lower but there is lesser room along delay axis before the reflected foreground modes shift to and contaminate the $k_\parallel$-modes of interest. As a result, the elbow-shaped design constraints shift upward and leftward. For instance, in the presence of dish-feed reflections, it will be feasible to probe only $k_\parallel > 0.15\,h$~Mpc$^{-1}$ with the 58.4~m baselines.
 
 \section{EoR-Foreground Dynamic Range}\label{sec:eor-sensitivity}
 
-{\bf The HERA antenna beam model used accounts for chromaticity introduced due to reflections between the dish and the feed but not between dishes. Assuming the latter is insignificant,} we estimate the EoR-foreground dynamic range (ratio of EoR signal and foreground powers) {\bf achievable with HERA} for both EoR models in the presence of antenna beam chromaticity. In order to avoid signal evolution across the entire band, we use subbands in which EoR signal evolution is not expected to be significant. These subbands with $B_\textrm{eff}=10$~MHz are defined by spectral weights in equation~\ref{eqn:bhw2}. These subbands are centered at 150~MHz and 170~MHz to estimate EoR-foreground dynamic range at $z \approx 8.47$ and $z \approx 7.36$ respectively.
+{\bf The HERA antenna beam model used accounts for chromaticity introduced due to reflections between the dish and the feed but not between dishes. Ignoring the latter,} we estimate the EoR-foreground dynamic range (ratio of EoR signal and foreground powers) {\bf achievable with HERA} for both EoR models in the presence of antenna beam chromaticity. In order to avoid signal evolution across the entire band, we use subbands in which EoR signal evolution is not expected to be significant. These subbands with $B_\textrm{eff}=10$~MHz are defined by spectral weights in equation~\ref{eqn:bhw2}. These subbands are centered at 150~MHz and 170~MHz to estimate EoR-foreground dynamic range at $z \approx 8.47$ and $z \approx 7.36$ respectively.
 
 \subsection{Dependence on Baseline-$k_\parallel$ Parameter Space}\label{sec:baseline-kprll}
 
@@ -311,8 +313,8 @@ We estimate EoR-foreground dynamic range for HERA using antenna beams of differe
   \centering
   % \subfloat[][150~MHz subband ($z \approx 8.47$)]{\label{fig:asm-dps-beam-chromaticity-baselines-150-subband}\includegraphics[width=\linewidth]{sim_asm_foreground_eor_beam_chromaticity_150.0_MHz_subband_win_method_bhw2.0.eps}} \\
   % \subfloat[][170~MHz subband ($z \approx 7.36$)]{\label{fig:asm-dps-beam-chromaticity-baselines-170-subband}\includegraphics[width=\linewidth]{sim_asm_foreground_eor_beam_chromaticity_170.0_MHz_subband_win_method_bhw2.0.eps}}
-  \subfloat[][150~MHz subband ($z \approx 8.47$)]{\label{fig:asm-dps-beam-chromaticity-baselines-150-subband}\includegraphics[width=\linewidth]{f5a.eps}} \\
-  \subfloat[][170~MHz subband ($z \approx 7.36$)]{\label{fig:asm-dps-beam-chromaticity-baselines-170-subband}\includegraphics[width=\linewidth]{f5b.eps}}
+  \subfloat[][150~MHz subband ($z \approx 8.47$)]{\label{fig:asm-dps-beam-chromaticity-baselines-150-subband}\includegraphics[width=\linewidth]{f7a.eps}} \\
+  \subfloat[][170~MHz subband ($z \approx 7.36$)]{\label{fig:asm-dps-beam-chromaticity-baselines-170-subband}\includegraphics[width=\linewidth]{f7b.eps}}
   \caption{EoR signal and foreground delay power spectrum in units of K$^2 (h^{-1}$~Mpc$)^3$ in 150~MHz (top) and 170~MHz (bottom) subbands ($B_\textrm{eff}=10$~MHz) on eight unique baseline lengths of HERA-19 at {\bf certain chosen} sky pointings. The length and orientation of the baseline vector corresponding to each panel is annotated on the top right corner. EoR models 1 and 2 are shown in cyan and gray respectively. The foregrounds obtained with achromatic, {\it Airy} and simulated chromatic antenna beams are shown in black, red and blue respectively. EoR-foreground dynamic range is highest for antenna beam with least chromaticity and vice versa. Even for the simulated chromatic antenna beam pattern, which has the highest chromaticity among the antenna beam models considered, foreground power will be lower than signal power from the two independent EoR models by more than two orders of magnitude for $|k_\parallel| \gtrsim 0.2\,h$~Mpc$^{-1}$ on all HERA baselines.}
   \label{fig:subbands}
 \end{figure*}
@@ -347,10 +349,10 @@ We consider the foreground power spectrum obtained with the simulated chromatic 
   % \subfloat[][EoR model 2, 150~MHz subband ]{\label{fig:lidz-fg-ratio-150}\includegraphics[width=0.45\linewidth]{eor_fg_ratio_llim_lidz_chrmbeam_sim_150.0_MHz_subband.eps}} \\
   % \subfloat[][EoR model 1, 170~MHz subband ]{\label{fig:21cmfast-fg-ratio-170}\includegraphics[width=0.45\linewidth]{eor_fg_ratio_llim_21cmfast_chrmbeam_sim_170.0_MHz_subband.eps}}
   % \subfloat[][EoR model 2, 170~MHz subband ]{\label{fig:lidz-fg-ratio-170}\includegraphics[width=0.45\linewidth]{eor_fg_ratio_llim_lidz_chrmbeam_sim_170.0_MHz_subband.eps}}
-  \subfloat[][EoR model 1, 150~MHz subband ]{\label{fig:21cmfast-fg-ratio-150}\includegraphics[width=0.45\linewidth]{f6a.eps}}
-  \subfloat[][EoR model 2, 150~MHz subband ]{\label{fig:lidz-fg-ratio-150}\includegraphics[width=0.45\linewidth]{f6b.eps}} \\
-  \subfloat[][EoR model 1, 170~MHz subband ]{\label{fig:21cmfast-fg-ratio-170}\includegraphics[width=0.45\linewidth]{f6c.eps}}
-  \subfloat[][EoR model 2, 170~MHz subband ]{\label{fig:lidz-fg-ratio-170}\includegraphics[width=0.45\linewidth]{f6d.eps}}
+  \subfloat[][EoR model 1, 150~MHz subband ]{\label{fig:21cmfast-fg-ratio-150}\includegraphics[width=0.45\linewidth]{f8a.eps}}
+  \subfloat[][EoR model 2, 150~MHz subband ]{\label{fig:lidz-fg-ratio-150}\includegraphics[width=0.45\linewidth]{f8b.eps}} \\
+  \subfloat[][EoR model 1, 170~MHz subband ]{\label{fig:21cmfast-fg-ratio-170}\includegraphics[width=0.45\linewidth]{f8c.eps}}
+  \subfloat[][EoR model 2, 170~MHz subband ]{\label{fig:lidz-fg-ratio-170}\includegraphics[width=0.45\linewidth]{f8d.eps}}
   \caption{Worst case EoR-foreground dynamic range, $\rho(\boldsymbol{b},f_0,\alpha)$, in {\it foreground avoidance} modes for different HERA-19 baselines as a function of RA ($\alpha$) of pointing on the sky. Each panel corresponds to the EoR model and subband indicated. The baseline vector is specified by its length (in m) and orientation (in degrees) at the bottom and top of the $x$-axis respectively. The color scale is logarithmic. Even in the worst case, HERA will be able detect EoR drawn from independent models on all baselines for a large fraction of a full 24~hour sky transit cycle {\bf except during the transit of the Galactic plane seen at 16--19 hours of RA}. $\rho(\boldsymbol{b},f_0,\alpha)$ is seen to increase with increasing baseline length. This is because the loss in sensitivity to diffuse foreground power with increase in antenna spacings is faster than in the case of the EoR signal.}
   \label{fig:eor-fg-ratios}
 \end{figure*}
