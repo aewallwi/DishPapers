@@ -1,3 +1,8 @@
+From a2e7bab (fgsim):
+====================
+
+(*) Modify figure 1 axes labels
+
 From 31e2ef7 (fgsim):
 ====================
 
