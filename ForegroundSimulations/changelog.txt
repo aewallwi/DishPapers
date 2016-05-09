@@ -1,3 +1,16 @@
+From d2876cc (fgsim):
+====================
+
+(*) coverletter.txt to git repo
+
+In ms.tex,
+
+(*) make minor corrections
+
+In reply_to_referee_report.tex,
+
+(*) Fine-tune response to referee report
+
 From 1ab992f (fgsim):
 ====================
 

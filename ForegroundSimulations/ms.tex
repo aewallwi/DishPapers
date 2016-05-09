@@ -128,7 +128,7 @@ In this study, we use the HERA-19 hexagonal array layout, a small subset of the 
 \begin{figure}[htb]
   \centering
   \includegraphics[width=\linewidth]{f1.eps}
-  \caption{{\bf 19-element HERA layout used in this study, a subset of the full proposed 350-element layout. It is located in the South African Karoo Radio Astronomy Reserve.}}
+  \caption{{\bf 19-element HERA layout used in this study, a subset of the full proposed 350-element layout. It is located in the South African Karoo Radio Astronomy Reserve. Each dish is 14~m across. The relative physical scale is illustrated by the group of people in this picture.}}
   \label{fig:HERA-19}
 \end{figure}
 
@@ -205,7 +205,7 @@ We use two models of EoR. In the first, simulations of the H{\sc i} signal were 
 
 \section{Chromaticity of Power Pattern}\label{sec:beam-chromaticity}
 
-{\bf Equations~\ref{eqn:obsvis} and \ref{eqn:delay-transform} define} the interplay between foregrounds and antenna power pattern, and the mapping between geometric phases of baselines and delays. We discuss the spillover of foreground power beyond the horizon delay limits caused by the chromatic nature of the antenna power pattern.
+{\bf Equations~\ref{eqn:obsvis} and \ref{eqn:delay-transform} define} the interplay between foregrounds, {\bf the} antenna power pattern, and the mapping between geometric phases of baselines and delays. We discuss the spillover of foreground power beyond the horizon delay limits caused by the chromatic nature of the antenna power pattern.
 
 \subsection{Effect on Foreground Contamination}\label{sec:effects-fgdps}
 
@@ -335,7 +335,7 @@ We define baseline-dependent $k_\parallel$-modes of interest for {\it foreground
 \end{align}
 where, the first term inside the parenthesis denotes the horizon limit, the second relates to the resolution due to subband bandwidth, $B_\textrm{eff}$, and $\zeta$ denotes a buffer to ensure the $k_\parallel^\textrm{FA}(|\boldsymbol{b}|)$ threshold ``safely'' avoids the main lobe of foreground power \citep{thy13}. In this study, we use $\zeta=3.5$.
 
-We estimate the worst case EoR-foreground dynamic range in the $\boldsymbol{b}$--$\alpha$ parameter space as:
+We estimate the worst-case EoR-foreground dynamic range in the $\boldsymbol{b}$--$\alpha$ parameter space as:
 \begin{align}
   \rho(\boldsymbol{b},f_0,\alpha) &= \min_{|k_\parallel|>k_\parallel^\textrm{FA}(\boldsymbol{b})}\left\{\frac{P_\textrm{H{\sc i}}(|\boldsymbol{b}|,k_\parallel,f_0)}{P_\textrm{FG}(\boldsymbol{b},k_\parallel,f_0,\alpha)}\right\}.
 \end{align}
@@ -353,13 +353,13 @@ We consider the foreground power spectrum obtained with the simulated chromatic 
   \subfloat[][EoR model 2, 150~MHz subband ]{\label{fig:lidz-fg-ratio-150}\includegraphics[width=0.45\linewidth]{f8b.eps}} \\
   \subfloat[][EoR model 1, 170~MHz subband ]{\label{fig:21cmfast-fg-ratio-170}\includegraphics[width=0.45\linewidth]{f8c.eps}}
   \subfloat[][EoR model 2, 170~MHz subband ]{\label{fig:lidz-fg-ratio-170}\includegraphics[width=0.45\linewidth]{f8d.eps}}
-  \caption{Worst case EoR-foreground dynamic range, $\rho(\boldsymbol{b},f_0,\alpha)$, in {\it foreground avoidance} modes for different HERA-19 baselines as a function of RA ($\alpha$) of pointing on the sky. Each panel corresponds to the EoR model and subband indicated. The baseline vector is specified by its length (in m) and orientation (in degrees) at the bottom and top of the $x$-axis respectively. The color scale is logarithmic. Even in the worst case, HERA will be able detect EoR drawn from independent models on all baselines for a large fraction of a full 24~hour sky transit cycle {\bf except during the transit of the Galactic plane seen at 16--19 hours of RA}. $\rho(\boldsymbol{b},f_0,\alpha)$ is seen to increase with increasing baseline length. This is because the loss in sensitivity to diffuse foreground power with increase in antenna spacings is faster than in the case of the EoR signal.}
+  \caption{Worst-case EoR-foreground dynamic range, $\rho(\boldsymbol{b},f_0,\alpha)$, in {\it foreground avoidance} modes for different HERA-19 baselines as a function of RA ($\alpha$) of pointing on the sky. Each panel corresponds to the EoR model and subband indicated. The baseline vector is specified by its length (in m) and orientation (in degrees) at the bottom and top of the $x$-axis respectively. The color scale is logarithmic. Even in the worst case, HERA will be able detect EoR drawn from independent models on all baselines for a large fraction of a full 24~hour sky transit cycle {\bf except during the transit of the Galactic plane seen at 16--19 hours of RA}. $\rho(\boldsymbol{b},f_0,\alpha)$ is seen to increase with increasing baseline length. This is because the loss in sensitivity to diffuse foreground power with increase in antenna spacings is faster than in the case of the EoR signal.}
   \label{fig:eor-fg-ratios}
 \end{figure*}
 
 For the baselines considered, $\rho(\boldsymbol{b},f_0,\alpha)$ increases with baseline length. We attribute this to the much steeper dependence of foreground emission on baseline length than that of EoR H{\sc i} power. {\bf This trend demonstrates that it is predominantly due to diffuse emission}. This is also confirmed from Fig.~\ref{fig:subbands} where the peak and sidelobe levels of foreground power obtained with the simulated chromatic antenna beam on the 14.6~m baseline, progressively drops by two orders of magnitude on the 58.4~m baseline. Hence, from a foreground contamination standpoint, the shortest baselines are less sensitive than longer ones in HERA-19 layout. % {\bf With the full proposed layout emission from point sources may become significant on longer baselines}. 
 
-In all four cases considered here, except when the Galactic {\bf plane} appears overhead {\bf roughly between 16 and 19 hours of RA}, the worst case signal-foreground ratio lies above unity in most of this parameter space. It demonstrates that HERA should detect the EoR signal with a very high signal-foreground ratio on all baselines over a majority of the pointings. 
+In all four cases considered here, except when the Galactic {\bf plane} appears overhead {\bf roughly between 16 and 19 hours of RA}, the worst-case signal-foreground ratio lies above unity in most of this parameter space. It demonstrates that HERA should detect the EoR signal with a very high signal-foreground ratio on all baselines over a majority of the pointings. 
 
 \section{Summary}\label{sec:summary}
 
