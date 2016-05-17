@@ -1,3 +1,11 @@
+From 314d0d4 (fgsim):
+====================
+
+In ms.tex,
+
+(*) Revert bold font highlighting to normal font
+(*) Change \tilde to \widetilde
+
 From d2876cc (fgsim):
 ====================
 
