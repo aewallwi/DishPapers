@@ -1,3 +1,9 @@
+From 1af76de (master):
+=====================
+
+(*) Add simulated foreground power spectra and EoR models to data
+folder as npz files 
+
 From 314d0d4 (fgsim):
 ====================
 
