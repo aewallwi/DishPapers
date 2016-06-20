@@ -1,3 +1,9 @@
+From 0b13cbf (master):
+=====================
+
+(*) Add simulated foreground visibilities to data folder as npz
+files 
+
 From 1af76de (master):
 =====================
 
