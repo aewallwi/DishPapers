@@ -2,7 +2,7 @@
 
 import numpy as np, pylab as plt, aipy as a
 import sys, csv
-
+from matplotlib import colors
 
 def fromcsv(filename):
     print 'Reading', filename
@@ -61,6 +61,13 @@ for filename in sys.argv[1:]:
     fq_H,db_H = fromcsv1('/Users/Punthipatra/WORKAREA1/DATA_Area/Project_HERA/DishPapers/DishReflectometry/GB_reflectometry_part2/HERA_DB.csv') # Reading the magnitude and phase of the feed only datafile to calibrate for the zero point/ 
     fq_H,ph_H = fromcsv1('/Users/Punthipatra/WORKAREA1/DATA_Area/Project_HERA/DishPapers/DishReflectometry/GB_reflectometry_part2/HERA_P.csv')
     
+    #fq_feed =fq_f
+    #db_feed =db_f
+    #ph_feed =ph_f
+    #fq_H = fq
+    #db_H = db
+    #ph_H = ph
+    
     delay,delay_spectrum = fromcsv('simulation_aaron.csv') # Reading the magnitude and phase of the feed only datafile to calibrate for the zero point/ 
     
     
@@ -73,7 +80,7 @@ for filename in sys.argv[1:]:
     d_H = lin(db_H,ph_H)
     
     
-    valid = np.where(np.logical_and(fq < .200, fq > .100)) # restrict to PAPER band
+    valid = np.where(np.logical_and(fq < .200, fq > .10)) # restrict to PAPER band
     valid1 = np.where(np.logical_and(fq_H < .200, fq_H > .100)) # restrict to PAPER band
     
     fq, db, ph, d = fq[valid], db[valid], ph[valid], d[valid]
@@ -116,11 +123,13 @@ for filename in sys.argv[1:]:
         #plt.plot(fq_f,180*np.arctan2(np.imag(d_f),np.real(d_f))/np.pi,linewidth=2.5,label='return loss HERA element (simulation)' )
         #plt.plot(fq_feed,ph_feed,linewidth=2.5,label='return loss HERA element (measured)' )
         
-        #plt.plot(fq,pwr(d2),linewidth=2.5,label='return loss feed (simulation)' )
+        #plt.plot(fq,db,linewidth=2.5,label='return loss feed (simulation)' )
+        #plt.show()
         #plt.plot(fq_H,pwr(d2_H),linewidth=2.5,label='return loss feed (measured)' )
         
         #plt.plot(np.fft.fftshift(tau), 10.0*np.log10(np.fft.fftshift(np.abs(_d))), linewidth=2.5, label= 'Feed Only (Simulation)')
-        plt.plot(np.fft.fftshift(tau), 10.0*np.log10(np.fft.fftshift(np.abs(_d2))), linewidth=2.5, label= 'HERA (Simulation)')
+        plt.plot(np.fft.fftshift(tau1), 10.0*np.log10(np.fft.fftshift(np.abs(_d2H))), linewidth=2.5, color = '#ff8c00' ,  label= 'HERA (EM Simulation)')
+        
         
         #plt.plot(np.fft.fftshift(tau), 0.5*pwr(np.fft.fftshift(np.abs(_d2))), linewidth=2.5, label='HERA feed')
         
@@ -168,23 +177,29 @@ for filename in sys.argv[1:]:
         
         
         #ax1.plot(k_ll, -achrmbeam_spec[0], linewidth=1.5, color ='k', label='k||>0.1 ')
-        #plt.plot(tau2, -achrmbeam_spec[0], linewidth=1.5, color ='r', label='k||>0.1 ')
+        plt.plot(tau2, -achrmbeam_spec[0], linewidth=1.5, color ='r', label='FG Simulation k||>0.1 ')
         #ax1.plot(k_ll, -achrmbeam_spec[1], linewidth=1.5, color ='b', label='k||>0.15')
-        #plt.plot(tau2, -achrmbeam_spec[1], linewidth=1.5, color ='b', label='k||>0.15')
+        plt.plot(tau2, -achrmbeam_spec[1], linewidth=1.5, color ='b', label='FG Simulation k||>0.15')
         #ax1.plot(k_ll, -achrmbeam_spec[2], linewidth=1.5, color ='r', label='k||>0.2')
-        #plt.plot(tau2, -achrmbeam_spec[2], linewidth=1.5, color ='k', label='k||>0.2')
+        plt.plot(tau2, -achrmbeam_spec[2], linewidth=1.5, color ='k', label='FG Simulation k||>0.2')
         
         #ax1.fill_between(k_ll, -achrmbeam_spec[0],color='0.5', label=' ')
-        #plt.fill_between(tau2, -achrmbeam_spec[0],color='0.5', label=' ')
+        plt.fill_between(tau2, -achrmbeam_spec[0],color='0.5', label=' ')
         #ax1.fill_between(k_ll, -achrmbeam_spec[1],color='0.75', label=' ')
-        #plt.fill_between(tau2, -achrmbeam_spec[1],color='0.75', label=' ')
+        plt.fill_between(tau2, -achrmbeam_spec[1],color='0.75', label=' ')
         #ax1.fill_between(k_ll, -achrmbeam_spec[2],color='0.9', label=' ')
-        #plt.fill_between(tau2, -achrmbeam_spec[2],color='0.9', label=' ')
+        plt.fill_between(tau2, -achrmbeam_spec[2],color='0.82', label=' ')
         
         #ax2.plot(np.fft.fftshift(tau1), 0.5*pwr(np.fft.fftshift(np.abs(_d2H))), color='m', linewidth=4.5, label='HERA element (Measured)')
-        plt.plot(np.fft.fftshift(tau1), 0.5*pwr(np.fft.fftshift(np.abs(_d2H))),   linewidth=2.5, label='HERA (Measurement)')
+        #plt.plot(np.fft.fftshift(tau1), 0.5*pwr(np.fft.fftshift(np.abs(_d2H))),   linewidth=2.5, label='HERA (Measurement)')
         #ax2.plot(np.fft.fftshift(tau1), 0.5*pwr(np.fft.fftshift(np.abs(_d3H))), linewidth=2.0, color ='0.1', label='HERA element in with 20dB better return loss')
-        plt.plot(np.fft.fftshift(tau1), 0.5*pwr(np.fft.fftshift(np.abs(_d3H))), color='0.75',linewidth=2.0, label='20dB improvement')
+        #plt.plot(np.fft.fftshift(tau1), 0.5*pwr(np.fft.fftshift(np.abs(_d3H))), color='c',linewidth=2.0, label='20dB improvement')
+        
+        
+        npzdata2 = np.load('/Users/Punthipatra/WORKAREA1/DATA_Area/Project_HERA/DishPapers/DishReflectometry/GB_reflectometry_part2/Simulation/delayplot/delay_spectrum.npz')
+        tau3 = npzdata2['tau_hera']
+        ddave = npzdata2['dhera']
+        #plt.plot(tau3, -ddave,linewidth=1.5 , label='Dave simulation')
         
         d_t_10 =1+d_feed/30 # Transmission coefficient
         d1_H = ((d_H/30-d_feed/30)*(d_feed/30)/d_t_H ) # Reflections corrected to produce system bandpass in the receiving mode 
@@ -192,14 +207,36 @@ for filename in sys.argv[1:]:
         
         _d3H = np.fft.ifft(np.abs(d2_H)**2*window1) /window1.mean()# compensate for window amplitude
         
+        np.savez('delayspectrum', delay = np.fft.fftshift(tau1), amp = 10.0*np.log10(np.fft.fftshift(np.abs(_d2H))) )
         
-        #plt.plot(np.fft.fftshift(tau1), 0.5*pwr(np.fft.fftshift(np.abs(_d3H))), linewidth=2.0, color ='c', label='30dB improvement')
+        npzdata3 = np.load('/Users/Punthipatra/WORKAREA1/DATA_Area/Project_HERA/DishPapers/DishReflectometry/GB_reflectometry_part2/refl_cstr.npz')
+        tau4 = npzdata3['tau_cstr']
+        tau5 = npzdata3['tau_meas']
+       
+        meas_aar = npzdata3['refl_meas']
+        meas_aar_010 = npzdata3['refl_cstr_dspec_k0.10']
+        meas_aar_015 = npzdata3['refl_cstr_dspec_k0.15']
+        meas_aar_020 = npzdata3['refl_cstr_dspec_k0.20']
+        
+        meas_aar_oqe_010 = npzdata3['refl_cstr_oqe_k0.10']
+        meas_aar_oqe_015 = npzdata3['refl_cstr_oqe_k0.15']
+        meas_aar_oqe_020 = npzdata3['refl_cstr_oqe_k0.20']
+        
+        plt.plot(tau5, meas_aar, linewidth=1.5, color ='k', label='FG Simulation k||>0.2')
+        plt.plot(tau4, meas_aar_010, linewidth=1.5, color ='r', label='FG Simulation k||>0.1')
+        plt.plot(tau4, meas_aar_015, linewidth=1.5, color ='b', label='FG Simulation k||>0.15')
+        plt.plot(tau4, meas_aar_020, linewidth=1.5, color ='k', label='FG Simulation k||>0.2')
+        
+        plt.plot(tau4, meas_aar_oqe_010, linewidth=1.5, color ='m', label='FG Simulation OQE k||>0.1')
+        plt.plot(tau4, meas_aar_oqe_015, linewidth=1.5, color ='g', label='FG Simulation OQE k||>0.15')
+        plt.plot(tau4, meas_aar_oqe_020, linewidth=1.5, color ='c', label='FG Simulation OQE k||>0.2')
+        #plt.plot(np.fft.fftshift(tau1), 0.5*pwr(np.fft.fftshift(np.abs(_d3H))), linewidth=2.0, color ='m', label='30dB improvement')
         
 #-----------------plotting returnloss magnitude--------------
 #plt.plot(fq, 10.0*np.log10((np.abs(d)**2)), label='Feed on dish')
 #ax1.set_xlim(0,max(k_ll))
 #ax2.set_xlim(0,500)
-plt.xlim(-450,450)
+plt.xlim(-500,500)
 #plt.ylim(-60,0)
 
 #tau2,achrmbeam_spec[0],achrmbeam_spec[1],achrmbeam_spec[2] = tau2[valid2],achrmbeam_spec[0][valid2],achrmbeam_spec[1][valid2],achrmbeam_spec[2][valid2]
@@ -209,7 +246,7 @@ plt.ylabel('Delay Spectrum (dB)')
 #plt.ylabel('Return loss magnitude (dB)')
 #plt.ylabel('Return loss phase (deg)')
 plt.grid()
-plt.legend(loc='upper right')
+plt.legend(loc='upper left')
 plt.show()
 
 #-----------------plotting returnloss phase--------------

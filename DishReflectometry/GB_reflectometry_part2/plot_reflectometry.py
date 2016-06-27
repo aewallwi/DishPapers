@@ -90,9 +90,9 @@ for filename in sys.argv[1:]:
         #_dww_rb = np.fft.ifft((d2_rb)**2*window2) / window2.mean() # compensate for window amplitude
 
     #import IPython; IPython.embed()
-    plt.plot(fq_f,np.abs(d_f),linewidth=2.5,label='Transmission UCB(real)')
-    plt.plot(fq_f,np.abs(d2),linewidth=2.5,label='Transmission UCB(real)')
-    plt.show()
+    #plt.plot(fq_f,np.abs(d_f),linewidth=2.5,label='Transmission UCB(real)')
+    #plt.plot(fq_f,np.abs(d2),linewidth=2.5,label='Transmission UCB(real)')
+    #plt.show()
     #plt.plot(fq,d_t.imag,linewidth=2.5,label='Transmission UCB (imag)')
     #plt.plot(fq,10.0*np.log10(np.abs(d2)),linewidth=2.5,label='Corrected measurements UCB (abs mag)')
     #plt.plot(fq_rb_f,d_rb_t.real,linewidth=2.5,label='Transmission RB (real)')
