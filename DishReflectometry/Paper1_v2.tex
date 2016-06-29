@@ -1,3 +1,4 @@
+%\documentclass[12pt,preprint]{aastex}
 \documentclass[twocolumn]{emulateapj}
 \usepackage{float,amsmath}
 \usepackage{graphicx}
@@ -46,19 +47,19 @@ emission from neutral hydrogen in our early universe has gained attention as a
 powerful probe of both cosmology and astrophysics.  While the science case for
 21~cm cosmology, particularly during the Epoch of Reionization, is well
 established (see, e.g.,
-~\citep{furlanetto_et_al2006,morales_wyithe2010,pritchard_loeb2012}),
+~\cite{furlanetto_et_al2006, morales_wyithe2010, pritchard_loeb2012}),
 the technical path toward measuring this signal has been extremely challenging.  The
 weakness of this hyperfine line keeps the 21~cm signal below opacity throughout
 cosmological history, but it also creates sensitivity and calibration
 challenges that are yet to be fully solved.  With noise temperatures dominated
-by sky noise ~\citep{XXX} and foregrounds four to five orders of magnitude
-brighter than the signal ~\citep{XXX}, 
+by sky noise and foregrounds four to five orders of magnitude
+brighter than the signal ~\citep{2015ApJ...801..138P}, 
 sky-averaged 21~cm monopole experiments such as
-(EDGES; ~\citealt{XXX}),
-(BIGHORNS; ~\citealt{XXX}),
-(SARAS; ~\citealt{patra_et_al2014}),
-(SCIHI; ~\citealt{voytek_et_al2014}),
-(HYPERION; ~\citealt{presley_et_al2015})
+EDGES; ~\citep{baars_et_al1977},
+BIGHORNS; ~\citealt{XXX},
+SARAS; ~\citep{Patra_et_al1999} ,
+SCIHI; ~\citealt{2015PhDT........65V},
+HYPERION; ~\citep{presley_et_al2015}
 % XXX others?
 and 21~cm reionization power spectrum experiments such as
 the LOw Frequency ARray (LOFAR; ~\citealt{XXX}),
@@ -467,30 +468,30 @@ While measuring the return loss of the dish-feed assembly, the signal transmitte
 \label{fig:delay_spectrum}
 \end{figure}
 %
-\subsubsection{Effect of antenna beam pattern and feed return loss on delay spectrum estimation}
-The return loss $\Gamma_{f}$ determines the amount of power coupled to the system via the feed. Additionally, with each reflection, the power coupled to the system reduces by a factor of $\Gamma_{f}^{2}$. Since the reflected signal results in a system response at a higher delay, multiple reflections of the signal off the feed and the dish would result in an exponential envelope in the delay spectrum. The return loss of power results from the antenna impedance mismatch with free space as well as the transmission line. The complex antenna impedance is shown in Figure \ref{fig:feed_impedance}.
-\begin{figure}
-\centering
-\includegraphics[width=\linewidth]{plots/Feed_impedance.png}
-\caption{Complex antenna impedance of the HERA feed element.} %Some indication of which line is which on the plot would be really helpful here.
-\label{fig:feed_impedance}
-\end{figure} 
+%\subsubsection{Effect of antenna beam pattern and feed return loss on delay spectrum estimation}
+%The return loss $\Gamma_{f}$ determines the amount of power coupled to the system via the feed. Additionally, with each reflection, the power coupled to the system reduces by a factor of $\Gamma_{f}^{2}$. Since the reflected signal results in a system response at a higher delay, multiple reflections of the signal off the feed and the dish would result in an exponential envelope in the delay spectrum. The return loss of power results from the antenna impedance mismatch with free space as well as the transmission line. The complex antenna impedance is shown in Figure \ref{fig:feed_impedance}.
+%\begin{figure}
+%\centering
+%\includegraphics[width=\linewidth]{plots/Feed_impedance.png}
+%\caption{Complex antenna impedance of the HERA feed element.} %Some indication of which line is which on the plot would be really helpful here.
+%\label{fig:feed_impedance}
+%\end{figure} 
 %
-While the antenna beam pattern, $A_{f}$, is a smooth function of frequency and should have its imprint confined to lower delays, the return loss, $\Gamma_{f}$, broadens the delay spectrum. However, a smaller return loss will result in a vertical shift of the delay spectrum at lower values and, therefore, can make the higher order reflections insignificant. Given the antenna impedance and the 50 Ohm transmission line, the measurements are done using a passive balun with a 2:1 impedance ratio, providing a net return loss of power between the sky, the antenna, and the transmission line shown in Figure \ref{fig:freq}. This provides the maximum impedance matching. \\
-\subsubsection{Effect of frequency bandwidth on delay spectrum estimation}
-The estimation of the delay spectrum by taking the Fourier transform of the measured return loss is sensitive to the frequency bandwidth of operation. Since the measurements are done in the spectral domain, a measurement between two frequencies is analogous to windowing the frequency domain data by a square window function. In the delay domain, the Fourier transform of this would result in multiple side lobes at higher delays. Therefore, appropriate windowing of the data is necessary prior to taking the Fourier transform of the measured data. Figure \ref{fig:window} shows the delay spectrum estimated from the measured data using a square window as well as a Blackman Harris window. Windowing prior to Fourier transforming the data significantly reduces the system response at higher delays.  
-\begin{figure}
-\centering
-\includegraphics[width=\linewidth]{plots/window.png}
-\caption{The affect of a finite bandwidth on the estimation of the delay spectrum: The blue line shows the delay spectrum of the HERA element computed from the measured data, which is band limited between 100 to 200MHz. The green line shows the delay spectrum estimated from the same data set after multiplying the data by a Blackman Harris window. The delay spectrum of the windowed data set shows a significant reduction in the instrument response at higher delays.}
-\label{fig:window}
-\end{figure} 
-\subsubsection{Effect of the dish and feed on the delay spectrum estimation}
-The measurement equations show the effects of multiple reflections of the sky signal between the feed and the dish. Any other reflections off the feed structure and/or any other part of the dish-feed assembly would appear at arbitrary delays. The estimated delay spectrum of the instrument is collectively contributed to by all the reflections. We measure the return loss of the feed alone, keeping it on the ground facing the sky (Figure \ref{fig:freq}). The delay spectrum estimated from this measurement provides the lowest limit of the delay spectrum of the instrument, considering there are not multiple reflections between the feed and the dish. 
- Any additional reflections also contribute to the measured return loss and, thus, the delay spectrum at various delays. Figure \ref{fig:delay_spectrum} shows the delay spectrum of the feed while it is kept upside down on the ground (in green), as well as that of a HERA antenna with the feed suspended at the focal plane (in blue). The red line shows the delay spectrum of the PAPER antenna for comparison with the HERA element.
+%While the antenna beam pattern, $A_{f}$, is a smooth function of frequency and should have its imprint confined to lower delays, the return loss, $\Gamma_{f}$, broadens the delay spectrum. However, a smaller return loss will result in a vertical shift of the delay spectrum at lower values and, therefore, can make the higher order reflections insignificant. Given the antenna impedance and the 50 Ohm transmission line, the measurements are done using a passive balun with a 2:1 impedance ratio, providing a net return loss of power between the sky, the antenna, and the transmission line shown in Figure \ref{fig:freq}. This provides the maximum impedance matching. \\
+%\subsubsection{Effect of frequency bandwidth on delay spectrum estimation}
+%The estimation of the delay spectrum by taking the Fourier transform of the measured return loss is sensitive to the frequency bandwidth of operation. Since the measurements are done in the spectral domain, a measurement between two frequencies is analogous to windowing the frequency domain data by a square window function. In the delay domain, the Fourier transform of this would result in multiple side lobes at higher delays. Therefore, appropriate windowing of the data is necessary prior to taking the Fourier transform of the measured data. Figure \ref{fig:window} shows the delay spectrum estimated from the measured data using a square window as well as a Blackman Harris window. Windowing prior to Fourier transforming the data significantly reduces the system response at higher delays.  
+%\begin{figure}
+%\centering
+%\includegraphics[width=\linewidth]{plots/window.png}
+%\caption{The affect of a finite bandwidth on the estimation of the delay spectrum: The blue line shows the delay spectrum of the HERA element computed from the measured data, which is band limited between 100 to 200MHz. The green line shows the delay spectrum estimated from the same data set after multiplying the data by a Blackman Harris window. The delay spectrum of the windowed data set shows a significant reduction in the instrument response at higher delays.}
+%\label{fig:window}
+%\end{figure} 
+%\subsubsection{Effect of the dish and feed on the delay spectrum estimation}
+%The measurement equations show the effects of multiple reflections of the sky signal between the feed and the dish. Any other reflections off the feed structure and/or any other part of the dish-feed assembly would appear at arbitrary delays. The estimated delay spectrum of the instrument is collectively contributed to by all the reflections. We measure the return loss of the feed alone, keeping it on the ground facing the sky (Figure \ref{fig:freq}). The delay spectrum estimated from this measurement provides the lowest limit of the delay spectrum of the instrument, considering there are not multiple reflections between the feed and the dish. 
+ %Any additional reflections also contribute to the measured return loss and, thus, the delay spectrum at various delays. Figure \ref{fig:delay_spectrum} shows the delay spectrum of the feed while it is kept upside down on the ground (in green), as well as that of a HERA antenna with the feed suspended at the focal plane (in blue). The red line shows the delay spectrum of the PAPER antenna for comparison with the HERA element.
 %\subsubsection{Effect of feed height on delay spectrum estimation}
-\subsubsection{Performance Comparison: HERA vs. PAPER}
-While PAPER has established the, to date, most stringent upper limit on the 21cm power spectrum measurement, the need to increase the measurement sensitivity called for increased collecting area per PAPER antenna. This has driven the parabolic reflector antenna design of the PAPER successor, HERA, where essentially the PAPER antenna, with minor modifications of the ground plane-side plane assembly, works as the feed and, thus, in combination with the dish, yields a larger collecting area per element. Figure \ref{fig:freq} shows the return loss measurement for the PAPER antenna, and Figure \ref{fig:delay_spectrum} shows the corresponding delay spectrum (red line). The HERA feed element shows an improved delay response compared to the PAPER element across all delays $>50~ns$, with marginal improvement at delays $<50~ns$. The delay response of the HERA element degrades marginally as the feed is suspended over the dish due to multiple reflections between the feed and the dish. The majority of structure in the response at lower delays is due to the feed and its supporting structure, evidenced by those features common to all three measurements. At the lower delays, the structures in the delay response remain unaltered even with the variation of the feed height relative to the dish vertex. Essentially these structures set lower limits on the $k_{||}$ values that could be probed, and since redshift $z$ maps to frequency (and, thus, $k_{||}$), any redshift above the instrument footprint could likewise be probed. %Check for accuracy....
+%\subsubsection{\textbf{Performance Comparison: HERA vs. PAPER}}
+%While PAPER has established the, to date, most stringent upper limit on the 21cm power spectrum measurement, the need to increase the measurement sensitivity called for increased collecting area per PAPER antenna. This has driven the parabolic reflector antenna design of the PAPER successor, HERA, where essentially the PAPER antenna, with minor modifications of the ground plane-side plane assembly, works as the feed and, thus, in combination with the dish, yields a larger collecting area per element. Figure \ref{fig:freq} shows the return loss measurement for the PAPER antenna, and Figure \ref{fig:delay_spectrum} shows the corresponding delay spectrum (red line). The HERA feed element shows an improved delay response compared to the PAPER element across all delays $>50~ns$, with marginal improvement at delays $<50~ns$. The delay response of the HERA element degrades marginally as the feed is suspended over the dish due to multiple reflections between the feed and the dish. The majority of structure in the response at lower delays is due to the feed and its supporting structure, evidenced by those features common to all three measurements. At the lower delays, the structures in the delay response remain unaltered even with the variation of the feed height relative to the dish vertex. Essentially these structures set lower limits on the $k_{||}$ values that could be probed, and since redshift $z$ maps to frequency (and, thus, $k_{||}$), any redshift above the instrument footprint could likewise be probed. %Check for accuracy....
 
 
 
@@ -624,7 +625,8 @@ HERA of $-60dB$ attenuation at $60ns$, we recommend reinvestigating this specifi
 the element's current delay performance on HERA science.  We suspect that, at the level of $-50dB$ at $60ns$ and $-60dB$ at $120ns$, this
 performance may indeed be adequate for the delay-domain power spectrum analysis for which HERA has been optimized.
 
-\bibliography{biblio.bib}{}
+%\bibliography{biblio}{}
+\bibliography{Reference}
 \bibliographystyle{apj}
 \end{document}
 
