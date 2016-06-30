@@ -403,42 +403,9 @@ While measuring the return loss of the dish-feed assembly, the signal transmitte
 
 \section{\textbf{Effect of instrument delay spectrum on 21cm power spectrum measurements}}
 
-
-
-\begin{itemize}
-\item 
-\textbf{Comparison with electromagnetic simulation:}\\
-
-
-
-The delay spectrum estimated from the simulated and measured return loss is shown in the figure \ref{fig:sim_em}. The two delay spectrum are in good agreement with each other upto around $60~ns$ up to which the structures in the delay domain are mostly caused due to signal reflections in the feed structure. Since the simulated return loss shows a better match of the antenna to the 50 Ohm transmission line. At zero delay , in case of simulation, almost $100\%$ of the sky signal is received whereas in case of measurements, this match is found to be less than $5~dB$ resulting in partial coupling of the sky signal to the system. Given all the reflections unaltered, if the matching in between the feed and the transmission line is improved by about $10~dB$, which is achievable in reality, the delay spectrum would improve substantially. This is plotted in grey. The work is currently under progress to improve the feed return loss at least by  $10dB$ (Eloy et al 2016 in prep?). Beyond $60~nS$ other multiple reflections manifests themselves at higher delays and the delay spectrum of the measurement and simulations begin to deviate from each other.
-
-\begin{figure}
-\centering
-\includegraphics[width=\linewidth]{plots/delay_sim_meas.png}
-\caption{Comparison between delay spectrum of HERA element estimated from the electromagnetic simulation of the feed return loss (dave deBoer 2016) and measurements by a vector network analyser.}
-\label{fig:sim_em}
-\end{figure}
-
-\item
-\textbf{Comparison with time domain simulation: }\\
-In a related series of papers, (Ewall-Wice et al 2016) has shown the simulated power kernel of the HERA element which considers the electromagnetic simulations of the HERA feed and multiple reflection in between the dish and the feed vertex. Our measurements, in comparison to the simulations, shows a much complex structure in the delay spectrum. This results from various multiple reflections within and around the feed as well as in the cable connecting the feed output to the vector network analyser. Once again, keeping all other reflections within the system unchanged, a simple $~10dB$ improvement in the feed impedance match could match the simulations with measurements. 
-
-
-\begin{figure}
-\centering
-\includegraphics[width=\linewidth]{plots/delay_power.png}
-\caption{Comparison between delay spectrum of HERA element estimated from the simulation of the multiple reflections between the feed and the dish and reflectometry measurements by a vector network analyser.}
-\label{fig:sim_pk}
-\end{figure}
-
-
-
-
-\item
-\textbf{Comparison with foreground simulation}
-In a related series of papers, (Thyagarajan et al 2016) has presented the detailed sensitivity calculations of HERA is using a comprehensive foreground as well as model for EoR power spectrum for various simulated antenna element response. The theoretical limits for the level of signal attenuation required in order to reduce the foreground contaminations at the delay modes significant for power spectrum measurements are shown for three different lower limits of $k_\parallel$ values. The requirements for the reduced instrument response at higher delays are more stringent for the detection of lower $k_\parallel$ modes. The response is computed for the redshift of $z=8.47$ at frequency $150~MHz$. The yellow and cyan curves shows the improvement on the instrument delay spectrum that could be achieved by improving the feed return loss by $20, 30db$ respectively. With a $30dB$ improvement in return loss, for power spectrum at $k_{\parallel}>0.15$, the foreground contaminations at higher delays could potentially be limited to only a few delay modes. Achieving a $30~dB$ improvement at the feed is extremely challenging. However, since multiple reflections results in multiplication of the feed return loss as well as the input return loss at the backend, a $20~dB$ improvement in the feed and another $~20dB$ improvement in the mismatch between the cable and the backend input could establish the same. 
-
+21cm power spectrum measurements are limited by challenges posed by the low frequency radio foreground that is order of magnitude brighter than the expected power spectrum amplitude. While PAPER has established the till date the most stringent upper limit on the 21cm power spectrum measurement, the need for increased sensitivity called for increased collecting area per PAPER element. This has driven to the parabolic reflector antenna based design of the PAPER successor HERA where essentially the PAPER antenna with minor modification of the ground plane-side plane assembly works as the feed and thus having larger collecting area per element. Additional limitations on PAPER and its contemporaries are imposed by the spectral structure of the system response. Sky signal is frequency modulated by the system bandpass response. In delay spectrum technique of 21cm power spectrum estimation, sky signal is convolved with the system response in the delay domain. In this process of convolution, the frequency dependent system response with rapid frequency variation results in spreading of the smooth spectrum foreground of the sky signal to the delays in which EoR power spectrum is to be estimated. This essentially limits the capacity of any experiment to probe the smaller spatial scales of fluctuations. \\
+	In a related series of papers, the spatial scales of fluctuation $(k_||)$ HERA element delay response has been studied via electromagnetic simulation (deBoer et al 2016) as well as via time domain simulation (Ewall-wice et al 2016). Figure \ref{fig:sim_em} and \ref{fig:sim_pk} shows the measurement presented this paper in comparison with the simulations. Simulations and measurements are in good agreement with each other upto around $60~ns$ up to which the structures in the delay domain are mostly caused due to signal reflections in the feed structure. Since the simulated return loss shows a better match of the antenna to the 50 Ohm transmission line. At zero delay , in case of simulation, almost $100\%$ of the sky signal is received whereas in case of measurements, this match is found to be less than $5~dB$ resulting in partial coupling of the sky signal to the system. Given all the reflections unaltered, if the matching in between the feed and the transmission line is improved by about $10~dB$, which is achievable in reality, the delay spectrum would improve substantially. This is plotted in grey. The work is currently under progress to improve the feed return loss at least by  $10dB$ (Eloy et al 2016 in prep?). Beyond $60~nS$ other multiple reflections manifests themselves at higher delays and the delay spectrum of the measurement and simulations begin to deviate from each other.\\
+Thygarajan et al 2016) has presented the detailed sensitivity calculations of HERA is using a comprehensive foreground model as well as model for EoR power spectrum for various simulated antenna element response. The theoretical limits for the level of signal attenuation required in order to reduce the foreground contaminations at the delay modes significant for power spectrum measurements are shown for three different lower limits of $k_\parallel$ values. The requirements for the reduced instrument response at higher delays are more stringent for the detection of lower $k_\parallel$ modes. The response is computed for the redshift of $z=8.47$ at frequency $150~MHz$. \\
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{plots/meas_forground.png}
@@ -446,33 +413,10 @@ In a related series of papers, (Thyagarajan et al 2016) has presented the detail
 \label{fig:sim_fg}
 \end{figure}
 
-\end{itemize}
+In the following section, we further investigate the limits of required instrumental delay response from what is established by Thyagarajan et al 2016. Combining with the  inverse covariance weighting formalism of foreground suppression we derive a new limit for the instrument delay response for power spectrum measurements. With inverse covariance weighting a foreground suppression of about 30dB could be achieved that results in room for substantial performance degradation and yet a successful measurement of 21~cm power spectrum. Our measurements, evaluated in the light of these limits shows that the HERA is not limited by either its systematics. With only delay spectrum technique, it is capable of detecting the EoR power spectrum for the $k_{\parallel}$ modes as low as $k_{\parallel}>=0.2$. If combined with the inverse covariance weighting formalism of foreground suppression, the instrument performs well below the limits of foreground suppression.    
 
-\subsubsection{\textbf{Comparison of performance of HERA with PAPER}}
-While PAPER has established the till date the most stringent upper limit on the 21cm power spectrum measurement, the need to increase the measurement sensitivity called for increased collecting area per PAPER antenna. This has driven to the parabolic reflector antenna based design of the PAPER successor HERA where essentially the PAPER antenna with minor modification of the ground plane-side plane assembly works as the feed and thus having larger collecting area per element. Figure \ref{fig:freq} shows the return loss measurement of power of the PAPER antenna and figure \ref{fig:delay_spectrum} shows (red line) the corresponding delay spectrum. The feed element shows improved delay response compared to the PAPER element across all delays $>50~ns$ with marginal improvement at delays $<50~ns$. The delay response of the HERA element degrades marginally as the feed is suspended over the dish due to multiple reflections between the feed and the dish.  It is evident that majority of the response at lower delays are contributed due to the feed and its supporting structure at lower delays which is somewhat common to all three measurements. At the lower delays, the structures in the delay response remains unaltered even with the variation of the feed height relative to the dish vertex. It is essentially these structures set lower limits on the $k_{||}$ that could be probed and any redshift $z$ above the instrument footprint. 
+would  for power spectrum measurements, especially at smaller spatial scales of fluctuation i.e lower values of $k_{\parallel}$.
 
-%\section{\textbf{Effect of instrument delay spectrum on 21cm power spectrum measurements} }
-%The delay response of the instrument is dependent on the band chosen for the Fourier transform.
-%The measurement bandwidth effects the amplitude and phase of the delay spectrum. Fourier transforms taken over wider bandwidth
-%become dominated by the feed sidelobes outside the operating band, making the resultant delay profiles less relevant
-%for the power spectrum performance of the HERA instrument.  Conversely, when performing Fourier transforms over much 
-%narrow bands (the windowed $20MHz$ bands typical of PAPER analysis), the width of the resulting delay profile
-%becomes dominated by sidelobes of low delay emission interacting with the narrow bandwidth kernel.  
-%Although this may appear to be a relevant performance metric for PAPER power spectrum analysis, such an analysis typically pre-filters out low-delay emission using wide bandwidths precisely to avoid sidelobes from low-delay emission.  Hence, the most relevant delay-spectrum performance profile is that taken using the $100-200MHz$ band. \textbf{In the $100-200MHz$ delay profile, we see a delay response of $-25dB$ at $60ns$, which slopes down to $-60dB$ at $\sim120ns$.  WRITE AGAIN}
-
-
-%Figure \ref{fig:elevator} is again a delay plot of the return loss at four different feed suspension heights. 
-%We use the PAPER bandwidth and note
-%that the measurements are near identical at low delays, implying that low delay reflections are caused primarily by reflections within the feed cage. 
-%However, at higher delays we notice discrepancies between the different heights.
-%In addition, Figure \ref{fig:outofthedish} presents measurements taken of the feed only.away from the dish. Echosorb is placed under the feed for some of the
-%measurements, with the expectation that it will prevent any reflections off the
-%ground.
-% Measurements are also taken of the feed inside its metal cage in various configurations. It is shown that the feed performs best without the cage and with the absorber. 
-%All these measurements are suggestive of the  fact that the feed-cage assembly itself is responsible for a significant portion of the structure up to $60ns$ and
-%that the cylindrical cage may be contributing up to $20ns$ to the width of the delay profile. 
-%We note that this depends stronglyon its coupling to structures around it. 
-%Structure beyond $60ns$ appears to scale with the height of the feed above the dish.
 
 
 
