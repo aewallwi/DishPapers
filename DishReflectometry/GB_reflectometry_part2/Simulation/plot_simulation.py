@@ -127,8 +127,9 @@ for filename in sys.argv[1:]:
         #plt.show()
         #plt.plot(fq_H,pwr(d2_H),linewidth=2.5,label='return loss feed (measured)' )
         
-        #plt.plot(np.fft.fftshift(tau), 10.0*np.log10(np.fft.fftshift(np.abs(_d))), linewidth=2.5, label= 'Feed Only (Simulation)')
-        plt.plot(np.fft.fftshift(tau1), 10.0*np.log10(np.fft.fftshift(np.abs(_d2H))), linewidth=2.5, color = '#ff8c00' ,  label= 'HERA (EM Simulation)')
+        #plt.plot(np.fft.fftshift(tau), 10.0*np.log10(np.fft.fftshift(np.abs(_d2))), linewidth=2.5, color = '#ff8c00', label= 'EM Simulation')
+        #plt.plot(1000*delay, delay_spectrum, linewidth=2.5, color = 'black', label='Time domain simulation')
+        plt.plot(np.fft.fftshift(tau1), 10.0*np.log10(np.fft.fftshift(np.abs(_d2H))), linewidth=2.5, color = 'blue' ,  label= 'Measurement')
         
         
         #plt.plot(np.fft.fftshift(tau), 0.5*pwr(np.fft.fftshift(np.abs(_d2))), linewidth=2.5, label='HERA feed')
@@ -141,7 +142,7 @@ for filename in sys.argv[1:]:
     	
         
         
-        #plt.plot(1000*delay, delay_spectrum, linewidth=2.5, label='Simulated power kernel of HERA element')
+        #plt.plot(1000*delay, delay_spectrum, linewidth=2.5, label='Time domain simulation')
         
         #_dww_rb = np.fft.ifft((d2_rb)**2*window2) / window2.mean() # compensate for window amplitude
     
@@ -201,11 +202,13 @@ for filename in sys.argv[1:]:
         ddave = npzdata2['dhera']
         #plt.plot(tau3, -ddave,linewidth=1.5 , label='Dave simulation')
         
-        d_t_10 =1+d_feed/30 # Transmission coefficient
-        d1_H = ((d_H/30-d_feed/30)*(d_feed/30)/d_t_H ) # Reflections corrected to produce system bandpass in the receiving mode 
+        d_t_10 =1+d_feed/10 # Transmission coefficient
+        d1_H = ((d_H/10-d_feed/10)*(d_feed/10)/d_t_H ) # Reflections corrected to produce system bandpass in the receiving mode 
         d2_H = d1_H+d_t_10 # Zero term added for final correction
         
         _d3H = np.fft.ifft(np.abs(d2_H)**2*window1) /window1.mean()# compensate for window amplitude
+        
+        #plt.plot(np.fft.fftshift(tau1), 10.0*np.log10(np.fft.fftshift(np.abs(_d3H))), linewidth=2.5, color = 'gray' ,  label= '')
         
         np.savez('delayspectrum', delay = np.fft.fftshift(tau1), amp = 10.0*np.log10(np.fft.fftshift(np.abs(_d2H))) )
         
@@ -222,10 +225,10 @@ for filename in sys.argv[1:]:
         meas_aar_oqe_015 = npzdata3['refl_cstr_oqe_k0.15']
         meas_aar_oqe_020 = npzdata3['refl_cstr_oqe_k0.20']
         
-        plt.plot(tau5, meas_aar, linewidth=1.5, color ='k', label='FG Simulation k||>0.2')
-        plt.plot(tau4, meas_aar_010, linewidth=1.5, color ='r', label='FG Simulation k||>0.1')
-        plt.plot(tau4, meas_aar_015, linewidth=1.5, color ='b', label='FG Simulation k||>0.15')
-        plt.plot(tau4, meas_aar_020, linewidth=1.5, color ='k', label='FG Simulation k||>0.2')
+        #plt.plot(tau5, meas_aar, linewidth=1.5, color ='k', label='FG Simulation k||>0.2')
+        #plt.plot(tau4, meas_aar_010, linewidth=1.5, color ='r', label='FG Simulation k||>0.1')
+        #plt.plot(tau4, meas_aar_015, linewidth=1.5, color ='b', label='FG Simulation k||>0.15')
+        #plt.plot(tau4, meas_aar_020, linewidth=1.5, color ='k', label='FG Simulation k||>0.2')
         
         plt.plot(tau4, meas_aar_oqe_010, linewidth=1.5, color ='m', label='FG Simulation OQE k||>0.1')
         plt.plot(tau4, meas_aar_oqe_015, linewidth=1.5, color ='g', label='FG Simulation OQE k||>0.15')
@@ -237,7 +240,7 @@ for filename in sys.argv[1:]:
 #ax1.set_xlim(0,max(k_ll))
 #ax2.set_xlim(0,500)
 plt.xlim(-500,500)
-#plt.ylim(-60,0)
+plt.ylim(-60,0)
 
 #tau2,achrmbeam_spec[0],achrmbeam_spec[1],achrmbeam_spec[2] = tau2[valid2],achrmbeam_spec[0][valid2],achrmbeam_spec[1][valid2],achrmbeam_spec[2][valid2]
 plt.xlabel('Delay (nS)')
