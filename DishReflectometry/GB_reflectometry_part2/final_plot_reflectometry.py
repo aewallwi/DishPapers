@@ -87,9 +87,9 @@ for filename in sys.argv[1:]:
     
     
     
-    valid = np.where(np.logical_and(fq < .200, fq > .100)) # restrict to PAPER band
+    valid = np.where(np.logical_and(fq < .175, fq > .140)) # restrict to PAPER band
     
-    valid1 = np.where(np.logical_and(fq < .200, fq > .100)) # restrict to PAPER band
+    valid1 = np.where(np.logical_and(fq < .175, fq > .140)) # restrict to PAPER band
     
     fq, d, db, ph = fq[valid], d[valid], db[valid], ph[valid]
     
@@ -184,7 +184,7 @@ for filename in sys.argv[1:]:
     	
     	
     
-plt.xlim(-450,450)
+plt.xlim(-350,350)
 #plt.ylim(-60,0)
 #plt.xlabel('Delay (nS)')
 plt.ylabel('Delay Spectrum(dB)')
