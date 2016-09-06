@@ -19,22 +19,35 @@
 \newcommand{\fngexp}{{e^{\frac{2\pi i\nu\vec{b}\cdot\thhat}{c}}}}
 \newcommand{\ifngexp}{{e^{-\frac{2\pi i\nu\vec{b}\cdot\thhat}{c}}}}
 \newcommand{\dfngexp}{{e^{2\pi i\nu \Delta \tau}}}
-\newcommand{\myemail}{skywalker@galaxy.far.far.away}
+%\newcommand{\myemail}{skywalker@galaxy.far.far.away}
 
 \shorttitle{HERA dish reflectometry }
 \shortauthors{Patra et al.}
 
+\def\UCB{\altaffilmark{1}}
+\def\UCBtxt{\affil{\altaffilmark{1}University of California, Berkeley, nipanjana@berkeley.edu}}
+\def\ASU{\altaffilmark{2}}
+\def\ASUtxt{\affil{\altaffilmark{2}Arizona State University, School of Earth and Space Exploration, e-mail: t\_nithyanandan@asu.edu}}
+
+\def\myemail{\altaffilmark{$\dagger$}}
+\def\myemailtxt{\altaffiltext{$\dagger$}{e-mail: nipanjana@berkeley.edu}}
 \begin{document}
 
 \title{THE HYDROGEN EPOCH OF REIONIZATION ARRAY DISH: CHARACTERIZATION OF  THE INSTRUMENTAL RESPONSE WITH REFLECTOMETRY MEASUREMENTS AND ITS IMPLICATIONS ON THE MEASUREMENT OF 21CM POWER SPECTRUM. } 
 %\maketitle
 
-\author{Nipanjana Patra\altaffilmark{1} }
-\email{Contact author email: nipanjana@berkeley.edu}
-\author{Aaron Parsons\altaffilmark{1}, Dave DeBoer, Zaki S. Ali\altaffilmark{1}, Cherie Day\altaffilmark{1}, Carina Cheng\altaffilmark{1}}
-\author{Gilbert Hsyu\altaffilmark{2}, Tsz Kuk Leung\altaffilmark{2}}
-\altaffiltext{1}{University of California, Berkeley, nipanjana@berkeley.edu}
-\altaffiltext{2}{To be inserted}
+\author{
+Nipanjana Patra\UCB\myemail,
+Aaron~R.~Parsons\UCB,
+Nithyanandan Thyagarajan\ASU,
+David~R.~DeBoer\UCB,
+Zaki~S.~Ali\UCB,
+Cherie~K.~Day\UCB, 
+Carina Cheng\UCB,
+%Gilbert Hsyu\altaffilmark{2}, 
+%Tsz Kuk Leung\altaffilmark{2}
+}
+%\altaffiltext{2}{To be inserted}}
 
 \begin{abstract}
 \end{abstract}
@@ -53,11 +66,11 @@ weakness of this hyperfine line keeps the 21~cm signal below opacity throughout
 cosmological history, but it also creates sensitivity and calibration
 challenges that are yet to be fully solved.  With noise temperatures dominated
 by sky noise and foregrounds four to five orders of magnitude
-brighter than the signal ~\citep{2015ApJ...801..138P}, 
+brighter than the signal, 
 sky-averaged 21~cm monopole experiments such as
 EDGES; ~\citep{Bowman_et_al2010},
-BIGHORNS; ~\citealt{XXX},
-SARAS; ~\citep{Patra_et_al2015} ,
+BIGHORNS; ~\citealt{2015PhDT........65V},
+SARAS; ~\citep{Patra_et_al2015}, \citep{Patra_et_al2013} ,
 SCIHI; ~\citep{2015PhDT........65V},
 HYPERION; ~\citep{presley_et_al2015}
 % XXX others?
@@ -68,8 +81,7 @@ the Giant Metre-wave Radio Telescope (GMRT; ~\citealt{XXX}),
 the Donald C. Backer Precision Array to Probe the Epoch of Reionization (PAPER; ~\citealt{parsons_et_al2010}),
 the Hydrogen Epoch of Reionization Array (HERA; ~\citealt{XXX}),
 and the future Square Kilometre Array (SKA; ~\citealt{XXX})
-must
-furnish both collecting area and foreground suppression at levels significantly
+must furnish both their foreground suppression limits given their system performance at levels significantly
 beyond anything previously achieved in radio telescopes operating below 1 GHz.
 
 One of the most problematic effects facing these experiments is instrument
@@ -80,7 +92,7 @@ as well as probe the evolution of 21~cm emission over cosmological timescales.
 The evolving response of a radio telescope --- either a single dish
 or an interferometer --- versus spectral frequency modulates spectrally smooth foregrounds,
 contaminating spectral modes that might
-otherwise be used to measure reionization ~\citep{XXX}.  Moreover, the chromaticity of
+otherwise be used to measure reionization ~\citep{liu_et_al2014a}.  Moreover, the chromaticity of
 a telescope's response scales linearly with diameter, putting the
 needs of foreground suppression and signal sensitivity in direct tension with one
 another. In addition to that, systematic effects are unique to each instrument and their manifestation 
@@ -89,7 +101,7 @@ is different in each dataset.
 A major step forward for the field of 21~cm cosmology has been the development
 of a mathematical description of telescope chromaticity, how it varies with
 element separation (or telescope diameter), and what it implies for distinguishing
-foreground emission from the cosmological 21~cm signal ~\citep{XXX}.  The ``wedge'', as it is
+foreground emission from the cosmological 21~cm signal~\citep{Thyagarajan_et_al2015}.  The ``wedge'', as it is
 colloquially known, describes a linear relationship between the separation between elements
 in an interferometric baseline and the maximum line-of-sight Fourier mode\footnote{Assuming
 a flat sky and using appropriate
@@ -104,27 +116,21 @@ within the limits of the wedge,
 foreground contamination may be suppressed through a combination of calibration and model 
 subtraction.  However, calibration or modeling errors rapidly re-establish the characteristic
 wedge pattern.  Outside of the wedge, foreground contamination drops rapidly 
-~\citep{pober_et_al2013,thargarajan_et_al2015}, provided that the spectral responses
+~\citep{pober_et_al2013},\citep{Thyagarajan_et_al2015}, provided that the spectral responses
 of antenna elements and analog electronics are sufficiently smooth\footnote{Here, we distinguish
 the chromaticity of the elements in isolation from the chromaticity inherent to
 element separation in an interferometric baseline.}.  In the promising, avoidance-based
-foreground strategy employed by PAPER ~\citep{parsons_et_al2014,ali_et_al2015}, these modes
+foreground strategy employed by PAPER ~\citep{parsons_et_al2014},\citep{Ali_et_al2015}, these modes
 may be targeted as the lowest risk path for constraining 21~cm reionization in the near term.
   
 % XXX document map
-The efficacy of the techniques of foreground removal from the measured data critically limits the 21~cm power spectrum measurements. The delay transformation technique of foreground removal, introduced by  ~\cite{ParsonsBacker2009,Parsons2012}, computes the Fourier transform of the visibility measured by an interferometer and produces a spectrum, referred to as the delay spectrum hereafter, which is a function of the geometric time delay corresponding to the physical length of the baseline between two antennas. For the visibilities measured over a wide field across a wide frequency bandwidth, the delay spectrum consists of the instrument response, the foreground signal, and the 21cm power spectrum, hereafter referred to as the EoR signal.
+The efficacy of the techniques of foreground removal from the measured data critically limits the 21~cm power spectrum measurements. The delay transformation technique of foreground removal, introduced by  ~\citep{Parsons_Backer_2009},\citep{Parsons_et_al_2012}, computes the Fourier transform of the visibility measured by an interferometer and produces a spectrum, referred to as the delay spectrum hereafter, which is a function of the geometric time delay corresponding to the physical length of the baseline between two antennas. For the visibilities measured over a wide field across a wide frequency bandwidth, the delay spectrum consists of the instrument response, the foreground signal, and the 21cm power spectrum, hereafter referred to as the EoR signal.
 %The complex visibility measured by an interferometer is a convolution of the instrument response with the true sky response in the UV plane. Therefore, when Fourier transformed, the delay spectrum is the multiplication of the sky response with the instrument response in the delay domain.
-The technique exploits the smooth spectral characteristics of the foreground and for a widefield wide bandwidth visibility measurement by an interferometer with a baseline $b$, confines the foreground contribution to the computed delay spectrum within the largest possible time delay, $\tau = b/c$, corresponding to the given baseline length. Such techniques also assume a spectrally smooth instrumental response whose contribution to the measured data, much as the contribution of the smooth spectrum foreground, also has an upper bound in the delay space imposed by the largest geometric delay of the given baseline. 
-Beyond this limit, for an ideal system performance, the delay spectrum would be dominated by any wideband signal across the sky with spectral and spatial fluctuations over small scales, such as the EoR signal, and therefore, could be detectable.\\
-\indent The interaction between the sky signal and instrument response can alter the relative contribution of the foreground, instrument response and the EoR signal at a given delay and, thus, influence the detectability of the EoR signal. Such interactions may cause the foreground and systematics to spill over into higher delays and, thus, push the upper limit of the foreground and systematics contaminated delay modes to much higher delays. In this process, the EoR signal over large spatial scales will be lost. \\
+The technique exploits the smooth spectral characteristics of the foreground and for a widefield wide bandwidth visibility measurement by an interferometer with a baseline $b$, confines the foreground contribution to the computed delay spectrum within the largest possible time delay, $\tau = b/c$, corresponding to the given baseline length. Such techniques also assume a spectrally smooth instrumental response whose contribution to the measured data, much as the contribution of the smooth spectrum foreground, also has an upper bound in the delay space imposed by the largest geometric delay of the given baseline. Beyond this limit, for an ideal system performance, the delay spectrum would be dominated by any wideband signal across the sky with spectral and spatial fluctuations over small scales, such as the EoR signal, and therefore, could be detectable. The interaction between the sky signal and instrument response can alter the relative contribution of the foreground, instrument response and the EoR signal at a given delay and, thus, influence the detectability of the EoR signal. Such interactions may cause the foreground and systematics to spill over into higher delays and, thus, push the upper limit of the foreground and systematics contaminated delay modes to much higher delays. In this process, the EoR signal over large spatial scales will be lost. \\
 \indent The Hydrogen Epoch of Reionization Array (HERA) is a proposed array consisting of 568 14-m dishes in South Africa which will measure the 21~cm power spectrum between 100 to 200~MHz.
-In this paper, we investigate the performance of an individual HERA element and the resulting contribution of the instrument response to the delay spectrum.
- Reflectometry measurements  are carried out across a wide bandwidth on a prototype HERA element in Green Bank, WV (Figure \ref{fig:heradish}), and the results are interpreted in light of the delay spectrum technique. Section 2 describes the delay spectrum for the ideal and non-ideal performance of a two element interferometer. Reflectometry measurements are described in section 3. Section 4 describes the performance of the HERA element as an interferometer for detection of the 21~cm power spectrum.
-In coordination with ~\citet{XXXsisterpapers}, we compare 
-reflectometry measurements with
-a specification for the spectral performance of an element, given models of the relative brightness of
-foreground and 21~cm reionization modes in $k$-space in section 5.
-
+In this paper, we investigate the performance of an individual HERA element and the resulting manifestation of the instrument response to the delay spectrum. Reflectometry measurements  are carried out across a wide bandwidth on a prototype HERA element in Green Bank, WV (Figure \ref{fig:heradish}), and the results are interpreted in light of the delay spectrum technique of power spectrum estimation and inverse covariance weighting method of foreground suppression. Section 2 briefly describes the delay spectrum for the ideal and non-ideal performance of a two element interferometer. Section 3 describes the reflectometry measurements and establishes the connection between visibility measurements and reflectometry. Reflectometry results are described in section 5. Section 6 evaluates the performance of the HERA element for detection of the 21~cm power spectrum.
+This paper is one in a series of four papers that studies the time and frequency domain simulation of  HERA element~\citep{Ewall-Wice_et_al2016}, ~\citep{ddboer_et_al2016},beam pattern measurements~\citep{Neben_et_al2016}, and foreground limits ~\citep{Thyagarajan_et_al2016}. We compare 
+reflectometry measurements to the simulated specification for the spectral performance of a HERA element ~\citep{ddboer_et_al2016} and to the limits of EoR to foreground power ratio established by ~\citep{Thyagarajan_et_al2016}. 
 \begin{figure*}
 \centering
 \includegraphics[trim={2cm 20cm 30cm 15cm},clip, totalheight=0.3\textheight]{plots/heradish.jpg}
@@ -316,7 +322,7 @@ The simultated and measureded return loss of the feed as well as the HERA elemen
 \begin{figure}[ht]
 \begin{minipage}[b]{\linewidth}
 \centering
-\includegraphics[angle=0, width=\linewidth]{/Users/Nipanjana/WORKAREA1/DATA_Area/Project_HERA/DishPapers/DishReflectometry/GB_reflectometry_part3/plot/RL_mag_feed.png}
+\includegraphics[angle=0, width=\linewidth]{GB_reflectometry_part3/plot/RL_mag_feed.png}
 \end{minipage}
 \vspace{0.1cm}
 \begin{minipage}[b]{\linewidth}
@@ -332,7 +338,7 @@ The simultated and measureded return loss of the feed as well as the HERA elemen
 \begin{figure}[ht]
 \begin{minipage}[b]{\linewidth}
 \centering
-\includegraphics[angle=0, width=\linewidth]{/Users/Nipanjana/WORKAREA1/DATA_Area/Project_HERA/DishPapers/DishReflectometry/GB_reflectometry_part3/plot/RL_mag_dish.png}
+\includegraphics[angle=0, width=\linewidth]{GB_reflectometry_part3/plot/RL_mag_dish.png}
 \end{minipage}
 \vspace{0.1cm}
 \begin{minipage}[b]{\linewidth}
@@ -345,7 +351,7 @@ The simultated and measureded return loss of the feed as well as the HERA elemen
 
 \begin{figure}       
 \centering
-\includegraphics[width=\linewidth]{/Users/Nipanjana/WORKAREA1/DATA_Area/Project_HERA/DishPapers/DishReflectometry/GB_reflectometry_part3/plot/ds_feed_on_dish_trans_recp.png}
+\includegraphics[width=\linewidth]{GB_reflectometry_part3/plot/ds_feed_on_dish_trans_recp.png}
 \caption{Delay spectrum of the HERA feed (brown) estimated by taking the Fourier transform of the measured return loss of power at the feed output. The feed, when suspended on the dish results in a more complex return loss as shown in figure \ref{RL_mag_dish} and corresponding delay response is shown here in black. This figure shows the delay spectrum of the instrument in the as estimated from direct measurements of the return loss i.e, in the transmission mode of the antenna. }
 \label{ds_feed_on_dish_trans}
 \end{figure}
@@ -518,7 +524,8 @@ the element's current delay performance on HERA science.  We suspect that, at th
 performance may indeed be adequate for the delay-domain power spectrum analysis for which HERA has been optimized.
 
 %\bibliography{biblio}{}
-\bibliography{Reference}{}
 \bibliographystyle{apj}
+\bibliography{Reference}{}
+
 \end{document}
 
