@@ -514,28 +514,16 @@ This demonstrates that the performance of the HERA element performance, in conju
 
 
 \section{\textbf{Conclusion}}
-
-The delay-domain performance of the HERA dish is central to HERA's function as a power spectrum instrument.
-As we have seen, reflectometry measurements can help characterize HERA's performance in this domain, and
-as Equation \ref{eqn:ratio1} shows, these measurements must be adjusted for a difference in transmission/reflection
+The interplay between the extremely bright sky signal with the system response has remained somewhat undermined for the first generation 21cm experiments such as MWA, LOFAR, PAPER. With the theory of redshifted 21cm experiments have very well evolved, it is absolute necessity now to quantify the instrumental limits of these measurement in order to produce a believable power spectrum estimates.
+In this paper, we studied the performance of a HERA element in both frequency as well as delay domain. The effects of multiple reflections  in a HERA feed-dish assembly is investigated in detail and their effects on the measured visibility as well as delay spectrum is estimated.  The delay-domain performance of the HERA dish is central to HERA's function as a power spectrum instrument. Reflectometry measurements characterised HERA's performance in this domain, and as Equation \ref{eq10} shows, these measurements must be adjusted for a difference in transmission/reflection
 at the first feed encounter in order to be interpreted as the delay response of a feed relative to an incident
-plane wave from the sky.  We also see that the choice of windowing function is critical for accurately measuring the
+plane wave from the sky.  It is also shown that the choice of windowing function is critical for accurately measuring the
 antenna delay response at higher delays, where sidelobes from much higher amplitude responses at small delays can easily
-dominate.  We find Hamming, Hanning, and Blackman-Harris windows to be generally adequate while square windowing functions are not.
-Given the critical nature of the windowing function, we recommend that all reflectometry measurements be performed in the
+dominate.  Blackman-Harris window is found to be generally adequate while square windowing functions are not.
+Given the critical nature of the windowing function, it is recommended that all reflectometry measurements be performed in the
 frequency domain, so that the data could be Fourier transformed with the appropriate window.
-
-Taken all together, we summarize that the first version of the HERA dish, with a PAPER-style feed and cylindrical cage, is close to meeting
-specification, but will require additional work to fall below $-60dB$ at $60ns$.  Given that the width of the delay response is a convolution
-of the feed response and the dish reflections, it is not possible to perfectly decouple the response of the feed from that of the dish.
-It may be possible to achieve enough of a reduction to meet specification by modifying the feed.
-Given that previous measurements using a PAPER feed with a simple backplane exhibit structure above $-60dB$ at $60ns$,
-we deduce that these advances will most likely require improving the feed return loss.  We also recommend re-investigating the scattering
-cone for reducing standing waves between the feed and dish.  Finally, given the proximity of our measurements to the rough 
-specification that was adopted for 
-HERA of $-60dB$ attenuation at $60ns$, we recommend reinvestigating this specification to determine more accurately the impact of 
-the element's current delay performance on HERA science.  We suspect that, at the level of $-50dB$ at $60ns$ and $-60dB$ at $120ns$, this
-performance may indeed be adequate for the delay-domain power spectrum analysis for which HERA has been optimized.
+The delay spectrum estimates are then compared with the electromagnetic as well as time domain simulation of the HERA element~\citep{Ewall-Wice_et_al2016}, ~\citep{ddboer_et_al2016}. The same is then compared with the foreground simulation of~\cite{Thyagarajan_et_al2015}. The performance is also evaluated in the light of HERA power spectrum estimation technique using inverse covariance weighting formalism. 
+Taken all together, we summarise that the HERA antenna element, with a PAPER-style crossed dipole feed and cylindrical cage the instrument delay spectrum very well satisfies the criteria necessary to meet its science goal. 
 
 %\bibliography{biblio}{}
 \bibliographystyle{apj}
