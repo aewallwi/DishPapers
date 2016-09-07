@@ -177,12 +177,13 @@ The convolution is carried out along the $\tau$ axis which is Fourier conjugate 
 The redshifted 21 cm spatial power spectrum is defined as
 \begin{equation}
   P_{21}(k_\perp,k_\parallel) = (|\tilde V(\vec b, \tau)|^{2} \left(\frac{1}{\Omega\Delta B}\right)\left(\frac{D^2\Delta D}{\Delta B}\right)\left(\frac{\lambda^2}{2k_\textrm{B}}\right)^2 ,
-\label{eq:delay-power-spectrum}
+\label{eq4}
 \end{equation}
 where
 \begin{equation}
   k_\perp = \frac{2\pi f}{D}\Bigg({b\over c}\Bigg), \text{ }
   k_\parallel = \frac{2\pi\tau\,f_{21}H_0\,E(z)}{c(1+z)^2}, 
+ \label{eq5}
 \end{equation}
 The power spectrum is a function of cosmological as well as instrumental parameters which are:\\
 $f_{21}$:rest frame frequency of the 21~cm radiation.\\
@@ -210,9 +211,9 @@ $E(z)= [\Omega_\textrm{M}(1+z)^3+\Omega_\textrm{k}(1+z)^2+\Omega_\Lambda]^{1/2}$
 The Hydrogen Epoch of Reionization Array consists of parabolic dishes which provide increased collecting area per array element compared to its predecessor experiment PAPER. Plane waves incident on a parabolic dish are focussed at the feed which is kept at the focal plane of the dish.
 The mismatch between the impedance of free space and the feed and transmission line results in a partial coupling of the sky signal into the feed while the rest is reflected off the feed. 
 The reflected signal illuminates the dish and most of it is reflected back into the space.
-However, a part of it reflects back and forth several times in between the feed and the vertex of the dish which is shadowed by the feed (dashed blue arrows in Figure \ref{fig:cartoon}).
+However, a part of it reflects back and forth several times in between the feed and the vertex of the dish which is shadowed by the feed.
 Such reflections generate multiple copies of the incident sky signal of reduced strength at various delay and phase and thus produces spurious correlations in the visibilities of interferometric data.  Identical spurious visibilities could be resulted due to reflections internal to the system causing delay space distortion. Therefore, it is necessary to measure and understand the instrument delay spectrum in order to qualify the system for the measurement of 21cm power spectrum. 
-In this section we compute the visibility of a two element interferometer accounting for the additional reflections of the sky signal in between the feed and the dish vertex and the corresponding effects on the delay spectrum, using the multiple reflection formulation of Sec. \ref{sec:multiple}. In this section, the effect of reflections on the visibility data and corresponding effect on the delay spectrum is discussed in detail. We assume two antennas with identical geometry and electrical parameters i.e, $\bmvolt_{1}(\thhat,\nu)=\bmvolt_{2}(\thhat,\nu) = \bmvolt(\thhat,\nu)$. 
+In this section we compute the visibility of a two element interferometer accounting for the additional reflections of the sky signal in between the feed and the dish vertex and the corresponding effects on the delay spectrum in detail. We assume two antennas with identical geometry and electrical parameters i.e, $\bmvolt_{1}(\thhat,\nu)=\bmvolt_{2}(\thhat,\nu) = \bmvolt(\thhat,\nu)$. 
  \subsection{\textbf{Antenna Reception With Multiple Reflections}}
 \label{sec:multiple}
 To examine the performance of an antenna and feed in the presence of multiple reflections, we can think of the system as a screen at a distance $F$ from a feed (see Figure \ref{fig:sys}), noting that this does ignore the sky pattern of the feed itself.  The screen reflects a factor, $\Gamma_d$, of the voltage and transmits $(1+\Gamma_d)$ (see, {\em e.g.} Pozar).  Similarly, the feed reflects $\Gamma_f$ and transmits $(1+\Gamma_f)$.  The voltage pattern $\volt_{sky}$ is incident onto that system and  $(1+\Gamma_{d})(1+\Gamma_{f})$ is coupled into the cable leading from the feed. 
