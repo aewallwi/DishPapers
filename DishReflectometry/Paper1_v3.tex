@@ -33,7 +33,7 @@
 \def\myemailtxt{\altaffiltext{$\dagger$}{e-mail: nipanjana@berkeley.edu}}
 \begin{document}
 
-\title{THE HYDROGEN EPOCH OF REIONIZATION ARRAY DISH: CHARACTERIZATION OF  THE INSTRUMENTAL RESPONSE WITH REFLECTOMETRY MEASUREMENTS AND ITS IMPLICATIONS ON THE MEASUREMENT OF 21CM POWER SPECTRUM. } 
+\title{THE HERA DISH III : MEASURING ELEMENT CHROMATICITY WITH REFLECTOMETRY. } 
 %\maketitle
 
 \author{
@@ -177,12 +177,13 @@ The convolution is carried out along the $\tau$ axis which is Fourier conjugate 
 The redshifted 21 cm spatial power spectrum is defined as
 \begin{equation}
   P_{21}(k_\perp,k_\parallel) = (|\tilde V(\vec b, \tau)|^{2} \left(\frac{1}{\Omega\Delta B}\right)\left(\frac{D^2\Delta D}{\Delta B}\right)\left(\frac{\lambda^2}{2k_\textrm{B}}\right)^2 ,
-\label{eq:delay-power-spectrum}
+\label{eq4}
 \end{equation}
 where
 \begin{equation}
   k_\perp = \frac{2\pi f}{D}\Bigg({b\over c}\Bigg), \text{ }
   k_\parallel = \frac{2\pi\tau\,f_{21}H_0\,E(z)}{c(1+z)^2}, 
+ \label{eq5}
 \end{equation}
 The power spectrum is a function of cosmological as well as instrumental parameters which are:\\
 $f_{21}$:rest frame frequency of the 21~cm radiation.\\
@@ -210,9 +211,9 @@ $E(z)= [\Omega_\textrm{M}(1+z)^3+\Omega_\textrm{k}(1+z)^2+\Omega_\Lambda]^{1/2}$
 The Hydrogen Epoch of Reionization Array consists of parabolic dishes which provide increased collecting area per array element compared to its predecessor experiment PAPER. Plane waves incident on a parabolic dish are focussed at the feed which is kept at the focal plane of the dish.
 The mismatch between the impedance of free space and the feed and transmission line results in a partial coupling of the sky signal into the feed while the rest is reflected off the feed. 
 The reflected signal illuminates the dish and most of it is reflected back into the space.
-However, a part of it reflects back and forth several times in between the feed and the vertex of the dish which is shadowed by the feed (dashed blue arrows in Figure \ref{fig:cartoon}).
+However, a part of it reflects back and forth several times in between the feed and the vertex of the dish which is shadowed by the feed.
 Such reflections generate multiple copies of the incident sky signal of reduced strength at various delay and phase and thus produces spurious correlations in the visibilities of interferometric data.  Identical spurious visibilities could be resulted due to reflections internal to the system causing delay space distortion. Therefore, it is necessary to measure and understand the instrument delay spectrum in order to qualify the system for the measurement of 21cm power spectrum. 
-In this section we compute the visibility of a two element interferometer accounting for the additional reflections of the sky signal in between the feed and the dish vertex and the corresponding effects on the delay spectrum, using the multiple reflection formulation of Sec. \ref{sec:multiple}. In this section, the effect of reflections on the visibility data and corresponding effect on the delay spectrum is discussed in detail. We assume two antennas with identical geometry and electrical parameters i.e, $\bmvolt_{1}(\thhat,\nu)=\bmvolt_{2}(\thhat,\nu) = \bmvolt(\thhat,\nu)$. 
+In this section we compute the visibility of a two element interferometer accounting for the additional reflections of the sky signal in between the feed and the dish vertex and the corresponding effects on the delay spectrum in detail. We assume two antennas with identical geometry and electrical parameters i.e, $\bmvolt_{1}(\thhat,\nu)=\bmvolt_{2}(\thhat,\nu) = \bmvolt(\thhat,\nu)$. 
  \subsection{\textbf{Antenna Reception With Multiple Reflections}}
 \label{sec:multiple}
 To examine the performance of an antenna and feed in the presence of multiple reflections, we can think of the system as a screen at a distance $F$ from a feed (see Figure \ref{fig:sys}), noting that this does ignore the sky pattern of the feed itself.  The screen reflects a factor, $\Gamma_d$, of the voltage and transmits $(1+\Gamma_d)$ (see, {\em e.g.} Pozar).  Similarly, the feed reflects $\Gamma_f$ and transmits $(1+\Gamma_f)$.  The voltage pattern $\volt_{sky}$ is incident onto that system and  $(1+\Gamma_{d})(1+\Gamma_{f})$ is coupled into the cable leading from the feed. 
@@ -222,7 +223,10 @@ $n^{th}$ reflection may be written as:
 \volt_{rec} & = &  (1+\Gamma_d) (1+\Gamma_{f}) \volt_{sky}[1+ \Gamma_{f}\Gamma_{d} \dfngexp \nonumber \\
 	&& + (\Gamma_{f}\Gamma_{d})^2  (\dfngexp)^{2}+ \nonumber \\
 &&  ....+ (\Gamma_{f}\Gamma_{d})^{n} (\dfngexp)^{n}]
+\label{eq6}
 \end{eqnarray}
+
+
 \begin{figure}
 \centering
 \includegraphics[width=0.5\textwidth]{plots/microsys.pdf}
@@ -236,7 +240,7 @@ Hence,
  \begin{eqnarray}
 {\volt_{rec}\over \volt_{sky} } & = &   (1+\Gamma_d)(1+\Gamma_{f}) \displaystyle\sum\limits_{n=0}^{N} [\Gamma_{f}\Gamma_{d}\dfngexp]^{n}\nonumber\\
 & = & \frac{ (1+\Gamma_d)(1+\Gamma_{f})}{1+\Gamma_{f}\Gamma_{d}\dfngexp} 
-\label{corrected_response}
+\label{eq7}
 \end{eqnarray}
 Note that $n=0$ is when the initial wave enters the cable at the feed (where we assume we have set our reference plane).  We may identify $(1+\Gamma_d)$ as the voltage reception pattern of the antenna, denoted $\bmvolt(\thhat,\nu)$, which is a function of angle on the sky.  Additionally, $(1+\Gamma_f$) is the voltage efficiency for the feed (not a function of angle).
 
@@ -268,22 +272,24 @@ lowered by a three-pulley system mounted on the three poles. The focal height of
          && + \volt_{trans} (1+\Gamma_f)^2 \Gamma_{d} \dfngexp \Gamma_d\Gamma_f\dfngexp \nonumber \\
          && + \volt_{trans} (1+\Gamma_f)^2 \Gamma_{d} \dfngexp (\Gamma_d\Gamma_f\dfngexp)^2 \nonumber \\
 &&  ....+ \volt_{trans} (1+\Gamma_f)^2 \Gamma_{d} \dfngexp (\Gamma_d\Gamma_f\dfngexp)^n \nonumber \\
+\label{eq8}
 \end{eqnarray}
 Therefore, 
 \begin{equation}
 {\volt_{rec}\over \volt_{trans} } = \Gamma_f + \frac{(1+\Gamma_f)^2}{\Gamma_{f}} \displaystyle\sum\limits_{n=1}^{N} [\Gamma_{f}\Gamma_{d}\dfngexp]^{n}
-\label{eq:s11}
+\label{eq9}
 \end{equation}
 The VNA measures the quantity $\volt_{rec}/\volt_{trans}=s_{11}$ which is the voltage reflection coefficient of the HERA element.
 The fundamental differences between the right hand side of equations \ref{eq:Sigma} and \ref{eq:s11} are the $n=0$ term and the multiplicative factor in front of the convergent series $\displaystyle\sum\limits_{n=1}^{N} [\Gamma_{f}\Gamma_{d}\dfngexp]^{n}$ that represents the contribution of the delayed voltage components at the VNA input, arising due to multiple signal reflections between the feed and the dish. Finally, writing $\volt_{rec}/\volt_{trans}=s_{11}$, equation \ref{eq:s11} can be written as,
 \begin{equation}
 s_{11} +\frac{(1+\Gamma_f)^2}{\Gamma_f}-\Gamma_f = \frac{(1+\Gamma_f)^2}{\Gamma_{f}} \displaystyle\sum\limits_{n=0}^{N} [\Gamma_{f}\Gamma_{d}\dfngexp]^{n}
+\label{eq10}
 \end{equation}
 Comparing to Eq. \ref{eq:Sigma} and we find that
 \begin{eqnarray}
 {\volt_{rec}\over \volt_{sky} } & = & (1+\Gamma_d)\left[(1+\Gamma_f) + \frac{\Gamma_f}{(1+\Gamma_f)}\left(s_{11} - \Gamma_f\right)\right] \nonumber\\
  & = & \bmvolt(\thhat,\nu) \left[(1+\Gamma_f) + \frac{\Gamma_f}{(1+\Gamma_f)}\left(s_{11} - \Gamma_f\right)\right]
-\label{zero_delay_correction}
+\label{eq11}
 \end{eqnarray}
 When the feed return loss is measured separately, all the higher order terms of equation \ref{eq:s11} do not exist. In this case, $\Gamma_f = s_{11}^{f}$. Using this measurement and the VNA measurement of $s11$, the quantity $v_{rec}\over v_{sky}$ is estimated. \\
 %
@@ -292,7 +298,7 @@ When the feed return loss is measured separately, all the higher order terms of 
 {I_{rec}\over I_{sky} } & = & \Bigg|{\volt_{rec}\over \volt_{sky} }\Bigg|^2 =  \beam(\thhat,\nu)\times \nonumber\\
              && \left[|1+\Gamma_f|^2 +  2\operatorname{Re}\left(\frac{\Gamma_f}{(1+\Gamma_f)}(s_{11} - \Gamma_f)\right)\right] + \nonumber\\ 
              &&  \left[ \frac{|\Gamma_f|^2}{|1+\Gamma_{f}|^2}|s_{11} - \Gamma_f|^2  \right]  \nonumber\\
-\label{eq:power_ratio}             
+\label{eq12}             
 \end{eqnarray}
 
 In terms of visibility, the same could be written as,  
@@ -300,7 +306,7 @@ In terms of visibility, the same could be written as,
 \vis^{mul}(\vec b,\nu) & = & \int \beam(\thhat,\nu)\times \nonumber\\
              && \left[|1+\Gamma_f|^2 +  2\operatorname{Re}\left(\frac{\Gamma_f}{(1+\Gamma_f)}(s_{11} - \Gamma_f)\right)\right] + \nonumber\\ 
              &&  \left[ \frac{|\Gamma_f|^2}{|1+\Gamma_{f}|^2}|s_{11} - \Gamma_f|^2  \right]  I_{sky} \ifngexp d\Omega
-\label{visibility_mul}
+\label{eq13}
 \end{eqnarray}
 
 Comparing equations \ref{eq:power_ratio} and \ref{eq2}, the cross power generated by $v_{1}$ and $v_{2}$ would have a spurious visibility response due to the mutual correlation between multiply reflected voltages represented by the second and the third term of the right hand side of equation \ref{eq:power_ratio}. In the ideal case, $\Gamma_{f}=0$, in which case equation \ref{eq:power_ratio} results in equation \ref{eq2}. The Fourier transform of this visibility spectrum along the frequency axis results in the delay spectrum. 
@@ -429,44 +435,52 @@ HERA power spectrum estimation is done using the Optimal Quadratic Estimator (OQ
 HERA instrument aims at measuring the redshifted 21~cm power spectrum $P_{21}(k_\perp,k_\parallel)$, conventionally written as, 
 \begin{equation}
 \langle  \tilde T_{b}(\bold k) \tilde T_{b}^{*}(\bold k^{'}) \rangle = (2\pi)^{3} \delta (\bold k - \bold k^{'})P_{21}(k_\perp,k_\parallel)
+\label{eq14}
 \end{equation}
 
 where $\langle  \tilde T_{b}(\bold k) \tilde T_{b}^{*}(\bold k^{'}) \rangle $ is the correlation function of the three dimensional spatial Fourier transform of the sky brightness temperature distribution $ \tilde T_{b}(\bold k)$, and $\delta$ is the Dirac delta function. While both $P_{21}(k_\perp,k_\parallel), \tilde T_{b}({\bold k})$ is continuous, the power spectrum could only be estimated at discrete values of $\bold k$. Observation frequency and bandwidth are so chosen that the power spectrum could e approximated as a constant and a piecewise continuous function of $\bold k$  which correspond to a thin shell in $\bold k$ space. This corresponds to the $k_{perp}$, $k_{parallel}$  values $a <k_{\perp} < a+1$, $b <k_{\parallel} < b+1$ where the indices a, b can assume M, N different values.  We denote the power spectrum as $\hat p_{\alpha}$ where alpha represents a particular $(M,N)$ value. Our analysis begins with a data vector $\bold x$. $\bold x$ is the list of visibilities measured at a given frequency over a certain bandwidth i.e for a given $k_{\parallel}$ mode for a given $\Delta \bold k $. The first estimate of power spectrum is written as, 
 
 \begin{equation}
 \hat q_{\alpha} = \bold x^{T} E^{\alpha} \bold x  - b^{\alpha}
+\label{eq15}
 \end{equation}
 
 where $b_{\alpha}$ is a constant that assumes different values for each $\bold k$ and represents any additive noise power spectrum or residual foreground contamination to power spectrum estimate. $b_{\alpha}$ could be eliminated from the estimate by cross correlating two visibility data sets at two different times. $E^{\alpha}$ is a symmetric matrix operation denoting the Fourier transform of the data, binning, and foreground reduction. Various binning and foreground reduction technique would result in various different form of $E^{\alpha}$ resulting in estimates of $\hat p_{\alpha}$ with non identical statistics. A possible choice of $E^{\alpha}$ is
 \begin{equation}
 E^{\alpha} =  {1 \over 2} C^{-1} Q_{\alpha} C^{-1}
+\label{eq16}
 \end{equation} 
 
 where $C = \langle \bold x \bold x^{t} \rangle$ is the covariance matrix of the data vector $\bold x$. $Q_{\alpha} \equiv {\delta C \over \delta p_{\alpha} } $ is a matrix operator that Fourier transforms the visibilities along the frequency axis and maps them into the $\bold k$ space for every M,N values. Finally, the normalized estimate of the power spectrum could be written as,  
 \begin{equation}
 \hat p_{\alpha} = M \hat q_{\alpha} 
+\label{eq17}
 \end{equation} 
 
 Since $\hat p_{\alpha}$ is a discrete estimate of the true power spectrum $p_{\alpha}$, both are related by the window function matrix $W$, 
 \begin{equation}
 \hat p_{\alpha} = W p_{\alpha}
+\label{eq18}
 \end{equation} 
 
 Hence, the estimated power spectrum $\hat p_{\alpha}$ for a given $k_{\perp}, k_{\parallel}$ values would have contribution for the nearby $k_{\perp}, k_{\parallel}$ values weighted by the window function. The wider the window function, the larger would be the contribution of the adjacent modes to the discrete power spectrum estimate. In general, therefore, $W$ is a non-diagonal matrix. Also, for a given choice of normalization matrix M, the window function W will be, 
 
 \begin{equation}
  W = MF
+ \label{eq19}
 \end{equation} 
 
 where , 
 \begin{equation}
  F_{\alpha\beta} = \frac {1} { 2} [C^{-1}Q_{\alpha}C^{-1}Q_{\beta}]^{T}
+ \label{eq20}
 \end{equation} 
  is the Fisher matrix of the measured data. The choice of normalization matrix $M$ is critically important for the analysis. If $M = F^{-1}$, $W=I$ resulting in $\hat p_{\alpha} = p_{\alpha}$ i.e, estimated value of the power spectrum equals to the true power spectrum.\\
  The errors on the power spectrum estimate is given by the covariance of the band power which could be computed from the measured data as,  
 \begin{eqnarray}
  C_{\alpha} & = & \langle \hat p_{\alpha} \hat p_{\alpha}^{T} \rangle - \langle \hat p_{\alpha} \rangle \langle \hat p_{\alpha}^{T} \rangle \nonumber\\
  		& = & MFM^{T}
+\label{eq21}
  \end{eqnarray} 
  
  For a choice of $M = F^{-1}$, the covariance in the estimated band power is as large as $M$ resulting in highest error in estimation. Hence, the choice of the normalization matrix $M$ is critical in the analysis process since its precise form determines the vertical error bars in the estimate of power spectrum. 
@@ -477,12 +491,12 @@ However, there no definite way to know the covariance of individual signal compo
  Combining the inverse covariance weighting formalism with the foreground simulation of Thyagarajan et al 2016, we derive a new limit on required foreground attenuation with respect to the EoR signal, required for power spectrum estimation using HERA measurements. The foreground model of Thyagarajan et al (2015a) is adopted wherein the diffused emission is accounted for using de Oliviera-Costa et al. 2008 and the point sources are modeled using NRAO VLA sky survey at 1.42 GHz(NVSS, Condon et al 1998) and Sydney University Molonglo Sky Survey (SUMSS; Bock et al 199;Mauch et al 2003.) at 843 MHz. The EoR signal model is derived from the 21cmFAST (Messinger et al 2011). The model parameters are kept same as what is used in Thyagarajan et al 2016 and Ewall-wice et all 2016. The EoR model parameters are listed below.\\
  Virial temperature of minimum mass of dark matter halos that host ionizing sources, $T_{vir}^{min} = 2*10^4 K$, Ionising efficiency $\eta = 20$, Mean Free Path of UV photons $R_{mfp} = 15Mpc.$ For these model parameter values, the redshift of $50\%$ reionization is predicted to be at $z = 8.5$ at 150MHz.\\
 We use the reflectometry measurements, corrected for the antenna response in the receiving mode, to compute the visibilities (eq 13) for the given model of the foreground, the EoR and the system noise. These visibilities formed the complex data vector $\bold x$. We compute the covariance matrix $C$ from the simulated data. $\bold x$ is then multiplied by the inverse of the covariance matrix. This step essentially weighs down the foreground contribution to the measured data. Once Fourier transformed, the delay spectrum of the simulated data is constituted by linear super position of the delay spectrum of the foreground, the EoR signal.  We again compute the EoR to foreground power ratio which is now smaller than what is estimated in Thyagarajan et al 2016 as shown in fig:\ref{fig:sim_fg_revised}. 
-\begin{figure}[ht]
+\begin{figure*}[ht]
 \centering
 \includegraphics[width=\linewidth]{GB_reflectometry_part3/plot/HERA_ds_fg_sim_rev.png}
 \caption{Delay spectrum of HERA element estimated from the reflectometry measurements by a vector network analyzer. The colored region shows the revised EoR to foreground power ratio in comparison to the measurements and the foreground simulation presented in (Thyagarajan et al 2016).}
 \label{fig:sim_fg_revised}
-\end{figure}
+\end{figure*}
 This demonstrates that the performance of the HERA element performance, in conjunction with the inverse covariance method of foreground suppression, qualifies the system for its the science goal it is designed for, irrespective of its chromatic response generated due to multiple reflections in the system.
 
 
@@ -500,28 +514,16 @@ This demonstrates that the performance of the HERA element performance, in conju
 
 
 \section{\textbf{Conclusion}}
-
-The delay-domain performance of the HERA dish is central to HERA's function as a power spectrum instrument.
-As we have seen, reflectometry measurements can help characterize HERA's performance in this domain, and
-as Equation \ref{eqn:ratio1} shows, these measurements must be adjusted for a difference in transmission/reflection
+The interplay between the extremely bright sky signal with the system response has remained somewhat undermined for the first generation 21cm experiments such as MWA, LOFAR, PAPER. With the theory of redshifted 21cm experiments have very well evolved, it is absolute necessity now to quantify the instrumental limits of these measurement in order to produce a believable power spectrum estimates.
+In this paper, we studied the performance of a HERA element in both frequency as well as delay domain. The effects of multiple reflections  in a HERA feed-dish assembly is investigated in detail and their effects on the measured visibility as well as delay spectrum is estimated.  The delay-domain performance of the HERA dish is central to HERA's function as a power spectrum instrument. Reflectometry measurements characterised HERA's performance in this domain, and as Equation \ref{eq10} shows, these measurements must be adjusted for a difference in transmission/reflection
 at the first feed encounter in order to be interpreted as the delay response of a feed relative to an incident
-plane wave from the sky.  We also see that the choice of windowing function is critical for accurately measuring the
+plane wave from the sky.  It is also shown that the choice of windowing function is critical for accurately measuring the
 antenna delay response at higher delays, where sidelobes from much higher amplitude responses at small delays can easily
-dominate.  We find Hamming, Hanning, and Blackman-Harris windows to be generally adequate while square windowing functions are not.
-Given the critical nature of the windowing function, we recommend that all reflectometry measurements be performed in the
+dominate.  Blackman-Harris window is found to be generally adequate while square windowing functions are not.
+Given the critical nature of the windowing function, it is recommended that all reflectometry measurements be performed in the
 frequency domain, so that the data could be Fourier transformed with the appropriate window.
-
-Taken all together, we summarize that the first version of the HERA dish, with a PAPER-style feed and cylindrical cage, is close to meeting
-specification, but will require additional work to fall below $-60dB$ at $60ns$.  Given that the width of the delay response is a convolution
-of the feed response and the dish reflections, it is not possible to perfectly decouple the response of the feed from that of the dish.
-It may be possible to achieve enough of a reduction to meet specification by modifying the feed.
-Given that previous measurements using a PAPER feed with a simple backplane exhibit structure above $-60dB$ at $60ns$,
-we deduce that these advances will most likely require improving the feed return loss.  We also recommend re-investigating the scattering
-cone for reducing standing waves between the feed and dish.  Finally, given the proximity of our measurements to the rough 
-specification that was adopted for 
-HERA of $-60dB$ attenuation at $60ns$, we recommend reinvestigating this specification to determine more accurately the impact of 
-the element's current delay performance on HERA science.  We suspect that, at the level of $-50dB$ at $60ns$ and $-60dB$ at $120ns$, this
-performance may indeed be adequate for the delay-domain power spectrum analysis for which HERA has been optimized.
+The delay spectrum estimates are then compared with the electromagnetic as well as time domain simulation of the HERA element~\citep{Ewall-Wice_et_al2016}, ~\citep{ddboer_et_al2016}. The same is then compared with the foreground simulation of~\cite{Thyagarajan_et_al2015}. The performance is also evaluated in the light of HERA power spectrum estimation technique using inverse covariance weighting formalism. 
+Taken all together, we summarise that the HERA antenna element, with a PAPER-style crossed dipole feed and cylindrical cage the instrument delay spectrum very well satisfies the criteria necessary to meet its science goal. 
 
 %\bibliography{biblio}{}
 \bibliographystyle{apj}
