@@ -498,18 +498,12 @@
     \section{\textbf{Results}}
     %Return loss measurements yields the instrument pass band response that would manifest in autocorrelation data of a single HERA element. Upon our assumption that two adjacent antenna elements have identical design parameters and electrical properties, this power is also a measure of the cross power or the visibility $\vis (\vec b, \nu)$ between the two antennas with a normalisation factor of $2$. 
     
-    Performance of the HERA feed and the dish-feed assembly has been simulated by
-    the em solver "High Frequency Structural Simulator(HFSS)" using the finite
-    element method.  The simulated and measured return loss of the feed, both
-    magnitude and phase are shown in the upper panel of the figure
-    \ref{RL_mag_dish}. While the simulated return loss of the feed structure shows
-    two resonant peaks around 120 and $160~MHz$, the feed resonance occur at
-    slightly higher frequencies. Notable are the difference in the shape of the
-    resonant peaks. While the simulated response shows very wide resonant peaks, as
-    expected from this dipole structures, the measured return loss of the feed has
-    a narrow peak around its low frequency resonance. This feature dominates the
-    fall off rate in the delay response of the system bandpass. The delay response
-    of the feed is shown in figure \ref{ds_feed_on_dish_trans}. 
+    Return loss measurement of the HERA feed as well as dish-feed assembly is shown in figure \ref{RL_mag_dish}. Estimated        
+    delay spectrum is shown in figure \ref{ds_feed_on_dish_trans}. A number of systematic effects as well as
+    mathematical artifacts that are critical to this measurement and their effects
+    on the corresponding estimation of the delay spectrum are discussed next. 
+    
+    
     
     \begin{figure*}[ht]
     \begin{minipage}[b]{0.5\linewidth}
@@ -542,16 +536,10 @@
     \label{ds_feed_on_dish_trans}
     \end{figure}
     
-    Lower panel of the figure \ref{RL_mag_dish} shows the measured return loss when
-    the feed is suspended at the focal plane of the parabolic dish which is at $5m$
-    from the dish vertex. The measured return loss is much more complex than what
-    is found from the simulation. 
-    %To estimate the delay spectrum of the dish-feed assembly i.e one single HERA element, this measurement is first corrected to map the response of the antenna from transmitting mode to receiving mode via equation \ref{zero_delay_correction}. The corrected measurement is then Fourier transformed to obtain the delay spectrum of the instrument in the receiving mode as given in equation \ref{corrected_response}. 
-    Measurement bandwidth is kept much larger than the bandwidth of operation to
-    achieve higher delay resolution. A number of systematic effects as well as
-    mathematical artifacts that are critical to this measurement and their effects
-    on the corresponding estimation of the delay spectrum are taken in to account
-    in determination of the delay spectrum and described below. 
+       %To estimate the delay spectrum of the dish-feed assembly i.e one single HERA element, this measurement is first corrected to map the response of the antenna from transmitting mode to receiving mode via equation \ref{zero_delay_correction}. The corrected measurement is then Fourier transformed to obtain the delay spectrum of the instrument in the receiving mode as given in equation \ref{corrected_response}. 
+    %Measurement bandwidth is kept much larger than the bandwidth of operation to
+    %achieve higher delay resolution. 
+
     
     \subsection{Zero delay response}
     %At first, the frequency domain measurement of s11 is Fourier-transformed to compute the response of the system in the delay domain. 
@@ -561,10 +549,10 @@
     
     During observation, each HERA element is connected to an active balun similar
     to the ones used in the PAPER antenna which provides greater than 10dB return
-    loss of power at the feed output as is achieved in the measurement presented
-    here.These baluns are under further design improvements aiming at 10 to 20dB
-    better impedance match between the feed and the balun than the measurements
-    presented here.  Our measurement is done using a vector network analyzer for
+    loss of power at the feed output. These baluns are currently under further design 
+    improvements aiming at 10 to 20dB
+    better impedance match between the feed and the backend.
+    Measurements presented here is done using a vector network analyzer for
     which the active balun has been replaced by a passive balun.Given the antenna
     impedance and the 50 Ohm transmission line the measurements are done using the
     passive balun with a 4:1 impedance ratio. This measurements are conservative
@@ -608,20 +596,20 @@
     dish reflections starts to dominate and the two delay spectrum deviates from
     each other. With some manipulation of the equation \ref{eq10}, we can estimate
     the dish return loss $\Gamma_{d}$ and corresponding delay spectrum as shown in
-    the figure \ref{dish_delay_spectrum}.
+    figure \ref{dish_delay_spectrum}.
     
     \subsection{Multiple reflection between the feed and the backend.}
     
-    Another effect that spill over of the smooth foreground power at higher delays
+    Another effect that spills over of the smooth foreground power at higher delays
     is the multiple reflection of the received signal between the feed output and
     the input of the analog backend and correlators. In our measurements, the feed
     output is connected to the VNA via a 50 feet long LMR 400 cable. This length
-    correspond to a delay of $\approx 120~nS$ for the signals travelling through
+    corresponds to a delay of $\approx 120~nS$ for the signals traveling through
     the cable. The delay spectrum of both feed and feed-dish assembly shows an
-    enhanced feature at this delay indicating a reflection from the VNA input. We
+    enhanced feature around this delay indicating a reflection from the VNA input. We
     measure the VNA input reflections by disconnecting the feed and connecting an
     open load at the feed input of the cable. The measured return loss is shown in
-    the figure \ref{fig:open_RL}. Since the electromagnetic wave travelling through
+    figure \ref{fig:open_RL}. Since the electromagnetic wave traveling through
     a transmission line undergoes a $100\%$ reflections from an open ended
     transmission line, we compute the combined effect of the VNA input return loss
     along with the cable resistive loss from this measurement as shown in figure
@@ -631,7 +619,11 @@
     commercially available RF connectors that are commonly used. This manifests
     itself in a peak in the delay spectrum which is $50~dB$ above the measurement
     noise floor. The delays at which this effect becomes dominant depends on the
-    length of the cable. Due to finite return loss at the input of the backends,
+    length of the cable. Since our measurement plane is at the open end of the cable
+    first reflection appears at zero delay while the second one appears around 120~ns. 
+    Peak amplitude of the consecutive reflection is reduced by $22~dB$. Third and 
+    consecutive reflections are buried in the noise floor of this measurement.Due to 
+    finite return loss at the input of the backends,
     this effect will be present in all the observations and thus would impact the
     instrument delay spectrum. However, its effect could be reduced below the level
     where the foreground  achieving a return loss at the backend input is greater
@@ -647,7 +639,7 @@
     \centering
     \includegraphics[angle=0, width=\linewidth]{GB_reflectometry_part3/plot/open_delay.png}
     \end{minipage}
-    \caption{Left: Magnitude and phase of the return loss measured when the open load is connected at the feed input of the cable. Ideally, for an open load, the electromagnetic wave travelling through the transmission cable undergoes a $100\%$ reflections and magnitude of the return loss is $0dB$. However, due to the resistive loss in the cable, the a small part of the signal is dissipated in the cable resulting a smaller return loss.  Right: Delay spectrum of the open load that shows the multiple reflections at the VNA input. The delay spectrum of the feed and the feed-dish assembly is also plotted for comparison.}
+    \caption{Left: Magnitude and phase of the return loss measured when the open load is connected at the feed input of the cable. Ideally, for an open load, the electromagnetic wave traveling through the transmission cable undergoes a $100\%$ reflections and magnitude of the return loss is $0dB$. However, due to the resistive loss in the cable, the a small part of the signal is dissipated in the cable resulting a smaller return loss.  Right: Delay spectrum of the open load that shows the multiple reflections at the VNA input. The delay spectrum of the feed and the feed-dish assembly is also plotted for comparison.}
     \label{fig:open_RL}       
     \end{figure*}
     
@@ -655,16 +647,17 @@
     
     Estimation of the delay spectrum by taking the Fourier transform of the
     measured return loss is sensitive to the bandwidth of measurements. Since the
-    measurements are done in the spectral domain, measurement between two
-    frequencies is analogous to windowing the frequency domain data by a square
+    measurements are done in the spectral domain over finite bandwidth, it is analogous
+     to windowing the frequency domain data by a square
     window function. In the delay domain, Fourier transform of this would result in
-    multiple side lobes at higher delays. Therefore, appropriate windowing of the
-    data is  necessary prior to taking the Fourier transform of the measured data.
+    multiple side lobes at higher delays. Appropriate windowing of the
+    measured data is necessary prior to taking the Fourier transform reduces
+    the system response at higher delays by few orders of magnitude~\citep{nithya_et_al2013}.
     Figure \ref{fig:window} shows the delay spectrum estimated from the measured
-    data using a square window as well as Blackman Harris window. Windowing the
-    data prior to Fourier transform significantly reduces the system response
-    higher delays.  
-    
+    data using a square window as well as Blackman Harris window. Even though windowing 
+    results in about $50\%$ loss of spectral sensitivity, it provides an additional $30~dB$ headroom 
+    for the foreground contaminations at higher delays. Spectral sensitivity could be improved by longer integration
+    time.     
     \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{GB_reflectometry_part3/plot/ds_window.png}
@@ -690,45 +683,52 @@
    \label{fig:sim_em}
    \end{figure}
  \subsubsection{Electromagnetic simulation:}  
-We compare the delay spectrum estimated from our measurements with the same derived from the return loss obtained from the HFSS simulations of the HERA element (figure \ref{fig:sim_em}). The simulation is in good agreement with the measurements up to about 80~ns after which the cable reflection starts to manifests. The dominant term in the expression of  return loss of the HERA element in
-    receiving mode (equation \ref{eq11}) is the zero delay term $(1+\Gamma_{f})$. As
-    mentioned earlier, the feed reflection coefficient $\Gamma_{a}$ shows two
-    resonances in between 100-140~MHz and 160-200~MHz. While the one at high
-    frequency is a wider peak, the low frequency resonance shows a sharp feature in
-    frequency. This dominates the overall shape of the delay spectrum in figure
+ Performance of the HERA feed and the dish-feed assembly has been simulated by
+    the em solver "High Frequency Structural Simulator(HFSS)" using the finite
+    element method.  The simulated and measured return loss of the feed, both
+    magnitude and phase are shown in the upper panel of figure
+    \ref{RL_mag_dish}. Bottom panel of figure \ref{RL_mag_dish} shows the measured return loss when
+    feed is suspended at the focal plane of the parabolic dish which is at $5m$
+    from the dish vertex. The measured return loss is much more complex than what
+    is found from simulation. 
+    While the simulated return loss of the feed structure shows
+    two resonant peaks around 120 and $160~MHz$, the feed resonance occur at
+    slightly higher frequencies. Notable are the difference in the shape of the
+    resonant peaks. While the simulated response shows very wide resonant peaks, as
+    expected from these dipole structures, the measured return loss has
+    a narrow peak at its low frequency resonance. The dominant term in the expression of  return loss of the HERA element in
+    receiving mode (equation \ref{eq11}) is the zero delay term $(1+\Gamma_{f})$. Hence the low frequency peak dominates the overall shape of the delay spectrum in figure
     \ref{fig:sim_em}.\\
-  \subsubsection{Time domain simulation:}  
+    
+    
+    
+   \subsubsection{Time domain simulation:}  
     We also compare our measurements with the time domain simulation presented in ~\cite{Ewall-Wice_et_al2016}. In this simulation, electromagnetic response of the HERA element is determined as a function of time using the commercial numerical simulation software Microwave Studio developed by Computer Simulation Technology. The simulation assumed a constant $125\Omega$ impedance at the dipole terminals. In reality, dipole impedance is function of frequency across the entire band. This results in deviation between the simulated delay response and the delay spectrum estimate of our measurements. \\
      \subsubsection{Foreground simulation:}  
     We also compare our measurement with the foreground simulation of~\citep{Thyagarajan_et_al2016} as shown in the first panel of figure \ref{ds_full_sub_band}. The shaded region of each panel shows the EoR to
     foreground power ratio required for detection of 21~cm power spectrum at those
-    individual delays~\citep{Thyagarajan_et_al2016}. This ratio is computed by
+    individual delays. This ratio is computed by
     using the HFSS simulation of chromatic antenna beam and the sky models. Diffused sky foreground model is
     incorporated from~\citep{deolivieracosta_et_al2008} whereas the point source
     contribution is estimated by combining the NRAO VLA Sky Survey (NVSS) at
     1.42~GHz~\citep{Condon_1998}, Sydney University Molonglo sky Survey (SUMSS)
     ~\citep{Bock_et_al_1999}, \citep{Mauch_et_al_2003} at 843~MHz. The EoR signal
     is simulated by using 21cmFAST \citep{Messinger_et_al2011}. The model
-    parameters used by~\cite{Thyagarajan_et_al2016} for the EoR signal simulation
+    parameters used for the EoR signal simulation
     are : Virial temperature of minimum mass of dark matter halos that host
     ionizing sources, $T_{vir}^{min} = 2*10^4 K$, Ionising efficiency $\eta = 20$,
     Mean Free Path of UV photons $R_{mfp} = 15Mpc.$ For these model parameter
     values, the redshift of $50\%$ reionization is predicted to be at $z = 8.5$ at
-    150MHz.  Ideally, the delay response of the smooth foreground is confined at
-    lower delays whereas the same for the EoR signal is spread across the entire
-    delay range. However, due to system chromaticity of the simulated response of
-    the HERA element, foreground spills over the higher delays.
-    ~\cite{Thyagarajan_et_al2016} computes the required attenuation of the
-    foreground with respect to the EoR power available at that delay in order for a
-    detection of the EoR signal at that delay mode. It is shown that for a given
+    150MHz.  
+    EoR to foreground power ratio shows that for a given
     delay mode, the estimate of a lower $k_{\parallel}$ mode requires a higher
-    attenuation compared to a higher $k_{\parallel}$ mode. (For details
-    ~\cite{Thyagarajan_et_al2016}). \\
+    attenuation compared to a higher $k_{\parallel}$ mode. 
      This simulation also, however, does not incorporate the frequency dependent antenna impedance that 
      results in a frequency dependent return loss of power at the antenna terminal. Hence, the shaded region shows the most      
      stringent limits of  EoR to foreground power ratio and sets the upper most limit of the required system performance under the assumption of non-chromatic return loss. 
      
     \subsubsection{Delay spectrum of sub bands}
+    \label{sub-band}
     In HERA analysis, the 21~cm power spectrum
     is estimated by gridding the observed data along the line of sight distance i.e
     is in frequency or redshift and spatial frequency scale
@@ -742,15 +742,15 @@ We compare the delay spectrum estimated from our measurements with the same deri
     \ref{ds_full_sub_band}. Each panel of figure \ref{ds_full_sub_band} shows the
     delay spectrum estimated from the return loss measurement of the HERA element
     between 100-200, 100-140, 130-170, 160 to 200~MHz respectively. Each panel also
-    compares the estimated delay spectrum with em simulation of~\cite{deBoer_2016} at various subband.  Sub band delay spectra are wider compared to full
+    compares the delay spectrum estimate obtained em simulation of~\cite{deBoer_2016} at various subband.  Sub band delay spectra are wider compared to full
     band delay spectrum.  Shape of the resonant peaks determines the roll off rate
     of the delay spectrum at all frequency ranges. At higher
     frequency, our measurement closely follows the em simulations except around
     80-120~ns where the cable reflection between the antenna and the backend manifests
     itself at all frequencies. \\ 
-    The shaded regions are however represents the EoR to Foreground power ratio simulated across the entire band.
-    The HFSS simulation of chromatic antenna beam, as incorporated by \cite{Thyagarajan_et_al2016} varies smoothly  	across frequency resulting in no significant changes in this simulation at various sub bands.  
-     HERA system performance conforms directly to the limits as posed by simulations, at frequencies $>160~MHz$. With the measured system response including the multiple reflections, the instrument would be able to probe the spatial modes of interest $k_{\parallel}>0.2$ with very little foreground bleeding $k_{\parallel} \approx 0.2$.
+    The shaded regions however represents the EoR to Foreground power ratio simulated across the entire band.
+    The HFSS simulation of chromatic antenna beam varies smoothly across frequency resulting in no significant changes in this simulation at various sub bands.  
+     HERA system performance conforms directly to the limits as posed by simulations, at frequencies $>160~MHz$. With the measured system response including the multiple reflections, the instrument would be able to probe the spatial modes of interest $k_{\parallel}>0.2$ with very little foreground bleeding around $k_{\parallel} \approx 0.2$.
       At other frequencies, it is possible to do a successful measurement by weighting down the
       foreground contribution in the measured data. This is discussed in the following section.
     \begin{figure*}[ht]
@@ -858,12 +858,14 @@ We compare the delay spectrum estimated from our measurements with the same deri
     the EoR signal. \\ 
     Combining the inverse covariance weighting formalism with the
     foreground simulation of \cite{Thyagarajan_et_al2016}, we derive a new limit on
-    required foreground attenuation with respect to the EoR signal for
+    foreground attenuation with respect to the EoR signal required for
     power spectrum estimation using HERA measurements. The foreground model of
-    \cite{Thyagarajan_et_al2016} as described in section \ref{subband} is adopted here. We use
+    \cite{Thyagarajan_et_al2016} as described in section \ref{sub-band} is adopted here. We use
     the reflectometry measurements, corrected for the antenna response in the
     receiving mode, to compute the visibilities (eq 13) for the given model of the
-    foreground, the EoR and the system noise. These visibilities formed the complex
+    foreground, the EoR and the system noise. Notable here is, our measurement contains 
+     beam chromaticity as well as chromaticity of the antenna impedance i.e, the effect 
+     of return loss of power at the antenna terminal . These visibilities formed the complex
     data vector $\bold x$. We compute the covariance matrix $C$ from the simulated
     data. $\bold x$ is then multiplied by the inverse of the covariance matrix.
     This step essentially weighs down the foreground contribution to the measured
@@ -878,7 +880,7 @@ We compare the delay spectrum estimated from our measurements with the same deri
     \caption{Delay spectrum of HERA element estimated from the reflectometry measurements by a vector network analyzer. The colored region shows the revised EoR to foreground power ratio in comparison to the measurements and the foreground simulation presented in \cite{Thyagarajan_et_al2016}.}
     \label{fig:sim_fg_revised}
     \end{figure*}
-    This demonstrates that the performance of the HERA element, in conjunction with the inverse covariance method of foreground suppression, qualifies the system for its the science goal it is designed for, irrespective of its chromatic response generated due to multiple reflections in the system.
+    This demonstrates that the performance of the HERA element, in conjunction with the inverse covariance method of foreground suppression, qualifies the system for its the science goal it is designed for, irrespective of its intrinsic chromatic response as well as chromaticity generated due to multiple reflections in the system.
     
     
     %Covariance matrix $C$ is computed from the simulated visibility data. Next, the data vector $\bold $ that consists of the complex simulated visibilities, is weighted by the computed covariance of the data. 
