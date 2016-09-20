@@ -16,8 +16,10 @@
     \newcommand{\bmvolt}{{a}}
     \newcommand{\beam}{{A}}
     \newcommand{\thhat}{{\hat\theta}}
-    \newcommand{\fngexp}{{e^{\frac{2\pi i\nu\vec{b}\cdot\thhat}{c}}}}
-    \newcommand{\ifngexp}{{e^{-\frac{2\pi i\nu\vec{b}\cdot\thhat}{c}}}}
+    %\newcommand{\fngexp}{{e^{\frac{2\pi i\nu\vec{b}\cdot\thhat}{c}}}}
+    %\newcommand{\ifngexp}{{e^{-\frac{2\pi i\nu\vec{b}\cdot\thhat}{c}}}}
+    \newcommand{\fngexp}{{e^{2\pi i\nu\vec{b}\cdot\thhat/c}}}
+    \newcommand{\ifngexp}{{e^{-2\pi i\nu\vec{b}\cdot\thhat/c}}}
     \newcommand{\dfngexp}{{e^{2\pi i\nu \Delta \tau}}}
     %\newcommand{\myemail}{skywalker@galaxy.far.far.away}
     
@@ -209,24 +211,6 @@
     systematics contaminated delay modes to much higher delays. In this process,
     the EoR signal over large spatial scales will be lost. \\
     
-    \indent The Hydrogen Epoch of Reionization Array (HERA) is a proposed array
-    consisting of 568 14-m dishes in South Africa which will measure the 21~cm
-    power spectrum between 100 to 200~MHz.
-    In this paper, we investigate the performance of an individual HERA element and
-    the resulting manifestation of the instrument response to the delay spectrum.
-    Reflectometry measurements  are carried out across a wide bandwidth on a
-    prototype HERA element in Green Bank, WV (Figure \ref{fig:heradish}), and the
-    results are interpreted in light of the delay spectrum technique of power
-    spectrum estimation and inverse covariance weighting method of foreground
-    suppression. Section 2 briefly describes the delay spectrum for the ideal and
-    non-ideal performance of a two element interferometer. Section 3 describes the
-    reflectometry measurements and establishes the connection between visibility
-    measurements and reflectometry. Reflectometry results are described in section
-    5. Section 6 evaluates the performance of the HERA element for detection of the
-    21~cm power spectrum.
-    
-    This paper is one in a series of four papers that studies the time and frequency domain simulation of  HERA element~\citep{Ewall-Wice_et_al2016}, ~\citep{ddboer_et_al2016},beam pattern measurements~\citep{Neben_et_al2016}, and foreground limits ~\citep{Thyagarajan_et_al2016}. We compare 
-    reflectometry measurements to the simulated specification for the spectral performance of a HERA element ~\citep{ddboer_et_al2016} and to the limits of EoR to foreground power ratio established by ~\citep{Thyagarajan_et_al2016}. 
     \begin{figure*}
     \centering
     \includegraphics[trim={2cm 20cm 30cm 15cm},clip, totalheight=0.3\textheight]{plots/heradish.jpg}
@@ -234,25 +218,45 @@
     \label{fig:heradish}
     \end{figure*}
     
+
+    In this paper, we use reflectometry measurements to
+    investigate the delay-domain performance of 
+    the 14-m parabolic dish elements (Figure \ref{fig:heradish}) that are proposed to be used in HERA, operating 
+    from 100 to 200~MHz.
+    %Reflectometry measurements are carried out across a wide bandwidth on a
+    %prototype HERA element in Green Bank, WV (Figure \ref{fig:heradish}), and the
+    %results are interpreted in light of the delay spectrum technique of power
+    %spectrum estimation and inverse covariance weighting method of foreground
+    %suppression. 
+    This paper is one in a series of four papers that studies the time and frequency domain simulation of  HERA element~\citep{Ewall-Wice_et_al2016}, ~\citep{ddboer_et_al2016},beam pattern measurements~\citep{Neben_et_al2016}, and foreground limits ~\citep{Thyagarajan_et_al2016}. We compare 
+    reflectometry measurements to the simulated specification for the spectral performance of a HERA element ~\citep{ddboer_et_al2016} and to the limits of EoR to foreground power ratio established by ~\citep{Thyagarajan_et_al2016}. 
+    In this paper, Section 2 briefly describes the delay spectrum for the ideal and
+    non-ideal performance of a two element interferometer. Section 3 describes the
+    reflectometry measurements and establishes the connection between visibility
+    measurements and reflectometry. Reflectometry results are described in Section
+    5. Section 6 evaluates the performance of the HERA element for detection of the
+    21~cm power spectrum.
     
-    \section{\textbf{Visibility measurements by a two element interferometer and the delay spectrum}}
+    
+    \section{\textbf{Visibility measurements by a two element interferometer in the delay domain}}
+
     Consider a two element interferometer with a baseline $\vec b$. If we denote the electric field sky signal in the direction $\thhat$ by $\volt_\sky(\vec \theta, \nu)$, then the voltage output of each antenna may be written as,  
     
     \begin{equation}
-    \volt_{1}(\thhat, \nu) = \bmvolt_{1}(\thhat,\nu)\volt_\sky(\thhat,\nu)\nonumber\\
+    \volt_{1}(\thhat, \nu) = \bmvolt_{1}(\thhat,\nu)~\volt_\sky(\thhat,\nu)\nonumber\\
     \end{equation}
     \begin{equation}
-    \volt_{2} (\thhat, \nu)= \bmvolt_{2}(\thhat,\nu)\volt_\sky(\thhat,\nu)\fngexp\nonumber\\
+    \volt_{2} (\thhat, \nu)= \bmvolt_{2}(\thhat,\nu)~\volt_\sky(\thhat,\nu)~\fngexp\nonumber\\
     \end{equation}
     Hence, the time averaged visibility measured by the interferometer may be written as, 
     \begin{equation}
-    \vis(\vec b, \nu) =  \int  \volt_{1}(\thhat,\nu)  \volt_{2}^{*} (\thhat, \nu) \ifngexp d\Omega 
+    \vis(\vec b, \nu) =  \int  \volt_{1}(\thhat,\nu)~  \volt_{2}^{*} (\thhat, \nu)~ \ifngexp d\Omega 
     \label{eq1}
     \end{equation}
     
-    We define the antenna cross power pattern as  $\beam(\thhat,\nu)=\bmvolt_{1}(\thhat,\nu)\bmvolt_{2}^{*}(\thhat,\nu)$ and denote the sky intensity as  $I_\sky(\thhat,\nu)=\volt_\sky(\thhat,\nu)\volt_\sky^{*}(\thhat,\nu)$. Hence, 
+    We define the antenna cross power pattern as  $\beam(\thhat,\nu)=\bmvolt_{1}(\thhat,\nu)~\bmvolt_{2}^{*}(\thhat,\nu)$ and denote the sky intensity as  $I_\sky(\thhat,\nu)=\volt_\sky(\thhat,\nu)~\volt_\sky^{*}(\thhat,\nu)$. Hence, 
     \begin{equation}
-    \vis(\vec b,\nu) = \int \beam(\thhat, \nu) I_\sky(\thhat,\nu) \ifngexp d\Omega
+    \vis(\vec b,\nu) = \int \beam(\thhat, \nu)~ I_\sky(\thhat,\nu)~ \ifngexp d\Omega
     	%	& = & \int B(l,m, \nu) I_{sky}(l,m,\nu) exp(-2\pi i \nu \tau_{g} ) dl dm \nonumber\\
      	%	& = & B(\vec u,\nu) \ast P_{sky}(\vec u,\nu ) \nonumber\\
     	%	& = & B(\nu { |\vec b| \over c} , \nu) \ast P_{sky}(\nu { |\vec b| \over c} , \nu) \nonumber\\
@@ -270,7 +274,8 @@
     % XXX rethink how to express this equation (not correct about integrated over all sky)
     % XXX define tau_g
     The convolution is carried out along the $\tau$ axis which is Fourier conjugate of the frequency $\nu$. 
-    The redshifted 21 cm spatial power spectrum is defined as
+    It was then shown that the this delay-transformed visibility related to the power spectrum of redshifted
+    21 cm emission as
     \begin{equation}
       P_{21}(k_\perp,k_\parallel) = (|\tilde V(\vec b, \tau)|^{2} \left(\frac{1}{\Omega\Delta B}\right)\left(\frac{D^2\Delta D}{\Delta B}\right)\left(\frac{\lambda^2}{2k_\textrm{B}}\right)^2 ,
     \label{eq4}
