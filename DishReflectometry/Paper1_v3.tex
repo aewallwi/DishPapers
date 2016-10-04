@@ -268,16 +268,23 @@
     In ~\citet{parsons_et_al2012a}, the Fourier transform of the visibility along the frequency axis was introduced,
     resulting in the delay spectrum:
     \begin{eqnarray}
-    \tilde V(\vec b, \tau) & = & \int\!\![{\beam(\vec b,\nu)*I_\sky(\vec b,\nu)] ~e^{-2\pi i\nu\tau}d\nu}%\nonumber\\	                        %& = &   \left [ A(\vec b, \tau)\ast I_{sky}(\vec b, \tau) \ast \delta( \tau - \frac{{\vec {b} \cdot \thhat}}{c} )\right ] d\Omega 
+    %\tilde V(\vec b, \tau) & = & \int\!\![{\beam(\vec b,\nu)*I_\sky(\vec b,\nu)] ~e^{-2\pi i\nu\tau}d\nu}%\nonumber\\	  
+     \tilde V(\vec b, \tau) & = & \beam(\vec b,\tau)*I_\sky(\vec b,\tau)
+                           %& = &   \left [ A(\vec b, \tau)\ast I_{sky}(\vec b, \tau) \ast \delta( \tau - \frac{{\vec {b} \cdot \thhat}}{c} )\right ] d\Omega 
     \label{eq3}
     \end{eqnarray}
     % XXX rethink how to express this equation (not correct about integrated over all sky)
     % XXX define tau_g
-    The convolution is carried out along the $\tau$ axis which is Fourier conjugate of the frequency $\nu$. 
-    It was then shown that the this delay-transformed visibility related to the power spectrum of redshifted
-    21 cm emission as
+    The convolution is carried out along the $\tau$ axis which is Fourier conjugate of the frequency $\nu$. Qualitatively, 
+    delay spectrum of the visibility results from the convolution of the delay spectrum of the instrument with the instrument delay response. It is, therefore, important to determine the instrument delay response in order to determine sky delay response at a particular delay. by de-convolving the delay transformed visibility by the instrument response. 
+    
+   The delay-transformed visibility is related to the power spectrum of redshifted
+    21 cm emission by the relation, 
     \begin{equation}
-      P_{21}(k_\perp,k_\parallel) = (|\tilde V(\vec b, \tau)|^{2} \left(\frac{1}{\Omega\Delta B}\right)\left(\frac{D^2\Delta D}{\Delta B}\right)\left(\frac{\lambda^2}{2k_\textrm{B}}\right)^2 ,
+     %P_{21}(k_\perp,k_\parallel) = (|\tilde V(\vec b, \tau)|^{2} \left(\frac{1}{\Omega\Delta B}\right)\left(\frac{D^2\Delta D}{\Delta B}\right)\left(\frac{\lambda^2}{2k_\textrm{B}}\right)^2 ,
+     %\end{equation}
+     %\begin{equation}
+ P_{21}(k_\perp,k_\parallel) = (|\tilde V(\vec b, \tau)|^{2} \left(\frac{\lambda^2}{2k_\textrm{B}}\right)^2 {X^{2}Y \over \Omega \Delta B}
     \label{eq4}
     \end{equation}
     where
@@ -286,34 +293,46 @@
       k_\parallel = \frac{2\pi\tau\,f_{21}H_0\,E(z)}{c(1+z)^2}, 
      \label{eq5}
     \end{equation}
-    The power spectrum is a function of cosmological as well as instrumental parameters which are:\\
-    $f_{21}$:rest frame frequency of the 21~cm radiation.\\
+    where, \\
+    \begin{itemize}
+    \item
+     $f_{21}$:rest frame frequency of the 21~cm radiation.\\
+     \item
     $f$: observation frequency.\\
+    \item
     $z$: cosmological redshift corresponding to the frequency of observation.\\
+    \item
      $\Delta B$: bandwidth centered at the observation frequency.\\
+     \item
      $k_\textrm{B}$: Boltzmann constant.\\
+     \item
      $D\equiv D(z)$ comoving distance along the line of sight\\
+     \item
      $\Delta D$ the comoving distance along the line of sight corresponding to bandwidth of observation $\Delta B$.\\
+     \item
     $E(z)= [\Omega_\textrm{M}(1+z)^3+\Omega_\textrm{k}(1+z)^2+\Omega_\Lambda]^{1/2}$ \\
-    \indent In this paper, we use $\Omega_{M}=0.27$, $\Omega_{\Lambda}=0.73$, $\Omega_{K}=1-\Omega_{M}-\Omega_{\Lambda}$, $H_0=100 h^{-1}\,$km$\,$s$^{-1}\,$Mpc$^{-1}$, and $P(k_\perp,k_\parallel)$ is in units of K$^2 (h^{-1}$~Mpc$)^3$.
-    
-    \indent Since both $k_{\perp}$ and $k_{\parallel}$ are functions of the delay
-    $\tau$, corresponding to the given baseline length, the redshifted 21 cm power
-    spectrum could be estimated from the delay spectrum of the visibility measured
-    by an interferometer. The sky delay spectrum from any direction $\thhat$ is
-    convolved with the delay spectrum of the instrument and would be located at the
-    delay $\tau = {\vec b \cdot \thhat \over c}$ %defined this differently earlier
-     in the delay domain. The maximum geometric delay possible for a given baseline would be $\tau_{g} ={ b \over c }$ for the direction of $\thhat = 0$, when the phase centre is halfway in between the two antennas. %The phase center is elsewhere defined as being at the center of one of the antennas.
-     Hence, the sky contribution from any direction would be confined within
-    $-\tau_{g}<\tau<\tau_{g}$. Due to the chromaticity of the sky signal as well as
-    the instrument response, the delay spectrum of the sky spills over into delays
-    with $\tau> \tau_{g}$, with a decaying amplitude [Ref to the Figure Parsons12].
-    The foreground, $P_{fg}(\tau)$, which is spectrally smooth, and the 21~cm power
-    spectrum, $P_{21}(\tau)$, which contains spectral signatures, contribute to the
-    sky delay spectrum $P_{sky}(\tau)$.Therefore, in the spill over region
-    $(\tau>\tau_{g})$, the relative strength of the smooth spectrum foreground,
-    with respect to the delay spectrum of the $I_{21}$, reduces and the 21cm delay
-    spectrum could be detectable.
+    \item
+    X, Y are cosmological scalers that relates the angular dependence with spectral frequency to corresponding comoving distance.
+    \end{itemize}
+   % \indent In this paper, we use $\Omega_{M}=0.27$, $\Omega_{\Lambda}=0.73$, $\Omega_{K}=1-\Omega_{M}-\Omega_{\Lambda}$, $H_0=100 h^{-1}\,$km$\,$s$^{-1}\,$Mpc$^{-1}$, and $P(k_\perp,k_\parallel)$ is in units of K$^2 (h^{-1}$~Mpc$)^3$.
+    %\indent Since both $k_{\perp}$ and $k_{\parallel}$ are functions of the delay
+    %$\tau$, corresponding to the given baseline length, the redshifted 21 cm power
+    %spectrum could be estimated from the delay spectrum of the visibility measured
+    %by an interferometer. 
+    %The sky delay spectrum from any direction $\thhat$ is
+    %convolved with the delay spectrum of the instrument and would be located at the
+    %delay $\tau = {\vec b \cdot \thhat \over c}$ %defined this differently earlier
+     %in the delay domain. The maximum geometric delay possible for a given baseline would be $\tau_{g} ={ b \over c }$ for the direction of $\thhat = 0$, when the phase centre is halfway in between the two antennas. %The phase center is elsewhere defined as being at the center of one of the antennas.
+     %Hence, the sky contribution from any direction would be confined within
+    %$-\tau_{g}<\tau<\tau_{g}$. Due to the chromaticity of the sky signal as well as
+    %the instrument response, the delay spectrum of the sky spills over into delays
+    %with $\tau> \tau_{g}$, with a decaying amplitude [Ref to the Figure Parsons12].
+    %The foreground, $P_{fg}(\tau)$, which is spectrally smooth, and the 21~cm power
+    %spectrum, $P_{21}(\tau)$, which contains spectral signatures, contribute to the
+    %sky delay spectrum $P_{sky}(\tau)$.Therefore, in the spill over region
+   % $(\tau>\tau_{g})$, the relative strength of the smooth spectrum foreground,
+    %with respect to the delay spectrum of the $I_{21}$, reduces and the 21cm delay
+    %spectrum could be detectable.
     
      %In words, the sky delay spectrum from any direction $\thhat$ is convolved with the delay spectrum of the instrument and would be located at the delay $\tau = {\vec b \cdot \thhat \over c}$ in the delay domain. The maximum geometric delay possible for a given base line would be $\tau_{g} ={ b \over c }$ for the direction of $\thhat = 0$ when the phase centre is halfway in between the two antennas. Hence, the sky contribution from any direction would be confined within $-\tau_{g}<\tau<\tau_{g}$. Due to chromaticity of the sky signal as well as instrument reponse, the delay spectrum of the sky spills over the delay $\tau> \tau_{g}$ with decaying amplitude [Ref to the Figure Parsons12]. Sky delay spectrum $I_{sky}(\tau)$ is contributed by the foreground  $I_{fg}(\tau)$  which is spectrally smooth and the 21~cm power spectrum $I_{21}(\tau)$ which contains spectral signatures. Therefore, in the spill over region $(\tau>\tau_{g})$, the relative strength of the smooth spectrum foreground with respect to the delay spectrum of the $I_{21}$ reduces and the 21~cm delay spectrum could potentially be detectable. 
     
@@ -324,7 +343,7 @@
     
     \section{\textbf{Effects of multiple reflections on visibility and delay spectrum}}
     
-    The Hydrogen Epoch of Reionization Array consists of parabolic dishes which
+    HERA consists of parabolic dishes which
     provide increased collecting area per array element compared to its predecessor
     experiment PAPER. Plane waves incident on a parabolic dish are focussed at the
     feed which is kept at the focal plane of the dish.  The mismatch between the
@@ -405,12 +424,13 @@
     \ref{eq7} could be measured using the return loss measurement technique with a
     vector network analyzer (VNA). \\
     
-    \section{\textbf{Reflectometry measurements}} 
+    \section{\textbf{Reflectometry}} 
     
-    Reflectometry is a method of determining the multiple reflection of any signal within a system. 
-    If applied to a radio telescope such as a parabolic dish, this could determine the extent to which 
+    Reflectometry is a method of determining the multiple reflection of any signal within 
+    a system in either time or frequency domain. If applied to a radio telescope such as
+     a parabolic dish, this could determine the extent to which 
     sky signal is reflected back and forth between the reflector and the feed ~\citep{2015arXiv150205862P}.
-    Reflectometry measurements are carried out at the HERA element prototype in
+    Frequency domain reflectometry measurements are carried out at the HERA element prototype in
     Green Bank, WV (Figure \ref{fig:heradish}) in order to measure the instrument
     response of the feed and dish assembly and characterise the performance.  HERA
     element consists off a $14\,m$ diameter parabolic reflector and a
@@ -488,8 +508,9 @@
     visibilities contributed to by any two voltage components from two antennas
     with no mutual delay will be located at the delay $\tau = 0$ whereas any two
     voltage components from two antennas having a mutual delay of $n\Delta \tau$
-    will be centred at $n\Delta \tau$. These will broaden the width of the delay
-    spectrum, which ultimately interferes with the 21cm power spectrum detection.
+    will be centred at $n\Delta \tau$. These will result in leakage of the foreground 
+    at delays where EoR power spectrum could be measured.
+   % spectrum, which ultimately interferes with the 21cm power spectrum detection.
     
     \begin{figure*}
     \centering
@@ -559,11 +580,11 @@
     better impedance match between the feed and the backend.
     Measurements presented here is done using a vector network analyzer for
     which the active balun has been replaced by a passive balun.Given the antenna
-    impedance and the 50 Ohm transmission line the measurements are done using the
-    passive balun with a 4:1 impedance ratio. This measurements are conservative
+    impedance and the 50 Ohm transmission line, the measurements are done using the
+    passive balun with a 4:1 impedance ratio. These measurements are conservative
     estimate  for both $\Gamma_{f}$ and $s_{11}$.\\ While measuring the return loss
     of the dish-feed assembly, the signal transmitted by the VNA is reflected first
-    off the feed. This is represented by $\Gamma_{f}$ in equation \ref{eq9}. This
+    from the feed. This is represented by $\Gamma_{f}$ in equation \ref{eq9}. This
     essentially represents a mismatch in between the feed and the 50 Ohm
     transmission line. In delay domain, this appears at the zero delay bin. The
     zero delay response is identical whether or not the feed is suspended on the
@@ -599,9 +620,10 @@
     reflections every integral multiple of $\approx2.86~ns$. The combined effect of
     feed and the dish dominates the delay spectrum up to $\> 50nS$ after which the
     dish reflections starts to dominate and the two delay spectrum deviates from
-    each other. With some manipulation of the equation \ref{eq10}, we can estimate
-    the dish return loss $\Gamma_{d}$ and corresponding delay spectrum as shown in
-    figure \ref{dish_delay_spectrum}.
+    each other. 
+    %With some manipulation of the equation \ref{eq10}, we can estimate
+    %the dish return loss $\Gamma_{d}$ and corresponding delay spectrum as shown in
+    %figure \ref{dish_delay_spectrum}.
     
     \subsection{Multiple reflection between the feed and the backend.}
     
@@ -620,7 +642,7 @@
     along with the cable resistive loss from this measurement as shown in figure
     \ref{fig:open_RL}. This results an important system design criterion for HERA.
     The VNA input return loss is found to be at a level of $-14$ to $-30dB$ across
-    the measurement band. This is consistent with the matched provided by the
+    the measurement band. This is consistent with the specification provided by the
     commercially available RF connectors that are commonly used. This manifests
     itself in a peak in the delay spectrum which is $50~dB$ above the measurement
     noise floor. The delays at which this effect becomes dominant depends on the
@@ -632,7 +654,9 @@
     this effect will be present in all the observations and thus would impact the
     instrument delay spectrum. However, its effect could be reduced below the level
     where the foreground  achieving a return loss at the backend input is greater
-    than at least $-30~dB$. 
+    than at least $-30~dB$. Moreover, if cable length are sufficiently increased
+    without the loss of signal, these reflections could be made to occur at delays
+    which are not of interest for EoR measurements.
     
     \begin{figure*}[ht]
     \begin{minipage}[b]{0.5\linewidth}
@@ -680,7 +704,7 @@
     %\label{fig:delay_spectrum}
     %\end{figure}
     
-  \subsection{Comparison with simulations:}
+  \subsection{Comparison with simulations}
   \begin{figure}{H}
   \centering
   \includegraphics[width=\linewidth]{GB_reflectometry_part3/plot/simulation_comparison2.png}
@@ -702,7 +726,7 @@
     resonant peaks. While the simulated response shows very wide resonant peaks, as
     expected from these dipole structures, the measured return loss has
     a narrow peak at its low frequency resonance. The dominant term in the expression of  return loss of the HERA element in
-    receiving mode (equation \ref{eq11}) is the zero delay term $(1+\Gamma_{f})$. Hence the low frequency peak dominates the overall shape of the delay spectrum in figure
+    receiving mode (equation \ref{eq11}) is the zero delay term $(1+\Gamma_{f})$. Hence the feed return loss, especially the shape of the low frequency resonant peak dominates the overall shape of the delay spectrum in figure
     \ref{fig:sim_em}.\\
     
     
