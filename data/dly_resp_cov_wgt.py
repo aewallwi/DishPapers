@@ -22,6 +22,7 @@ def gen_eor_mdl(ks, Pk, shape, fq_axis=1, fq0=.1, fq1=.2, bm_eff=HERA_BM_EFF_150
     B = fq1 - fq0 # GHz
     z = capo.pspec.f2z(np.average(fqs))
     scalar = capo.pspec.X2Y(z) * bm_eff * B
+    print scalar
     mdl = scipy.interpolate.interp1d(ks, Pk, bounds_error=False, fill_value=0)
     etas = np.fft.fftfreq(fqs.size, fqs[1]-fqs[0])
     kpls = etas * capo.pspec.dk_deta(z)
@@ -31,6 +32,7 @@ def gen_eor_mdl(ks, Pk, shape, fq_axis=1, fq0=.1, fq1=.2, bm_eff=HERA_BM_EFF_150
     sh = [1] * len(shape); sh[fq_axis] = -1
     dspec_amp.shape = sh
     jy2mK_HERA = jy2T(fqs, bm=bm_nos); jy2mK_HERA.shape = sh
+    print jy2mK_HERA
     vis = oqe.noise(shape).astype(np.complex128) * dspec_amp
     vis_mK = np.fft.fft(vis, axis=fq_axis)
     vis_Jy = vis_mK / jy2mK_HERA
@@ -49,7 +51,8 @@ def gen_constraint(tau, achr, eor, tcut=200.):
     return np.array(dts), mns
 
 #def dB(sig): return 10*np.log10(np.average(sig.real, axis=1)) / 2. # from mK^2 to mK
-def dB(sig): return 10*np.log10(np.abs(np.average(sig.real, axis=1))) / 2. # from mK^2 to mK
+#def dB(sig): return 10*np.log10(np.abs(np.average(sig.real, axis=1))) / 2. # from mK^2 to mK
+def dB(sig): return 30 * 4692954311.86 * np.abs(np.average(sig.real, axis=1)) / 2. # from mK^2 to mK
 #def dB(sig): return 10*np.log10(np.abs(np.average(np.abs(sig), axis=1))) / 2. # from mK^2 to mK
 #def dB(sig): return 10*np.log10(np.abs(np.median(sig, axis=1))) / 2. # from mK^2 to mK
 
@@ -94,11 +97,12 @@ except(KeyError):
     sig = wideband_clean(sig)
     window = aipy.dsp.gen_window(256, WINDOW); window.shape = (1,-1,1)
 
-#pW = 1.6*2*np.abs(np.fft.fftshift(np.fft.ifft(window*sky, axis=1), axes=1))**2
-plt.subplot(211); capo.plot.waterfall(sky[0], drng=6); plt.colorbar()
-plt.subplot(212); capo.plot.waterfall(sig[0], drng=3); plt.colorbar()
-#plt.subplot(212); capo.plot.waterfall(sky2[0], drng=8); plt.colorbar()
-plt.show()
+if False:
+    #pW = 1.6*2*np.abs(np.fft.fftshift(np.fft.ifft(window*sky, axis=1), axes=1))**2
+    plt.subplot(211); capo.plot.waterfall(sky[0], drng=6); plt.colorbar()
+    plt.subplot(212); capo.plot.waterfall(sig[0], drng=3); plt.colorbar()
+    #plt.subplot(212); capo.plot.waterfall(sky2[0], drng=8); plt.colorbar()
+    plt.show()
 
 #npz_achr = np.load('fgdps_achromatic.npz')
 #sky2 = npz_achr['skyvis'].astype(np.complex128) * 1e6 # mK^2 (bl,dly,t)
@@ -163,12 +167,14 @@ for boot in xrange(1):
     print boot
     # gather C,iC matrices for baselines to try cross-application
     ds.clear_cache()
+    ds.lmin = 1e-2
     ds.set_data(dat)
     Cs,iCs = {},{}
     for k in dat:
         #Cs[k] = ds.C(k)
-        #Cs[k] = sum([ds.C(ki)+0*np.identity(NCHAN) for ki in dat])
-        Cs[k] = sum([ds.C(ki)+3e-6*np.identity(NCHAN) for ki in dat if ki != k])
+        Cs[k] = sum([ds.C(ki)+8e-5*np.identity(NCHAN) for ki in dat])
+        #Cs[k] = sum([ds.C(ki)+1e-4*np.identity(NCHAN) for ki in dat])
+        #Cs[k] = sum([ds.C(ki)+3e-4*np.identity(NCHAN) for ki in dat if ki != k])
         #Cs[k] = sum([ds.C(ki)+1e-6*np.identity(NCHAN) for ki in dat if ki != k])
         #Cs[k] = sum([ds.C(ki)+1e-4*np.identity(NCHAN) for ki in dat if ki != k])
         #Cs[k] = sum([ds.C(ki)+0*np.identity(NCHAN) for ki in dat if ki != k])
@@ -193,23 +199,24 @@ for boot in xrange(1):
         pW1 = 1.6*2*np.abs(np.fft.fftshift(np.fft.ifft(win1*dat_cut[ki].T, axis=0), axes=0))**2
         pW2 = 2.4*2*np.abs(np.fft.fftshift(np.fft.ifft(win2*dat_cut[ki].T, axis=0), axes=0))**2
         plt.figure(1)
-        plt.plot(tau, dB(pI), 'b', label='I')
-        plt.plot(tau, dB(pW1), 'g', label='W')
-        plt.plot(tau, dB(pW2), 'g', label='W')
-        plt.plot(tau, dB(pI_eor), 'k', label='E')
+        #plt.plot(tau, dB(pI), 'b', label='I')
+        #plt.plot(tau, dB(pW1), 'g', label='W')
+        plt.plot(tau, dB(pW2), 'g', label='Delay Spectrum (Blackman-Harris$^\\frac{3}{2}$)')
+        plt.plot(tau, dB(pI_eor), 'k', label='Reionization')
         ds.set_iC({ki:iCs[ki]})
         qC = ds.q_hat(ki,ki)
         FC = ds.get_F(ki,ki)
-        #MC,WC = ds.get_MW(FC, mode='I')
-        MC,WC = ds.get_MW(FC, mode='F^-1/2')
+        MC,WC = ds.get_MW(FC, mode='I')
+        #MC,WC = ds.get_MW(FC, mode='F^-1/2')
         #MC,WC = ds.get_MW(FC, mode='F^-1')
         pC = ds.p_hat(MC,qC)
         plt.figure(1)
-        plt.plot(tau, dB(pC), 'r', label='C')
+        plt.semilogy(tau, dB(pC), 'r', label='Optimal Quadratic Estimator')
         #print k_1/dk_deta
         #print k_2/dk_deta
         #plt.plot(k_1/dk_deta, 10*np.log10(eor1))
         #plt.plot(k_2/dk_deta, 10*np.log10(eor2))
+        '''
         plt.figure(2)
         for kcut in [.1,.15,.2]:
             tcut = kcut / dk_deta
@@ -221,7 +228,9 @@ for boot in xrange(1):
             tau_c, prf_c = gen_constraint(tau, np.where(dB(pC) > -35, dB(pC), -50), dB(pI_eor), tcut=tcut)
             prf_c_final[kcut] = np.where(prf_c < prf_c_final[kcut], prf_c, prf_c_final[kcut])
             plt.plot(tau_c, prf_c, 'r', label='C-%0.2f' % (kcut))
+        '''
 
+'''
 for kcut in prf_c_final:
     plt.plot(tau_c, prf_c_final[kcut], 'r', label='C-%0.2f' % (kcut))
     plt.plot(tau_c, prf_w_final[kcut], 'g', label='C-%0.2f' % (kcut))
@@ -230,6 +239,11 @@ plt.figure(2)
 plt.plot(tau_meas, ref_meas, 'k')
 #plt.legend(loc='best')
 plt.xlim(0,500)
+'''
+plt.xlabel('Delay [ns]')
+plt.ylabel('Power Spectrum [mK$^2$ h$^{-3}$Mpc$^3$]')
+plt.grid()
+#plt.legend(loc='best')
 plt.show()
 
 sav = {'tau_cstr':tau_c, 'tau_meas':tau_meas, 'refl_meas':ref_meas}
