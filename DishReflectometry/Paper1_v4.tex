@@ -822,11 +822,19 @@
  The HERA analysis pipeline for power spectrum estimation exploits the inverse covariance weighting to reduce the foreground contribution to the measured visibility data. In the light of this analysis technique we further investigate the limits of EoR to foreground power ratio from what is established by conservative estimates of \cite{Thyagarajan_et_al2016}. In the following section we briefly describe the power spectrum estimation technique used in HERA analysis and inverse covariance weighting. We evaluate the instrument delay response in the context of covariance weighting.
 
    % \section{\textbf{Power spectrum estimation}}  
-   \section{\textbf{Revised delay spectrum limit using inverse covariance weighting}}    
-    
+   \section{\textbf{Revised delay spectrum specification using inverse covariance weighting}}    
+    The results we presented in the previous section focused on the delay-domain performance of
+the antenna, where it convolves the foreground signal and must fall beneath the amplitude of the 
+21cm EoR signal to avoid a systematic bias.  We used a windowed delay tranformation to make these comparisons.
+This simple analysis lends itself to being easily interpretable, but it omits the 
+suppression of foreground systematics that are a feature of more sophisticated power spectrum estimation techniques.
+In this section, we explore how we might re-evaluate our specification for the delay-domain performance of
+the HERA antenna in light of these techniques.
+
     HERA power spectrum estimation is done using the optimal quadratic estimator
-    (OQE) formalism that has been outlined in extensive detail in  ~\cite{liu_et_al2010}, ~\cite{dillon_et_al2013a}, ~\cite{liu_et_al2014a}, ~\cite{liu_et_al2014b}, ~\cite{trott_et_al2012}, ~\cite{Ali_et_al2015}. We briefly  describe the a few major steps of OQE formalism here and evaluate the prototype HERA element response in the light of this analysis method.
-    Conventionally, the 21~cm power spectrum $P_{21}(k_\perp,k_\parallel)$ is written as, 
+    (OQE) formalism that has been outlined in extensive detail in  ~\cite{liu_et_al2010}, ~\cite{dillon_et_al2013a}, ~\cite{liu_et_al2014a}, ~\cite{liu_et_al2014b}, ~\cite{trott_et_al2012}, ~\cite{Ali_et_al2015}. We briefly  describe the major steps of OQE formalism here and evaluate the prototype HERA element response in the light of this analysis method.
+    
+The 21~cm power spectrum $P_{21}(k_\perp,k_\parallel)$ is related to the temperature field as, 
     \begin{equation}
     \langle  \tilde T_{b}(\bold k) \tilde T_{b}^{*}(\bold k^{'}) \rangle = (2\pi)^{3} \delta (\bold k - \bold k^{'})P_{21}(k_\perp,k_\parallel)
     \label{eq14}
@@ -834,13 +842,16 @@
     
     where $\langle  \tilde T_{b}(\bold k) \tilde T_{b}^{*}(\bold k^{'}) \rangle $ is the correlation function of the three dimensional spatial Fourier transform of the sky brightness temperature distribution $ \tilde T_{b}(\bold k)$, and $\delta$ is the Dirac delta function. %While both $P_{21}(k_\perp,k_\parallel)$ and $\tilde T_{b}({\bold k})$ are continuous, the power spectrum estimate is discrete. Observation frequency and bandwidth are so chosen that the power spectrum is approximated as a constant and a piecewise discrete function of $\bold k$  which correspond to a thin shell in $\bold k$ space assuming isotropy perpendicular to the line of sight. 
  %This corresponds to the $k_{\perp}$, $k_{\parallel}$  values $a <k_{\perp} < a+1$, $b <k_{\parallel} < b+1$ where the indices a, b can assume M, N different values.  
- We denote the power spectrum estimate as $\hat p_{\alpha}$ where $\alpha$ represents a particular value of $k_{\parallel}, k_{\perp}$. If $\bold x$ is the list of visibilities measured at a given frequency over a certain bandwidth i.e for a given $k_{\parallel}$ mode for a given $\Delta  k $, the first estimate of power spectrum is, 
+ We estimate the power spectrum $P(k)$ integrated over a range of $k_\parallel, k_\perp$.  We call this 
+the bandpower $\hat p_{\alpha}$, where $\alpha$ represents a range of $k_{\parallel}, k_{\perp}$. Let us take
+$\bold x$ to be a vector of visibilities measured at range of frequencies.  We can estimate unnormalized
+band powers $\hat q_\alpha$ according to the equation
     \begin{equation}
-    \hat q_{\alpha} = \bold x^{T} E^{\alpha} \bold x % - b_{\alpha}
+    \hat q_{\alpha} = \bold x^{T} E^{\alpha} \bold x, % - b_{\alpha}
     \label{eq15}
     \end{equation}
  %   where $b_{\alpha}$ is additive noise bias  to the power spectrum estimate. In practice, $b_{\alpha}$ can be eliminated from the estimate by cross correlating two visibility data sets with different noise terms. 
- where, $E^{\alpha}$ is a symmetric matrix operation denoting the Fourier transform of the data, binning, and foreground reduction. Various binning and foreground reduction techniques result in different forms of $E^{\alpha}$ resulting in estimates of $\hat p_{\alpha}$ with different statistics. A possible choice of $E^{\alpha}$ is
+ where $E^{\alpha}$ is a symmetric matrix operation denoting the Fourier transform of the data, binning, and foreground reduction. Various binning and foreground reduction techniques result in different forms of $E^{\alpha}$ resulting in estimates of $\hat p_{\alpha}$ with different statistics. A possible choice of $E^{\alpha}$ is
     \begin{equation}
     E^{\alpha} =  {1 \over 2} C^{-1} Q_{\alpha} C^{-1}
     \label{eq16}
@@ -882,15 +893,40 @@
      %For a choice of $M \propto F^{-1}$, the covariance in the estimated band power is as large as $M$ resulting in highest error in estimation. Hence, the choice of the normalization matrix $M$ is critical in the analysis process since its precise form determines the vertical error bars in the estimate of power spectrum. 
     
    % \subsection{Inverse covariance weighting: revised delay spectrum limit}
-  The critical step in the power spectrum estimation formalism is weighting of the data by the inverse of its covariance. This results in orders of magnitude reduction in the foreground power relative to the EoR signal. We combine the inverse covariance weighting formalism with the
-   simulations of \cite{Thyagarajan_et_al2016} and derive a revised limit on required foreground power reduction with respect to EoR for a successful power spectrum measurement. The foreground model of
-    \cite{Thyagarajan_et_al2016} as described in section \ref{sub-band} is adopted here to compute the 
-    data vector $\bold x$ which contains contributions from the EoR, the foreground, and
-   the instrument noise. The computed power spectra with and without covariance weighting are shown in figure \ref{fig:cov_weight}. The orange curve represents the power spectrum computed from the EoR model for three different baseline orientations for a pair of adjacent HERA elements.  The blue curves show the power spectrum of the observed sky signal including both foreground and the EoR. The contribution from the bright foregrounds dominate the lower delay modes making separation of the EoR from the foreground impossible up to delays $\approx 300$ ~ns. 
+  The critical step in the power spectrum estimation formalism is the weighting of the data by the inverse of its covariance. This can result in orders-of-magnitude reduction in the foreground power relative to the EoR signal because foregrounds tend to be concentrated into a small number of eigenmodes. 
+
+To derive a delay-spectrum specification for an antenna using the inverse covariance weighting, we begin
+with the
+   simulations of \cite{Thyagarajan_et_al2016} and use OQE formalism to estimate the amplitude of the power spectrum
+from a simulated data vector $\bold x$ 
+    which contains contributions from the EoR, the foreground, and
+   the instrument noise. The computed power spectra with and without covariance weighting are shown in figure \ref{fig:cov_weight}, where the strong dependence of the foreground amplitude on the weighting of the data can be clearly seen. The orange curve indicates the power spectrum computed from the EoR model averaged over three different baseline orientations for adjacent HERA elements.  The blue curve indicates the power spectrum of the observed sky signal including both foreground and the EoR using the windowed delay transform analysis. Here, the contribution from the bright foregrounds dominate the lower delay modes, making separation of the EoR from the foreground impossible up to delays $\approx 300$ ~ns. 
    % The matrix $E^{\alpha}$ represents a weighting of the data vector $\bold x$ by inverse of its covariance.
-   Weighting by the covariance matrix which is estimated from the simulated data, results in orders of magnitude reduction in the foreground power relative to the EoR signal at low delays and allow us to estimate the power spectrum at those delays. The covariance weighted power spectrum is shown by the purple curve in the plot. If any systematic
-    fluctuation is identified by their covariance in frequency, those particular
-    modes can be down-weighted by the inverse covariance weighting. 
+The covariance weighted power spectrum is illustrated by the purple curve in the plot. 
+   Weighting by the covariance matrix estimated from the simulated data dramatically reduces the foreground power relative to the EoR signal at low delays, opening up the possibility of estimating the EoR power spectrum at those delays. 
+
+When using simple delay-transform power spectrum estimation, the chromaticism of the antenna convolves
+the foreground signal in delay domain.  As described in \ref{Thyagarajan_et_al2016}, this 
+enables us to set a specification
+for our antenna reflectometry as a function of delay, as illustrated by the grey shaded regions in
+Figure \ref{fig:sim_fg_revised}.  This relationship is not as simple when using
+optimal quadratic power-spectrum estimation.  For example, a direction-independent bandpass shape 
+that multiplies the foreground signal falls into a single eigenmode that can be downweighted essentially to zero.
+This makes the interpretation of the output power spectrum as a reflectometry constraint problematic.  Without
+knowing in detail the direction dependence of the antenna chromaticism, we cannot know how many eigenmodes
+will be occupied by the systematics arising from the foreground-dish interaction. 
+
+To be relatively conservative, we simply use the inverse covariance weighted power spectrum from simulations that
+do not include antenna chromaticism as an effective input foreground amplitude and repeat the translation to
+a reflectometry specification as before.  The result is illustrated by the colored shaded regions
+in Figure \ref{fig:sim_fg_revised}.  This approach ignores the ability of OQE to identify and invert
+instrumental covariances, making it a relatively conservative standard.  On the other hand, should the number
+of direction-dependent spectral eigenmodes of the dish become large, this approach could potentially underestimate
+the impact of dish chromaticism.  Therefore, we present it as a demonstration that our reflectometry specifications
+could be substantially less stringent for HERA's OQE pipeline, but suggest not over-interpreting the exact 
+level of the implied specification without a detailed analysis of the direction dependence of the reflectometry
+results.
+
     %Strongsystematics that appear in the covariance of $\bold x$ will appear as eigen modes
     %of $C$, which will be downweighted in $C^{-1}$ by the square of their corresponding
     %eigenvalue.
@@ -908,11 +944,11 @@
      %Weighting the measured visibility by the inverse of its
     %covariance results in orders-of-magnitude reduction in foreground power relative to
     %the EoR signal.
-    In this sense, using optimal quadratic estimators can dramatically 
-    reduce our reliance on smooth instrumental responses, with a corresponding reduction
-    in the stringency of instrument performance specification.
+    %In this sense, using optimal quadratic estimators can dramatically 
+    %reduce our reliance on smooth instrumental responses, with a corresponding reduction
+    %in the stringency of instrument performance specification.
     
-     We again compute the required attenuation of foreground power relative to the EoR signal at every delay and compare it with the delay response of the instrument. \textbf{This ratio now has higher values at each delay in comparison with the conservative estimate provided by \cite{Thyagarajan_et_al2016} as shown in fig: \ref{fig:sim_fg_revised}. }
+     %We again compute the required attenuation of foreground power relative to the EoR signal at every delay and compare it with the delay response of the instrument. \textbf{This ratio now has higher values at each delay in comparison with the conservative estimate provided by \cite{Thyagarajan_et_al2016} as shown in fig: \ref{fig:sim_fg_revised}. }
      %Combining the inverse covariance weighting formalism with the
     %foreground simulation of \cite{Thyagarajan_et_al2016}, we derive a new specification on
     %foreground attenuation with respect to the EoR signal required for
@@ -921,10 +957,10 @@
    % the reflectometry measurements, corrected for the antenna response in the
     %receiving mode (eq \ref{eq11}) to compute the visibilities for the given model of the
     %foreground, the EoR and the system noise. 
-     \textbf{Our measurement includes chromaticity of the beam as well as antenna impedance as a function of frequency i.e, the effect 
-     of return loss of power at the antenna terminal. Angular response of the antenna beam 
-     can also be a function of frequency and introduce additional modes of fluctuations. This is included in the conservative estimates of \cite{Thyagarajan_et_al2015}. Our
-     measured response is beam integrated and does not take into account this angle dependency.}
+     %\textbf{Our measurement includes chromaticity of the beam as well as antenna impedance as a function of frequency i.e, the effect 
+     %of return loss of power at the antenna terminal. Angular response of the antenna beam 
+     %can also be a function of frequency and introduce additional modes of fluctuations. This is included in the conservative estimates of \cite{Thyagarajan_et_al2015}. Our
+     %measured response is beam integrated and does not take into account this angle dependency.}
      %These visibilities formed the complex
     %data vector $\bold x$. We compute the covariance matrix $C$ from the simulated
     %data. It is hard to know the
