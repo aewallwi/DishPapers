@@ -1,0 +1,15 @@
+1. the ones without pale purple links are public memos, preprints or conference proceedings
+2. all these articles follow this author specification
+3. Dillon & Parsons 2016: astro-ph.IM, 1602.06259. 
+Ewall-Wice et al 2016, astro-ph.CO, 1602.06277. 
+Liu & Parsons 2015, astro-ph.CO, 1510.08815
+Liu et al. 2015, astro-ph.CO, 1509.08463
+Moore et al. 2015. astro-ph.CO, 1502.05072
+Neben et al. 2016. astro-ph.IM, 1602.05249
+Parsons et al. 2015. astro-ph.IM, 1503.05564
+Ram Marthi & Chengalur 2013. astro-ph.IM, 1310.1449
+Thyagarajan et al. 2016.astro-ph.CO, 1603.08958
+
+4. thank you for removing that duplicate reference
+5. volume 30, page e007
+6. 2016 10th European Conference on Antennas and Propagation (EuCAP), 1. Davos, Switzerland, 10-15 April 2016
