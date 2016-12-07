@@ -60,11 +60,19 @@ Condon, J.~J., Cotton, W.~D., Greisen, E.~W., Yin, Q.~F., Perley, R.~A.,
 DeBoer, D. 2015, HERA Phase I Feed Design, Technical Memo~11, Dept. of
   Astronomy, University of California, Berkeley, CA
 
-\bibitem[{DeBoer {et~al.}(2016)}]{deboer16}
-DeBoer, D., {et~al.} 2016, in preparation
+\bibitem[{{DeBoer} {et~al.}(2016){DeBoer}, {Parsons}, {Aguirre}, {Alexander},
+  {Ali}, {Beardsley}, {Bernardi}, {Bowman}, {Bradley}, {Carilli}, {Cheng}, {de
+  Lera Acedo}, {Dillon}, {Ewall-Wice}, {Fadana}, {Fagnoni}, {Fritz},
+  {Furlanetto}, {Glendenning}, {Greig}, {Grobbelaar}, {Hazelton}, {Hewitt},
+  {Hickish}, {Jacobs}, {Julius}, {Kariseb}, {Kohn}, {Lekalake}, {Liu}, {Loots},
+  {MacMahon}, {Malan}, {Malgas}, {Maree}, {Mathison}, {Matsetela}, {Mesinger},
+  {Morales}, {Neben}, {Patra}, {Pieterse}, {Pober}, {Razavi-Ghods},
+  {Ringuette}, {Robnett}, {Rosie}, {Sell}, {Smith}, {Syce}, {Tegmark},
+  {Thyagarajan}, {Williams}, \& {Zheng}}]{deboer16}
+{DeBoer}, D.~R., {et~al.} 2016
 
 \bibitem[{{Dillon} \& {Parsons}(2016)}]{dillonparsons16}
-{Dillon}, J.~S., \& {Parsons}, A.~R. 2016, ArXiv e-prints
+{Dillon}, J.~S., \& {Parsons}, A.~R. 2016, \apj, 826, 181
 
 \bibitem[{{Dillon} {et~al.}(2014){Dillon}, {Liu}, {Williams}, {Hewitt},
   {Tegmark}, {Morgan}, {Levine}, {Morales}, {Tingay}, {Bernardi}, {Bowman},
@@ -72,12 +80,12 @@ DeBoer, D., {et~al.} 2016, in preparation
   {Webster}}]{X13}
 {Dillon}, J.~S., {et~al.} 2014, Phys. Rev. D, 89, 023002
 
-\bibitem[{{Ewall-Wice} {et~al.}(2016){Ewall-Wice}, {Bradley}, {DeBoer},
+\bibitem[{{Ewall-Wice} {et~al.}(2016){Ewall-Wice}, {Bradley}, {Deboer},
   {Hewitt}, {Parsons}, {Aguirre}, {Ali}, {Bowman}, {Cheng}, {Neben}, {Patra},
-  {Thyagarajan}, {Venter}, {de Lera Acedo}, {Dillon}, {Doolittle}, {Egan},
-  {Hendrick}, {Klima}, {Kohn}, {Schaffner}, {Shelton}, {Saliwanchik},
-  {Tegmark}, {Taylor}, {Taylor}, \& {Wirt}}]{ewallwice16}
-{Ewall-Wice}, A., {et~al.} 2016, ArXiv e-prints
+  {Thyagarajan}, {Venter}, {de Lera Acedo}, {Dillon}, {Dickenson}, {Doolittle},
+  {Egan}, {Hedrick}, {Klima}, {Kohn}, {Schaffner}, {Shelton}, {Saliwanchik},
+  {Taylor}, {Taylor}, {Tegmark}, \& {Wirt}}]{ewallwice16}
+{Ewall-Wice}, A., {et~al.} 2016, \apj, 831, 196
 
 \bibitem[{Furlanetto {et~al.}(2006)Furlanetto, Oh, \&
   Briggs}]{FurlanettoReview}
@@ -93,8 +101,8 @@ G\'{o}rski, K.~M., Hivon, E., Banday, A.~J., Wandelt, B.~D., Hansen, F.~K.,
 Jeli\'{c}, V., Zaroubi, S., Labropoulos, P., Bernardi, G., de~Bruyn, A.~G., \&
   Koopmans, L. V.~E. 2010, MNRAS, 409, 1647
 
-\bibitem[{{Liu} \& {Parsons}(2015)}]{liu15b}
-{Liu}, A., \& {Parsons}, A.~R. 2015, ArXiv e-prints
+\bibitem[{{Liu} \& {Parsons}(2016)}]{liu15b}
+{Liu}, A., \& {Parsons}, A.~R. 2016, \mnras, 457, 1864
 
 \bibitem[{{Liu} {et~al.}(2014{\natexlab{a}}){Liu}, {Parsons}, \&
   {Trott}}]{AdrianWedge1}
@@ -105,10 +113,10 @@ Jeli\'{c}, V., Zaroubi, S., Labropoulos, P., Bernardi, G., de~Bruyn, A.~G., \&
   {Trott}}]{AdrianWedge2}
 ---. 2014{\natexlab{b}}, Phys. Rev. D, 90, 023019
 
-\bibitem[{{Liu} {et~al.}(2015){Liu}, {Pritchard}, {Allison}, {Parsons},
+\bibitem[{{Liu} {et~al.}(2016){Liu}, {Pritchard}, {Allison}, {Parsons},
   {Seljak}, \& {Sherwin}}]{liu15a}
 {Liu}, A., {Pritchard}, J.~R., {Allison}, R., {Parsons}, A.~R., {Seljak}, U.,
-  \& {Sherwin}, B.~D. 2015, ArXiv e-prints
+  \& {Sherwin}, B.~D. 2016, \prd, 93, 043013
 
 \bibitem[{{Liu} {et~al.}(2010){Liu}, {Tegmark}, {Morrison}, {Lutomirski}, \&
   {Zaldarriaga}}]{liu2010}
@@ -143,7 +151,7 @@ Mauch, T., Murphy, T., Buttery, H.~J., Curran, J., Hunstead, R.~W.,
   {Cen}}]{21cmfast}
 {Mesinger}, A., {Furlanetto}, S., \& {Cen}, R. 2011, \mnras, 411, 955
 
-\bibitem[{{Moore} {et~al.}(2015){Moore}, {Aguirre}, {Parsons}, {Ali},
+\bibitem[{{Moore} {et~al.}(2015){Moore}, {Aguirre}, {Kohn}, {Parsons}, {Ali},
   {Bradley}, {Carilli}, {DeBoer}, {Dexter}, {Gugliucci}, {Jacobs}, {Klima},
   {Liu}, {MacMahon}, {Manley}, {Pober}, {Stefan}, \& {Walbrugh}}]{moore2015}
 {Moore}, D., {et~al.} 2015, ArXiv e-prints
@@ -180,7 +188,7 @@ Moore, D.~F., Aguirre, J.~E., Parsons, A.~R., Jacobs, D.~C., \& Pober, J.~C.
   {McWhirter}, {Mitchell}, {Morales}, {Morgan}, {Oberoi}, {Ord}, {Prabu},
   {Udaya Shankar}, {Srivani}, {Subrahmanyan}, {Tingay}, {Wayth}, {Webster},
   {Williams}, \& {Williams}}]{neben16}
----. 2016, ArXiv e-prints
+---. 2016, \apj, 820, 44
 
 \bibitem[{{Newburgh} {et~al.}(2014){Newburgh}, {Addison}, {Amiri}, {Bandura},
   {Bond}, {Connor}, {Cliche}, {Davis}, {Deng}, {Denman}, {Dobbs}, {Fandino},
@@ -204,9 +212,9 @@ Parsons, A., \& DeBoer, D. 2015, Configuration of the HERA Element, Technical
 {Parsons}, A., {Pober}, J., {McQuinn}, M., {Jacobs}, D., \& {Aguirre}, J.
   2012{\natexlab{a}}, \apj, 753, 81
 
-\bibitem[{{Parsons} {et~al.}(2015){Parsons}, {Liu}, {Ali}, \&
+\bibitem[{{Parsons} {et~al.}(2016){Parsons}, {Liu}, {Ali}, \&
   {Cheng}}]{parsonsoptimalfringeratefiltering}
-{Parsons}, A.~R., {Liu}, A., {Ali}, Z.~S., \& {Cheng}, C. 2015, ArXiv e-prints
+{Parsons}, A.~R., {Liu}, A., {Ali}, Z.~S., \& {Cheng}, C. 2016, \apj, 820, 51
 
 \bibitem[{{Parsons} {et~al.}(2012{\natexlab{b}}){Parsons}, {Pober}, {Aguirre},
   {Carilli}, {Jacobs}, \& {Moore}}]{parsons12b}
@@ -261,8 +269,8 @@ Pober, J.~C., {et~al.} 2014, ApJ, 782, 66
 
 \bibitem[{{Thyagarajan} {et~al.}(2016){Thyagarajan}, {Parsons}, {DeBoer},
   {Bowman}, {Ewall-Wice}, {Neben}, \& {Patra}}]{nithya16}
-{Thyagarajan}, N., {Parsons}, A., {DeBoer}, D., {Bowman}, J., {Ewall-Wice}, A.,
-  {Neben}, A., \& {Patra}, N. 2016, ArXiv e-prints
+{Thyagarajan}, N., {Parsons}, A.~R., {DeBoer}, D.~R., {Bowman}, J.~D.,
+  {Ewall-Wice}, A.~M., {Neben}, A.~R., \& {Patra}, N. 2016, \apj, 825, 9
 
 \bibitem[{Thyagarajan {et~al.}(2013)Thyagarajan, Shankar, Subrahmanyan, Arcus,
   Bernardi, Bowman, Briggs, Bunton, Cappallo, Corey, deSouza, Emrich, Gaensler,
